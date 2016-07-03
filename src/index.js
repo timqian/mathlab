@@ -1,3 +1,6 @@
+/**
+ * Math lab like lodash
+ */
 export _getCol from './_getCol'
 export det from './det'
 export diag from './diag'
@@ -11,7 +14,6 @@ export dotVV from './dotVV'
 export eig from './eig'
 export getDiag from './getDiag'
 export identity from './identity'
-export index from './index'
 export inv from './inv'
 export linspace from './linspace'
 export negtranspose from './negtranspose'

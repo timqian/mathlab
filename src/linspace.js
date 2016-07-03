@@ -5,7 +5,7 @@
  * @param {Number} a
  * @param {Number} b
  * @param {Number} n
- * @returns Array
+ * @returns {Array}
  * @example 
  * 
  * linspace(1, 2, 3)

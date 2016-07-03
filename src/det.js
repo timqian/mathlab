@@ -7,7 +7,7 @@ import clone from './utils/clone'
  * 
  * @export
  * @param {Array} x
- * @returns Number
+ * @returns {Number}
  * @example
  * 
  * det([[1, 2], [1, 2]])

@@ -5,7 +5,7 @@ import rep from './rep';
  * Generate identity matrix of given size
  * 
  * @param {Number} n
- * @returns Array
+ * @returns {Array}
  * @example 
  * 
  * identity(2)

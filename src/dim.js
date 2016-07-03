@@ -3,7 +3,7 @@
  * 
  * @export
  * @param {Array} x
- * @returns Array
+ * @returns {Array}
  * @example 
  * 
  * dim([[1, 2, 3], [1, 2, 2]])

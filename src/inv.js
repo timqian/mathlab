@@ -7,7 +7,7 @@ import clone from './clone'
  * 
  * @export
  * @param {Array} x
- * @returns Array
+ * @returns {Array}
  * @example 
  * 
  * inv([[1,2],[3,4]])

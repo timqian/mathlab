@@ -3,7 +3,7 @@
  * 
  * @export
  * @param {Array} x
- * @returns Array
+ * @returns {Array}
  * @example 
  * 
  * transpose([[1,2,3],[4,5,6]])

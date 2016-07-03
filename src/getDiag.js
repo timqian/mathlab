@@ -3,7 +3,7 @@
  * 
  * @export
  * @param {Array} A
- * @returns Array
+ * @returns {Array}
  * @example 
  * 
  * getDiag([[1, 3], [0, 2]])
