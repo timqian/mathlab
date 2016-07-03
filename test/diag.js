@@ -1,8 +1,9 @@
-import assert from 'assert';
-import diag from '../lib/diag';
+import assert from 'assert'
+import should from 'should'
+import { diag } from '../lib'
 
 describe('diag', function () {
-  it('make a diag matrix', function () {
-    diag([1, 2])
-  });
-});
+  it('', function () {
+    diag([1, 2]).should.deepEqual([[1, 0], [0, 2]])
+  })
+})
