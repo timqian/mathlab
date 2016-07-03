@@ -1,0 +1,1 @@
+export diag from './diag'
