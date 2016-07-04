@@ -10,7 +10,7 @@
     "access": null,
     "description": null,
     "lineNumber": 2,
-    "content": "//\tDeterminant\nimport dim from './dim'\nimport clone from './utils/clone'\n\n/**\n * Determinant of matix\n * \n * @export\n * @param {Array} x\n * @returns {Number}\n * @example\n * \n * det([[1, 2], [1, 2]])\n * // 0\n */\nexport default function det (x) {\n  var s = dim(x)\n  if (s.length !== 2 || s[0] !== s[1]) { throw new Error('det() only works on square matrices'); }\n  var n = s[0], ret = 1,i,j,k,A = clone(x),Aj,Ai,alpha,temp,k1,k2,k3\n  for (j = 0;j < n - 1;j++) {\n    k = j\n    for (i = j + 1;i < n;i++) { if (Math.abs(A[i][j]) > Math.abs(A[k][j])) { k = i; } }\n    if (k !== j) {\n      temp = A[k]; A[k] = A[j]; A[j] = temp\n      ret *= -1\n    }\n    Aj = A[j]\n    for (i = j + 1;i < n;i++) {\n      Ai = A[i]\n      alpha = Ai[j] / Aj[j]\n      for (k = j + 1;k < n - 1;k += 2) {\n        k1 = k + 1\n        Ai[k] -= Aj[k] * alpha\n        Ai[k1] -= Aj[k1] * alpha\n      }\n      if (k !== n) { Ai[k] -= Aj[k] * alpha; }\n    }\n    if (Aj[j] === 0) { return 0; }\n    ret *= Aj[j]\n  }\n  return ret * A[j][j]\n}\n"
+    "content": "//\tDeterminant\nimport dim from './dim'\nimport clone from './utils/clone'\n\n/**\n * Determinant of matix\n * \n * @export\n * @param {Matrix} x\n * @returns {Number}\n * @example\n * \n * det([[1, 2], [1, 2]])\n * // 0\n */\nexport default function det (x) {\n  var s = dim(x)\n  if (s.length !== 2 || s[0] !== s[1]) { throw new Error('det() only works on square matrices'); }\n  var n = s[0], ret = 1,i,j,k,A = clone(x),Aj,Ai,alpha,temp,k1,k2,k3\n  for (j = 0;j < n - 1;j++) {\n    k = j\n    for (i = j + 1;i < n;i++) { if (Math.abs(A[i][j]) > Math.abs(A[k][j])) { k = i; } }\n    if (k !== j) {\n      temp = A[k]; A[k] = A[j]; A[j] = temp\n      ret *= -1\n    }\n    Aj = A[j]\n    for (i = j + 1;i < n;i++) {\n      Ai = A[i]\n      alpha = Ai[j] / Aj[j]\n      for (k = j + 1;k < n - 1;k += 2) {\n        k1 = k + 1\n        Ai[k] -= Aj[k] * alpha\n        Ai[k1] -= Aj[k1] * alpha\n      }\n      if (k !== n) { Ai[k] -= Aj[k] * alpha; }\n    }\n    if (Aj[j] === 0) { return 0; }\n    ret *= Aj[j]\n  }\n  return ret * A[j][j]\n}\n"
   },
   {
     "__docId__": 1,
@@ -43,7 +43,7 @@
       {
         "nullable": null,
         "types": [
-          "Array"
+          "Matrix"
         ],
         "spread": false,
         "optional": false,
