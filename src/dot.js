@@ -26,6 +26,6 @@
 //     case 0:
 //       return x * y
 //     default:
-//       throw new Error('dot only works on vectors and matrices')
+//       throw new Error('dot() only works on vectors and matrices')
 //   }
 // }

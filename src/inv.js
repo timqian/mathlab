@@ -1,6 +1,6 @@
 import dim from './dim'
 import identity from './identity'
-import clone from './clone'
+import clone from './utils/clone'
 
 /**
  * Inverse of an matrix

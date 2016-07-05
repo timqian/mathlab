@@ -1,8 +1,50 @@
 window.esdocSearchIndex = [
   [
+    "mathlab/src/abs.js~abs",
+    "function/index.html#static-function-abs",
+    "<span>abs</span> <span class=\"search-result-import-path\">mathlab/src/abs.js</span>",
+    "function"
+  ],
+  [
+    "mathlab/src/acos.js~acos",
+    "function/index.html#static-function-acos",
+    "<span>acos</span> <span class=\"search-result-import-path\">mathlab/src/acos.js</span>",
+    "function"
+  ],
+  [
+    "mathlab/src/asin.js~asin",
+    "function/index.html#static-function-asin",
+    "<span>asin</span> <span class=\"search-result-import-path\">mathlab/src/asin.js</span>",
+    "function"
+  ],
+  [
+    "mathlab/src/atan2.js~atan2",
+    "function/index.html#static-function-atan2",
+    "<span>atan2</span> <span class=\"search-result-import-path\">mathlab/src/atan2.js</span>",
+    "function"
+  ],
+  [
+    "mathlab/src/atan.js~atan",
+    "function/index.html#static-function-atan",
+    "<span>atan</span> <span class=\"search-result-import-path\">mathlab/src/atan.js</span>",
+    "function"
+  ],
+  [
+    "mathlab/src/ceil.js~ceil",
+    "function/index.html#static-function-ceil",
+    "<span>ceil</span> <span class=\"search-result-import-path\">mathlab/src/ceil.js</span>",
+    "function"
+  ],
+  [
     "mathlab/src/utils/clone.js~clone",
     "function/index.html#static-function-clone",
     "<span>clone</span> <span class=\"search-result-import-path\">mathlab/src/utils/clone.js</span>",
+    "function"
+  ],
+  [
+    "mathlab/src/cos.js~cos",
+    "function/index.html#static-function-cos",
+    "<span>cos</span> <span class=\"search-result-import-path\">mathlab/src/cos.js</span>",
     "function"
   ],
   [
@@ -21,6 +63,18 @@ window.esdocSearchIndex = [
     "mathlab/src/dim.js~dim",
     "function/index.html#static-function-dim",
     "<span>dim</span> <span class=\"search-result-import-path\">mathlab/src/dim.js</span>",
+    "function"
+  ],
+  [
+    "mathlab/src/exp.js~exp",
+    "function/index.html#static-function-exp",
+    "<span>exp</span> <span class=\"search-result-import-path\">mathlab/src/exp.js</span>",
+    "function"
+  ],
+  [
+    "mathlab/src/floor.js~floor",
+    "function/index.html#static-function-floor",
+    "<span>floor</span> <span class=\"search-result-import-path\">mathlab/src/floor.js</span>",
     "function"
   ],
   [
@@ -45,6 +99,42 @@ window.esdocSearchIndex = [
     "mathlab/src/linspace.js~linspace",
     "function/index.html#static-function-linspace",
     "<span>linspace</span> <span class=\"search-result-import-path\">mathlab/src/linspace.js</span>",
+    "function"
+  ],
+  [
+    "mathlab/src/log.js~log",
+    "function/index.html#static-function-log",
+    "<span>log</span> <span class=\"search-result-import-path\">mathlab/src/log.js</span>",
+    "function"
+  ],
+  [
+    "mathlab/src/pow.js~pow",
+    "function/index.html#static-function-pow",
+    "<span>pow</span> <span class=\"search-result-import-path\">mathlab/src/pow.js</span>",
+    "function"
+  ],
+  [
+    "mathlab/src/round.js~round",
+    "function/index.html#static-function-round",
+    "<span>round</span> <span class=\"search-result-import-path\">mathlab/src/round.js</span>",
+    "function"
+  ],
+  [
+    "mathlab/src/sin.js~sin",
+    "function/index.html#static-function-sin",
+    "<span>sin</span> <span class=\"search-result-import-path\">mathlab/src/sin.js</span>",
+    "function"
+  ],
+  [
+    "mathlab/src/sqrt.js~sqrt",
+    "function/index.html#static-function-sqrt",
+    "<span>sqrt</span> <span class=\"search-result-import-path\">mathlab/src/sqrt.js</span>",
+    "function"
+  ],
+  [
+    "mathlab/src/tan.js~tan",
+    "function/index.html#static-function-tan",
+    "<span>tan</span> <span class=\"search-result-import-path\">mathlab/src/tan.js</span>",
     "function"
   ],
   [
@@ -384,6 +474,48 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
+    "src/abs.js",
+    "file/src/abs.js.html",
+    "src/abs.js",
+    "file"
+  ],
+  [
+    "src/acos.js",
+    "file/src/acos.js.html",
+    "src/acos.js",
+    "file"
+  ],
+  [
+    "src/asin.js",
+    "file/src/asin.js.html",
+    "src/asin.js",
+    "file"
+  ],
+  [
+    "src/atan.js",
+    "file/src/atan.js.html",
+    "src/atan.js",
+    "file"
+  ],
+  [
+    "src/atan2.js",
+    "file/src/atan2.js.html",
+    "src/atan2.js",
+    "file"
+  ],
+  [
+    "src/ceil.js",
+    "file/src/ceil.js.html",
+    "src/ceil.js",
+    "file"
+  ],
+  [
+    "src/cos.js",
+    "file/src/cos.js.html",
+    "src/cos.js",
+    "file"
+  ],
+  [
     "src/det.js",
     "file/src/det.js.html",
     "src/det.js",
@@ -414,6 +546,18 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/exp.js",
+    "file/src/exp.js.html",
+    "src/exp.js",
+    "file"
+  ],
+  [
+    "src/floor.js",
+    "file/src/floor.js.html",
+    "src/floor.js",
+    "file"
+  ],
+  [
     "src/getdiag.js",
     "file/src/getDiag.js.html",
     "src/getDiag.js",
@@ -435,6 +579,42 @@ window.esdocSearchIndex = [
     "src/linspace.js",
     "file/src/linspace.js.html",
     "src/linspace.js",
+    "file"
+  ],
+  [
+    "src/log.js",
+    "file/src/log.js.html",
+    "src/log.js",
+    "file"
+  ],
+  [
+    "src/pow.js",
+    "file/src/pow.js.html",
+    "src/pow.js",
+    "file"
+  ],
+  [
+    "src/round.js",
+    "file/src/round.js.html",
+    "src/round.js",
+    "file"
+  ],
+  [
+    "src/sin.js",
+    "file/src/sin.js.html",
+    "src/sin.js",
+    "file"
+  ],
+  [
+    "src/sqrt.js",
+    "file/src/sqrt.js.html",
+    "src/sqrt.js",
+    "file"
+  ],
+  [
+    "src/tan.js",
+    "file/src/tan.js.html",
+    "src/tan.js",
     "file"
   ],
   [

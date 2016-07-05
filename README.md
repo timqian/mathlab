@@ -4,8 +4,8 @@ Lodash like math lab in javascript, focusing on matrix manipulation.
 
 ## Goals
 - **Modulize**: only import the function you need.
-
 - **Easy to use**: no extra concepts to grasp before using
+- **Functional**: no side effact
 
 ## Install
 ```
@@ -25,134 +25,133 @@ diag([1,2])
 ```
 
 ## Function list
-- [ ] [`abs()`](#)	Absolute value
-- [ ] [`acos()`](#)	Arc-cosine
-- [ ] [`add()`](#)	Pointwise sum x+y
-- [ ] [`addeq()`](#)	Pointwise sum x+=y
-- [ ] [`all()`](#)	All the components of x are true
-- [ ] [`and()`](#)	Pointwise x && y
-- [ ] [`andeq()`](#)	Pointwise x &= y
-- [ ] [`any()`](#)	One or more of the components of x are true
-- [ ] [`asin()`](#)	Arc-sine
-- [ ] [`atan()`](#)	Arc-tangeant
-- [ ] [`atan2()`](#)	Arc-tangeant (two parameters)
-- [ ] [`band()`](#)	Pointwise x & y
-- [ ] [`bench()`](#)	Benchmarking routine
-- [ ] [`bnot()`](#)	Binary negation ~x
-- [ ] [`bor()`](#)	Binary or x|y
-- [ ] [`bxor()`](#)	Binary xor x^y
-- [ ] [`ccsDim()`](#)	Dimensions of sparse matrix
-- [ ] [`ccsDot()`](#)	Sparse matrix-matrix product
-- [ ] [`ccsFull()`](#)	Convert sparse to full
-- [ ] [`ccsGather()`](#)	Gather entries of sparse matrix
-- [ ] [`ccsGetBlock()`](#)	Get rows/columns of sparse matrix
-- [ ] [`ccsLUP()`](#)	Compute LUP decomposition of sparse matrix
-- [ ] [`ccsLUPSolve()`](#)	Solve Ax=b using LUP decomp
-- [ ] [`ccsScatter()`](#)	Scatter entries of sparse matrix
-- [ ] [`ccsSparse()`](#)	Convert from full to sparse
-- [ ] [`ccsTSolve()`](#)	Solve upper/lower triangular system
-- [ ] [`ccs<op>()`](#)	Supported ops include: add/div/mul/geq/etc...
-- [ ] [`cLU()`](#)	Coordinate matrix LU decomposition
-- [ ] [`cLUsolve()`](#)	Coordinate matrix LU solve
-- [ ] [`cdelsq()`](#)	Coordinate matrix Laplacian
-- [ ] [`cdotMV()`](#)	Coordinate matrix-vector product
-- [ ] [`ceil()`](#)	Pointwise Math.ceil(x)
-- [ ] [`cgrid()`](#)	Coordinate grid for cdelsq
-- [ ] [`clone()`](#)	Deep copy of Array
-- [ ] [`cos()`](#)	Pointwise Math.cos(x)
-- [ ] [`det()`](#)	Determinant
-- [ ] [`diag()`](#)	Create diagonal matrix
-- [ ] [`dim()`](#)	Get Array dimensions
-- [ ] [`div()`](#)	Pointwise x/y
-- [ ] [`diveq()`](#)	Pointwise x/=y
-- [ ] [`dopri()`](#)	Numerical integration of ODE using Dormand-Prince RK method. Returns an object Dopri.
-- [ ] [`Dopri.at()`](#)	Evaluate the ODE solution at a point
-- [ ] [`Function()`](#)	Description
-- [ ] [`dot()`](#)	Matrix-Matrix, Matrix-Vector and Vector-Matrix product
-- [ ] [`eig()`](#)	Eigenvalues and eigenvectors
-- [ ] [`epsilon()`](#)	2.220446049250313e-16
-- [ ] [`eq()`](#)	Pointwise comparison x === y
-- [ ] [`exp()`](#)	Pointwise Math.exp(x)
-- [ ] [`floor()`](#)	Poinwise Math.floor(x)
-- [ ] [`geq()`](#)	Pointwise x>=y
-- [ ] [`getBlock()`](#)	Extract a block from a matrix
-- [ ] [`getDiag()`](#)	Get the diagonal of a matrix
-- [ ] [`gt()`](#)	Pointwise x>y
-- [ ] [`identity()`](#)	Identity matrix
-- [ ] [`imageURL()`](#)	Encode a matrix as an image URL
-- [ ] [`inv()`](#)	Matrix inverse
-- [ ] [`isFinite()`](#)	Pointwise isFinite(x)
-- [ ] [`isNaN()`](#)	Pointwise isNaN(x)
-- [ ] [`largeArray()`](#)	Don't prettyPrint Arrays larger than this
-- [ ] [`leq()`](#)	Pointwise x<=y
-- [ ] [`linspace()`](#)	Generate evenly spaced values
-- [ ] [`log()`](#)	Pointwise Math.log(x)
-- [ ] [`lshift()`](#)	Pointwise x<<y
-- [ ] [`lshifteq()`](#)	Pointwise x<<=y
-- [ ] [`lt()`](#)	Pointwise x<y
-- [ ] [`LU()`](#)	Dense LU decomposition
-- [ ] [`LUsolve()`](#)	Dense LU solve
-- [ ] [`mapreduce()`](#)	Make a pointwise map-reduce function
-- [ ] [`mod()`](#)	Pointwise x%y
-- [ ] [`modeq()`](#)	Pointwise x%=y
-- [ ] [`mul()`](#)	Pointwise x*y
-- [ ] [`neg()`](#)	Pointwise -x
-- [ ] [`neq()`](#)	Pointwise x!==y
-- [ ] [`norm2()`](#)	Square root of the sum of the square of the entries of x
-- [ ] [`norm2Squared()`](#)	Sum of squares of entries of x
-- [ ] [`norminf()`](#)	Largest modulus entry of x
-- [ ] [`not()`](#)	Pointwise logical negation !x
-- [ ] [`or()`](#)	Pointwise logical or x||y
-- [ ] [`oreq()`](#)	Pointwise x|=y
-- [ ] [`parseCSV()`](#)	Parse a CSV file into an Array
-- [ ] [`parseDate()`](#)	Pointwise parseDate(x)
-- [ ] [`parseFloat()`](#)	Pointwise parseFloat(x)
-- [ ] [`pointwise()`](#)	Create a pointwise function
-- [ ] [`pow()`](#)	Pointwise Math.pow(x)
-- [ ] [`precision()`](#)	Number of digits to prettyPrint
-- [ ] [`prettyPrint()`](#)	Pretty-prints x
-- [ ] [`random()`](#)	Create an Array of random numbers
-- [ ] [`rep()`](#)	Create an Array by duplicating values
-- [ ] [`Function()`](#)	Description
-- [ ] [`round()`](#)	Pointwise Math.round(x)
-- [ ] [`rrshift()`](#)	Pointwise x>>>y
-- [ ] [`rrshifteq()`](#)	Pointwise x>>>=y
-- [ ] [`rshift()`](#)	Pointwise x>>y
-- [ ] [`rshifteq()`](#)	Pointwise x>>=y
-- [ ] [`same()`](#)	x and y are entrywise identical
-- [ ] [`seedrandom()`](#)	The seedrandom module
-- [ ] [`setBlock()`](#)	Set a block of a matrix
-- [ ] [`sin()`](#)	Pointwise Math.sin(x)
-- [ ] [`solve()`](#)	Solve Ax=b
-- [ ] [`solveLP()`](#)	Solve a linear programming problem
-- [ ] [`solveQP()`](#)	Solve a quadratic programming problem
-- [ ] [`spline()`](#)	Create a Spline object
-- [ ] [`Spline.at()`](#)	Evaluate the Spline at a point
-- [ ] [`Spline.diff()`](#)	Differentiate the Spline
-- [ ] [`Spline.roots()`](#)	Find all the roots of the Spline
-- [ ] [`sqrt()`](#)	Pointwise Math.sqrt(x)
-- [ ] [`sub()`](#)	Pointwise x-y
-- [ ] [`subeq()`](#)	Pointwise x-=y
-- [ ] [`sum()`](#)	Sum all the entries of x
-- [ ] [`svd()`](#)	Singular value decomposition
-- [ ] [`t()`](#)	Create a tensor type T (may be complex-valued)
-- [ ] [`T.<numericfun>()`](#)	Supported <numericfun> are: abs, add, cos, diag, div, dot, exp, getBlock, getDiag, inv, log, mul, neg, norm2, setBlock, sin, sub, transpose
-- [ ] [`T.conj()`](#)	Pointwise complex conjugate
-- [ ] [`T.fft()`](#)	Fast Fourier transform
-- [ ] [`T.get()`](#)	Read an entry
-- [ ] [`T.getRow()`](#)	Get a row
-- [ ] [`T.getRows()`](#)	Get a range of rows
-- [ ] [`T.ifft()`](#)	Inverse FFT
-- [ ] [`T.reciprocal()`](#)	Pointwise 1/z
-- [ ] [`T.set()`](#)	Set an entry
-- [ ] [`T.setRow()`](#)	Set a row
-- [ ] [`T.setRows()`](#)	Set a range of rows
-- [ ] [`T.transjugate()`](#)	The conjugate-transpose of a matrix
-- [ ] [`tan()`](#)	Pointwise Math.tan(x)
-- [ ] [`tensor()`](#)	Tensor product ret[i][j] = x[i]*y[j]
-- [ ] [`toCSV()`](#)	Make a CSV file
-- [ ] [`transpose()`](#)	Matrix transpose
-- [ ] [`uncmin()`](#)	Unconstrained optimization
-- [ ] [`version()`](#)	Version string for the numeric library
-- [ ] [`xor()`](#)	Pointwise x^y
-- [ ] [`xoreq()`](#)	Pointwise x^=y
+
+- [x] [`abs()`](http://www.timqian.com/mathlab/function/index.html#static-function-abs)	Absolute value
+- [x] [`acos()`](http://www.timqian.com/mathlab/function/index.html#static-function-acos)	Arc-cosine
+- [ ] [`add()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise sum x+y
+- [ ] [`addeq()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise sum x+=y
+- [ ] [`all()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	All the components of x are true
+- [ ] [`and()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise x && y
+- [ ] [`andeq()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise x &= y
+- [ ] [`any()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	One or more of the components of x are true
+- [x] [`asin()`](http://www.timqian.com/mathlab/function/index.html#static-function-asin)	Arc-sine
+- [x] [`atan()`](http://www.timqian.com/mathlab/function/index.html#static-function-atan)	Arc-tangeant
+- [x] [`atan2()`](http://www.timqian.com/mathlab/function/index.html#static-function-atan2)	Arc-tangeant (two parameters)
+- [ ] [`band()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise x & y
+- [ ] [`bench()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Benchmarking routine
+- [ ] [`bnot()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Binary negation ~x
+- [ ] [`bor()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Binary or x|y
+- [ ] [`bxor()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Binary xor x^y
+- [ ] [`ccsDim()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Dimensions of sparse matrix
+- [ ] [`ccsDot()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Sparse matrix-matrix product
+- [ ] [`ccsFull()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Convert sparse to full
+- [ ] [`ccsGather()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Gather entries of sparse matrix
+- [ ] [`ccsGetBlock()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Get rows/columns of sparse matrix
+- [ ] [`ccsLUP()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Compute LUP decomposition of sparse matrix
+- [ ] [`ccsLUPSolve()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Solve Ax=b using LUP decomp
+- [ ] [`ccsScatter()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Scatter entries of sparse matrix
+- [ ] [`ccsSparse()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Convert from full to sparse
+- [ ] [`ccsTSolve()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Solve upper/lower triangular system
+- [ ] [`ccs<op>()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Supported ops include: add/div/mul/geq/etc...
+- [ ] [`cLU()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Coordinate matrix LU decomposition
+- [ ] [`cLUsolve()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Coordinate matrix LU solve
+- [ ] [`cdelsq()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Coordinate matrix Laplacian
+- [ ] [`cdotMV()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Coordinate matrix-vector product
+- [x] [`ceil()`](http://www.timqian.com/mathlab/function/index.html#static-function-ceil)	Pointwise Math.ceil(x)
+- [ ] [`cgrid()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Coordinate grid for cdelsq
+- [ ] [`clone()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Deep copy of Array
+- [x] [`cos()`](http://www.timqian.com/mathlab/function/index.html#static-function-cos)	Pointwise Math.cos(x)
+- [x] [`det()`](http://www.timqian.com/mathlab/function/index.html#static-function-det)	Determinant
+- [x] [`diag()`](http://www.timqian.com/mathlab/function/index.html#static-function-diag)	Create diagonal matrix
+- [x] [`dim()`](http://www.timqian.com/mathlab/function/index.html#static-function-dim)	Get Array dimensions
+- [ ] [`div()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise x/y
+- [ ] [`diveq()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise x/=y
+- [ ] [`dopri()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Numerical integration of ODE using Dormand-Prince RK method. Returns an object Dopri.
+- [ ] [`Dopri.at()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Evaluate the ODE solution at a point
+- [ ] [`dot()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Matrix-Matrix, Matrix-Vector and Vector-Matrix product
+- [ ] [`eig()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Eigenvalues and eigenvectors
+- [ ] [`epsilon()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	2.220446049250313e-16
+- [ ] [`eq()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise comparison x === y
+- [x] [`exp()`](http://www.timqian.com/mathlab/function/index.html#static-function-exp)	Pointwise Math.exp(x)
+- [x] [`floor()`](http://www.timqian.com/mathlab/function/index.html#static-function-floor)	Poinwise Math.floor(x)
+- [ ] [`geq()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise x>=y
+- [ ] [`getBlock()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Extract a block from a matrix
+- [x] [`getDiag()`](http://www.timqian.com/mathlab/function/index.html#static-function-getDiag)	Get the diagonal of a matrix
+- [ ] [`gt()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise x>y
+- [x] [`identity()`](http://www.timqian.com/mathlab/function/index.html#static-function-identity)	Identity matrix
+- [ ] [`imageURL()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Encode a matrix as an image URL
+- [x] [`inv()`](http://www.timqian.com/mathlab/function/index.html#static-function-inv)	Matrix inverse
+- [ ] [`isFinite()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise isFinite(x)
+- [ ] [`isNaN()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise isNaN(x)
+- [ ] [`largeArray()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Don't prettyPrint Arrays larger than this
+- [ ] [`leq()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise x<=y
+- [x] [`linspace()`](http://www.timqian.com/mathlab/function/index.html#static-function-linspace)	Generate evenly spaced values
+- [x] [`log()`](http://www.timqian.com/mathlab/function/index.html#static-function-log)	Pointwise Math.log(x)
+- [ ] [`lshift()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise x<<y
+- [ ] [`lshifteq()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise x<<=y
+- [ ] [`lt()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise x<y
+- [ ] [`LU()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Dense LU decomposition
+- [ ] [`LUsolve()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Dense LU solve
+- [ ] [`mapreduce()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Make a pointwise map-reduce function
+- [ ] [`mod()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise x%y
+- [ ] [`modeq()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise x%=y
+- [ ] [`mul()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise x*y
+- [ ] [`neg()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise -x
+- [ ] [`neq()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise x!==y
+- [ ] [`norm2()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Square root of the sum of the square of the entries of x
+- [ ] [`norm2Squared()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Sum of squares of entries of x
+- [ ] [`norminf()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Largest modulus entry of x
+- [ ] [`not()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise logical negation !x
+- [ ] [`or()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise logical or x||y
+- [ ] [`oreq()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise x|=y
+- [ ] [`parseCSV()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Parse a CSV file into an Array
+- [ ] [`parseDate()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise parseDate(x)
+- [ ] [`parseFloat()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise parseFloat(x)
+- [ ] [`pointwise()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Create a pointwise function
+- [x] [`pow()`](http://www.timqian.com/mathlab/function/index.html#static-function-pow)	Pointwise Math.pow(x)
+- [ ] [`precision()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Number of digits to prettyPrint
+- [ ] [`prettyPrint()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pretty-prints x
+- [ ] [`random()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Create an Array of random numbers
+- [ ] [`rep()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Create an Array by duplicating values
+- [ ] [`round()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise Math.round(x)
+- [ ] [`rrshift()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise x>>>y
+- [ ] [`rrshifteq()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise x>>>=y
+- [ ] [`rshift()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise x>>y
+- [ ] [`rshifteq()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise x>>=y
+- [ ] [`same()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	x and y are entrywise identical
+- [ ] [`seedrandom()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	The seedrandom module
+- [ ] [`setBlock()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Set a block of a matrix
+- [ ] [`sin()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise Math.sin(x)
+- [ ] [`solve()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Solve Ax=b
+- [ ] [`solveLP()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Solve a linear programming problem
+- [ ] [`solveQP()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Solve a quadratic programming problem
+- [ ] [`spline()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Create a Spline object
+- [ ] [`Spline.at()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Evaluate the Spline at a point
+- [ ] [`Spline.diff()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Differentiate the Spline
+- [ ] [`Spline.roots()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Find all the roots of the Spline
+- [x] [`sqrt()`](http://www.timqian.com/mathlab/function/index.html#static-function-sqrt)	Pointwise Math.sqrt(x)
+- [ ] [`sub()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise x-y
+- [ ] [`subeq()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise x-=y
+- [ ] [`sum()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Sum all the entries of x
+- [ ] [`svd()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Singular value decomposition
+- [ ] [`t()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Create a tensor type T (may be complex-valued)
+- [ ] [`T.<numericfun>()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Supported <numericfun> are: abs, add, cos, diag, div, dot, exp, getBlock, getDiag, inv, log, mul, neg, norm2, setBlock, sin, sub, transpose
+- [ ] [`T.conj()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise complex conjugate
+- [ ] [`T.fft()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Fast Fourier transform
+- [ ] [`T.get()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Read an entry
+- [ ] [`T.getRow()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Get a row
+- [ ] [`T.getRows()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Get a range of rows
+- [ ] [`T.ifft()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Inverse FFT
+- [ ] [`T.reciprocal()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise 1/z
+- [ ] [`T.set()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Set an entry
+- [ ] [`T.setRow()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Set a row
+- [ ] [`T.setRows()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Set a range of rows
+- [ ] [`T.transjugate()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	The conjugate-transpose of a matrix
+- [x] [`tan()`](http://www.timqian.com/mathlab/function/index.html#static-function-tan)	Pointwise Math.tan(x)
+- [ ] [`tensor()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Tensor product ret[i][j] = x[i]*y[j]
+- [ ] [`toCSV()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Make a CSV file
+- [x] [`transpose()`](http://www.timqian.com/mathlab/function/index.html#static-function-transpose)	Matrix transpose
+- [ ] [`uncmin()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Unconstrained optimization
+- [ ] [`version()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Version string for the numeric library
+- [ ] [`xor()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise x^y
+- [ ] [`xoreq()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise x^=y

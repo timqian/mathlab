@@ -1,14 +1,49 @@
 {
-  "coverage": "88.88%",
-  "expectCount": 9,
-  "actualCount": 8,
+  "coverage": "95.83%",
+  "expectCount": 24,
+  "actualCount": 23,
   "files": {
+    "src/abs.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/acos.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/asin.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/atan.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/atan2.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/ceil.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
     "src/utils/clone.js": {
       "expectCount": 1,
       "actualCount": 0,
       "undocumentLines": [
         1
       ]
+    },
+    "src/cos.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
     },
     "src/det.js": {
       "expectCount": 1,
@@ -21,6 +56,16 @@
       "undocumentLines": []
     },
     "src/dim.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/exp.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/floor.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
@@ -41,6 +86,36 @@
       "undocumentLines": []
     },
     "src/linspace.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/log.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/pow.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/round.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/sin.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/sqrt.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/tan.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
