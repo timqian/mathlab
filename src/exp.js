@@ -1,5 +1,5 @@
 
-import dim from './dim'
+import pointwise from './pointwise'
 
 /**
  * Pointwise Math.exp(x)
@@ -16,15 +16,6 @@ import dim from './dim'
  * exp([[1,2],[1,3]])
  * // Equals [ [Math.exp(1), Math.exp(2)], [Math.exp(1), Math.exp(3)] ]
  */
-export default function exp(m) {
-  switch (dim(m).length) {
-    case 0:
-      return Math.exp(m)
-    case 1:
-      return m.map(Math.exp)
-    case 2:
-      return m.map(a => a.map(Math.exp))
-    default:
-      throw new Error('exp(): wrong size')
-  }
+export default function (m) {
+  return pointwise(Math.exp)(m)
 }

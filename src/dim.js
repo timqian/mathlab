@@ -10,15 +10,12 @@
  * // [2, 3]
  */
 export default function dim (x) {
-  var y // ,z
   if (typeof x === 'object') {
-    y = x[0]
-    if (typeof y === 'object') {
-      // z = y[0]
-      // if (typeof z === 'object') {
-      //   return numeric._dim(x)
-      // }
-      return [x.length, y.length]
+    if (typeof x[0] === 'object') {
+      if (typeof x[0][0] === 'object') {
+        throw new Error('mathlab: only support two demitional matrix for now')
+      }
+      return [x.length, x[0].length]
     }
     return [x.length]
   }

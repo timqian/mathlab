@@ -10,7 +10,7 @@
     "access": null,
     "description": null,
     "lineNumber": 2,
-    "content": "\nimport dim from './dim'\n\n/**\n * Pointwise Math.abs(x)\n * \n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * abs(1)\n * // Equals Math.abs(1)\n * abs([1, 2])\n * // Equals [Math.abs(1), Math.abs(2)]\n * abs([[1,2],[1,3]])\n * // Equals [ [Math.abs(1), Math.abs(2)], [Math.abs(1), Math.abs(3)] ]\n */\nexport default function abs(m) {\n  switch (dim(m).length) {\n    case 0:\n      return Math.abs(m)\n    case 1:\n      return m.map(Math.abs)\n    case 2:\n      return m.map(a => a.map(Math.abs))\n    default:\n      throw new Error('abs(): wrong size')\n  }\n}\n"
+    "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise Math.abs(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * abs(1)\n * // Equals Math.abs(1)\n * abs([1, 2])\n * // Equals [Math.abs(1), Math.abs(2)]\n * abs([[1,2],[1,3]])\n * // Equals [ [Math.abs(1), Math.abs(2)], [Math.abs(1), Math.abs(3)] ]\n */\nexport default function (m) {\n  return pointwise(Math.abs)(m)\n}\n"
   },
   {
     "__docId__": 1,
@@ -28,8 +28,12 @@
     "examples": [
       "\nabs(1)\n// Equals Math.abs(1)\nabs([1, 2])\n// Equals [Math.abs(1), Math.abs(2)]\nabs([[1,2],[1,3]])\n// Equals [ [Math.abs(1), Math.abs(2)], [Math.abs(1), Math.abs(3)] ]"
     ],
-    "lineNumber": 18,
+    "lineNumber": 19,
     "unknown": [
+      {
+        "tagName": "@export",
+        "tagValue": ""
+      },
       {
         "tagName": "@returns",
         "tagValue": "{Number|Array}"
@@ -70,7 +74,7 @@
     "access": null,
     "description": null,
     "lineNumber": 2,
-    "content": "\nimport dim from './dim'\n\n/**\n * Pointwise Math.acos(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * acos(1)\n * // Equals Math.acos(1)\n * acos([1, 2])\n * // Equals [Math.acos(1), Math.acos(2)]\n * acos([[1,2],[1,3]])\n * // Equals [ [Math.acos(1), Math.acos(2)], [Math.acos(1), Math.acos(3)] ]\n */\nexport default function acos(m) {\n  switch (dim(m).length) {\n    case 0:\n      return Math.acos(m)\n    case 1:\n      return m.map(Math.acos)\n    case 2:\n      return m.map(a => a.map(Math.acos))\n    default:\n      throw new Error('acos(): wrong size')\n  }\n}\n"
+    "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise Math.acos(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * acos(1)\n * // Equals Math.acos(1)\n * acos([1, 2])\n * // Equals [Math.acos(1), Math.acos(2)]\n * acos([[1,2],[1,3]])\n * // Equals [ [Math.acos(1), Math.acos(2)], [Math.acos(1), Math.acos(3)] ]\n */\nexport default function (m) {\n  return pointwise(Math.acos)(m)\n}\n"
   },
   {
     "__docId__": 3,
@@ -128,16 +132,166 @@
     "kind": "file",
     "static": true,
     "variation": null,
+    "name": "src/add.js",
+    "memberof": null,
+    "longname": "src/add.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 2,
+    "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise add\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * add(1, 2)\n * // Equals 1 + 2\n * add([1, 2], [2, 2])\n * // Equals [1 + 2, 2 + 2]\n * add([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 + 2, 1 + 2], [1 + 2, 2 + 2] ]\n */\nexport default function (m1, m2) {\n  return pointwise((x, y) => x + y)(m1, m2)\n}\n"
+  },
+  {
+    "__docId__": 5,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "add",
+    "memberof": "src/add.js",
+    "longname": "src/add.js~add",
+    "access": null,
+    "export": true,
+    "importPath": "mathlab/src/add.js",
+    "importStyle": "add",
+    "description": "Pointwise add",
+    "examples": [
+      "\nadd(1, 2)\n// Equals 1 + 2\nadd([1, 2], [2, 2])\n// Equals [1 + 2, 2 + 2]\nadd([[2,1], [1,2]], [[2, 2], [2, 2]]))\n// Equals [ [2 + 2, 1 + 2], [1 + 2, 2 + 2] ]"
+    ],
+    "lineNumber": 20,
+    "unknown": [
+      {
+        "tagName": "@export",
+        "tagValue": ""
+      },
+      {
+        "tagName": "@returns",
+        "tagValue": "{Number|Array}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "m1",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "m2",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Number",
+        "Array"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 6,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/and.js",
+    "memberof": null,
+    "longname": "src/and.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 2,
+    "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise and\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * and(1, 2)\n * // Equals 1 && 2\n * and([1, 2], [2, 2])\n * // Equals [1 && 2, 2 && 2]\n * and([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 && 2, 1 && 2], [1 && 2, 2 && 2] ]\n */\nexport default function (m1, m2) {\n  return pointwise((x, y) => x && y)(m1, m2)\n}\n"
+  },
+  {
+    "__docId__": 7,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "and",
+    "memberof": "src/and.js",
+    "longname": "src/and.js~and",
+    "access": null,
+    "export": true,
+    "importPath": "mathlab/src/and.js",
+    "importStyle": "and",
+    "description": "Pointwise and",
+    "examples": [
+      "\nand(1, 2)\n// Equals 1 && 2\nand([1, 2], [2, 2])\n// Equals [1 && 2, 2 && 2]\nand([[2,1], [1,2]], [[2, 2], [2, 2]]))\n// Equals [ [2 && 2, 1 && 2], [1 && 2, 2 && 2] ]"
+    ],
+    "lineNumber": 20,
+    "unknown": [
+      {
+        "tagName": "@export",
+        "tagValue": ""
+      },
+      {
+        "tagName": "@returns",
+        "tagValue": "{Number|Array}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "m1",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "m2",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Number",
+        "Array"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 8,
+    "kind": "file",
+    "static": true,
+    "variation": null,
     "name": "src/asin.js",
     "memberof": null,
     "longname": "src/asin.js",
     "access": null,
     "description": null,
     "lineNumber": 2,
-    "content": "\nimport dim from './dim'\n\n/**\n * Pointwise Math.asin(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * asin(1)\n * // Equals Math.asin(1)\n * asin([1, 2])\n * // Equals [Math.asin(1), Math.asin(2)]\n * asin([[1,2],[1,3]])\n * // Equals [ [Math.asin(1), Math.asin(2)], [Math.asin(1), Math.asin(3)] ]\n */\nexport default function asin(m) {\n  switch (dim(m).length) {\n    case 0:\n      return Math.asin(m)\n    case 1:\n      return m.map(Math.asin)\n    case 2:\n      return m.map(a => a.map(Math.asin))\n    default:\n      throw new Error('asin(): wrong size')\n  }\n}\n"
+    "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise Math.asin(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * asin(1)\n * // Equals Math.asin(1)\n * asin([1, 2])\n * // Equals [Math.asin(1), Math.asin(2)]\n * asin([[1,2],[1,3]])\n * // Equals [ [Math.asin(1), Math.asin(2)], [Math.asin(1), Math.asin(3)] ]\n */\nexport default function (m) {\n  return pointwise(Math.asin)(m)\n}\n"
   },
   {
-    "__docId__": 5,
+    "__docId__": 9,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -188,7 +342,7 @@
     "generator": false
   },
   {
-    "__docId__": 6,
+    "__docId__": 10,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -198,10 +352,10 @@
     "access": null,
     "description": null,
     "lineNumber": 2,
-    "content": "\nimport dim from './dim'\n\n/**\n * Pointwise Math.atan(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * atan(1)\n * // Equals Math.atan(1)\n * atan([1, 2])\n * // Equals [Math.atan(1), Math.atan(2)]\n * atan([[1,2],[1,3]])\n * // Equals [ [Math.atan(1), Math.atan(2)], [Math.atan(1), Math.atan(3)] ]\n */\nexport default function atan(m) {\n  switch (dim(m).length) {\n    case 0:\n      return Math.atan(m)\n    case 1:\n      return m.map(Math.atan)\n    case 2:\n      return m.map(a => a.map(Math.atan))\n    default:\n      throw new Error('atan(): wrong size')\n  }\n}\n"
+    "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise Math.atan(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * atan(1)\n * // Equals Math.atan(1)\n * atan([1, 2])\n * // Equals [Math.atan(1), Math.atan(2)]\n * atan([[1,2],[1,3]])\n * // Equals [ [Math.atan(1), Math.atan(2)], [Math.atan(1), Math.atan(3)] ]\n */\nexport default function (m) {\n  return pointwise(Math.atan)(m)\n}\n"
   },
   {
-    "__docId__": 7,
+    "__docId__": 11,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -252,7 +406,7 @@
     "generator": false
   },
   {
-    "__docId__": 8,
+    "__docId__": 12,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -261,11 +415,11 @@
     "longname": "src/atan2.js",
     "access": null,
     "description": null,
-    "lineNumber": 1,
-    "content": "import dim from './dim';\n\n/**\n * Pointwise Math.atan2(x, y)\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * atan2(1, 2)\n * // Equals Math.atan2(1, 2)\n * atan2([1, 2], [2, 2])\n * // Equals [Math.atan2(1, 2), Math.atan2(2, 2)]\n * atan2([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [Math.atan2(2, 2), Math.atan2(1, 2)], [Math.atan2(1, 2), Math.atan2(2, 2)] ]\n */\nexport default function atan2(m1, m2) {\n  if (dim(m1)[0] !== dim(m2)[0] || dim(m1)[1] !== dim(m2)[1]) {\n    throw new Error('atan2() requires two matrices having the same size')\n  }\n  switch (dim(m1).length) {\n    case 0:\n      return Math.atan2(m1, m2)\n    case 1:\n      return m1.map((x, i) => Math.atan2(x, m2[i]))\n    case 2:\n      return m1.map( (mm1, i) => mm1.map( (x, j) => Math.atan2(x, m2[i][j]) ) )\n    default:\n      throw new Error('atan2(): wrong size')\n  }\n}"
+    "lineNumber": 2,
+    "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise Math.atan2(x, y)\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * atan2(1, 2)\n * // Equals Math.atan2(1, 2)\n * atan2([1, 2], [2, 2])\n * // Equals [Math.atan2(1, 2), Math.atan2(2, 2)]\n * atan2([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [Math.atan2(2, 2), Math.atan2(1, 2)], [Math.atan2(1, 2), Math.atan2(2, 2)] ]\n */\nexport default function (m1, m2) { \n  return pointwise(Math.atan2)(m1, m2)\n}\n"
   },
   {
-    "__docId__": 9,
+    "__docId__": 13,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -280,7 +434,7 @@
     "examples": [
       "\natan2(1, 2)\n// Equals Math.atan2(1, 2)\natan2([1, 2], [2, 2])\n// Equals [Math.atan2(1, 2), Math.atan2(2, 2)]\natan2([[2,1], [1,2]], [[2, 2], [2, 2]]))\n// Equals [ [Math.atan2(2, 2), Math.atan2(1, 2)], [Math.atan2(1, 2), Math.atan2(2, 2)] ]"
     ],
-    "lineNumber": 19,
+    "lineNumber": 20,
     "unknown": [
       {
         "tagName": "@export",
@@ -327,7 +481,232 @@
     "generator": false
   },
   {
-    "__docId__": 10,
+    "__docId__": 14,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/band.js",
+    "memberof": null,
+    "longname": "src/band.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 2,
+    "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise band\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * band(1, 2)\n * // Equals 1 & 2\n * band([1, 2], [2, 2])\n * // Equals [1 & 2, 2 & 2]\n * band([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 & 2, 1 & 2], [1 & 2, 2 & 2] ]\n */\nexport default function (m1, m2) {\n  return pointwise((x, y) => x & y)(m1, m2)\n}\n"
+  },
+  {
+    "__docId__": 15,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "band",
+    "memberof": "src/band.js",
+    "longname": "src/band.js~band",
+    "access": null,
+    "export": true,
+    "importPath": "mathlab/src/band.js",
+    "importStyle": "band",
+    "description": "Pointwise band",
+    "examples": [
+      "\nband(1, 2)\n// Equals 1 & 2\nband([1, 2], [2, 2])\n// Equals [1 & 2, 2 & 2]\nband([[2,1], [1,2]], [[2, 2], [2, 2]]))\n// Equals [ [2 & 2, 1 & 2], [1 & 2, 2 & 2] ]"
+    ],
+    "lineNumber": 20,
+    "unknown": [
+      {
+        "tagName": "@export",
+        "tagValue": ""
+      },
+      {
+        "tagName": "@returns",
+        "tagValue": "{Number|Array}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "m1",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "m2",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Number",
+        "Array"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 16,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/bor.js",
+    "memberof": null,
+    "longname": "src/bor.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 2,
+    "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise bor\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * bor(1, 2)\n * // Equals 1 | 2\n * bor([1, 2], [2, 2])\n * // Equals [1 | 2, 2 | 2]\n * bor([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 | 2, 1 | 2], [1 | 2, 2 | 2] ]\n */\nexport default function (m1, m2) {\n  return pointwise((x, y) => x | y)(m1, m2)\n}\n"
+  },
+  {
+    "__docId__": 17,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "bor",
+    "memberof": "src/bor.js",
+    "longname": "src/bor.js~bor",
+    "access": null,
+    "export": true,
+    "importPath": "mathlab/src/bor.js",
+    "importStyle": "bor",
+    "description": "Pointwise bor",
+    "examples": [
+      "\nbor(1, 2)\n// Equals 1 | 2\nbor([1, 2], [2, 2])\n// Equals [1 | 2, 2 | 2]\nbor([[2,1], [1,2]], [[2, 2], [2, 2]]))\n// Equals [ [2 | 2, 1 | 2], [1 | 2, 2 | 2] ]"
+    ],
+    "lineNumber": 20,
+    "unknown": [
+      {
+        "tagName": "@export",
+        "tagValue": ""
+      },
+      {
+        "tagName": "@returns",
+        "tagValue": "{Number|Array}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "m1",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "m2",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Number",
+        "Array"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 18,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/bxor.js",
+    "memberof": null,
+    "longname": "src/bxor.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 2,
+    "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise bxor\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * bxor(1, 2)\n * // Equals 1 ^ 2\n * bxor([1, 2], [2, 2])\n * // Equals [1 ^ 2, 2 ^ 2]\n * bxor([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 ^ 2, 1 ^ 2], [1 ^ 2, 2 ^ 2] ]\n */\nexport default function (m1, m2) {\n  return pointwise((x, y) => x ^ y)(m1, m2)\n}\n"
+  },
+  {
+    "__docId__": 19,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "bxor",
+    "memberof": "src/bxor.js",
+    "longname": "src/bxor.js~bxor",
+    "access": null,
+    "export": true,
+    "importPath": "mathlab/src/bxor.js",
+    "importStyle": "bxor",
+    "description": "Pointwise bxor",
+    "examples": [
+      "\nbxor(1, 2)\n// Equals 1 ^ 2\nbxor([1, 2], [2, 2])\n// Equals [1 ^ 2, 2 ^ 2]\nbxor([[2,1], [1,2]], [[2, 2], [2, 2]]))\n// Equals [ [2 ^ 2, 1 ^ 2], [1 ^ 2, 2 ^ 2] ]"
+    ],
+    "lineNumber": 20,
+    "unknown": [
+      {
+        "tagName": "@export",
+        "tagValue": ""
+      },
+      {
+        "tagName": "@returns",
+        "tagValue": "{Number|Array}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "m1",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "m2",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Number",
+        "Array"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 20,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -337,10 +716,10 @@
     "access": null,
     "description": null,
     "lineNumber": 2,
-    "content": "\nimport dim from './dim'\n\n/**\n * Pointwise Math.ceil(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * ceil(1)\n * // Equals Math.ceil(1)\n * ceil([1, 2])\n * // Equals [Math.ceil(1), Math.ceil(2)]\n * ceil([[1,2],[1,3]])\n * // Equals [ [Math.ceil(1), Math.ceil(2)], [Math.ceil(1), Math.ceil(3)] ]\n */\nexport default function ceil(m) {\n  switch (dim(m).length) {\n    case 0:\n      return Math.ceil(m)\n    case 1:\n      return m.map(Math.ceil)\n    case 2:\n      return m.map(a => a.map(Math.ceil))\n    default:\n      throw new Error('ceil(): wrong size')\n  }\n}\n"
+    "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise Math.ceil(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * ceil(1)\n * // Equals Math.ceil(1)\n * ceil([1, 2])\n * // Equals [Math.ceil(1), Math.ceil(2)]\n * ceil([[1,2],[1,3]])\n * // Equals [ [Math.ceil(1), Math.ceil(2)], [Math.ceil(1), Math.ceil(3)] ]\n */\nexport default function (m) {\n  return pointwise(Math.ceil)(m)\n}\n"
   },
   {
-    "__docId__": 11,
+    "__docId__": 21,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -391,7 +770,7 @@
     "generator": false
   },
   {
-    "__docId__": 12,
+    "__docId__": 22,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -401,10 +780,10 @@
     "access": null,
     "description": null,
     "lineNumber": 2,
-    "content": "\nimport dim from './dim'\n\n/**\n * Pointwise Math.cos(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * cos(1)\n * // Equals Math.cos(1)\n * cos([1, 2])\n * // Equals [Math.cos(1), Math.cos(2)]\n * cos([[1,2],[1,3]])\n * // Equals [ [Math.cos(1), Math.cos(2)], [Math.cos(1), Math.cos(3)] ]\n */\nexport default function cos(m) {\n  switch (dim(m).length) {\n    case 0:\n      return Math.cos(m)\n    case 1:\n      return m.map(Math.cos)\n    case 2:\n      return m.map(a => a.map(Math.cos))\n    default:\n      throw new Error('cos(): wrong size')\n  }\n}\n"
+    "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise Math.cos(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * cos(1)\n * // Equals Math.cos(1)\n * cos([1, 2])\n * // Equals [Math.cos(1), Math.cos(2)]\n * cos([[1,2],[1,3]])\n * // Equals [ [Math.cos(1), Math.cos(2)], [Math.cos(1), Math.cos(3)] ]\n */\nexport default function (m) {\n  return pointwise(Math.cos)(m)\n}\n"
   },
   {
-    "__docId__": 13,
+    "__docId__": 23,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -455,7 +834,7 @@
     "generator": false
   },
   {
-    "__docId__": 14,
+    "__docId__": 24,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -468,7 +847,7 @@
     "content": "//\tDeterminant\nimport dim from './dim'\nimport clone from './utils/clone'\n\n/**\n * Determinant of matix\n * \n * @export\n * @param {Array} x\n * @returns {Number}\n * @example\n * \n * det([[1, 2], [1, 2]])\n * // 0\n */\nexport default function det (x) {\n  var s = dim(x)\n  if (s.length !== 2 || s[0] !== s[1]) { throw new Error('det() only works on square matrices'); }\n  var n = s[0], ret = 1,i,j,k,A = clone(x),Aj,Ai,alpha,temp,k1,k2,k3\n  for (j = 0;j < n - 1;j++) {\n    k = j\n    for (i = j + 1;i < n;i++) { if (Math.abs(A[i][j]) > Math.abs(A[k][j])) { k = i; } }\n    if (k !== j) {\n      temp = A[k]; A[k] = A[j]; A[j] = temp\n      ret *= -1\n    }\n    Aj = A[j]\n    for (i = j + 1;i < n;i++) {\n      Ai = A[i]\n      alpha = Ai[j] / Aj[j]\n      for (k = j + 1;k < n - 1;k += 2) {\n        k1 = k + 1\n        Ai[k] -= Aj[k] * alpha\n        Ai[k1] -= Aj[k1] * alpha\n      }\n      if (k !== n) { Ai[k] -= Aj[k] * alpha; }\n    }\n    if (Aj[j] === 0) { return 0; }\n    ret *= Aj[j]\n  }\n  return ret * A[j][j]\n}\n"
   },
   {
-    "__docId__": 15,
+    "__docId__": 25,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -517,7 +896,7 @@
     "generator": false
   },
   {
-    "__docId__": 16,
+    "__docId__": 26,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -530,7 +909,7 @@
     "content": "/**\n * Create diagonal matrix from vector\n * \n * @param {Array} d\n * @returns {Array}\n * @example \n * \n * diag([1, 2])\n * // [[1, 0], \n * //  [0, 2]]\n */\nexport default function diag (d) {\n  var i, i1, j, n = d.length, A = Array(n), Ai\n  for (i = n - 1; i >= 0; i--) {\n    Ai = Array(n)\n    i1 = i + 2\n    for (j = n - 1; j >= i1; j -= 2) {\n      Ai[j] = 0\n      Ai[j - 1] = 0\n    }\n    if (j > i) { Ai[j] = 0; }\n    Ai[i] = d[i]\n    for (j = i - 1; j >= 1; j -= 2) {\n      Ai[j] = 0\n      Ai[j - 1] = 0\n    }\n    if (j === 0) { Ai[0] = 0; }\n    A[i] = Ai\n  }\n  return A\n}\n"
   },
   {
-    "__docId__": 17,
+    "__docId__": 27,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -575,7 +954,7 @@
     "generator": false
   },
   {
-    "__docId__": 18,
+    "__docId__": 28,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -585,10 +964,10 @@
     "access": null,
     "description": null,
     "lineNumber": 12,
-    "content": "/**\n * Get Array dimensions\n * \n * @export\n * @param {Array} x\n * @returns {Array}\n * @example \n * \n * dim([[1, 2, 3], [1, 2, 2]])\n * // [2, 3]\n */\nexport default function dim (x) {\n  var y // ,z\n  if (typeof x === 'object') {\n    y = x[0]\n    if (typeof y === 'object') {\n      // z = y[0]\n      // if (typeof z === 'object') {\n      //   return numeric._dim(x)\n      // }\n      return [x.length, y.length]\n    }\n    return [x.length]\n  }\n  return []\n}\n"
+    "content": "/**\n * Get Array dimensions\n * \n * @export\n * @param {Array} x\n * @returns {Array}\n * @example \n * \n * dim([[1, 2, 3], [1, 2, 2]])\n * // [2, 3]\n */\nexport default function dim (x) {\n  if (typeof x === 'object') {\n    if (typeof x[0] === 'object') {\n      if (typeof x[0][0] === 'object') {\n        throw new Error('mathlab: only support two demitional matrix for now')\n      }\n      return [x.length, x[0].length]\n    }\n    return [x.length]\n  }\n  return []\n}\n"
   },
   {
-    "__docId__": 19,
+    "__docId__": 29,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -637,7 +1016,82 @@
     "generator": false
   },
   {
-    "__docId__": 20,
+    "__docId__": 30,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/div.js",
+    "memberof": null,
+    "longname": "src/div.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 2,
+    "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise div\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * div(1, 2)\n * // Equals 1 / 2\n * div([1, 2], [2, 2])\n * // Equals [1 / 2, 2 / 2]\n * div([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 / 2, 1 / 2], [1 / 2, 2 / 2] ]\n */\nexport default function (m1, m2) {\n  return pointwise((x, y) => x / y)(m1, m2)\n}\n"
+  },
+  {
+    "__docId__": 31,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "div",
+    "memberof": "src/div.js",
+    "longname": "src/div.js~div",
+    "access": null,
+    "export": true,
+    "importPath": "mathlab/src/div.js",
+    "importStyle": "div",
+    "description": "Pointwise div",
+    "examples": [
+      "\ndiv(1, 2)\n// Equals 1 / 2\ndiv([1, 2], [2, 2])\n// Equals [1 / 2, 2 / 2]\ndiv([[2,1], [1,2]], [[2, 2], [2, 2]]))\n// Equals [ [2 / 2, 1 / 2], [1 / 2, 2 / 2] ]"
+    ],
+    "lineNumber": 20,
+    "unknown": [
+      {
+        "tagName": "@export",
+        "tagValue": ""
+      },
+      {
+        "tagName": "@returns",
+        "tagValue": "{Number|Array}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "m1",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "m2",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Number",
+        "Array"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 32,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -650,7 +1104,7 @@
     "content": "// import dim from './dim'\n// import dotMMbig from './dotMMbig'\n// import dotMMsmall from './dotMMsmall'\n// import dotVV from './dotVV'\n// import dotVM from './dotVM'\n// import dotMV from './dotMV'\n// import mulVS from './mulVS'\n// import mulSV from './mulSV'\n\n// export default function dot (x, y) {\n//   var d = dim\n//   switch (d(x).length * 1000 + d(y).length) {\n//     case 2002:\n//       if (y.length < 10) return dotMMsmall(x, y)\n//       else return dotMMbig(x, y)\n//     case 2001:\n//       return dotMV(x, y)\n//     case 1002:\n//       return dotVM(x, y)\n//     case 1001:\n//       return dotVV(x, y)\n//     case 1000:\n//       return mulVS(x, y)\n//     case 1:\n//       return mulSV(x, y)\n//     case 0:\n//       return x * y\n//     default:\n//       throw new Error('dot() only works on vectors and matrices')\n//   }\n// }\n"
   },
   {
-    "__docId__": 21,
+    "__docId__": 33,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -663,7 +1117,82 @@
     "content": "// export default function eig (A, maxiter) {\n//   var QH = numeric.toUpperHessenberg(A)\n//   var QB = numeric.QRFrancis(QH.H, maxiter)\n//   var T = numeric.T\n//   var n = A.length,i,k,flag = false,B = QB.B,H = numeric.dot(QB.Q, numeric.dot(QH.H, numeric.transpose(QB.Q)))\n//   var Q = new T(numeric.dot(QB.Q, QH.Q)), Q0\n//   var m = B.length,j\n//   var a,b,c,d,p1,p2,disc,x,y,p,q,n1,n2\n//   var sqrt = Math.sqrt\n//   for (k = 0;k < m;k++) {\n//     i = B[k][0]\n//     if (i === B[k][1]) {\n//       // nothing\n//     } else {\n//       j = i + 1\n//       a = H[i][i]\n//       b = H[i][j]\n//       c = H[j][i]\n//       d = H[j][j]\n//       if (b === 0 && c === 0) continue\n//       p1 = -a - d\n//       p2 = a * d - b * c\n//       disc = p1 * p1 - 4 * p2\n//       if (disc >= 0) {\n//         if (p1 < 0) x = -0.5 * (p1 - sqrt(disc))\n//         else x = -0.5 * (p1 + sqrt(disc))\n//         n1 = (a - x) * (a - x) + b * b\n//         n2 = c * c + (d - x) * (d - x)\n//         if (n1 > n2) {\n//           n1 = sqrt(n1)\n//           p = (a - x) / n1\n//           q = b / n1\n//         } else {\n//           n2 = sqrt(n2)\n//           p = c / n2\n//           q = (d - x) / n2\n//         }\n//         Q0 = new T([[q, -p], [p, q]])\n//         Q.setRows(i, j, Q0.dot(Q.getRows(i, j)))\n//       } else {\n//         x = -0.5 * p1\n//         y = 0.5 * sqrt(-disc)\n//         n1 = (a - x) * (a - x) + b * b\n//         n2 = c * c + (d - x) * (d - x)\n//         if (n1 > n2) {\n//           n1 = sqrt(n1 + y * y)\n//           p = (a - x) / n1\n//           q = b / n1\n//           x = 0\n//           y /= n1\n//         } else {\n//           n2 = sqrt(n2 + y * y)\n//           p = c / n2\n//           q = (d - x) / n2\n//           x = y / n2\n//           y = 0\n//         }\n//         Q0 = new T([[q, -p], [p, q]], [[x, y], [y, -x]])\n//         Q.setRows(i, j, Q0.dot(Q.getRows(i, j)))\n//       }\n//     }\n//   }\n//   var R = Q.dot(A).dot(Q.transjugate()), n = A.length, E = numeric.T.identity(n)\n//   for (j = 0;j < n;j++) {\n//     if (j > 0) {\n//       for (k = j - 1;k >= 0;k--) {\n//         var Rk = R.get([k, k]), Rj = R.get([j, j])\n//         if (numeric.neq(Rk.x, Rj.x) || numeric.neq(Rk.y, Rj.y)) {\n//           x = R.getRow(k).getBlock([k], [j - 1])\n//           y = E.getRow(j).getBlock([k], [j - 1])\n//           E.set([j, k], (R.get([k, j]).neg().sub(x.dot(y))).div(Rk.sub(Rj)))\n//         } else {\n//           E.setRow(j, E.getRow(k))\n//           continue\n//         }\n//       }\n//     }\n//   }\n//   for (j = 0;j < n;j++) {\n//     x = E.getRow(j)\n//     E.setRow(j, x.div(x.norm2()))\n//   }\n//   E = E.transpose()\n//   E = Q.transjugate().dot(E)\n//   return { lambda: R.getDiag(), E: E }\n// }\n"
   },
   {
-    "__docId__": 22,
+    "__docId__": 34,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/eq.js",
+    "memberof": null,
+    "longname": "src/eq.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 2,
+    "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise eq\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * eq(1, 2)\n * // Equals 1 === 2\n * eq([1, 2], [2, 2])\n * // Equals [1 === 2, 2 === 2]\n * eq([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 === 2, 1 === 2], [1 === 2, 2 === 2] ]\n */\nexport default function (m1, m2) {\n  return pointwise((x, y) => x === y)(m1, m2)\n}\n"
+  },
+  {
+    "__docId__": 35,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "eq",
+    "memberof": "src/eq.js",
+    "longname": "src/eq.js~eq",
+    "access": null,
+    "export": true,
+    "importPath": "mathlab/src/eq.js",
+    "importStyle": "eq",
+    "description": "Pointwise eq",
+    "examples": [
+      "\neq(1, 2)\n// Equals 1 === 2\neq([1, 2], [2, 2])\n// Equals [1 === 2, 2 === 2]\neq([[2,1], [1,2]], [[2, 2], [2, 2]]))\n// Equals [ [2 === 2, 1 === 2], [1 === 2, 2 === 2] ]"
+    ],
+    "lineNumber": 20,
+    "unknown": [
+      {
+        "tagName": "@export",
+        "tagValue": ""
+      },
+      {
+        "tagName": "@returns",
+        "tagValue": "{Number|Array}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "m1",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "m2",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Number",
+        "Array"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 36,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -673,10 +1202,10 @@
     "access": null,
     "description": null,
     "lineNumber": 2,
-    "content": "\nimport dim from './dim'\n\n/**\n * Pointwise Math.exp(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * exp(1)\n * // Equals Math.exp(1)\n * exp([1, 2])\n * // Equals [Math.exp(1), Math.exp(2)]\n * exp([[1,2],[1,3]])\n * // Equals [ [Math.exp(1), Math.exp(2)], [Math.exp(1), Math.exp(3)] ]\n */\nexport default function exp(m) {\n  switch (dim(m).length) {\n    case 0:\n      return Math.exp(m)\n    case 1:\n      return m.map(Math.exp)\n    case 2:\n      return m.map(a => a.map(Math.exp))\n    default:\n      throw new Error('exp(): wrong size')\n  }\n}\n"
+    "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise Math.exp(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * exp(1)\n * // Equals Math.exp(1)\n * exp([1, 2])\n * // Equals [Math.exp(1), Math.exp(2)]\n * exp([[1,2],[1,3]])\n * // Equals [ [Math.exp(1), Math.exp(2)], [Math.exp(1), Math.exp(3)] ]\n */\nexport default function (m) {\n  return pointwise(Math.exp)(m)\n}\n"
   },
   {
-    "__docId__": 23,
+    "__docId__": 37,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -727,7 +1256,7 @@
     "generator": false
   },
   {
-    "__docId__": 24,
+    "__docId__": 38,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -737,10 +1266,10 @@
     "access": null,
     "description": null,
     "lineNumber": 2,
-    "content": "\nimport dim from './dim'\n\n/**\n * Pointwise Math.floor(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * floor(1)\n * // Equals Math.floor(1)\n * floor([1, 2])\n * // Equals [Math.floor(1), Math.floor(2)]\n * floor([[1,2],[1,3]])\n * // Equals [ [Math.floor(1), Math.floor(2)], [Math.floor(1), Math.floor(3)] ]\n */\nexport default function floor(m) {\n  switch (dim(m).length) {\n    case 0:\n      return Math.floor(m)\n    case 1:\n      return m.map(Math.floor)\n    case 2:\n      return m.map(a => a.map(Math.floor))\n    default:\n      throw new Error('floor(): wrong size')\n  }\n}\n"
+    "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise Math.floor(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * floor(1)\n * // Equals Math.floor(1)\n * floor([1, 2])\n * // Equals [Math.floor(1), Math.floor(2)]\n * floor([[1,2],[1,3]])\n * // Equals [ [Math.floor(1), Math.floor(2)], [Math.floor(1), Math.floor(3)] ]\n */\nexport default function (m) {\n  return pointwise(Math.floor)(m)\n}\n"
   },
   {
-    "__docId__": 25,
+    "__docId__": 39,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -791,7 +1320,82 @@
     "generator": false
   },
   {
-    "__docId__": 26,
+    "__docId__": 40,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/geq.js",
+    "memberof": null,
+    "longname": "src/geq.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 2,
+    "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise geq\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * geq(1, 2)\n * // Equals 1 >= 2\n * geq([1, 2], [2, 2])\n * // Equals [1 >= 2, 2 >= 2]\n * geq([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 >= 2, 1 >= 2], [1 >= 2, 2 >= 2] ]\n */\nexport default function (m1, m2) {\n  return pointwise((x, y) => x >= y)(m1, m2)\n}\n"
+  },
+  {
+    "__docId__": 41,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "geq",
+    "memberof": "src/geq.js",
+    "longname": "src/geq.js~geq",
+    "access": null,
+    "export": true,
+    "importPath": "mathlab/src/geq.js",
+    "importStyle": "geq",
+    "description": "Pointwise geq",
+    "examples": [
+      "\ngeq(1, 2)\n// Equals 1 >= 2\ngeq([1, 2], [2, 2])\n// Equals [1 >= 2, 2 >= 2]\ngeq([[2,1], [1,2]], [[2, 2], [2, 2]]))\n// Equals [ [2 >= 2, 1 >= 2], [1 >= 2, 2 >= 2] ]"
+    ],
+    "lineNumber": 20,
+    "unknown": [
+      {
+        "tagName": "@export",
+        "tagValue": ""
+      },
+      {
+        "tagName": "@returns",
+        "tagValue": "{Number|Array}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "m1",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "m2",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Number",
+        "Array"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 42,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -804,7 +1408,7 @@
     "content": "/**\n * \tGet the diagonal of a matrix\n * \n * @export\n * @param {Array} A\n * @returns {Array}\n * @example \n * \n * getDiag([[1, 3], [0, 2]])\n * // [1, 2]\n */\nexport default function getDiag(A) {\n  var n = Math.min(A.length, A[0].length),i,ret = Array(n)\n  for (i = n - 1;i >= 1;--i) {\n    ret[i] = A[i][i]\n    --i\n    ret[i] = A[i][i]\n  }\n  if (i === 0) {\n    ret[0] = A[0][0]\n  }\n  return ret\n}\n"
   },
   {
-    "__docId__": 27,
+    "__docId__": 43,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -853,7 +1457,82 @@
     "generator": false
   },
   {
-    "__docId__": 28,
+    "__docId__": 44,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/gt.js",
+    "memberof": null,
+    "longname": "src/gt.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 2,
+    "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise gt\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * gt(1, 2)\n * // Equals 1 > 2\n * gt([1, 2], [2, 2])\n * // Equals [1 > 2, 2 > 2]\n * gt([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 > 2, 1 > 2], [1 > 2, 2 > 2] ]\n */\nexport default function (m1, m2) {\n  return pointwise((x, y) => x > y)(m1, m2)\n}\n"
+  },
+  {
+    "__docId__": 45,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "gt",
+    "memberof": "src/gt.js",
+    "longname": "src/gt.js~gt",
+    "access": null,
+    "export": true,
+    "importPath": "mathlab/src/gt.js",
+    "importStyle": "gt",
+    "description": "Pointwise gt",
+    "examples": [
+      "\ngt(1, 2)\n// Equals 1 > 2\ngt([1, 2], [2, 2])\n// Equals [1 > 2, 2 > 2]\ngt([[2,1], [1,2]], [[2, 2], [2, 2]]))\n// Equals [ [2 > 2, 1 > 2], [1 > 2, 2 > 2] ]"
+    ],
+    "lineNumber": 20,
+    "unknown": [
+      {
+        "tagName": "@export",
+        "tagValue": ""
+      },
+      {
+        "tagName": "@returns",
+        "tagValue": "{Number|Array}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "m1",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "m2",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Number",
+        "Array"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 46,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -862,56 +1541,11 @@
     "longname": "src/identity.js",
     "access": null,
     "description": null,
-    "lineNumber": 1,
-    "content": "import diag from './diag';\nimport rep from './rep';\n\n/**\n * Generate identity matrix of given size\n * \n * @param {Number} n\n * @returns {Array}\n * @example \n * \n * identity(2)\n * // [[1, 0], [0, 1]]\n */\nexport default function identity (n) { \n  return diag(rep([n], 1)); \n}\n"
+    "lineNumber": 17,
+    "content": "// import diag from './diag';\n// import rep from './rep';\n\n// /**\n//  * Generate identity matrix of given size\n//  * \n//  * @param {Number} n\n//  * @returns {Array}\n//  * @example \n//  * \n//  * identity(2)\n//  * // [[1, 0], [0, 1]]\n//  */\n// export default function identity (n) { \n//   return diag(rep([n], 1)); \n// }\n"
   },
   {
-    "__docId__": 29,
-    "kind": "function",
-    "static": true,
-    "variation": null,
-    "name": "identity",
-    "memberof": "src/identity.js",
-    "longname": "src/identity.js~identity",
-    "access": null,
-    "export": true,
-    "importPath": "mathlab/src/identity.js",
-    "importStyle": "identity",
-    "description": "Generate identity matrix of given size",
-    "examples": [
-      "\nidentity(2)\n// [[1, 0], [0, 1]]"
-    ],
-    "lineNumber": 14,
-    "unknown": [
-      {
-        "tagName": "@returns",
-        "tagValue": "{Array}"
-      }
-    ],
-    "params": [
-      {
-        "nullable": null,
-        "types": [
-          "Number"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "n",
-        "description": ""
-      }
-    ],
-    "return": {
-      "nullable": null,
-      "types": [
-        "Array"
-      ],
-      "spread": false,
-      "description": ""
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 30,
+    "__docId__": 47,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -920,26 +1554,39 @@
     "longname": "src/inv.js",
     "access": null,
     "description": null,
-    "lineNumber": 1,
-    "content": "import dim from './dim'\nimport identity from './identity'\nimport clone from './utils/clone'\n\n/**\n * Inverse of an matrix\n * \n * @export\n * @param {Array} x\n * @returns {Array}\n * @example \n * \n * inv([[1,2],[3,4]])\n * // [[   -2,    1],\n * //  [  1.5, -0.5]]\n */\nexport default function inv (x) {\n  var s = dim(x), abs = Math.abs, m = s[0], n = s[1]\n  var A = clone(x), Ai, Aj\n  var I = identity(m), Ii, Ij\n  var i,j,k,x\n  for (j = 0;j < n;++j) {\n    var i0 = -1\n    var v0 = -1\n    for (i = j;i !== m;++i) { k = abs(A[i][j]); if (k > v0) { i0 = i; v0 = k; } }\n    Aj = A[i0]; A[i0] = A[j]; A[j] = Aj\n    Ij = I[i0]; I[i0] = I[j]; I[j] = Ij\n    x = Aj[j]\n    for (k = j;k !== n;++k)    Aj[k] /= x\n    for (k = n - 1;k !== -1;--k) Ij[k] /= x\n    for (i = m - 1;i !== -1;--i) {\n      if (i !== j) {\n        Ai = A[i]\n        Ii = I[i]\n        x = Ai[j]\n        for (k = j + 1;k !== n;++k)  Ai[k] -= Aj[k] * x\n        for (k = n - 1;k > 0;--k) { Ii[k] -= Ij[k] * x; --k; Ii[k] -= Ij[k] * x; }\n        if (k === 0) Ii[0] -= Ij[0] * x\n      }\n    }\n  }\n  return I\n}\n"
+    "lineNumber": 44,
+    "content": "// import dim from './dim'\n// import identity from './identity'\n// import clone from './utils/clone'\n\n// /**\n//  * Inverse of an matrix\n//  * \n//  * @export\n//  * @param {Array} x\n//  * @returns {Array}\n//  * @example \n//  * \n//  * inv([[1,2],[3,4]])\n//  * // [[   -2,    1],\n//  * //  [  1.5, -0.5]]\n//  */\n// export default function inv (x) {\n//   var s = dim(x), abs = Math.abs, m = s[0], n = s[1]\n//   var A = clone(x), Ai, Aj\n//   var I = identity(m), Ii, Ij\n//   var i,j,k,x\n//   for (j = 0;j < n;++j) {\n//     var i0 = -1\n//     var v0 = -1\n//     for (i = j;i !== m;++i) { k = abs(A[i][j]); if (k > v0) { i0 = i; v0 = k; } }\n//     Aj = A[i0]; A[i0] = A[j]; A[j] = Aj\n//     Ij = I[i0]; I[i0] = I[j]; I[j] = Ij\n//     x = Aj[j]\n//     for (k = j;k !== n;++k)    Aj[k] /= x\n//     for (k = n - 1;k !== -1;--k) Ij[k] /= x\n//     for (i = m - 1;i !== -1;--i) {\n//       if (i !== j) {\n//         Ai = A[i]\n//         Ii = I[i]\n//         x = Ai[j]\n//         for (k = j + 1;k !== n;++k)  Ai[k] -= Aj[k] * x\n//         for (k = n - 1;k > 0;--k) { Ii[k] -= Ij[k] * x; --k; Ii[k] -= Ij[k] * x; }\n//         if (k === 0) Ii[0] -= Ij[0] * x\n//       }\n//     }\n//   }\n//   return I\n// }\n"
   },
   {
-    "__docId__": 31,
+    "__docId__": 48,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/leq.js",
+    "memberof": null,
+    "longname": "src/leq.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 2,
+    "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise leq\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * leq(1, 2)\n * // Equals 1 <= 2\n * leq([1, 2], [2, 2])\n * // Equals [1 <= 2, 2 <= 2]\n * leq([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 <= 2, 1 <= 2], [1 <= 2, 2 <= 2] ]\n */\nexport default function (m1, m2) {\n  return pointwise((x, y) => x <= y)(m1, m2)\n}\n"
+  },
+  {
+    "__docId__": 49,
     "kind": "function",
     "static": true,
     "variation": null,
-    "name": "inv",
-    "memberof": "src/inv.js",
-    "longname": "src/inv.js~inv",
+    "name": "leq",
+    "memberof": "src/leq.js",
+    "longname": "src/leq.js~leq",
     "access": null,
     "export": true,
-    "importPath": "mathlab/src/inv.js",
-    "importStyle": "inv",
-    "description": "Inverse of an matrix",
+    "importPath": "mathlab/src/leq.js",
+    "importStyle": "leq",
+    "description": "Pointwise leq",
     "examples": [
-      "\ninv([[1,2],[3,4]])\n// [[   -2,    1],\n//  [  1.5, -0.5]]"
+      "\nleq(1, 2)\n// Equals 1 <= 2\nleq([1, 2], [2, 2])\n// Equals [1 <= 2, 2 <= 2]\nleq([[2,1], [1,2]], [[2, 2], [2, 2]]))\n// Equals [ [2 <= 2, 1 <= 2], [1 <= 2, 2 <= 2] ]"
     ],
-    "lineNumber": 17,
+    "lineNumber": 20,
     "unknown": [
       {
         "tagName": "@export",
@@ -947,24 +1594,37 @@
       },
       {
         "tagName": "@returns",
-        "tagValue": "{Array}"
+        "tagValue": "{Number|Array}"
       }
     ],
     "params": [
       {
         "nullable": null,
         "types": [
+          "Number",
           "Array"
         ],
         "spread": false,
         "optional": false,
-        "name": "x",
+        "name": "m1",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "m2",
         "description": ""
       }
     ],
     "return": {
       "nullable": null,
       "types": [
+        "Number",
         "Array"
       ],
       "spread": false,
@@ -973,7 +1633,7 @@
     "generator": false
   },
   {
-    "__docId__": 32,
+    "__docId__": 50,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -986,7 +1646,7 @@
     "content": "/**\n * Generate evenly spaced values\n * \n * @export\n * @param {Number} a\n * @param {Number} b\n * @param {Number} n\n * @returns {Array}\n * @example \n * \n * linspace(1, 2, 3)\n * // [1, 1.5, 2]\n */\nexport default function linspace (a, b, n) {\n  if (typeof n === 'undefined') n = Math.max(Math.round(b - a) + 1, 1)\n  if (n < 2) {\n    return n === 1 ? [a] : []\n  }\n  var i,ret = Array(n)\n  n--\n  for (i = n;i >= 0;i--) {\n    ret[i] = (i * b + (n - i) * a) / n\n  }\n  return ret\n}\n"
   },
   {
-    "__docId__": 33,
+    "__docId__": 51,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1055,7 +1715,7 @@
     "generator": false
   },
   {
-    "__docId__": 34,
+    "__docId__": 52,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1065,10 +1725,10 @@
     "access": null,
     "description": null,
     "lineNumber": 2,
-    "content": "\nimport dim from './dim'\n\n/**\n * Pointwise Math.log(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * log(1)\n * // Equals Math.log(1)\n * log([1, 2])\n * // Equals [Math.log(1), Math.log(2)]\n * log([[1,2],[1,3]])\n * // Equals [ [Math.log(1), Math.log(2)], [Math.log(1), Math.log(3)] ]\n */\nexport default function log(m) {\n  switch (dim(m).length) {\n    case 0:\n      return Math.log(m)\n    case 1:\n      return m.map(Math.log)\n    case 2:\n      return m.map(a => a.map(Math.log))\n    default:\n      throw new Error('log(): wrong size')\n  }\n}\n"
+    "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise Math.log(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * log(1)\n * // Equals Math.log(1)\n * log([1, 2])\n * // Equals [Math.log(1), Math.log(2)]\n * log([[1,2],[1,3]])\n * // Equals [ [Math.log(1), Math.log(2)], [Math.log(1), Math.log(3)] ]\n */\nexport default function (m) {\n  return pointwise(Math.log)(m)\n}\n"
   },
   {
-    "__docId__": 35,
+    "__docId__": 53,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1119,35 +1779,35 @@
     "generator": false
   },
   {
-    "__docId__": 36,
+    "__docId__": 54,
     "kind": "file",
     "static": true,
     "variation": null,
-    "name": "src/pow.js",
+    "name": "src/lshift.js",
     "memberof": null,
-    "longname": "src/pow.js",
+    "longname": "src/lshift.js",
     "access": null,
     "description": null,
-    "lineNumber": 1,
-    "content": "import dim from './dim';\n\n/**\n * Pointwise Math.pow(x, y)\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * pow(1, 2)\n * // Equals Math.pow(1, 2)\n * pow([1, 2], [2, 2])\n * // Equals [Math.pow(1, 2), Math.pow(2, 2)]\n * pow([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [Math.pow(2, 2), Math.pow(1, 2)], [Math.pow(1, 2), Math.pow(2, 2)] ]\n */\nexport default function pow(m1, m2) {\n  if (dim(m1)[0] !== dim(m2)[0] || dim(m1)[1] !== dim(m2)[1]) {\n    throw new Error('pow() requires two matrices having the same size')\n  }\n  switch (dim(m1).length) {\n    case 0:\n      return Math.pow(m1, m2)\n    case 1:\n      return m1.map((x, i) => Math.pow(x, m2[i]))\n    case 2:\n      return m1.map( (mm1, i) => mm1.map( (x, j) => Math.pow(x, m2[i][j]) ) )\n    default:\n      throw new Error('pow(): wrong size')\n  }\n}"
+    "lineNumber": 2,
+    "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise lshift\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * lshift(1, 2)\n * // Equals 1 << 2\n * lshift([1, 2], [2, 2])\n * // Equals [1 << 2, 2 << 2]\n * lshift([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 << 2, 1 << 2], [1 << 2, 2 << 2] ]\n */\nexport default function (m1, m2) {\n  return pointwise((x, y) => x << y)(m1, m2)\n}\n"
   },
   {
-    "__docId__": 37,
+    "__docId__": 55,
     "kind": "function",
     "static": true,
     "variation": null,
-    "name": "pow",
-    "memberof": "src/pow.js",
-    "longname": "src/pow.js~pow",
+    "name": "lshift",
+    "memberof": "src/lshift.js",
+    "longname": "src/lshift.js~lshift",
     "access": null,
     "export": true,
-    "importPath": "mathlab/src/pow.js",
-    "importStyle": "pow",
-    "description": "Pointwise Math.pow(x, y)",
+    "importPath": "mathlab/src/lshift.js",
+    "importStyle": "lshift",
+    "description": "Pointwise lshift",
     "examples": [
-      "\npow(1, 2)\n// Equals Math.pow(1, 2)\npow([1, 2], [2, 2])\n// Equals [Math.pow(1, 2), Math.pow(2, 2)]\npow([[2,1], [1,2]], [[2, 2], [2, 2]]))\n// Equals [ [Math.pow(2, 2), Math.pow(1, 2)], [Math.pow(1, 2), Math.pow(2, 2)] ]"
+      "\nlshift(1, 2)\n// Equals 1 << 2\nlshift([1, 2], [2, 2])\n// Equals [1 << 2, 2 << 2]\nlshift([[2,1], [1,2]], [[2, 2], [2, 2]]))\n// Equals [ [2 << 2, 1 << 2], [1 << 2, 2 << 2] ]"
     ],
-    "lineNumber": 19,
+    "lineNumber": 20,
     "unknown": [
       {
         "tagName": "@export",
@@ -1194,7 +1854,519 @@
     "generator": false
   },
   {
-    "__docId__": 38,
+    "__docId__": 56,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/lt.js",
+    "memberof": null,
+    "longname": "src/lt.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 2,
+    "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise lt\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * lt(1, 2)\n * // Equals 1 < 2\n * lt([1, 2], [2, 2])\n * // Equals [1 < 2, 2 < 2]\n * lt([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 < 2, 1 < 2], [1 < 2, 2 < 2] ]\n */\nexport default function (m1, m2) {\n  return pointwise((x, y) => x < y)(m1, m2)\n}\n"
+  },
+  {
+    "__docId__": 57,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "lt",
+    "memberof": "src/lt.js",
+    "longname": "src/lt.js~lt",
+    "access": null,
+    "export": true,
+    "importPath": "mathlab/src/lt.js",
+    "importStyle": "lt",
+    "description": "Pointwise lt",
+    "examples": [
+      "\nlt(1, 2)\n// Equals 1 < 2\nlt([1, 2], [2, 2])\n// Equals [1 < 2, 2 < 2]\nlt([[2,1], [1,2]], [[2, 2], [2, 2]]))\n// Equals [ [2 < 2, 1 < 2], [1 < 2, 2 < 2] ]"
+    ],
+    "lineNumber": 20,
+    "unknown": [
+      {
+        "tagName": "@export",
+        "tagValue": ""
+      },
+      {
+        "tagName": "@returns",
+        "tagValue": "{Number|Array}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "m1",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "m2",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Number",
+        "Array"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 58,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/mod.js",
+    "memberof": null,
+    "longname": "src/mod.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 2,
+    "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise mod\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * mod(1, 2)\n * // Equals 1 % 2\n * mod([1, 2], [2, 2])\n * // Equals [1 % 2, 2 % 2]\n * mod([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 % 2, 1 % 2], [1 % 2, 2 % 2] ]\n */\nexport default function (m1, m2) {\n  return pointwise((x, y) => x % y)(m1, m2)\n}\n"
+  },
+  {
+    "__docId__": 59,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "mod",
+    "memberof": "src/mod.js",
+    "longname": "src/mod.js~mod",
+    "access": null,
+    "export": true,
+    "importPath": "mathlab/src/mod.js",
+    "importStyle": "mod",
+    "description": "Pointwise mod",
+    "examples": [
+      "\nmod(1, 2)\n// Equals 1 % 2\nmod([1, 2], [2, 2])\n// Equals [1 % 2, 2 % 2]\nmod([[2,1], [1,2]], [[2, 2], [2, 2]]))\n// Equals [ [2 % 2, 1 % 2], [1 % 2, 2 % 2] ]"
+    ],
+    "lineNumber": 20,
+    "unknown": [
+      {
+        "tagName": "@export",
+        "tagValue": ""
+      },
+      {
+        "tagName": "@returns",
+        "tagValue": "{Number|Array}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "m1",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "m2",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Number",
+        "Array"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 60,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/mul.js",
+    "memberof": null,
+    "longname": "src/mul.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 2,
+    "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise mul\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * mul(1, 2)\n * // Equals 1 * 2\n * mul([1, 2], [2, 2])\n * // Equals [1 * 2, 2 * 2]\n * mul([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 * 2, 1 * 2], [1 * 2, 2 * 2] ]\n */\nexport default function (m1, m2) {\n  return pointwise((x, y) => x * y)(m1, m2)\n}\n"
+  },
+  {
+    "__docId__": 61,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "mul",
+    "memberof": "src/mul.js",
+    "longname": "src/mul.js~mul",
+    "access": null,
+    "export": true,
+    "importPath": "mathlab/src/mul.js",
+    "importStyle": "mul",
+    "description": "Pointwise mul",
+    "examples": [
+      "\nmul(1, 2)\n// Equals 1 * 2\nmul([1, 2], [2, 2])\n// Equals [1 * 2, 2 * 2]\nmul([[2,1], [1,2]], [[2, 2], [2, 2]]))\n// Equals [ [2 * 2, 1 * 2], [1 * 2, 2 * 2] ]"
+    ],
+    "lineNumber": 20,
+    "unknown": [
+      {
+        "tagName": "@export",
+        "tagValue": ""
+      },
+      {
+        "tagName": "@returns",
+        "tagValue": "{Number|Array}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "m1",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "m2",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Number",
+        "Array"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 62,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/neq.js",
+    "memberof": null,
+    "longname": "src/neq.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 2,
+    "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise neq\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * neq(1, 2)\n * // Equals 1 !== 2\n * neq([1, 2], [2, 2])\n * // Equals [1 !== 2, 2 !== 2]\n * neq([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 !== 2, 1 !== 2], [1 !== 2, 2 !== 2] ]\n */\nexport default function (m1, m2) {\n  return pointwise((x, y) => x !== y)(m1, m2)\n}\n"
+  },
+  {
+    "__docId__": 63,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "neq",
+    "memberof": "src/neq.js",
+    "longname": "src/neq.js~neq",
+    "access": null,
+    "export": true,
+    "importPath": "mathlab/src/neq.js",
+    "importStyle": "neq",
+    "description": "Pointwise neq",
+    "examples": [
+      "\nneq(1, 2)\n// Equals 1 !== 2\nneq([1, 2], [2, 2])\n// Equals [1 !== 2, 2 !== 2]\nneq([[2,1], [1,2]], [[2, 2], [2, 2]]))\n// Equals [ [2 !== 2, 1 !== 2], [1 !== 2, 2 !== 2] ]"
+    ],
+    "lineNumber": 20,
+    "unknown": [
+      {
+        "tagName": "@export",
+        "tagValue": ""
+      },
+      {
+        "tagName": "@returns",
+        "tagValue": "{Number|Array}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "m1",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "m2",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Number",
+        "Array"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 64,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/or.js",
+    "memberof": null,
+    "longname": "src/or.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 2,
+    "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise or\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * or(1, 2)\n * // Equals 1 || 2\n * or([1, 2], [2, 2])\n * // Equals [1 || 2, 2 || 2]\n * or([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 || 2, 1 || 2], [1 || 2, 2 || 2] ]\n */\nexport default function (m1, m2) {\n  return pointwise((x, y) => x || y)(m1, m2)\n}\n"
+  },
+  {
+    "__docId__": 65,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "or",
+    "memberof": "src/or.js",
+    "longname": "src/or.js~or",
+    "access": null,
+    "export": true,
+    "importPath": "mathlab/src/or.js",
+    "importStyle": "or",
+    "description": "Pointwise or",
+    "examples": [
+      "\nor(1, 2)\n// Equals 1 || 2\nor([1, 2], [2, 2])\n// Equals [1 || 2, 2 || 2]\nor([[2,1], [1,2]], [[2, 2], [2, 2]]))\n// Equals [ [2 || 2, 1 || 2], [1 || 2, 2 || 2] ]"
+    ],
+    "lineNumber": 20,
+    "unknown": [
+      {
+        "tagName": "@export",
+        "tagValue": ""
+      },
+      {
+        "tagName": "@returns",
+        "tagValue": "{Number|Array}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "m1",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "m2",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Number",
+        "Array"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 66,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/pointwise.js",
+    "memberof": null,
+    "longname": "src/pointwise.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 2,
+    "content": "\nimport dim from './dim'\n\n/**\n * Create a pointwise function\n * \n * @export\n * @param {Function} fun\n * @returns {Function}\n * @example \n * \n * function _inc (x) {\n *   return x + 1\n * }\n * const inc = pointwise(inc)\n * inc(1)                                  // 2\n * inc([1, 2])                             // [2, 3]\n * inc([[1, 2], [1, 3]])                   // [[2, 3], [2, 4]]\n * \n * \n * function _add (x, y) {\n *   return x + y\n * }\n * const add = pointwise(_add)\n * add(1, 2)                                // 3\n * add([1, 2], [1, 2])                      // [2, 4]\n * add([[1, 2], [1, 2]], [[1, 2], [1, 2]])  //[[2, 4], [2, 4]]\n */\nexport default function pointwise (fun) {\n  return function (...args) {\n    if(args.length === 0) { \n      throw new Error('mathlab: must provide arguments') \n    } else if (args.length === 1) {\n      const [m] = args\n      switch (dim(m).length) {\n        case 0:\n          return fun(m)\n        case 1:\n          return m.map(fun)\n        case 2:\n          return m.map(a => a.map(fun))\n        default:\n          throw new Error('mathlab: only support two demitional matrix')\n      }\n    } else if (args.length === 2) {\n      const [m1, m2] = args\n      if (dim(m1)[0] !== dim(m2)[0] || dim(m1)[1] !== dim(m2)[1]) {\n        throw new Error('mathlab: size of two matrices should be the same')\n      }\n      switch (dim(m1).length) {\n        case 0:\n          return fun(m1, m2)\n        case 1:\n          return m1.map((x, i) => fun(x, m2[i]))\n        case 2:\n          return m1.map( (mm1, i) => mm1.map( (x, j) => fun(x, m2[i][j]) ) )\n        default:\n          throw new Error('mathlab: only support two demitional matrix')\n      }      \n    }\n  }\n}\n"
+  },
+  {
+    "__docId__": 67,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "pointwise",
+    "memberof": "src/pointwise.js",
+    "longname": "src/pointwise.js~pointwise",
+    "access": null,
+    "export": true,
+    "importPath": "mathlab/src/pointwise.js",
+    "importStyle": "pointwise",
+    "description": "Create a pointwise function",
+    "examples": [
+      "\nfunction _inc (x) {\n  return x + 1\n}\nconst inc = pointwise(inc)\ninc(1)                                  // 2\ninc([1, 2])                             // [2, 3]\ninc([[1, 2], [1, 3]])                   // [[2, 3], [2, 4]]\n\n\nfunction _add (x, y) {\n  return x + y\n}\nconst add = pointwise(_add)\nadd(1, 2)                                // 3\nadd([1, 2], [1, 2])                      // [2, 4]\nadd([[1, 2], [1, 2]], [[1, 2], [1, 2]])  //[[2, 4], [2, 4]]"
+    ],
+    "lineNumber": 29,
+    "unknown": [
+      {
+        "tagName": "@export",
+        "tagValue": ""
+      },
+      {
+        "tagName": "@returns",
+        "tagValue": "{Function}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Function"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "fun",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Function"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 68,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/pow.js",
+    "memberof": null,
+    "longname": "src/pow.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 2,
+    "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise Math.pow(x, y)\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * pow(1, 2)\n * // Equals Math.pow(1, 2)\n * pow([1, 2], [2, 2])\n * // Equals [Math.pow(1, 2), Math.pow(2, 2)]\n * pow([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [Math.pow(2, 2), Math.pow(1, 2)], [Math.pow(1, 2), Math.pow(2, 2)] ]\n */\nexport default function (m1, m2) { \n  return pointwise(Math.pow)(m1, m2)\n}\n"
+  },
+  {
+    "__docId__": 69,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "pow",
+    "memberof": "src/pow.js",
+    "longname": "src/pow.js~pow",
+    "access": null,
+    "export": true,
+    "importPath": "mathlab/src/pow.js",
+    "importStyle": "pow",
+    "description": "Pointwise Math.pow(x, y)",
+    "examples": [
+      "\npow(1, 2)\n// Equals Math.pow(1, 2)\npow([1, 2], [2, 2])\n// Equals [Math.pow(1, 2), Math.pow(2, 2)]\npow([[2,1], [1,2]], [[2, 2], [2, 2]]))\n// Equals [ [Math.pow(2, 2), Math.pow(1, 2)], [Math.pow(1, 2), Math.pow(2, 2)] ]"
+    ],
+    "lineNumber": 20,
+    "unknown": [
+      {
+        "tagName": "@export",
+        "tagValue": ""
+      },
+      {
+        "tagName": "@returns",
+        "tagValue": "{Number|Array}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "m1",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "m2",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Number",
+        "Array"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 70,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1204,10 +2376,10 @@
     "access": null,
     "description": null,
     "lineNumber": 2,
-    "content": "\nimport dim from './dim'\n\n/**\n * Pointwise Math.round(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * round(1)\n * // Equals Math.round(1)\n * round([1, 2])\n * // Equals [Math.round(1), Math.round(2)]\n * round([[1,2],[1,3]])\n * // Equals [ [Math.round(1), Math.round(2)], [Math.round(1), Math.round(3)] ]\n */\nexport default function round(m) {\n  switch (dim(m).length) {\n    case 0:\n      return Math.round(m)\n    case 1:\n      return m.map(Math.round)\n    case 2:\n      return m.map(a => a.map(Math.round))\n    default:\n      throw new Error('round(): wrong size')\n  }\n}\n"
+    "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise Math.round(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * round(1)\n * // Equals Math.round(1)\n * round([1, 2])\n * // Equals [Math.round(1), Math.round(2)]\n * round([[1,2],[1,3]])\n * // Equals [ [Math.round(1), Math.round(2)], [Math.round(1), Math.round(3)] ]\n */\nexport default function (m) {\n  return pointwise(Math.round)(m)\n}\n"
   },
   {
-    "__docId__": 39,
+    "__docId__": 71,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1258,7 +2430,157 @@
     "generator": false
   },
   {
-    "__docId__": 40,
+    "__docId__": 72,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/rrshift.js",
+    "memberof": null,
+    "longname": "src/rrshift.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 2,
+    "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise rrshift\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * rrshift(1, 2)\n * // Equals 1 >>> 2\n * rrshift([1, 2], [2, 2])\n * // Equals [1 >>> 2, 2 >>> 2]\n * rrshift([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 >>> 2, 1 >>> 2], [1 >>> 2, 2 >>> 2] ]\n */\nexport default function (m1, m2) {\n  return pointwise((x, y) => x >>> y)(m1, m2)\n}\n"
+  },
+  {
+    "__docId__": 73,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "rrshift",
+    "memberof": "src/rrshift.js",
+    "longname": "src/rrshift.js~rrshift",
+    "access": null,
+    "export": true,
+    "importPath": "mathlab/src/rrshift.js",
+    "importStyle": "rrshift",
+    "description": "Pointwise rrshift",
+    "examples": [
+      "\nrrshift(1, 2)\n// Equals 1 >>> 2\nrrshift([1, 2], [2, 2])\n// Equals [1 >>> 2, 2 >>> 2]\nrrshift([[2,1], [1,2]], [[2, 2], [2, 2]]))\n// Equals [ [2 >>> 2, 1 >>> 2], [1 >>> 2, 2 >>> 2] ]"
+    ],
+    "lineNumber": 20,
+    "unknown": [
+      {
+        "tagName": "@export",
+        "tagValue": ""
+      },
+      {
+        "tagName": "@returns",
+        "tagValue": "{Number|Array}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "m1",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "m2",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Number",
+        "Array"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 74,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/rshift.js",
+    "memberof": null,
+    "longname": "src/rshift.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 2,
+    "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise rshift\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * rshift(1, 2)\n * // Equals 1 >> 2\n * rshift([1, 2], [2, 2])\n * // Equals [1 >> 2, 2 >> 2]\n * rshift([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 >> 2, 1 >> 2], [1 >> 2, 2 >> 2] ]\n */\nexport default function (m1, m2) {\n  return pointwise((x, y) => x >> y)(m1, m2)\n}\n"
+  },
+  {
+    "__docId__": 75,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "rshift",
+    "memberof": "src/rshift.js",
+    "longname": "src/rshift.js~rshift",
+    "access": null,
+    "export": true,
+    "importPath": "mathlab/src/rshift.js",
+    "importStyle": "rshift",
+    "description": "Pointwise rshift",
+    "examples": [
+      "\nrshift(1, 2)\n// Equals 1 >> 2\nrshift([1, 2], [2, 2])\n// Equals [1 >> 2, 2 >> 2]\nrshift([[2,1], [1,2]], [[2, 2], [2, 2]]))\n// Equals [ [2 >> 2, 1 >> 2], [1 >> 2, 2 >> 2] ]"
+    ],
+    "lineNumber": 20,
+    "unknown": [
+      {
+        "tagName": "@export",
+        "tagValue": ""
+      },
+      {
+        "tagName": "@returns",
+        "tagValue": "{Number|Array}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "m1",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "m2",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Number",
+        "Array"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 76,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1268,10 +2590,10 @@
     "access": null,
     "description": null,
     "lineNumber": 2,
-    "content": "\nimport dim from './dim'\n\n/**\n * Pointwise Math.sin(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * sin(1)\n * // Equals Math.sin(1)\n * sin([1, 2])\n * // Equals [Math.sin(1), Math.sin(2)]\n * sin([[1,2],[1,3]])\n * // Equals [ [Math.sin(1), Math.sin(2)], [Math.sin(1), Math.sin(3)] ]\n */\nexport default function sin(m) {\n  switch (dim(m).length) {\n    case 0:\n      return Math.sin(m)\n    case 1:\n      return m.map(Math.sin)\n    case 2:\n      return m.map(a => a.map(Math.sin))\n    default:\n      throw new Error('sin(): wrong size')\n  }\n}\n"
+    "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise Math.sin(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * sin(1)\n * // Equals Math.sin(1)\n * sin([1, 2])\n * // Equals [Math.sin(1), Math.sin(2)]\n * sin([[1,2],[1,3]])\n * // Equals [ [Math.sin(1), Math.sin(2)], [Math.sin(1), Math.sin(3)] ]\n */\nexport default function (m) {\n  return pointwise(Math.sin)(m)\n}\n"
   },
   {
-    "__docId__": 41,
+    "__docId__": 77,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1322,7 +2644,7 @@
     "generator": false
   },
   {
-    "__docId__": 42,
+    "__docId__": 78,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1332,10 +2654,10 @@
     "access": null,
     "description": null,
     "lineNumber": 2,
-    "content": "\nimport dim from './dim'\n\n/**\n * Pointwise Math.sqrt(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * sqrt(1)\n * // Equals Math.sqrt(1)\n * sqrt([1, 2])\n * // Equals [Math.sqrt(1), Math.sqrt(2)]\n * sqrt([[1,2],[1,3]])\n * // Equals [ [Math.sqrt(1), Math.sqrt(2)], [Math.sqrt(1), Math.sqrt(3)] ]\n */\nexport default function sqrt(m) {\n  switch (dim(m).length) {\n    case 0:\n      return Math.sqrt(m)\n    case 1:\n      return m.map(Math.sqrt)\n    case 2:\n      return m.map(a => a.map(Math.sqrt))\n    default:\n      throw new Error('sqrt(): wrong size')\n  }\n}\n"
+    "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise Math.sqrt(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * sqrt(1)\n * // Equals Math.sqrt(1)\n * sqrt([1, 2])\n * // Equals [Math.sqrt(1), Math.sqrt(2)]\n * sqrt([[1,2],[1,3]])\n * // Equals [ [Math.sqrt(1), Math.sqrt(2)], [Math.sqrt(1), Math.sqrt(3)] ]\n */\nexport default function (m) {\n  return pointwise(Math.sqrt)(m)\n}\n"
   },
   {
-    "__docId__": 43,
+    "__docId__": 79,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1386,7 +2708,82 @@
     "generator": false
   },
   {
-    "__docId__": 44,
+    "__docId__": 80,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/sub.js",
+    "memberof": null,
+    "longname": "src/sub.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 2,
+    "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise sub\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * sub(1, 2)\n * // Equals 1 - 2\n * sub([1, 2], [2, 2])\n * // Equals [1 - 2, 2 - 2]\n * sub([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 - 2, 1 - 2], [1 - 2, 2 - 2] ]\n */\nexport default function (m1, m2) {\n  return pointwise((x, y) => x - y)(m1, m2)\n}\n"
+  },
+  {
+    "__docId__": 81,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "sub",
+    "memberof": "src/sub.js",
+    "longname": "src/sub.js~sub",
+    "access": null,
+    "export": true,
+    "importPath": "mathlab/src/sub.js",
+    "importStyle": "sub",
+    "description": "Pointwise sub",
+    "examples": [
+      "\nsub(1, 2)\n// Equals 1 - 2\nsub([1, 2], [2, 2])\n// Equals [1 - 2, 2 - 2]\nsub([[2,1], [1,2]], [[2, 2], [2, 2]]))\n// Equals [ [2 - 2, 1 - 2], [1 - 2, 2 - 2] ]"
+    ],
+    "lineNumber": 20,
+    "unknown": [
+      {
+        "tagName": "@export",
+        "tagValue": ""
+      },
+      {
+        "tagName": "@returns",
+        "tagValue": "{Number|Array}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "m1",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number",
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "m2",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Number",
+        "Array"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 82,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1396,10 +2793,10 @@
     "access": null,
     "description": null,
     "lineNumber": 2,
-    "content": "\nimport dim from './dim'\n\n/**\n * Pointwise Math.tan(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * tan(1)\n * // Equals Math.tan(1)\n * tan([1, 2])\n * // Equals [Math.tan(1), Math.tan(2)]\n * tan([[1,2],[1,3]])\n * // Equals [ [Math.tan(1), Math.tan(2)], [Math.tan(1), Math.tan(3)] ]\n */\nexport default function tan(m) {\n  switch (dim(m).length) {\n    case 0:\n      return Math.tan(m)\n    case 1:\n      return m.map(Math.tan)\n    case 2:\n      return m.map(a => a.map(Math.tan))\n    default:\n      throw new Error('tan(): wrong size')\n  }\n}\n"
+    "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise Math.tan(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * tan(1)\n * // Equals Math.tan(1)\n * tan([1, 2])\n * // Equals [Math.tan(1), Math.tan(2)]\n * tan([[1,2],[1,3]])\n * // Equals [ [Math.tan(1), Math.tan(2)], [Math.tan(1), Math.tan(3)] ]\n */\nexport default function (m) {\n  return pointwise(Math.tan)(m)\n}\n"
   },
   {
-    "__docId__": 45,
+    "__docId__": 83,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1450,7 +2847,7 @@
     "generator": false
   },
   {
-    "__docId__": 46,
+    "__docId__": 84,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1463,7 +2860,7 @@
     "content": "/**\n * Matrix transpose\n * \n * @export\n * @param {Array} x\n * @returns {Array}\n * @example \n * \n * transpose([[1,2,3],[4,5,6]])\n * //[[1,4],\n * // [2,5],\n * // [3,6]]\n */\nexport default function transpose (x) {\n  var i,j,m = x.length,n = x[0].length, ret = Array(n),A0,A1,Bj\n  for (j = 0;j < n;j++) ret[j] = Array(m)\n  for (i = m - 1;i >= 1;i -= 2) {\n    A1 = x[i]\n    A0 = x[i - 1]\n    for (j = n - 1;j >= 1;--j) {\n      Bj = ret[j]; Bj[i] = A1[j]; Bj[i - 1] = A0[j]\n      --j\n      Bj = ret[j]; Bj[i] = A1[j]; Bj[i - 1] = A0[j]\n    }\n    if (j === 0) {\n      Bj = ret[0]; Bj[i] = A1[0]; Bj[i - 1] = A0[0]\n    }\n  }\n  if (i === 0) {\n    A0 = x[0]\n    for (j = n - 1;j >= 1;--j) {\n      ret[j][0] = A0[j]\n      --j\n      ret[j][0] = A0[j]\n    }\n    if (j === 0) { ret[0][0] = A0[0]; }\n  }\n  return ret\n}\n"
   },
   {
-    "__docId__": 47,
+    "__docId__": 85,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1512,7 +2909,7 @@
     "generator": false
   },
   {
-    "__docId__": 48,
+    "__docId__": 86,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1525,7 +2922,7 @@
     "content": "export default function clone (arr) {\n  return JSON.parse(JSON.stringify(arr))\n}\n"
   },
   {
-    "__docId__": 49,
+    "__docId__": 87,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1555,7 +2952,7 @@
     "generator": false
   },
   {
-    "__docId__": 51,
+    "__docId__": 89,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1568,7 +2965,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 52,
+    "__docId__": 90,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1581,7 +2978,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 53,
+    "__docId__": 91,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1594,7 +2991,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 54,
+    "__docId__": 92,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1607,7 +3004,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 55,
+    "__docId__": 93,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1620,7 +3017,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 56,
+    "__docId__": 94,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1633,7 +3030,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 57,
+    "__docId__": 95,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1646,7 +3043,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 58,
+    "__docId__": 96,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1659,7 +3056,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 59,
+    "__docId__": 97,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1672,7 +3069,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 60,
+    "__docId__": 98,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1685,7 +3082,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 61,
+    "__docId__": 99,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1698,7 +3095,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 62,
+    "__docId__": 100,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1711,7 +3108,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 63,
+    "__docId__": 101,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1724,7 +3121,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 64,
+    "__docId__": 102,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1737,7 +3134,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 65,
+    "__docId__": 103,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1750,7 +3147,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 66,
+    "__docId__": 104,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1763,7 +3160,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 67,
+    "__docId__": 105,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1776,7 +3173,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 68,
+    "__docId__": 106,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1789,7 +3186,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 69,
+    "__docId__": 107,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1802,7 +3199,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 70,
+    "__docId__": 108,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1815,7 +3212,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 71,
+    "__docId__": 109,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1828,7 +3225,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 72,
+    "__docId__": 110,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1841,7 +3238,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 73,
+    "__docId__": 111,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1854,7 +3251,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 74,
+    "__docId__": 112,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1867,7 +3264,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 75,
+    "__docId__": 113,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1880,7 +3277,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 76,
+    "__docId__": 114,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1893,7 +3290,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 77,
+    "__docId__": 115,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1906,7 +3303,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 78,
+    "__docId__": 116,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1919,7 +3316,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 79,
+    "__docId__": 117,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1932,7 +3329,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 80,
+    "__docId__": 118,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1945,7 +3342,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 81,
+    "__docId__": 119,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1958,7 +3355,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 82,
+    "__docId__": 120,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1971,7 +3368,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 83,
+    "__docId__": 121,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1984,7 +3381,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 84,
+    "__docId__": 122,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1997,7 +3394,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 85,
+    "__docId__": 123,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2010,7 +3407,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 86,
+    "__docId__": 124,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2023,7 +3420,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 87,
+    "__docId__": 125,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2036,7 +3433,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 88,
+    "__docId__": 126,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2049,7 +3446,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 89,
+    "__docId__": 127,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2062,7 +3459,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 90,
+    "__docId__": 128,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2075,7 +3472,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 91,
+    "__docId__": 129,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2088,7 +3485,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 92,
+    "__docId__": 130,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2101,7 +3498,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 93,
+    "__docId__": 131,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2114,7 +3511,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 94,
+    "__docId__": 132,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2127,7 +3524,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 95,
+    "__docId__": 133,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2140,7 +3537,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 96,
+    "__docId__": 134,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2153,7 +3550,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 97,
+    "__docId__": 135,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2166,7 +3563,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 99,
+    "__docId__": 137,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2179,7 +3576,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 100,
+    "__docId__": 138,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2192,7 +3589,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 101,
+    "__docId__": 139,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2205,7 +3602,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 102,
+    "__docId__": 140,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2218,7 +3615,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 103,
+    "__docId__": 141,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2231,7 +3628,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 104,
+    "__docId__": 142,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2244,7 +3641,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 105,
+    "__docId__": 143,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2257,7 +3654,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 106,
+    "__docId__": 144,
     "kind": "external",
     "static": true,
     "variation": null,

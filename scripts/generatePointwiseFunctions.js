@@ -9,7 +9,7 @@ const mathFuns = [
 // src
 mathFuns.forEach(fun => {
   const src = `
-import dim from './dim'
+import pointwise from './pointwise'
 
 /**
  * Pointwise Math.${fun}(x)
@@ -26,17 +26,8 @@ import dim from './dim'
  * ${fun}([[1,2],[1,3]])
  * // Equals [ [Math.${fun}(1), Math.${fun}(2)], [Math.${fun}(1), Math.${fun}(3)] ]
  */
-export default function ${fun}(m) {
-  switch (dim(m).length) {
-    case 0:
-      return Math.${fun}(m)
-    case 1:
-      return m.map(Math.${fun})
-    case 2:
-      return m.map(a => a.map(Math.${fun}))
-    default:
-      throw new Error('${fun}(): wrong size')
-  }
+export default function (m) {
+  return pointwise(Math.${fun})(m)
 }
 `
 

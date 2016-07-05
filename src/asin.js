@@ -1,5 +1,5 @@
 
-import dim from './dim'
+import pointwise from './pointwise'
 
 /**
  * Pointwise Math.asin(x)
@@ -16,15 +16,6 @@ import dim from './dim'
  * asin([[1,2],[1,3]])
  * // Equals [ [Math.asin(1), Math.asin(2)], [Math.asin(1), Math.asin(3)] ]
  */
-export default function asin(m) {
-  switch (dim(m).length) {
-    case 0:
-      return Math.asin(m)
-    case 1:
-      return m.map(Math.asin)
-    case 2:
-      return m.map(a => a.map(Math.asin))
-    default:
-      throw new Error('asin(): wrong size')
-  }
+export default function (m) {
+  return pointwise(Math.asin)(m)
 }

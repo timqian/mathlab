@@ -1,5 +1,5 @@
 
-import dim from './dim'
+import pointwise from './pointwise'
 
 /**
  * Pointwise Math.atan(x)
@@ -16,15 +16,6 @@ import dim from './dim'
  * atan([[1,2],[1,3]])
  * // Equals [ [Math.atan(1), Math.atan(2)], [Math.atan(1), Math.atan(3)] ]
  */
-export default function atan(m) {
-  switch (dim(m).length) {
-    case 0:
-      return Math.atan(m)
-    case 1:
-      return m.map(Math.atan)
-    case 2:
-      return m.map(a => a.map(Math.atan))
-    default:
-      throw new Error('atan(): wrong size')
-  }
+export default function (m) {
+  return pointwise(Math.atan)(m)
 }

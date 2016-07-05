@@ -5,7 +5,7 @@ const mathFuns2 = ['atan2','pow']
 
 mathFuns2.forEach(fun => {
     const src = `
-import dim from './dim';
+import pointwise from './pointwise'
 
 /**
  * Pointwise Math.${fun}(x, y)
@@ -23,20 +23,8 @@ import dim from './dim';
  * ${fun}([[2,1], [1,2]], [[2, 2], [2, 2]]))
  * // Equals [ [Math.${fun}(2, 2), Math.${fun}(1, 2)], [Math.${fun}(1, 2), Math.${fun}(2, 2)] ]
  */
-export default function ${fun}(m1, m2) {
-  if (dim(m1)[0] !== dim(m2)[0] || dim(m1)[1] !== dim(m2)[1]) {
-    throw new Error('${fun}() requires two matrices having the same size')
-  }
-  switch (dim(m1).length) {
-    case 0:
-      return Math.${fun}(m1, m2)
-    case 1:
-      return m1.map((x, i) => Math.${fun}(x, m2[i]))
-    case 2:
-      return m1.map( (mm1, i) => mm1.map( (x, j) => Math.${fun}(x, m2[i][j]) ) )
-    default:
-      throw new Error('${fun}(): wrong size')
-  }
+export default function (m1, m2) { 
+  return pointwise(Math.${fun})(m1, m2)
 }
 `
 const test = `

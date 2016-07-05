@@ -1,5 +1,5 @@
 
-import dim from './dim'
+import pointwise from './pointwise'
 
 /**
  * Pointwise Math.sqrt(x)
@@ -16,15 +16,6 @@ import dim from './dim'
  * sqrt([[1,2],[1,3]])
  * // Equals [ [Math.sqrt(1), Math.sqrt(2)], [Math.sqrt(1), Math.sqrt(3)] ]
  */
-export default function sqrt(m) {
-  switch (dim(m).length) {
-    case 0:
-      return Math.sqrt(m)
-    case 1:
-      return m.map(Math.sqrt)
-    case 2:
-      return m.map(a => a.map(Math.sqrt))
-    default:
-      throw new Error('sqrt(): wrong size')
-  }
+export default function (m) {
+  return pointwise(Math.sqrt)(m)
 }

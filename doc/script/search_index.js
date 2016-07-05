@@ -12,6 +12,18 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "mathlab/src/add.js~add",
+    "function/index.html#static-function-add",
+    "<span>add</span> <span class=\"search-result-import-path\">mathlab/src/add.js</span>",
+    "function"
+  ],
+  [
+    "mathlab/src/and.js~and",
+    "function/index.html#static-function-and",
+    "<span>and</span> <span class=\"search-result-import-path\">mathlab/src/and.js</span>",
+    "function"
+  ],
+  [
     "mathlab/src/asin.js~asin",
     "function/index.html#static-function-asin",
     "<span>asin</span> <span class=\"search-result-import-path\">mathlab/src/asin.js</span>",
@@ -27,6 +39,24 @@ window.esdocSearchIndex = [
     "mathlab/src/atan.js~atan",
     "function/index.html#static-function-atan",
     "<span>atan</span> <span class=\"search-result-import-path\">mathlab/src/atan.js</span>",
+    "function"
+  ],
+  [
+    "mathlab/src/band.js~band",
+    "function/index.html#static-function-band",
+    "<span>band</span> <span class=\"search-result-import-path\">mathlab/src/band.js</span>",
+    "function"
+  ],
+  [
+    "mathlab/src/bor.js~bor",
+    "function/index.html#static-function-bor",
+    "<span>bor</span> <span class=\"search-result-import-path\">mathlab/src/bor.js</span>",
+    "function"
+  ],
+  [
+    "mathlab/src/bxor.js~bxor",
+    "function/index.html#static-function-bxor",
+    "<span>bxor</span> <span class=\"search-result-import-path\">mathlab/src/bxor.js</span>",
     "function"
   ],
   [
@@ -66,6 +96,18 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "mathlab/src/div.js~div",
+    "function/index.html#static-function-div",
+    "<span>div</span> <span class=\"search-result-import-path\">mathlab/src/div.js</span>",
+    "function"
+  ],
+  [
+    "mathlab/src/eq.js~eq",
+    "function/index.html#static-function-eq",
+    "<span>eq</span> <span class=\"search-result-import-path\">mathlab/src/eq.js</span>",
+    "function"
+  ],
+  [
     "mathlab/src/exp.js~exp",
     "function/index.html#static-function-exp",
     "<span>exp</span> <span class=\"search-result-import-path\">mathlab/src/exp.js</span>",
@@ -78,21 +120,27 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "mathlab/src/geq.js~geq",
+    "function/index.html#static-function-geq",
+    "<span>geq</span> <span class=\"search-result-import-path\">mathlab/src/geq.js</span>",
+    "function"
+  ],
+  [
     "mathlab/src/getdiag.js~getdiag",
     "function/index.html#static-function-getDiag",
     "<span>getDiag</span> <span class=\"search-result-import-path\">mathlab/src/getDiag.js</span>",
     "function"
   ],
   [
-    "mathlab/src/identity.js~identity",
-    "function/index.html#static-function-identity",
-    "<span>identity</span> <span class=\"search-result-import-path\">mathlab/src/identity.js</span>",
+    "mathlab/src/gt.js~gt",
+    "function/index.html#static-function-gt",
+    "<span>gt</span> <span class=\"search-result-import-path\">mathlab/src/gt.js</span>",
     "function"
   ],
   [
-    "mathlab/src/inv.js~inv",
-    "function/index.html#static-function-inv",
-    "<span>inv</span> <span class=\"search-result-import-path\">mathlab/src/inv.js</span>",
+    "mathlab/src/leq.js~leq",
+    "function/index.html#static-function-leq",
+    "<span>leq</span> <span class=\"search-result-import-path\">mathlab/src/leq.js</span>",
     "function"
   ],
   [
@@ -108,6 +156,48 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "mathlab/src/lshift.js~lshift",
+    "function/index.html#static-function-lshift",
+    "<span>lshift</span> <span class=\"search-result-import-path\">mathlab/src/lshift.js</span>",
+    "function"
+  ],
+  [
+    "mathlab/src/lt.js~lt",
+    "function/index.html#static-function-lt",
+    "<span>lt</span> <span class=\"search-result-import-path\">mathlab/src/lt.js</span>",
+    "function"
+  ],
+  [
+    "mathlab/src/mod.js~mod",
+    "function/index.html#static-function-mod",
+    "<span>mod</span> <span class=\"search-result-import-path\">mathlab/src/mod.js</span>",
+    "function"
+  ],
+  [
+    "mathlab/src/mul.js~mul",
+    "function/index.html#static-function-mul",
+    "<span>mul</span> <span class=\"search-result-import-path\">mathlab/src/mul.js</span>",
+    "function"
+  ],
+  [
+    "mathlab/src/neq.js~neq",
+    "function/index.html#static-function-neq",
+    "<span>neq</span> <span class=\"search-result-import-path\">mathlab/src/neq.js</span>",
+    "function"
+  ],
+  [
+    "mathlab/src/or.js~or",
+    "function/index.html#static-function-or",
+    "<span>or</span> <span class=\"search-result-import-path\">mathlab/src/or.js</span>",
+    "function"
+  ],
+  [
+    "mathlab/src/pointwise.js~pointwise",
+    "function/index.html#static-function-pointwise",
+    "<span>pointwise</span> <span class=\"search-result-import-path\">mathlab/src/pointwise.js</span>",
+    "function"
+  ],
+  [
     "mathlab/src/pow.js~pow",
     "function/index.html#static-function-pow",
     "<span>pow</span> <span class=\"search-result-import-path\">mathlab/src/pow.js</span>",
@@ -120,6 +210,18 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "mathlab/src/rrshift.js~rrshift",
+    "function/index.html#static-function-rrshift",
+    "<span>rrshift</span> <span class=\"search-result-import-path\">mathlab/src/rrshift.js</span>",
+    "function"
+  ],
+  [
+    "mathlab/src/rshift.js~rshift",
+    "function/index.html#static-function-rshift",
+    "<span>rshift</span> <span class=\"search-result-import-path\">mathlab/src/rshift.js</span>",
+    "function"
+  ],
+  [
     "mathlab/src/sin.js~sin",
     "function/index.html#static-function-sin",
     "<span>sin</span> <span class=\"search-result-import-path\">mathlab/src/sin.js</span>",
@@ -129,6 +231,12 @@ window.esdocSearchIndex = [
     "mathlab/src/sqrt.js~sqrt",
     "function/index.html#static-function-sqrt",
     "<span>sqrt</span> <span class=\"search-result-import-path\">mathlab/src/sqrt.js</span>",
+    "function"
+  ],
+  [
+    "mathlab/src/sub.js~sub",
+    "function/index.html#static-function-sub",
+    "<span>sub</span> <span class=\"search-result-import-path\">mathlab/src/sub.js</span>",
     "function"
   ],
   [
@@ -486,6 +594,18 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/add.js",
+    "file/src/add.js.html",
+    "src/add.js",
+    "file"
+  ],
+  [
+    "src/and.js",
+    "file/src/and.js.html",
+    "src/and.js",
+    "file"
+  ],
+  [
     "src/asin.js",
     "file/src/asin.js.html",
     "src/asin.js",
@@ -501,6 +621,24 @@ window.esdocSearchIndex = [
     "src/atan2.js",
     "file/src/atan2.js.html",
     "src/atan2.js",
+    "file"
+  ],
+  [
+    "src/band.js",
+    "file/src/band.js.html",
+    "src/band.js",
+    "file"
+  ],
+  [
+    "src/bor.js",
+    "file/src/bor.js.html",
+    "src/bor.js",
+    "file"
+  ],
+  [
+    "src/bxor.js",
+    "file/src/bxor.js.html",
+    "src/bxor.js",
     "file"
   ],
   [
@@ -534,6 +672,12 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/div.js",
+    "file/src/div.js.html",
+    "src/div.js",
+    "file"
+  ],
+  [
     "src/dot.js",
     "file/src/dot.js.html",
     "src/dot.js",
@@ -543,6 +687,12 @@ window.esdocSearchIndex = [
     "src/eig.js",
     "file/src/eig.js.html",
     "src/eig.js",
+    "file"
+  ],
+  [
+    "src/eq.js",
+    "file/src/eq.js.html",
+    "src/eq.js",
     "file"
   ],
   [
@@ -558,9 +708,21 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/geq.js",
+    "file/src/geq.js.html",
+    "src/geq.js",
+    "file"
+  ],
+  [
     "src/getdiag.js",
     "file/src/getDiag.js.html",
     "src/getDiag.js",
+    "file"
+  ],
+  [
+    "src/gt.js",
+    "file/src/gt.js.html",
+    "src/gt.js",
     "file"
   ],
   [
@@ -576,6 +738,12 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/leq.js",
+    "file/src/leq.js.html",
+    "src/leq.js",
+    "file"
+  ],
+  [
     "src/linspace.js",
     "file/src/linspace.js.html",
     "src/linspace.js",
@@ -585,6 +753,48 @@ window.esdocSearchIndex = [
     "src/log.js",
     "file/src/log.js.html",
     "src/log.js",
+    "file"
+  ],
+  [
+    "src/lshift.js",
+    "file/src/lshift.js.html",
+    "src/lshift.js",
+    "file"
+  ],
+  [
+    "src/lt.js",
+    "file/src/lt.js.html",
+    "src/lt.js",
+    "file"
+  ],
+  [
+    "src/mod.js",
+    "file/src/mod.js.html",
+    "src/mod.js",
+    "file"
+  ],
+  [
+    "src/mul.js",
+    "file/src/mul.js.html",
+    "src/mul.js",
+    "file"
+  ],
+  [
+    "src/neq.js",
+    "file/src/neq.js.html",
+    "src/neq.js",
+    "file"
+  ],
+  [
+    "src/or.js",
+    "file/src/or.js.html",
+    "src/or.js",
+    "file"
+  ],
+  [
+    "src/pointwise.js",
+    "file/src/pointwise.js.html",
+    "src/pointwise.js",
     "file"
   ],
   [
@@ -600,6 +810,18 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/rrshift.js",
+    "file/src/rrshift.js.html",
+    "src/rrshift.js",
+    "file"
+  ],
+  [
+    "src/rshift.js",
+    "file/src/rshift.js.html",
+    "src/rshift.js",
+    "file"
+  ],
+  [
     "src/sin.js",
     "file/src/sin.js.html",
     "src/sin.js",
@@ -609,6 +831,12 @@ window.esdocSearchIndex = [
     "src/sqrt.js",
     "file/src/sqrt.js.html",
     "src/sqrt.js",
+    "file"
+  ],
+  [
+    "src/sub.js",
+    "file/src/sub.js.html",
+    "src/sub.js",
     "file"
   ],
   [

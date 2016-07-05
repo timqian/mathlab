@@ -1,5 +1,5 @@
 
-import dim from './dim'
+import pointwise from './pointwise'
 
 /**
  * Pointwise Math.abs(x)
@@ -16,15 +16,6 @@ import dim from './dim'
  * abs([[1,2],[1,3]])
  * // Equals [ [Math.abs(1), Math.abs(2)], [Math.abs(1), Math.abs(3)] ]
  */
-export default function abs(m) {
-  switch (dim(m).length) {
-    case 0:
-      return Math.abs(m)
-    case 1:
-      return m.map(Math.abs)
-    case 2:
-      return m.map(a => a.map(Math.abs))
-    default:
-      throw new Error('abs(): wrong size')
-  }
+export default function (m) {
+  return pointwise(Math.abs)(m)
 }

@@ -1,7 +1,7 @@
 {
-  "coverage": "95.83%",
-  "expectCount": 24,
-  "actualCount": 23,
+  "coverage": "97.61%",
+  "expectCount": 42,
+  "actualCount": 41,
   "files": {
     "src/abs.js": {
       "expectCount": 1,
@@ -9,6 +9,16 @@
       "undocumentLines": []
     },
     "src/acos.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/add.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/and.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
@@ -24,6 +34,21 @@
       "undocumentLines": []
     },
     "src/atan2.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/band.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/bor.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/bxor.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
@@ -60,6 +85,16 @@
       "actualCount": 1,
       "undocumentLines": []
     },
+    "src/div.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/eq.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
     "src/exp.js": {
       "expectCount": 1,
       "actualCount": 1,
@@ -70,17 +105,22 @@
       "actualCount": 1,
       "undocumentLines": []
     },
+    "src/geq.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
     "src/getDiag.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
     },
-    "src/identity.js": {
+    "src/gt.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
     },
-    "src/inv.js": {
+    "src/leq.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
@@ -95,6 +135,41 @@
       "actualCount": 1,
       "undocumentLines": []
     },
+    "src/lshift.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/lt.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/mod.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/mul.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/neq.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/or.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/pointwise.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
     "src/pow.js": {
       "expectCount": 1,
       "actualCount": 1,
@@ -105,12 +180,27 @@
       "actualCount": 1,
       "undocumentLines": []
     },
+    "src/rrshift.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/rshift.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
     "src/sin.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
     },
     "src/sqrt.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/sub.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []

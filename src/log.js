@@ -1,5 +1,5 @@
 
-import dim from './dim'
+import pointwise from './pointwise'
 
 /**
  * Pointwise Math.log(x)
@@ -16,15 +16,6 @@ import dim from './dim'
  * log([[1,2],[1,3]])
  * // Equals [ [Math.log(1), Math.log(2)], [Math.log(1), Math.log(3)] ]
  */
-export default function log(m) {
-  switch (dim(m).length) {
-    case 0:
-      return Math.log(m)
-    case 1:
-      return m.map(Math.log)
-    case 2:
-      return m.map(a => a.map(Math.log))
-    default:
-      throw new Error('log(): wrong size')
-  }
+export default function (m) {
+  return pointwise(Math.log)(m)
 }
