@@ -3,8 +3,8 @@
   "body": [],
   "sourceType": "module",
   "range": [
-    1187,
-    1187
+    1181,
+    1181
   ],
   "loc": {
     "start": {
@@ -55,10 +55,10 @@
     },
     {
       "type": "Line",
-      "value": " import clone from './utils/clone'",
+      "value": " import clone from './clone'",
       "range": [
         64,
-        100
+        94
       ],
       "loc": {
         "start": {
@@ -67,7 +67,7 @@
         },
         "end": {
           "line": 3,
-          "column": 36
+          "column": 30
         }
       }
     },
@@ -75,8 +75,8 @@
       "type": "Line",
       "value": " /**",
       "range": [
-        102,
-        108
+        96,
+        102
       ],
       "loc": {
         "start": {
@@ -93,8 +93,8 @@
       "type": "Line",
       "value": "  * Inverse of an matrix",
       "range": [
-        109,
-        135
+        103,
+        129
       ],
       "loc": {
         "start": {
@@ -111,8 +111,8 @@
       "type": "Line",
       "value": "  * ",
       "range": [
-        136,
-        142
+        130,
+        136
       ],
       "loc": {
         "start": {
@@ -129,8 +129,8 @@
       "type": "Line",
       "value": "  * @export",
       "range": [
-        143,
-        156
+        137,
+        150
       ],
       "loc": {
         "start": {
@@ -147,8 +147,8 @@
       "type": "Line",
       "value": "  * @param {Array} x",
       "range": [
-        157,
-        179
+        151,
+        173
       ],
       "loc": {
         "start": {
@@ -165,8 +165,8 @@
       "type": "Line",
       "value": "  * @returns {Array}",
       "range": [
-        180,
-        202
+        174,
+        196
       ],
       "loc": {
         "start": {
@@ -183,8 +183,8 @@
       "type": "Line",
       "value": "  * @example ",
       "range": [
-        203,
-        218
+        197,
+        212
       ],
       "loc": {
         "start": {
@@ -201,8 +201,8 @@
       "type": "Line",
       "value": "  * ",
       "range": [
-        219,
-        225
+        213,
+        219
       ],
       "loc": {
         "start": {
@@ -219,8 +219,8 @@
       "type": "Line",
       "value": "  * inv([[1,2],[3,4]])",
       "range": [
-        226,
-        250
+        220,
+        244
       ],
       "loc": {
         "start": {
@@ -237,8 +237,8 @@
       "type": "Line",
       "value": "  * // [[   -2,    1],",
       "range": [
-        251,
-        275
+        245,
+        269
       ],
       "loc": {
         "start": {
@@ -255,8 +255,8 @@
       "type": "Line",
       "value": "  * //  [  1.5, -0.5]]",
       "range": [
-        276,
-        300
+        270,
+        294
       ],
       "loc": {
         "start": {
@@ -273,8 +273,8 @@
       "type": "Line",
       "value": "  */",
       "range": [
-        301,
-        307
+        295,
+        301
       ],
       "loc": {
         "start": {
@@ -291,8 +291,8 @@
       "type": "Line",
       "value": " export default function inv (x) {",
       "range": [
-        308,
-        344
+        302,
+        338
       ],
       "loc": {
         "start": {
@@ -309,8 +309,8 @@
       "type": "Line",
       "value": "   var s = dim(x), abs = Math.abs, m = s[0], n = s[1]",
       "range": [
-        345,
-        400
+        339,
+        394
       ],
       "loc": {
         "start": {
@@ -327,8 +327,8 @@
       "type": "Line",
       "value": "   var A = clone(x), Ai, Aj",
       "range": [
-        401,
-        430
+        395,
+        424
       ],
       "loc": {
         "start": {
@@ -345,8 +345,8 @@
       "type": "Line",
       "value": "   var I = identity(m), Ii, Ij",
       "range": [
-        431,
-        463
+        425,
+        457
       ],
       "loc": {
         "start": {
@@ -363,8 +363,8 @@
       "type": "Line",
       "value": "   var i,j,k,x",
       "range": [
-        464,
-        480
+        458,
+        474
       ],
       "loc": {
         "start": {
@@ -381,8 +381,8 @@
       "type": "Line",
       "value": "   for (j = 0;j < n;++j) {",
       "range": [
-        481,
-        509
+        475,
+        503
       ],
       "loc": {
         "start": {
@@ -399,8 +399,8 @@
       "type": "Line",
       "value": "     var i0 = -1",
       "range": [
-        510,
-        528
+        504,
+        522
       ],
       "loc": {
         "start": {
@@ -417,8 +417,8 @@
       "type": "Line",
       "value": "     var v0 = -1",
       "range": [
-        529,
-        547
+        523,
+        541
       ],
       "loc": {
         "start": {
@@ -435,8 +435,8 @@
       "type": "Line",
       "value": "     for (i = j;i !== m;++i) { k = abs(A[i][j]); if (k > v0) { i0 = i; v0 = k; } }",
       "range": [
-        548,
-        632
+        542,
+        626
       ],
       "loc": {
         "start": {
@@ -453,8 +453,8 @@
       "type": "Line",
       "value": "     Aj = A[i0]; A[i0] = A[j]; A[j] = Aj",
       "range": [
-        633,
-        675
+        627,
+        669
       ],
       "loc": {
         "start": {
@@ -471,8 +471,8 @@
       "type": "Line",
       "value": "     Ij = I[i0]; I[i0] = I[j]; I[j] = Ij",
       "range": [
-        676,
-        718
+        670,
+        712
       ],
       "loc": {
         "start": {
@@ -489,8 +489,8 @@
       "type": "Line",
       "value": "     x = Aj[j]",
       "range": [
-        719,
-        735
+        713,
+        729
       ],
       "loc": {
         "start": {
@@ -507,8 +507,8 @@
       "type": "Line",
       "value": "     for (k = j;k !== n;++k)    Aj[k] /= x",
       "range": [
-        736,
-        780
+        730,
+        774
       ],
       "loc": {
         "start": {
@@ -525,8 +525,8 @@
       "type": "Line",
       "value": "     for (k = n - 1;k !== -1;--k) Ij[k] /= x",
       "range": [
-        781,
-        827
+        775,
+        821
       ],
       "loc": {
         "start": {
@@ -543,8 +543,8 @@
       "type": "Line",
       "value": "     for (i = m - 1;i !== -1;--i) {",
       "range": [
-        828,
-        865
+        822,
+        859
       ],
       "loc": {
         "start": {
@@ -561,8 +561,8 @@
       "type": "Line",
       "value": "       if (i !== j) {",
       "range": [
-        866,
-        889
+        860,
+        883
       ],
       "loc": {
         "start": {
@@ -579,8 +579,8 @@
       "type": "Line",
       "value": "         Ai = A[i]",
       "range": [
-        890,
-        910
+        884,
+        904
       ],
       "loc": {
         "start": {
@@ -597,8 +597,8 @@
       "type": "Line",
       "value": "         Ii = I[i]",
       "range": [
-        911,
-        931
+        905,
+        925
       ],
       "loc": {
         "start": {
@@ -615,8 +615,8 @@
       "type": "Line",
       "value": "         x = Ai[j]",
       "range": [
-        932,
-        952
+        926,
+        946
       ],
       "loc": {
         "start": {
@@ -633,8 +633,8 @@
       "type": "Line",
       "value": "         for (k = j + 1;k !== n;++k)  Ai[k] -= Aj[k] * x",
       "range": [
-        953,
-        1011
+        947,
+        1005
       ],
       "loc": {
         "start": {
@@ -651,8 +651,8 @@
       "type": "Line",
       "value": "         for (k = n - 1;k > 0;--k) { Ii[k] -= Ij[k] * x; --k; Ii[k] -= Ij[k] * x; }",
       "range": [
-        1012,
-        1097
+        1006,
+        1091
       ],
       "loc": {
         "start": {
@@ -669,8 +669,8 @@
       "type": "Line",
       "value": "         if (k === 0) Ii[0] -= Ij[0] * x",
       "range": [
-        1098,
-        1140
+        1092,
+        1134
       ],
       "loc": {
         "start": {
@@ -687,8 +687,8 @@
       "type": "Line",
       "value": "       }",
       "range": [
-        1141,
-        1151
+        1135,
+        1145
       ],
       "loc": {
         "start": {
@@ -705,8 +705,8 @@
       "type": "Line",
       "value": "     }",
       "range": [
-        1152,
-        1160
+        1146,
+        1154
       ],
       "loc": {
         "start": {
@@ -723,8 +723,8 @@
       "type": "Line",
       "value": "   }",
       "range": [
-        1161,
-        1167
+        1155,
+        1161
       ],
       "loc": {
         "start": {
@@ -741,8 +741,8 @@
       "type": "Line",
       "value": "   return I",
       "range": [
-        1168,
-        1181
+        1162,
+        1175
       ],
       "loc": {
         "start": {
@@ -759,8 +759,8 @@
       "type": "Line",
       "value": " }",
       "range": [
-        1182,
-        1186
+        1176,
+        1180
       ],
       "loc": {
         "start": {
@@ -813,10 +813,10 @@
     },
     {
       "type": "Line",
-      "value": " import clone from './utils/clone'",
+      "value": " import clone from './clone'",
       "range": [
         64,
-        100
+        94
       ],
       "loc": {
         "start": {
@@ -825,7 +825,7 @@
         },
         "end": {
           "line": 3,
-          "column": 36
+          "column": 30
         }
       }
     },
@@ -833,8 +833,8 @@
       "type": "Line",
       "value": " /**",
       "range": [
-        102,
-        108
+        96,
+        102
       ],
       "loc": {
         "start": {
@@ -851,8 +851,8 @@
       "type": "Line",
       "value": "  * Inverse of an matrix",
       "range": [
-        109,
-        135
+        103,
+        129
       ],
       "loc": {
         "start": {
@@ -869,8 +869,8 @@
       "type": "Line",
       "value": "  * ",
       "range": [
-        136,
-        142
+        130,
+        136
       ],
       "loc": {
         "start": {
@@ -887,8 +887,8 @@
       "type": "Line",
       "value": "  * @export",
       "range": [
-        143,
-        156
+        137,
+        150
       ],
       "loc": {
         "start": {
@@ -905,8 +905,8 @@
       "type": "Line",
       "value": "  * @param {Array} x",
       "range": [
-        157,
-        179
+        151,
+        173
       ],
       "loc": {
         "start": {
@@ -923,8 +923,8 @@
       "type": "Line",
       "value": "  * @returns {Array}",
       "range": [
-        180,
-        202
+        174,
+        196
       ],
       "loc": {
         "start": {
@@ -941,8 +941,8 @@
       "type": "Line",
       "value": "  * @example ",
       "range": [
-        203,
-        218
+        197,
+        212
       ],
       "loc": {
         "start": {
@@ -959,8 +959,8 @@
       "type": "Line",
       "value": "  * ",
       "range": [
-        219,
-        225
+        213,
+        219
       ],
       "loc": {
         "start": {
@@ -977,8 +977,8 @@
       "type": "Line",
       "value": "  * inv([[1,2],[3,4]])",
       "range": [
-        226,
-        250
+        220,
+        244
       ],
       "loc": {
         "start": {
@@ -995,8 +995,8 @@
       "type": "Line",
       "value": "  * // [[   -2,    1],",
       "range": [
-        251,
-        275
+        245,
+        269
       ],
       "loc": {
         "start": {
@@ -1013,8 +1013,8 @@
       "type": "Line",
       "value": "  * //  [  1.5, -0.5]]",
       "range": [
-        276,
-        300
+        270,
+        294
       ],
       "loc": {
         "start": {
@@ -1031,8 +1031,8 @@
       "type": "Line",
       "value": "  */",
       "range": [
-        301,
-        307
+        295,
+        301
       ],
       "loc": {
         "start": {
@@ -1049,8 +1049,8 @@
       "type": "Line",
       "value": " export default function inv (x) {",
       "range": [
-        308,
-        344
+        302,
+        338
       ],
       "loc": {
         "start": {
@@ -1067,8 +1067,8 @@
       "type": "Line",
       "value": "   var s = dim(x), abs = Math.abs, m = s[0], n = s[1]",
       "range": [
-        345,
-        400
+        339,
+        394
       ],
       "loc": {
         "start": {
@@ -1085,8 +1085,8 @@
       "type": "Line",
       "value": "   var A = clone(x), Ai, Aj",
       "range": [
-        401,
-        430
+        395,
+        424
       ],
       "loc": {
         "start": {
@@ -1103,8 +1103,8 @@
       "type": "Line",
       "value": "   var I = identity(m), Ii, Ij",
       "range": [
-        431,
-        463
+        425,
+        457
       ],
       "loc": {
         "start": {
@@ -1121,8 +1121,8 @@
       "type": "Line",
       "value": "   var i,j,k,x",
       "range": [
-        464,
-        480
+        458,
+        474
       ],
       "loc": {
         "start": {
@@ -1139,8 +1139,8 @@
       "type": "Line",
       "value": "   for (j = 0;j < n;++j) {",
       "range": [
-        481,
-        509
+        475,
+        503
       ],
       "loc": {
         "start": {
@@ -1157,8 +1157,8 @@
       "type": "Line",
       "value": "     var i0 = -1",
       "range": [
-        510,
-        528
+        504,
+        522
       ],
       "loc": {
         "start": {
@@ -1175,8 +1175,8 @@
       "type": "Line",
       "value": "     var v0 = -1",
       "range": [
-        529,
-        547
+        523,
+        541
       ],
       "loc": {
         "start": {
@@ -1193,8 +1193,8 @@
       "type": "Line",
       "value": "     for (i = j;i !== m;++i) { k = abs(A[i][j]); if (k > v0) { i0 = i; v0 = k; } }",
       "range": [
-        548,
-        632
+        542,
+        626
       ],
       "loc": {
         "start": {
@@ -1211,8 +1211,8 @@
       "type": "Line",
       "value": "     Aj = A[i0]; A[i0] = A[j]; A[j] = Aj",
       "range": [
-        633,
-        675
+        627,
+        669
       ],
       "loc": {
         "start": {
@@ -1229,8 +1229,8 @@
       "type": "Line",
       "value": "     Ij = I[i0]; I[i0] = I[j]; I[j] = Ij",
       "range": [
-        676,
-        718
+        670,
+        712
       ],
       "loc": {
         "start": {
@@ -1247,8 +1247,8 @@
       "type": "Line",
       "value": "     x = Aj[j]",
       "range": [
-        719,
-        735
+        713,
+        729
       ],
       "loc": {
         "start": {
@@ -1265,8 +1265,8 @@
       "type": "Line",
       "value": "     for (k = j;k !== n;++k)    Aj[k] /= x",
       "range": [
-        736,
-        780
+        730,
+        774
       ],
       "loc": {
         "start": {
@@ -1283,8 +1283,8 @@
       "type": "Line",
       "value": "     for (k = n - 1;k !== -1;--k) Ij[k] /= x",
       "range": [
-        781,
-        827
+        775,
+        821
       ],
       "loc": {
         "start": {
@@ -1301,8 +1301,8 @@
       "type": "Line",
       "value": "     for (i = m - 1;i !== -1;--i) {",
       "range": [
-        828,
-        865
+        822,
+        859
       ],
       "loc": {
         "start": {
@@ -1319,8 +1319,8 @@
       "type": "Line",
       "value": "       if (i !== j) {",
       "range": [
-        866,
-        889
+        860,
+        883
       ],
       "loc": {
         "start": {
@@ -1337,8 +1337,8 @@
       "type": "Line",
       "value": "         Ai = A[i]",
       "range": [
-        890,
-        910
+        884,
+        904
       ],
       "loc": {
         "start": {
@@ -1355,8 +1355,8 @@
       "type": "Line",
       "value": "         Ii = I[i]",
       "range": [
-        911,
-        931
+        905,
+        925
       ],
       "loc": {
         "start": {
@@ -1373,8 +1373,8 @@
       "type": "Line",
       "value": "         x = Ai[j]",
       "range": [
-        932,
-        952
+        926,
+        946
       ],
       "loc": {
         "start": {
@@ -1391,8 +1391,8 @@
       "type": "Line",
       "value": "         for (k = j + 1;k !== n;++k)  Ai[k] -= Aj[k] * x",
       "range": [
-        953,
-        1011
+        947,
+        1005
       ],
       "loc": {
         "start": {
@@ -1409,8 +1409,8 @@
       "type": "Line",
       "value": "         for (k = n - 1;k > 0;--k) { Ii[k] -= Ij[k] * x; --k; Ii[k] -= Ij[k] * x; }",
       "range": [
-        1012,
-        1097
+        1006,
+        1091
       ],
       "loc": {
         "start": {
@@ -1427,8 +1427,8 @@
       "type": "Line",
       "value": "         if (k === 0) Ii[0] -= Ij[0] * x",
       "range": [
-        1098,
-        1140
+        1092,
+        1134
       ],
       "loc": {
         "start": {
@@ -1445,8 +1445,8 @@
       "type": "Line",
       "value": "       }",
       "range": [
-        1141,
-        1151
+        1135,
+        1145
       ],
       "loc": {
         "start": {
@@ -1463,8 +1463,8 @@
       "type": "Line",
       "value": "     }",
       "range": [
-        1152,
-        1160
+        1146,
+        1154
       ],
       "loc": {
         "start": {
@@ -1481,8 +1481,8 @@
       "type": "Line",
       "value": "   }",
       "range": [
-        1161,
-        1167
+        1155,
+        1161
       ],
       "loc": {
         "start": {
@@ -1499,8 +1499,8 @@
       "type": "Line",
       "value": "   return I",
       "range": [
-        1168,
-        1181
+        1162,
+        1175
       ],
       "loc": {
         "start": {
@@ -1517,8 +1517,8 @@
       "type": "Line",
       "value": " }",
       "range": [
-        1182,
-        1186
+        1176,
+        1180
       ],
       "loc": {
         "start": {

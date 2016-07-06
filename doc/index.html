@@ -40,9 +40,11 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-atan">atan</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-atan2">atan2</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-band">band</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-bnot">bnot</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-bor">bor</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-bxor">bxor</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ceil">ceil</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-clone">clone</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-cos">cos</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-det">det</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-diag">diag</a></span></span></li>
@@ -61,7 +63,9 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-lt">lt</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mod">mod</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mul">mul</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-neg">neg</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-neq">neq</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-not">not</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-or">or</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-pointwise">pointwise</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-pow">pow</a></span></span></li>
@@ -73,7 +77,6 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-sub">sub</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-tan">tan</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-transpose">transpose</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">utils</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-clone">clone</a></span></span></li>
 </ul>
 </div>
 </nav>
@@ -83,8 +86,8 @@
 <h2 id="goals">Goals</h2>
 <ul>
 <li><strong>Modulize</strong>: only import the function you need.</li>
-<li><strong>Easy to use</strong>: no extra concepts to grasp before using</li>
-<li><strong>Functional</strong>: no side effact</li>
+<li><strong>Easy to use</strong>: no extra concepts to grasp(1D Array as vector and 2D Array as matrix)</li>
+<li><strong>Functional</strong>: no side effact on input data and the outside world</li>
 </ul>
 <h2 id="install">Install</h2>
 <pre><code><code class="source-code prettyprint">$ npm install mathlab --save</code>
@@ -100,10 +103,8 @@ diag([1,2])
 </code></pre>
 <h2 id="function-list">Function list</h2>
 <ul>
-<li><p>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>pointwise()</code></a>    Create a pointwise function</p>
-</li>
-<li><p>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>all()</code></a>    All the components of x are true</p>
-</li>
+<li>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>pointwise()</code></a>    Create a pointwise function</li>
+<li>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>all()</code></a>    All the components of x are true</li>
 <li>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>any()</code></a>    One or more of the components of x are true</li>
 <li>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>bench()</code></a>    Benchmarking routine</li>
 <li>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>ccsDim()</code></a>    Dimensions of sparse matrix</li>
@@ -122,7 +123,6 @@ diag([1,2])
 <li>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>cdelsq()</code></a>    Coordinate matrix Laplacian</li>
 <li>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>cdotMV()</code></a>    Coordinate matrix-vector product</li>
 <li>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>cgrid()</code></a>    Coordinate grid for cdelsq</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-clone"><code>clone()</code></a>    Deep copy of Array</li>
 <li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-det"><code>det()</code></a>    Determinant</li>
 <li>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>diveq()</code></a>    Pointwise x/=y</li>
 <li>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>dopri()</code></a>    Numerical integration of ODE using Dormand-Prince RK method. Returns an object Dopri.</li>
@@ -181,14 +181,13 @@ diag([1,2])
 <li>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>uncmin()</code></a>    Unconstrained optimization</li>
 <li>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>version()</code></a>    Version string for the numeric library</li>
 </ul>
-<h3 id="pointwise-functions">Pointwise functions</h3>
+<h4 id="pointwise-functions">Pointwise functions</h4>
 <ul>
+<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-clone"><code>clone()</code></a>    Deep copy of Array</li>
 <li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-abs"><code>abs()</code></a>    Absolute value</li>
 <li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-acos"><code>acos()</code></a>    Arc-cosine</li>
 <li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-add"><code>add()</code></a>    Pointwise sum x+y</li>
-<li>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>addeq()</code></a>    Pointwise sum x+=y</li>
 <li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-and"><code>and()</code></a>    Pointwise x &amp;&amp; y</li>
-<li>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>andeq()</code></a>    Pointwise x &amp;= y</li>
 <li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-asin"><code>asin()</code></a>    Arc-sine</li>
 <li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-atan"><code>atan()</code></a>    Arc-tangeant</li>
 <li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-atan2"><code>atan2()</code></a>    Arc-tangeant (two parameters)</li>
@@ -206,26 +205,20 @@ diag([1,2])
 <li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-floor"><code>floor()</code></a>    Poinwise Math.floor(x)</li>
 <li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-geq"><code>geq()</code></a>    Pointwise x&gt;=y</li>
 <li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-gt"><code>gt()</code></a>    Pointwise x&gt;y</li>
-<li>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>isFinite()</code></a>    Pointwise isFinite(x)</li>
-<li>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>isNaN()</code></a>    Pointwise isNaN(x)</li>
 <li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-leq"><code>leq()</code></a>    Pointwise x&lt;=y</li>
 <li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-linspace"><code>linspace()</code></a>    Generate evenly spaced values</li>
 <li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-log"><code>log()</code></a>    Pointwise Math.log(x)</li>
 <li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-lshift"><code>lshift()</code></a>    Pointwise x&lt;&lt;y</li>
-<li>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>lshifteq()</code></a>    Pointwise x&lt;&lt;=y</li>
 <li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-lt"><code>lt()</code></a>    Pointwise x&lt;y</li>
 <li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-mod"><code>mod()</code></a>    Pointwise x%y</li>
-<li>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>modeq()</code></a>    Pointwise x%=y</li>
 <li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-mul"><code>mul()</code></a>    Pointwise x*y</li>
-<li>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>neg()</code></a>    Pointwise -x</li>
+<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-neg"><code>neg()</code></a>    Pointwise -x</li>
 <li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-neq"><code>neq()</code></a>    Pointwise x!==y</li>
-<li>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>not()</code></a>    Pointwise logical negation !x</li>
+<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-not"><code>not()</code></a>    Pointwise logical negation !x</li>
 <li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-or"><code>or()</code></a>    Pointwise logical or x||y</li>
-<li>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>oreq()</code></a>    Pointwise x|=y</li>
 <li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-pow"><code>pow()</code></a>    Pointwise Math.pow(x)</li>
 <li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-round"><code>round()</code></a>    Pointwise Math.round(x)</li>
 <li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-rrshift"><code>rrshift()</code></a>    Pointwise x&gt;&gt;&gt;y</li>
-<li>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>rrshifteq()</code></a>    Pointwise x&gt;&gt;&gt;=y</li>
 <li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-rshift"><code>rshift()</code></a>    Pointwise x&gt;&gt;y</li>
 <li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-rshift"><code>rshifteq()</code></a>    Pointwise x&gt;&gt;=y</li>
 <li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-sin"><code>sin()</code></a>    Pointwise Math.sin(x)</li>
@@ -233,7 +226,6 @@ diag([1,2])
 <li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-sub"><code>sub()</code></a>    Pointwise x-y</li>
 <li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-tan"><code>tan()</code></a>    Pointwise Math.tan(x)</li>
 <li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-xor"><code>xor()</code></a>    Pointwise x^y</li>
-<li>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>xoreq()</code></a>    Pointwise x^=y</li>
 </ul>
 </div>
 </div>

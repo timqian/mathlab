@@ -48,6 +48,12 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "mathlab/src/bnot.js~bnot",
+    "function/index.html#static-function-bnot",
+    "<span>bnot</span> <span class=\"search-result-import-path\">mathlab/src/bnot.js</span>",
+    "function"
+  ],
+  [
     "mathlab/src/bor.js~bor",
     "function/index.html#static-function-bor",
     "<span>bor</span> <span class=\"search-result-import-path\">mathlab/src/bor.js</span>",
@@ -66,9 +72,9 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
-    "mathlab/src/utils/clone.js~clone",
+    "mathlab/src/clone.js~clone",
     "function/index.html#static-function-clone",
-    "<span>clone</span> <span class=\"search-result-import-path\">mathlab/src/utils/clone.js</span>",
+    "<span>clone</span> <span class=\"search-result-import-path\">mathlab/src/clone.js</span>",
     "function"
   ],
   [
@@ -180,9 +186,21 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "mathlab/src/neg.js~neg",
+    "function/index.html#static-function-neg",
+    "<span>neg</span> <span class=\"search-result-import-path\">mathlab/src/neg.js</span>",
+    "function"
+  ],
+  [
     "mathlab/src/neq.js~neq",
     "function/index.html#static-function-neq",
     "<span>neq</span> <span class=\"search-result-import-path\">mathlab/src/neq.js</span>",
+    "function"
+  ],
+  [
+    "mathlab/src/not.js~not",
+    "function/index.html#static-function-not",
+    "<span>not</span> <span class=\"search-result-import-path\">mathlab/src/not.js</span>",
     "function"
   ],
   [
@@ -630,6 +648,12 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/bnot.js",
+    "file/src/bnot.js.html",
+    "src/bnot.js",
+    "file"
+  ],
+  [
     "src/bor.js",
     "file/src/bor.js.html",
     "src/bor.js",
@@ -645,6 +669,12 @@ window.esdocSearchIndex = [
     "src/ceil.js",
     "file/src/ceil.js.html",
     "src/ceil.js",
+    "file"
+  ],
+  [
+    "src/clone.js",
+    "file/src/clone.js.html",
+    "src/clone.js",
     "file"
   ],
   [
@@ -780,9 +810,21 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/neg.js",
+    "file/src/neg.js.html",
+    "src/neg.js",
+    "file"
+  ],
+  [
     "src/neq.js",
     "file/src/neq.js.html",
     "src/neq.js",
+    "file"
+  ],
+  [
+    "src/not.js",
+    "file/src/not.js.html",
+    "src/not.js",
     "file"
   ],
   [
@@ -849,12 +891,6 @@ window.esdocSearchIndex = [
     "src/transpose.js",
     "file/src/transpose.js.html",
     "src/transpose.js",
-    "file"
-  ],
-  [
-    "src/utils/clone.js",
-    "file/src/utils/clone.js.html",
-    "src/utils/clone.js",
     "file"
   ]
 ]

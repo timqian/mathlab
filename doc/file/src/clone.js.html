@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">src/dim.js | API Document</title>
+  <title data-ice="title">src/clone.js | API Document</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -81,29 +81,28 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/dim.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
- * Get Array dimensions
+<div class="content" data-ice="content"><h1 data-ice="title">src/clone.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">
+import pointwise from &apos;./pointwise&apos;
+
+/**
+ * Pointwise clone
  * 
  * @export
- * @param {Array} x
- * @returns {Array}
+ * @param {Number|Array} m1
+ * @param {Number|Array} m2
+ * @returns {Number|Array}
  * @example 
  * 
- * dim([[1, 2, 3], [1, 2, 2]])
- * // [2, 3]
+ * clone(1, 2)
+ * // Equals 1  2
+ * clone([1, 2], [2, 2])
+ * // Equals [1  2, 2  2]
+ * clone([[2,1], [1,2]], [[2, 2], [2, 2]]))
+ * // Equals [ [2  2, 1  2], [1  2, 2  2] ]
  */
-export default function dim (x) {
-  if (typeof x === &apos;object&apos;) {
-    if (typeof x[0] === &apos;object&apos;) {
-      if (typeof x[0][0] === &apos;object&apos;) {
-        throw new Error(&apos;mathlab: only support two demitional matrix for now&apos;)
-      }
-      return [x.length, x[0].length]
-    }
-    return [x.length]
-  }
-  return []
+export default function (m) {
+  return pointwise(x =&gt; x)(m)
 }
 </code></pre>
 

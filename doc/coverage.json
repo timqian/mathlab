@@ -1,7 +1,7 @@
 {
-  "coverage": "97.61%",
-  "expectCount": 42,
-  "actualCount": 41,
+  "coverage": "100%",
+  "expectCount": 45,
+  "actualCount": 45,
   "files": {
     "src/abs.js": {
       "expectCount": 1,
@@ -43,6 +43,11 @@
       "actualCount": 1,
       "undocumentLines": []
     },
+    "src/bnot.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
     "src/bor.js": {
       "expectCount": 1,
       "actualCount": 1,
@@ -58,12 +63,10 @@
       "actualCount": 1,
       "undocumentLines": []
     },
-    "src/utils/clone.js": {
+    "src/clone.js": {
       "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        1
-      ]
+      "actualCount": 1,
+      "undocumentLines": []
     },
     "src/cos.js": {
       "expectCount": 1,
@@ -155,7 +158,17 @@
       "actualCount": 1,
       "undocumentLines": []
     },
+    "src/neg.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
     "src/neq.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/not.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
