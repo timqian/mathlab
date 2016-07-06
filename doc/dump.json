@@ -566,7 +566,7 @@
     "access": null,
     "description": null,
     "lineNumber": 2,
-    "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise bnot\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * bnot(1, 2)\n * // Equals 1 ~ 2\n * bnot([1, 2], [2, 2])\n * // Equals [1 ~ 2, 2 ~ 2]\n * bnot([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 ~ 2, 1 ~ 2], [1 ~ 2, 2 ~ 2] ]\n */\nexport default function (m) {\n  return pointwise(x => ~x)(m)\n}\n"
+    "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise bnot\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * bnot(1, 2)\n * // Equals 1 ~ 2\n * bnot([1, 2], [2, 2])\n * // Equals [1 ~ 2, 2 ~ 2]\n * bnot([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 ~ 2, 1 ~ 2], [1 ~ 2, 2 ~ 2] ]\n */\nexport default function (m) {\n  return pointwise(x => ~x)(m)\n}\n"
   },
   {
     "__docId__": 17,
@@ -584,7 +584,7 @@
     "examples": [
       "\nbnot(1, 2)\n// Equals 1 ~ 2\nbnot([1, 2], [2, 2])\n// Equals [1 ~ 2, 2 ~ 2]\nbnot([[2,1], [1,2]], [[2, 2], [2, 2]]))\n// Equals [ [2 ~ 2, 1 ~ 2], [1 ~ 2, 2 ~ 2] ]"
     ],
-    "lineNumber": 20,
+    "lineNumber": 19,
     "unknown": [
       {
         "tagName": "@export",
@@ -604,18 +604,7 @@
         ],
         "spread": false,
         "optional": false,
-        "name": "m1",
-        "description": ""
-      },
-      {
-        "nullable": null,
-        "types": [
-          "Number",
-          "Array"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "m2",
+        "name": "m",
         "description": ""
       }
     ],
@@ -855,7 +844,7 @@
     "access": null,
     "description": null,
     "lineNumber": 2,
-    "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise clone\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * clone(1, 2)\n * // Equals 1  2\n * clone([1, 2], [2, 2])\n * // Equals [1  2, 2  2]\n * clone([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2  2, 1  2], [1  2, 2  2] ]\n */\nexport default function (m) {\n  return pointwise(x => x)(m)\n}\n"
+    "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise clone\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * clone(1, 2)\n * // Equals 1  2\n * clone([1, 2], [2, 2])\n * // Equals [1  2, 2  2]\n * clone([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2  2, 1  2], [1  2, 2  2] ]\n */\nexport default function (m) {\n  return pointwise(x => x)(m)\n}\n"
   },
   {
     "__docId__": 25,
@@ -873,7 +862,7 @@
     "examples": [
       "\nclone(1, 2)\n// Equals 1  2\nclone([1, 2], [2, 2])\n// Equals [1  2, 2  2]\nclone([[2,1], [1,2]], [[2, 2], [2, 2]]))\n// Equals [ [2  2, 1  2], [1  2, 2  2] ]"
     ],
-    "lineNumber": 20,
+    "lineNumber": 19,
     "unknown": [
       {
         "tagName": "@export",
@@ -893,18 +882,7 @@
         ],
         "spread": false,
         "optional": false,
-        "name": "m1",
-        "description": ""
-      },
-      {
-        "nullable": null,
-        "types": [
-          "Number",
-          "Array"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "m2",
+        "name": "m",
         "description": ""
       }
     ],
@@ -2239,7 +2217,7 @@
     "access": null,
     "description": null,
     "lineNumber": 2,
-    "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise neg\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * neg(1, 2)\n * // Equals 1 - 2\n * neg([1, 2], [2, 2])\n * // Equals [1 - 2, 2 - 2]\n * neg([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 - 2, 1 - 2], [1 - 2, 2 - 2] ]\n */\nexport default function (m) {\n  return pointwise(x => -x)(m)\n}\n"
+    "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise neg\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * neg(1, 2)\n * // Equals 1 - 2\n * neg([1, 2], [2, 2])\n * // Equals [1 - 2, 2 - 2]\n * neg([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 - 2, 1 - 2], [1 - 2, 2 - 2] ]\n */\nexport default function (m) {\n  return pointwise(x => -x)(m)\n}\n"
   },
   {
     "__docId__": 67,
@@ -2257,7 +2235,7 @@
     "examples": [
       "\nneg(1, 2)\n// Equals 1 - 2\nneg([1, 2], [2, 2])\n// Equals [1 - 2, 2 - 2]\nneg([[2,1], [1,2]], [[2, 2], [2, 2]]))\n// Equals [ [2 - 2, 1 - 2], [1 - 2, 2 - 2] ]"
     ],
-    "lineNumber": 20,
+    "lineNumber": 19,
     "unknown": [
       {
         "tagName": "@export",
@@ -2277,18 +2255,7 @@
         ],
         "spread": false,
         "optional": false,
-        "name": "m1",
-        "description": ""
-      },
-      {
-        "nullable": null,
-        "types": [
-          "Number",
-          "Array"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "m2",
+        "name": "m",
         "description": ""
       }
     ],
@@ -2389,7 +2356,7 @@
     "access": null,
     "description": null,
     "lineNumber": 2,
-    "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise not\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * not(1, 2)\n * // Equals 1 ! 2\n * not([1, 2], [2, 2])\n * // Equals [1 ! 2, 2 ! 2]\n * not([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 ! 2, 1 ! 2], [1 ! 2, 2 ! 2] ]\n */\nexport default function (m) {\n  return pointwise(x => !x)(m)\n}\n"
+    "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise not\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * not(1, 2)\n * // Equals 1 ! 2\n * not([1, 2], [2, 2])\n * // Equals [1 ! 2, 2 ! 2]\n * not([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 ! 2, 1 ! 2], [1 ! 2, 2 ! 2] ]\n */\nexport default function (m) {\n  return pointwise(x => !x)(m)\n}\n"
   },
   {
     "__docId__": 71,
@@ -2407,7 +2374,7 @@
     "examples": [
       "\nnot(1, 2)\n// Equals 1 ! 2\nnot([1, 2], [2, 2])\n// Equals [1 ! 2, 2 ! 2]\nnot([[2,1], [1,2]], [[2, 2], [2, 2]]))\n// Equals [ [2 ! 2, 1 ! 2], [1 ! 2, 2 ! 2] ]"
     ],
-    "lineNumber": 20,
+    "lineNumber": 19,
     "unknown": [
       {
         "tagName": "@export",
@@ -2427,18 +2394,7 @@
         ],
         "spread": false,
         "optional": false,
-        "name": "m1",
-        "description": ""
-      },
-      {
-        "nullable": null,
-        "types": [
-          "Number",
-          "Array"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "m2",
+        "name": "m",
         "description": ""
       }
     ],

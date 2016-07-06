@@ -17,8 +17,7 @@ import pointwise from './pointwise'
  * Pointwise ${key}
  * 
  * @export
- * @param {Number|Array} m1
- * @param {Number|Array} m2
+ * @param {Number|Array} m
  * @returns {Number|Array}
  * @example 
  * 

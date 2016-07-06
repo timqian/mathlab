@@ -61,10 +61,10 @@
         "trailingComments": [
           {
             "type": "Block",
-            "value": "*\n * Pointwise clone\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * clone(1, 2)\n * // Equals 1  2\n * clone([1, 2], [2, 2])\n * // Equals [1  2, 2  2]\n * clone([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2  2, 1  2], [1  2, 2  2] ]\n ",
+            "value": "*\n * Pointwise clone\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * clone(1, 2)\n * // Equals 1  2\n * clone([1, 2], [2, 2])\n * // Equals [1  2, 2  2]\n * clone([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2  2, 1  2], [1  2, 2  2] ]\n ",
             "range": [
               38,
-              351
+              322
             ],
             "loc": {
               "start": {
@@ -72,7 +72,7 @@
                 "column": 0
               },
               "end": {
-                "line": 19,
+                "line": 18,
                 "column": 3
               }
             }
@@ -81,7 +81,7 @@
       },
       "range": [
         1,
-        352
+        323
       ],
       "loc": {
         "start": {
@@ -89,7 +89,7 @@
           "column": 0
         },
         "end": {
-          "line": 20,
+          "line": 19,
           "column": 0
         }
       }
@@ -104,16 +104,16 @@
             "type": "Identifier",
             "name": "m",
             "range": [
-              377,
-              378
+              348,
+              349
             ],
             "loc": {
               "start": {
-                "line": 20,
+                "line": 19,
                 "column": 25
               },
               "end": {
-                "line": 20,
+                "line": 19,
                 "column": 26
               }
             }
@@ -132,16 +132,16 @@
                     "type": "Identifier",
                     "name": "pointwise",
                     "range": [
-                      391,
-                      400
+                      362,
+                      371
                     ],
                     "loc": {
                       "start": {
-                        "line": 21,
+                        "line": 20,
                         "column": 9
                       },
                       "end": {
-                        "line": 21,
+                        "line": 20,
                         "column": 18
                       }
                     }
@@ -155,16 +155,16 @@
                           "type": "Identifier",
                           "name": "x",
                           "range": [
-                            401,
-                            402
+                            372,
+                            373
                           ],
                           "loc": {
                             "start": {
-                              "line": 21,
+                              "line": 20,
                               "column": 19
                             },
                             "end": {
-                              "line": 21,
+                              "line": 20,
                               "column": 20
                             }
                           }
@@ -174,16 +174,16 @@
                         "type": "Identifier",
                         "name": "x",
                         "range": [
-                          406,
-                          407
+                          377,
+                          378
                         ],
                         "loc": {
                           "start": {
-                            "line": 21,
+                            "line": 20,
                             "column": 24
                           },
                           "end": {
-                            "line": 21,
+                            "line": 20,
                             "column": 25
                           }
                         }
@@ -191,32 +191,32 @@
                       "generator": false,
                       "expression": true,
                       "range": [
-                        401,
-                        407
+                        372,
+                        378
                       ],
                       "loc": {
                         "start": {
-                          "line": 21,
+                          "line": 20,
                           "column": 19
                         },
                         "end": {
-                          "line": 21,
+                          "line": 20,
                           "column": 25
                         }
                       }
                     }
                   ],
                   "range": [
-                    391,
-                    408
+                    362,
+                    379
                   ],
                   "loc": {
                     "start": {
-                      "line": 21,
+                      "line": 20,
                       "column": 9
                     },
                     "end": {
-                      "line": 21,
+                      "line": 20,
                       "column": 26
                     }
                   }
@@ -226,63 +226,63 @@
                     "type": "Identifier",
                     "name": "m",
                     "range": [
-                      409,
-                      410
+                      380,
+                      381
                     ],
                     "loc": {
                       "start": {
-                        "line": 21,
+                        "line": 20,
                         "column": 27
                       },
                       "end": {
-                        "line": 21,
+                        "line": 20,
                         "column": 28
                       }
                     }
                   }
                 ],
                 "range": [
-                  391,
-                  411
+                  362,
+                  382
                 ],
                 "loc": {
                   "start": {
-                    "line": 21,
+                    "line": 20,
                     "column": 9
                   },
                   "end": {
-                    "line": 21,
+                    "line": 20,
                     "column": 29
                   }
                 }
               },
               "range": [
-                384,
-                412
+                355,
+                383
               ],
               "loc": {
                 "start": {
-                  "line": 21,
+                  "line": 20,
                   "column": 2
                 },
                 "end": {
-                  "line": 22,
+                  "line": 21,
                   "column": 0
                 }
               }
             }
           ],
           "range": [
-            380,
-            413
+            351,
+            384
           ],
           "loc": {
             "start": {
-              "line": 20,
+              "line": 19,
               "column": 28
             },
             "end": {
-              "line": 22,
+              "line": 21,
               "column": 1
             }
           }
@@ -290,26 +290,26 @@
         "generator": false,
         "expression": false,
         "range": [
-          367,
-          413
+          338,
+          384
         ],
         "loc": {
           "start": {
-            "line": 20,
+            "line": 19,
             "column": 15
           },
           "end": {
-            "line": 22,
+            "line": 21,
             "column": 1
           }
         },
         "leadingComments": [
           {
             "type": "Block",
-            "value": "*\n * Pointwise clone\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * clone(1, 2)\n * // Equals 1  2\n * clone([1, 2], [2, 2])\n * // Equals [1  2, 2  2]\n * clone([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2  2, 1  2], [1  2, 2  2] ]\n ",
+            "value": "*\n * Pointwise clone\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * clone(1, 2)\n * // Equals 1  2\n * clone([1, 2], [2, 2])\n * // Equals [1  2, 2  2]\n * clone([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2  2, 1  2], [1  2, 2  2] ]\n ",
             "range": [
               38,
-              351
+              322
             ],
             "loc": {
               "start": {
@@ -317,7 +317,7 @@
                 "column": 0
               },
               "end": {
-                "line": 19,
+                "line": 18,
                 "column": 3
               }
             }
@@ -326,26 +326,26 @@
         "trailingComments": []
       },
       "range": [
-        352,
-        413
+        323,
+        384
       ],
       "loc": {
         "start": {
-          "line": 20,
+          "line": 19,
           "column": 0
         },
         "end": {
-          "line": 22,
+          "line": 21,
           "column": 1
         }
       },
       "leadingComments": [
         {
           "type": "Block",
-          "value": "*\n * Pointwise clone\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * clone(1, 2)\n * // Equals 1  2\n * clone([1, 2], [2, 2])\n * // Equals [1  2, 2  2]\n * clone([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2  2, 1  2], [1  2, 2  2] ]\n ",
+          "value": "*\n * Pointwise clone\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * clone(1, 2)\n * // Equals 1  2\n * clone([1, 2], [2, 2])\n * // Equals [1  2, 2  2]\n * clone([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2  2, 1  2], [1  2, 2  2] ]\n ",
           "range": [
             38,
-            351
+            322
           ],
           "loc": {
             "start": {
@@ -353,7 +353,7 @@
               "column": 0
             },
             "end": {
-              "line": 19,
+              "line": 18,
               "column": 3
             }
           }
@@ -364,7 +364,7 @@
   "sourceType": "module",
   "range": [
     1,
-    413
+    384
   ],
   "loc": {
     "start": {
@@ -372,17 +372,17 @@
       "column": 0
     },
     "end": {
-      "line": 22,
+      "line": 21,
       "column": 1
     }
   },
   "comments": [
     {
       "type": "Block",
-      "value": "*\n * Pointwise clone\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * clone(1, 2)\n * // Equals 1  2\n * clone([1, 2], [2, 2])\n * // Equals [1  2, 2  2]\n * clone([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2  2, 1  2], [1  2, 2  2] ]\n ",
+      "value": "*\n * Pointwise clone\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * clone(1, 2)\n * // Equals 1  2\n * clone([1, 2], [2, 2])\n * // Equals [1  2, 2  2]\n * clone([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2  2, 1  2], [1  2, 2  2] ]\n ",
       "range": [
         38,
-        351
+        322
       ],
       "loc": {
         "start": {
@@ -390,7 +390,7 @@
           "column": 0
         },
         "end": {
-          "line": 19,
+          "line": 18,
           "column": 3
         }
       }

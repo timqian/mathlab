@@ -61,10 +61,10 @@
         "trailingComments": [
           {
             "type": "Block",
-            "value": "*\n * Pointwise neg\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * neg(1, 2)\n * // Equals 1 - 2\n * neg([1, 2], [2, 2])\n * // Equals [1 - 2, 2 - 2]\n * neg([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 - 2, 1 - 2], [1 - 2, 2 - 2] ]\n ",
+            "value": "*\n * Pointwise neg\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * neg(1, 2)\n * // Equals 1 - 2\n * neg([1, 2], [2, 2])\n * // Equals [1 - 2, 2 - 2]\n * neg([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 - 2, 1 - 2], [1 - 2, 2 - 2] ]\n ",
             "range": [
               38,
-              350
+              321
             ],
             "loc": {
               "start": {
@@ -72,7 +72,7 @@
                 "column": 0
               },
               "end": {
-                "line": 19,
+                "line": 18,
                 "column": 3
               }
             }
@@ -81,7 +81,7 @@
       },
       "range": [
         1,
-        351
+        322
       ],
       "loc": {
         "start": {
@@ -89,7 +89,7 @@
           "column": 0
         },
         "end": {
-          "line": 20,
+          "line": 19,
           "column": 0
         }
       }
@@ -104,16 +104,16 @@
             "type": "Identifier",
             "name": "m",
             "range": [
-              376,
-              377
+              347,
+              348
             ],
             "loc": {
               "start": {
-                "line": 20,
+                "line": 19,
                 "column": 25
               },
               "end": {
-                "line": 20,
+                "line": 19,
                 "column": 26
               }
             }
@@ -132,16 +132,16 @@
                     "type": "Identifier",
                     "name": "pointwise",
                     "range": [
-                      390,
-                      399
+                      361,
+                      370
                     ],
                     "loc": {
                       "start": {
-                        "line": 21,
+                        "line": 20,
                         "column": 9
                       },
                       "end": {
-                        "line": 21,
+                        "line": 20,
                         "column": 18
                       }
                     }
@@ -155,16 +155,16 @@
                           "type": "Identifier",
                           "name": "x",
                           "range": [
-                            400,
-                            401
+                            371,
+                            372
                           ],
                           "loc": {
                             "start": {
-                              "line": 21,
+                              "line": 20,
                               "column": 19
                             },
                             "end": {
-                              "line": 21,
+                              "line": 20,
                               "column": 20
                             }
                           }
@@ -177,32 +177,32 @@
                           "type": "Identifier",
                           "name": "x",
                           "range": [
-                            406,
-                            407
+                            377,
+                            378
                           ],
                           "loc": {
                             "start": {
-                              "line": 21,
+                              "line": 20,
                               "column": 25
                             },
                             "end": {
-                              "line": 21,
+                              "line": 20,
                               "column": 26
                             }
                           }
                         },
                         "prefix": true,
                         "range": [
-                          405,
-                          407
+                          376,
+                          378
                         ],
                         "loc": {
                           "start": {
-                            "line": 21,
+                            "line": 20,
                             "column": 24
                           },
                           "end": {
-                            "line": 21,
+                            "line": 20,
                             "column": 26
                           }
                         }
@@ -210,32 +210,32 @@
                       "generator": false,
                       "expression": true,
                       "range": [
-                        400,
-                        407
+                        371,
+                        378
                       ],
                       "loc": {
                         "start": {
-                          "line": 21,
+                          "line": 20,
                           "column": 19
                         },
                         "end": {
-                          "line": 21,
+                          "line": 20,
                           "column": 26
                         }
                       }
                     }
                   ],
                   "range": [
-                    390,
-                    408
+                    361,
+                    379
                   ],
                   "loc": {
                     "start": {
-                      "line": 21,
+                      "line": 20,
                       "column": 9
                     },
                     "end": {
-                      "line": 21,
+                      "line": 20,
                       "column": 27
                     }
                   }
@@ -245,63 +245,63 @@
                     "type": "Identifier",
                     "name": "m",
                     "range": [
-                      409,
-                      410
+                      380,
+                      381
                     ],
                     "loc": {
                       "start": {
-                        "line": 21,
+                        "line": 20,
                         "column": 28
                       },
                       "end": {
-                        "line": 21,
+                        "line": 20,
                         "column": 29
                       }
                     }
                   }
                 ],
                 "range": [
-                  390,
-                  411
+                  361,
+                  382
                 ],
                 "loc": {
                   "start": {
-                    "line": 21,
+                    "line": 20,
                     "column": 9
                   },
                   "end": {
-                    "line": 21,
+                    "line": 20,
                     "column": 30
                   }
                 }
               },
               "range": [
-                383,
-                412
+                354,
+                383
               ],
               "loc": {
                 "start": {
-                  "line": 21,
+                  "line": 20,
                   "column": 2
                 },
                 "end": {
-                  "line": 22,
+                  "line": 21,
                   "column": 0
                 }
               }
             }
           ],
           "range": [
-            379,
-            413
+            350,
+            384
           ],
           "loc": {
             "start": {
-              "line": 20,
+              "line": 19,
               "column": 28
             },
             "end": {
-              "line": 22,
+              "line": 21,
               "column": 1
             }
           }
@@ -309,26 +309,26 @@
         "generator": false,
         "expression": false,
         "range": [
-          366,
-          413
+          337,
+          384
         ],
         "loc": {
           "start": {
-            "line": 20,
+            "line": 19,
             "column": 15
           },
           "end": {
-            "line": 22,
+            "line": 21,
             "column": 1
           }
         },
         "leadingComments": [
           {
             "type": "Block",
-            "value": "*\n * Pointwise neg\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * neg(1, 2)\n * // Equals 1 - 2\n * neg([1, 2], [2, 2])\n * // Equals [1 - 2, 2 - 2]\n * neg([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 - 2, 1 - 2], [1 - 2, 2 - 2] ]\n ",
+            "value": "*\n * Pointwise neg\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * neg(1, 2)\n * // Equals 1 - 2\n * neg([1, 2], [2, 2])\n * // Equals [1 - 2, 2 - 2]\n * neg([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 - 2, 1 - 2], [1 - 2, 2 - 2] ]\n ",
             "range": [
               38,
-              350
+              321
             ],
             "loc": {
               "start": {
@@ -336,7 +336,7 @@
                 "column": 0
               },
               "end": {
-                "line": 19,
+                "line": 18,
                 "column": 3
               }
             }
@@ -345,26 +345,26 @@
         "trailingComments": []
       },
       "range": [
-        351,
-        413
+        322,
+        384
       ],
       "loc": {
         "start": {
-          "line": 20,
+          "line": 19,
           "column": 0
         },
         "end": {
-          "line": 22,
+          "line": 21,
           "column": 1
         }
       },
       "leadingComments": [
         {
           "type": "Block",
-          "value": "*\n * Pointwise neg\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * neg(1, 2)\n * // Equals 1 - 2\n * neg([1, 2], [2, 2])\n * // Equals [1 - 2, 2 - 2]\n * neg([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 - 2, 1 - 2], [1 - 2, 2 - 2] ]\n ",
+          "value": "*\n * Pointwise neg\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * neg(1, 2)\n * // Equals 1 - 2\n * neg([1, 2], [2, 2])\n * // Equals [1 - 2, 2 - 2]\n * neg([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 - 2, 1 - 2], [1 - 2, 2 - 2] ]\n ",
           "range": [
             38,
-            350
+            321
           ],
           "loc": {
             "start": {
@@ -372,7 +372,7 @@
               "column": 0
             },
             "end": {
-              "line": 19,
+              "line": 18,
               "column": 3
             }
           }
@@ -383,7 +383,7 @@
   "sourceType": "module",
   "range": [
     1,
-    413
+    384
   ],
   "loc": {
     "start": {
@@ -391,17 +391,17 @@
       "column": 0
     },
     "end": {
-      "line": 22,
+      "line": 21,
       "column": 1
     }
   },
   "comments": [
     {
       "type": "Block",
-      "value": "*\n * Pointwise neg\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * neg(1, 2)\n * // Equals 1 - 2\n * neg([1, 2], [2, 2])\n * // Equals [1 - 2, 2 - 2]\n * neg([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 - 2, 1 - 2], [1 - 2, 2 - 2] ]\n ",
+      "value": "*\n * Pointwise neg\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * neg(1, 2)\n * // Equals 1 - 2\n * neg([1, 2], [2, 2])\n * // Equals [1 - 2, 2 - 2]\n * neg([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 - 2, 1 - 2], [1 - 2, 2 - 2] ]\n ",
       "range": [
         38,
-        350
+        321
       ],
       "loc": {
         "start": {
@@ -409,7 +409,7 @@
           "column": 0
         },
         "end": {
-          "line": 19,
+          "line": 18,
           "column": 3
         }
       }
