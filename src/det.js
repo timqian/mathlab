@@ -1,6 +1,6 @@
 //	Determinant
 import dim from './dim'
-import clone from './utils/clone'
+import clone from './clone'
 
 /**
  * Determinant of matix

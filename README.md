@@ -4,8 +4,8 @@ Lodash like math lab in javascript, focusing on matrix manipulation.
 
 ## Goals
 - **Modulize**: only import the function you need.
-- **Easy to use**: no extra concepts to grasp before using
-- **Functional**: no side effact
+- **Easy to use**: no extra concepts to grasp(1D Array as vector and 2D Array as matrix)
+- **Functional**: no side effact on input data and the outside world
 
 ## Install
 ```
@@ -25,8 +25,8 @@ diag([1,2])
 ```
 
 ## Function list
-- [ ] [`pointwise()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Create a pointwise function
 
+- [ ] [`pointwise()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Create a pointwise function
 - [ ] [`all()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	All the components of x are true
 - [ ] [`any()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	One or more of the components of x are true
 - [ ] [`bench()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Benchmarking routine
@@ -46,7 +46,6 @@ diag([1,2])
 - [ ] [`cdelsq()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Coordinate matrix Laplacian
 - [ ] [`cdotMV()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Coordinate matrix-vector product
 - [ ] [`cgrid()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Coordinate grid for cdelsq
-- [x] [`clone()`](http://www.timqian.com/mathlab/function/index.html#static-function-clone)	Deep copy of Array
 - [x] [`det()`](http://www.timqian.com/mathlab/function/index.html#static-function-det)	Determinant
 - [ ] [`diveq()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise x/=y
 - [ ] [`dopri()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Numerical integration of ODE using Dormand-Prince RK method. Returns an object Dopri.
@@ -105,13 +104,13 @@ diag([1,2])
 - [ ] [`uncmin()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Unconstrained optimization
 - [ ] [`version()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Version string for the numeric library
 
-### Pointwise functions
+#### Pointwise functions
+
+- [x] [`clone()`](http://www.timqian.com/mathlab/function/index.html#static-function-clone)	Deep copy of Array
 - [x] [`abs()`](http://www.timqian.com/mathlab/function/index.html#static-function-abs)	Absolute value
 - [x] [`acos()`](http://www.timqian.com/mathlab/function/index.html#static-function-acos)	Arc-cosine
 - [x] [`add()`](http://www.timqian.com/mathlab/function/index.html#static-function-add)	Pointwise sum x+y
-- [ ] [`addeq()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise sum x+=y
 - [x] [`and()`](http://www.timqian.com/mathlab/function/index.html#static-function-and)	Pointwise x && y
-- [ ] [`andeq()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise x &= y
 - [x] [`asin()`](http://www.timqian.com/mathlab/function/index.html#static-function-asin)	Arc-sine
 - [x] [`atan()`](http://www.timqian.com/mathlab/function/index.html#static-function-atan)	Arc-tangeant
 - [x] [`atan2()`](http://www.timqian.com/mathlab/function/index.html#static-function-atan2)	Arc-tangeant (two parameters)
@@ -129,26 +128,20 @@ diag([1,2])
 - [x] [`floor()`](http://www.timqian.com/mathlab/function/index.html#static-function-floor)	Poinwise Math.floor(x)
 - [x] [`geq()`](http://www.timqian.com/mathlab/function/index.html#static-function-geq)	Pointwise x>=y
 - [x] [`gt()`](http://www.timqian.com/mathlab/function/index.html#static-function-gt)	Pointwise x>y
-- [ ] [`isFinite()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise isFinite(x)
-- [ ] [`isNaN()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise isNaN(x)
 - [x] [`leq()`](http://www.timqian.com/mathlab/function/index.html#static-function-leq)	Pointwise x<=y
 - [x] [`linspace()`](http://www.timqian.com/mathlab/function/index.html#static-function-linspace)	Generate evenly spaced values
 - [x] [`log()`](http://www.timqian.com/mathlab/function/index.html#static-function-log)	Pointwise Math.log(x)
 - [x] [`lshift()`](http://www.timqian.com/mathlab/function/index.html#static-function-lshift)	Pointwise x<<y
-- [ ] [`lshifteq()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise x<<=y
 - [x] [`lt()`](http://www.timqian.com/mathlab/function/index.html#static-function-lt)	Pointwise x<y
 - [x] [`mod()`](http://www.timqian.com/mathlab/function/index.html#static-function-mod)	Pointwise x%y
-- [ ] [`modeq()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise x%=y
 - [x] [`mul()`](http://www.timqian.com/mathlab/function/index.html#static-function-mul)	Pointwise x*y
-- [ ] [`neg()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise -x
+- [x] [`neg()`](http://www.timqian.com/mathlab/function/index.html#static-function-neg)	Pointwise -x
 - [x] [`neq()`](http://www.timqian.com/mathlab/function/index.html#static-function-neq)	Pointwise x!==y
-- [ ] [`not()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise logical negation !x
+- [x] [`not()`](http://www.timqian.com/mathlab/function/index.html#static-function-not)	Pointwise logical negation !x
 - [x] [`or()`](http://www.timqian.com/mathlab/function/index.html#static-function-or)	Pointwise logical or x||y
-- [ ] [`oreq()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise x|=y
 - [x] [`pow()`](http://www.timqian.com/mathlab/function/index.html#static-function-pow)	Pointwise Math.pow(x)
 - [x] [`round()`](http://www.timqian.com/mathlab/function/index.html#static-function-round)	Pointwise Math.round(x)
 - [x] [`rrshift()`](http://www.timqian.com/mathlab/function/index.html#static-function-rrshift)	Pointwise x>>>y
-- [ ] [`rrshifteq()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise x>>>=y
 - [x] [`rshift()`](http://www.timqian.com/mathlab/function/index.html#static-function-rshift)	Pointwise x>>y
 - [x] [`rshifteq()`](http://www.timqian.com/mathlab/function/index.html#static-function-rshift)	Pointwise x>>=y
 - [x] [`sin()`](http://www.timqian.com/mathlab/function/index.html#static-function-sin)	Pointwise Math.sin(x)
@@ -156,4 +149,3 @@ diag([1,2])
 - [x] [`sub()`](http://www.timqian.com/mathlab/function/index.html#static-function-sub)	Pointwise x-y
 - [x] [`tan()`](http://www.timqian.com/mathlab/function/index.html#static-function-tan)	Pointwise Math.tan(x)
 - [x] [`xor()`](http://www.timqian.com/mathlab/function/index.html#static-function-xor)	Pointwise x^y
-- [ ] [`xoreq()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise x^=y
