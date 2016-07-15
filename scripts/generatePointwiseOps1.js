@@ -21,12 +21,12 @@ import pointwise from './pointwise'
  * @returns {Number|Array}
  * @example 
  * 
- * ${key}(1, 2)
- * // Equals 1 ${op} 2
- * ${key}([1, 2], [2, 2])
- * // Equals [1 ${op} 2, 2 ${op} 2]
- * ${key}([[2,1], [1,2]], [[2, 2], [2, 2]]))
- * // Equals [ [2 ${op} 2, 1 ${op} 2], [1 ${op} 2, 2 ${op} 2] ]
+ * ${key}(2)
+ * // returns ${op}2
+ * ${key}([1, 2])
+ * // returns [${op}1, ${op}2]
+ * ${key}([[1, 2], [2, 2]]))
+ * // returns [ [${op}1, ${op}2], [${op}2, ${op}2] ]
  */
 export default function (m) {
   return pointwise(x => ${op}x)(m)

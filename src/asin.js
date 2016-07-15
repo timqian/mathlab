@@ -10,11 +10,11 @@ import pointwise from './pointwise'
  * @example 
  * 
  * asin(1)
- * // Equals Math.asin(1)
+ * // returns Math.asin(1)
  * asin([1, 2])
- * // Equals [Math.asin(1), Math.asin(2)]
+ * // returns [Math.asin(1), Math.asin(2)]
  * asin([[1,2],[1,3]])
- * // Equals [ [Math.asin(1), Math.asin(2)], [Math.asin(1), Math.asin(3)] ]
+ * // returns [ [Math.asin(1), Math.asin(2)], [Math.asin(1), Math.asin(3)] ]
  */
 export default function (m) {
   return pointwise(Math.asin)(m)

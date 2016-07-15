@@ -11,11 +11,11 @@ import pointwise from './pointwise'
  * @example 
  * 
  * atan2(1, 2)
- * // Equals Math.atan2(1, 2)
+ * // returns Math.atan2(1, 2)
  * atan2([1, 2], [2, 2])
- * // Equals [Math.atan2(1, 2), Math.atan2(2, 2)]
+ * // returns [Math.atan2(1, 2), Math.atan2(2, 2)]
  * atan2([[2,1], [1,2]], [[2, 2], [2, 2]]))
- * // Equals [ [Math.atan2(2, 2), Math.atan2(1, 2)], [Math.atan2(1, 2), Math.atan2(2, 2)] ]
+ * // returns [ [Math.atan2(2, 2), Math.atan2(1, 2)], [Math.atan2(1, 2), Math.atan2(2, 2)] ]
  */
 export default function (m1, m2) { 
   return pointwise(Math.atan2)(m1, m2)

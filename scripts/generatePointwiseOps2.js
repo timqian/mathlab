@@ -38,11 +38,11 @@ import pointwise from './pointwise'
  * @example 
  * 
  * ${key}(1, 2)
- * // Equals 1 ${op} 2
+ * // returns 1 ${op} 2
  * ${key}([1, 2], [2, 2])
- * // Equals [1 ${op} 2, 2 ${op} 2]
+ * // returns [1 ${op} 2, 2 ${op} 2]
  * ${key}([[2,1], [1,2]], [[2, 2], [2, 2]]))
- * // Equals [ [2 ${op} 2, 1 ${op} 2], [1 ${op} 2, 2 ${op} 2] ]
+ * // returns [ [2 ${op} 2, 1 ${op} 2], [1 ${op} 2, 2 ${op} 2] ]
  */
 export default function (m1, m2) {
   return pointwise((x, y) => x ${op} y)(m1, m2)

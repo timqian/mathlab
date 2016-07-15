@@ -10,11 +10,11 @@ import pointwise from './pointwise'
  * @example 
  * 
  * exp(1)
- * // Equals Math.exp(1)
+ * // returns Math.exp(1)
  * exp([1, 2])
- * // Equals [Math.exp(1), Math.exp(2)]
+ * // returns [Math.exp(1), Math.exp(2)]
  * exp([[1,2],[1,3]])
- * // Equals [ [Math.exp(1), Math.exp(2)], [Math.exp(1), Math.exp(3)] ]
+ * // returns [ [Math.exp(1), Math.exp(2)], [Math.exp(1), Math.exp(3)] ]
  */
 export default function (m) {
   return pointwise(Math.exp)(m)

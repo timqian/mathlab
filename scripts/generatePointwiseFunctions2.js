@@ -17,11 +17,11 @@ import pointwise from './pointwise'
  * @example 
  * 
  * ${fun}(1, 2)
- * // Equals Math.${fun}(1, 2)
+ * // returns Math.${fun}(1, 2)
  * ${fun}([1, 2], [2, 2])
- * // Equals [Math.${fun}(1, 2), Math.${fun}(2, 2)]
+ * // returns [Math.${fun}(1, 2), Math.${fun}(2, 2)]
  * ${fun}([[2,1], [1,2]], [[2, 2], [2, 2]]))
- * // Equals [ [Math.${fun}(2, 2), Math.${fun}(1, 2)], [Math.${fun}(1, 2), Math.${fun}(2, 2)] ]
+ * // returns [ [Math.${fun}(2, 2), Math.${fun}(1, 2)], [Math.${fun}(1, 2), Math.${fun}(2, 2)] ]
  */
 export default function (m1, m2) { 
   return pointwise(Math.${fun})(m1, m2)

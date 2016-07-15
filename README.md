@@ -14,10 +14,9 @@ $ npm install mathlab --save
 
 ## Sample usage
 ```js
-/** import function */
-// import { diag } from 'mathlab'      /** or */
-// import diag from 'mathlab/lib/diag' /** or */
-var diag = require('mathlab').diag
+// import function
+import { diag } from 'mathlab'      /** or */
+// import diag from 'mathlab/lib/diag'
 
 diag([1,2])
 // [[1, 0], 

@@ -10,11 +10,11 @@ import pointwise from './pointwise'
  * @example 
  * 
  * acos(1)
- * // Equals Math.acos(1)
+ * // returns Math.acos(1)
  * acos([1, 2])
- * // Equals [Math.acos(1), Math.acos(2)]
+ * // returns [Math.acos(1), Math.acos(2)]
  * acos([[1,2],[1,3]])
- * // Equals [ [Math.acos(1), Math.acos(2)], [Math.acos(1), Math.acos(3)] ]
+ * // returns [ [Math.acos(1), Math.acos(2)], [Math.acos(1), Math.acos(3)] ]
  */
 export default function (m) {
   return pointwise(Math.acos)(m)

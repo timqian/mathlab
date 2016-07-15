@@ -10,11 +10,11 @@ import pointwise from './pointwise'
  * @example 
  * 
  * abs(1)
- * // Equals Math.abs(1)
+ * // returns Math.abs(1)
  * abs([1, 2])
- * // Equals [Math.abs(1), Math.abs(2)]
+ * // returns [Math.abs(1), Math.abs(2)]
  * abs([[1,2],[1,3]])
- * // Equals [ [Math.abs(1), Math.abs(2)], [Math.abs(1), Math.abs(3)] ]
+ * // returns [ [Math.abs(1), Math.abs(2)], [Math.abs(1), Math.abs(3)] ]
  */
 export default function (m) {
   return pointwise(Math.abs)(m)
