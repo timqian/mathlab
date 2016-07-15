@@ -61,10 +61,10 @@
         "trailingComments": [
           {
             "type": "Block",
-            "value": "*\n * Pointwise Math.round(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * round(1)\n * // Equals Math.round(1)\n * round([1, 2])\n * // Equals [Math.round(1), Math.round(2)]\n * round([[1,2],[1,3]])\n * // Equals [ [Math.round(1), Math.round(2)], [Math.round(1), Math.round(3)] ]\n ",
+            "value": "*\n * Pointwise Math.round(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * round(1)\n * // returns Math.round(1)\n * round([1, 2])\n * // returns [Math.round(1), Math.round(2)]\n * round([[1,2],[1,3]])\n * // returns [ [Math.round(1), Math.round(2)], [Math.round(1), Math.round(3)] ]\n ",
             "range": [
               38,
-              362
+              365
             ],
             "loc": {
               "start": {
@@ -81,7 +81,7 @@
       },
       "range": [
         1,
-        363
+        366
       ],
       "loc": {
         "start": {
@@ -104,8 +104,8 @@
             "type": "Identifier",
             "name": "m",
             "range": [
-              388,
-              389
+              391,
+              392
             ],
             "loc": {
               "start": {
@@ -132,8 +132,8 @@
                     "type": "Identifier",
                     "name": "pointwise",
                     "range": [
-                      402,
-                      411
+                      405,
+                      414
                     ],
                     "loc": {
                       "start": {
@@ -154,8 +154,8 @@
                         "type": "Identifier",
                         "name": "Math",
                         "range": [
-                          412,
-                          416
+                          415,
+                          419
                         ],
                         "loc": {
                           "start": {
@@ -172,8 +172,8 @@
                         "type": "Identifier",
                         "name": "round",
                         "range": [
-                          417,
-                          422
+                          420,
+                          425
                         ],
                         "loc": {
                           "start": {
@@ -187,8 +187,8 @@
                         }
                       },
                       "range": [
-                        412,
-                        422
+                        415,
+                        425
                       ],
                       "loc": {
                         "start": {
@@ -203,8 +203,8 @@
                     }
                   ],
                   "range": [
-                    402,
-                    423
+                    405,
+                    426
                   ],
                   "loc": {
                     "start": {
@@ -222,8 +222,8 @@
                     "type": "Identifier",
                     "name": "m",
                     "range": [
-                      424,
-                      425
+                      427,
+                      428
                     ],
                     "loc": {
                       "start": {
@@ -238,8 +238,8 @@
                   }
                 ],
                 "range": [
-                  402,
-                  426
+                  405,
+                  429
                 ],
                 "loc": {
                   "start": {
@@ -253,8 +253,8 @@
                 }
               },
               "range": [
-                395,
-                427
+                398,
+                430
               ],
               "loc": {
                 "start": {
@@ -269,8 +269,8 @@
             }
           ],
           "range": [
-            391,
-            428
+            394,
+            431
           ],
           "loc": {
             "start": {
@@ -286,8 +286,8 @@
         "generator": false,
         "expression": false,
         "range": [
-          378,
-          428
+          381,
+          431
         ],
         "loc": {
           "start": {
@@ -302,10 +302,10 @@
         "leadingComments": [
           {
             "type": "Block",
-            "value": "*\n * Pointwise Math.round(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * round(1)\n * // Equals Math.round(1)\n * round([1, 2])\n * // Equals [Math.round(1), Math.round(2)]\n * round([[1,2],[1,3]])\n * // Equals [ [Math.round(1), Math.round(2)], [Math.round(1), Math.round(3)] ]\n ",
+            "value": "*\n * Pointwise Math.round(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * round(1)\n * // returns Math.round(1)\n * round([1, 2])\n * // returns [Math.round(1), Math.round(2)]\n * round([[1,2],[1,3]])\n * // returns [ [Math.round(1), Math.round(2)], [Math.round(1), Math.round(3)] ]\n ",
             "range": [
               38,
-              362
+              365
             ],
             "loc": {
               "start": {
@@ -322,8 +322,8 @@
         "trailingComments": []
       },
       "range": [
-        363,
-        428
+        366,
+        431
       ],
       "loc": {
         "start": {
@@ -338,10 +338,10 @@
       "leadingComments": [
         {
           "type": "Block",
-          "value": "*\n * Pointwise Math.round(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * round(1)\n * // Equals Math.round(1)\n * round([1, 2])\n * // Equals [Math.round(1), Math.round(2)]\n * round([[1,2],[1,3]])\n * // Equals [ [Math.round(1), Math.round(2)], [Math.round(1), Math.round(3)] ]\n ",
+          "value": "*\n * Pointwise Math.round(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * round(1)\n * // returns Math.round(1)\n * round([1, 2])\n * // returns [Math.round(1), Math.round(2)]\n * round([[1,2],[1,3]])\n * // returns [ [Math.round(1), Math.round(2)], [Math.round(1), Math.round(3)] ]\n ",
           "range": [
             38,
-            362
+            365
           ],
           "loc": {
             "start": {
@@ -360,7 +360,7 @@
   "sourceType": "module",
   "range": [
     1,
-    428
+    431
   ],
   "loc": {
     "start": {
@@ -375,10 +375,10 @@
   "comments": [
     {
       "type": "Block",
-      "value": "*\n * Pointwise Math.round(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * round(1)\n * // Equals Math.round(1)\n * round([1, 2])\n * // Equals [Math.round(1), Math.round(2)]\n * round([[1,2],[1,3]])\n * // Equals [ [Math.round(1), Math.round(2)], [Math.round(1), Math.round(3)] ]\n ",
+      "value": "*\n * Pointwise Math.round(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * round(1)\n * // returns Math.round(1)\n * round([1, 2])\n * // returns [Math.round(1), Math.round(2)]\n * round([[1,2],[1,3]])\n * // returns [ [Math.round(1), Math.round(2)], [Math.round(1), Math.round(3)] ]\n ",
       "range": [
         38,
-        362
+        365
       ],
       "loc": {
         "start": {

@@ -61,10 +61,10 @@
         "trailingComments": [
           {
             "type": "Block",
-            "value": "*\n * Pointwise rrshift\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * rrshift(1, 2)\n * // Equals 1 >>> 2\n * rrshift([1, 2], [2, 2])\n * // Equals [1 >>> 2, 2 >>> 2]\n * rrshift([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 >>> 2, 1 >>> 2], [1 >>> 2, 2 >>> 2] ]\n ",
+            "value": "*\n * Pointwise rrshift\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * rrshift(1, 2)\n * // returns 1 >>> 2\n * rrshift([1, 2], [2, 2])\n * // returns [1 >>> 2, 2 >>> 2]\n * rrshift([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 >>> 2, 1 >>> 2], [1 >>> 2, 2 >>> 2] ]\n ",
             "range": [
               38,
-              380
+              383
             ],
             "loc": {
               "start": {
@@ -81,7 +81,7 @@
       },
       "range": [
         1,
-        381
+        384
       ],
       "loc": {
         "start": {
@@ -104,8 +104,8 @@
             "type": "Identifier",
             "name": "m1",
             "range": [
-              406,
-              408
+              409,
+              411
             ],
             "loc": {
               "start": {
@@ -122,8 +122,8 @@
             "type": "Identifier",
             "name": "m2",
             "range": [
-              410,
-              412
+              413,
+              415
             ],
             "loc": {
               "start": {
@@ -150,8 +150,8 @@
                     "type": "Identifier",
                     "name": "pointwise",
                     "range": [
-                      425,
-                      434
+                      428,
+                      437
                     ],
                     "loc": {
                       "start": {
@@ -173,8 +173,8 @@
                           "type": "Identifier",
                           "name": "x",
                           "range": [
-                            436,
-                            437
+                            439,
+                            440
                           ],
                           "loc": {
                             "start": {
@@ -191,8 +191,8 @@
                           "type": "Identifier",
                           "name": "y",
                           "range": [
-                            439,
-                            440
+                            442,
+                            443
                           ],
                           "loc": {
                             "start": {
@@ -213,8 +213,8 @@
                           "type": "Identifier",
                           "name": "x",
                           "range": [
-                            445,
-                            446
+                            448,
+                            449
                           ],
                           "loc": {
                             "start": {
@@ -231,8 +231,8 @@
                           "type": "Identifier",
                           "name": "y",
                           "range": [
-                            451,
-                            452
+                            454,
+                            455
                           ],
                           "loc": {
                             "start": {
@@ -246,8 +246,8 @@
                           }
                         },
                         "range": [
-                          445,
-                          452
+                          448,
+                          455
                         ],
                         "loc": {
                           "start": {
@@ -263,8 +263,8 @@
                       "generator": false,
                       "expression": true,
                       "range": [
-                        435,
-                        452
+                        438,
+                        455
                       ],
                       "loc": {
                         "start": {
@@ -279,8 +279,8 @@
                     }
                   ],
                   "range": [
-                    425,
-                    453
+                    428,
+                    456
                   ],
                   "loc": {
                     "start": {
@@ -298,8 +298,8 @@
                     "type": "Identifier",
                     "name": "m1",
                     "range": [
-                      454,
-                      456
+                      457,
+                      459
                     ],
                     "loc": {
                       "start": {
@@ -316,8 +316,8 @@
                     "type": "Identifier",
                     "name": "m2",
                     "range": [
-                      458,
-                      460
+                      461,
+                      463
                     ],
                     "loc": {
                       "start": {
@@ -332,8 +332,8 @@
                   }
                 ],
                 "range": [
-                  425,
-                  461
+                  428,
+                  464
                 ],
                 "loc": {
                   "start": {
@@ -347,8 +347,8 @@
                 }
               },
               "range": [
-                418,
-                462
+                421,
+                465
               ],
               "loc": {
                 "start": {
@@ -363,8 +363,8 @@
             }
           ],
           "range": [
-            414,
-            463
+            417,
+            466
           ],
           "loc": {
             "start": {
@@ -380,8 +380,8 @@
         "generator": false,
         "expression": false,
         "range": [
-          396,
-          463
+          399,
+          466
         ],
         "loc": {
           "start": {
@@ -396,10 +396,10 @@
         "leadingComments": [
           {
             "type": "Block",
-            "value": "*\n * Pointwise rrshift\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * rrshift(1, 2)\n * // Equals 1 >>> 2\n * rrshift([1, 2], [2, 2])\n * // Equals [1 >>> 2, 2 >>> 2]\n * rrshift([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 >>> 2, 1 >>> 2], [1 >>> 2, 2 >>> 2] ]\n ",
+            "value": "*\n * Pointwise rrshift\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * rrshift(1, 2)\n * // returns 1 >>> 2\n * rrshift([1, 2], [2, 2])\n * // returns [1 >>> 2, 2 >>> 2]\n * rrshift([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 >>> 2, 1 >>> 2], [1 >>> 2, 2 >>> 2] ]\n ",
             "range": [
               38,
-              380
+              383
             ],
             "loc": {
               "start": {
@@ -416,8 +416,8 @@
         "trailingComments": []
       },
       "range": [
-        381,
-        463
+        384,
+        466
       ],
       "loc": {
         "start": {
@@ -432,10 +432,10 @@
       "leadingComments": [
         {
           "type": "Block",
-          "value": "*\n * Pointwise rrshift\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * rrshift(1, 2)\n * // Equals 1 >>> 2\n * rrshift([1, 2], [2, 2])\n * // Equals [1 >>> 2, 2 >>> 2]\n * rrshift([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 >>> 2, 1 >>> 2], [1 >>> 2, 2 >>> 2] ]\n ",
+          "value": "*\n * Pointwise rrshift\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * rrshift(1, 2)\n * // returns 1 >>> 2\n * rrshift([1, 2], [2, 2])\n * // returns [1 >>> 2, 2 >>> 2]\n * rrshift([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 >>> 2, 1 >>> 2], [1 >>> 2, 2 >>> 2] ]\n ",
           "range": [
             38,
-            380
+            383
           ],
           "loc": {
             "start": {
@@ -454,7 +454,7 @@
   "sourceType": "module",
   "range": [
     1,
-    463
+    466
   ],
   "loc": {
     "start": {
@@ -469,10 +469,10 @@
   "comments": [
     {
       "type": "Block",
-      "value": "*\n * Pointwise rrshift\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * rrshift(1, 2)\n * // Equals 1 >>> 2\n * rrshift([1, 2], [2, 2])\n * // Equals [1 >>> 2, 2 >>> 2]\n * rrshift([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 >>> 2, 1 >>> 2], [1 >>> 2, 2 >>> 2] ]\n ",
+      "value": "*\n * Pointwise rrshift\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * rrshift(1, 2)\n * // returns 1 >>> 2\n * rrshift([1, 2], [2, 2])\n * // returns [1 >>> 2, 2 >>> 2]\n * rrshift([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 >>> 2, 1 >>> 2], [1 >>> 2, 2 >>> 2] ]\n ",
       "range": [
         38,
-        380
+        383
       ],
       "loc": {
         "start": {

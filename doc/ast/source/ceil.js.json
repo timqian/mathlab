@@ -61,10 +61,10 @@
         "trailingComments": [
           {
             "type": "Block",
-            "value": "*\n * Pointwise Math.ceil(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * ceil(1)\n * // Equals Math.ceil(1)\n * ceil([1, 2])\n * // Equals [Math.ceil(1), Math.ceil(2)]\n * ceil([[1,2],[1,3]])\n * // Equals [ [Math.ceil(1), Math.ceil(2)], [Math.ceil(1), Math.ceil(3)] ]\n ",
+            "value": "*\n * Pointwise Math.ceil(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * ceil(1)\n * // returns Math.ceil(1)\n * ceil([1, 2])\n * // returns [Math.ceil(1), Math.ceil(2)]\n * ceil([[1,2],[1,3]])\n * // returns [ [Math.ceil(1), Math.ceil(2)], [Math.ceil(1), Math.ceil(3)] ]\n ",
             "range": [
               38,
-              351
+              354
             ],
             "loc": {
               "start": {
@@ -81,7 +81,7 @@
       },
       "range": [
         1,
-        352
+        355
       ],
       "loc": {
         "start": {
@@ -104,8 +104,8 @@
             "type": "Identifier",
             "name": "m",
             "range": [
-              377,
-              378
+              380,
+              381
             ],
             "loc": {
               "start": {
@@ -132,8 +132,8 @@
                     "type": "Identifier",
                     "name": "pointwise",
                     "range": [
-                      391,
-                      400
+                      394,
+                      403
                     ],
                     "loc": {
                       "start": {
@@ -154,8 +154,8 @@
                         "type": "Identifier",
                         "name": "Math",
                         "range": [
-                          401,
-                          405
+                          404,
+                          408
                         ],
                         "loc": {
                           "start": {
@@ -172,8 +172,8 @@
                         "type": "Identifier",
                         "name": "ceil",
                         "range": [
-                          406,
-                          410
+                          409,
+                          413
                         ],
                         "loc": {
                           "start": {
@@ -187,8 +187,8 @@
                         }
                       },
                       "range": [
-                        401,
-                        410
+                        404,
+                        413
                       ],
                       "loc": {
                         "start": {
@@ -203,8 +203,8 @@
                     }
                   ],
                   "range": [
-                    391,
-                    411
+                    394,
+                    414
                   ],
                   "loc": {
                     "start": {
@@ -222,8 +222,8 @@
                     "type": "Identifier",
                     "name": "m",
                     "range": [
-                      412,
-                      413
+                      415,
+                      416
                     ],
                     "loc": {
                       "start": {
@@ -238,8 +238,8 @@
                   }
                 ],
                 "range": [
-                  391,
-                  414
+                  394,
+                  417
                 ],
                 "loc": {
                   "start": {
@@ -253,8 +253,8 @@
                 }
               },
               "range": [
-                384,
-                415
+                387,
+                418
               ],
               "loc": {
                 "start": {
@@ -269,8 +269,8 @@
             }
           ],
           "range": [
-            380,
-            416
+            383,
+            419
           ],
           "loc": {
             "start": {
@@ -286,8 +286,8 @@
         "generator": false,
         "expression": false,
         "range": [
-          367,
-          416
+          370,
+          419
         ],
         "loc": {
           "start": {
@@ -302,10 +302,10 @@
         "leadingComments": [
           {
             "type": "Block",
-            "value": "*\n * Pointwise Math.ceil(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * ceil(1)\n * // Equals Math.ceil(1)\n * ceil([1, 2])\n * // Equals [Math.ceil(1), Math.ceil(2)]\n * ceil([[1,2],[1,3]])\n * // Equals [ [Math.ceil(1), Math.ceil(2)], [Math.ceil(1), Math.ceil(3)] ]\n ",
+            "value": "*\n * Pointwise Math.ceil(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * ceil(1)\n * // returns Math.ceil(1)\n * ceil([1, 2])\n * // returns [Math.ceil(1), Math.ceil(2)]\n * ceil([[1,2],[1,3]])\n * // returns [ [Math.ceil(1), Math.ceil(2)], [Math.ceil(1), Math.ceil(3)] ]\n ",
             "range": [
               38,
-              351
+              354
             ],
             "loc": {
               "start": {
@@ -322,8 +322,8 @@
         "trailingComments": []
       },
       "range": [
-        352,
-        416
+        355,
+        419
       ],
       "loc": {
         "start": {
@@ -338,10 +338,10 @@
       "leadingComments": [
         {
           "type": "Block",
-          "value": "*\n * Pointwise Math.ceil(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * ceil(1)\n * // Equals Math.ceil(1)\n * ceil([1, 2])\n * // Equals [Math.ceil(1), Math.ceil(2)]\n * ceil([[1,2],[1,3]])\n * // Equals [ [Math.ceil(1), Math.ceil(2)], [Math.ceil(1), Math.ceil(3)] ]\n ",
+          "value": "*\n * Pointwise Math.ceil(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * ceil(1)\n * // returns Math.ceil(1)\n * ceil([1, 2])\n * // returns [Math.ceil(1), Math.ceil(2)]\n * ceil([[1,2],[1,3]])\n * // returns [ [Math.ceil(1), Math.ceil(2)], [Math.ceil(1), Math.ceil(3)] ]\n ",
           "range": [
             38,
-            351
+            354
           ],
           "loc": {
             "start": {
@@ -360,7 +360,7 @@
   "sourceType": "module",
   "range": [
     1,
-    416
+    419
   ],
   "loc": {
     "start": {
@@ -375,10 +375,10 @@
   "comments": [
     {
       "type": "Block",
-      "value": "*\n * Pointwise Math.ceil(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * ceil(1)\n * // Equals Math.ceil(1)\n * ceil([1, 2])\n * // Equals [Math.ceil(1), Math.ceil(2)]\n * ceil([[1,2],[1,3]])\n * // Equals [ [Math.ceil(1), Math.ceil(2)], [Math.ceil(1), Math.ceil(3)] ]\n ",
+      "value": "*\n * Pointwise Math.ceil(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * ceil(1)\n * // returns Math.ceil(1)\n * ceil([1, 2])\n * // returns [Math.ceil(1), Math.ceil(2)]\n * ceil([[1,2],[1,3]])\n * // returns [ [Math.ceil(1), Math.ceil(2)], [Math.ceil(1), Math.ceil(3)] ]\n ",
       "range": [
         38,
-        351
+        354
       ],
       "loc": {
         "start": {

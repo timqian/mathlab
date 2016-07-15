@@ -61,10 +61,10 @@
         "trailingComments": [
           {
             "type": "Block",
-            "value": "*\n * Pointwise lt\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * lt(1, 2)\n * // Equals 1 < 2\n * lt([1, 2], [2, 2])\n * // Equals [1 < 2, 2 < 2]\n * lt([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 < 2, 1 < 2], [1 < 2, 2 < 2] ]\n ",
+            "value": "*\n * Pointwise lt\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * lt(1, 2)\n * // returns 1 < 2\n * lt([1, 2], [2, 2])\n * // returns [1 < 2, 2 < 2]\n * lt([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 < 2, 1 < 2], [1 < 2, 2 < 2] ]\n ",
             "range": [
               38,
-              346
+              349
             ],
             "loc": {
               "start": {
@@ -81,7 +81,7 @@
       },
       "range": [
         1,
-        347
+        350
       ],
       "loc": {
         "start": {
@@ -104,8 +104,8 @@
             "type": "Identifier",
             "name": "m1",
             "range": [
-              372,
-              374
+              375,
+              377
             ],
             "loc": {
               "start": {
@@ -122,8 +122,8 @@
             "type": "Identifier",
             "name": "m2",
             "range": [
-              376,
-              378
+              379,
+              381
             ],
             "loc": {
               "start": {
@@ -150,8 +150,8 @@
                     "type": "Identifier",
                     "name": "pointwise",
                     "range": [
-                      391,
-                      400
+                      394,
+                      403
                     ],
                     "loc": {
                       "start": {
@@ -173,8 +173,8 @@
                           "type": "Identifier",
                           "name": "x",
                           "range": [
-                            402,
-                            403
+                            405,
+                            406
                           ],
                           "loc": {
                             "start": {
@@ -191,8 +191,8 @@
                           "type": "Identifier",
                           "name": "y",
                           "range": [
-                            405,
-                            406
+                            408,
+                            409
                           ],
                           "loc": {
                             "start": {
@@ -213,8 +213,8 @@
                           "type": "Identifier",
                           "name": "x",
                           "range": [
-                            411,
-                            412
+                            414,
+                            415
                           ],
                           "loc": {
                             "start": {
@@ -231,8 +231,8 @@
                           "type": "Identifier",
                           "name": "y",
                           "range": [
-                            415,
-                            416
+                            418,
+                            419
                           ],
                           "loc": {
                             "start": {
@@ -246,8 +246,8 @@
                           }
                         },
                         "range": [
-                          411,
-                          416
+                          414,
+                          419
                         ],
                         "loc": {
                           "start": {
@@ -263,8 +263,8 @@
                       "generator": false,
                       "expression": true,
                       "range": [
-                        401,
-                        416
+                        404,
+                        419
                       ],
                       "loc": {
                         "start": {
@@ -279,8 +279,8 @@
                     }
                   ],
                   "range": [
-                    391,
-                    417
+                    394,
+                    420
                   ],
                   "loc": {
                     "start": {
@@ -298,8 +298,8 @@
                     "type": "Identifier",
                     "name": "m1",
                     "range": [
-                      418,
-                      420
+                      421,
+                      423
                     ],
                     "loc": {
                       "start": {
@@ -316,8 +316,8 @@
                     "type": "Identifier",
                     "name": "m2",
                     "range": [
-                      422,
-                      424
+                      425,
+                      427
                     ],
                     "loc": {
                       "start": {
@@ -332,8 +332,8 @@
                   }
                 ],
                 "range": [
-                  391,
-                  425
+                  394,
+                  428
                 ],
                 "loc": {
                   "start": {
@@ -347,8 +347,8 @@
                 }
               },
               "range": [
-                384,
-                426
+                387,
+                429
               ],
               "loc": {
                 "start": {
@@ -363,8 +363,8 @@
             }
           ],
           "range": [
-            380,
-            427
+            383,
+            430
           ],
           "loc": {
             "start": {
@@ -380,8 +380,8 @@
         "generator": false,
         "expression": false,
         "range": [
-          362,
-          427
+          365,
+          430
         ],
         "loc": {
           "start": {
@@ -396,10 +396,10 @@
         "leadingComments": [
           {
             "type": "Block",
-            "value": "*\n * Pointwise lt\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * lt(1, 2)\n * // Equals 1 < 2\n * lt([1, 2], [2, 2])\n * // Equals [1 < 2, 2 < 2]\n * lt([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 < 2, 1 < 2], [1 < 2, 2 < 2] ]\n ",
+            "value": "*\n * Pointwise lt\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * lt(1, 2)\n * // returns 1 < 2\n * lt([1, 2], [2, 2])\n * // returns [1 < 2, 2 < 2]\n * lt([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 < 2, 1 < 2], [1 < 2, 2 < 2] ]\n ",
             "range": [
               38,
-              346
+              349
             ],
             "loc": {
               "start": {
@@ -416,8 +416,8 @@
         "trailingComments": []
       },
       "range": [
-        347,
-        427
+        350,
+        430
       ],
       "loc": {
         "start": {
@@ -432,10 +432,10 @@
       "leadingComments": [
         {
           "type": "Block",
-          "value": "*\n * Pointwise lt\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * lt(1, 2)\n * // Equals 1 < 2\n * lt([1, 2], [2, 2])\n * // Equals [1 < 2, 2 < 2]\n * lt([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 < 2, 1 < 2], [1 < 2, 2 < 2] ]\n ",
+          "value": "*\n * Pointwise lt\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * lt(1, 2)\n * // returns 1 < 2\n * lt([1, 2], [2, 2])\n * // returns [1 < 2, 2 < 2]\n * lt([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 < 2, 1 < 2], [1 < 2, 2 < 2] ]\n ",
           "range": [
             38,
-            346
+            349
           ],
           "loc": {
             "start": {
@@ -454,7 +454,7 @@
   "sourceType": "module",
   "range": [
     1,
-    427
+    430
   ],
   "loc": {
     "start": {
@@ -469,10 +469,10 @@
   "comments": [
     {
       "type": "Block",
-      "value": "*\n * Pointwise lt\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * lt(1, 2)\n * // Equals 1 < 2\n * lt([1, 2], [2, 2])\n * // Equals [1 < 2, 2 < 2]\n * lt([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 < 2, 1 < 2], [1 < 2, 2 < 2] ]\n ",
+      "value": "*\n * Pointwise lt\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * lt(1, 2)\n * // returns 1 < 2\n * lt([1, 2], [2, 2])\n * // returns [1 < 2, 2 < 2]\n * lt([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 < 2, 1 < 2], [1 < 2, 2 < 2] ]\n ",
       "range": [
         38,
-        346
+        349
       ],
       "loc": {
         "start": {

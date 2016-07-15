@@ -61,10 +61,10 @@
         "trailingComments": [
           {
             "type": "Block",
-            "value": "*\n * Pointwise Math.pow(x, y)\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * pow(1, 2)\n * // Equals Math.pow(1, 2)\n * pow([1, 2], [2, 2])\n * // Equals [Math.pow(1, 2), Math.pow(2, 2)]\n * pow([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [Math.pow(2, 2), Math.pow(1, 2)], [Math.pow(1, 2), Math.pow(2, 2)] ]\n ",
+            "value": "*\n * Pointwise Math.pow(x, y)\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * pow(1, 2)\n * // returns Math.pow(1, 2)\n * pow([1, 2], [2, 2])\n * // returns [Math.pow(1, 2), Math.pow(2, 2)]\n * pow([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [Math.pow(2, 2), Math.pow(1, 2)], [Math.pow(1, 2), Math.pow(2, 2)] ]\n ",
             "range": [
               38,
-              424
+              427
             ],
             "loc": {
               "start": {
@@ -81,7 +81,7 @@
       },
       "range": [
         1,
-        425
+        428
       ],
       "loc": {
         "start": {
@@ -104,8 +104,8 @@
             "type": "Identifier",
             "name": "m1",
             "range": [
-              450,
-              452
+              453,
+              455
             ],
             "loc": {
               "start": {
@@ -122,8 +122,8 @@
             "type": "Identifier",
             "name": "m2",
             "range": [
-              454,
-              456
+              457,
+              459
             ],
             "loc": {
               "start": {
@@ -150,8 +150,8 @@
                     "type": "Identifier",
                     "name": "pointwise",
                     "range": [
-                      470,
-                      479
+                      473,
+                      482
                     ],
                     "loc": {
                       "start": {
@@ -172,8 +172,8 @@
                         "type": "Identifier",
                         "name": "Math",
                         "range": [
-                          480,
-                          484
+                          483,
+                          487
                         ],
                         "loc": {
                           "start": {
@@ -190,8 +190,8 @@
                         "type": "Identifier",
                         "name": "pow",
                         "range": [
-                          485,
-                          488
+                          488,
+                          491
                         ],
                         "loc": {
                           "start": {
@@ -205,8 +205,8 @@
                         }
                       },
                       "range": [
-                        480,
-                        488
+                        483,
+                        491
                       ],
                       "loc": {
                         "start": {
@@ -221,8 +221,8 @@
                     }
                   ],
                   "range": [
-                    470,
-                    489
+                    473,
+                    492
                   ],
                   "loc": {
                     "start": {
@@ -240,8 +240,8 @@
                     "type": "Identifier",
                     "name": "m1",
                     "range": [
-                      490,
-                      492
+                      493,
+                      495
                     ],
                     "loc": {
                       "start": {
@@ -258,8 +258,8 @@
                     "type": "Identifier",
                     "name": "m2",
                     "range": [
-                      494,
-                      496
+                      497,
+                      499
                     ],
                     "loc": {
                       "start": {
@@ -274,8 +274,8 @@
                   }
                 ],
                 "range": [
-                  470,
-                  497
+                  473,
+                  500
                 ],
                 "loc": {
                   "start": {
@@ -289,8 +289,8 @@
                 }
               },
               "range": [
-                463,
-                498
+                466,
+                501
               ],
               "loc": {
                 "start": {
@@ -305,8 +305,8 @@
             }
           ],
           "range": [
-            458,
-            499
+            461,
+            502
           ],
           "loc": {
             "start": {
@@ -322,8 +322,8 @@
         "generator": false,
         "expression": false,
         "range": [
-          440,
-          499
+          443,
+          502
         ],
         "loc": {
           "start": {
@@ -338,10 +338,10 @@
         "leadingComments": [
           {
             "type": "Block",
-            "value": "*\n * Pointwise Math.pow(x, y)\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * pow(1, 2)\n * // Equals Math.pow(1, 2)\n * pow([1, 2], [2, 2])\n * // Equals [Math.pow(1, 2), Math.pow(2, 2)]\n * pow([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [Math.pow(2, 2), Math.pow(1, 2)], [Math.pow(1, 2), Math.pow(2, 2)] ]\n ",
+            "value": "*\n * Pointwise Math.pow(x, y)\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * pow(1, 2)\n * // returns Math.pow(1, 2)\n * pow([1, 2], [2, 2])\n * // returns [Math.pow(1, 2), Math.pow(2, 2)]\n * pow([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [Math.pow(2, 2), Math.pow(1, 2)], [Math.pow(1, 2), Math.pow(2, 2)] ]\n ",
             "range": [
               38,
-              424
+              427
             ],
             "loc": {
               "start": {
@@ -358,8 +358,8 @@
         "trailingComments": []
       },
       "range": [
-        425,
-        499
+        428,
+        502
       ],
       "loc": {
         "start": {
@@ -374,10 +374,10 @@
       "leadingComments": [
         {
           "type": "Block",
-          "value": "*\n * Pointwise Math.pow(x, y)\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * pow(1, 2)\n * // Equals Math.pow(1, 2)\n * pow([1, 2], [2, 2])\n * // Equals [Math.pow(1, 2), Math.pow(2, 2)]\n * pow([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [Math.pow(2, 2), Math.pow(1, 2)], [Math.pow(1, 2), Math.pow(2, 2)] ]\n ",
+          "value": "*\n * Pointwise Math.pow(x, y)\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * pow(1, 2)\n * // returns Math.pow(1, 2)\n * pow([1, 2], [2, 2])\n * // returns [Math.pow(1, 2), Math.pow(2, 2)]\n * pow([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [Math.pow(2, 2), Math.pow(1, 2)], [Math.pow(1, 2), Math.pow(2, 2)] ]\n ",
           "range": [
             38,
-            424
+            427
           ],
           "loc": {
             "start": {
@@ -396,7 +396,7 @@
   "sourceType": "module",
   "range": [
     1,
-    499
+    502
   ],
   "loc": {
     "start": {
@@ -411,10 +411,10 @@
   "comments": [
     {
       "type": "Block",
-      "value": "*\n * Pointwise Math.pow(x, y)\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * pow(1, 2)\n * // Equals Math.pow(1, 2)\n * pow([1, 2], [2, 2])\n * // Equals [Math.pow(1, 2), Math.pow(2, 2)]\n * pow([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [Math.pow(2, 2), Math.pow(1, 2)], [Math.pow(1, 2), Math.pow(2, 2)] ]\n ",
+      "value": "*\n * Pointwise Math.pow(x, y)\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * pow(1, 2)\n * // returns Math.pow(1, 2)\n * pow([1, 2], [2, 2])\n * // returns [Math.pow(1, 2), Math.pow(2, 2)]\n * pow([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [Math.pow(2, 2), Math.pow(1, 2)], [Math.pow(1, 2), Math.pow(2, 2)] ]\n ",
       "range": [
         38,
-        424
+        427
       ],
       "loc": {
         "start": {

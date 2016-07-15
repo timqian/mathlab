@@ -95,11 +95,11 @@ import pointwise from &apos;./pointwise&apos;
  * @example 
  * 
  * band(1, 2)
- * // Equals 1 &amp; 2
+ * // returns 1 &amp; 2
  * band([1, 2], [2, 2])
- * // Equals [1 &amp; 2, 2 &amp; 2]
+ * // returns [1 &amp; 2, 2 &amp; 2]
  * band([[2,1], [1,2]], [[2, 2], [2, 2]]))
- * // Equals [ [2 &amp; 2, 1 &amp; 2], [1 &amp; 2, 2 &amp; 2] ]
+ * // returns [ [2 &amp; 2, 1 &amp; 2], [1 &amp; 2, 2 &amp; 2] ]
  */
 export default function (m1, m2) {
   return pointwise((x, y) =&gt; x &amp; y)(m1, m2)

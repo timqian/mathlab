@@ -61,10 +61,10 @@
         "trailingComments": [
           {
             "type": "Block",
-            "value": "*\n * Pointwise Math.atan2(x, y)\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * atan2(1, 2)\n * // Equals Math.atan2(1, 2)\n * atan2([1, 2], [2, 2])\n * // Equals [Math.atan2(1, 2), Math.atan2(2, 2)]\n * atan2([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [Math.atan2(2, 2), Math.atan2(1, 2)], [Math.atan2(1, 2), Math.atan2(2, 2)] ]\n ",
+            "value": "*\n * Pointwise Math.atan2(x, y)\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * atan2(1, 2)\n * // returns Math.atan2(1, 2)\n * atan2([1, 2], [2, 2])\n * // returns [Math.atan2(1, 2), Math.atan2(2, 2)]\n * atan2([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [Math.atan2(2, 2), Math.atan2(1, 2)], [Math.atan2(1, 2), Math.atan2(2, 2)] ]\n ",
             "range": [
               38,
-              446
+              449
             ],
             "loc": {
               "start": {
@@ -81,7 +81,7 @@
       },
       "range": [
         1,
-        447
+        450
       ],
       "loc": {
         "start": {
@@ -104,8 +104,8 @@
             "type": "Identifier",
             "name": "m1",
             "range": [
-              472,
-              474
+              475,
+              477
             ],
             "loc": {
               "start": {
@@ -122,8 +122,8 @@
             "type": "Identifier",
             "name": "m2",
             "range": [
-              476,
-              478
+              479,
+              481
             ],
             "loc": {
               "start": {
@@ -150,8 +150,8 @@
                     "type": "Identifier",
                     "name": "pointwise",
                     "range": [
-                      492,
-                      501
+                      495,
+                      504
                     ],
                     "loc": {
                       "start": {
@@ -172,8 +172,8 @@
                         "type": "Identifier",
                         "name": "Math",
                         "range": [
-                          502,
-                          506
+                          505,
+                          509
                         ],
                         "loc": {
                           "start": {
@@ -190,8 +190,8 @@
                         "type": "Identifier",
                         "name": "atan2",
                         "range": [
-                          507,
-                          512
+                          510,
+                          515
                         ],
                         "loc": {
                           "start": {
@@ -205,8 +205,8 @@
                         }
                       },
                       "range": [
-                        502,
-                        512
+                        505,
+                        515
                       ],
                       "loc": {
                         "start": {
@@ -221,8 +221,8 @@
                     }
                   ],
                   "range": [
-                    492,
-                    513
+                    495,
+                    516
                   ],
                   "loc": {
                     "start": {
@@ -240,8 +240,8 @@
                     "type": "Identifier",
                     "name": "m1",
                     "range": [
-                      514,
-                      516
+                      517,
+                      519
                     ],
                     "loc": {
                       "start": {
@@ -258,8 +258,8 @@
                     "type": "Identifier",
                     "name": "m2",
                     "range": [
-                      518,
-                      520
+                      521,
+                      523
                     ],
                     "loc": {
                       "start": {
@@ -274,8 +274,8 @@
                   }
                 ],
                 "range": [
-                  492,
-                  521
+                  495,
+                  524
                 ],
                 "loc": {
                   "start": {
@@ -289,8 +289,8 @@
                 }
               },
               "range": [
-                485,
-                522
+                488,
+                525
               ],
               "loc": {
                 "start": {
@@ -305,8 +305,8 @@
             }
           ],
           "range": [
-            480,
-            523
+            483,
+            526
           ],
           "loc": {
             "start": {
@@ -322,8 +322,8 @@
         "generator": false,
         "expression": false,
         "range": [
-          462,
-          523
+          465,
+          526
         ],
         "loc": {
           "start": {
@@ -338,10 +338,10 @@
         "leadingComments": [
           {
             "type": "Block",
-            "value": "*\n * Pointwise Math.atan2(x, y)\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * atan2(1, 2)\n * // Equals Math.atan2(1, 2)\n * atan2([1, 2], [2, 2])\n * // Equals [Math.atan2(1, 2), Math.atan2(2, 2)]\n * atan2([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [Math.atan2(2, 2), Math.atan2(1, 2)], [Math.atan2(1, 2), Math.atan2(2, 2)] ]\n ",
+            "value": "*\n * Pointwise Math.atan2(x, y)\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * atan2(1, 2)\n * // returns Math.atan2(1, 2)\n * atan2([1, 2], [2, 2])\n * // returns [Math.atan2(1, 2), Math.atan2(2, 2)]\n * atan2([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [Math.atan2(2, 2), Math.atan2(1, 2)], [Math.atan2(1, 2), Math.atan2(2, 2)] ]\n ",
             "range": [
               38,
-              446
+              449
             ],
             "loc": {
               "start": {
@@ -358,8 +358,8 @@
         "trailingComments": []
       },
       "range": [
-        447,
-        523
+        450,
+        526
       ],
       "loc": {
         "start": {
@@ -374,10 +374,10 @@
       "leadingComments": [
         {
           "type": "Block",
-          "value": "*\n * Pointwise Math.atan2(x, y)\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * atan2(1, 2)\n * // Equals Math.atan2(1, 2)\n * atan2([1, 2], [2, 2])\n * // Equals [Math.atan2(1, 2), Math.atan2(2, 2)]\n * atan2([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [Math.atan2(2, 2), Math.atan2(1, 2)], [Math.atan2(1, 2), Math.atan2(2, 2)] ]\n ",
+          "value": "*\n * Pointwise Math.atan2(x, y)\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * atan2(1, 2)\n * // returns Math.atan2(1, 2)\n * atan2([1, 2], [2, 2])\n * // returns [Math.atan2(1, 2), Math.atan2(2, 2)]\n * atan2([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [Math.atan2(2, 2), Math.atan2(1, 2)], [Math.atan2(1, 2), Math.atan2(2, 2)] ]\n ",
           "range": [
             38,
-            446
+            449
           ],
           "loc": {
             "start": {
@@ -396,7 +396,7 @@
   "sourceType": "module",
   "range": [
     1,
-    523
+    526
   ],
   "loc": {
     "start": {
@@ -411,10 +411,10 @@
   "comments": [
     {
       "type": "Block",
-      "value": "*\n * Pointwise Math.atan2(x, y)\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * atan2(1, 2)\n * // Equals Math.atan2(1, 2)\n * atan2([1, 2], [2, 2])\n * // Equals [Math.atan2(1, 2), Math.atan2(2, 2)]\n * atan2([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [Math.atan2(2, 2), Math.atan2(1, 2)], [Math.atan2(1, 2), Math.atan2(2, 2)] ]\n ",
+      "value": "*\n * Pointwise Math.atan2(x, y)\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * atan2(1, 2)\n * // returns Math.atan2(1, 2)\n * atan2([1, 2], [2, 2])\n * // returns [Math.atan2(1, 2), Math.atan2(2, 2)]\n * atan2([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [Math.atan2(2, 2), Math.atan2(1, 2)], [Math.atan2(1, 2), Math.atan2(2, 2)] ]\n ",
       "range": [
         38,
-        446
+        449
       ],
       "loc": {
         "start": {

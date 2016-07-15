@@ -61,10 +61,10 @@
         "trailingComments": [
           {
             "type": "Block",
-            "value": "*\n * Pointwise Math.sin(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * sin(1)\n * // Equals Math.sin(1)\n * sin([1, 2])\n * // Equals [Math.sin(1), Math.sin(2)]\n * sin([[1,2],[1,3]])\n * // Equals [ [Math.sin(1), Math.sin(2)], [Math.sin(1), Math.sin(3)] ]\n ",
+            "value": "*\n * Pointwise Math.sin(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * sin(1)\n * // returns Math.sin(1)\n * sin([1, 2])\n * // returns [Math.sin(1), Math.sin(2)]\n * sin([[1,2],[1,3]])\n * // returns [ [Math.sin(1), Math.sin(2)], [Math.sin(1), Math.sin(3)] ]\n ",
             "range": [
               38,
-              340
+              343
             ],
             "loc": {
               "start": {
@@ -81,7 +81,7 @@
       },
       "range": [
         1,
-        341
+        344
       ],
       "loc": {
         "start": {
@@ -104,8 +104,8 @@
             "type": "Identifier",
             "name": "m",
             "range": [
-              366,
-              367
+              369,
+              370
             ],
             "loc": {
               "start": {
@@ -132,8 +132,8 @@
                     "type": "Identifier",
                     "name": "pointwise",
                     "range": [
-                      380,
-                      389
+                      383,
+                      392
                     ],
                     "loc": {
                       "start": {
@@ -154,8 +154,8 @@
                         "type": "Identifier",
                         "name": "Math",
                         "range": [
-                          390,
-                          394
+                          393,
+                          397
                         ],
                         "loc": {
                           "start": {
@@ -172,8 +172,8 @@
                         "type": "Identifier",
                         "name": "sin",
                         "range": [
-                          395,
-                          398
+                          398,
+                          401
                         ],
                         "loc": {
                           "start": {
@@ -187,8 +187,8 @@
                         }
                       },
                       "range": [
-                        390,
-                        398
+                        393,
+                        401
                       ],
                       "loc": {
                         "start": {
@@ -203,8 +203,8 @@
                     }
                   ],
                   "range": [
-                    380,
-                    399
+                    383,
+                    402
                   ],
                   "loc": {
                     "start": {
@@ -222,8 +222,8 @@
                     "type": "Identifier",
                     "name": "m",
                     "range": [
-                      400,
-                      401
+                      403,
+                      404
                     ],
                     "loc": {
                       "start": {
@@ -238,8 +238,8 @@
                   }
                 ],
                 "range": [
-                  380,
-                  402
+                  383,
+                  405
                 ],
                 "loc": {
                   "start": {
@@ -253,8 +253,8 @@
                 }
               },
               "range": [
-                373,
-                403
+                376,
+                406
               ],
               "loc": {
                 "start": {
@@ -269,8 +269,8 @@
             }
           ],
           "range": [
-            369,
-            404
+            372,
+            407
           ],
           "loc": {
             "start": {
@@ -286,8 +286,8 @@
         "generator": false,
         "expression": false,
         "range": [
-          356,
-          404
+          359,
+          407
         ],
         "loc": {
           "start": {
@@ -302,10 +302,10 @@
         "leadingComments": [
           {
             "type": "Block",
-            "value": "*\n * Pointwise Math.sin(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * sin(1)\n * // Equals Math.sin(1)\n * sin([1, 2])\n * // Equals [Math.sin(1), Math.sin(2)]\n * sin([[1,2],[1,3]])\n * // Equals [ [Math.sin(1), Math.sin(2)], [Math.sin(1), Math.sin(3)] ]\n ",
+            "value": "*\n * Pointwise Math.sin(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * sin(1)\n * // returns Math.sin(1)\n * sin([1, 2])\n * // returns [Math.sin(1), Math.sin(2)]\n * sin([[1,2],[1,3]])\n * // returns [ [Math.sin(1), Math.sin(2)], [Math.sin(1), Math.sin(3)] ]\n ",
             "range": [
               38,
-              340
+              343
             ],
             "loc": {
               "start": {
@@ -322,8 +322,8 @@
         "trailingComments": []
       },
       "range": [
-        341,
-        404
+        344,
+        407
       ],
       "loc": {
         "start": {
@@ -338,10 +338,10 @@
       "leadingComments": [
         {
           "type": "Block",
-          "value": "*\n * Pointwise Math.sin(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * sin(1)\n * // Equals Math.sin(1)\n * sin([1, 2])\n * // Equals [Math.sin(1), Math.sin(2)]\n * sin([[1,2],[1,3]])\n * // Equals [ [Math.sin(1), Math.sin(2)], [Math.sin(1), Math.sin(3)] ]\n ",
+          "value": "*\n * Pointwise Math.sin(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * sin(1)\n * // returns Math.sin(1)\n * sin([1, 2])\n * // returns [Math.sin(1), Math.sin(2)]\n * sin([[1,2],[1,3]])\n * // returns [ [Math.sin(1), Math.sin(2)], [Math.sin(1), Math.sin(3)] ]\n ",
           "range": [
             38,
-            340
+            343
           ],
           "loc": {
             "start": {
@@ -360,7 +360,7 @@
   "sourceType": "module",
   "range": [
     1,
-    404
+    407
   ],
   "loc": {
     "start": {
@@ -375,10 +375,10 @@
   "comments": [
     {
       "type": "Block",
-      "value": "*\n * Pointwise Math.sin(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * sin(1)\n * // Equals Math.sin(1)\n * sin([1, 2])\n * // Equals [Math.sin(1), Math.sin(2)]\n * sin([[1,2],[1,3]])\n * // Equals [ [Math.sin(1), Math.sin(2)], [Math.sin(1), Math.sin(3)] ]\n ",
+      "value": "*\n * Pointwise Math.sin(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * sin(1)\n * // returns Math.sin(1)\n * sin([1, 2])\n * // returns [Math.sin(1), Math.sin(2)]\n * sin([[1,2],[1,3]])\n * // returns [ [Math.sin(1), Math.sin(2)], [Math.sin(1), Math.sin(3)] ]\n ",
       "range": [
         38,
-        340
+        343
       ],
       "loc": {
         "start": {

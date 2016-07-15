@@ -95,11 +95,11 @@ import pointwise from &apos;./pointwise&apos;
  * @example 
  * 
  * pow(1, 2)
- * // Equals Math.pow(1, 2)
+ * // returns Math.pow(1, 2)
  * pow([1, 2], [2, 2])
- * // Equals [Math.pow(1, 2), Math.pow(2, 2)]
+ * // returns [Math.pow(1, 2), Math.pow(2, 2)]
  * pow([[2,1], [1,2]], [[2, 2], [2, 2]]))
- * // Equals [ [Math.pow(2, 2), Math.pow(1, 2)], [Math.pow(1, 2), Math.pow(2, 2)] ]
+ * // returns [ [Math.pow(2, 2), Math.pow(1, 2)], [Math.pow(1, 2), Math.pow(2, 2)] ]
  */
 export default function (m1, m2) { 
   return pointwise(Math.pow)(m1, m2)

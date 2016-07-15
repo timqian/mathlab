@@ -95,11 +95,11 @@ import pointwise from &apos;./pointwise&apos;
  * @example 
  * 
  * gt(1, 2)
- * // Equals 1 &gt; 2
+ * // returns 1 &gt; 2
  * gt([1, 2], [2, 2])
- * // Equals [1 &gt; 2, 2 &gt; 2]
+ * // returns [1 &gt; 2, 2 &gt; 2]
  * gt([[2,1], [1,2]], [[2, 2], [2, 2]]))
- * // Equals [ [2 &gt; 2, 1 &gt; 2], [1 &gt; 2, 2 &gt; 2] ]
+ * // returns [ [2 &gt; 2, 1 &gt; 2], [1 &gt; 2, 2 &gt; 2] ]
  */
 export default function (m1, m2) {
   return pointwise((x, y) =&gt; x &gt; y)(m1, m2)

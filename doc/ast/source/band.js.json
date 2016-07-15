@@ -61,10 +61,10 @@
         "trailingComments": [
           {
             "type": "Block",
-            "value": "*\n * Pointwise band\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * band(1, 2)\n * // Equals 1 & 2\n * band([1, 2], [2, 2])\n * // Equals [1 & 2, 2 & 2]\n * band([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 & 2, 1 & 2], [1 & 2, 2 & 2] ]\n ",
+            "value": "*\n * Pointwise band\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * band(1, 2)\n * // returns 1 & 2\n * band([1, 2], [2, 2])\n * // returns [1 & 2, 2 & 2]\n * band([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 & 2, 1 & 2], [1 & 2, 2 & 2] ]\n ",
             "range": [
               38,
-              354
+              357
             ],
             "loc": {
               "start": {
@@ -81,7 +81,7 @@
       },
       "range": [
         1,
-        355
+        358
       ],
       "loc": {
         "start": {
@@ -104,8 +104,8 @@
             "type": "Identifier",
             "name": "m1",
             "range": [
-              380,
-              382
+              383,
+              385
             ],
             "loc": {
               "start": {
@@ -122,8 +122,8 @@
             "type": "Identifier",
             "name": "m2",
             "range": [
-              384,
-              386
+              387,
+              389
             ],
             "loc": {
               "start": {
@@ -150,8 +150,8 @@
                     "type": "Identifier",
                     "name": "pointwise",
                     "range": [
-                      399,
-                      408
+                      402,
+                      411
                     ],
                     "loc": {
                       "start": {
@@ -173,8 +173,8 @@
                           "type": "Identifier",
                           "name": "x",
                           "range": [
-                            410,
-                            411
+                            413,
+                            414
                           ],
                           "loc": {
                             "start": {
@@ -191,8 +191,8 @@
                           "type": "Identifier",
                           "name": "y",
                           "range": [
-                            413,
-                            414
+                            416,
+                            417
                           ],
                           "loc": {
                             "start": {
@@ -213,8 +213,8 @@
                           "type": "Identifier",
                           "name": "x",
                           "range": [
-                            419,
-                            420
+                            422,
+                            423
                           ],
                           "loc": {
                             "start": {
@@ -231,8 +231,8 @@
                           "type": "Identifier",
                           "name": "y",
                           "range": [
-                            423,
-                            424
+                            426,
+                            427
                           ],
                           "loc": {
                             "start": {
@@ -246,8 +246,8 @@
                           }
                         },
                         "range": [
-                          419,
-                          424
+                          422,
+                          427
                         ],
                         "loc": {
                           "start": {
@@ -263,8 +263,8 @@
                       "generator": false,
                       "expression": true,
                       "range": [
-                        409,
-                        424
+                        412,
+                        427
                       ],
                       "loc": {
                         "start": {
@@ -279,8 +279,8 @@
                     }
                   ],
                   "range": [
-                    399,
-                    425
+                    402,
+                    428
                   ],
                   "loc": {
                     "start": {
@@ -298,8 +298,8 @@
                     "type": "Identifier",
                     "name": "m1",
                     "range": [
-                      426,
-                      428
+                      429,
+                      431
                     ],
                     "loc": {
                       "start": {
@@ -316,8 +316,8 @@
                     "type": "Identifier",
                     "name": "m2",
                     "range": [
-                      430,
-                      432
+                      433,
+                      435
                     ],
                     "loc": {
                       "start": {
@@ -332,8 +332,8 @@
                   }
                 ],
                 "range": [
-                  399,
-                  433
+                  402,
+                  436
                 ],
                 "loc": {
                   "start": {
@@ -347,8 +347,8 @@
                 }
               },
               "range": [
-                392,
-                434
+                395,
+                437
               ],
               "loc": {
                 "start": {
@@ -363,8 +363,8 @@
             }
           ],
           "range": [
-            388,
-            435
+            391,
+            438
           ],
           "loc": {
             "start": {
@@ -380,8 +380,8 @@
         "generator": false,
         "expression": false,
         "range": [
-          370,
-          435
+          373,
+          438
         ],
         "loc": {
           "start": {
@@ -396,10 +396,10 @@
         "leadingComments": [
           {
             "type": "Block",
-            "value": "*\n * Pointwise band\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * band(1, 2)\n * // Equals 1 & 2\n * band([1, 2], [2, 2])\n * // Equals [1 & 2, 2 & 2]\n * band([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 & 2, 1 & 2], [1 & 2, 2 & 2] ]\n ",
+            "value": "*\n * Pointwise band\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * band(1, 2)\n * // returns 1 & 2\n * band([1, 2], [2, 2])\n * // returns [1 & 2, 2 & 2]\n * band([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 & 2, 1 & 2], [1 & 2, 2 & 2] ]\n ",
             "range": [
               38,
-              354
+              357
             ],
             "loc": {
               "start": {
@@ -416,8 +416,8 @@
         "trailingComments": []
       },
       "range": [
-        355,
-        435
+        358,
+        438
       ],
       "loc": {
         "start": {
@@ -432,10 +432,10 @@
       "leadingComments": [
         {
           "type": "Block",
-          "value": "*\n * Pointwise band\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * band(1, 2)\n * // Equals 1 & 2\n * band([1, 2], [2, 2])\n * // Equals [1 & 2, 2 & 2]\n * band([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 & 2, 1 & 2], [1 & 2, 2 & 2] ]\n ",
+          "value": "*\n * Pointwise band\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * band(1, 2)\n * // returns 1 & 2\n * band([1, 2], [2, 2])\n * // returns [1 & 2, 2 & 2]\n * band([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 & 2, 1 & 2], [1 & 2, 2 & 2] ]\n ",
           "range": [
             38,
-            354
+            357
           ],
           "loc": {
             "start": {
@@ -454,7 +454,7 @@
   "sourceType": "module",
   "range": [
     1,
-    435
+    438
   ],
   "loc": {
     "start": {
@@ -469,10 +469,10 @@
   "comments": [
     {
       "type": "Block",
-      "value": "*\n * Pointwise band\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * band(1, 2)\n * // Equals 1 & 2\n * band([1, 2], [2, 2])\n * // Equals [1 & 2, 2 & 2]\n * band([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 & 2, 1 & 2], [1 & 2, 2 & 2] ]\n ",
+      "value": "*\n * Pointwise band\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * band(1, 2)\n * // returns 1 & 2\n * band([1, 2], [2, 2])\n * // returns [1 & 2, 2 & 2]\n * band([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 & 2, 1 & 2], [1 & 2, 2 & 2] ]\n ",
       "range": [
         38,
-        354
+        357
       ],
       "loc": {
         "start": {

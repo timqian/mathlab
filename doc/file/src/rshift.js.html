@@ -95,11 +95,11 @@ import pointwise from &apos;./pointwise&apos;
  * @example 
  * 
  * rshift(1, 2)
- * // Equals 1 &gt;&gt; 2
+ * // returns 1 &gt;&gt; 2
  * rshift([1, 2], [2, 2])
- * // Equals [1 &gt;&gt; 2, 2 &gt;&gt; 2]
+ * // returns [1 &gt;&gt; 2, 2 &gt;&gt; 2]
  * rshift([[2,1], [1,2]], [[2, 2], [2, 2]]))
- * // Equals [ [2 &gt;&gt; 2, 1 &gt;&gt; 2], [1 &gt;&gt; 2, 2 &gt;&gt; 2] ]
+ * // returns [ [2 &gt;&gt; 2, 1 &gt;&gt; 2], [1 &gt;&gt; 2, 2 &gt;&gt; 2] ]
  */
 export default function (m1, m2) {
   return pointwise((x, y) =&gt; x &gt;&gt; y)(m1, m2)

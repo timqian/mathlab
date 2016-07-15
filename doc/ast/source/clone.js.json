@@ -61,10 +61,10 @@
         "trailingComments": [
           {
             "type": "Block",
-            "value": "*\n * Pointwise clone\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * clone(1, 2)\n * // Equals 1  2\n * clone([1, 2], [2, 2])\n * // Equals [1  2, 2  2]\n * clone([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2  2, 1  2], [1  2, 2  2] ]\n ",
+            "value": "*\n * Pointwise clone\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * clone(2)\n * // returns 2\n * clone([1, 2])\n * // returns [1, 2]\n * clone([[1, 2], [2, 2]]))\n * // returns [ [1, 2], [2, 2] ]\n ",
             "range": [
               38,
-              322
+              277
             ],
             "loc": {
               "start": {
@@ -81,7 +81,7 @@
       },
       "range": [
         1,
-        323
+        278
       ],
       "loc": {
         "start": {
@@ -104,8 +104,8 @@
             "type": "Identifier",
             "name": "m",
             "range": [
-              348,
-              349
+              303,
+              304
             ],
             "loc": {
               "start": {
@@ -132,8 +132,8 @@
                     "type": "Identifier",
                     "name": "pointwise",
                     "range": [
-                      362,
-                      371
+                      317,
+                      326
                     ],
                     "loc": {
                       "start": {
@@ -155,8 +155,8 @@
                           "type": "Identifier",
                           "name": "x",
                           "range": [
-                            372,
-                            373
+                            327,
+                            328
                           ],
                           "loc": {
                             "start": {
@@ -174,8 +174,8 @@
                         "type": "Identifier",
                         "name": "x",
                         "range": [
-                          377,
-                          378
+                          332,
+                          333
                         ],
                         "loc": {
                           "start": {
@@ -191,8 +191,8 @@
                       "generator": false,
                       "expression": true,
                       "range": [
-                        372,
-                        378
+                        327,
+                        333
                       ],
                       "loc": {
                         "start": {
@@ -207,8 +207,8 @@
                     }
                   ],
                   "range": [
-                    362,
-                    379
+                    317,
+                    334
                   ],
                   "loc": {
                     "start": {
@@ -226,8 +226,8 @@
                     "type": "Identifier",
                     "name": "m",
                     "range": [
-                      380,
-                      381
+                      335,
+                      336
                     ],
                     "loc": {
                       "start": {
@@ -242,8 +242,8 @@
                   }
                 ],
                 "range": [
-                  362,
-                  382
+                  317,
+                  337
                 ],
                 "loc": {
                   "start": {
@@ -257,8 +257,8 @@
                 }
               },
               "range": [
-                355,
-                383
+                310,
+                338
               ],
               "loc": {
                 "start": {
@@ -273,8 +273,8 @@
             }
           ],
           "range": [
-            351,
-            384
+            306,
+            339
           ],
           "loc": {
             "start": {
@@ -290,8 +290,8 @@
         "generator": false,
         "expression": false,
         "range": [
-          338,
-          384
+          293,
+          339
         ],
         "loc": {
           "start": {
@@ -306,10 +306,10 @@
         "leadingComments": [
           {
             "type": "Block",
-            "value": "*\n * Pointwise clone\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * clone(1, 2)\n * // Equals 1  2\n * clone([1, 2], [2, 2])\n * // Equals [1  2, 2  2]\n * clone([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2  2, 1  2], [1  2, 2  2] ]\n ",
+            "value": "*\n * Pointwise clone\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * clone(2)\n * // returns 2\n * clone([1, 2])\n * // returns [1, 2]\n * clone([[1, 2], [2, 2]]))\n * // returns [ [1, 2], [2, 2] ]\n ",
             "range": [
               38,
-              322
+              277
             ],
             "loc": {
               "start": {
@@ -326,8 +326,8 @@
         "trailingComments": []
       },
       "range": [
-        323,
-        384
+        278,
+        339
       ],
       "loc": {
         "start": {
@@ -342,10 +342,10 @@
       "leadingComments": [
         {
           "type": "Block",
-          "value": "*\n * Pointwise clone\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * clone(1, 2)\n * // Equals 1  2\n * clone([1, 2], [2, 2])\n * // Equals [1  2, 2  2]\n * clone([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2  2, 1  2], [1  2, 2  2] ]\n ",
+          "value": "*\n * Pointwise clone\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * clone(2)\n * // returns 2\n * clone([1, 2])\n * // returns [1, 2]\n * clone([[1, 2], [2, 2]]))\n * // returns [ [1, 2], [2, 2] ]\n ",
           "range": [
             38,
-            322
+            277
           ],
           "loc": {
             "start": {
@@ -364,7 +364,7 @@
   "sourceType": "module",
   "range": [
     1,
-    384
+    339
   ],
   "loc": {
     "start": {
@@ -379,10 +379,10 @@
   "comments": [
     {
       "type": "Block",
-      "value": "*\n * Pointwise clone\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * clone(1, 2)\n * // Equals 1  2\n * clone([1, 2], [2, 2])\n * // Equals [1  2, 2  2]\n * clone([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2  2, 1  2], [1  2, 2  2] ]\n ",
+      "value": "*\n * Pointwise clone\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * clone(2)\n * // returns 2\n * clone([1, 2])\n * // returns [1, 2]\n * clone([[1, 2], [2, 2]]))\n * // returns [ [1, 2], [2, 2] ]\n ",
       "range": [
         38,
-        322
+        277
       ],
       "loc": {
         "start": {

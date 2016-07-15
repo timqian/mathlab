@@ -61,10 +61,10 @@
         "trailingComments": [
           {
             "type": "Block",
-            "value": "*\n * Pointwise not\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * not(1, 2)\n * // Equals 1 ! 2\n * not([1, 2], [2, 2])\n * // Equals [1 ! 2, 2 ! 2]\n * not([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 ! 2, 1 ! 2], [1 ! 2, 2 ! 2] ]\n ",
+            "value": "*\n * Pointwise not\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * not(2)\n * // returns !2\n * not([1, 2])\n * // returns [!1, !2]\n * not([[1, 2], [2, 2]]))\n * // returns [ [!1, !2], [!2, !2] ]\n ",
             "range": [
               38,
-              321
+              276
             ],
             "loc": {
               "start": {
@@ -81,7 +81,7 @@
       },
       "range": [
         1,
-        322
+        277
       ],
       "loc": {
         "start": {
@@ -104,8 +104,8 @@
             "type": "Identifier",
             "name": "m",
             "range": [
-              347,
-              348
+              302,
+              303
             ],
             "loc": {
               "start": {
@@ -132,8 +132,8 @@
                     "type": "Identifier",
                     "name": "pointwise",
                     "range": [
-                      361,
-                      370
+                      316,
+                      325
                     ],
                     "loc": {
                       "start": {
@@ -155,8 +155,8 @@
                           "type": "Identifier",
                           "name": "x",
                           "range": [
-                            371,
-                            372
+                            326,
+                            327
                           ],
                           "loc": {
                             "start": {
@@ -177,8 +177,8 @@
                           "type": "Identifier",
                           "name": "x",
                           "range": [
-                            377,
-                            378
+                            332,
+                            333
                           ],
                           "loc": {
                             "start": {
@@ -193,8 +193,8 @@
                         },
                         "prefix": true,
                         "range": [
-                          376,
-                          378
+                          331,
+                          333
                         ],
                         "loc": {
                           "start": {
@@ -210,8 +210,8 @@
                       "generator": false,
                       "expression": true,
                       "range": [
-                        371,
-                        378
+                        326,
+                        333
                       ],
                       "loc": {
                         "start": {
@@ -226,8 +226,8 @@
                     }
                   ],
                   "range": [
-                    361,
-                    379
+                    316,
+                    334
                   ],
                   "loc": {
                     "start": {
@@ -245,8 +245,8 @@
                     "type": "Identifier",
                     "name": "m",
                     "range": [
-                      380,
-                      381
+                      335,
+                      336
                     ],
                     "loc": {
                       "start": {
@@ -261,8 +261,8 @@
                   }
                 ],
                 "range": [
-                  361,
-                  382
+                  316,
+                  337
                 ],
                 "loc": {
                   "start": {
@@ -276,8 +276,8 @@
                 }
               },
               "range": [
-                354,
-                383
+                309,
+                338
               ],
               "loc": {
                 "start": {
@@ -292,8 +292,8 @@
             }
           ],
           "range": [
-            350,
-            384
+            305,
+            339
           ],
           "loc": {
             "start": {
@@ -309,8 +309,8 @@
         "generator": false,
         "expression": false,
         "range": [
-          337,
-          384
+          292,
+          339
         ],
         "loc": {
           "start": {
@@ -325,10 +325,10 @@
         "leadingComments": [
           {
             "type": "Block",
-            "value": "*\n * Pointwise not\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * not(1, 2)\n * // Equals 1 ! 2\n * not([1, 2], [2, 2])\n * // Equals [1 ! 2, 2 ! 2]\n * not([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 ! 2, 1 ! 2], [1 ! 2, 2 ! 2] ]\n ",
+            "value": "*\n * Pointwise not\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * not(2)\n * // returns !2\n * not([1, 2])\n * // returns [!1, !2]\n * not([[1, 2], [2, 2]]))\n * // returns [ [!1, !2], [!2, !2] ]\n ",
             "range": [
               38,
-              321
+              276
             ],
             "loc": {
               "start": {
@@ -345,8 +345,8 @@
         "trailingComments": []
       },
       "range": [
-        322,
-        384
+        277,
+        339
       ],
       "loc": {
         "start": {
@@ -361,10 +361,10 @@
       "leadingComments": [
         {
           "type": "Block",
-          "value": "*\n * Pointwise not\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * not(1, 2)\n * // Equals 1 ! 2\n * not([1, 2], [2, 2])\n * // Equals [1 ! 2, 2 ! 2]\n * not([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 ! 2, 1 ! 2], [1 ! 2, 2 ! 2] ]\n ",
+          "value": "*\n * Pointwise not\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * not(2)\n * // returns !2\n * not([1, 2])\n * // returns [!1, !2]\n * not([[1, 2], [2, 2]]))\n * // returns [ [!1, !2], [!2, !2] ]\n ",
           "range": [
             38,
-            321
+            276
           ],
           "loc": {
             "start": {
@@ -383,7 +383,7 @@
   "sourceType": "module",
   "range": [
     1,
-    384
+    339
   ],
   "loc": {
     "start": {
@@ -398,10 +398,10 @@
   "comments": [
     {
       "type": "Block",
-      "value": "*\n * Pointwise not\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * not(1, 2)\n * // Equals 1 ! 2\n * not([1, 2], [2, 2])\n * // Equals [1 ! 2, 2 ! 2]\n * not([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 ! 2, 1 ! 2], [1 ! 2, 2 ! 2] ]\n ",
+      "value": "*\n * Pointwise not\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * not(2)\n * // returns !2\n * not([1, 2])\n * // returns [!1, !2]\n * not([[1, 2], [2, 2]]))\n * // returns [ [!1, !2], [!2, !2] ]\n ",
       "range": [
         38,
-        321
+        276
       ],
       "loc": {
         "start": {

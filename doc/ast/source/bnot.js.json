@@ -61,10 +61,10 @@
         "trailingComments": [
           {
             "type": "Block",
-            "value": "*\n * Pointwise bnot\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * bnot(1, 2)\n * // Equals 1 ~ 2\n * bnot([1, 2], [2, 2])\n * // Equals [1 ~ 2, 2 ~ 2]\n * bnot([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 ~ 2, 1 ~ 2], [1 ~ 2, 2 ~ 2] ]\n ",
+            "value": "*\n * Pointwise bnot\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * bnot(2)\n * // returns ~2\n * bnot([1, 2])\n * // returns [~1, ~2]\n * bnot([[1, 2], [2, 2]]))\n * // returns [ [~1, ~2], [~2, ~2] ]\n ",
             "range": [
               38,
-              325
+              280
             ],
             "loc": {
               "start": {
@@ -81,7 +81,7 @@
       },
       "range": [
         1,
-        326
+        281
       ],
       "loc": {
         "start": {
@@ -104,8 +104,8 @@
             "type": "Identifier",
             "name": "m",
             "range": [
-              351,
-              352
+              306,
+              307
             ],
             "loc": {
               "start": {
@@ -132,8 +132,8 @@
                     "type": "Identifier",
                     "name": "pointwise",
                     "range": [
-                      365,
-                      374
+                      320,
+                      329
                     ],
                     "loc": {
                       "start": {
@@ -155,8 +155,8 @@
                           "type": "Identifier",
                           "name": "x",
                           "range": [
-                            375,
-                            376
+                            330,
+                            331
                           ],
                           "loc": {
                             "start": {
@@ -177,8 +177,8 @@
                           "type": "Identifier",
                           "name": "x",
                           "range": [
-                            381,
-                            382
+                            336,
+                            337
                           ],
                           "loc": {
                             "start": {
@@ -193,8 +193,8 @@
                         },
                         "prefix": true,
                         "range": [
-                          380,
-                          382
+                          335,
+                          337
                         ],
                         "loc": {
                           "start": {
@@ -210,8 +210,8 @@
                       "generator": false,
                       "expression": true,
                       "range": [
-                        375,
-                        382
+                        330,
+                        337
                       ],
                       "loc": {
                         "start": {
@@ -226,8 +226,8 @@
                     }
                   ],
                   "range": [
-                    365,
-                    383
+                    320,
+                    338
                   ],
                   "loc": {
                     "start": {
@@ -245,8 +245,8 @@
                     "type": "Identifier",
                     "name": "m",
                     "range": [
-                      384,
-                      385
+                      339,
+                      340
                     ],
                     "loc": {
                       "start": {
@@ -261,8 +261,8 @@
                   }
                 ],
                 "range": [
-                  365,
-                  386
+                  320,
+                  341
                 ],
                 "loc": {
                   "start": {
@@ -276,8 +276,8 @@
                 }
               },
               "range": [
-                358,
-                387
+                313,
+                342
               ],
               "loc": {
                 "start": {
@@ -292,8 +292,8 @@
             }
           ],
           "range": [
-            354,
-            388
+            309,
+            343
           ],
           "loc": {
             "start": {
@@ -309,8 +309,8 @@
         "generator": false,
         "expression": false,
         "range": [
-          341,
-          388
+          296,
+          343
         ],
         "loc": {
           "start": {
@@ -325,10 +325,10 @@
         "leadingComments": [
           {
             "type": "Block",
-            "value": "*\n * Pointwise bnot\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * bnot(1, 2)\n * // Equals 1 ~ 2\n * bnot([1, 2], [2, 2])\n * // Equals [1 ~ 2, 2 ~ 2]\n * bnot([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 ~ 2, 1 ~ 2], [1 ~ 2, 2 ~ 2] ]\n ",
+            "value": "*\n * Pointwise bnot\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * bnot(2)\n * // returns ~2\n * bnot([1, 2])\n * // returns [~1, ~2]\n * bnot([[1, 2], [2, 2]]))\n * // returns [ [~1, ~2], [~2, ~2] ]\n ",
             "range": [
               38,
-              325
+              280
             ],
             "loc": {
               "start": {
@@ -345,8 +345,8 @@
         "trailingComments": []
       },
       "range": [
-        326,
-        388
+        281,
+        343
       ],
       "loc": {
         "start": {
@@ -361,10 +361,10 @@
       "leadingComments": [
         {
           "type": "Block",
-          "value": "*\n * Pointwise bnot\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * bnot(1, 2)\n * // Equals 1 ~ 2\n * bnot([1, 2], [2, 2])\n * // Equals [1 ~ 2, 2 ~ 2]\n * bnot([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 ~ 2, 1 ~ 2], [1 ~ 2, 2 ~ 2] ]\n ",
+          "value": "*\n * Pointwise bnot\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * bnot(2)\n * // returns ~2\n * bnot([1, 2])\n * // returns [~1, ~2]\n * bnot([[1, 2], [2, 2]]))\n * // returns [ [~1, ~2], [~2, ~2] ]\n ",
           "range": [
             38,
-            325
+            280
           ],
           "loc": {
             "start": {
@@ -383,7 +383,7 @@
   "sourceType": "module",
   "range": [
     1,
-    388
+    343
   ],
   "loc": {
     "start": {
@@ -398,10 +398,10 @@
   "comments": [
     {
       "type": "Block",
-      "value": "*\n * Pointwise bnot\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * bnot(1, 2)\n * // Equals 1 ~ 2\n * bnot([1, 2], [2, 2])\n * // Equals [1 ~ 2, 2 ~ 2]\n * bnot([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 ~ 2, 1 ~ 2], [1 ~ 2, 2 ~ 2] ]\n ",
+      "value": "*\n * Pointwise bnot\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * bnot(2)\n * // returns ~2\n * bnot([1, 2])\n * // returns [~1, ~2]\n * bnot([[1, 2], [2, 2]]))\n * // returns [ [~1, ~2], [~2, ~2] ]\n ",
       "range": [
         38,
-        325
+        280
       ],
       "loc": {
         "start": {

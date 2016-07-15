@@ -61,10 +61,10 @@
         "trailingComments": [
           {
             "type": "Block",
-            "value": "*\n * Pointwise eq\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * eq(1, 2)\n * // Equals 1 === 2\n * eq([1, 2], [2, 2])\n * // Equals [1 === 2, 2 === 2]\n * eq([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 === 2, 1 === 2], [1 === 2, 2 === 2] ]\n ",
+            "value": "*\n * Pointwise eq\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * eq(1, 2)\n * // returns 1 === 2\n * eq([1, 2], [2, 2])\n * // returns [1 === 2, 2 === 2]\n * eq([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 === 2, 1 === 2], [1 === 2, 2 === 2] ]\n ",
             "range": [
               38,
-              360
+              363
             ],
             "loc": {
               "start": {
@@ -81,7 +81,7 @@
       },
       "range": [
         1,
-        361
+        364
       ],
       "loc": {
         "start": {
@@ -104,8 +104,8 @@
             "type": "Identifier",
             "name": "m1",
             "range": [
-              386,
-              388
+              389,
+              391
             ],
             "loc": {
               "start": {
@@ -122,8 +122,8 @@
             "type": "Identifier",
             "name": "m2",
             "range": [
-              390,
-              392
+              393,
+              395
             ],
             "loc": {
               "start": {
@@ -150,8 +150,8 @@
                     "type": "Identifier",
                     "name": "pointwise",
                     "range": [
-                      405,
-                      414
+                      408,
+                      417
                     ],
                     "loc": {
                       "start": {
@@ -173,8 +173,8 @@
                           "type": "Identifier",
                           "name": "x",
                           "range": [
-                            416,
-                            417
+                            419,
+                            420
                           ],
                           "loc": {
                             "start": {
@@ -191,8 +191,8 @@
                           "type": "Identifier",
                           "name": "y",
                           "range": [
-                            419,
-                            420
+                            422,
+                            423
                           ],
                           "loc": {
                             "start": {
@@ -213,8 +213,8 @@
                           "type": "Identifier",
                           "name": "x",
                           "range": [
-                            425,
-                            426
+                            428,
+                            429
                           ],
                           "loc": {
                             "start": {
@@ -231,8 +231,8 @@
                           "type": "Identifier",
                           "name": "y",
                           "range": [
-                            431,
-                            432
+                            434,
+                            435
                           ],
                           "loc": {
                             "start": {
@@ -246,8 +246,8 @@
                           }
                         },
                         "range": [
-                          425,
-                          432
+                          428,
+                          435
                         ],
                         "loc": {
                           "start": {
@@ -263,8 +263,8 @@
                       "generator": false,
                       "expression": true,
                       "range": [
-                        415,
-                        432
+                        418,
+                        435
                       ],
                       "loc": {
                         "start": {
@@ -279,8 +279,8 @@
                     }
                   ],
                   "range": [
-                    405,
-                    433
+                    408,
+                    436
                   ],
                   "loc": {
                     "start": {
@@ -298,8 +298,8 @@
                     "type": "Identifier",
                     "name": "m1",
                     "range": [
-                      434,
-                      436
+                      437,
+                      439
                     ],
                     "loc": {
                       "start": {
@@ -316,8 +316,8 @@
                     "type": "Identifier",
                     "name": "m2",
                     "range": [
-                      438,
-                      440
+                      441,
+                      443
                     ],
                     "loc": {
                       "start": {
@@ -332,8 +332,8 @@
                   }
                 ],
                 "range": [
-                  405,
-                  441
+                  408,
+                  444
                 ],
                 "loc": {
                   "start": {
@@ -347,8 +347,8 @@
                 }
               },
               "range": [
-                398,
-                442
+                401,
+                445
               ],
               "loc": {
                 "start": {
@@ -363,8 +363,8 @@
             }
           ],
           "range": [
-            394,
-            443
+            397,
+            446
           ],
           "loc": {
             "start": {
@@ -380,8 +380,8 @@
         "generator": false,
         "expression": false,
         "range": [
-          376,
-          443
+          379,
+          446
         ],
         "loc": {
           "start": {
@@ -396,10 +396,10 @@
         "leadingComments": [
           {
             "type": "Block",
-            "value": "*\n * Pointwise eq\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * eq(1, 2)\n * // Equals 1 === 2\n * eq([1, 2], [2, 2])\n * // Equals [1 === 2, 2 === 2]\n * eq([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 === 2, 1 === 2], [1 === 2, 2 === 2] ]\n ",
+            "value": "*\n * Pointwise eq\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * eq(1, 2)\n * // returns 1 === 2\n * eq([1, 2], [2, 2])\n * // returns [1 === 2, 2 === 2]\n * eq([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 === 2, 1 === 2], [1 === 2, 2 === 2] ]\n ",
             "range": [
               38,
-              360
+              363
             ],
             "loc": {
               "start": {
@@ -416,8 +416,8 @@
         "trailingComments": []
       },
       "range": [
-        361,
-        443
+        364,
+        446
       ],
       "loc": {
         "start": {
@@ -432,10 +432,10 @@
       "leadingComments": [
         {
           "type": "Block",
-          "value": "*\n * Pointwise eq\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * eq(1, 2)\n * // Equals 1 === 2\n * eq([1, 2], [2, 2])\n * // Equals [1 === 2, 2 === 2]\n * eq([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 === 2, 1 === 2], [1 === 2, 2 === 2] ]\n ",
+          "value": "*\n * Pointwise eq\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * eq(1, 2)\n * // returns 1 === 2\n * eq([1, 2], [2, 2])\n * // returns [1 === 2, 2 === 2]\n * eq([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 === 2, 1 === 2], [1 === 2, 2 === 2] ]\n ",
           "range": [
             38,
-            360
+            363
           ],
           "loc": {
             "start": {
@@ -454,7 +454,7 @@
   "sourceType": "module",
   "range": [
     1,
-    443
+    446
   ],
   "loc": {
     "start": {
@@ -469,10 +469,10 @@
   "comments": [
     {
       "type": "Block",
-      "value": "*\n * Pointwise eq\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * eq(1, 2)\n * // Equals 1 === 2\n * eq([1, 2], [2, 2])\n * // Equals [1 === 2, 2 === 2]\n * eq([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // Equals [ [2 === 2, 1 === 2], [1 === 2, 2 === 2] ]\n ",
+      "value": "*\n * Pointwise eq\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * eq(1, 2)\n * // returns 1 === 2\n * eq([1, 2], [2, 2])\n * // returns [1 === 2, 2 === 2]\n * eq([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 === 2, 1 === 2], [1 === 2, 2 === 2] ]\n ",
       "range": [
         38,
-        360
+        363
       ],
       "loc": {
         "start": {

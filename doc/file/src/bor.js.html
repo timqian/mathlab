@@ -95,11 +95,11 @@ import pointwise from &apos;./pointwise&apos;
  * @example 
  * 
  * bor(1, 2)
- * // Equals 1 | 2
+ * // returns 1 | 2
  * bor([1, 2], [2, 2])
- * // Equals [1 | 2, 2 | 2]
+ * // returns [1 | 2, 2 | 2]
  * bor([[2,1], [1,2]], [[2, 2], [2, 2]]))
- * // Equals [ [2 | 2, 1 | 2], [1 | 2, 2 | 2] ]
+ * // returns [ [2 | 2, 1 | 2], [1 | 2, 2 | 2] ]
  */
 export default function (m1, m2) {
   return pointwise((x, y) =&gt; x | y)(m1, m2)
