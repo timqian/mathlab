@@ -25,33 +25,10 @@ diag([1,2])
 
 ## Function list
 
-- [ ] [`pointwise()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Create a pointwise function
-- [ ] [`all()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	All the components of x are true
-- [ ] [`any()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	One or more of the components of x are true
-- [ ] [`bench()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Benchmarking routine
-- [ ] [`ccsDim()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Dimensions of sparse matrix
-- [ ] [`ccsDot()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Sparse matrix-matrix product
-- [ ] [`ccsFull()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Convert sparse to full
-- [ ] [`ccsGather()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Gather entries of sparse matrix
-- [ ] [`ccsGetBlock()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Get rows/columns of sparse matrix
-- [ ] [`ccsLUP()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Compute LUP decomposition of sparse matrix
-- [ ] [`ccsLUPSolve()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Solve Ax=b using LUP decomp
-- [ ] [`ccsScatter()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Scatter entries of sparse matrix
-- [ ] [`ccsSparse()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Convert from full to sparse
-- [ ] [`ccsTSolve()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Solve upper/lower triangular system
-- [ ] [`ccs<op>()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Supported ops include: add/div/mul/geq/etc...
-- [ ] [`cLU()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Coordinate matrix LU decomposition
-- [ ] [`cLUsolve()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Coordinate matrix LU solve
-- [ ] [`cdelsq()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Coordinate matrix Laplacian
-- [ ] [`cdotMV()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Coordinate matrix-vector product
-- [ ] [`cgrid()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Coordinate grid for cdelsq
+- [x] [`pointwise()`](http://www.timqian.com/mathlab/function/index.html#static-function-pointwise)	Create a pointwise function
 - [x] [`det()`](http://www.timqian.com/mathlab/function/index.html#static-function-det)	Determinant
-- [ ] [`diveq()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise x/=y
-- [ ] [`dopri()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Numerical integration of ODE using Dormand-Prince RK method. Returns an object Dopri.
-- [ ] [`Dopri.at()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Evaluate the ODE solution at a point
-- [ ] [`dot()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Matrix-Matrix, Matrix-Vector and Vector-Matrix product
+- [x] [`dot()`](http://www.timqian.com/mathlab/function/index.html#static-function-dot)	Matrix-Matrix, Matrix-Vector and Vector-Matrix product
 - [ ] [`eig()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Eigenvalues and eigenvectors
-- [ ] [`epsilon()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	2.220446049250313e-16
 - [ ] [`getBlock()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Extract a block from a matrix
 - [x] [`getDiag()`](http://www.timqian.com/mathlab/function/index.html#static-function-getDiag)	Get the diagonal of a matrix
 - [x] [`identity()`](http://www.timqian.com/mathlab/function/index.html#static-function-identity)	Identity matrix
@@ -64,8 +41,6 @@ diag([1,2])
 - [ ] [`norm2()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Square root of the sum of the square of the entries of x
 - [ ] [`norm2Squared()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Sum of squares of entries of x
 - [ ] [`norminf()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Largest modulus entry of x
-- [ ] [`parseCSV()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Parse a CSV file into an Array
-- [ ] [`parseDate()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise parseDate(x)
 - [ ] [`parseFloat()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise parseFloat(x)
 - [ ] [`precision()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Number of digits to prettyPrint
 - [ ] [`prettyPrint()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pretty-prints x
@@ -81,7 +56,6 @@ diag([1,2])
 - [ ] [`Spline.at()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Evaluate the Spline at a point
 - [ ] [`Spline.diff()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Differentiate the Spline
 - [ ] [`Spline.roots()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Find all the roots of the Spline
-- [ ] [`subeq()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise x-=y
 - [ ] [`sum()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Sum all the entries of x
 - [ ] [`svd()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Singular value decomposition
 - [ ] [`t()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Create a tensor type T (may be complex-valued)
@@ -148,3 +122,6 @@ diag([1,2])
 - [x] [`sub()`](http://www.timqian.com/mathlab/function/index.html#static-function-sub)	Pointwise x-y
 - [x] [`tan()`](http://www.timqian.com/mathlab/function/index.html#static-function-tan)	Pointwise Math.tan(x)
 - [x] [`xor()`](http://www.timqian.com/mathlab/function/index.html#static-function-xor)	Pointwise x^y
+
+## Constants
+- [x] [`epsilon`](http://www.timqian.com/mathlab/function/index.html#static-function-epsilon)	Return 2.220446049250313e-16
