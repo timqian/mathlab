@@ -1,5 +1,20 @@
 import dim from './dim'
 
+/**
+ * 
+ * 
+ * @export
+ * @param {Array | Number} x
+ * @param {Array | Number} y
+ * @returns {Array | Number}
+ * @example
+ * 
+ * dot([[1, 1], [2, 1]], [1, 2])
+ * // [3, 4]
+ * 
+ * dot([1, 2], 4)
+ * // [4, 8]
+ */
 export default function dot(x, y) {
     var d = dim;
     switch (d(x).length * 1000 + d(y).length) {

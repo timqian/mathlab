@@ -29,10 +29,9 @@ diag([1,2])
 - [x] [`det()`](http://www.timqian.com/mathlab/function/index.html#static-function-det)	Determinant
 - [x] [`dot()`](http://www.timqian.com/mathlab/function/index.html#static-function-dot)	Matrix-Matrix, Matrix-Vector and Vector-Matrix product
 - [ ] [`eig()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Eigenvalues and eigenvectors
-- [ ] [`getBlock()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Extract a block from a matrix
+- [x] [`getBlock()`](http://www.timqian.com/mathlab/function/index.html#static-function-getBlock)	Extract a block from a matrix
 - [x] [`getDiag()`](http://www.timqian.com/mathlab/function/index.html#static-function-getDiag)	Get the diagonal of a matrix
 - [x] [`identity()`](http://www.timqian.com/mathlab/function/index.html#static-function-identity)	Identity matrix
-- [ ] [`imageURL()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Encode a matrix as an image URL
 - [x] [`inv()`](http://www.timqian.com/mathlab/function/index.html#static-function-inv)	Matrix inverse
 - [ ] [`largeArray()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Don't prettyPrint Arrays larger than this
 - [ ] [`LU()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Dense LU decomposition
@@ -44,11 +43,10 @@ diag([1,2])
 - [ ] [`parseFloat()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise parseFloat(x)
 - [ ] [`precision()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Number of digits to prettyPrint
 - [ ] [`prettyPrint()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pretty-prints x
-- [ ] [`random()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Create an Array of random numbers
-- [ ] [`rep()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Create an Array by duplicating values
-- [ ] [`same()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	x and y are entrywise identical
-- [ ] [`seedrandom()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	The seedrandom module
-- [ ] [`setBlock()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Set a block of a matrix
+- [x] [`random()`](http://www.timqian.com/mathlab/function/index.html#static-function-random)	Create an Array of random numbers
+- [x] [`rep()`](http://www.timqian.com/mathlab/function/index.html#static-function-rep)	Create an Array by duplicating values
+- [x] [`same()`](http://www.timqian.com/mathlab/function/index.html#static-function-same)	x and y are entrywise identical
+- [x] [`setBlock()`](http://www.timqian.com/mathlab/function/index.html#static-function-setBlock)	Set a block of a matrix
 - [ ] [`solve()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Solve Ax=b
 - [ ] [`solveLP()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Solve a linear programming problem
 - [ ] [`solveQP()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Solve a quadratic programming problem
@@ -72,7 +70,6 @@ diag([1,2])
 - [ ] [`T.setRows()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Set a range of rows
 - [ ] [`T.transjugate()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	The conjugate-transpose of a matrix
 - [ ] [`tensor()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Tensor product ret[i][j] = x[i]*y[j]
-- [ ] [`toCSV()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Make a CSV file
 - [x] [`transpose()`](http://www.timqian.com/mathlab/function/index.html#static-function-transpose)	Matrix transpose
 - [ ] [`uncmin()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Unconstrained optimization
 - [ ] [`version()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Version string for the numeric library
