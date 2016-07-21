@@ -1,7 +1,10 @@
 
 import assert from 'assert'
 import should from 'should'
-import { div } from '../lib'
+import { div, T } from '../lib'
+
+const c1 = new T([1,2],[1,1])
+const c2 = new T([2,2],[1,1])
 
 describe('div', () => {
   it('', () => {
@@ -11,5 +14,9 @@ describe('div', () => {
       .should.deepEqual(
         [ [2 / 2, 1 / 2], [1 / 2, 2 / 2] ]
       )
+    div(c1, c2).x.should.deepEqual([ 0.6000000000000001, 1 ])
+    div(c1, c2).y.should.deepEqual([ 0.2, 0 ])
+    div(c1, 2).x.should.deepEqual([.5, 1])
+    console.log(c1, c2);
   })
 })

@@ -28,7 +28,7 @@ diag([1,2])
 - [x] [`pointwise()`](http://www.timqian.com/mathlab/function/index.html#static-function-pointwise)	Create a pointwise function
 - [x] [`det()`](http://www.timqian.com/mathlab/function/index.html#static-function-det)	Determinant
 - [x] [`dot()`](http://www.timqian.com/mathlab/function/index.html#static-function-dot)	Matrix-Matrix, Matrix-Vector and Vector-Matrix product
-- [ ] [`eig()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Eigenvalues and eigenvectors
+- [x] [`eig()`](http://www.timqian.com/mathlab/function/index.html#static-function-eig)	Eigenvalues and eigenvectors
 - [x] [`getBlock()`](http://www.timqian.com/mathlab/function/index.html#static-function-getBlock)	Extract a block from a matrix
 - [x] [`getDiag()`](http://www.timqian.com/mathlab/function/index.html#static-function-getDiag)	Get the diagonal of a matrix
 - [x] [`identity()`](http://www.timqian.com/mathlab/function/index.html#static-function-identity)	Identity matrix
@@ -56,19 +56,20 @@ diag([1,2])
 - [ ] [`Spline.roots()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Find all the roots of the Spline
 - [ ] [`sum()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Sum all the entries of x
 - [ ] [`svd()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Singular value decomposition
-- [ ] [`t()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Create a tensor type T (may be complex-valued)
-- [ ] [`T.<numericfun>()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Supported <numericfun> are: abs, add, cos, diag, div, dot, exp, getBlock, getDiag, inv, log, mul, neg, norm2, setBlock, sin, sub, transpose
-- [ ] [`T.conj()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise complex conjugate
-- [ ] [`T.fft()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Fast Fourier transform
-- [ ] [`T.get()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Read an entry
-- [ ] [`T.getRow()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Get a row
-- [ ] [`T.getRows()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Get a range of rows
-- [ ] [`T.ifft()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Inverse FFT
-- [ ] [`T.reciprocal()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise 1/z
-- [ ] [`T.set()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Set an entry
-- [ ] [`T.setRow()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Set a row
-- [ ] [`T.setRows()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Set a range of rows
-- [ ] [`T.transjugate()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	The conjugate-transpose of a matrix
+- [x] [`T()`](http://www.timqian.com/mathlab/function/index.html#static-function-T)	Create a tensor type T (may be complex-valued)
+- [x] `T.<numericfun>()`	Supported <numericfun> are: abs, add, cos, diag, div, dot, exp, getBlock, getDiag, inv, log, mul, neg, norm2, setBlock, sin, sub, transpose
+- [x] [`T.identity()`]() Generate identity complex structure matrix of given size
+- [x] [`T.conj()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise complex conjugate
+- [x] [`T.fft()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Fast Fourier transform
+- [x] [`T.get()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Read an entry
+- [x] [`T.getRow()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Get a row
+- [x] [`T.getRows()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Get a range of rows
+- [x] [`T.ifft()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Inverse FFT
+- [x] [`T.reciprocal()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise 1/z
+- [x] [`T.set()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Set an entry
+- [x] [`T.setRow()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Set a row
+- [x] [`T.setRows()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Set a range of rows
+- [x] [`T.transjugate()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	The conjugate-transpose of a matrix
 - [ ] [`tensor()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Tensor product ret[i][j] = x[i]*y[j]
 - [x] [`transpose()`](http://www.timqian.com/mathlab/function/index.html#static-function-transpose)	Matrix transpose
 - [ ] [`uncmin()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Unconstrained optimization
@@ -120,5 +121,5 @@ diag([1,2])
 - [x] [`tan()`](http://www.timqian.com/mathlab/function/index.html#static-function-tan)	Pointwise Math.tan(x)
 - [x] [`xor()`](http://www.timqian.com/mathlab/function/index.html#static-function-xor)	Pointwise x^y
 
-## Constants
+#### Constants
 - [x] [`epsilon`](http://www.timqian.com/mathlab/function/index.html#static-function-epsilon)	Return 2.220446049250313e-16

@@ -1,7 +1,10 @@
 
 import assert from 'assert'
 import should from 'should'
-import { mul } from '../lib'
+import { mul, T } from '../lib'
+
+const c1 = new T([1,2],[1,1])
+const c2 = new T([2,2],[1,1])
 
 describe('mul', () => {
   it('', () => {
@@ -11,5 +14,9 @@ describe('mul', () => {
       .should.deepEqual(
         [ [2 * 2, 1 * 2], [1 * 2, 2 * 2] ]
       )
+    mul(c1, c2).x.should.deepEqual([ 1, 3 ])
+    mul(c1, c2).y.should.deepEqual([ 3, 4 ])
+    mul(c1, 3).x.should.deepEqual([3, 6])
+    console.log(c1, c2);
   })
 })
