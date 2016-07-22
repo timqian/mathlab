@@ -1,6 +1,16 @@
 
 import pointwise from './pointwise'
 
+const ceil = pointwise(Math.ceil)
+
+function cceil(x) {
+  throw new Error('mathlab.ceil: no ceil for complex number')
+}
+
+function sceil(x) {
+  throw new Error('mathlab.ceil: ceil for sparse matrix has not been implemented yet')
+}
+
 /**
  * Pointwise Math.ceil(x)
  * 
@@ -17,5 +27,12 @@ import pointwise from './pointwise'
  * // returns [ [Math.ceil(1), Math.ceil(2)], [Math.ceil(1), Math.ceil(3)] ]
  */
 export default function (m) {
-  return pointwise(Math.ceil)(m)
+  switch (m.constructor.name) {
+    case 'Complex':
+      return cceil(m);
+    case 'Sparse':
+      return sceil(m);
+    default:
+      return ceil(m);
+  }
 }

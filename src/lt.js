@@ -1,5 +1,14 @@
-
 import pointwise from './pointwise'
+
+const lt = pointwise((x, y) => x < y);
+
+function clt(x, y) {
+  throw new Error('mathlab.lt: no lt for complex number')
+}
+
+function slt(x, y) {
+  throw new Error('mathlab.lt: lt for sparse matrix has not been implemented yet')
+}
 
 /**
  * Pointwise lt
@@ -18,5 +27,12 @@ import pointwise from './pointwise'
  * // returns [ [2 < 2, 1 < 2], [1 < 2, 2 < 2] ]
  */
 export default function (m1, m2) {
-  return pointwise((x, y) => x < y)(m1, m2)
+  switch (m1.constructor.name) {
+    case 'Complex':
+      return clt(m1, m2);
+    case 'Sparse':
+      return slt(m1, m2);
+    default:
+      return lt(m1, m2);
+  }
 }

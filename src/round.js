@@ -1,6 +1,16 @@
 
 import pointwise from './pointwise'
 
+const round = pointwise(Math.round)
+
+function cround(x) {
+  throw new Error('mathlab.round: no round for complex number')
+}
+
+function sround(x) {
+  throw new Error('mathlab.round: round for sparse matrix has not been implemented yet')
+}
+
 /**
  * Pointwise Math.round(x)
  * 
@@ -17,5 +27,12 @@ import pointwise from './pointwise'
  * // returns [ [Math.round(1), Math.round(2)], [Math.round(1), Math.round(3)] ]
  */
 export default function (m) {
-  return pointwise(Math.round)(m)
+  switch (m.constructor.name) {
+    case 'Complex':
+      return cround(m);
+    case 'Sparse':
+      return sround(m);
+    default:
+      return round(m);
+  }
 }

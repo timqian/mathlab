@@ -1,6 +1,16 @@
 
 import pointwise from './pointwise'
 
+const atan = pointwise(Math.atan)
+
+function catan(x) {
+  throw new Error('mathlab.atan: no atan for complex number')
+}
+
+function satan(x) {
+  throw new Error('mathlab.atan: atan for sparse matrix has not been implemented yet')
+}
+
 /**
  * Pointwise Math.atan(x)
  * 
@@ -17,5 +27,12 @@ import pointwise from './pointwise'
  * // returns [ [Math.atan(1), Math.atan(2)], [Math.atan(1), Math.atan(3)] ]
  */
 export default function (m) {
-  return pointwise(Math.atan)(m)
+  switch (m.constructor.name) {
+    case 'Complex':
+      return catan(m);
+    case 'Sparse':
+      return satan(m);
+    default:
+      return atan(m);
+  }
 }

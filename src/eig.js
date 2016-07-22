@@ -1,6 +1,6 @@
 // import dot from './dot';
 // import transpose from './transpose';
-// import T from './T'
+// import Complex from './Complex'
 
 // /**
 //  * Eigenvalues of real matrices
@@ -16,7 +16,7 @@
 //     i, k, flag = false,
 //     B = QB.B,
 //     H = dot(QB.Q, dot(QH.H, transpose(QB.Q)));
-//   var Q = new T(dot(QB.Q, QH.Q)),
+//   var Q = new Complex(dot(QB.Q, QH.Q)),
 //     Q0;
 //   var m = B.length,
 //     j;
@@ -50,7 +50,7 @@
 //           p = c / n2;
 //           q = (d - x) / n2;
 //         }
-//         Q0 = new T([
+//         Q0 = new Complex([
 //           [q, -p],
 //           [p, q]
 //         ]);
@@ -73,7 +73,7 @@
 //           x = y / n2;
 //           y = 0;
 //         }
-//         Q0 = new T([
+//         Q0 = new Complex([
 //           [q, -p],
 //           [p, q]
 //         ], [
@@ -86,7 +86,7 @@
 //   }
 //   var R = Q.dot(A).dot(Q.transjugate()),
 //     n = A.length,
-//     E = numeric.T.identity(n);
+//     E = numeric.Complex.identity(n);
 //   for (j = 0; j < n; j++) {
 //     if (j > 0) {
 //       for (k = j - 1; k >= 0; k--) {

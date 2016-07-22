@@ -6,7 +6,7 @@ import clone from './clone';
 import neg from './neg';
 import add from './add';
 
-export default class T {
+export default class Complex {
   constructor(x, y) {
     this.x = x;
     this.y = y;
@@ -15,9 +15,9 @@ export default class T {
   reciprocal() {
     if(this.y) {
         var d = add(mul(this.x,this.x),mul(this.y,this.y));
-        return new T(div(this.x, d),div(neg(this.y), d));
+        return new Complex(div(this.x, d),div(neg(this.y), d));
     }
-    return new T(div(1, this.x));
+    return new Complex(div(1, this.x));
   }
 
   fft() {
@@ -37,7 +37,7 @@ export default class T {
       cx[m-k] = cos(t);
       cy[m-k] = sin(t)
     }
-    var X = new T(a,b), Y = new T(cx,cy);
+    var X = new Complex(a,b), Y = new Complex(cx,cy);
     X = mul(X, Y);
     convpow2(X.x, X.y, clone(Y.x), neg(Y.y));
     X = mul(X, Y);
@@ -63,7 +63,7 @@ export default class T {
       cx[m-k] = cos(t);
       cy[m-k] = sin(t)
     }
-    var X = new T(a,b), Y = new T(cx,cy);
+    var X = new Complex(a,b), Y = new Complex(cx,cy);
     X = mul(X, Y);
     convpow2(X.x, X.y, clone(Y.x), neg(Y.y));
     X = mul(X, Y);
@@ -80,11 +80,11 @@ export default class T {
  * @returns {Object}
  * @example 
  * 
- * T.identity(2)
+ * Complex.identity(2)
  * // {x: [[1, 0], [0, 1]], y: undefined}
  */
-T.identity = function(n) {
-  return new T(identity(n));
+Complex.identity = function(n) {
+  return new Complex(identity(n));
 }
 
 

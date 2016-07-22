@@ -1,5 +1,14 @@
-
 import pointwise from './pointwise'
+
+const and = pointwise((x, y) => x && y);
+
+function cand(x, y) {
+  throw new Error('mathlab.and: no and for complex number')
+}
+
+function sand(x, y) {
+  throw new Error('mathlab.and: and for sparse matrix has not been implemented yet')
+}
 
 /**
  * Pointwise and
@@ -18,5 +27,12 @@ import pointwise from './pointwise'
  * // returns [ [2 && 2, 1 && 2], [1 && 2, 2 && 2] ]
  */
 export default function (m1, m2) {
-  return pointwise((x, y) => x && y)(m1, m2)
+  switch (m1.constructor.name) {
+    case 'Complex':
+      return cand(m1, m2);
+    case 'Sparse':
+      return sand(m1, m2);
+    default:
+      return and(m1, m2);
+  }
 }

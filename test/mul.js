@@ -1,10 +1,10 @@
 
 import assert from 'assert'
 import should from 'should'
-import { mul, T } from '../lib'
+import { mul, Complex } from '../lib'
 
-const c1 = new T([1,2],[1,1])
-const c2 = new T([2,2],[1,1])
+const c1 = new Complex([1,2],[1,1])
+const c2 = new Complex([2,2],[1,1])
 
 describe('mul', () => {
   it('', () => {

@@ -1,8 +1,9 @@
 
 import assert from 'assert'
 import should from 'should'
-import { abs } from '../lib'
+import { abs, Complex } from '../lib'
 
+const c1 = new Complex([1,2], [1,2])
 describe('abs', () => {
   it('', () => {
     abs(1).should.equal(Math.abs(1))

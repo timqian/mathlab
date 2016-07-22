@@ -1,6 +1,16 @@
 
 import pointwise from './pointwise'
 
+const sin = pointwise(Math.sin)
+
+function csin(x) {
+  throw new Error('mathlab.sin: no sin for complex number')
+}
+
+function ssin(x) {
+  throw new Error('mathlab.sin: sin for sparse matrix has not been implemented yet')
+}
+
 /**
  * Pointwise Math.sin(x)
  * 
@@ -17,5 +27,12 @@ import pointwise from './pointwise'
  * // returns [ [Math.sin(1), Math.sin(2)], [Math.sin(1), Math.sin(3)] ]
  */
 export default function (m) {
-  return pointwise(Math.sin)(m)
+  switch (m.constructor.name) {
+    case 'Complex':
+      return csin(m);
+    case 'Sparse':
+      return ssin(m);
+    default:
+      return sin(m);
+  }
 }

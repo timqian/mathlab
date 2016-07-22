@@ -1,5 +1,14 @@
-
 import pointwise from './pointwise'
+
+const sub = pointwise((x, y) => x - y);
+
+function csub(x, y) {
+  throw new Error('mathlab.sub: sub for complex matrix has not been implemented yet')
+}
+
+function ssub(x, y) {
+  throw new Error('mathlab.sub: sub for sparse matrix has not been implemented yet')
+}
 
 /**
  * Pointwise sub
@@ -18,5 +27,12 @@ import pointwise from './pointwise'
  * // returns [ [2 - 2, 1 - 2], [1 - 2, 2 - 2] ]
  */
 export default function (m1, m2) {
-  return pointwise((x, y) => x - y)(m1, m2)
+  switch (m1.constructor.name) {
+    case 'Complex':
+      return csub(m1, m2);
+    case 'Sparse':
+      return ssub(m1, m2);
+    default:
+      return sub(m1, m2);
+  }
 }

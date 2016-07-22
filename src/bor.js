@@ -1,5 +1,14 @@
-
 import pointwise from './pointwise'
+
+const bor = pointwise((x, y) => x | y);
+
+function cbor(x, y) {
+  throw new Error('mathlab.bor: no bor for complex number')
+}
+
+function sbor(x, y) {
+  throw new Error('mathlab.bor: bor for sparse matrix has not been implemented yet')
+}
 
 /**
  * Pointwise bor
@@ -18,5 +27,12 @@ import pointwise from './pointwise'
  * // returns [ [2 | 2, 1 | 2], [1 | 2, 2 | 2] ]
  */
 export default function (m1, m2) {
-  return pointwise((x, y) => x | y)(m1, m2)
+  switch (m1.constructor.name) {
+    case 'Complex':
+      return cbor(m1, m2);
+    case 'Sparse':
+      return sbor(m1, m2);
+    default:
+      return bor(m1, m2);
+  }
 }

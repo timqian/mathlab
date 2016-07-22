@@ -1,5 +1,14 @@
-
 import pointwise from './pointwise'
+
+const eq = pointwise((x, y) => x === y);
+
+function ceq(x, y) {
+  throw new Error('mathlab.eq: no eq for complex number')
+}
+
+function seq(x, y) {
+  throw new Error('mathlab.eq: eq for sparse matrix has not been implemented yet')
+}
 
 /**
  * Pointwise eq
@@ -18,5 +27,12 @@ import pointwise from './pointwise'
  * // returns [ [2 === 2, 1 === 2], [1 === 2, 2 === 2] ]
  */
 export default function (m1, m2) {
-  return pointwise((x, y) => x === y)(m1, m2)
+  switch (m1.constructor.name) {
+    case 'Complex':
+      return ceq(m1, m2);
+    case 'Sparse':
+      return seq(m1, m2);
+    default:
+      return eq(m1, m2);
+  }
 }

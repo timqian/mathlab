@@ -1,5 +1,4 @@
-export OldT from './OldT'
-export T from './T'
+export Complex from './Complex'
 export abs from './abs'
 export acos from './acos'
 export add from './add'

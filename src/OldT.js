@@ -1,7 +1,7 @@
-// export default function T(x,y) { this.x = x; this.y = y; }
-// // function t(x,y) { return new numeric.T(x,y); }
+// export default function Complex(x,y) { this.x = x; this.y = y; }
+// // function t(x,y) { return new numeric.Complex(x,y); }
 
-// function Tbinop(rr,rc,cr,cc,setup) {
+// function Complexbinop(rr,rc,cr,cc,setup) {
 //     if(typeof setup !== "string") {
 //         var k;
 //         setup = '';
@@ -13,77 +13,77 @@
 //     }
 //     return Function(['y'],
 //             'var x = this;\n'+
-//             'if(!(y instanceof numeric.T)) { y = new numeric.T(y); }\n'+
+//             'if(!(y instanceof numeric.Complex)) { y = new numeric.Complex(y); }\n'+
 //             setup+'\n'+
 //             'if(x.y) {'+
 //             '  if(y.y) {'+
-//             '    return new numeric.T('+cc+');\n'+
+//             '    return new numeric.Complex('+cc+');\n'+
 //             '  }\n'+
-//             '  return new numeric.T('+cr+');\n'+
+//             '  return new numeric.Complex('+cr+');\n'+
 //             '}\n'+
 //             'if(y.y) {\n'+
-//             '  return new numeric.T('+rc+');\n'+
+//             '  return new numeric.Complex('+rc+');\n'+
 //             '}\n'+
-//             'return new numeric.T('+rr+');\n'
+//             'return new numeric.Complex('+rr+');\n'
 //     );
 // }
 
-// T.prototype.add = numeric.Tbinop(
+// Complex.prototype.add = numeric.Complexbinop(
 //         'add(x.x,y.x)',
 //         'add(x.x,y.x),y.y',
 //         'add(x.x,y.x),x.y',
 //         'add(x.x,y.x),add(x.y,y.y)');
 
-// T.prototype.sub = numeric.Tbinop(
+// Complex.prototype.sub = numeric.Complexbinop(
 //         'sub(x.x,y.x)',
 //         'sub(x.x,y.x),neg(y.y)',
 //         'sub(x.x,y.x),x.y',
 //         'sub(x.x,y.x),sub(x.y,y.y)');
 
-// T.prototype.mul = numeric.Tbinop(
+// Complex.prototype.mul = numeric.Complexbinop(
 //         'mul(x.x,y.x)',
 //         'mul(x.x,y.x),mul(x.x,y.y)',
 //         'mul(x.x,y.x),mul(x.y,y.x)',
 //         'sub(mul(x.x,y.x),mul(x.y,y.y)),add(mul(x.x,y.y),mul(x.y,y.x))');
 
 
-// T.prototype.reciprocal = function reciprocal() {
+// Complex.prototype.reciprocal = function reciprocal() {
 //     var mul = numeric.mul, div = numeric.div;
 //     if(this.y) {
 //         var d = numeric.add(mul(this.x,this.x),mul(this.y,this.y));
-//         return new numeric.T(div(this.x,d),div(numeric.neg(this.y),d));
+//         return new numeric.Complex(div(this.x,d),div(numeric.neg(this.y),d));
 //     }
-//     return new T(div(1,this.x));
+//     return new Complex(div(1,this.x));
 // }
 
-// T.prototype.div = function div(y) {
-//     if(!(y instanceof numeric.T)) y = new numeric.T(y);
+// Complex.prototype.div = function div(y) {
+//     if(!(y instanceof numeric.Complex)) y = new numeric.Complex(y);
 //     if(y.y) { return this.mul(y.reciprocal()); }
 //     var div = numeric.div;
-//     if(this.y) { return new numeric.T(div(this.x,y.x),div(this.y,y.x)); }
-//     return new numeric.T(div(this.x,y.x));
+//     if(this.y) { return new numeric.Complex(div(this.x,y.x),div(this.y,y.x)); }
+//     return new numeric.Complex(div(this.x,y.x));
 // }
 
-// T.prototype.dot = numeric.Tbinop(
+// Complex.prototype.dot = numeric.Complexbinop(
 //         'dot(x.x,y.x)',
 //         'dot(x.x,y.x),dot(x.x,y.y)',
 //         'dot(x.x,y.x),dot(x.y,y.x)',
 //         'sub(dot(x.x,y.x),dot(x.y,y.y)),add(dot(x.x,y.y),dot(x.y,y.x))'
 //         );
 
-// T.prototype.transpose = function transpose() {
+// Complex.prototype.transpose = function transpose() {
 //     var t = numeric.transpose, x = this.x, y = this.y;
-//     if(y) { return new numeric.T(t(x),t(y)); }
-//     return new numeric.T(t(x));
+//     if(y) { return new numeric.Complex(t(x),t(y)); }
+//     return new numeric.Complex(t(x));
 // }
 
-// T.prototype.transjugate = function transjugate() {
+// Complex.prototype.transjugate = function transjugate() {
 //     var t = numeric.transpose, x = this.x, y = this.y;
-//     if(y) { return new numeric.T(t(x),numeric.negtranspose(y)); }
-//     return new numeric.T(t(x));
+//     if(y) { return new numeric.Complex(t(x),numeric.negtranspose(y)); }
+//     return new numeric.Complex(t(x));
 // }
 
-// function Tunop(r,c,s) {
+// function Complexunop(r,c,s) {
 //     if(typeof s !== "string") { s = ''; }
 //     return Function(
 //             'var x = this;\n'+
@@ -96,46 +96,46 @@
 // }
 
 
-// T.prototype.exp = numeric.Tunop(
-//         'return new numeric.T(ex)',
-//         'return new numeric.T(mul(cos(x.y),ex),mul(sin(x.y),ex))',
+// Complex.prototype.exp = numeric.Complexunop(
+//         'return new numeric.Complex(ex)',
+//         'return new numeric.Complex(mul(cos(x.y),ex),mul(sin(x.y),ex))',
 //         'var ex = numeric.exp(x.x), cos = numeric.cos, sin = numeric.sin, mul = numeric.mul;');
 
-// T.prototype.conj = numeric.Tunop(
-//         'return new numeric.T(x.x);',
-//         'return new numeric.T(x.x,numeric.neg(x.y));');
+// Complex.prototype.conj = numeric.Complexunop(
+//         'return new numeric.Complex(x.x);',
+//         'return new numeric.Complex(x.x,numeric.neg(x.y));');
 
-// T.prototype.neg = numeric.Tunop(
-//         'return new numeric.T(neg(x.x));',
-//         'return new numeric.T(neg(x.x),neg(x.y));',
+// Complex.prototype.neg = numeric.Complexunop(
+//         'return new numeric.Complex(neg(x.x));',
+//         'return new numeric.Complex(neg(x.x),neg(x.y));',
 //         'var neg = numeric.neg;');
 
-// T.prototype.sin = numeric.Tunop(
-//         'return new numeric.T(numeric.sin(x.x))',
-//         'return x.exp().sub(x.neg().exp()).div(new numeric.T(0,2));');
+// Complex.prototype.sin = numeric.Complexunop(
+//         'return new numeric.Complex(numeric.sin(x.x))',
+//         'return x.exp().sub(x.neg().exp()).div(new numeric.Complex(0,2));');
 
-// T.prototype.cos = numeric.Tunop(
-//         'return new numeric.T(numeric.cos(x.x))',
+// Complex.prototype.cos = numeric.Complexunop(
+//         'return new numeric.Complex(numeric.cos(x.x))',
 //         'return x.exp().add(x.neg().exp()).div(2);');
 
-// T.prototype.abs = numeric.Tunop(
-//         'return new numeric.T(numeric.abs(x.x));',
-//         'return new numeric.T(numeric.sqrt(numeric.add(mul(x.x,x.x),mul(x.y,x.y))));',
+// Complex.prototype.abs = numeric.Complexunop(
+//         'return new numeric.Complex(numeric.abs(x.x));',
+//         'return new numeric.Complex(numeric.sqrt(numeric.add(mul(x.x,x.x),mul(x.y,x.y))));',
 //         'var mul = numeric.mul;');
 
-// T.prototype.log = numeric.Tunop(
-//         'return new numeric.T(numeric.log(x.x));',
-//         'var theta = new numeric.T(numeric.atan2(x.y,x.x)), r = x.abs();\n'+
-//         'return new numeric.T(numeric.log(r.x),theta.x);');
+// Complex.prototype.log = numeric.Complexunop(
+//         'return new numeric.Complex(numeric.log(x.x));',
+//         'var theta = new numeric.Complex(numeric.atan2(x.y,x.x)), r = x.abs();\n'+
+//         'return new numeric.Complex(numeric.log(r.x),theta.x);');
 
-// T.prototype.norm2 = numeric.Tunop(
+// Complex.prototype.norm2 = numeric.Complexunop(
 //         'return numeric.norm2(x.x);',
 //         'var f = numeric.norm2Squared;\n'+
 //         'return Math.sqrt(f(x.x)+f(x.y));');
 
-// T.prototype.inv = function inv() {
+// Complex.prototype.inv = function inv() {
 //     var A = this;
-//     if(typeof A.y === "undefined") { return new numeric.T(numeric.inv(A.x)); }
+//     if(typeof A.y === "undefined") { return new numeric.Complex(numeric.inv(A.x)); }
 //     var n = A.x.length, i, j, k;
 //     var Rx = numeric.identity(n),Ry = numeric.rep([n,n],0);
 //     var Ax = numeric.clone(A.x), Ay = numeric.clone(A.y);
@@ -197,10 +197,10 @@
 //             }
 //         }
 //     }
-//     return new numeric.T(Rx,Ry);
+//     return new numeric.Complex(Rx,Ry);
 // }
 
-// T.prototype.get = function get(i) {
+// Complex.prototype.get = function get(i) {
 //     var x = this.x, y = this.y, k = 0, ik, n = i.length;
 //     if(y) {
 //         while(k<n) {
@@ -209,17 +209,17 @@
 //             y = y[ik];
 //             k++;
 //         }
-//         return new numeric.T(x,y);
+//         return new numeric.Complex(x,y);
 //     }
 //     while(k<n) {
 //         ik = i[k];
 //         x = x[ik];
 //         k++;
 //     }
-//     return new numeric.T(x);
+//     return new numeric.Complex(x);
 // }
 
-// T.prototype.set = function set(i,v) {
+// Complex.prototype.set = function set(i,v) {
 //     var x = this.x, y = this.y, k = 0, ik, n = i.length, vx = v.x, vy = v.y;
 //     if(n===0) {
 //         if(vy) { this.y = vy; }
@@ -267,19 +267,19 @@
 //     return this;
 // }
 
-// T.prototype.getRows = function getRows(i0,i1) {
+// Complex.prototype.getRows = function getRows(i0,i1) {
 //     var n = i1-i0+1, j;
 //     var rx = Array(n), ry, x = this.x, y = this.y;
 //     for(j=i0;j<=i1;j++) { rx[j-i0] = x[j]; }
 //     if(y) {
 //         ry = Array(n);
 //         for(j=i0;j<=i1;j++) { ry[j-i0] = y[j]; }
-//         return new numeric.T(rx,ry);
+//         return new numeric.Complex(rx,ry);
 //     }
-//     return new numeric.T(rx);
+//     return new numeric.Complex(rx);
 // }
 
-// T.prototype.setRows = function setRows(i0,i1,A) {
+// Complex.prototype.setRows = function setRows(i0,i1,A) {
 //     var j;
 //     var rx = this.x, ry = this.y, x = A.x, y = A.y;
 //     for(j=i0;j<=i1;j++) { rx[j] = x[j-i0]; }
@@ -292,13 +292,13 @@
 //     return this;
 // }
 
-// T.prototype.getRow = function getRow(k) {
+// Complex.prototype.getRow = function getRow(k) {
 //     var x = this.x, y = this.y;
-//     if(y) { return new numeric.T(x[k],y[k]); }
-//     return new numeric.T(x[k]);
+//     if(y) { return new numeric.Complex(x[k],y[k]); }
+//     return new numeric.Complex(x[k]);
 // }
 
-// T.prototype.setRow = function setRow(i,v) {
+// Complex.prototype.setRow = function setRow(i,v) {
 //     var rx = this.x, ry = this.y, x = v.x, y = v.y;
 //     rx[i] = x;
 //     if(y) {
@@ -310,14 +310,14 @@
 //     return this;
 // }
 
-// T.prototype.getBlock = function getBlock(from,to) {
+// Complex.prototype.getBlock = function getBlock(from,to) {
 //     var x = this.x, y = this.y, b = numeric.getBlock;
-//     if(y) { return new numeric.T(b(x,from,to),b(y,from,to)); }
-//     return new numeric.T(b(x,from,to));
+//     if(y) { return new numeric.Complex(b(x,from,to),b(y,from,to)); }
+//     return new numeric.Complex(b(x,from,to));
 // }
 
-// T.prototype.setBlock = function setBlock(from,to,A) {
-//     if(!(A instanceof numeric.T)) A = new numeric.T(A);
+// Complex.prototype.setBlock = function setBlock(from,to,A) {
+//     if(!(A instanceof numeric.Complex)) A = new numeric.Complex(A);
 //     var x = this.x, y = this.y, b = numeric.setBlock, Ax = A.x, Ay = A.y;
 //     if(Ay) {
 //         if(!y) { this.y = numeric.rep(numeric.dim(this),0); y = this.y; }
@@ -329,30 +329,30 @@
 //     if(y) b(y,from,to,numeric.rep(numeric.dim(Ax),0));
 // }
 
-// T.rep = function rep(s,v) {
-//     var T = numeric.T;
-//     if(!(v instanceof T)) v = new T(v);
+// Complex.rep = function rep(s,v) {
+//     var Complex = numeric.Complex;
+//     if(!(v instanceof Complex)) v = new Complex(v);
 //     var x = v.x, y = v.y, r = numeric.rep;
-//     if(y) return new T(r(s,x),r(s,y));
-//     return new T(r(s,x));
+//     if(y) return new Complex(r(s,x),r(s,y));
+//     return new Complex(r(s,x));
 // }
 
-// T.diag = function diag(d) {
-//     if(!(d instanceof numeric.T)) d = new numeric.T(d);
+// Complex.diag = function diag(d) {
+//     if(!(d instanceof numeric.Complex)) d = new numeric.Complex(d);
 //     var x = d.x, y = d.y, diag = numeric.diag;
-//     if(y) return new numeric.T(diag(x),diag(y));
-//     return new numeric.T(diag(x));
+//     if(y) return new numeric.Complex(diag(x),diag(y));
+//     return new numeric.Complex(diag(x));
 // }
 
-// T.eig = function eig() {
+// Complex.eig = function eig() {
 //     if(this.y) { throw new Error('eig: not implemented for complex matrices.'); }
 //     return numeric.eig(this.x);
 // }
 
 
-// T.prototype.getDiag = function getDiag() {
+// Complex.prototype.getDiag = function getDiag() {
 //     var n = numeric;
 //     var x = this.x, y = this.y;
-//     if(y) { return new n.T(n.getDiag(x),n.getDiag(y)); }
-//     return new n.T(n.getDiag(x));
+//     if(y) { return new n.Complex(n.getDiag(x),n.getDiag(y)); }
+//     return new n.Complex(n.getDiag(x));
 // }

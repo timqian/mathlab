@@ -1,6 +1,16 @@
 
 import pointwise from './pointwise'
 
+const acos = pointwise(Math.acos)
+
+function cacos(x) {
+  throw new Error('mathlab.acos: no acos for complex number')
+}
+
+function sacos(x) {
+  throw new Error('mathlab.acos: acos for sparse matrix has not been implemented yet')
+}
+
 /**
  * Pointwise Math.acos(x)
  * 
@@ -17,5 +27,12 @@ import pointwise from './pointwise'
  * // returns [ [Math.acos(1), Math.acos(2)], [Math.acos(1), Math.acos(3)] ]
  */
 export default function (m) {
-  return pointwise(Math.acos)(m)
+  switch (m.constructor.name) {
+    case 'Complex':
+      return cacos(m);
+    case 'Sparse':
+      return sacos(m);
+    default:
+      return acos(m);
+  }
 }

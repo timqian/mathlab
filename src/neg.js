@@ -1,21 +1,38 @@
 
 import pointwise from './pointwise'
 
+const neg = pointwise(x=> -x);
+
+function cneg(x) {
+  throw new Error('mathlab.neg: no neg for complex number')
+}
+
+function sneg(x) {
+  throw new Error('mathlab.neg: neg for sparse matrix has not been implemented yet')
+}
+
 /**
- * Pointwise neg
+ * Pointwise Math.neg(x)
  * 
  * @export
  * @param {Number|Array} m
  * @returns {Number|Array}
  * @example 
  * 
- * neg(2)
- * // returns -2
+ * neg(1)
+ * // returns Math.neg(1)
  * neg([1, 2])
- * // returns [-1, -2]
- * neg([[1, 2], [2, 2]]))
- * // returns [ [-1, -2], [-2, -2] ]
+ * // returns [Math.neg(1), Math.neg(2)]
+ * neg([[1,2],[1,3]])
+ * // returns [ [Math.neg(1), Math.neg(2)], [Math.neg(1), Math.neg(3)] ]
  */
 export default function (m) {
-  return pointwise(x => -x)(m)
+  switch (m.constructor.name) {
+    case 'Complex':
+      return cneg(m);
+    case 'Sparse':
+      return sneg(m);
+    default:
+      return neg(m);
+  }
 }

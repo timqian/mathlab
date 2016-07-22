@@ -1,6 +1,16 @@
 
 import pointwise from './pointwise'
 
+const exp = pointwise(Math.exp)
+
+function cexp(x) {
+  throw new Error('mathlab.exp: no exp for complex number')
+}
+
+function sexp(x) {
+  throw new Error('mathlab.exp: exp for sparse matrix has not been implemented yet')
+}
+
 /**
  * Pointwise Math.exp(x)
  * 
@@ -17,5 +27,12 @@ import pointwise from './pointwise'
  * // returns [ [Math.exp(1), Math.exp(2)], [Math.exp(1), Math.exp(3)] ]
  */
 export default function (m) {
-  return pointwise(Math.exp)(m)
+  switch (m.constructor.name) {
+    case 'Complex':
+      return cexp(m);
+    case 'Sparse':
+      return sexp(m);
+    default:
+      return exp(m);
+  }
 }

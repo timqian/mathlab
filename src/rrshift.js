@@ -1,5 +1,14 @@
-
 import pointwise from './pointwise'
+
+const rrshift = pointwise((x, y) => x >>> y);
+
+function crrshift(x, y) {
+  throw new Error('mathlab.rrshift: no rrshift for complex number')
+}
+
+function srrshift(x, y) {
+  throw new Error('mathlab.rrshift: rrshift for sparse matrix has not been implemented yet')
+}
 
 /**
  * Pointwise rrshift
@@ -18,5 +27,12 @@ import pointwise from './pointwise'
  * // returns [ [2 >>> 2, 1 >>> 2], [1 >>> 2, 2 >>> 2] ]
  */
 export default function (m1, m2) {
-  return pointwise((x, y) => x >>> y)(m1, m2)
+  switch (m1.constructor.name) {
+    case 'Complex':
+      return crrshift(m1, m2);
+    case 'Sparse':
+      return srrshift(m1, m2);
+    default:
+      return rrshift(m1, m2);
+  }
 }

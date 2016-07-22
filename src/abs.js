@@ -1,5 +1,22 @@
 
 import pointwise from './pointwise'
+import Complex from './Complex'
+import mul from './mul'
+import sqrt from './sqrt';
+import add from './add';
+
+const abs = pointwise(Math.abs)
+
+function cabs(x) {
+  if (x.y) {
+    return new Complex(sqrt(add(mul(x.x, x.x), mul(x.y, x.y))));
+  }
+  return new Complex(abs(x.x));
+}
+
+function sabs(x) {
+  throw new Error('mathlab.abs: abs for sparse matrix has not been implemented yet')
+}
 
 /**
  * Pointwise Math.abs(x)
@@ -17,5 +34,12 @@ import pointwise from './pointwise'
  * // returns [ [Math.abs(1), Math.abs(2)], [Math.abs(1), Math.abs(3)] ]
  */
 export default function (m) {
-  return pointwise(Math.abs)(m)
+  switch (m.constructor.name) {
+    case 'Complex':
+      return cabs(m);
+    case 'Sparse':
+      return sabs(m);
+    default:
+      return abs(m);
+  }
 }

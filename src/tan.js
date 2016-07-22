@@ -1,6 +1,16 @@
 
 import pointwise from './pointwise'
 
+const tan = pointwise(Math.tan)
+
+function ctan(x) {
+  throw new Error('mathlab.tan: no tan for complex number')
+}
+
+function stan(x) {
+  throw new Error('mathlab.tan: tan for sparse matrix has not been implemented yet')
+}
+
 /**
  * Pointwise Math.tan(x)
  * 
@@ -17,5 +27,12 @@ import pointwise from './pointwise'
  * // returns [ [Math.tan(1), Math.tan(2)], [Math.tan(1), Math.tan(3)] ]
  */
 export default function (m) {
-  return pointwise(Math.tan)(m)
+  switch (m.constructor.name) {
+    case 'Complex':
+      return ctan(m);
+    case 'Sparse':
+      return stan(m);
+    default:
+      return tan(m);
+  }
 }

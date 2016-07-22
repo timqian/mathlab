@@ -1,6 +1,16 @@
 
 import pointwise from './pointwise'
 
+const sqrt = pointwise(Math.sqrt)
+
+function csqrt(x) {
+  throw new Error('mathlab.sqrt: no sqrt for complex number')
+}
+
+function ssqrt(x) {
+  throw new Error('mathlab.sqrt: sqrt for sparse matrix has not been implemented yet')
+}
+
 /**
  * Pointwise Math.sqrt(x)
  * 
@@ -17,5 +27,12 @@ import pointwise from './pointwise'
  * // returns [ [Math.sqrt(1), Math.sqrt(2)], [Math.sqrt(1), Math.sqrt(3)] ]
  */
 export default function (m) {
-  return pointwise(Math.sqrt)(m)
+  switch (m.constructor.name) {
+    case 'Complex':
+      return csqrt(m);
+    case 'Sparse':
+      return ssqrt(m);
+    default:
+      return sqrt(m);
+  }
 }
