@@ -1,10 +1,14 @@
 
 import pointwise from './pointwise'
+import Complex from './Complex'
 
 const neg = pointwise(x=> -x);
 
 function cneg(x) {
-  throw new Error('mathlab.neg: no neg for complex number')
+  if (x.y) {
+    return new Complex(neg(x.x), neg(x.y));
+  }
+  return new Complex(neg(x.x));
 }
 
 function sneg(x) {

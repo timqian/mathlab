@@ -1,10 +1,19 @@
 
 import pointwise from './pointwise'
+import Complex from './Complex'
+import neg from './neg'
+import exp from './exp'
+import div from './div'
+import sub from './sub'
 
 const sin = pointwise(Math.sin)
 
 function csin(x) {
-  throw new Error('mathlab.sin: no sin for complex number')
+  if (x.y) {
+    return div(sub(exp(x), exp(neg(x))), new Complex(0,2))
+    // return x.exp().sub(x.neg().exp()).div(new Complex(0, 2));
+  }
+  return new Complex(sin(x.x));
 }
 
 function ssin(x) {

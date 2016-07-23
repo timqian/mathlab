@@ -1,7 +1,7 @@
 
 import assert from 'assert'
 import should from 'should'
-import { add } from '../lib'
+import { add, Complex } from '../lib'
 
 describe('add', () => {
   it('', () => {
@@ -11,5 +11,12 @@ describe('add', () => {
       .should.deepEqual(
         [ [2 + 2, 1 + 2], [1 + 2, 2 + 2] ]
       )
+    add(new Complex(1, 2), 2).x.should.equal(3)
+    add(new Complex(1, 2), 2).y.should.equal(2)
+    add(new Complex([1,2], [2,2]), new Complex([1,1],[1,1]))
+      .x.should.deepEqual([2, 3])
+    add(new Complex([[1,2], [2,2]]), [[1,1],[1,1]])
+      .x.should.deepEqual([[2, 3],[3,3]])
+    add(new Complex(1,2), 1).x.should.equal(2)
   })
 })

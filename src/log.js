@@ -1,10 +1,18 @@
 
 import pointwise from './pointwise'
+import Complex from './Complex'
+import atan2 from './atan2'
+import abs from './abs'
 
 const log = pointwise(Math.log)
 
 function clog(x) {
-  throw new Error('mathlab.log: no log for complex number')
+  if (x.y) {
+    var theta = new Complex(atan2(x.y, x.x)),
+      r = abs(x);
+    return new Complex(log(r.x), theta.x);
+  }
+  return new Complex(log(x.x));
 }
 
 function slog(x) {

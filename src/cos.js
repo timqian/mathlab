@@ -1,10 +1,18 @@
 
 import pointwise from './pointwise'
+import Complex from './Complex'
+import neg from './neg'
+import exp from './exp'
+import div from './div'
+import add from './add'
 
 const cos = pointwise(Math.cos)
 
 function ccos(x) {
-  throw new Error('mathlab.cos: no cos for complex number')
+  if (x.y) {
+    return div(add(exp(x), exp(neg(x))), 2);
+  }
+  return new Complex(cos(x.x));
 }
 
 function scos(x) {

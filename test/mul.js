@@ -17,6 +17,5 @@ describe('mul', () => {
     mul(c1, c2).x.should.deepEqual([ 1, 3 ])
     mul(c1, c2).y.should.deepEqual([ 3, 4 ])
     mul(c1, 3).x.should.deepEqual([3, 6])
-    console.log(c1, c2);
   })
 })

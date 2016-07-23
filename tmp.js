@@ -1,90 +1,42 @@
-{
-  add: function anonymous(y) {
-    var x = this;
-    if (!(y instanceof T)) { y = new T(y); }
-    var add = add;
-    if (x.y) {
-      if (y.y) {
-        return new T(add(x.x, y.x), add(x.y, y.y));
-      }
-      return new T(add(x.x, y.x), x.y);
-    }
-    if (y.y) {
-      return new T(add(x.x, y.x), y.y);
-    }
-    return new T(add(x.x, y.x));
-  },
-  sub: function anonymous(y) {
-    var x = this;
-    if (!(y instanceof T)) { y = new T(y); }
-    var sub = sub;
-    var neg = neg;
-    if (x.y) {
-      if (y.y) {
-        return new T(sub(x.x, y.x), sub(x.y, y.y));
-      }
-      return new T(sub(x.x, y.x), x.y);
-    }
-    if (y.y) {
-      return new T(sub(x.x, y.x), neg(y.y));
-    }
-    return new T(sub(x.x, y.x));
-  },
-  mul: function anonymous(y) {
-    var x = this;
-    if (!(y instanceof T)) { y = new T(y); }
-    var add = add;
-    var sub = sub;
-    var mul = mul;
-    if (x.y) {
-      if (y.y) {
-        return new T(sub(mul(x.x, y.x), mul(x.y, y.y)), add(mul(x.x, y.y), mul(x.y, y.x)));
-      }
-      return new T(mul(x.x, y.x), mul(x.y, y.x));
-    }
-    if (y.y) {
-      return new T(mul(x.x, y.x), mul(x.x, y.y));
-    }
-    return new T(mul(x.x, y.x));
-  },
-  reciprocal: function reciprocal() {
-    "use strict";
-    var mul = mul,
-      div = div;
-    if (this.y) {
-      var d = add(mul(this.x, this.x), mul(this.y, this.y));
-      return new T(div(this.x, d), div(neg(this.y), d));
-    }
-    return new T(div(1, this.x));
-  },
-  div: function div(y) {
-    "use strict";
-    if (!(y instanceof T)) y = new T(y);
-    if (y.y) {
-      return this.mul(y.reciprocal());
-    }
-    var div = div;
-    if (this.y) {
-      return new T(div(this.x, y.x), div(this.y, y.x));
-    }
-    return new T(div(this.x, y.x));
-  },
+
+  // reciprocal: function reciprocal() {
+  //   "use strict";
+  //   var mul = mul,
+  //     div = div;
+  //   if (this.y) {
+  //     var d = add(mul(this.x, this.x), mul(this.y, this.y));
+  //     return new Complex(div(this.x, d), div(neg(this.y), d));
+  //   }
+  //   return new Complex(div(1, this.x));
+  // },
+  // div: function div(y) {
+  //   "use strict";
+  //   if (!(y instanceof Complex)) y = new Complex(y);
+  //   if (y.y) {
+  //     return this.mul(y.reciprocal());
+  //   }
+  //   var div = div;
+  //   if (this.y) {
+  //     return new Complex(div(this.x, y.x), div(this.y, y.x));
+  //   }
+  //   return new Complex(div(this.x, y.x));
+  // },
   dot: function anonymous(y) {
     var x = this;
-    if (!(y instanceof T)) { y = new T(y); }
+    if (!(y instanceof Complex)) { y = new Complex(y); }
     var dot = dot;
     var add = add;
     var sub = sub;
     if (x.y) {
       if (y.y) {
-        return new T(sub(dot(x.x, y.x), dot(x.y, y.y)), add(dot(x.x, y.y), dot(x.y, y.x)));
+        return new Complex(sub(dot(x.x, y.x), dot(x.y, y.y)), add(dot(x.x, y.y), dot(x.y, y.x)));
       }
-      return new T(dot(x.x, y.x), dot(x.y, y.x));
+      return new Complex(dot(x.x, y.x), dot(x.y, y.x));
     }
     if (y.y) {
-      return new T(dot(x.x, y.x), dot(x.x, y.y));
+      return new Complex(dot(x.x, y.x), dot(x.x, y.y));
     }
-    return new T(dot(x.x, y.x));
+    return new Complex(dot(x.x, y.x));
   },
   transpose: function transpose() {
     "use strict";
@@ -92,9 +44,9 @@
       x = this.x,
       y = this.y;
     if (y) {
-      return new T(t(x), t(y));
+      return new Complex(t(x), t(y));
     }
-    return new T(t(x));
+    return new Complex(t(x));
   },
   transjugate: function transjugate() {
     "use strict";
@@ -102,73 +54,31 @@
       x = this.x,
       y = this.y;
     if (y) {
-      return new T(t(x), negtranspose(y));
+      return new Complex(t(x), negtranspose(y));
     }
-    return new T(t(x));
-  },
-  exp: function anonymous() {
-    var x = this;
-    var ex = exp(x.x),
-      cos = cos,
-      sin = sin,
-      mul = mul;
-    if (x.y) {
-      return new T(mul(cos(x.y), ex), mul(sin(x.y), ex));
-    }
-    return new T(ex);
+    return new Complex(t(x));
   },
   conj: function anonymous() {
     var x = this;
     if (x.y) {
-      return new T(x.x, neg(x.y));;
+      return new Complex(x.x, neg(x.y));
     }
-    return new T(x.x);;
+    return new Complex(x.x);
   },
-  neg: function anonymous() {
-    var x = this;
-    var neg = neg;
-    if (x.y) {
-      return new T(neg(x.x), neg(x.y));;
-    }
-    return new T(neg(x.x));;
-  },
-  sin: function anonymous() {
-    var x = this;
-    if (x.y) {
-      return x.exp().sub(x.neg().exp()).div(new T(0, 2));;
-    }
-    return new T(sin(x.x));
-  },
-  cos: function anonymous() {
-    var x = this;
-    if (x.y) {
-      return x.exp().add(x.neg().exp()).div(2);;
-    }
-    return new T(cos(x.x));
-  },
-  abs: ,
-  log: function anonymous() {
-    var x = this;
-    if (x.y) {
-      var theta = new T(atan2(x.y, x.x)),
-        r = x.abs();
-      return new T(log(r.x), theta.x);;
-    }
-    return new T(log(x.x));;
-  },
+
   norm2: function anonymous() {
     var x = this;
     if (x.y) {
       var f = norm2Squared;
-      return Math.sqrt(f(x.x) + f(x.y));;
+      return Math.sqrt(f(x.x) + f(x.y));
     }
-    return norm2(x.x);;
+    return norm2(x.x);
   },
   inv: function inv() {
     "use strict";
     var A = this;
     if (typeof A.y === "undefined") {
-      return new T(inv(A.x));
+      return new Complex(inv(A.x));
     }
     var n = A.x.length,
       i, j, k;
@@ -261,7 +171,7 @@
         }
       }
     }
-    return new T(Rx, Ry);
+    return new Complex(Rx, Ry);
   },
   get: function get(i) {
     "use strict";
@@ -276,14 +186,14 @@
         y = y[ik];
         k++;
       }
-      return new T(x, y);
+      return new Complex(x, y);
     }
     while (k < n) {
       ik = i[k];
       x = x[ik];
       k++;
     }
-    return new T(x);
+    return new Complex(x);
   },
   set: function set(i, v) {
     "use strict";
@@ -347,9 +257,9 @@
     if (y) {
       ry = Array(n);
       for (j = i0; j <= i1; j++) { ry[j - i0] = y[j]; }
-      return new T(rx, ry);
+      return new Complex(rx, ry);
     }
-    return new T(rx);
+    return new Complex(rx);
   },
   setRows: function setRows(i0, i1, A) {
     "use strict";
@@ -375,9 +285,9 @@
     var x = this.x,
       y = this.y;
     if (y) {
-      return new T(x[k], y[k]);
+      return new Complex(x[k], y[k]);
     }
-    return new T(x[k]);
+    return new Complex(x[k]);
   },
   setRow: function setRow(i, v) {
     "use strict";
@@ -401,13 +311,13 @@
       y = this.y,
       b = getBlock;
     if (y) {
-      return new T(b(x, from, to), b(y, from, to));
+      return new Complex(b(x, from, to), b(y, from, to));
     }
-    return new T(b(x, from, to));
+    return new Complex(b(x, from, to));
   },
   setBlock: function setBlock(from, to, A) {
     "use strict";
-    if (!(A instanceof T)) A = new T(A);
+    if (!(A instanceof Complex)) A = new Complex(A);
     var x = this.x,
       y = this.y,
       b = setBlock,
@@ -431,84 +341,7 @@
     var x = this.x,
       y = this.y;
     if (y) {
-      return new n.T(n.getDiag(x), n.getDiag(y));
+      return new n.Complex(n.getDiag(x), n.getDiag(y));
     }
-    return new n.T(n.getDiag(x));
-  },
-  fft: function fft() {
-    "use strict";
-    var x = this.x,
-      y = this.y;
-    var n = x.length,
-      log = Math.log,
-      log2 = log(2),
-      p = Math.ceil(log(2 * n - 1) / log2),
-      m = Math.pow(2, p);
-    var cx = rep([m], 0),
-      cy = rep([m], 0),
-      cos = Math.cos,
-      sin = Math.sin;
-    var k, c = (-3.141592653589793238462643383279502884197169399375105820 / n),
-      t;
-    var a = rep([m], 0),
-      b = rep([m], 0),
-      nhalf = Math.floor(n / 2);
-    for (k = 0; k < n; k++) a[k] = x[k];
-    if (typeof y !== "undefined")
-      for (k = 0; k < n; k++) b[k] = y[k];
-    cx[0] = 1;
-    for (k = 1; k <= m / 2; k++) {
-      t = c * k * k;
-      cx[k] = cos(t);
-      cy[k] = sin(t);
-      cx[m - k] = cos(t);
-      cy[m - k] = sin(t)
-    }
-    var X = new T(a, b),
-      Y = new T(cx, cy);
-    X = X.mul(Y);
-    convpow2(X.x, X.y, clone(Y.x), neg(Y.y));
-    X = X.mul(Y);
-    X.x.length = n;
-    X.y.length = n;
-    return X;
-  },
-  ifft: function ifft() {
-    "use strict";
-    var x = this.x,
-      y = this.y;
-    var n = x.length,
-      log = Math.log,
-      log2 = log(2),
-      p = Math.ceil(log(2 * n - 1) / log2),
-      m = Math.pow(2, p);
-    var cx = rep([m], 0),
-      cy = rep([m], 0),
-      cos = Math.cos,
-      sin = Math.sin;
-    var k, c = (3.141592653589793238462643383279502884197169399375105820 / n),
-      t;
-    var a = rep([m], 0),
-      b = rep([m], 0),
-      nhalf = Math.floor(n / 2);
-    for (k = 0; k < n; k++) a[k] = x[k];
-    if (typeof y !== "undefined")
-      for (k = 0; k < n; k++) b[k] = y[k];
-    cx[0] = 1;
-    for (k = 1; k <= m / 2; k++) {
-      t = c * k * k;
-      cx[k] = cos(t);
-      cy[k] = sin(t);
-      cx[m - k] = cos(t);
-      cy[m - k] = sin(t)
-    }
-    var X = new T(a, b),
-      Y = new T(cx, cy);
-    X = X.mul(Y);
-    convpow2(X.x, X.y, clone(Y.x), neg(Y.y));
-    X = X.mul(Y);
-    X.x.length = n;
-    X.y.length = n;
-    return X.div(n);
+    return new n.Complex(n.getDiag(x));
   }
-}

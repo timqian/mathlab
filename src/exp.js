@@ -1,10 +1,18 @@
 
 import pointwise from './pointwise'
+import cos from './cos'
+import sin from './sin'
+import mul from './mul'
+import Complex from './Complex'
 
 const exp = pointwise(Math.exp)
 
 function cexp(x) {
-  throw new Error('mathlab.exp: no exp for complex number')
+  var ex = exp(x.x);
+  if (x.y) {
+    return new Complex(mul(cos(x.y), ex), mul(sin(x.y), ex));
+  }
+  return new Complex(ex);
 }
 
 function sexp(x) {

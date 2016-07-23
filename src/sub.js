@@ -1,9 +1,21 @@
 import pointwise from './pointwise'
+import Complex from './Complex'
+import neg from './neg'
 
 const sub = pointwise((x, y) => x - y);
 
 function csub(x, y) {
-  throw new Error('mathlab.sub: sub for complex matrix has not been implemented yet')
+  if (!(y instanceof Complex)) { y = new Complex(y); }
+  if (x.y) {
+    if (y.y) {
+      return new Complex(sub(x.x, y.x), sub(x.y, y.y));
+    }
+    return new Complex(sub(x.x, y.x), x.y);
+  }
+  if (y.y) {
+    return new Complex(sub(x.x, y.x), neg(y.y));
+  }
+  return new Complex(sub(x.x, y.x));
 }
 
 function ssub(x, y) {

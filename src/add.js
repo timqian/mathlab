@@ -1,9 +1,20 @@
 import pointwise from './pointwise'
+import Complex from './Complex'
 
 const add = pointwise((x, y) => x + y);
 
 function cadd(x, y) {
-  throw new Error('mathlab.add: add for complex matrix has not been implemented yet')
+  if (!(y instanceof Complex)) { y = new Complex(y); }
+  if (x.y) {
+    if (y.y) {
+      return new Complex(add(x.x, y.x), add(x.y, y.y));
+    }
+    return new Complex(add(x.x, y.x), x.y);
+  }
+  if (y.y) {
+    return new Complex(add(x.x, y.x), y.y);
+  }
+  return new Complex(add(x.x, y.x));
 }
 
 function sadd(x, y) {
