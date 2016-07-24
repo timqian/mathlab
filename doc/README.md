@@ -10,7 +10,7 @@
 
 ## Math Object functions
 
-- [**`abs`**](#): Pointwise [Math.abs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/abs)
+- [**abs**](#): Pointwise [Math.abs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/abs)
 
 	+ params: `Number | Array | Complex | Sparse`
 
@@ -27,7 +27,7 @@
 		abs(new Sparse([[1,2,0],[0,0,-1],[1,0,0]])) // {row: col: val:}
 		```
 
-- **`acos`**: Pointwise [Math.acos](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/acos)
+- **acos**: Pointwise [Math.acos](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/acos)
 
 	+ params:
 
