@@ -2,10 +2,11 @@
 
 Lodash like math lab in javascript, focusing on matrix manipulation.
 
-## Goals
+## Features
 - **Modulize**: only import the function you need.
 - **Easy to use**: no extra concepts to grasp(1D Array as vector and 2D Array as matrix)
 - **Functional**: no side effact on input data and the outside world
+- Support sparse and complex matrix manipulation
 
 ## Install
 ```
@@ -14,13 +15,18 @@ $ npm install mathlab --save
 
 ## Sample usage
 ```js
-import { diag } from 'mathlab' 
-// import diag from 'mathlab/lib/diag'
+import { dot } from 'mathlab'
+const A = [[1,2,3],
+           [4,5,6]];
 
-diag([1,2])
-// [[1, 0], 
-//  [0, 2]]
+const x = [7,8,9]
+
+const y = dot(A, x)
+
+console.log(y); // [50,122]
 ```
+
+# [Documents](https://github.com/timqian/mathlab/tree/master/doc#readme)
 
 ## Function list
 
