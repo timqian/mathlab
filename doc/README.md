@@ -10,15 +10,11 @@
 
 ## Math Object functions
 
-- `abs`: Pointwise [Math.abs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/abs)
+- [**`abs`**](#): Pointwise [Math.abs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/abs)
 
-	+ params:
+	+ params: `Number | Array | Complex | Sparse`
 
-		> Number | Array | Complex | Sparse
-
-	+ returns:
-
-		> Number | Array | Complex | Sparse
+	+ returns: `Number | Array | Complex | Sparse`
 
 	+ example:
 
