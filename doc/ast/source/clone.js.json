@@ -57,31 +57,11 @@
             "line": 2,
             "column": 35
           }
-        },
-        "trailingComments": [
-          {
-            "type": "Block",
-            "value": "*\n * Pointwise clone\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * clone(2)\n * // returns 2\n * clone([1, 2])\n * // returns [1, 2]\n * clone([[1, 2], [2, 2]]))\n * // returns [ [1, 2], [2, 2] ]\n ",
-            "range": [
-              38,
-              277
-            ],
-            "loc": {
-              "start": {
-                "line": 4,
-                "column": 0
-              },
-              "end": {
-                "line": 18,
-                "column": 3
-              }
-            }
-          }
-        ]
+        }
       },
       "range": [
         1,
-        278
+        38
       ],
       "loc": {
         "start": {
@@ -89,10 +69,478 @@
           "column": 0
         },
         "end": {
-          "line": 19,
+          "line": 4,
           "column": 0
         }
       }
+    },
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "clone",
+            "range": [
+              44,
+              49
+            ],
+            "loc": {
+              "start": {
+                "line": 4,
+                "column": 6
+              },
+              "end": {
+                "line": 4,
+                "column": 11
+              }
+            }
+          },
+          "init": {
+            "type": "CallExpression",
+            "callee": {
+              "type": "Identifier",
+              "name": "pointwise",
+              "range": [
+                52,
+                61
+              ],
+              "loc": {
+                "start": {
+                  "line": 4,
+                  "column": 14
+                },
+                "end": {
+                  "line": 4,
+                  "column": 23
+                }
+              }
+            },
+            "arguments": [
+              {
+                "type": "ArrowFunctionExpression",
+                "id": null,
+                "params": [
+                  {
+                    "type": "Identifier",
+                    "name": "x",
+                    "range": [
+                      62,
+                      63
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 24
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 25
+                      }
+                    }
+                  }
+                ],
+                "body": {
+                  "type": "Identifier",
+                  "name": "x",
+                  "range": [
+                    67,
+                    68
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 29
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 30
+                    }
+                  }
+                },
+                "generator": false,
+                "expression": true,
+                "range": [
+                  62,
+                  68
+                ],
+                "loc": {
+                  "start": {
+                    "line": 4,
+                    "column": 24
+                  },
+                  "end": {
+                    "line": 4,
+                    "column": 30
+                  }
+                }
+              }
+            ],
+            "range": [
+              52,
+              69
+            ],
+            "loc": {
+              "start": {
+                "line": 4,
+                "column": 14
+              },
+              "end": {
+                "line": 4,
+                "column": 31
+              }
+            }
+          },
+          "range": [
+            44,
+            69
+          ],
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 6
+            },
+            "end": {
+              "line": 4,
+              "column": 31
+            }
+          }
+        }
+      ],
+      "kind": "const",
+      "range": [
+        38,
+        70
+      ],
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 0
+        },
+        "end": {
+          "line": 4,
+          "column": 32
+        }
+      }
+    },
+    {
+      "type": "FunctionDeclaration",
+      "id": {
+        "type": "Identifier",
+        "name": "cclone",
+        "range": [
+          81,
+          87
+        ],
+        "loc": {
+          "start": {
+            "line": 6,
+            "column": 9
+          },
+          "end": {
+            "line": 6,
+            "column": 15
+          }
+        }
+      },
+      "params": [
+        {
+          "type": "Identifier",
+          "name": "x",
+          "range": [
+            88,
+            89
+          ],
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 16
+            },
+            "end": {
+              "line": 6,
+              "column": 17
+            }
+          }
+        }
+      ],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "ThrowStatement",
+            "argument": {
+              "type": "NewExpression",
+              "callee": {
+                "type": "Identifier",
+                "name": "Error",
+                "range": [
+                  105,
+                  110
+                ],
+                "loc": {
+                  "start": {
+                    "line": 7,
+                    "column": 12
+                  },
+                  "end": {
+                    "line": 7,
+                    "column": 17
+                  }
+                }
+              },
+              "arguments": [
+                {
+                  "type": "Literal",
+                  "value": "mathlab.clone: no clone for complex number",
+                  "raw": "'mathlab.clone: no clone for complex number'",
+                  "range": [
+                    111,
+                    155
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 7,
+                      "column": 18
+                    },
+                    "end": {
+                      "line": 7,
+                      "column": 62
+                    }
+                  }
+                }
+              ],
+              "range": [
+                101,
+                156
+              ],
+              "loc": {
+                "start": {
+                  "line": 7,
+                  "column": 8
+                },
+                "end": {
+                  "line": 7,
+                  "column": 63
+                }
+              }
+            },
+            "range": [
+              95,
+              157
+            ],
+            "loc": {
+              "start": {
+                "line": 7,
+                "column": 2
+              },
+              "end": {
+                "line": 8,
+                "column": 0
+              }
+            }
+          }
+        ],
+        "range": [
+          91,
+          158
+        ],
+        "loc": {
+          "start": {
+            "line": 6,
+            "column": 19
+          },
+          "end": {
+            "line": 8,
+            "column": 1
+          }
+        }
+      },
+      "generator": false,
+      "expression": false,
+      "range": [
+        72,
+        158
+      ],
+      "loc": {
+        "start": {
+          "line": 6,
+          "column": 0
+        },
+        "end": {
+          "line": 8,
+          "column": 1
+        }
+      }
+    },
+    {
+      "type": "FunctionDeclaration",
+      "id": {
+        "type": "Identifier",
+        "name": "sclone",
+        "range": [
+          169,
+          175
+        ],
+        "loc": {
+          "start": {
+            "line": 10,
+            "column": 9
+          },
+          "end": {
+            "line": 10,
+            "column": 15
+          }
+        }
+      },
+      "params": [
+        {
+          "type": "Identifier",
+          "name": "x",
+          "range": [
+            176,
+            177
+          ],
+          "loc": {
+            "start": {
+              "line": 10,
+              "column": 16
+            },
+            "end": {
+              "line": 10,
+              "column": 17
+            }
+          }
+        }
+      ],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "ThrowStatement",
+            "argument": {
+              "type": "NewExpression",
+              "callee": {
+                "type": "Identifier",
+                "name": "Error",
+                "range": [
+                  193,
+                  198
+                ],
+                "loc": {
+                  "start": {
+                    "line": 11,
+                    "column": 12
+                  },
+                  "end": {
+                    "line": 11,
+                    "column": 17
+                  }
+                }
+              },
+              "arguments": [
+                {
+                  "type": "Literal",
+                  "value": "mathlab.clone: clone for sparse matrix has not been implemented yet",
+                  "raw": "'mathlab.clone: clone for sparse matrix has not been implemented yet'",
+                  "range": [
+                    199,
+                    268
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 11,
+                      "column": 18
+                    },
+                    "end": {
+                      "line": 11,
+                      "column": 87
+                    }
+                  }
+                }
+              ],
+              "range": [
+                189,
+                269
+              ],
+              "loc": {
+                "start": {
+                  "line": 11,
+                  "column": 8
+                },
+                "end": {
+                  "line": 11,
+                  "column": 88
+                }
+              }
+            },
+            "range": [
+              183,
+              270
+            ],
+            "loc": {
+              "start": {
+                "line": 11,
+                "column": 2
+              },
+              "end": {
+                "line": 12,
+                "column": 0
+              }
+            }
+          }
+        ],
+        "range": [
+          179,
+          271
+        ],
+        "loc": {
+          "start": {
+            "line": 10,
+            "column": 19
+          },
+          "end": {
+            "line": 12,
+            "column": 1
+          }
+        }
+      },
+      "generator": false,
+      "expression": false,
+      "range": [
+        160,
+        271
+      ],
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 0
+        },
+        "end": {
+          "line": 12,
+          "column": 1
+        }
+      },
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * Pointwise clone(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * clone(1)\n * // returns clone(1)\n * clone([1, 2])\n * // returns [clone(1), clone(2)]\n * clone([[1,2],[1,3]])\n * // returns [ [clone(1), clone(2)], [clone(1), clone(3)] ]\n ",
+          "range": [
+            273,
+            560
+          ],
+          "loc": {
+            "start": {
+              "line": 14,
+              "column": 0
+            },
+            "end": {
+              "line": 28,
+              "column": 3
+            }
+          }
+        }
+      ]
     },
     {
       "type": "ExportDefaultDeclaration",
@@ -104,16 +552,16 @@
             "type": "Identifier",
             "name": "m",
             "range": [
-              303,
-              304
+              586,
+              587
             ],
             "loc": {
               "start": {
-                "line": 19,
+                "line": 29,
                 "column": 25
               },
               "end": {
-                "line": 19,
+                "line": 29,
                 "column": 26
               }
             }
@@ -123,166 +571,438 @@
           "type": "BlockStatement",
           "body": [
             {
-              "type": "ReturnStatement",
-              "argument": {
-                "type": "CallExpression",
-                "callee": {
-                  "type": "CallExpression",
-                  "callee": {
+              "type": "SwitchStatement",
+              "discriminant": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
                     "type": "Identifier",
-                    "name": "pointwise",
+                    "name": "m",
                     "range": [
-                      317,
-                      326
+                      601,
+                      602
                     ],
                     "loc": {
                       "start": {
-                        "line": 20,
+                        "line": 30,
+                        "column": 10
+                      },
+                      "end": {
+                        "line": 30,
+                        "column": 11
+                      }
+                    }
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "constructor",
+                    "range": [
+                      603,
+                      614
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 30,
+                        "column": 12
+                      },
+                      "end": {
+                        "line": 30,
+                        "column": 23
+                      }
+                    }
+                  },
+                  "range": [
+                    601,
+                    614
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 30,
+                      "column": 10
+                    },
+                    "end": {
+                      "line": 30,
+                      "column": 23
+                    }
+                  }
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "name",
+                  "range": [
+                    615,
+                    619
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 30,
+                      "column": 24
+                    },
+                    "end": {
+                      "line": 30,
+                      "column": 28
+                    }
+                  }
+                },
+                "range": [
+                  601,
+                  619
+                ],
+                "loc": {
+                  "start": {
+                    "line": 30,
+                    "column": 10
+                  },
+                  "end": {
+                    "line": 30,
+                    "column": 28
+                  }
+                }
+              },
+              "cases": [
+                {
+                  "type": "SwitchCase",
+                  "test": {
+                    "type": "Literal",
+                    "value": "Complex",
+                    "raw": "'Complex'",
+                    "range": [
+                      632,
+                      641
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 31,
                         "column": 9
                       },
                       "end": {
-                        "line": 20,
+                        "line": 31,
                         "column": 18
                       }
                     }
                   },
-                  "arguments": [
+                  "consequent": [
                     {
-                      "type": "ArrowFunctionExpression",
-                      "id": null,
-                      "params": [
-                        {
+                      "type": "ReturnStatement",
+                      "argument": {
+                        "type": "CallExpression",
+                        "callee": {
                           "type": "Identifier",
-                          "name": "x",
+                          "name": "cclone",
                           "range": [
-                            327,
-                            328
+                            656,
+                            662
                           ],
                           "loc": {
                             "start": {
-                              "line": 20,
-                              "column": 19
+                              "line": 32,
+                              "column": 13
                             },
                             "end": {
-                              "line": 20,
-                              "column": 20
+                              "line": 32,
+                              "column": 19
                             }
                           }
-                        }
-                      ],
-                      "body": {
-                        "type": "Identifier",
-                        "name": "x",
+                        },
+                        "arguments": [
+                          {
+                            "type": "Identifier",
+                            "name": "m",
+                            "range": [
+                              663,
+                              664
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 32,
+                                "column": 20
+                              },
+                              "end": {
+                                "line": 32,
+                                "column": 21
+                              }
+                            }
+                          }
+                        ],
                         "range": [
-                          332,
-                          333
+                          656,
+                          665
                         ],
                         "loc": {
                           "start": {
-                            "line": 20,
-                            "column": 24
+                            "line": 32,
+                            "column": 13
                           },
                           "end": {
-                            "line": 20,
-                            "column": 25
+                            "line": 32,
+                            "column": 22
                           }
                         }
                       },
-                      "generator": false,
-                      "expression": true,
                       "range": [
-                        327,
-                        333
+                        649,
+                        666
                       ],
                       "loc": {
                         "start": {
-                          "line": 20,
-                          "column": 19
+                          "line": 32,
+                          "column": 6
                         },
                         "end": {
-                          "line": 20,
-                          "column": 25
+                          "line": 32,
+                          "column": 23
                         }
                       }
                     }
                   ],
                   "range": [
-                    317,
-                    334
+                    627,
+                    666
                   ],
                   "loc": {
                     "start": {
-                      "line": 20,
-                      "column": 9
+                      "line": 31,
+                      "column": 4
                     },
                     "end": {
-                      "line": 20,
-                      "column": 26
+                      "line": 32,
+                      "column": 23
                     }
                   }
                 },
-                "arguments": [
-                  {
-                    "type": "Identifier",
-                    "name": "m",
+                {
+                  "type": "SwitchCase",
+                  "test": {
+                    "type": "Literal",
+                    "value": "Sparse",
+                    "raw": "'Sparse'",
                     "range": [
-                      335,
-                      336
+                      676,
+                      684
                     ],
                     "loc": {
                       "start": {
-                        "line": 20,
-                        "column": 27
+                        "line": 33,
+                        "column": 9
                       },
                       "end": {
-                        "line": 20,
-                        "column": 28
+                        "line": 33,
+                        "column": 17
                       }
                     }
-                  }
-                ],
-                "range": [
-                  317,
-                  337
-                ],
-                "loc": {
-                  "start": {
-                    "line": 20,
-                    "column": 9
                   },
-                  "end": {
-                    "line": 20,
-                    "column": 29
+                  "consequent": [
+                    {
+                      "type": "ReturnStatement",
+                      "argument": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "Identifier",
+                          "name": "sclone",
+                          "range": [
+                            699,
+                            705
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 34,
+                              "column": 13
+                            },
+                            "end": {
+                              "line": 34,
+                              "column": 19
+                            }
+                          }
+                        },
+                        "arguments": [
+                          {
+                            "type": "Identifier",
+                            "name": "m",
+                            "range": [
+                              706,
+                              707
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 34,
+                                "column": 20
+                              },
+                              "end": {
+                                "line": 34,
+                                "column": 21
+                              }
+                            }
+                          }
+                        ],
+                        "range": [
+                          699,
+                          708
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 34,
+                            "column": 13
+                          },
+                          "end": {
+                            "line": 34,
+                            "column": 22
+                          }
+                        }
+                      },
+                      "range": [
+                        692,
+                        709
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 34,
+                          "column": 6
+                        },
+                        "end": {
+                          "line": 34,
+                          "column": 23
+                        }
+                      }
+                    }
+                  ],
+                  "range": [
+                    671,
+                    709
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 33,
+                      "column": 4
+                    },
+                    "end": {
+                      "line": 34,
+                      "column": 23
+                    }
+                  }
+                },
+                {
+                  "type": "SwitchCase",
+                  "test": null,
+                  "consequent": [
+                    {
+                      "type": "ReturnStatement",
+                      "argument": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "Identifier",
+                          "name": "clone",
+                          "range": [
+                            736,
+                            741
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 36,
+                              "column": 13
+                            },
+                            "end": {
+                              "line": 36,
+                              "column": 18
+                            }
+                          }
+                        },
+                        "arguments": [
+                          {
+                            "type": "Identifier",
+                            "name": "m",
+                            "range": [
+                              742,
+                              743
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 36,
+                                "column": 19
+                              },
+                              "end": {
+                                "line": 36,
+                                "column": 20
+                              }
+                            }
+                          }
+                        ],
+                        "range": [
+                          736,
+                          744
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 36,
+                            "column": 13
+                          },
+                          "end": {
+                            "line": 36,
+                            "column": 21
+                          }
+                        }
+                      },
+                      "range": [
+                        729,
+                        745
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 36,
+                          "column": 6
+                        },
+                        "end": {
+                          "line": 36,
+                          "column": 22
+                        }
+                      }
+                    }
+                  ],
+                  "range": [
+                    714,
+                    745
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 35,
+                      "column": 4
+                    },
+                    "end": {
+                      "line": 36,
+                      "column": 22
+                    }
                   }
                 }
-              },
+              ],
               "range": [
-                310,
-                338
+                593,
+                749
               ],
               "loc": {
                 "start": {
-                  "line": 20,
+                  "line": 30,
                   "column": 2
                 },
                 "end": {
-                  "line": 21,
-                  "column": 0
+                  "line": 37,
+                  "column": 3
                 }
               }
             }
           ],
           "range": [
-            306,
-            339
+            589,
+            751
           ],
           "loc": {
             "start": {
-              "line": 19,
+              "line": 29,
               "column": 28
             },
             "end": {
-              "line": 21,
+              "line": 38,
               "column": 1
             }
           }
@@ -290,34 +1010,34 @@
         "generator": false,
         "expression": false,
         "range": [
-          293,
-          339
+          576,
+          751
         ],
         "loc": {
           "start": {
-            "line": 19,
+            "line": 29,
             "column": 15
           },
           "end": {
-            "line": 21,
+            "line": 38,
             "column": 1
           }
         },
         "leadingComments": [
           {
             "type": "Block",
-            "value": "*\n * Pointwise clone\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * clone(2)\n * // returns 2\n * clone([1, 2])\n * // returns [1, 2]\n * clone([[1, 2], [2, 2]]))\n * // returns [ [1, 2], [2, 2] ]\n ",
+            "value": "*\n * Pointwise clone(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * clone(1)\n * // returns clone(1)\n * clone([1, 2])\n * // returns [clone(1), clone(2)]\n * clone([[1,2],[1,3]])\n * // returns [ [clone(1), clone(2)], [clone(1), clone(3)] ]\n ",
             "range": [
-              38,
-              277
+              273,
+              560
             ],
             "loc": {
               "start": {
-                "line": 4,
+                "line": 14,
                 "column": 0
               },
               "end": {
-                "line": 18,
+                "line": 28,
                 "column": 3
               }
             }
@@ -326,34 +1046,34 @@
         "trailingComments": []
       },
       "range": [
-        278,
-        339
+        561,
+        751
       ],
       "loc": {
         "start": {
-          "line": 19,
+          "line": 29,
           "column": 0
         },
         "end": {
-          "line": 21,
+          "line": 38,
           "column": 1
         }
       },
       "leadingComments": [
         {
           "type": "Block",
-          "value": "*\n * Pointwise clone\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * clone(2)\n * // returns 2\n * clone([1, 2])\n * // returns [1, 2]\n * clone([[1, 2], [2, 2]]))\n * // returns [ [1, 2], [2, 2] ]\n ",
+          "value": "*\n * Pointwise clone(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * clone(1)\n * // returns clone(1)\n * clone([1, 2])\n * // returns [clone(1), clone(2)]\n * clone([[1,2],[1,3]])\n * // returns [ [clone(1), clone(2)], [clone(1), clone(3)] ]\n ",
           "range": [
-            38,
-            277
+            273,
+            560
           ],
           "loc": {
             "start": {
-              "line": 4,
+              "line": 14,
               "column": 0
             },
             "end": {
-              "line": 18,
+              "line": 28,
               "column": 3
             }
           }
@@ -364,7 +1084,7 @@
   "sourceType": "module",
   "range": [
     1,
-    339
+    751
   ],
   "loc": {
     "start": {
@@ -372,25 +1092,25 @@
       "column": 0
     },
     "end": {
-      "line": 21,
+      "line": 38,
       "column": 1
     }
   },
   "comments": [
     {
       "type": "Block",
-      "value": "*\n * Pointwise clone\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * clone(2)\n * // returns 2\n * clone([1, 2])\n * // returns [1, 2]\n * clone([[1, 2], [2, 2]]))\n * // returns [ [1, 2], [2, 2] ]\n ",
+      "value": "*\n * Pointwise clone(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * clone(1)\n * // returns clone(1)\n * clone([1, 2])\n * // returns [clone(1), clone(2)]\n * clone([[1,2],[1,3]])\n * // returns [ [clone(1), clone(2)], [clone(1), clone(3)] ]\n ",
       "range": [
-        38,
-        277
+        273,
+        560
       ],
       "loc": {
         "start": {
-          "line": 4,
+          "line": 14,
           "column": 0
         },
         "end": {
-          "line": 18,
+          "line": 28,
           "column": 3
         }
       }

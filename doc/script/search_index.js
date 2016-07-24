@@ -1,5 +1,11 @@
 window.esdocSearchIndex = [
   [
+    "mathlab/src/complex.js~complex",
+    "class/src/Complex.js~Complex.html",
+    "<span>Complex</span> <span class=\"search-result-import-path\">mathlab/src/Complex.js</span>",
+    "class"
+  ],
+  [
     "mathlab/src/abs.js~abs",
     "function/index.html#static-function-abs",
     "<span>abs</span> <span class=\"search-result-import-path\">mathlab/src/abs.js</span>",
@@ -108,6 +114,18 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "mathlab/src/dot.js~dot",
+    "function/index.html#static-function-dot",
+    "<span>dot</span> <span class=\"search-result-import-path\">mathlab/src/dot.js</span>",
+    "function"
+  ],
+  [
+    "mathlab/src/eig.js~eig",
+    "function/index.html#static-function-eig",
+    "<span>eig</span> <span class=\"search-result-import-path\">mathlab/src/eig.js</span>",
+    "function"
+  ],
+  [
     "mathlab/src/eq.js~eq",
     "function/index.html#static-function-eq",
     "<span>eq</span> <span class=\"search-result-import-path\">mathlab/src/eq.js</span>",
@@ -132,6 +150,12 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "mathlab/src/getblock.js~getblock",
+    "function/index.html#static-function-getBlock",
+    "<span>getBlock</span> <span class=\"search-result-import-path\">mathlab/src/getBlock.js</span>",
+    "function"
+  ],
+  [
     "mathlab/src/getdiag.js~getdiag",
     "function/index.html#static-function-getDiag",
     "<span>getDiag</span> <span class=\"search-result-import-path\">mathlab/src/getDiag.js</span>",
@@ -141,6 +165,18 @@ window.esdocSearchIndex = [
     "mathlab/src/gt.js~gt",
     "function/index.html#static-function-gt",
     "<span>gt</span> <span class=\"search-result-import-path\">mathlab/src/gt.js</span>",
+    "function"
+  ],
+  [
+    "mathlab/src/identity.js~identity",
+    "function/index.html#static-function-identity",
+    "<span>identity</span> <span class=\"search-result-import-path\">mathlab/src/identity.js</span>",
+    "function"
+  ],
+  [
+    "mathlab/src/inv.js~inv",
+    "function/index.html#static-function-inv",
+    "<span>inv</span> <span class=\"search-result-import-path\">mathlab/src/inv.js</span>",
     "function"
   ],
   [
@@ -192,15 +228,33 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "mathlab/src/negtranspose.js~negtranspose",
+    "function/index.html#static-function-negtranspose",
+    "<span>negtranspose</span> <span class=\"search-result-import-path\">mathlab/src/negtranspose.js</span>",
+    "function"
+  ],
+  [
     "mathlab/src/neq.js~neq",
     "function/index.html#static-function-neq",
     "<span>neq</span> <span class=\"search-result-import-path\">mathlab/src/neq.js</span>",
     "function"
   ],
   [
+    "mathlab/src/norm2.js~norm2",
+    "function/index.html#static-function-norm2",
+    "<span>norm2</span> <span class=\"search-result-import-path\">mathlab/src/norm2.js</span>",
+    "function"
+  ],
+  [
     "mathlab/src/not.js~not",
     "function/index.html#static-function-not",
     "<span>not</span> <span class=\"search-result-import-path\">mathlab/src/not.js</span>",
+    "function"
+  ],
+  [
+    "mathlab/src/norm2squared.js~nrom2squared",
+    "function/index.html#static-function-nrom2Squared",
+    "<span>nrom2Squared</span> <span class=\"search-result-import-path\">mathlab/src/norm2Squared.js</span>",
     "function"
   ],
   [
@@ -222,6 +276,24 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "mathlab/src/random.js~random",
+    "function/index.html#static-function-random",
+    "<span>random</span> <span class=\"search-result-import-path\">mathlab/src/random.js</span>",
+    "function"
+  ],
+  [
+    "mathlab/src/reciprocal.js~reciprocal",
+    "function/index.html#static-function-reciprocal",
+    "<span>reciprocal</span> <span class=\"search-result-import-path\">mathlab/src/reciprocal.js</span>",
+    "function"
+  ],
+  [
+    "mathlab/src/rep.js~rep",
+    "function/index.html#static-function-rep",
+    "<span>rep</span> <span class=\"search-result-import-path\">mathlab/src/rep.js</span>",
+    "function"
+  ],
+  [
     "mathlab/src/round.js~round",
     "function/index.html#static-function-round",
     "<span>round</span> <span class=\"search-result-import-path\">mathlab/src/round.js</span>",
@@ -237,6 +309,18 @@ window.esdocSearchIndex = [
     "mathlab/src/rshift.js~rshift",
     "function/index.html#static-function-rshift",
     "<span>rshift</span> <span class=\"search-result-import-path\">mathlab/src/rshift.js</span>",
+    "function"
+  ],
+  [
+    "mathlab/src/same.js~same",
+    "function/index.html#static-function-same",
+    "<span>same</span> <span class=\"search-result-import-path\">mathlab/src/same.js</span>",
+    "function"
+  ],
+  [
+    "mathlab/src/setblock.js~setblock",
+    "function/index.html#static-function-setBlock",
+    "<span>setBlock</span> <span class=\"search-result-import-path\">mathlab/src/setBlock.js</span>",
     "function"
   ],
   [
@@ -261,6 +345,12 @@ window.esdocSearchIndex = [
     "mathlab/src/tan.js~tan",
     "function/index.html#static-function-tan",
     "<span>tan</span> <span class=\"search-result-import-path\">mathlab/src/tan.js</span>",
+    "function"
+  ],
+  [
+    "mathlab/src/tensor.js~tensor",
+    "function/index.html#static-function-tensor",
+    "<span>tensor</span> <span class=\"search-result-import-path\">mathlab/src/tensor.js</span>",
     "function"
   ],
   [
@@ -600,6 +690,114 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
+    "src/complex.js",
+    "file/src/Complex.js.html",
+    "src/Complex.js",
+    "file"
+  ],
+  [
+    "src/complex.js~complex#constructor",
+    "class/src/Complex.js~Complex.html#instance-constructor-constructor",
+    "src/Complex.js~Complex#constructor",
+    "method"
+  ],
+  [
+    "src/complex.js~complex#fft",
+    "class/src/Complex.js~Complex.html#instance-method-fft",
+    "src/Complex.js~Complex#fft",
+    "method"
+  ],
+  [
+    "src/complex.js~complex#get",
+    "class/src/Complex.js~Complex.html#instance-method-get",
+    "src/Complex.js~Complex#get",
+    "method"
+  ],
+  [
+    "src/complex.js~complex#getblock",
+    "class/src/Complex.js~Complex.html#instance-method-getBlock",
+    "src/Complex.js~Complex#getBlock",
+    "method"
+  ],
+  [
+    "src/complex.js~complex#getrow",
+    "class/src/Complex.js~Complex.html#instance-method-getRow",
+    "src/Complex.js~Complex#getRow",
+    "method"
+  ],
+  [
+    "src/complex.js~complex#getrows",
+    "class/src/Complex.js~Complex.html#instance-method-getRows",
+    "src/Complex.js~Complex#getRows",
+    "method"
+  ],
+  [
+    "src/complex.js~complex#identity",
+    "class/src/Complex.js~Complex.html#instance-method-identity",
+    "src/Complex.js~Complex#identity",
+    "method"
+  ],
+  [
+    "src/complex.js~complex#ifft",
+    "class/src/Complex.js~Complex.html#instance-method-ifft",
+    "src/Complex.js~Complex#ifft",
+    "method"
+  ],
+  [
+    "src/complex.js~complex#reciprocal",
+    "class/src/Complex.js~Complex.html#instance-method-reciprocal",
+    "src/Complex.js~Complex#reciprocal",
+    "method"
+  ],
+  [
+    "src/complex.js~complex#set",
+    "class/src/Complex.js~Complex.html#instance-method-set",
+    "src/Complex.js~Complex#set",
+    "method"
+  ],
+  [
+    "src/complex.js~complex#setblock",
+    "class/src/Complex.js~Complex.html#instance-method-setBlock",
+    "src/Complex.js~Complex#setBlock",
+    "method"
+  ],
+  [
+    "src/complex.js~complex#setrow",
+    "class/src/Complex.js~Complex.html#instance-method-setRow",
+    "src/Complex.js~Complex#setRow",
+    "method"
+  ],
+  [
+    "src/complex.js~complex#setrows",
+    "class/src/Complex.js~Complex.html#instance-method-setRows",
+    "src/Complex.js~Complex#setRows",
+    "method"
+  ],
+  [
+    "src/complex.js~complex#transjugate",
+    "class/src/Complex.js~Complex.html#instance-method-transjugate",
+    "src/Complex.js~Complex#transjugate",
+    "method"
+  ],
+  [
+    "src/complex.js~complex#x",
+    "class/src/Complex.js~Complex.html#instance-member-x",
+    "src/Complex.js~Complex#x",
+    "member"
+  ],
+  [
+    "src/complex.js~complex#y",
+    "class/src/Complex.js~Complex.html#instance-member-y",
+    "src/Complex.js~Complex#y",
+    "member"
+  ],
+  [
+    "src/oldt.js",
+    "file/src/OldT.js.html",
+    "src/OldT.js",
+    "file"
+  ],
+  [
     "src/abs.js",
     "file/src/abs.js.html",
     "src/abs.js",
@@ -720,6 +918,12 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/epsilon.js",
+    "file/src/epsilon.js.html",
+    "src/epsilon.js",
+    "file"
+  ],
+  [
     "src/eq.js",
     "file/src/eq.js.html",
     "src/eq.js",
@@ -741,6 +945,12 @@ window.esdocSearchIndex = [
     "src/geq.js",
     "file/src/geq.js.html",
     "src/geq.js",
+    "file"
+  ],
+  [
+    "src/getblock.js",
+    "file/src/getBlock.js.html",
+    "src/getBlock.js",
     "file"
   ],
   [
@@ -816,9 +1026,27 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/negtranspose.js",
+    "file/src/negtranspose.js.html",
+    "src/negtranspose.js",
+    "file"
+  ],
+  [
     "src/neq.js",
     "file/src/neq.js.html",
     "src/neq.js",
+    "file"
+  ],
+  [
+    "src/norm2.js",
+    "file/src/norm2.js.html",
+    "src/norm2.js",
+    "file"
+  ],
+  [
+    "src/norm2squared.js",
+    "file/src/norm2Squared.js.html",
+    "src/norm2Squared.js",
     "file"
   ],
   [
@@ -840,9 +1068,33 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/pointwise2.js",
+    "file/src/pointwise2.js.html",
+    "src/pointwise2.js",
+    "file"
+  ],
+  [
     "src/pow.js",
     "file/src/pow.js.html",
     "src/pow.js",
+    "file"
+  ],
+  [
+    "src/random.js",
+    "file/src/random.js.html",
+    "src/random.js",
+    "file"
+  ],
+  [
+    "src/reciprocal.js",
+    "file/src/reciprocal.js.html",
+    "src/reciprocal.js",
+    "file"
+  ],
+  [
+    "src/rep.js",
+    "file/src/rep.js.html",
+    "src/rep.js",
     "file"
   ],
   [
@@ -861,6 +1113,18 @@ window.esdocSearchIndex = [
     "src/rshift.js",
     "file/src/rshift.js.html",
     "src/rshift.js",
+    "file"
+  ],
+  [
+    "src/same.js",
+    "file/src/same.js.html",
+    "src/same.js",
+    "file"
+  ],
+  [
+    "src/setblock.js",
+    "file/src/setBlock.js.html",
+    "src/setBlock.js",
     "file"
   ],
   [
@@ -885,6 +1149,12 @@ window.esdocSearchIndex = [
     "src/tan.js",
     "file/src/tan.js.html",
     "src/tan.js",
+    "file"
+  ],
+  [
+    "src/tensor.js",
+    "file/src/tensor.js.html",
+    "src/tensor.js",
     "file"
   ],
   [

@@ -1,3 +1,5 @@
+import Complex from './Complex'
+
 /**
  * Matrix transpose
  * 
@@ -11,7 +13,31 @@
  * // [2,5],
  * // [3,6]]
  */
-export default function transpose (x) {
+export default function (x) {
+  switch (x.constructor.name) {
+    case 'Complex':
+      return ctranspose(x);
+    case 'Sparse':
+      return stranspose(x);
+    default:
+      return transpose(x);
+  }
+}
+
+function ctranspose(x) {
+  // TODO: Check if is matrix
+    var t = transpose;
+    if (x.y) {
+      return new Complex(t(x.x), t(x.y));
+    }
+    return new Complex(t(x.x));
+}
+
+function stranspose(x) {
+  throw new Error('mathlab.transpose: transpose for sparse matrix has not been implemented yet')
+}
+
+function transpose (x) {
   var i,j,m = x.length,n = x[0].length, ret = Array(n),A0,A1,Bj
   for (j = 0;j < n;j++) ret[j] = Array(m)
   for (i = m - 1;i >= 1;i -= 2) {

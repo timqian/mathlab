@@ -10,31 +10,31 @@
             "type": "Identifier",
             "name": "pointwise",
             "range": [
-              8,
-              17
+              7,
+              16
             ],
             "loc": {
               "start": {
-                "line": 2,
+                "line": 1,
                 "column": 7
               },
               "end": {
-                "line": 2,
+                "line": 1,
                 "column": 16
               }
             }
           },
           "range": [
-            8,
-            17
+            7,
+            16
           ],
           "loc": {
             "start": {
-              "line": 2,
+              "line": 1,
               "column": 7
             },
             "end": {
-              "line": 2,
+              "line": 1,
               "column": 16
             }
           }
@@ -45,54 +45,592 @@
         "value": "./pointwise",
         "raw": "'./pointwise'",
         "range": [
-          23,
-          36
+          22,
+          35
         ],
         "loc": {
           "start": {
-            "line": 2,
+            "line": 1,
             "column": 22
           },
           "end": {
-            "line": 2,
+            "line": 1,
             "column": 35
           }
-        },
-        "trailingComments": [
-          {
-            "type": "Block",
-            "value": "*\n * Pointwise rrshift\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * rrshift(1, 2)\n * // returns 1 >>> 2\n * rrshift([1, 2], [2, 2])\n * // returns [1 >>> 2, 2 >>> 2]\n * rrshift([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 >>> 2, 1 >>> 2], [1 >>> 2, 2 >>> 2] ]\n ",
-            "range": [
-              38,
-              383
-            ],
-            "loc": {
-              "start": {
-                "line": 4,
-                "column": 0
-              },
-              "end": {
-                "line": 19,
-                "column": 3
-              }
-            }
-          }
-        ]
+        }
       },
       "range": [
-        1,
-        384
+        0,
+        37
       ],
       "loc": {
         "start": {
-          "line": 2,
+          "line": 1,
           "column": 0
         },
         "end": {
-          "line": 20,
+          "line": 3,
           "column": 0
         }
       }
+    },
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "rrshift",
+            "range": [
+              43,
+              50
+            ],
+            "loc": {
+              "start": {
+                "line": 3,
+                "column": 6
+              },
+              "end": {
+                "line": 3,
+                "column": 13
+              }
+            }
+          },
+          "init": {
+            "type": "CallExpression",
+            "callee": {
+              "type": "Identifier",
+              "name": "pointwise",
+              "range": [
+                53,
+                62
+              ],
+              "loc": {
+                "start": {
+                  "line": 3,
+                  "column": 16
+                },
+                "end": {
+                  "line": 3,
+                  "column": 25
+                }
+              }
+            },
+            "arguments": [
+              {
+                "type": "ArrowFunctionExpression",
+                "id": null,
+                "params": [
+                  {
+                    "type": "Identifier",
+                    "name": "x",
+                    "range": [
+                      64,
+                      65
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 3,
+                        "column": 27
+                      },
+                      "end": {
+                        "line": 3,
+                        "column": 28
+                      }
+                    }
+                  },
+                  {
+                    "type": "Identifier",
+                    "name": "y",
+                    "range": [
+                      67,
+                      68
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 3,
+                        "column": 30
+                      },
+                      "end": {
+                        "line": 3,
+                        "column": 31
+                      }
+                    }
+                  }
+                ],
+                "body": {
+                  "type": "BinaryExpression",
+                  "operator": ">>>",
+                  "left": {
+                    "type": "Identifier",
+                    "name": "x",
+                    "range": [
+                      73,
+                      74
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 3,
+                        "column": 36
+                      },
+                      "end": {
+                        "line": 3,
+                        "column": 37
+                      }
+                    }
+                  },
+                  "right": {
+                    "type": "Identifier",
+                    "name": "y",
+                    "range": [
+                      79,
+                      80
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 3,
+                        "column": 42
+                      },
+                      "end": {
+                        "line": 3,
+                        "column": 43
+                      }
+                    }
+                  },
+                  "range": [
+                    73,
+                    80
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 3,
+                      "column": 36
+                    },
+                    "end": {
+                      "line": 3,
+                      "column": 43
+                    }
+                  }
+                },
+                "generator": false,
+                "expression": true,
+                "range": [
+                  63,
+                  80
+                ],
+                "loc": {
+                  "start": {
+                    "line": 3,
+                    "column": 26
+                  },
+                  "end": {
+                    "line": 3,
+                    "column": 43
+                  }
+                }
+              }
+            ],
+            "range": [
+              53,
+              81
+            ],
+            "loc": {
+              "start": {
+                "line": 3,
+                "column": 16
+              },
+              "end": {
+                "line": 3,
+                "column": 44
+              }
+            }
+          },
+          "range": [
+            43,
+            81
+          ],
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 6
+            },
+            "end": {
+              "line": 3,
+              "column": 44
+            }
+          }
+        }
+      ],
+      "kind": "const",
+      "range": [
+        37,
+        82
+      ],
+      "loc": {
+        "start": {
+          "line": 3,
+          "column": 0
+        },
+        "end": {
+          "line": 3,
+          "column": 45
+        }
+      }
+    },
+    {
+      "type": "FunctionDeclaration",
+      "id": {
+        "type": "Identifier",
+        "name": "crrshift",
+        "range": [
+          93,
+          101
+        ],
+        "loc": {
+          "start": {
+            "line": 5,
+            "column": 9
+          },
+          "end": {
+            "line": 5,
+            "column": 17
+          }
+        }
+      },
+      "params": [
+        {
+          "type": "Identifier",
+          "name": "x",
+          "range": [
+            102,
+            103
+          ],
+          "loc": {
+            "start": {
+              "line": 5,
+              "column": 18
+            },
+            "end": {
+              "line": 5,
+              "column": 19
+            }
+          }
+        },
+        {
+          "type": "Identifier",
+          "name": "y",
+          "range": [
+            105,
+            106
+          ],
+          "loc": {
+            "start": {
+              "line": 5,
+              "column": 21
+            },
+            "end": {
+              "line": 5,
+              "column": 22
+            }
+          }
+        }
+      ],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "ThrowStatement",
+            "argument": {
+              "type": "NewExpression",
+              "callee": {
+                "type": "Identifier",
+                "name": "Error",
+                "range": [
+                  122,
+                  127
+                ],
+                "loc": {
+                  "start": {
+                    "line": 6,
+                    "column": 12
+                  },
+                  "end": {
+                    "line": 6,
+                    "column": 17
+                  }
+                }
+              },
+              "arguments": [
+                {
+                  "type": "Literal",
+                  "value": "mathlab.rrshift: no rrshift for complex number",
+                  "raw": "'mathlab.rrshift: no rrshift for complex number'",
+                  "range": [
+                    128,
+                    176
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 6,
+                      "column": 18
+                    },
+                    "end": {
+                      "line": 6,
+                      "column": 66
+                    }
+                  }
+                }
+              ],
+              "range": [
+                118,
+                177
+              ],
+              "loc": {
+                "start": {
+                  "line": 6,
+                  "column": 8
+                },
+                "end": {
+                  "line": 6,
+                  "column": 67
+                }
+              }
+            },
+            "range": [
+              112,
+              178
+            ],
+            "loc": {
+              "start": {
+                "line": 6,
+                "column": 2
+              },
+              "end": {
+                "line": 7,
+                "column": 0
+              }
+            }
+          }
+        ],
+        "range": [
+          108,
+          179
+        ],
+        "loc": {
+          "start": {
+            "line": 5,
+            "column": 24
+          },
+          "end": {
+            "line": 7,
+            "column": 1
+          }
+        }
+      },
+      "generator": false,
+      "expression": false,
+      "range": [
+        84,
+        179
+      ],
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 0
+        },
+        "end": {
+          "line": 7,
+          "column": 1
+        }
+      }
+    },
+    {
+      "type": "FunctionDeclaration",
+      "id": {
+        "type": "Identifier",
+        "name": "srrshift",
+        "range": [
+          190,
+          198
+        ],
+        "loc": {
+          "start": {
+            "line": 9,
+            "column": 9
+          },
+          "end": {
+            "line": 9,
+            "column": 17
+          }
+        }
+      },
+      "params": [
+        {
+          "type": "Identifier",
+          "name": "x",
+          "range": [
+            199,
+            200
+          ],
+          "loc": {
+            "start": {
+              "line": 9,
+              "column": 18
+            },
+            "end": {
+              "line": 9,
+              "column": 19
+            }
+          }
+        },
+        {
+          "type": "Identifier",
+          "name": "y",
+          "range": [
+            202,
+            203
+          ],
+          "loc": {
+            "start": {
+              "line": 9,
+              "column": 21
+            },
+            "end": {
+              "line": 9,
+              "column": 22
+            }
+          }
+        }
+      ],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "ThrowStatement",
+            "argument": {
+              "type": "NewExpression",
+              "callee": {
+                "type": "Identifier",
+                "name": "Error",
+                "range": [
+                  219,
+                  224
+                ],
+                "loc": {
+                  "start": {
+                    "line": 10,
+                    "column": 12
+                  },
+                  "end": {
+                    "line": 10,
+                    "column": 17
+                  }
+                }
+              },
+              "arguments": [
+                {
+                  "type": "Literal",
+                  "value": "mathlab.rrshift: rrshift for sparse matrix has not been implemented yet",
+                  "raw": "'mathlab.rrshift: rrshift for sparse matrix has not been implemented yet'",
+                  "range": [
+                    225,
+                    298
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 10,
+                      "column": 18
+                    },
+                    "end": {
+                      "line": 10,
+                      "column": 91
+                    }
+                  }
+                }
+              ],
+              "range": [
+                215,
+                299
+              ],
+              "loc": {
+                "start": {
+                  "line": 10,
+                  "column": 8
+                },
+                "end": {
+                  "line": 10,
+                  "column": 92
+                }
+              }
+            },
+            "range": [
+              209,
+              300
+            ],
+            "loc": {
+              "start": {
+                "line": 10,
+                "column": 2
+              },
+              "end": {
+                "line": 11,
+                "column": 0
+              }
+            }
+          }
+        ],
+        "range": [
+          205,
+          301
+        ],
+        "loc": {
+          "start": {
+            "line": 9,
+            "column": 24
+          },
+          "end": {
+            "line": 11,
+            "column": 1
+          }
+        }
+      },
+      "generator": false,
+      "expression": false,
+      "range": [
+        181,
+        301
+      ],
+      "loc": {
+        "start": {
+          "line": 9,
+          "column": 0
+        },
+        "end": {
+          "line": 11,
+          "column": 1
+        }
+      },
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * Pointwise rrshift\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * rrshift(1, 2)\n * // returns 1 >>> 2\n * rrshift([1, 2], [2, 2])\n * // returns [1 >>> 2, 2 >>> 2]\n * rrshift([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 >>> 2, 1 >>> 2], [1 >>> 2, 2 >>> 2] ]\n ",
+          "range": [
+            303,
+            648
+          ],
+          "loc": {
+            "start": {
+              "line": 13,
+              "column": 0
+            },
+            "end": {
+              "line": 28,
+              "column": 3
+            }
+          }
+        }
+      ]
     },
     {
       "type": "ExportDefaultDeclaration",
@@ -104,16 +642,16 @@
             "type": "Identifier",
             "name": "m1",
             "range": [
-              409,
-              411
+              674,
+              676
             ],
             "loc": {
               "start": {
-                "line": 20,
+                "line": 29,
                 "column": 25
               },
               "end": {
-                "line": 20,
+                "line": 29,
                 "column": 27
               }
             }
@@ -122,16 +660,16 @@
             "type": "Identifier",
             "name": "m2",
             "range": [
-              413,
-              415
+              678,
+              680
             ],
             "loc": {
               "start": {
-                "line": 20,
+                "line": 29,
                 "column": 29
               },
               "end": {
-                "line": 20,
+                "line": 29,
                 "column": 31
               }
             }
@@ -141,238 +679,492 @@
           "type": "BlockStatement",
           "body": [
             {
-              "type": "ReturnStatement",
-              "argument": {
-                "type": "CallExpression",
-                "callee": {
-                  "type": "CallExpression",
-                  "callee": {
+              "type": "SwitchStatement",
+              "discriminant": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
                     "type": "Identifier",
-                    "name": "pointwise",
+                    "name": "m1",
                     "range": [
-                      428,
-                      437
+                      694,
+                      696
                     ],
                     "loc": {
                       "start": {
-                        "line": 21,
+                        "line": 30,
+                        "column": 10
+                      },
+                      "end": {
+                        "line": 30,
+                        "column": 12
+                      }
+                    }
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "constructor",
+                    "range": [
+                      697,
+                      708
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 30,
+                        "column": 13
+                      },
+                      "end": {
+                        "line": 30,
+                        "column": 24
+                      }
+                    }
+                  },
+                  "range": [
+                    694,
+                    708
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 30,
+                      "column": 10
+                    },
+                    "end": {
+                      "line": 30,
+                      "column": 24
+                    }
+                  }
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "name",
+                  "range": [
+                    709,
+                    713
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 30,
+                      "column": 25
+                    },
+                    "end": {
+                      "line": 30,
+                      "column": 29
+                    }
+                  }
+                },
+                "range": [
+                  694,
+                  713
+                ],
+                "loc": {
+                  "start": {
+                    "line": 30,
+                    "column": 10
+                  },
+                  "end": {
+                    "line": 30,
+                    "column": 29
+                  }
+                }
+              },
+              "cases": [
+                {
+                  "type": "SwitchCase",
+                  "test": {
+                    "type": "Literal",
+                    "value": "Complex",
+                    "raw": "'Complex'",
+                    "range": [
+                      726,
+                      735
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 31,
                         "column": 9
                       },
                       "end": {
-                        "line": 21,
+                        "line": 31,
                         "column": 18
                       }
                     }
                   },
-                  "arguments": [
+                  "consequent": [
                     {
-                      "type": "ArrowFunctionExpression",
-                      "id": null,
-                      "params": [
-                        {
+                      "type": "ReturnStatement",
+                      "argument": {
+                        "type": "CallExpression",
+                        "callee": {
                           "type": "Identifier",
-                          "name": "x",
+                          "name": "crrshift",
                           "range": [
-                            439,
-                            440
+                            750,
+                            758
                           ],
                           "loc": {
                             "start": {
-                              "line": 21,
-                              "column": 20
+                              "line": 32,
+                              "column": 13
                             },
                             "end": {
-                              "line": 21,
+                              "line": 32,
                               "column": 21
                             }
                           }
                         },
-                        {
-                          "type": "Identifier",
-                          "name": "y",
-                          "range": [
-                            442,
-                            443
-                          ],
-                          "loc": {
-                            "start": {
-                              "line": 21,
-                              "column": 23
-                            },
-                            "end": {
-                              "line": 21,
-                              "column": 24
+                        "arguments": [
+                          {
+                            "type": "Identifier",
+                            "name": "m1",
+                            "range": [
+                              759,
+                              761
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 32,
+                                "column": 22
+                              },
+                              "end": {
+                                "line": 32,
+                                "column": 24
+                              }
+                            }
+                          },
+                          {
+                            "type": "Identifier",
+                            "name": "m2",
+                            "range": [
+                              763,
+                              765
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 32,
+                                "column": 26
+                              },
+                              "end": {
+                                "line": 32,
+                                "column": 28
+                              }
                             }
                           }
-                        }
-                      ],
-                      "body": {
-                        "type": "BinaryExpression",
-                        "operator": ">>>",
-                        "left": {
-                          "type": "Identifier",
-                          "name": "x",
-                          "range": [
-                            448,
-                            449
-                          ],
-                          "loc": {
-                            "start": {
-                              "line": 21,
-                              "column": 29
-                            },
-                            "end": {
-                              "line": 21,
-                              "column": 30
-                            }
-                          }
-                        },
-                        "right": {
-                          "type": "Identifier",
-                          "name": "y",
-                          "range": [
-                            454,
-                            455
-                          ],
-                          "loc": {
-                            "start": {
-                              "line": 21,
-                              "column": 35
-                            },
-                            "end": {
-                              "line": 21,
-                              "column": 36
-                            }
-                          }
-                        },
+                        ],
                         "range": [
-                          448,
-                          455
+                          750,
+                          766
                         ],
                         "loc": {
                           "start": {
-                            "line": 21,
-                            "column": 29
+                            "line": 32,
+                            "column": 13
                           },
                           "end": {
-                            "line": 21,
-                            "column": 36
+                            "line": 32,
+                            "column": 29
                           }
                         }
                       },
-                      "generator": false,
-                      "expression": true,
                       "range": [
-                        438,
-                        455
+                        743,
+                        767
                       ],
                       "loc": {
                         "start": {
-                          "line": 21,
-                          "column": 19
+                          "line": 32,
+                          "column": 6
                         },
                         "end": {
-                          "line": 21,
-                          "column": 36
+                          "line": 32,
+                          "column": 30
                         }
                       }
                     }
                   ],
                   "range": [
-                    428,
-                    456
+                    721,
+                    767
                   ],
                   "loc": {
                     "start": {
-                      "line": 21,
-                      "column": 9
+                      "line": 31,
+                      "column": 4
                     },
                     "end": {
-                      "line": 21,
-                      "column": 37
+                      "line": 32,
+                      "column": 30
                     }
                   }
                 },
-                "arguments": [
-                  {
-                    "type": "Identifier",
-                    "name": "m1",
+                {
+                  "type": "SwitchCase",
+                  "test": {
+                    "type": "Literal",
+                    "value": "Sparse",
+                    "raw": "'Sparse'",
                     "range": [
-                      457,
-                      459
+                      777,
+                      785
                     ],
                     "loc": {
                       "start": {
-                        "line": 21,
-                        "column": 38
+                        "line": 33,
+                        "column": 9
                       },
                       "end": {
-                        "line": 21,
-                        "column": 40
+                        "line": 33,
+                        "column": 17
                       }
                     }
                   },
-                  {
-                    "type": "Identifier",
-                    "name": "m2",
-                    "range": [
-                      461,
-                      463
-                    ],
-                    "loc": {
-                      "start": {
-                        "line": 21,
-                        "column": 42
+                  "consequent": [
+                    {
+                      "type": "ReturnStatement",
+                      "argument": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "Identifier",
+                          "name": "srrshift",
+                          "range": [
+                            800,
+                            808
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 34,
+                              "column": 13
+                            },
+                            "end": {
+                              "line": 34,
+                              "column": 21
+                            }
+                          }
+                        },
+                        "arguments": [
+                          {
+                            "type": "Identifier",
+                            "name": "m1",
+                            "range": [
+                              809,
+                              811
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 34,
+                                "column": 22
+                              },
+                              "end": {
+                                "line": 34,
+                                "column": 24
+                              }
+                            }
+                          },
+                          {
+                            "type": "Identifier",
+                            "name": "m2",
+                            "range": [
+                              813,
+                              815
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 34,
+                                "column": 26
+                              },
+                              "end": {
+                                "line": 34,
+                                "column": 28
+                              }
+                            }
+                          }
+                        ],
+                        "range": [
+                          800,
+                          816
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 34,
+                            "column": 13
+                          },
+                          "end": {
+                            "line": 34,
+                            "column": 29
+                          }
+                        }
                       },
-                      "end": {
-                        "line": 21,
-                        "column": 44
+                      "range": [
+                        793,
+                        817
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 34,
+                          "column": 6
+                        },
+                        "end": {
+                          "line": 34,
+                          "column": 30
+                        }
                       }
+                    }
+                  ],
+                  "range": [
+                    772,
+                    817
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 33,
+                      "column": 4
+                    },
+                    "end": {
+                      "line": 34,
+                      "column": 30
                     }
                   }
-                ],
-                "range": [
-                  428,
-                  464
-                ],
-                "loc": {
-                  "start": {
-                    "line": 21,
-                    "column": 9
-                  },
-                  "end": {
-                    "line": 21,
-                    "column": 45
+                },
+                {
+                  "type": "SwitchCase",
+                  "test": null,
+                  "consequent": [
+                    {
+                      "type": "ReturnStatement",
+                      "argument": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "Identifier",
+                          "name": "rrshift",
+                          "range": [
+                            844,
+                            851
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 36,
+                              "column": 13
+                            },
+                            "end": {
+                              "line": 36,
+                              "column": 20
+                            }
+                          }
+                        },
+                        "arguments": [
+                          {
+                            "type": "Identifier",
+                            "name": "m1",
+                            "range": [
+                              852,
+                              854
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 36,
+                                "column": 21
+                              },
+                              "end": {
+                                "line": 36,
+                                "column": 23
+                              }
+                            }
+                          },
+                          {
+                            "type": "Identifier",
+                            "name": "m2",
+                            "range": [
+                              856,
+                              858
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 36,
+                                "column": 25
+                              },
+                              "end": {
+                                "line": 36,
+                                "column": 27
+                              }
+                            }
+                          }
+                        ],
+                        "range": [
+                          844,
+                          859
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 36,
+                            "column": 13
+                          },
+                          "end": {
+                            "line": 36,
+                            "column": 28
+                          }
+                        }
+                      },
+                      "range": [
+                        837,
+                        860
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 36,
+                          "column": 6
+                        },
+                        "end": {
+                          "line": 36,
+                          "column": 29
+                        }
+                      }
+                    }
+                  ],
+                  "range": [
+                    822,
+                    860
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 35,
+                      "column": 4
+                    },
+                    "end": {
+                      "line": 36,
+                      "column": 29
+                    }
                   }
                 }
-              },
+              ],
               "range": [
-                421,
-                465
+                686,
+                864
               ],
               "loc": {
                 "start": {
-                  "line": 21,
+                  "line": 30,
                   "column": 2
                 },
                 "end": {
-                  "line": 22,
-                  "column": 0
+                  "line": 37,
+                  "column": 3
                 }
               }
             }
           ],
           "range": [
-            417,
-            466
+            682,
+            866
           ],
           "loc": {
             "start": {
-              "line": 20,
+              "line": 29,
               "column": 33
             },
             "end": {
-              "line": 22,
+              "line": 38,
               "column": 1
             }
           }
@@ -380,16 +1172,16 @@
         "generator": false,
         "expression": false,
         "range": [
-          399,
-          466
+          664,
+          866
         ],
         "loc": {
           "start": {
-            "line": 20,
+            "line": 29,
             "column": 15
           },
           "end": {
-            "line": 22,
+            "line": 38,
             "column": 1
           }
         },
@@ -398,16 +1190,16 @@
             "type": "Block",
             "value": "*\n * Pointwise rrshift\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * rrshift(1, 2)\n * // returns 1 >>> 2\n * rrshift([1, 2], [2, 2])\n * // returns [1 >>> 2, 2 >>> 2]\n * rrshift([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 >>> 2, 1 >>> 2], [1 >>> 2, 2 >>> 2] ]\n ",
             "range": [
-              38,
-              383
+              303,
+              648
             ],
             "loc": {
               "start": {
-                "line": 4,
+                "line": 13,
                 "column": 0
               },
               "end": {
-                "line": 19,
+                "line": 28,
                 "column": 3
               }
             }
@@ -416,16 +1208,16 @@
         "trailingComments": []
       },
       "range": [
-        384,
-        466
+        649,
+        866
       ],
       "loc": {
         "start": {
-          "line": 20,
+          "line": 29,
           "column": 0
         },
         "end": {
-          "line": 22,
+          "line": 38,
           "column": 1
         }
       },
@@ -434,16 +1226,16 @@
           "type": "Block",
           "value": "*\n * Pointwise rrshift\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * rrshift(1, 2)\n * // returns 1 >>> 2\n * rrshift([1, 2], [2, 2])\n * // returns [1 >>> 2, 2 >>> 2]\n * rrshift([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 >>> 2, 1 >>> 2], [1 >>> 2, 2 >>> 2] ]\n ",
           "range": [
-            38,
-            383
+            303,
+            648
           ],
           "loc": {
             "start": {
-              "line": 4,
+              "line": 13,
               "column": 0
             },
             "end": {
-              "line": 19,
+              "line": 28,
               "column": 3
             }
           }
@@ -453,16 +1245,16 @@
   ],
   "sourceType": "module",
   "range": [
-    1,
-    466
+    0,
+    866
   ],
   "loc": {
     "start": {
-      "line": 2,
+      "line": 1,
       "column": 0
     },
     "end": {
-      "line": 22,
+      "line": 38,
       "column": 1
     }
   },
@@ -471,16 +1263,16 @@
       "type": "Block",
       "value": "*\n * Pointwise rrshift\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * rrshift(1, 2)\n * // returns 1 >>> 2\n * rrshift([1, 2], [2, 2])\n * // returns [1 >>> 2, 2 >>> 2]\n * rrshift([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 >>> 2, 1 >>> 2], [1 >>> 2, 2 >>> 2] ]\n ",
       "range": [
-        38,
-        383
+        303,
+        648
       ],
       "loc": {
         "start": {
-          "line": 4,
+          "line": 13,
           "column": 0
         },
         "end": {
-          "line": 19,
+          "line": 28,
           "column": 3
         }
       }

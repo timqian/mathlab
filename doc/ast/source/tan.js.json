@@ -57,31 +57,11 @@
             "line": 2,
             "column": 35
           }
-        },
-        "trailingComments": [
-          {
-            "type": "Block",
-            "value": "*\n * Pointwise Math.tan(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * tan(1)\n * // returns Math.tan(1)\n * tan([1, 2])\n * // returns [Math.tan(1), Math.tan(2)]\n * tan([[1,2],[1,3]])\n * // returns [ [Math.tan(1), Math.tan(2)], [Math.tan(1), Math.tan(3)] ]\n ",
-            "range": [
-              38,
-              343
-            ],
-            "loc": {
-              "start": {
-                "line": 4,
-                "column": 0
-              },
-              "end": {
-                "line": 18,
-                "column": 3
-              }
-            }
-          }
-        ]
+        }
       },
       "range": [
         1,
-        344
+        38
       ],
       "loc": {
         "start": {
@@ -89,10 +69,474 @@
           "column": 0
         },
         "end": {
-          "line": 19,
+          "line": 4,
           "column": 0
         }
       }
+    },
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "tan",
+            "range": [
+              44,
+              47
+            ],
+            "loc": {
+              "start": {
+                "line": 4,
+                "column": 6
+              },
+              "end": {
+                "line": 4,
+                "column": 9
+              }
+            }
+          },
+          "init": {
+            "type": "CallExpression",
+            "callee": {
+              "type": "Identifier",
+              "name": "pointwise",
+              "range": [
+                50,
+                59
+              ],
+              "loc": {
+                "start": {
+                  "line": 4,
+                  "column": 12
+                },
+                "end": {
+                  "line": 4,
+                  "column": 21
+                }
+              }
+            },
+            "arguments": [
+              {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "Identifier",
+                  "name": "Math",
+                  "range": [
+                    60,
+                    64
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 22
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 26
+                    }
+                  }
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "tan",
+                  "range": [
+                    65,
+                    68
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 27
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 30
+                    }
+                  }
+                },
+                "range": [
+                  60,
+                  68
+                ],
+                "loc": {
+                  "start": {
+                    "line": 4,
+                    "column": 22
+                  },
+                  "end": {
+                    "line": 4,
+                    "column": 30
+                  }
+                }
+              }
+            ],
+            "range": [
+              50,
+              69
+            ],
+            "loc": {
+              "start": {
+                "line": 4,
+                "column": 12
+              },
+              "end": {
+                "line": 4,
+                "column": 31
+              }
+            }
+          },
+          "range": [
+            44,
+            69
+          ],
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 6
+            },
+            "end": {
+              "line": 4,
+              "column": 31
+            }
+          }
+        }
+      ],
+      "kind": "const",
+      "range": [
+        38,
+        71
+      ],
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 0
+        },
+        "end": {
+          "line": 6,
+          "column": 0
+        }
+      }
+    },
+    {
+      "type": "FunctionDeclaration",
+      "id": {
+        "type": "Identifier",
+        "name": "ctan",
+        "range": [
+          80,
+          84
+        ],
+        "loc": {
+          "start": {
+            "line": 6,
+            "column": 9
+          },
+          "end": {
+            "line": 6,
+            "column": 13
+          }
+        }
+      },
+      "params": [
+        {
+          "type": "Identifier",
+          "name": "x",
+          "range": [
+            85,
+            86
+          ],
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 14
+            },
+            "end": {
+              "line": 6,
+              "column": 15
+            }
+          }
+        }
+      ],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "ThrowStatement",
+            "argument": {
+              "type": "NewExpression",
+              "callee": {
+                "type": "Identifier",
+                "name": "Error",
+                "range": [
+                  102,
+                  107
+                ],
+                "loc": {
+                  "start": {
+                    "line": 7,
+                    "column": 12
+                  },
+                  "end": {
+                    "line": 7,
+                    "column": 17
+                  }
+                }
+              },
+              "arguments": [
+                {
+                  "type": "Literal",
+                  "value": "mathlab.tan: no tan for complex number",
+                  "raw": "'mathlab.tan: no tan for complex number'",
+                  "range": [
+                    108,
+                    148
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 7,
+                      "column": 18
+                    },
+                    "end": {
+                      "line": 7,
+                      "column": 58
+                    }
+                  }
+                }
+              ],
+              "range": [
+                98,
+                149
+              ],
+              "loc": {
+                "start": {
+                  "line": 7,
+                  "column": 8
+                },
+                "end": {
+                  "line": 7,
+                  "column": 59
+                }
+              }
+            },
+            "range": [
+              92,
+              150
+            ],
+            "loc": {
+              "start": {
+                "line": 7,
+                "column": 2
+              },
+              "end": {
+                "line": 8,
+                "column": 0
+              }
+            }
+          }
+        ],
+        "range": [
+          88,
+          151
+        ],
+        "loc": {
+          "start": {
+            "line": 6,
+            "column": 17
+          },
+          "end": {
+            "line": 8,
+            "column": 1
+          }
+        }
+      },
+      "generator": false,
+      "expression": false,
+      "range": [
+        71,
+        151
+      ],
+      "loc": {
+        "start": {
+          "line": 6,
+          "column": 0
+        },
+        "end": {
+          "line": 8,
+          "column": 1
+        }
+      }
+    },
+    {
+      "type": "FunctionDeclaration",
+      "id": {
+        "type": "Identifier",
+        "name": "stan",
+        "range": [
+          162,
+          166
+        ],
+        "loc": {
+          "start": {
+            "line": 10,
+            "column": 9
+          },
+          "end": {
+            "line": 10,
+            "column": 13
+          }
+        }
+      },
+      "params": [
+        {
+          "type": "Identifier",
+          "name": "x",
+          "range": [
+            167,
+            168
+          ],
+          "loc": {
+            "start": {
+              "line": 10,
+              "column": 14
+            },
+            "end": {
+              "line": 10,
+              "column": 15
+            }
+          }
+        }
+      ],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "ThrowStatement",
+            "argument": {
+              "type": "NewExpression",
+              "callee": {
+                "type": "Identifier",
+                "name": "Error",
+                "range": [
+                  184,
+                  189
+                ],
+                "loc": {
+                  "start": {
+                    "line": 11,
+                    "column": 12
+                  },
+                  "end": {
+                    "line": 11,
+                    "column": 17
+                  }
+                }
+              },
+              "arguments": [
+                {
+                  "type": "Literal",
+                  "value": "mathlab.tan: tan for sparse matrix has not been implemented yet",
+                  "raw": "'mathlab.tan: tan for sparse matrix has not been implemented yet'",
+                  "range": [
+                    190,
+                    255
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 11,
+                      "column": 18
+                    },
+                    "end": {
+                      "line": 11,
+                      "column": 83
+                    }
+                  }
+                }
+              ],
+              "range": [
+                180,
+                256
+              ],
+              "loc": {
+                "start": {
+                  "line": 11,
+                  "column": 8
+                },
+                "end": {
+                  "line": 11,
+                  "column": 84
+                }
+              }
+            },
+            "range": [
+              174,
+              257
+            ],
+            "loc": {
+              "start": {
+                "line": 11,
+                "column": 2
+              },
+              "end": {
+                "line": 12,
+                "column": 0
+              }
+            }
+          }
+        ],
+        "range": [
+          170,
+          258
+        ],
+        "loc": {
+          "start": {
+            "line": 10,
+            "column": 17
+          },
+          "end": {
+            "line": 12,
+            "column": 1
+          }
+        }
+      },
+      "generator": false,
+      "expression": false,
+      "range": [
+        153,
+        258
+      ],
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 0
+        },
+        "end": {
+          "line": 12,
+          "column": 1
+        }
+      },
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * Pointwise Math.tan(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * tan(1)\n * // returns Math.tan(1)\n * tan([1, 2])\n * // returns [Math.tan(1), Math.tan(2)]\n * tan([[1,2],[1,3]])\n * // returns [ [Math.tan(1), Math.tan(2)], [Math.tan(1), Math.tan(3)] ]\n ",
+          "range": [
+            260,
+            565
+          ],
+          "loc": {
+            "start": {
+              "line": 14,
+              "column": 0
+            },
+            "end": {
+              "line": 28,
+              "column": 3
+            }
+          }
+        }
+      ]
     },
     {
       "type": "ExportDefaultDeclaration",
@@ -104,16 +548,16 @@
             "type": "Identifier",
             "name": "m",
             "range": [
-              369,
-              370
+              591,
+              592
             ],
             "loc": {
               "start": {
-                "line": 19,
+                "line": 29,
                 "column": 25
               },
               "end": {
-                "line": 19,
+                "line": 29,
                 "column": 26
               }
             }
@@ -123,162 +567,438 @@
           "type": "BlockStatement",
           "body": [
             {
-              "type": "ReturnStatement",
-              "argument": {
-                "type": "CallExpression",
-                "callee": {
-                  "type": "CallExpression",
-                  "callee": {
+              "type": "SwitchStatement",
+              "discriminant": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
                     "type": "Identifier",
-                    "name": "pointwise",
+                    "name": "m",
                     "range": [
-                      383,
-                      392
+                      606,
+                      607
                     ],
                     "loc": {
                       "start": {
-                        "line": 20,
+                        "line": 30,
+                        "column": 10
+                      },
+                      "end": {
+                        "line": 30,
+                        "column": 11
+                      }
+                    }
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "constructor",
+                    "range": [
+                      608,
+                      619
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 30,
+                        "column": 12
+                      },
+                      "end": {
+                        "line": 30,
+                        "column": 23
+                      }
+                    }
+                  },
+                  "range": [
+                    606,
+                    619
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 30,
+                      "column": 10
+                    },
+                    "end": {
+                      "line": 30,
+                      "column": 23
+                    }
+                  }
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "name",
+                  "range": [
+                    620,
+                    624
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 30,
+                      "column": 24
+                    },
+                    "end": {
+                      "line": 30,
+                      "column": 28
+                    }
+                  }
+                },
+                "range": [
+                  606,
+                  624
+                ],
+                "loc": {
+                  "start": {
+                    "line": 30,
+                    "column": 10
+                  },
+                  "end": {
+                    "line": 30,
+                    "column": 28
+                  }
+                }
+              },
+              "cases": [
+                {
+                  "type": "SwitchCase",
+                  "test": {
+                    "type": "Literal",
+                    "value": "Complex",
+                    "raw": "'Complex'",
+                    "range": [
+                      637,
+                      646
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 31,
                         "column": 9
                       },
                       "end": {
-                        "line": 20,
+                        "line": 31,
                         "column": 18
                       }
                     }
                   },
-                  "arguments": [
+                  "consequent": [
                     {
-                      "type": "MemberExpression",
-                      "computed": false,
-                      "object": {
-                        "type": "Identifier",
-                        "name": "Math",
-                        "range": [
-                          393,
-                          397
-                        ],
-                        "loc": {
-                          "start": {
-                            "line": 20,
-                            "column": 19
-                          },
-                          "end": {
-                            "line": 20,
-                            "column": 23
+                      "type": "ReturnStatement",
+                      "argument": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "Identifier",
+                          "name": "ctan",
+                          "range": [
+                            661,
+                            665
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 32,
+                              "column": 13
+                            },
+                            "end": {
+                              "line": 32,
+                              "column": 17
+                            }
                           }
-                        }
-                      },
-                      "property": {
-                        "type": "Identifier",
-                        "name": "tan",
+                        },
+                        "arguments": [
+                          {
+                            "type": "Identifier",
+                            "name": "m",
+                            "range": [
+                              666,
+                              667
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 32,
+                                "column": 18
+                              },
+                              "end": {
+                                "line": 32,
+                                "column": 19
+                              }
+                            }
+                          }
+                        ],
                         "range": [
-                          398,
-                          401
+                          661,
+                          668
                         ],
                         "loc": {
                           "start": {
-                            "line": 20,
-                            "column": 24
+                            "line": 32,
+                            "column": 13
                           },
                           "end": {
-                            "line": 20,
-                            "column": 27
+                            "line": 32,
+                            "column": 20
                           }
                         }
                       },
                       "range": [
-                        393,
-                        401
+                        654,
+                        669
                       ],
                       "loc": {
                         "start": {
-                          "line": 20,
-                          "column": 19
+                          "line": 32,
+                          "column": 6
                         },
                         "end": {
-                          "line": 20,
-                          "column": 27
+                          "line": 32,
+                          "column": 21
                         }
                       }
                     }
                   ],
                   "range": [
-                    383,
-                    402
+                    632,
+                    669
                   ],
                   "loc": {
                     "start": {
-                      "line": 20,
-                      "column": 9
+                      "line": 31,
+                      "column": 4
                     },
                     "end": {
-                      "line": 20,
-                      "column": 28
+                      "line": 32,
+                      "column": 21
                     }
                   }
                 },
-                "arguments": [
-                  {
-                    "type": "Identifier",
-                    "name": "m",
+                {
+                  "type": "SwitchCase",
+                  "test": {
+                    "type": "Literal",
+                    "value": "Sparse",
+                    "raw": "'Sparse'",
                     "range": [
-                      403,
-                      404
+                      679,
+                      687
                     ],
                     "loc": {
                       "start": {
-                        "line": 20,
-                        "column": 29
+                        "line": 33,
+                        "column": 9
                       },
                       "end": {
-                        "line": 20,
-                        "column": 30
+                        "line": 33,
+                        "column": 17
                       }
                     }
-                  }
-                ],
-                "range": [
-                  383,
-                  405
-                ],
-                "loc": {
-                  "start": {
-                    "line": 20,
-                    "column": 9
                   },
-                  "end": {
-                    "line": 20,
-                    "column": 31
+                  "consequent": [
+                    {
+                      "type": "ReturnStatement",
+                      "argument": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "Identifier",
+                          "name": "stan",
+                          "range": [
+                            702,
+                            706
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 34,
+                              "column": 13
+                            },
+                            "end": {
+                              "line": 34,
+                              "column": 17
+                            }
+                          }
+                        },
+                        "arguments": [
+                          {
+                            "type": "Identifier",
+                            "name": "m",
+                            "range": [
+                              707,
+                              708
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 34,
+                                "column": 18
+                              },
+                              "end": {
+                                "line": 34,
+                                "column": 19
+                              }
+                            }
+                          }
+                        ],
+                        "range": [
+                          702,
+                          709
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 34,
+                            "column": 13
+                          },
+                          "end": {
+                            "line": 34,
+                            "column": 20
+                          }
+                        }
+                      },
+                      "range": [
+                        695,
+                        710
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 34,
+                          "column": 6
+                        },
+                        "end": {
+                          "line": 34,
+                          "column": 21
+                        }
+                      }
+                    }
+                  ],
+                  "range": [
+                    674,
+                    710
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 33,
+                      "column": 4
+                    },
+                    "end": {
+                      "line": 34,
+                      "column": 21
+                    }
+                  }
+                },
+                {
+                  "type": "SwitchCase",
+                  "test": null,
+                  "consequent": [
+                    {
+                      "type": "ReturnStatement",
+                      "argument": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "Identifier",
+                          "name": "tan",
+                          "range": [
+                            737,
+                            740
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 36,
+                              "column": 13
+                            },
+                            "end": {
+                              "line": 36,
+                              "column": 16
+                            }
+                          }
+                        },
+                        "arguments": [
+                          {
+                            "type": "Identifier",
+                            "name": "m",
+                            "range": [
+                              741,
+                              742
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 36,
+                                "column": 17
+                              },
+                              "end": {
+                                "line": 36,
+                                "column": 18
+                              }
+                            }
+                          }
+                        ],
+                        "range": [
+                          737,
+                          743
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 36,
+                            "column": 13
+                          },
+                          "end": {
+                            "line": 36,
+                            "column": 19
+                          }
+                        }
+                      },
+                      "range": [
+                        730,
+                        744
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 36,
+                          "column": 6
+                        },
+                        "end": {
+                          "line": 36,
+                          "column": 20
+                        }
+                      }
+                    }
+                  ],
+                  "range": [
+                    715,
+                    744
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 35,
+                      "column": 4
+                    },
+                    "end": {
+                      "line": 36,
+                      "column": 20
+                    }
                   }
                 }
-              },
+              ],
               "range": [
-                376,
-                406
+                598,
+                748
               ],
               "loc": {
                 "start": {
-                  "line": 20,
+                  "line": 30,
                   "column": 2
                 },
                 "end": {
-                  "line": 21,
-                  "column": 0
+                  "line": 37,
+                  "column": 3
                 }
               }
             }
           ],
           "range": [
-            372,
-            407
+            594,
+            750
           ],
           "loc": {
             "start": {
-              "line": 19,
+              "line": 29,
               "column": 28
             },
             "end": {
-              "line": 21,
+              "line": 38,
               "column": 1
             }
           }
@@ -286,16 +1006,16 @@
         "generator": false,
         "expression": false,
         "range": [
-          359,
-          407
+          581,
+          750
         ],
         "loc": {
           "start": {
-            "line": 19,
+            "line": 29,
             "column": 15
           },
           "end": {
-            "line": 21,
+            "line": 38,
             "column": 1
           }
         },
@@ -304,16 +1024,16 @@
             "type": "Block",
             "value": "*\n * Pointwise Math.tan(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * tan(1)\n * // returns Math.tan(1)\n * tan([1, 2])\n * // returns [Math.tan(1), Math.tan(2)]\n * tan([[1,2],[1,3]])\n * // returns [ [Math.tan(1), Math.tan(2)], [Math.tan(1), Math.tan(3)] ]\n ",
             "range": [
-              38,
-              343
+              260,
+              565
             ],
             "loc": {
               "start": {
-                "line": 4,
+                "line": 14,
                 "column": 0
               },
               "end": {
-                "line": 18,
+                "line": 28,
                 "column": 3
               }
             }
@@ -322,16 +1042,16 @@
         "trailingComments": []
       },
       "range": [
-        344,
-        407
+        566,
+        750
       ],
       "loc": {
         "start": {
-          "line": 19,
+          "line": 29,
           "column": 0
         },
         "end": {
-          "line": 21,
+          "line": 38,
           "column": 1
         }
       },
@@ -340,16 +1060,16 @@
           "type": "Block",
           "value": "*\n * Pointwise Math.tan(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * tan(1)\n * // returns Math.tan(1)\n * tan([1, 2])\n * // returns [Math.tan(1), Math.tan(2)]\n * tan([[1,2],[1,3]])\n * // returns [ [Math.tan(1), Math.tan(2)], [Math.tan(1), Math.tan(3)] ]\n ",
           "range": [
-            38,
-            343
+            260,
+            565
           ],
           "loc": {
             "start": {
-              "line": 4,
+              "line": 14,
               "column": 0
             },
             "end": {
-              "line": 18,
+              "line": 28,
               "column": 3
             }
           }
@@ -360,7 +1080,7 @@
   "sourceType": "module",
   "range": [
     1,
-    407
+    750
   ],
   "loc": {
     "start": {
@@ -368,7 +1088,7 @@
       "column": 0
     },
     "end": {
-      "line": 21,
+      "line": 38,
       "column": 1
     }
   },
@@ -377,16 +1097,16 @@
       "type": "Block",
       "value": "*\n * Pointwise Math.tan(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * tan(1)\n * // returns Math.tan(1)\n * tan([1, 2])\n * // returns [Math.tan(1), Math.tan(2)]\n * tan([[1,2],[1,3]])\n * // returns [ [Math.tan(1), Math.tan(2)], [Math.tan(1), Math.tan(3)] ]\n ",
       "range": [
-        38,
-        343
+        260,
+        565
       ],
       "loc": {
         "start": {
-          "line": 4,
+          "line": 14,
           "column": 0
         },
         "end": {
-          "line": 18,
+          "line": 28,
           "column": 3
         }
       }

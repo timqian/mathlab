@@ -14,8 +14,7 @@ $ npm install mathlab --save
 
 ## Sample usage
 ```js
-// import function
-import { diag } from 'mathlab'      /** or */
+import { diag } from 'mathlab' 
 // import diag from 'mathlab/lib/diag'
 
 diag([1,2])
@@ -37,8 +36,8 @@ diag([1,2])
 - [ ] [`LU()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Dense LU decomposition
 - [ ] [`LUsolve()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Dense LU solve
 - [ ] [`mapreduce()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Make a pointwise map-reduce function
-- [ ] [`norm2()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Square root of the sum of the square of the entries of x
-- [ ] [`norm2Squared()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Sum of squares of entries of x
+- [x] [`norm2()`](http://www.timqian.com/mathlab/function/index.html#static-function-norm2)	Square root of the sum of the squares of the entries of x
+- [x] [`norm2Squared()`](http://www.timqian.com/mathlab/function/index.html#static-function-norm2Squared)	Sum of squares of entries of x
 - [ ] [`norminf()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Largest modulus entry of x
 - [ ] [`parseFloat()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise parseFloat(x)
 - [ ] [`precision()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Number of digits to prettyPrint
@@ -56,21 +55,20 @@ diag([1,2])
 - [ ] [`Spline.roots()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Find all the roots of the Spline
 - [ ] [`sum()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Sum all the entries of x
 - [ ] [`svd()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Singular value decomposition
-- [x] [`T()`](http://www.timqian.com/mathlab/function/index.html#static-function-T)	Create a tensor type T (may be complex-valued)
-- [x] `T.<numericfun>()`	Supported <numericfun> are: abs, add, cos, diag, div, dot, exp, getBlock, getDiag, inv, log, mul, neg, norm2, setBlock, sin, sub, transpose
-- [x] [`T.identity()`]() Generate identity complex structure matrix of given size
-- [x] [`T.conj()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise complex conjugate
-- [x] [`T.fft()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Fast Fourier transform
-- [x] [`T.get()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Read an entry
-- [x] [`T.getRow()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Get a row
-- [x] [`T.getRows()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Get a range of rows
-- [x] [`T.ifft()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Inverse FFT
-- [x] [`T.reciprocal()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise 1/z
-- [x] [`T.set()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Set an entry
-- [x] [`T.setRow()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Set a row
-- [x] [`T.setRows()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Set a range of rows
-- [x] [`T.transjugate()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	The conjugate-transpose of a matrix
-- [ ] [`tensor()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Tensor product ret[i][j] = x[i]*y[j]
+- [x] [`Complex()`](http://www.timqian.com/mathlab/function/index.html#static-function-Complex)	Create a Complex type
+- [x] [`Complex.identity()`]() Generate identity complex structure matrix of given size
+- [x] [`Complex.conj()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise complex conjugate
+- [x] [`Complex.fft()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Fast Fourier transform
+- [x] [`Complex.get()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Read an entry
+- [x] [`Complex.getRow()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Get a row
+- [x] [`Complex.getRows()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Get a range of rows
+- [x] [`Complex.ifft()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Inverse FFComplex
+- [x] [`Complex.reciprocal()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise 1/z
+- [x] [`Complex.set()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Set an entry
+- [x] [`Complex.setRow()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Set a row
+- [x] [`Complex.setRows()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Set a range of rows
+- [x] [`Complex.transjugate()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Complexhe conjugate-transpose of a matrix
+- [x] [`tensor()`](http://www.timqian.com/mathlab/function/index.html#static-function-tensor)	Complexensor product ret[i][j] = x[i]*y[j]
 - [x] [`transpose()`](http://www.timqian.com/mathlab/function/index.html#static-function-transpose)	Matrix transpose
 - [ ] [`uncmin()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Unconstrained optimization
 - [ ] [`version()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Version string for the numeric library

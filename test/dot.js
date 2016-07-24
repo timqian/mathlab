@@ -1,11 +1,9 @@
 import assert from 'assert'
 import should from 'should'
-import {
-  dot
-} from '../lib'
+import { dot, Complex } from '../lib'
 
 describe('dot', () => {
-  it('', () => {
+  it('arr & num', () => {
     dot([1, 2], 4).should.deepEqual([4, 8])
     dot(4, [1, 2]).should.deepEqual([4, 8])
     dot([
@@ -20,5 +18,14 @@ describe('dot', () => {
 
     dot(1, 2).should.deepEqual(2)
 
+  })
+
+  it('Complex', () => {
+    dot(new Complex(1), 2).x.should.be.equal(2)
+    // {x: -2, y: 14}
+    dot(new Complex([1, 2], [2, 2]), new Complex([2,2], [2,2]))
+      .x.should.equal(-2)
+    dot(new Complex([1, 2], [2, 2]), new Complex([2,2], [2,2]))
+      .y.should.equal(14)
   })
 })

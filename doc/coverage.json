@@ -1,8 +1,31 @@
 {
-  "coverage": "100%",
-  "expectCount": 45,
-  "actualCount": 45,
+  "coverage": "76.31%",
+  "expectCount": 76,
+  "actualCount": 58,
   "files": {
+    "src/Complex.js": {
+      "expectCount": 17,
+      "actualCount": 0,
+      "undocumentLines": [
+        13,
+        14,
+        163,
+        36,
+        144,
+        127,
+        102,
+        27,
+        189,
+        19,
+        54,
+        150,
+        132,
+        114,
+        31,
+        15,
+        16
+      ]
+    },
     "src/abs.js": {
       "expectCount": 1,
       "actualCount": 1,
@@ -93,6 +116,16 @@
       "actualCount": 1,
       "undocumentLines": []
     },
+    "src/dot.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/eig.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
     "src/eq.js": {
       "expectCount": 1,
       "actualCount": 1,
@@ -113,12 +146,27 @@
       "actualCount": 1,
       "undocumentLines": []
     },
+    "src/getBlock.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
     "src/getDiag.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
     },
     "src/gt.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/identity.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/inv.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
@@ -163,12 +211,27 @@
       "actualCount": 1,
       "undocumentLines": []
     },
+    "src/negtranspose.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
     "src/neq.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
     },
+    "src/norm2.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
     "src/not.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/norm2Squared.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
@@ -188,6 +251,23 @@
       "actualCount": 1,
       "undocumentLines": []
     },
+    "src/random.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/reciprocal.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "src/rep.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
     "src/round.js": {
       "expectCount": 1,
       "actualCount": 1,
@@ -199,6 +279,16 @@
       "undocumentLines": []
     },
     "src/rshift.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/same.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/setBlock.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
@@ -219,6 +309,11 @@
       "undocumentLines": []
     },
     "src/tan.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/tensor.js": {
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []

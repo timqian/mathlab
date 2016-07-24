@@ -57,31 +57,11 @@
             "line": 2,
             "column": 35
           }
-        },
-        "trailingComments": [
-          {
-            "type": "Block",
-            "value": "*\n * Pointwise Math.ceil(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * ceil(1)\n * // returns Math.ceil(1)\n * ceil([1, 2])\n * // returns [Math.ceil(1), Math.ceil(2)]\n * ceil([[1,2],[1,3]])\n * // returns [ [Math.ceil(1), Math.ceil(2)], [Math.ceil(1), Math.ceil(3)] ]\n ",
-            "range": [
-              38,
-              354
-            ],
-            "loc": {
-              "start": {
-                "line": 4,
-                "column": 0
-              },
-              "end": {
-                "line": 18,
-                "column": 3
-              }
-            }
-          }
-        ]
+        }
       },
       "range": [
         1,
-        355
+        38
       ],
       "loc": {
         "start": {
@@ -89,10 +69,474 @@
           "column": 0
         },
         "end": {
-          "line": 19,
+          "line": 4,
           "column": 0
         }
       }
+    },
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "ceil",
+            "range": [
+              44,
+              48
+            ],
+            "loc": {
+              "start": {
+                "line": 4,
+                "column": 6
+              },
+              "end": {
+                "line": 4,
+                "column": 10
+              }
+            }
+          },
+          "init": {
+            "type": "CallExpression",
+            "callee": {
+              "type": "Identifier",
+              "name": "pointwise",
+              "range": [
+                51,
+                60
+              ],
+              "loc": {
+                "start": {
+                  "line": 4,
+                  "column": 13
+                },
+                "end": {
+                  "line": 4,
+                  "column": 22
+                }
+              }
+            },
+            "arguments": [
+              {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "Identifier",
+                  "name": "Math",
+                  "range": [
+                    61,
+                    65
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 23
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 27
+                    }
+                  }
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "ceil",
+                  "range": [
+                    66,
+                    70
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 28
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 32
+                    }
+                  }
+                },
+                "range": [
+                  61,
+                  70
+                ],
+                "loc": {
+                  "start": {
+                    "line": 4,
+                    "column": 23
+                  },
+                  "end": {
+                    "line": 4,
+                    "column": 32
+                  }
+                }
+              }
+            ],
+            "range": [
+              51,
+              71
+            ],
+            "loc": {
+              "start": {
+                "line": 4,
+                "column": 13
+              },
+              "end": {
+                "line": 4,
+                "column": 33
+              }
+            }
+          },
+          "range": [
+            44,
+            71
+          ],
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 6
+            },
+            "end": {
+              "line": 4,
+              "column": 33
+            }
+          }
+        }
+      ],
+      "kind": "const",
+      "range": [
+        38,
+        73
+      ],
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 0
+        },
+        "end": {
+          "line": 6,
+          "column": 0
+        }
+      }
+    },
+    {
+      "type": "FunctionDeclaration",
+      "id": {
+        "type": "Identifier",
+        "name": "cceil",
+        "range": [
+          82,
+          87
+        ],
+        "loc": {
+          "start": {
+            "line": 6,
+            "column": 9
+          },
+          "end": {
+            "line": 6,
+            "column": 14
+          }
+        }
+      },
+      "params": [
+        {
+          "type": "Identifier",
+          "name": "x",
+          "range": [
+            88,
+            89
+          ],
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 15
+            },
+            "end": {
+              "line": 6,
+              "column": 16
+            }
+          }
+        }
+      ],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "ThrowStatement",
+            "argument": {
+              "type": "NewExpression",
+              "callee": {
+                "type": "Identifier",
+                "name": "Error",
+                "range": [
+                  105,
+                  110
+                ],
+                "loc": {
+                  "start": {
+                    "line": 7,
+                    "column": 12
+                  },
+                  "end": {
+                    "line": 7,
+                    "column": 17
+                  }
+                }
+              },
+              "arguments": [
+                {
+                  "type": "Literal",
+                  "value": "mathlab.ceil: no ceil for complex number",
+                  "raw": "'mathlab.ceil: no ceil for complex number'",
+                  "range": [
+                    111,
+                    153
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 7,
+                      "column": 18
+                    },
+                    "end": {
+                      "line": 7,
+                      "column": 60
+                    }
+                  }
+                }
+              ],
+              "range": [
+                101,
+                154
+              ],
+              "loc": {
+                "start": {
+                  "line": 7,
+                  "column": 8
+                },
+                "end": {
+                  "line": 7,
+                  "column": 61
+                }
+              }
+            },
+            "range": [
+              95,
+              155
+            ],
+            "loc": {
+              "start": {
+                "line": 7,
+                "column": 2
+              },
+              "end": {
+                "line": 8,
+                "column": 0
+              }
+            }
+          }
+        ],
+        "range": [
+          91,
+          156
+        ],
+        "loc": {
+          "start": {
+            "line": 6,
+            "column": 18
+          },
+          "end": {
+            "line": 8,
+            "column": 1
+          }
+        }
+      },
+      "generator": false,
+      "expression": false,
+      "range": [
+        73,
+        156
+      ],
+      "loc": {
+        "start": {
+          "line": 6,
+          "column": 0
+        },
+        "end": {
+          "line": 8,
+          "column": 1
+        }
+      }
+    },
+    {
+      "type": "FunctionDeclaration",
+      "id": {
+        "type": "Identifier",
+        "name": "sceil",
+        "range": [
+          167,
+          172
+        ],
+        "loc": {
+          "start": {
+            "line": 10,
+            "column": 9
+          },
+          "end": {
+            "line": 10,
+            "column": 14
+          }
+        }
+      },
+      "params": [
+        {
+          "type": "Identifier",
+          "name": "x",
+          "range": [
+            173,
+            174
+          ],
+          "loc": {
+            "start": {
+              "line": 10,
+              "column": 15
+            },
+            "end": {
+              "line": 10,
+              "column": 16
+            }
+          }
+        }
+      ],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "ThrowStatement",
+            "argument": {
+              "type": "NewExpression",
+              "callee": {
+                "type": "Identifier",
+                "name": "Error",
+                "range": [
+                  190,
+                  195
+                ],
+                "loc": {
+                  "start": {
+                    "line": 11,
+                    "column": 12
+                  },
+                  "end": {
+                    "line": 11,
+                    "column": 17
+                  }
+                }
+              },
+              "arguments": [
+                {
+                  "type": "Literal",
+                  "value": "mathlab.ceil: ceil for sparse matrix has not been implemented yet",
+                  "raw": "'mathlab.ceil: ceil for sparse matrix has not been implemented yet'",
+                  "range": [
+                    196,
+                    263
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 11,
+                      "column": 18
+                    },
+                    "end": {
+                      "line": 11,
+                      "column": 85
+                    }
+                  }
+                }
+              ],
+              "range": [
+                186,
+                264
+              ],
+              "loc": {
+                "start": {
+                  "line": 11,
+                  "column": 8
+                },
+                "end": {
+                  "line": 11,
+                  "column": 86
+                }
+              }
+            },
+            "range": [
+              180,
+              265
+            ],
+            "loc": {
+              "start": {
+                "line": 11,
+                "column": 2
+              },
+              "end": {
+                "line": 12,
+                "column": 0
+              }
+            }
+          }
+        ],
+        "range": [
+          176,
+          266
+        ],
+        "loc": {
+          "start": {
+            "line": 10,
+            "column": 18
+          },
+          "end": {
+            "line": 12,
+            "column": 1
+          }
+        }
+      },
+      "generator": false,
+      "expression": false,
+      "range": [
+        158,
+        266
+      ],
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 0
+        },
+        "end": {
+          "line": 12,
+          "column": 1
+        }
+      },
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * Pointwise Math.ceil(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * ceil(1)\n * // returns Math.ceil(1)\n * ceil([1, 2])\n * // returns [Math.ceil(1), Math.ceil(2)]\n * ceil([[1,2],[1,3]])\n * // returns [ [Math.ceil(1), Math.ceil(2)], [Math.ceil(1), Math.ceil(3)] ]\n ",
+          "range": [
+            268,
+            584
+          ],
+          "loc": {
+            "start": {
+              "line": 14,
+              "column": 0
+            },
+            "end": {
+              "line": 28,
+              "column": 3
+            }
+          }
+        }
+      ]
     },
     {
       "type": "ExportDefaultDeclaration",
@@ -104,16 +548,16 @@
             "type": "Identifier",
             "name": "m",
             "range": [
-              380,
-              381
+              610,
+              611
             ],
             "loc": {
               "start": {
-                "line": 19,
+                "line": 29,
                 "column": 25
               },
               "end": {
-                "line": 19,
+                "line": 29,
                 "column": 26
               }
             }
@@ -123,162 +567,438 @@
           "type": "BlockStatement",
           "body": [
             {
-              "type": "ReturnStatement",
-              "argument": {
-                "type": "CallExpression",
-                "callee": {
-                  "type": "CallExpression",
-                  "callee": {
+              "type": "SwitchStatement",
+              "discriminant": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
                     "type": "Identifier",
-                    "name": "pointwise",
+                    "name": "m",
                     "range": [
-                      394,
-                      403
+                      625,
+                      626
                     ],
                     "loc": {
                       "start": {
-                        "line": 20,
+                        "line": 30,
+                        "column": 10
+                      },
+                      "end": {
+                        "line": 30,
+                        "column": 11
+                      }
+                    }
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "constructor",
+                    "range": [
+                      627,
+                      638
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 30,
+                        "column": 12
+                      },
+                      "end": {
+                        "line": 30,
+                        "column": 23
+                      }
+                    }
+                  },
+                  "range": [
+                    625,
+                    638
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 30,
+                      "column": 10
+                    },
+                    "end": {
+                      "line": 30,
+                      "column": 23
+                    }
+                  }
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "name",
+                  "range": [
+                    639,
+                    643
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 30,
+                      "column": 24
+                    },
+                    "end": {
+                      "line": 30,
+                      "column": 28
+                    }
+                  }
+                },
+                "range": [
+                  625,
+                  643
+                ],
+                "loc": {
+                  "start": {
+                    "line": 30,
+                    "column": 10
+                  },
+                  "end": {
+                    "line": 30,
+                    "column": 28
+                  }
+                }
+              },
+              "cases": [
+                {
+                  "type": "SwitchCase",
+                  "test": {
+                    "type": "Literal",
+                    "value": "Complex",
+                    "raw": "'Complex'",
+                    "range": [
+                      656,
+                      665
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 31,
                         "column": 9
                       },
                       "end": {
-                        "line": 20,
+                        "line": 31,
                         "column": 18
                       }
                     }
                   },
-                  "arguments": [
+                  "consequent": [
                     {
-                      "type": "MemberExpression",
-                      "computed": false,
-                      "object": {
-                        "type": "Identifier",
-                        "name": "Math",
-                        "range": [
-                          404,
-                          408
-                        ],
-                        "loc": {
-                          "start": {
-                            "line": 20,
-                            "column": 19
-                          },
-                          "end": {
-                            "line": 20,
-                            "column": 23
+                      "type": "ReturnStatement",
+                      "argument": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "Identifier",
+                          "name": "cceil",
+                          "range": [
+                            680,
+                            685
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 32,
+                              "column": 13
+                            },
+                            "end": {
+                              "line": 32,
+                              "column": 18
+                            }
                           }
-                        }
-                      },
-                      "property": {
-                        "type": "Identifier",
-                        "name": "ceil",
+                        },
+                        "arguments": [
+                          {
+                            "type": "Identifier",
+                            "name": "m",
+                            "range": [
+                              686,
+                              687
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 32,
+                                "column": 19
+                              },
+                              "end": {
+                                "line": 32,
+                                "column": 20
+                              }
+                            }
+                          }
+                        ],
                         "range": [
-                          409,
-                          413
+                          680,
+                          688
                         ],
                         "loc": {
                           "start": {
-                            "line": 20,
-                            "column": 24
+                            "line": 32,
+                            "column": 13
                           },
                           "end": {
-                            "line": 20,
-                            "column": 28
+                            "line": 32,
+                            "column": 21
                           }
                         }
                       },
                       "range": [
-                        404,
-                        413
+                        673,
+                        689
                       ],
                       "loc": {
                         "start": {
-                          "line": 20,
-                          "column": 19
+                          "line": 32,
+                          "column": 6
                         },
                         "end": {
-                          "line": 20,
-                          "column": 28
+                          "line": 32,
+                          "column": 22
                         }
                       }
                     }
                   ],
                   "range": [
-                    394,
-                    414
+                    651,
+                    689
                   ],
                   "loc": {
                     "start": {
-                      "line": 20,
-                      "column": 9
+                      "line": 31,
+                      "column": 4
                     },
                     "end": {
-                      "line": 20,
-                      "column": 29
+                      "line": 32,
+                      "column": 22
                     }
                   }
                 },
-                "arguments": [
-                  {
-                    "type": "Identifier",
-                    "name": "m",
+                {
+                  "type": "SwitchCase",
+                  "test": {
+                    "type": "Literal",
+                    "value": "Sparse",
+                    "raw": "'Sparse'",
                     "range": [
-                      415,
-                      416
+                      699,
+                      707
                     ],
                     "loc": {
                       "start": {
-                        "line": 20,
-                        "column": 30
+                        "line": 33,
+                        "column": 9
                       },
                       "end": {
-                        "line": 20,
-                        "column": 31
+                        "line": 33,
+                        "column": 17
                       }
                     }
-                  }
-                ],
-                "range": [
-                  394,
-                  417
-                ],
-                "loc": {
-                  "start": {
-                    "line": 20,
-                    "column": 9
                   },
-                  "end": {
-                    "line": 20,
-                    "column": 32
+                  "consequent": [
+                    {
+                      "type": "ReturnStatement",
+                      "argument": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "Identifier",
+                          "name": "sceil",
+                          "range": [
+                            722,
+                            727
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 34,
+                              "column": 13
+                            },
+                            "end": {
+                              "line": 34,
+                              "column": 18
+                            }
+                          }
+                        },
+                        "arguments": [
+                          {
+                            "type": "Identifier",
+                            "name": "m",
+                            "range": [
+                              728,
+                              729
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 34,
+                                "column": 19
+                              },
+                              "end": {
+                                "line": 34,
+                                "column": 20
+                              }
+                            }
+                          }
+                        ],
+                        "range": [
+                          722,
+                          730
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 34,
+                            "column": 13
+                          },
+                          "end": {
+                            "line": 34,
+                            "column": 21
+                          }
+                        }
+                      },
+                      "range": [
+                        715,
+                        731
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 34,
+                          "column": 6
+                        },
+                        "end": {
+                          "line": 34,
+                          "column": 22
+                        }
+                      }
+                    }
+                  ],
+                  "range": [
+                    694,
+                    731
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 33,
+                      "column": 4
+                    },
+                    "end": {
+                      "line": 34,
+                      "column": 22
+                    }
+                  }
+                },
+                {
+                  "type": "SwitchCase",
+                  "test": null,
+                  "consequent": [
+                    {
+                      "type": "ReturnStatement",
+                      "argument": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "Identifier",
+                          "name": "ceil",
+                          "range": [
+                            758,
+                            762
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 36,
+                              "column": 13
+                            },
+                            "end": {
+                              "line": 36,
+                              "column": 17
+                            }
+                          }
+                        },
+                        "arguments": [
+                          {
+                            "type": "Identifier",
+                            "name": "m",
+                            "range": [
+                              763,
+                              764
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 36,
+                                "column": 18
+                              },
+                              "end": {
+                                "line": 36,
+                                "column": 19
+                              }
+                            }
+                          }
+                        ],
+                        "range": [
+                          758,
+                          765
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 36,
+                            "column": 13
+                          },
+                          "end": {
+                            "line": 36,
+                            "column": 20
+                          }
+                        }
+                      },
+                      "range": [
+                        751,
+                        766
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 36,
+                          "column": 6
+                        },
+                        "end": {
+                          "line": 36,
+                          "column": 21
+                        }
+                      }
+                    }
+                  ],
+                  "range": [
+                    736,
+                    766
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 35,
+                      "column": 4
+                    },
+                    "end": {
+                      "line": 36,
+                      "column": 21
+                    }
                   }
                 }
-              },
+              ],
               "range": [
-                387,
-                418
+                617,
+                770
               ],
               "loc": {
                 "start": {
-                  "line": 20,
+                  "line": 30,
                   "column": 2
                 },
                 "end": {
-                  "line": 21,
-                  "column": 0
+                  "line": 37,
+                  "column": 3
                 }
               }
             }
           ],
           "range": [
-            383,
-            419
+            613,
+            772
           ],
           "loc": {
             "start": {
-              "line": 19,
+              "line": 29,
               "column": 28
             },
             "end": {
-              "line": 21,
+              "line": 38,
               "column": 1
             }
           }
@@ -286,16 +1006,16 @@
         "generator": false,
         "expression": false,
         "range": [
-          370,
-          419
+          600,
+          772
         ],
         "loc": {
           "start": {
-            "line": 19,
+            "line": 29,
             "column": 15
           },
           "end": {
-            "line": 21,
+            "line": 38,
             "column": 1
           }
         },
@@ -304,16 +1024,16 @@
             "type": "Block",
             "value": "*\n * Pointwise Math.ceil(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * ceil(1)\n * // returns Math.ceil(1)\n * ceil([1, 2])\n * // returns [Math.ceil(1), Math.ceil(2)]\n * ceil([[1,2],[1,3]])\n * // returns [ [Math.ceil(1), Math.ceil(2)], [Math.ceil(1), Math.ceil(3)] ]\n ",
             "range": [
-              38,
-              354
+              268,
+              584
             ],
             "loc": {
               "start": {
-                "line": 4,
+                "line": 14,
                 "column": 0
               },
               "end": {
-                "line": 18,
+                "line": 28,
                 "column": 3
               }
             }
@@ -322,16 +1042,16 @@
         "trailingComments": []
       },
       "range": [
-        355,
-        419
+        585,
+        772
       ],
       "loc": {
         "start": {
-          "line": 19,
+          "line": 29,
           "column": 0
         },
         "end": {
-          "line": 21,
+          "line": 38,
           "column": 1
         }
       },
@@ -340,16 +1060,16 @@
           "type": "Block",
           "value": "*\n * Pointwise Math.ceil(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * ceil(1)\n * // returns Math.ceil(1)\n * ceil([1, 2])\n * // returns [Math.ceil(1), Math.ceil(2)]\n * ceil([[1,2],[1,3]])\n * // returns [ [Math.ceil(1), Math.ceil(2)], [Math.ceil(1), Math.ceil(3)] ]\n ",
           "range": [
-            38,
-            354
+            268,
+            584
           ],
           "loc": {
             "start": {
-              "line": 4,
+              "line": 14,
               "column": 0
             },
             "end": {
-              "line": 18,
+              "line": 28,
               "column": 3
             }
           }
@@ -360,7 +1080,7 @@
   "sourceType": "module",
   "range": [
     1,
-    419
+    772
   ],
   "loc": {
     "start": {
@@ -368,7 +1088,7 @@
       "column": 0
     },
     "end": {
-      "line": 21,
+      "line": 38,
       "column": 1
     }
   },
@@ -377,16 +1097,16 @@
       "type": "Block",
       "value": "*\n * Pointwise Math.ceil(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * ceil(1)\n * // returns Math.ceil(1)\n * ceil([1, 2])\n * // returns [Math.ceil(1), Math.ceil(2)]\n * ceil([[1,2],[1,3]])\n * // returns [ [Math.ceil(1), Math.ceil(2)], [Math.ceil(1), Math.ceil(3)] ]\n ",
       "range": [
-        38,
-        354
+        268,
+        584
       ],
       "loc": {
         "start": {
-          "line": 4,
+          "line": 14,
           "column": 0
         },
         "end": {
-          "line": 18,
+          "line": 28,
           "column": 3
         }
       }

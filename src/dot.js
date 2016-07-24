@@ -1,4 +1,7 @@
 import dim from './dim'
+import add from './add'
+import sub from './sub'
+import Complex from './Complex'
 
 /**
  * 
@@ -15,7 +18,36 @@ import dim from './dim'
  * dot([1, 2], 4)
  * // [4, 8]
  */
-export default function dot(x, y) {
+export default function (x, y) {
+  switch (x.constructor.name) {
+    case 'Complex':
+      return cdot(x, y);
+    case 'Sparse':
+      return sdot(x, y);
+    default:
+      return dot(x, y);
+  }
+}
+
+function cdot(x, y) {
+  if (!(y instanceof Complex)) { y = new Complex(y); }
+    if (x.y) {
+      if (y.y) {
+        return new Complex(sub(dot(x.x, y.x), dot(x.y, y.y)), add(dot(x.x, y.y), dot(x.y, y.x)));
+      }
+      return new Complex(dot(x.x, y.x), dot(x.y, y.x));
+    }
+    if (y.y) {
+      return new Complex(dot(x.x, y.x), dot(x.x, y.y));
+    }
+    return new Complex(dot(x.x, y.x));
+}
+
+function sdot(x, y) {
+  throw new Error('mathlab.dot: dot for sparse matrix has not been implemented yet')
+}
+
+function dot(x, y) {
     var d = dim;
     switch (d(x).length * 1000 + d(y).length) {
         case 2002:

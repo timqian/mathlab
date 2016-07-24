@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">src/Complex.js | API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <a data-ice="repoURL" href="https://github.com/timqian/mathlab" class="repo-url-github">Repository</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Complex.js~Complex.html">Complex</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-abs">abs</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-acos">acos</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-add">add</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-and">and</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-asin">asin</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-atan">atan</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-atan2">atan2</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-band">band</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-bnot">bnot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-bor">bor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-bxor">bxor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ceil">ceil</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-clone">clone</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-cos">cos</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-det">det</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-diag">diag</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-dim">dim</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-div">div</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-dot">dot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-eig">eig</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-eq">eq</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-exp">exp</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-floor">floor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-geq">geq</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getBlock">getBlock</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getDiag">getDiag</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-gt">gt</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-identity">identity</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-inv">inv</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-leq">leq</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-linspace">linspace</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-log">log</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-lshift">lshift</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-lt">lt</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mod">mod</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mul">mul</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-neg">neg</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-negtranspose">negtranspose</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-neq">neq</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-norm2">norm2</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-nrom2Squared">nrom2Squared</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-not">not</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-or">or</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-pointwise">pointwise</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-pow">pow</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-random">random</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-reciprocal">reciprocal</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rep">rep</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-round">round</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rrshift">rrshift</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-rshift">rshift</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-same">same</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setBlock">setBlock</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-sin">sin</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-sqrt">sqrt</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-sub">sub</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-tan">tan</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-tensor">tensor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-transpose">transpose</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/Complex.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import identity from &apos;./identity&apos;;
+import mul from &apos;./mul&apos;;
+import div from &apos;./div&apos;;
+import rep from &apos;./rep&apos;;
+import clone from &apos;./clone&apos;;
+import neg from &apos;./neg&apos;;
+import add from &apos;./add&apos;;
+import getBlock from &apos;./getBlock&apos;;
+import setBlock from &apos;./setBlock&apos;
+import transpose from &apos;./transpose&apos;;
+
+
+export default class Complex {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+  }
+
+  reciprocal() {
+    if(this.y) {
+        var d = add(mul(this.x,this.x),mul(this.y,this.y));
+        return new Complex(div(this.x, d),div(neg(this.y), d));
+    }
+    return new Complex(div(1, this.x));
+  }
+
+  identity(n) {
+    return new Complex(identity(n));
+  }
+  
+  transjugate() {
+    var t = transpose, x = this.x, y = this.y;
+    if(y) { return new Complex(t(x), negtranspose(y)); }
+    return new Complex(t(x));
+  }
+  get(i) {
+    var x = this.x, y = this.y, k = 0, ik, n = i.length;
+    if(y) {
+        while(k&lt;n) {
+            ik = i[k];
+            x = x[ik];
+            y = y[ik];
+            k++;
+        }
+        return new Complex(x,y);
+    }
+    while(k&lt;n) {
+        ik = i[k];
+        x = x[ik];
+        k++;
+    }
+    return new Complex(x);
+  }
+  set(i,v) {
+    var x = this.x, y = this.y, k = 0, ik, n = i.length, vx = v.x, vy = v.y;
+    if(n===0) {
+        if(vy) { this.y = vy; }
+        else if(y) { this.y = undefined; }
+        this.x = x;
+        return this;
+    }
+    if(vy) {
+        if(y) { /* ok */ }
+        else {
+            y = rep(dim(x),0);
+            this.y = y;
+        }
+        while(k&lt;n-1) {
+            ik = i[k];
+            x = x[ik];
+            y = y[ik];
+            k++;
+        }
+        ik = i[k];
+        x[ik] = vx;
+        y[ik] = vy;
+        return this;
+    }
+    if(y) {
+        while(k&lt;n-1) {
+            ik = i[k];
+            x = x[ik];
+            y = y[ik];
+            k++;
+        }
+        ik = i[k];
+        x[ik] = vx;
+        if(vx instanceof Array) y[ik] = rep(dim(vx),0);
+        else y[ik] = 0;
+        return this;
+    }
+    while(k&lt;n-1) {
+        ik = i[k];
+        x = x[ik];
+        k++;
+    }
+    ik = i[k];
+    x[ik] = vx;
+    return this;
+  }
+
+  getRows(i0,i1) {
+    var n = i1-i0+1, j;
+    var rx = Array(n), ry, x = this.x, y = this.y;
+    for(j=i0;j&lt;=i1;j++) { rx[j-i0] = x[j]; }
+    if(y) {
+        ry = Array(n);
+        for(j=i0;j&lt;=i1;j++) { ry[j-i0] = y[j]; }
+        return new Complex(rx,ry);
+    }
+    return new Complex(rx);
+  }
+
+  setRows(i0,i1,A) {
+    var j;
+    var rx = this.x, ry = this.y, x = A.x, y = A.y;
+    for(j=i0;j&lt;=i1;j++) { rx[j] = x[j-i0]; }
+    if(y) {
+        if(!ry) { ry = rep(dim(rx),0); this.y = ry; }
+        for(j=i0;j&lt;=i1;j++) { ry[j] = y[j-i0]; }
+    } else if(ry) {
+        for(j=i0;j&lt;=i1;j++) { ry[j] = rep([x[j-i0].length],0); }
+    }
+    return this;
+  }
+
+  getRow(k) {
+    var x = this.x, y = this.y;
+    if(y) { return new Complex(x[k],y[k]); }
+    return new Complex(x[k]);
+  }
+  setRow(i,v) {
+    var rx = this.x, ry = this.y, x = v.x, y = v.y;
+    rx[i] = x;
+    if(y) {
+        if(!ry) { ry = rep(dim(rx),0); this.y = ry; }
+        ry[i] = y;
+    } else if(ry) {
+        ry = rep([x.length],0);
+    }
+    return this;
+  }
+
+  getBlock(from,to) {
+    var x = this.x, y = this.y, b = getBlock;
+    if(y) { return new Complex(b(x,from,to),b(y,from,to)); }
+    return new Complex(b(x,from,to));
+  }
+
+  setBlock(from,to,A) {
+    if(!(A instanceof Complex)) A = new Complex(A);
+    var x = this.x, y = this.y, b = setBlock, Ax = A.x, Ay = A.y;
+    if(Ay) {
+        if(!y) { this.y = rep(dim(this),0); y = this.y; }
+        b(x,from,to,Ax);
+        b(y,from,to,Ay);
+        return this;
+    }
+    b(x,from,to,Ax);
+    if(y) b(y,from,to,rep(dim(Ax),0));
+  }
+
+  fft() {
+    var x = this.x, y = this.y;
+    var n = x.length, log = Math.log, log2 = log(2),
+        p = Math.ceil(log(2*n-1)/log2), m = Math.pow(2,p);
+    var cx = rep([m],0), cy = rep([m],0), cos = Math.cos, sin = Math.sin;
+    var k, c = (-3.141592653589793238462643383279502884197169399375105820/n),t;
+    var a = rep([m],0), b = rep([m],0),nhalf = Math.floor(n/2);
+    for(k=0;k&lt;n;k++) a[k] = x[k];
+    if(typeof y !== &quot;undefined&quot;) for(k=0;k&lt;n;k++) b[k] = y[k];
+    cx[0] = 1;
+    for(k=1;k&lt;=m/2;k++) {
+      t = c*k*k;
+          console.log(&apos;X&apos;,X);cx[k] = cos(t);x
+      cy[k] = sin(t);
+      cx[m-k] = cos(t);
+      cy[m-k] = sin(t)
+    }
+    var X = new Complex(a,b), Y = new Complex(cx,cy);
+    X = mul(X, Y);
+    convpow2(X.x, X.y, clone(Y.x), neg(Y.y));
+    X = mul(X, Y);
+    X.x.length = n;
+    X.y.length = n;
+    return X;
+  }
+
+  ifft() {
+    var x = this.x, y = this.y;
+    var n = x.length, log = Math.log, log2 = log(2),
+        p = Math.ceil(log(2*n-1)/log2), m = Math.pow(2,p);
+    var cx = rep([m],0), cy = rep([m],0), cos = Math.cos, sin = Math.sin;
+    var k, c = (3.141592653589793238462643383279502884197169399375105820/n),t;
+    var a = rep([m],0), b = rep([m],0),nhalf = Math.floor(n/2);
+    for(k=0;k&lt;n;k++) a[k] = x[k];
+    if(typeof y !== &quot;undefined&quot;) for(k=0;k&lt;n;k++) b[k] = y[k];
+    cx[0] = 1;
+    for(k=1;k&lt;=m/2;k++) {
+      t = c*k*k;
+      cx[k] = cos(t);
+      cy[k] = sin(t);
+      cx[m-k] = cos(t);
+      cy[m-k] = sin(t)
+    }
+    var X = new Complex(a,b), Y = new Complex(cx,cy);
+    X = mul(X, Y);
+    convpow2(X.x, X.y, clone(Y.x), neg(Y.y));
+    X = mul(X, Y);
+    X.x.length = n;
+    X.y.length = n;
+    return div(X, n);
+  }
+}
+
+/**
+ * Generate identity complex structure matrix of given size
+ * 
+ * @param {Number} n
+ * @returns {Object}
+ * @example 
+ * 
+ * Complex.identity(2)
+ * // {x: [[1, 0], [0, 1]], y: undefined}
+ */
+Complex.identity = function(n) {
+  return new Complex(identity(n));
+}
+
+
+
+function fftpow2(x,y) {
+    var n = x.length;
+    if(n === 1) return;
+    var cos = Math.cos, sin = Math.sin, i,j;
+    var xe = Array(n/2), ye = Array(n/2), xo = Array(n/2), yo = Array(n/2);
+    j = n/2;
+    for(i=n-1;i!==-1;--i) {
+        --j;
+        xo[j] = x[i];
+        yo[j] = y[i];
+        --i;
+        xe[j] = x[i];
+        ye[j] = y[i];
+    }
+    fftpow2(xe,ye);
+    fftpow2(xo,yo);
+    j = n/2;
+    var t,k = (-6.2831853071795864769252867665590057683943387987502116419/n),ci,si;
+    for(i=n-1;i!==-1;--i) {
+        --j;
+        if(j === -1) j = n/2-1;
+        t = k*i;
+        ci = cos(t);
+        si = sin(t);
+        x[i] = xe[j] + ci*xo[j] - si*yo[j];
+        y[i] = ye[j] + ci*yo[j] + si*xo[j];
+    }
+}
+
+function _ifftpow2(x,y) {
+    var n = x.length;
+    if(n === 1) return;
+    var cos = Math.cos, sin = Math.sin, i,j;
+    var xe = Array(n/2), ye = Array(n/2), xo = Array(n/2), yo = Array(n/2);
+    j = n/2;
+    for(i=n-1;i!==-1;--i) {
+        --j;
+        xo[j] = x[i];
+        yo[j] = y[i];
+        --i;
+        xe[j] = x[i];
+        ye[j] = y[i];
+    }
+    _ifftpow2(xe,ye);
+    _ifftpow2(xo,yo);
+    j = n/2;
+    var t,k = (6.2831853071795864769252867665590057683943387987502116419/n),ci,si;
+    for(i=n-1;i!==-1;--i) {
+        --j;
+        if(j === -1) j = n/2-1;
+        t = k*i;
+        ci = cos(t);
+        si = sin(t);
+        x[i] = xe[j] + ci*xo[j] - si*yo[j];
+        y[i] = ye[j] + ci*yo[j] + si*xo[j];
+    }
+}
+
+function ifftpow2(x,y) {
+    _ifftpow2(x, y);
+    // x = div(x, x.length);
+    // y = div(y, y.length);
+    x.forEach((n, i) =&gt; {x[i] = n / x.length});
+    y.forEach((n, i) =&gt; {y[i] = n / y.length});
+}
+
+function convpow2(ax,ay,bx,by) {
+    fftpow2(ax,ay);
+    fftpow2(bx,by);
+    var i,n = ax.length,axi,bxi,ayi,byi;
+    for(i=n-1;i!==-1;--i) {
+        axi = ax[i]; ayi = ay[i]; bxi = bx[i]; byi = by[i];
+        ax[i] = axi*bxi-ayi*byi;
+        ay[i] = axi*byi+ayi*bxi;
+    }
+    ifftpow2(ax,ay);
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.7)</span></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

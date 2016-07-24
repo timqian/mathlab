@@ -1,10 +1,17 @@
 
 import assert from 'assert'
 import should from 'should'
-import { getDiag } from '../lib'
+import { getDiag, Complex } from '../lib'
 
 describe('getDiag', function () {
-  it('', function () {
+  it('Array', function () {
     getDiag([[1, 3], [0, 2]]).should.deepEqual([1, 2])
+  })
+
+  it('Complex', () =>{
+    getDiag(new Complex([[1, 3], [0, 2]], [[1, 3], [0, 2]]))
+      .x.should.deepEqual([1,2])
+    getDiag(new Complex([[1, 3], [0, 2]], [[1, 3], [0, 2]]))
+      .y.should.deepEqual([1,2])
   })
 })
