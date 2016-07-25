@@ -10,7 +10,7 @@
 ## Function list
    |                    |    |                 |                 |                     |   |                |
 ---|              --- | ------ |         ---------- | ------------ | --------------- | --- | --------------- |
-abs   |    bnot   |     diag   |     floor   |     leq   |       negtranspose   |  pow   |         setBlock   |
+[abs](#abs)   |    bnot   |     diag   |     floor   |     leq   |       negtranspose   |  pow   |         setBlock   |
 acos   |   bor   |      dim   |      geq   |       linspace   |  neq   |           random   |      sin   |
 add   |    bxor   |     div   |      getBlock   |  log   |       norm2   |         reciprocal   |  sqrt   |
 and   |    ceil   |     dot   |      getDiag   |   lshift   |    norm2Squared   |  rep   |         sub   |
@@ -23,7 +23,7 @@ band   |   det   |      exp   |      inv   |       neg   |       pointwise   |  
 
 ## Math Object functions
 
-- [**abs(x)**](https://github.com/timqian/mathlab/blob/master/src/abs   |): Pointwise [Math.abs(x)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/abs)
+- [**abs(x)**](#abs): Pointwise [Math.abs(x)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/abs) [*(source)*](https://github.com/timqian/mathlab/blob/master/src/abs.js)
 
 	+ params: `Number | Array | Complex | Sparse`
 
@@ -31,7 +31,7 @@ band   |   det   |      exp   |      inv   |       neg   |       pointwise   |  
 
 	+ example:
 
-		``   |
+		```js
 		import {abs, Complex, Sparse} from './mathlab'
 
 		abs(-1)  // -1
