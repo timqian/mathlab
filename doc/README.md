@@ -23,14 +23,11 @@ band   |   det   |      exp   |      inv   |       neg   |       pointwise   |  
 
 ## Math Object functions
 
+<a name='abs'/>
 - [**abs(x)**](#abs): Pointwise [Math.abs(x)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/abs) [*(source)*](https://github.com/timqian/mathlab/blob/master/src/abs.js)
-
 	+ params: `Number | Array | Complex | Sparse`
-
 	+ returns: `Number | Array | Complex | Sparse`
-
 	+ example:
-
 		```js
 		import {abs, Complex, Sparse} from './mathlab'
 
