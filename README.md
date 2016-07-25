@@ -1,5 +1,7 @@
 # [mathlab](http://timqian.com/mathlab)
 
+> Note: Unstable, Developing
+
 Lodash like math lab in javascript, focusing on matrix manipulation.
 
 ## Features

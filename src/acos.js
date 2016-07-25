@@ -15,7 +15,7 @@ function sacos(x) {
  * Pointwise Math.acos(x)
  * 
  * @export
- * @param {Number|Array} m
+ * @param {Number|Vector|Multidimensional array|Matirx|Sparse|Complex} m
  * @returns {Number|Array}
  * @example 
  * 

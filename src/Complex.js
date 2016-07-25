@@ -9,7 +9,6 @@ import getBlock from './getBlock';
 import setBlock from './setBlock'
 import transpose from './transpose';
 
-
 export default class Complex {
   constructor(x, y) {
     this.x = x;

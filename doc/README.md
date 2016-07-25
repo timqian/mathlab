@@ -8,8 +8,8 @@
 
 
 ## Function list
-   |                    |    |                 |                 |                     |   |                |
----|              --- | ------ |         ---------- | ------------ | --------------- | --- | --------------- |
+   |         |         |              |           |            |           |                |
+---|     --- | ------ |     ---------- | --------- | ----------- | --------- | ----------- |
 [abs](#abs)   |    bnot   |     diag   |     floor   |     leq   |       negtranspose   |  pow   |         setBlock   |
 acos   |   bor   |      dim   |      geq   |       linspace   |  neq   |           random   |      sin   |
 add   |    bxor   |     div   |      getBlock   |  log   |       norm2   |         reciprocal   |  sqrt   |
@@ -31,7 +31,7 @@ band   |   det   |      exp   |      inv   |       neg   |       pointwise   |  
 		```js
 		import {abs, Complex, Sparse} from './mathlab'
 
-		abs(-1)  // -1
+		abs(-1)  // 1
 		abs([-1, 2])  // [1, 2]
 		abs(new Complex(3, 4))  // {x: 5, y: 0}
 		abs(new Sparse([[1,2,0],[0,0,-1],[1,0,0]])) // {row: col: val:}
