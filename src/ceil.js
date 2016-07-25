@@ -1,5 +1,6 @@
 
 import pointwise from './pointwise'
+import Sparse from './Sparse'
 
 const ceil = pointwise(Math.ceil)
 
@@ -8,7 +9,11 @@ function cceil(x) {
 }
 
 function sceil(x) {
-  throw new Error('mathlab.ceil: ceil for sparse matrix has not been implemented yet')
+  return new Sparse({
+    col: x.col.slice(), // copy the array
+    row: x.row.slice(),
+    val: ceil(x.val),
+  })
 }
 
 /**

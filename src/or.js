@@ -7,7 +7,7 @@ function cor(x, y) {
 }
 
 function sor(x, y) {
-  throw new Error('mathlab.or: or for sparse matrix has not been implemented yet')
+  throw new Error('mathlab.or: or for sparse matrix not exist')
 }
 
 /**

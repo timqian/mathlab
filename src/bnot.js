@@ -1,5 +1,6 @@
 
 import pointwise from './pointwise'
+import Sparse from './Sparse'
 
 const bnot = pointwise(x=> ~x);
 
@@ -8,7 +9,11 @@ function cbnot(x) {
 }
 
 function sbnot(x) {
-  throw new Error('mathlab.bnot: bnot for sparse matrix has not been implemented yet')
+  return new Sparse({
+    col: x.col.slice(), // copy the array
+    row: x.row.slice(),
+    val: bnot(x.val),
+  })
 }
 
 /**

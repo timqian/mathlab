@@ -1,5 +1,6 @@
 
 import pointwise from './pointwise'
+import Sparse from './Sparse'
 
 const clone = pointwise(x => x);
 
@@ -8,8 +9,11 @@ function cclone(x) {
 }
 
 function sclone(x) {
-  throw new Error('mathlab.clone: clone for sparse matrix has not been implemented yet')
-}
+  return new Sparse({
+    col: x.col.slice(), // copy the array
+    row: x.row.slice(),
+    val: x.val.slice()
+  })}
 
 /**
  * Pointwise clone(x)

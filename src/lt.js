@@ -7,7 +7,7 @@ function clt(x, y) {
 }
 
 function slt(x, y) {
-  throw new Error('mathlab.lt: lt for sparse matrix has not been implemented yet')
+  throw new Error('mathlab.lt: lt for sparse matrix not exist')
 }
 
 /**

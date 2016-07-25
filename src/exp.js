@@ -4,6 +4,7 @@ import cos from './cos'
 import sin from './sin'
 import mul from './mul'
 import Complex from './Complex'
+import Sparse from './Sparse'
 
 const exp = pointwise(Math.exp)
 
@@ -16,7 +17,11 @@ function cexp(x) {
 }
 
 function sexp(x) {
-  throw new Error('mathlab.exp: exp for sparse matrix has not been implemented yet')
+  return new Sparse({
+    col: x.col.slice(), // copy the array
+    row: x.row.slice(),
+    val: exp(x.val),
+  })
 }
 
 /**

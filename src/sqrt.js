@@ -1,5 +1,6 @@
 
 import pointwise from './pointwise'
+import Sparse from './Sparse'
 
 const sqrt = pointwise(Math.sqrt)
 
@@ -8,7 +9,11 @@ function csqrt(x) {
 }
 
 function ssqrt(x) {
-  throw new Error('mathlab.sqrt: sqrt for sparse matrix has not been implemented yet')
+  return new Sparse({
+    col: x.col.slice(), // copy the array
+    row: x.row.slice(),
+    val: sqrt(x.val),
+  })
 }
 
 /**

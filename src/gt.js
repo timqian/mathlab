@@ -7,7 +7,7 @@ function cgt(x, y) {
 }
 
 function sgt(x, y) {
-  throw new Error('mathlab.gt: gt for sparse matrix has not been implemented yet')
+  throw new Error('mathlab.gt: gt for sparse matrix not exist')
 }
 
 /**

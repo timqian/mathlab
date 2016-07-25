@@ -15,7 +15,8 @@ function cdiv(x, y) {
 }
 
 function sdiv(x, y) {
-  throw new Error('mathlab.div: div for sparse matrix has not been implemented yet')
+  // TODO
+  throw new Error('mathlab.div: div for sparse matrix not exist')
 }
 
 /**

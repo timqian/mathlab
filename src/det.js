@@ -14,6 +14,7 @@ import clone from './clone'
  * // 0
  */
 export default function det (x) {
+  // TODO
   var s = dim(x)
   if (s.length !== 2 || s[0] !== s[1]) { throw new Error('det() only works on square matrices'); }
   var n = s[0], ret = 1,i,j,k,A = clone(x),Aj,Ai,alpha,temp,k1,k2,k3

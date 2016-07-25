@@ -17,6 +17,7 @@ import pointwise from './pointwise'
  * atan2([[2,1], [1,2]], [[2, 2], [2, 2]]))
  * // returns [ [Math.atan2(2, 2), Math.atan2(1, 2)], [Math.atan2(1, 2), Math.atan2(2, 2)] ]
  */
-export default function (m1, m2) { 
+export default function (m1, m2) {
+  // TODO 
   return pointwise(Math.atan2)(m1, m2)
 }

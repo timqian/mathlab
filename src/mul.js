@@ -22,7 +22,7 @@ function cmul(x, y) {
 }
 
 function smul(x, y) {
-  throw new Error('mathlab.sub: sub for sparse matrix has not been implemented yet')
+  throw new Error('mathlab.sub: sub for sparse matrix not exist')
 }
 
 /**

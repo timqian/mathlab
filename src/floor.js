@@ -1,5 +1,6 @@
 
 import pointwise from './pointwise'
+import Sparse from './Sparse'
 
 const floor = pointwise(Math.floor)
 
@@ -8,9 +9,12 @@ function cfloor(x) {
 }
 
 function sfloor(x) {
-  throw new Error('mathlab.floor: floor for sparse matrix has not been implemented yet')
+  return new Sparse({
+    col: x.col.slice(), // copy the array
+    row: x.row.slice(),
+    val: floor(x.val),
+  })
 }
-
 /**
  * Pointwise Math.floor(x)
  * 

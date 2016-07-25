@@ -1,6 +1,7 @@
 
 import pointwise from './pointwise'
 import Complex from './Complex'
+import Sparse from './Sparse'
 
 const neg = pointwise(x=> -x);
 
@@ -12,7 +13,11 @@ function cneg(x) {
 }
 
 function sneg(x) {
-  throw new Error('mathlab.neg: neg for sparse matrix has not been implemented yet')
+  return new Sparse({
+    col: x.col.slice(), // copy the array
+    row: x.row.slice(),
+    val: neg(x.val),
+  })
 }
 
 /**

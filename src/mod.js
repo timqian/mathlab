@@ -7,7 +7,7 @@ function cmod(x, y) {
 }
 
 function smod(x, y) {
-  throw new Error('mathlab.mod: mod for sparse matrix has not been implemented yet')
+  throw new Error('mathlab.mod: mod for sparse matrix not exist')
 }
 
 /**

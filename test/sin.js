@@ -1,7 +1,7 @@
 
 import assert from 'assert'
 import should from 'should'
-import { sin, Complex } from '../lib'
+import { sin, Complex, Sparse } from '../lib'
 
 describe('sin', () => {
   it('num & arr', () => {
@@ -16,5 +16,10 @@ describe('sin', () => {
     // {x: [ 1.403, 3.421], y: [ 0.4891, 1.509]}
     sin(new Complex([1, 2], [2, 2])).x[0].should.approximately(1.403, 0.01)
     sin(new Complex([1, 2], [2, 2])).y[1].should.approximately(1.509, 0.01)
+  })
+
+  it('Sparse', () =>{
+    sin(new Sparse([[1,2],[1,3]])).toFull()
+      .should.deepEqual([ [Math.sin(1), Math.sin(2)], [Math.sin(1), Math.sin(3)] ])
   })
 })

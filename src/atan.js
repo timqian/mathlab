@@ -1,5 +1,6 @@
 
 import pointwise from './pointwise'
+import Sparse from './Sparse'
 
 const atan = pointwise(Math.atan)
 
@@ -8,7 +9,11 @@ function catan(x) {
 }
 
 function satan(x) {
-  throw new Error('mathlab.atan: atan for sparse matrix has not been implemented yet')
+  return new Sparse({
+    col: x.col.slice(), // copy the array
+    row: x.row.slice(),
+    val: atan(x.val),
+  })
 }
 
 /**

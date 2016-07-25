@@ -1,6 +1,7 @@
 
 import pointwise from './pointwise'
 import Complex from './Complex'
+import Sparse from './Sparse'
 import neg from './neg'
 import exp from './exp'
 import div from './div'
@@ -17,7 +18,11 @@ function csin(x) {
 }
 
 function ssin(x) {
-  throw new Error('mathlab.sin: sin for sparse matrix has not been implemented yet')
+  return new Sparse({
+    col: x.col.slice(), // copy the array
+    row: x.row.slice(),
+    val: sin(x.val),
+  })
 }
 
 /**

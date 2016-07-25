@@ -1,5 +1,6 @@
 
 import pointwise from './pointwise'
+import Sparse from './Sparse'
 
 const asin = pointwise(Math.asin)
 
@@ -8,7 +9,11 @@ function casin(x) {
 }
 
 function sasin(x) {
-  throw new Error('mathlab.asin: asin for sparse matrix has not been implemented yet')
+  return new Sparse({
+    col: x.col.slice(), // copy the array
+    row: x.row.slice(),
+    val: asin(x.val),
+  })
 }
 
 /**

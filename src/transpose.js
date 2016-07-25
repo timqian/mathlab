@@ -34,7 +34,7 @@ function ctranspose(x) {
 }
 
 function stranspose(x) {
-  throw new Error('mathlab.transpose: transpose for sparse matrix has not been implemented yet')
+  throw new Error('mathlab.transpose: transpose for sparse matrix not exist')
 }
 
 function transpose (x) {

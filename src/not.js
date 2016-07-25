@@ -1,5 +1,6 @@
 
 import pointwise from './pointwise'
+import Sparse from './Sparse'
 
 const not = pointwise(x=> !x);
 
@@ -8,7 +9,11 @@ function cnot(x) {
 }
 
 function snot(x) {
-  throw new Error('mathlab.not: not for sparse matrix has not been implemented yet')
+  return new Sparse({
+    col: x.col.slice(), // copy the array
+    row: x.row.slice(),
+    val: not(x.val),
+  })
 }
 
 /**

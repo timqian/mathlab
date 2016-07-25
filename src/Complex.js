@@ -6,7 +6,7 @@ import clone from './clone';
 import neg from './neg';
 import add from './add';
 import getBlock from './getBlock';
-import setBlock from './setBlock'
+import setBlock from './setBlock';
 import transpose from './transpose';
 
 export default class Complex {
@@ -32,6 +32,7 @@ export default class Complex {
     if(y) { return new Complex(t(x), negtranspose(y)); }
     return new Complex(t(x));
   }
+  
   get(i) {
     var x = this.x, y = this.y, k = 0, ik, n = i.length;
     if(y) {
@@ -50,6 +51,7 @@ export default class Complex {
     }
     return new Complex(x);
   }
+  
   set(i,v) {
     var x = this.x, y = this.y, k = 0, ik, n = i.length, vx = v.x, vy = v.y;
     if(n===0) {

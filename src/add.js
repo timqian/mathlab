@@ -18,7 +18,8 @@ function cadd(x, y) {
 }
 
 function sadd(x, y) {
-  throw new Error('mathlab.add: add for sparse matrix has not been implemented yet')
+  // TODO
+  throw new Error('mathlab.add: add for sparse matrix not exist')
 }
 
 /**

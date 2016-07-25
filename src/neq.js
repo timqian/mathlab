@@ -7,7 +7,7 @@ function cneq(x, y) {
 }
 
 function sneq(x, y) {
-  throw new Error('mathlab.neq: neq for sparse matrix has not been implemented yet')
+  throw new Error('mathlab.neq: neq for sparse matrix not exist')
 }
 
 /**

@@ -8,7 +8,7 @@ function cround(x) {
 }
 
 function sround(x) {
-  throw new Error('mathlab.round: round for sparse matrix has not been implemented yet')
+  throw new Error('mathlab.round: round for sparse matrix not exist')
 }
 
 /**

@@ -1,5 +1,6 @@
 
 import pointwise from './pointwise'
+import Sparse from './Sparse'
 
 const acos = pointwise(Math.acos)
 
@@ -8,7 +9,11 @@ function cacos(x) {
 }
 
 function sacos(x) {
-  throw new Error('mathlab.acos: acos for sparse matrix has not been implemented yet')
+  return new Sparse({
+    col: x.col.slice(), // copy the array
+    row: x.row.slice(),
+    val: acos(x.val),
+  })
 }
 
 /**

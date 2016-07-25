@@ -7,7 +7,7 @@ function clshift(x, y) {
 }
 
 function slshift(x, y) {
-  throw new Error('mathlab.lshift: lshift for sparse matrix has not been implemented yet')
+  throw new Error('mathlab.lshift: lshift for sparse matrix not exist')
 }
 
 /**

@@ -1,7 +1,7 @@
 
 import assert from 'assert'
 import should from 'should'
-import { exp, Complex } from '../lib'
+import { exp, Complex, Sparse } from '../lib'
 
 describe('exp', () => {
   it('number & Array', () => {
@@ -15,5 +15,10 @@ describe('exp', () => {
     /**{x: [ -1.131, -3.075], y: [ 2.472, 6.719]} */
     exp(new Complex([1, 2], [2, 2])).x[0].should.approximately(-1.131, 0.01)
     exp(new Complex([1, 2], [2, 2])).y[1].should.approximately(6.719, 0.01)
+  })
+
+ it('Sparse', () =>{
+    exp(new Sparse([[1,2],[1,3]])).toFull()
+      .should.deepEqual([ [Math.exp(1), Math.exp(2)], [Math.exp(1), Math.exp(3)] ])
   })
 })

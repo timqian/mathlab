@@ -1,7 +1,7 @@
 
 import assert from 'assert'
 import should from 'should'
-import { abs, Complex } from '../lib'
+import { abs, Complex, Sparse } from '../lib'
 
 const c1 = new Complex([1,2], [1,2])
 describe('abs', () => {
@@ -15,5 +15,10 @@ describe('abs', () => {
     abs(new Complex(-1)).x.should.approximately(1, 0.01)
     // {x: [ 2.236, 2.828], y: }
     abs(new Complex([1, 2], [2, 2])).x[0].should.approximately(2.236, 0.01)
+  })
+
+  it('Sparse', () => {
+    abs(new Sparse([[1,0],[-2,1]])).toFull().should.deepEqual([[1,0],[2,1]])
+    // throw abs(new Sparse([[1,0],[-2,1]]))
   })
 })

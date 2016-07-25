@@ -1,5 +1,6 @@
 
 import pointwise from './pointwise'
+import Sparse from './Sparse'
 import Complex from './Complex'
 import atan2 from './atan2'
 import abs from './abs'
@@ -16,7 +17,11 @@ function clog(x) {
 }
 
 function slog(x) {
-  throw new Error('mathlab.log: log for sparse matrix has not been implemented yet')
+  return new Sparse({
+    col: x.col.slice(), // copy the array
+    row: x.row.slice(),
+    val: log(x.val),
+  })
 }
 
 /**

@@ -1,7 +1,7 @@
 
 import assert from 'assert'
 import should from 'should'
-import { not } from '../lib'
+import { not, Sparse } from '../lib'
 
 describe('not', () => {
   it('', () => {
@@ -11,5 +11,10 @@ describe('not', () => {
       .should.deepEqual(
         [ [! 2, ! 1], [! 1, ! 2] ]
       )
+  })
+
+  it('Sparse', () =>{
+    not(new Sparse([[1,2],[1,3]])).toFull()
+      .should.deepEqual([ [!1, !2], [!1, !3] ])
   })
 })

@@ -7,7 +7,8 @@ function cand(x, y) {
 }
 
 function sand(x, y) {
-  throw new Error('mathlab.and: and for sparse matrix has not been implemented yet')
+  // TODO
+  throw new Error('mathlab.and: and for sparse matrix not exist')
 }
 
 /**

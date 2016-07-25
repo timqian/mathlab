@@ -1,6 +1,7 @@
 
 import pointwise from './pointwise'
 import Complex from './Complex'
+import Sparse from './Sparse'
 import mul from './mul'
 import sqrt from './sqrt';
 import add from './add';
@@ -15,7 +16,11 @@ function cabs(x) {
 }
 
 function sabs(x) {
-  throw new Error('mathlab.abs: abs for sparse matrix has not been implemented yet')
+  return new Sparse({
+    col: x.col.slice(), // copy the array
+    row: x.row.slice(),
+    val: abs(x.val),
+  })
 }
 
 /**

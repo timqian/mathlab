@@ -7,7 +7,7 @@ function ceq(x, y) {
 }
 
 function seq(x, y) {
-  throw new Error('mathlab.eq: eq for sparse matrix has not been implemented yet')
+  throw new Error('mathlab.eq: eq for sparse matrix not exist')
 }
 
 /**

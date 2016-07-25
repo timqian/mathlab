@@ -1,7 +1,7 @@
 
 import assert from 'assert'
 import should from 'should'
-import { bnot } from '../lib'
+import { bnot, Sparse } from '../lib'
 
 describe('bnot', () => {
   it('', () => {
@@ -11,5 +11,10 @@ describe('bnot', () => {
       .should.deepEqual(
         [ [~ 2, ~ 1], [~ 1, ~ 2] ]
       )
+  })
+
+  it('Sparse', () =>{
+    bnot(new Sparse([[1,2],[1,3]])).toFull()
+      .should.deepEqual([ [~1, ~2], [~1, ~3] ])
   })
 })

@@ -34,7 +34,7 @@ function cnorm2(x, y) {
 }
 
 function snorm2(x, y) {
-  throw new Error('mathlab.norm2: norm2 for sparse matrix has not been implemented yet')
+  throw new Error('mathlab.norm2: norm2 for sparse matrix not exist')
 }
 
 function norm2(x) {

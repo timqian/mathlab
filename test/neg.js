@@ -1,7 +1,7 @@
 
 import assert from 'assert'
 import should from 'should'
-import { neg, Complex } from '../lib'
+import { neg, Complex, Sparse } from '../lib'
 
 describe('neg', () => {
   it('num & array', () => {
@@ -16,5 +16,10 @@ describe('neg', () => {
   it('Complex', () => {
     neg(new Complex(1)).x.should.equal(-1)
     neg(new Complex([1, 2], [2, 2])).y.should.deepEqual([-2,-2])
+  })
+
+  it('Sparse', () =>{
+    neg(new Sparse([[1,2],[1,3]])).toFull()
+      .should.deepEqual([ [-1, -2], [-1, -3] ])
   })
 })

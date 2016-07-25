@@ -7,7 +7,7 @@ function cleq(x, y) {
 }
 
 function sleq(x, y) {
-  throw new Error('mathlab.leq: leq for sparse matrix has not been implemented yet')
+  throw new Error('mathlab.leq: leq for sparse matrix not exist')
 }
 
 /**

@@ -19,7 +19,7 @@ function csub(x, y) {
 }
 
 function ssub(x, y) {
-  throw new Error('mathlab.sub: sub for sparse matrix has not been implemented yet')
+  throw new Error('mathlab.sub: sub for sparse matrix not exist')
 }
 
 /**
