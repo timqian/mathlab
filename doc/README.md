@@ -8,19 +8,17 @@
 
 
 ## Function list
-   |                    |    |                 |                 |                     |
----|              --- | ------ |         ---------- | ------------ | --------------- |
-abs   |    ceil   |     eq   |        linspace   |      not   |         rshift   |
-acos   |   clone   |    exp   |       log   |           OldT   |        same   |
-add   |    Complex   |  floor   |     lshift   |        or   |          setBlock   |
-and   |    cos   |      geq   |       lt   |            pointwise2   |  sin   |
-asin   |   det   |      getBlock   |  mod   |           pointwise   |   sqrt   |
-atan2   |  diag   |     getDiag   |   mul   |           pow   |         sub   |
-atan   |   dim   |      gt   |        neg   |           random   |      tan   |
-band   |   div   |      identity   |  negtranspose   |  reciprocal   |  tensor   |
-bnot   |   dot   |      index   |     neq   |           rep   |         transpose   |
-bor   |    eig   |      inv   |       norm2   |         round   |
-bxor   |   epsilon   |  leq   |       norm2Squared   |  rrshift   |
+   |                    |    |                 |                 |                     |   |                |
+---|              --- | ------ |         ---------- | ------------ | --------------- | --- | --------------- |
+abs   |    bnot   |     diag   |     floor   |     leq   |       negtranspose   |  pow   |         setBlock   |
+acos   |   bor   |      dim   |      geq   |       linspace   |  neq   |           random   |      sin   |
+add   |    bxor   |     div   |      getBlock   |  log   |       norm2   |         reciprocal   |  sqrt   |
+and   |    ceil   |     dot   |      getDiag   |   lshift   |    norm2Squared   |  rep   |         sub   |
+asin   |   clone   |    eig   |      gt   |        lt   |        not   |           round   |       tan   |
+atan2   |  Complex   |  epsilon   |  identity   |  mod   |       or   |            rrshift   |     tensor   |
+atan   |   cos   |      eq   |       index   |     mul   |       pointwise2   |    rshift   |      transpose   |
+band   |   det   |      exp   |      inv   |       neg   |       pointwise   |     same   |
+
 
 
 ## Math Object functions
