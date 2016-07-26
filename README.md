@@ -8,7 +8,7 @@ Lodash like math lab in javascript, focusing on matrix manipulation.
 - **Modulize**: only import the function you need.
 - **Easy to use**: no extra concepts to grasp(1D Array as vector and 2D Array as matrix)
 - **Functional**: no side effact on input data and the outside world
-- Support sparse and complex matrix manipulation
+- **multifunctional**: Support *sparse* and *complex* matrix manipulation; *FFT*; *eigenvectors & eigenvalues of matrix*; and so on
 
 ## Install
 ```
