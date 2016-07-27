@@ -1,10 +1,11 @@
 > Note: Unstable, Developing
 
+> Start as a refactoring of [numeric](https://github.com/sloisel/numeric)
+
 # mathlab
 Lodash like math lab in javascript, focusing on matrix manipulation.
 
 [![npm](https://nodei.co/npm/mathlab.png)](https://www.npmjs.com/package/mathlab)
-
 
 ## Features
 - **Modulize**: only import the function you need.
@@ -29,5 +30,5 @@ const y = dot(A, x)
 console.log(y); // [50,122]
 ```
 
-# [Documents wrote by human](https://github.com/timqian/mathlab/tree/master/doc#readme)
-# [Documents generated from comments](http://timqian.com/mathlab)
+# [Documents wrote by human(unfinished)](https://github.com/timqian/mathlab/tree/master/doc#readme)
+# [Documents generated from comments(unfinished)](http://timqian.com/mathlab)
