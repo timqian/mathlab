@@ -5,7 +5,7 @@
 1. [Data types](#data-types)
 1. [Math Object functions](#math-object-functions)
 
-## Data types
+## Sparse matrix and Complex numbers
 
 Besides from normal Array presenting vectors and matrix,
 mathlab support Complex number/vectors/matrix and Sparse matrix manipulation.
@@ -76,11 +76,7 @@ band   |   det   |      exp   |      inv   |       neg   |       pointwise   |  
 
 ## Math Object functions
 
-
-### Function list:
-
-
-
+The *Math* object functions have been adapted to work on Arrays , Complex and Sparse Objects
 
 ### Sample usage
 <a name='abs'><a/>
@@ -96,3 +92,8 @@ band   |   det   |      exp   |      inv   |       neg   |       pointwise   |  
 		abs(new Complex(3, 4))  // {x: 5, y: 0}
 		abs(new Sparse([[1,2,0],[0,0,-1],[1,0,0]])) // {row: col: val:}
 		```
+
+### Function list:
+  'abs', 'acos', 'asin', 'atan',
+  'ceil', 'cos', 'exp', 'floor',
+  'log', 'round', 'sin', 'sqrt', 'tan'
