@@ -531,11 +531,11 @@
               "arguments": [
                 {
                   "type": "Literal",
-                  "value": "mathlab.neq: neq for sparse matrix has not been implemented yet",
-                  "raw": "'mathlab.neq: neq for sparse matrix has not been implemented yet'",
+                  "value": "mathlab.neq: neq for sparse matrix not exist",
+                  "raw": "'mathlab.neq: neq for sparse matrix not exist'",
                   "range": [
                     205,
-                    270
+                    251
                   ],
                   "loc": {
                     "start": {
@@ -544,14 +544,14 @@
                     },
                     "end": {
                       "line": 10,
-                      "column": 83
+                      "column": 64
                     }
                   }
                 }
               ],
               "range": [
                 195,
-                271
+                252
               ],
               "loc": {
                 "start": {
@@ -560,13 +560,13 @@
                 },
                 "end": {
                   "line": 10,
-                  "column": 84
+                  "column": 65
                 }
               }
             },
             "range": [
               189,
-              272
+              253
             ],
             "loc": {
               "start": {
@@ -582,7 +582,7 @@
         ],
         "range": [
           185,
-          273
+          254
         ],
         "loc": {
           "start": {
@@ -599,7 +599,7 @@
       "expression": false,
       "range": [
         165,
-        273
+        254
       ],
       "loc": {
         "start": {
@@ -616,8 +616,8 @@
           "type": "Block",
           "value": "*\n * Pointwise neq\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * neq(1, 2)\n * // returns 1 !== 2\n * neq([1, 2], [2, 2])\n * // returns [1 !== 2, 2 !== 2]\n * neq([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 !== 2, 1 !== 2], [1 !== 2, 2 !== 2] ]\n ",
           "range": [
-            275,
-            604
+            256,
+            585
           ],
           "loc": {
             "start": {
@@ -642,8 +642,8 @@
             "type": "Identifier",
             "name": "m1",
             "range": [
-              630,
-              632
+              611,
+              613
             ],
             "loc": {
               "start": {
@@ -660,8 +660,8 @@
             "type": "Identifier",
             "name": "m2",
             "range": [
-              634,
-              636
+              615,
+              617
             ],
             "loc": {
               "start": {
@@ -690,8 +690,8 @@
                     "type": "Identifier",
                     "name": "m1",
                     "range": [
-                      650,
-                      652
+                      631,
+                      633
                     ],
                     "loc": {
                       "start": {
@@ -708,8 +708,8 @@
                     "type": "Identifier",
                     "name": "constructor",
                     "range": [
-                      653,
-                      664
+                      634,
+                      645
                     ],
                     "loc": {
                       "start": {
@@ -723,8 +723,8 @@
                     }
                   },
                   "range": [
-                    650,
-                    664
+                    631,
+                    645
                   ],
                   "loc": {
                     "start": {
@@ -741,8 +741,8 @@
                   "type": "Identifier",
                   "name": "name",
                   "range": [
-                    665,
-                    669
+                    646,
+                    650
                   ],
                   "loc": {
                     "start": {
@@ -756,8 +756,8 @@
                   }
                 },
                 "range": [
-                  650,
-                  669
+                  631,
+                  650
                 ],
                 "loc": {
                   "start": {
@@ -778,8 +778,8 @@
                     "value": "Complex",
                     "raw": "'Complex'",
                     "range": [
-                      682,
-                      691
+                      663,
+                      672
                     ],
                     "loc": {
                       "start": {
@@ -801,8 +801,8 @@
                           "type": "Identifier",
                           "name": "cneq",
                           "range": [
-                            706,
-                            710
+                            687,
+                            691
                           ],
                           "loc": {
                             "start": {
@@ -820,8 +820,8 @@
                             "type": "Identifier",
                             "name": "m1",
                             "range": [
-                              711,
-                              713
+                              692,
+                              694
                             ],
                             "loc": {
                               "start": {
@@ -838,8 +838,8 @@
                             "type": "Identifier",
                             "name": "m2",
                             "range": [
-                              715,
-                              717
+                              696,
+                              698
                             ],
                             "loc": {
                               "start": {
@@ -854,8 +854,8 @@
                           }
                         ],
                         "range": [
-                          706,
-                          718
+                          687,
+                          699
                         ],
                         "loc": {
                           "start": {
@@ -869,8 +869,8 @@
                         }
                       },
                       "range": [
-                        699,
-                        719
+                        680,
+                        700
                       ],
                       "loc": {
                         "start": {
@@ -885,8 +885,8 @@
                     }
                   ],
                   "range": [
-                    677,
-                    719
+                    658,
+                    700
                   ],
                   "loc": {
                     "start": {
@@ -906,8 +906,8 @@
                     "value": "Sparse",
                     "raw": "'Sparse'",
                     "range": [
-                      729,
-                      737
+                      710,
+                      718
                     ],
                     "loc": {
                       "start": {
@@ -929,8 +929,8 @@
                           "type": "Identifier",
                           "name": "sneq",
                           "range": [
-                            752,
-                            756
+                            733,
+                            737
                           ],
                           "loc": {
                             "start": {
@@ -948,8 +948,8 @@
                             "type": "Identifier",
                             "name": "m1",
                             "range": [
-                              757,
-                              759
+                              738,
+                              740
                             ],
                             "loc": {
                               "start": {
@@ -966,8 +966,8 @@
                             "type": "Identifier",
                             "name": "m2",
                             "range": [
-                              761,
-                              763
+                              742,
+                              744
                             ],
                             "loc": {
                               "start": {
@@ -982,8 +982,8 @@
                           }
                         ],
                         "range": [
-                          752,
-                          764
+                          733,
+                          745
                         ],
                         "loc": {
                           "start": {
@@ -997,8 +997,8 @@
                         }
                       },
                       "range": [
-                        745,
-                        765
+                        726,
+                        746
                       ],
                       "loc": {
                         "start": {
@@ -1013,8 +1013,8 @@
                     }
                   ],
                   "range": [
-                    724,
-                    765
+                    705,
+                    746
                   ],
                   "loc": {
                     "start": {
@@ -1039,8 +1039,8 @@
                           "type": "Identifier",
                           "name": "neq",
                           "range": [
-                            792,
-                            795
+                            773,
+                            776
                           ],
                           "loc": {
                             "start": {
@@ -1058,8 +1058,8 @@
                             "type": "Identifier",
                             "name": "m1",
                             "range": [
-                              796,
-                              798
+                              777,
+                              779
                             ],
                             "loc": {
                               "start": {
@@ -1076,8 +1076,8 @@
                             "type": "Identifier",
                             "name": "m2",
                             "range": [
-                              800,
-                              802
+                              781,
+                              783
                             ],
                             "loc": {
                               "start": {
@@ -1092,8 +1092,8 @@
                           }
                         ],
                         "range": [
-                          792,
-                          803
+                          773,
+                          784
                         ],
                         "loc": {
                           "start": {
@@ -1107,8 +1107,8 @@
                         }
                       },
                       "range": [
-                        785,
-                        804
+                        766,
+                        785
                       ],
                       "loc": {
                         "start": {
@@ -1123,8 +1123,8 @@
                     }
                   ],
                   "range": [
-                    770,
-                    804
+                    751,
+                    785
                   ],
                   "loc": {
                     "start": {
@@ -1139,8 +1139,8 @@
                 }
               ],
               "range": [
-                642,
-                808
+                623,
+                789
               ],
               "loc": {
                 "start": {
@@ -1155,8 +1155,8 @@
             }
           ],
           "range": [
-            638,
-            810
+            619,
+            791
           ],
           "loc": {
             "start": {
@@ -1172,8 +1172,8 @@
         "generator": false,
         "expression": false,
         "range": [
-          620,
-          810
+          601,
+          791
         ],
         "loc": {
           "start": {
@@ -1190,8 +1190,8 @@
             "type": "Block",
             "value": "*\n * Pointwise neq\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * neq(1, 2)\n * // returns 1 !== 2\n * neq([1, 2], [2, 2])\n * // returns [1 !== 2, 2 !== 2]\n * neq([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 !== 2, 1 !== 2], [1 !== 2, 2 !== 2] ]\n ",
             "range": [
-              275,
-              604
+              256,
+              585
             ],
             "loc": {
               "start": {
@@ -1208,8 +1208,8 @@
         "trailingComments": []
       },
       "range": [
-        605,
-        810
+        586,
+        791
       ],
       "loc": {
         "start": {
@@ -1226,8 +1226,8 @@
           "type": "Block",
           "value": "*\n * Pointwise neq\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * neq(1, 2)\n * // returns 1 !== 2\n * neq([1, 2], [2, 2])\n * // returns [1 !== 2, 2 !== 2]\n * neq([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 !== 2, 1 !== 2], [1 !== 2, 2 !== 2] ]\n ",
           "range": [
-            275,
-            604
+            256,
+            585
           ],
           "loc": {
             "start": {
@@ -1246,7 +1246,7 @@
   "sourceType": "module",
   "range": [
     0,
-    810
+    791
   ],
   "loc": {
     "start": {
@@ -1263,8 +1263,8 @@
       "type": "Block",
       "value": "*\n * Pointwise neq\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * neq(1, 2)\n * // returns 1 !== 2\n * neq([1, 2], [2, 2])\n * // returns [1 !== 2, 2 !== 2]\n * neq([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 !== 2, 1 !== 2], [1 !== 2, 2 !== 2] ]\n ",
       "range": [
-        275,
-        604
+        256,
+        585
       ],
       "loc": {
         "start": {

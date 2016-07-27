@@ -33,6 +33,7 @@
   <ul>
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Complex.js~Complex.html">Complex</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-abs">abs</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-acos">acos</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-add">add</a></span></span></li>
@@ -138,7 +139,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-acos">acos</a></span></span><span data-ice="signature">(m: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-acos">acos</a></span></span><span data-ice="signature">(m: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span>Vector</span> | <span>Multidimensional array</span> | <span>Matirx</span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
         </p>
       </div>
       <div>
@@ -1649,11 +1650,11 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/abs.js.html#lineNumber36">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/abs.js.html#lineNumber41">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import abs from &apos;<span><a href="file/src/abs.js.html#lineNumber36">mathlab/src/abs.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import abs from &apos;<span><a href="file/src/abs.js.html#lineNumber41">mathlab/src/abs.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Pointwise Math.abs(x)</p>
@@ -1725,15 +1726,15 @@ abs([[1,2],[1,3]])
     
     
     
-    <span data-ice="name">acos</span><span data-ice="signature">(m: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+    <span data-ice="name">acos</span><span data-ice="signature">(m: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span>Vector</span> | <span>Multidimensional array</span> | <span>Matirx</span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/acos.js.html#lineNumber29">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/acos.js.html#lineNumber34">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import acos from &apos;<span><a href="file/src/acos.js.html#lineNumber29">mathlab/src/acos.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import acos from &apos;<span><a href="file/src/acos.js.html#lineNumber34">mathlab/src/acos.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Pointwise Math.acos(x)</p>
@@ -1751,7 +1752,7 @@ abs([[1,2],[1,3]])
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">m</td>
-      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span>Vector</span> | <span>Multidimensional array</span> | <span>Matirx</span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"></td>
     </tr>
@@ -1809,11 +1810,11 @@ acos([[1,2],[1,3]])
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/add.js.html#lineNumber40">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/add.js.html#lineNumber41">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import add from &apos;<span><a href="file/src/add.js.html#lineNumber40">mathlab/src/add.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import add from &apos;<span><a href="file/src/add.js.html#lineNumber41">mathlab/src/add.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Pointwise add</p>
@@ -1895,11 +1896,11 @@ add([[2,1], [1,2]], [[2, 2], [2, 2]]))
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/and.js.html#lineNumber29">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/and.js.html#lineNumber30">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import and from &apos;<span><a href="file/src/and.js.html#lineNumber29">mathlab/src/and.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import and from &apos;<span><a href="file/src/and.js.html#lineNumber30">mathlab/src/and.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Pointwise and</p>
@@ -1981,11 +1982,11 @@ and([[2,1], [1,2]], [[2, 2], [2, 2]]))
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/asin.js.html#lineNumber29">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/asin.js.html#lineNumber34">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import asin from &apos;<span><a href="file/src/asin.js.html#lineNumber29">mathlab/src/asin.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import asin from &apos;<span><a href="file/src/asin.js.html#lineNumber34">mathlab/src/asin.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Pointwise Math.asin(x)</p>
@@ -2061,11 +2062,11 @@ asin([[1,2],[1,3]])
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/atan.js.html#lineNumber29">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/atan.js.html#lineNumber34">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import atan from &apos;<span><a href="file/src/atan.js.html#lineNumber29">mathlab/src/atan.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import atan from &apos;<span><a href="file/src/atan.js.html#lineNumber34">mathlab/src/atan.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Pointwise Math.atan(x)</p>
@@ -2313,11 +2314,11 @@ band([[2,1], [1,2]], [[2, 2], [2, 2]]))
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/bnot.js.html#lineNumber29">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/bnot.js.html#lineNumber34">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import bnot from &apos;<span><a href="file/src/bnot.js.html#lineNumber29">mathlab/src/bnot.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import bnot from &apos;<span><a href="file/src/bnot.js.html#lineNumber34">mathlab/src/bnot.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Pointwise Math.bnot(x)</p>
@@ -2565,11 +2566,11 @@ bxor([[2,1], [1,2]], [[2, 2], [2, 2]]))
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/ceil.js.html#lineNumber29">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/ceil.js.html#lineNumber34">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import ceil from &apos;<span><a href="file/src/ceil.js.html#lineNumber29">mathlab/src/ceil.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import ceil from &apos;<span><a href="file/src/ceil.js.html#lineNumber34">mathlab/src/ceil.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Pointwise Math.ceil(x)</p>
@@ -2645,11 +2646,11 @@ ceil([[1,2],[1,3]])
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/clone.js.html#lineNumber29">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/clone.js.html#lineNumber33">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import clone from &apos;<span><a href="file/src/clone.js.html#lineNumber29">mathlab/src/clone.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import clone from &apos;<span><a href="file/src/clone.js.html#lineNumber33">mathlab/src/clone.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Pointwise clone(x)</p>
@@ -2725,11 +2726,11 @@ clone([[1,2],[1,3]])
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/cos.js.html#lineNumber37">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/cos.js.html#lineNumber42">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import cos from &apos;<span><a href="file/src/cos.js.html#lineNumber37">mathlab/src/cos.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import cos from &apos;<span><a href="file/src/cos.js.html#lineNumber42">mathlab/src/cos.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Pointwise Math.cos(x)</p>
@@ -3034,11 +3035,11 @@ dim([[1, 2, 3], [1, 2, 2]])
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/div.js.html#lineNumber37">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/div.js.html#lineNumber38">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import div from &apos;<span><a href="file/src/div.js.html#lineNumber37">mathlab/src/div.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import div from &apos;<span><a href="file/src/div.js.html#lineNumber38">mathlab/src/div.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Pointwise div</p>
@@ -3363,11 +3364,11 @@ eq([[2,1], [1,2]], [[2, 2], [2, 2]]))
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/exp.js.html#lineNumber37">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/exp.js.html#lineNumber42">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import exp from &apos;<span><a href="file/src/exp.js.html#lineNumber37">mathlab/src/exp.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import exp from &apos;<span><a href="file/src/exp.js.html#lineNumber42">mathlab/src/exp.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Pointwise Math.exp(x)</p>
@@ -3443,11 +3444,11 @@ exp([[1,2],[1,3]])
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/floor.js.html#lineNumber29">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/floor.js.html#lineNumber33">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import floor from &apos;<span><a href="file/src/floor.js.html#lineNumber29">mathlab/src/floor.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import floor from &apos;<span><a href="file/src/floor.js.html#lineNumber33">mathlab/src/floor.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Pointwise Math.floor(x)</p>
@@ -4190,11 +4191,11 @@ linspace(1, 2, 3)
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/log.js.html#lineNumber37">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/log.js.html#lineNumber42">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import log from &apos;<span><a href="file/src/log.js.html#lineNumber37">mathlab/src/log.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import log from &apos;<span><a href="file/src/log.js.html#lineNumber42">mathlab/src/log.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Pointwise Math.log(x)</p>
@@ -4614,11 +4615,11 @@ mul([[2,1], [1,2]], [[2, 2], [2, 2]]))
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/neg.js.html#lineNumber33">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/neg.js.html#lineNumber38">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import neg from &apos;<span><a href="file/src/neg.js.html#lineNumber33">mathlab/src/neg.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import neg from &apos;<span><a href="file/src/neg.js.html#lineNumber38">mathlab/src/neg.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Pointwise Math.neg(x)</p>
@@ -4925,11 +4926,11 @@ norm2([2,2])
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/not.js.html#lineNumber29">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/not.js.html#lineNumber34">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import not from &apos;<span><a href="file/src/not.js.html#lineNumber29">mathlab/src/not.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import not from &apos;<span><a href="file/src/not.js.html#lineNumber34">mathlab/src/not.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Pointwise Math.not(x)</p>
@@ -5990,11 +5991,11 @@ setBlock([[1,2,3], [3,4,5]], [0,0], [1,1],[[2,2],[2,2]])
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/sin.js.html#lineNumber38">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/sin.js.html#lineNumber43">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import sin from &apos;<span><a href="file/src/sin.js.html#lineNumber38">mathlab/src/sin.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import sin from &apos;<span><a href="file/src/sin.js.html#lineNumber43">mathlab/src/sin.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Pointwise Math.sin(x)</p>
@@ -6070,11 +6071,11 @@ sin([[1,2],[1,3]])
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/sqrt.js.html#lineNumber29">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/sqrt.js.html#lineNumber34">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import sqrt from &apos;<span><a href="file/src/sqrt.js.html#lineNumber29">mathlab/src/sqrt.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import sqrt from &apos;<span><a href="file/src/sqrt.js.html#lineNumber34">mathlab/src/sqrt.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Pointwise Math.sqrt(x)</p>
@@ -6236,11 +6237,11 @@ sub([[2,1], [1,2]], [[2, 2], [2, 2]]))
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/tan.js.html#lineNumber29">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/tan.js.html#lineNumber35">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import tan from &apos;<span><a href="file/src/tan.js.html#lineNumber29">mathlab/src/tan.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import tan from &apos;<span><a href="file/src/tan.js.html#lineNumber35">mathlab/src/tan.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Pointwise Math.tan(x)</p>

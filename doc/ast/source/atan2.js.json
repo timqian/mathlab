@@ -150,16 +150,16 @@
                     "type": "Identifier",
                     "name": "pointwise",
                     "range": [
-                      495,
-                      504
+                      505,
+                      514
                     ],
                     "loc": {
                       "start": {
-                        "line": 21,
+                        "line": 22,
                         "column": 9
                       },
                       "end": {
-                        "line": 21,
+                        "line": 22,
                         "column": 18
                       }
                     }
@@ -172,16 +172,16 @@
                         "type": "Identifier",
                         "name": "Math",
                         "range": [
-                          505,
-                          509
+                          515,
+                          519
                         ],
                         "loc": {
                           "start": {
-                            "line": 21,
+                            "line": 22,
                             "column": 19
                           },
                           "end": {
-                            "line": 21,
+                            "line": 22,
                             "column": 23
                           }
                         }
@@ -190,47 +190,47 @@
                         "type": "Identifier",
                         "name": "atan2",
                         "range": [
-                          510,
-                          515
+                          520,
+                          525
                         ],
                         "loc": {
                           "start": {
-                            "line": 21,
+                            "line": 22,
                             "column": 24
                           },
                           "end": {
-                            "line": 21,
+                            "line": 22,
                             "column": 29
                           }
                         }
                       },
                       "range": [
-                        505,
-                        515
+                        515,
+                        525
                       ],
                       "loc": {
                         "start": {
-                          "line": 21,
+                          "line": 22,
                           "column": 19
                         },
                         "end": {
-                          "line": 21,
+                          "line": 22,
                           "column": 29
                         }
                       }
                     }
                   ],
                   "range": [
-                    495,
-                    516
+                    505,
+                    526
                   ],
                   "loc": {
                     "start": {
-                      "line": 21,
+                      "line": 22,
                       "column": 9
                     },
                     "end": {
-                      "line": 21,
+                      "line": 22,
                       "column": 30
                     }
                   }
@@ -240,16 +240,16 @@
                     "type": "Identifier",
                     "name": "m1",
                     "range": [
-                      517,
-                      519
+                      527,
+                      529
                     ],
                     "loc": {
                       "start": {
-                        "line": 21,
+                        "line": 22,
                         "column": 31
                       },
                       "end": {
-                        "line": 21,
+                        "line": 22,
                         "column": 33
                       }
                     }
@@ -258,55 +258,75 @@
                     "type": "Identifier",
                     "name": "m2",
                     "range": [
-                      521,
-                      523
+                      531,
+                      533
                     ],
                     "loc": {
                       "start": {
-                        "line": 21,
+                        "line": 22,
                         "column": 35
                       },
                       "end": {
-                        "line": 21,
+                        "line": 22,
                         "column": 37
                       }
                     }
                   }
                 ],
                 "range": [
-                  495,
-                  524
+                  505,
+                  534
                 ],
                 "loc": {
                   "start": {
-                    "line": 21,
+                    "line": 22,
                     "column": 9
                   },
                   "end": {
-                    "line": 21,
+                    "line": 22,
                     "column": 38
                   }
                 }
               },
               "range": [
-                488,
-                525
+                498,
+                535
               ],
               "loc": {
                 "start": {
-                  "line": 21,
+                  "line": 22,
                   "column": 2
                 },
                 "end": {
-                  "line": 22,
+                  "line": 23,
                   "column": 0
                 }
-              }
+              },
+              "leadingComments": [
+                {
+                  "type": "Line",
+                  "value": " TODO ",
+                  "range": [
+                    487,
+                    495
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 21,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 21,
+                      "column": 10
+                    }
+                  }
+                }
+              ]
             }
           ],
           "range": [
             483,
-            526
+            536
           ],
           "loc": {
             "start": {
@@ -314,7 +334,7 @@
               "column": 33
             },
             "end": {
-              "line": 22,
+              "line": 23,
               "column": 1
             }
           }
@@ -323,7 +343,7 @@
         "expression": false,
         "range": [
           465,
-          526
+          536
         ],
         "loc": {
           "start": {
@@ -331,7 +351,7 @@
             "column": 15
           },
           "end": {
-            "line": 22,
+            "line": 23,
             "column": 1
           }
         },
@@ -359,7 +379,7 @@
       },
       "range": [
         450,
-        526
+        536
       ],
       "loc": {
         "start": {
@@ -367,7 +387,7 @@
           "column": 0
         },
         "end": {
-          "line": 22,
+          "line": 23,
           "column": 1
         }
       },
@@ -396,7 +416,7 @@
   "sourceType": "module",
   "range": [
     1,
-    526
+    536
   ],
   "loc": {
     "start": {
@@ -404,7 +424,7 @@
       "column": 0
     },
     "end": {
-      "line": 22,
+      "line": 23,
       "column": 1
     }
   },
@@ -424,6 +444,24 @@
         "end": {
           "line": 19,
           "column": 3
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": " TODO ",
+      "range": [
+        487,
+        495
+      ],
+      "loc": {
+        "start": {
+          "line": 21,
+          "column": 2
+        },
+        "end": {
+          "line": 21,
+          "column": 10
         }
       }
     }

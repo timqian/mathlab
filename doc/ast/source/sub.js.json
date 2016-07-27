@@ -2181,11 +2181,11 @@
               "arguments": [
                 {
                   "type": "Literal",
-                  "value": "mathlab.sub: sub for sparse matrix has not been implemented yet",
-                  "raw": "'mathlab.sub: sub for sparse matrix has not been implemented yet'",
+                  "value": "mathlab.sub: sub for sparse matrix not exist",
+                  "raw": "'mathlab.sub: sub for sparse matrix not exist'",
                   "range": [
                     495,
-                    560
+                    541
                   ],
                   "loc": {
                     "start": {
@@ -2194,14 +2194,14 @@
                     },
                     "end": {
                       "line": 22,
-                      "column": 83
+                      "column": 64
                     }
                   }
                 }
               ],
               "range": [
                 485,
-                561
+                542
               ],
               "loc": {
                 "start": {
@@ -2210,13 +2210,13 @@
                 },
                 "end": {
                   "line": 22,
-                  "column": 84
+                  "column": 65
                 }
               }
             },
             "range": [
               479,
-              562
+              543
             ],
             "loc": {
               "start": {
@@ -2232,7 +2232,7 @@
         ],
         "range": [
           475,
-          563
+          544
         ],
         "loc": {
           "start": {
@@ -2249,7 +2249,7 @@
       "expression": false,
       "range": [
         455,
-        563
+        544
       ],
       "loc": {
         "start": {
@@ -2266,8 +2266,8 @@
           "type": "Block",
           "value": "*\n * Pointwise sub\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * sub(1, 2)\n * // returns 1 - 2\n * sub([1, 2], [2, 2])\n * // returns [1 - 2, 2 - 2]\n * sub([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 - 2, 1 - 2], [1 - 2, 2 - 2] ]\n ",
           "range": [
-            565,
-            880
+            546,
+            861
           ],
           "loc": {
             "start": {
@@ -2292,8 +2292,8 @@
             "type": "Identifier",
             "name": "m1",
             "range": [
-              906,
-              908
+              887,
+              889
             ],
             "loc": {
               "start": {
@@ -2310,8 +2310,8 @@
             "type": "Identifier",
             "name": "m2",
             "range": [
-              910,
-              912
+              891,
+              893
             ],
             "loc": {
               "start": {
@@ -2340,8 +2340,8 @@
                     "type": "Identifier",
                     "name": "m1",
                     "range": [
-                      926,
-                      928
+                      907,
+                      909
                     ],
                     "loc": {
                       "start": {
@@ -2358,8 +2358,8 @@
                     "type": "Identifier",
                     "name": "constructor",
                     "range": [
-                      929,
-                      940
+                      910,
+                      921
                     ],
                     "loc": {
                       "start": {
@@ -2373,8 +2373,8 @@
                     }
                   },
                   "range": [
-                    926,
-                    940
+                    907,
+                    921
                   ],
                   "loc": {
                     "start": {
@@ -2391,8 +2391,8 @@
                   "type": "Identifier",
                   "name": "name",
                   "range": [
-                    941,
-                    945
+                    922,
+                    926
                   ],
                   "loc": {
                     "start": {
@@ -2406,8 +2406,8 @@
                   }
                 },
                 "range": [
-                  926,
-                  945
+                  907,
+                  926
                 ],
                 "loc": {
                   "start": {
@@ -2428,8 +2428,8 @@
                     "value": "Complex",
                     "raw": "'Complex'",
                     "range": [
-                      958,
-                      967
+                      939,
+                      948
                     ],
                     "loc": {
                       "start": {
@@ -2451,8 +2451,8 @@
                           "type": "Identifier",
                           "name": "csub",
                           "range": [
-                            982,
-                            986
+                            963,
+                            967
                           ],
                           "loc": {
                             "start": {
@@ -2470,8 +2470,8 @@
                             "type": "Identifier",
                             "name": "m1",
                             "range": [
-                              987,
-                              989
+                              968,
+                              970
                             ],
                             "loc": {
                               "start": {
@@ -2488,8 +2488,8 @@
                             "type": "Identifier",
                             "name": "m2",
                             "range": [
-                              991,
-                              993
+                              972,
+                              974
                             ],
                             "loc": {
                               "start": {
@@ -2504,8 +2504,8 @@
                           }
                         ],
                         "range": [
-                          982,
-                          994
+                          963,
+                          975
                         ],
                         "loc": {
                           "start": {
@@ -2519,8 +2519,8 @@
                         }
                       },
                       "range": [
-                        975,
-                        995
+                        956,
+                        976
                       ],
                       "loc": {
                         "start": {
@@ -2535,8 +2535,8 @@
                     }
                   ],
                   "range": [
-                    953,
-                    995
+                    934,
+                    976
                   ],
                   "loc": {
                     "start": {
@@ -2556,8 +2556,8 @@
                     "value": "Sparse",
                     "raw": "'Sparse'",
                     "range": [
-                      1005,
-                      1013
+                      986,
+                      994
                     ],
                     "loc": {
                       "start": {
@@ -2579,8 +2579,8 @@
                           "type": "Identifier",
                           "name": "ssub",
                           "range": [
-                            1028,
-                            1032
+                            1009,
+                            1013
                           ],
                           "loc": {
                             "start": {
@@ -2598,8 +2598,8 @@
                             "type": "Identifier",
                             "name": "m1",
                             "range": [
-                              1033,
-                              1035
+                              1014,
+                              1016
                             ],
                             "loc": {
                               "start": {
@@ -2616,8 +2616,8 @@
                             "type": "Identifier",
                             "name": "m2",
                             "range": [
-                              1037,
-                              1039
+                              1018,
+                              1020
                             ],
                             "loc": {
                               "start": {
@@ -2632,8 +2632,8 @@
                           }
                         ],
                         "range": [
-                          1028,
-                          1040
+                          1009,
+                          1021
                         ],
                         "loc": {
                           "start": {
@@ -2647,8 +2647,8 @@
                         }
                       },
                       "range": [
-                        1021,
-                        1041
+                        1002,
+                        1022
                       ],
                       "loc": {
                         "start": {
@@ -2663,8 +2663,8 @@
                     }
                   ],
                   "range": [
-                    1000,
-                    1041
+                    981,
+                    1022
                   ],
                   "loc": {
                     "start": {
@@ -2689,8 +2689,8 @@
                           "type": "Identifier",
                           "name": "sub",
                           "range": [
-                            1068,
-                            1071
+                            1049,
+                            1052
                           ],
                           "loc": {
                             "start": {
@@ -2708,8 +2708,8 @@
                             "type": "Identifier",
                             "name": "m1",
                             "range": [
-                              1072,
-                              1074
+                              1053,
+                              1055
                             ],
                             "loc": {
                               "start": {
@@ -2726,8 +2726,8 @@
                             "type": "Identifier",
                             "name": "m2",
                             "range": [
-                              1076,
-                              1078
+                              1057,
+                              1059
                             ],
                             "loc": {
                               "start": {
@@ -2742,8 +2742,8 @@
                           }
                         ],
                         "range": [
-                          1068,
-                          1079
+                          1049,
+                          1060
                         ],
                         "loc": {
                           "start": {
@@ -2757,8 +2757,8 @@
                         }
                       },
                       "range": [
-                        1061,
-                        1080
+                        1042,
+                        1061
                       ],
                       "loc": {
                         "start": {
@@ -2773,8 +2773,8 @@
                     }
                   ],
                   "range": [
-                    1046,
-                    1080
+                    1027,
+                    1061
                   ],
                   "loc": {
                     "start": {
@@ -2789,8 +2789,8 @@
                 }
               ],
               "range": [
-                918,
-                1084
+                899,
+                1065
               ],
               "loc": {
                 "start": {
@@ -2805,8 +2805,8 @@
             }
           ],
           "range": [
-            914,
-            1086
+            895,
+            1067
           ],
           "loc": {
             "start": {
@@ -2822,8 +2822,8 @@
         "generator": false,
         "expression": false,
         "range": [
-          896,
-          1086
+          877,
+          1067
         ],
         "loc": {
           "start": {
@@ -2840,8 +2840,8 @@
             "type": "Block",
             "value": "*\n * Pointwise sub\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * sub(1, 2)\n * // returns 1 - 2\n * sub([1, 2], [2, 2])\n * // returns [1 - 2, 2 - 2]\n * sub([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 - 2, 1 - 2], [1 - 2, 2 - 2] ]\n ",
             "range": [
-              565,
-              880
+              546,
+              861
             ],
             "loc": {
               "start": {
@@ -2858,8 +2858,8 @@
         "trailingComments": []
       },
       "range": [
-        881,
-        1086
+        862,
+        1067
       ],
       "loc": {
         "start": {
@@ -2876,8 +2876,8 @@
           "type": "Block",
           "value": "*\n * Pointwise sub\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * sub(1, 2)\n * // returns 1 - 2\n * sub([1, 2], [2, 2])\n * // returns [1 - 2, 2 - 2]\n * sub([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 - 2, 1 - 2], [1 - 2, 2 - 2] ]\n ",
           "range": [
-            565,
-            880
+            546,
+            861
           ],
           "loc": {
             "start": {
@@ -2896,7 +2896,7 @@
   "sourceType": "module",
   "range": [
     0,
-    1086
+    1067
   ],
   "loc": {
     "start": {
@@ -2913,8 +2913,8 @@
       "type": "Block",
       "value": "*\n * Pointwise sub\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * sub(1, 2)\n * // returns 1 - 2\n * sub([1, 2], [2, 2])\n * // returns [1 - 2, 2 - 2]\n * sub([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 - 2, 1 - 2], [1 - 2, 2 - 2] ]\n ",
       "range": [
-        565,
-        880
+        546,
+        861
       ],
       "loc": {
         "start": {

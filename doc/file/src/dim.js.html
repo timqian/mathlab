@@ -33,6 +33,7 @@
   <ul>
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Complex.js~Complex.html">Complex</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-abs">abs</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-acos">acos</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-add">add</a></span></span></li>
@@ -108,7 +109,31 @@
  * dim([[1, 2, 3], [1, 2, 2]])
  * // [2, 3]
  */
-export default function dim (x) {
+export default function(x) {
+  switch (x.constructor.name) {
+    case &apos;Complex&apos;:
+      return cdim(x);
+    case &apos;Sparse&apos;:
+      return sdim(x);
+    default:
+      return dim(x);
+  }
+}
+
+function cdim(x) {
+  if (x.x) {
+    return dim(x.x)
+  } else {
+    return dim(x.y)
+  }
+}
+
+function sdim(x) {
+  return [x.col.length-1, x.col.length-1];
+}
+
+
+function dim (x) {
   if (typeof x === &apos;object&apos;) {
     if (typeof x[0] === &apos;object&apos;) {
       if (typeof x[0][0] === &apos;object&apos;) {

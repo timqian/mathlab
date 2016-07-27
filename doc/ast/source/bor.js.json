@@ -531,11 +531,11 @@
               "arguments": [
                 {
                   "type": "Literal",
-                  "value": "mathlab.bor: bor for sparse matrix has not been implemented yet",
-                  "raw": "'mathlab.bor: bor for sparse matrix has not been implemented yet'",
+                  "value": "mathlab.bor: bor for sparse matrix not exist",
+                  "raw": "'mathlab.bor: bor for sparse matrix not exist'",
                   "range": [
                     203,
-                    268
+                    249
                   ],
                   "loc": {
                     "start": {
@@ -544,14 +544,14 @@
                     },
                     "end": {
                       "line": 10,
-                      "column": 83
+                      "column": 64
                     }
                   }
                 }
               ],
               "range": [
                 193,
-                269
+                250
               ],
               "loc": {
                 "start": {
@@ -560,13 +560,13 @@
                 },
                 "end": {
                   "line": 10,
-                  "column": 84
+                  "column": 65
                 }
               }
             },
             "range": [
               187,
-              270
+              251
             ],
             "loc": {
               "start": {
@@ -582,7 +582,7 @@
         ],
         "range": [
           183,
-          271
+          252
         ],
         "loc": {
           "start": {
@@ -599,7 +599,7 @@
       "expression": false,
       "range": [
         163,
-        271
+        252
       ],
       "loc": {
         "start": {
@@ -616,8 +616,8 @@
           "type": "Block",
           "value": "*\n * Pointwise bor\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * bor(1, 2)\n * // returns 1 | 2\n * bor([1, 2], [2, 2])\n * // returns [1 | 2, 2 | 2]\n * bor([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 | 2, 1 | 2], [1 | 2, 2 | 2] ]\n ",
           "range": [
-            273,
-            588
+            254,
+            569
           ],
           "loc": {
             "start": {
@@ -642,8 +642,8 @@
             "type": "Identifier",
             "name": "m1",
             "range": [
-              614,
-              616
+              595,
+              597
             ],
             "loc": {
               "start": {
@@ -660,8 +660,8 @@
             "type": "Identifier",
             "name": "m2",
             "range": [
-              618,
-              620
+              599,
+              601
             ],
             "loc": {
               "start": {
@@ -690,8 +690,8 @@
                     "type": "Identifier",
                     "name": "m1",
                     "range": [
-                      634,
-                      636
+                      615,
+                      617
                     ],
                     "loc": {
                       "start": {
@@ -708,8 +708,8 @@
                     "type": "Identifier",
                     "name": "constructor",
                     "range": [
-                      637,
-                      648
+                      618,
+                      629
                     ],
                     "loc": {
                       "start": {
@@ -723,8 +723,8 @@
                     }
                   },
                   "range": [
-                    634,
-                    648
+                    615,
+                    629
                   ],
                   "loc": {
                     "start": {
@@ -741,8 +741,8 @@
                   "type": "Identifier",
                   "name": "name",
                   "range": [
-                    649,
-                    653
+                    630,
+                    634
                   ],
                   "loc": {
                     "start": {
@@ -756,8 +756,8 @@
                   }
                 },
                 "range": [
-                  634,
-                  653
+                  615,
+                  634
                 ],
                 "loc": {
                   "start": {
@@ -778,8 +778,8 @@
                     "value": "Complex",
                     "raw": "'Complex'",
                     "range": [
-                      666,
-                      675
+                      647,
+                      656
                     ],
                     "loc": {
                       "start": {
@@ -801,8 +801,8 @@
                           "type": "Identifier",
                           "name": "cbor",
                           "range": [
-                            690,
-                            694
+                            671,
+                            675
                           ],
                           "loc": {
                             "start": {
@@ -820,8 +820,8 @@
                             "type": "Identifier",
                             "name": "m1",
                             "range": [
-                              695,
-                              697
+                              676,
+                              678
                             ],
                             "loc": {
                               "start": {
@@ -838,8 +838,8 @@
                             "type": "Identifier",
                             "name": "m2",
                             "range": [
-                              699,
-                              701
+                              680,
+                              682
                             ],
                             "loc": {
                               "start": {
@@ -854,8 +854,8 @@
                           }
                         ],
                         "range": [
-                          690,
-                          702
+                          671,
+                          683
                         ],
                         "loc": {
                           "start": {
@@ -869,8 +869,8 @@
                         }
                       },
                       "range": [
-                        683,
-                        703
+                        664,
+                        684
                       ],
                       "loc": {
                         "start": {
@@ -885,8 +885,8 @@
                     }
                   ],
                   "range": [
-                    661,
-                    703
+                    642,
+                    684
                   ],
                   "loc": {
                     "start": {
@@ -906,8 +906,8 @@
                     "value": "Sparse",
                     "raw": "'Sparse'",
                     "range": [
-                      713,
-                      721
+                      694,
+                      702
                     ],
                     "loc": {
                       "start": {
@@ -929,8 +929,8 @@
                           "type": "Identifier",
                           "name": "sbor",
                           "range": [
-                            736,
-                            740
+                            717,
+                            721
                           ],
                           "loc": {
                             "start": {
@@ -948,8 +948,8 @@
                             "type": "Identifier",
                             "name": "m1",
                             "range": [
-                              741,
-                              743
+                              722,
+                              724
                             ],
                             "loc": {
                               "start": {
@@ -966,8 +966,8 @@
                             "type": "Identifier",
                             "name": "m2",
                             "range": [
-                              745,
-                              747
+                              726,
+                              728
                             ],
                             "loc": {
                               "start": {
@@ -982,8 +982,8 @@
                           }
                         ],
                         "range": [
-                          736,
-                          748
+                          717,
+                          729
                         ],
                         "loc": {
                           "start": {
@@ -997,8 +997,8 @@
                         }
                       },
                       "range": [
-                        729,
-                        749
+                        710,
+                        730
                       ],
                       "loc": {
                         "start": {
@@ -1013,8 +1013,8 @@
                     }
                   ],
                   "range": [
-                    708,
-                    749
+                    689,
+                    730
                   ],
                   "loc": {
                     "start": {
@@ -1039,8 +1039,8 @@
                           "type": "Identifier",
                           "name": "bor",
                           "range": [
-                            776,
-                            779
+                            757,
+                            760
                           ],
                           "loc": {
                             "start": {
@@ -1058,8 +1058,8 @@
                             "type": "Identifier",
                             "name": "m1",
                             "range": [
-                              780,
-                              782
+                              761,
+                              763
                             ],
                             "loc": {
                               "start": {
@@ -1076,8 +1076,8 @@
                             "type": "Identifier",
                             "name": "m2",
                             "range": [
-                              784,
-                              786
+                              765,
+                              767
                             ],
                             "loc": {
                               "start": {
@@ -1092,8 +1092,8 @@
                           }
                         ],
                         "range": [
-                          776,
-                          787
+                          757,
+                          768
                         ],
                         "loc": {
                           "start": {
@@ -1107,8 +1107,8 @@
                         }
                       },
                       "range": [
-                        769,
-                        788
+                        750,
+                        769
                       ],
                       "loc": {
                         "start": {
@@ -1123,8 +1123,8 @@
                     }
                   ],
                   "range": [
-                    754,
-                    788
+                    735,
+                    769
                   ],
                   "loc": {
                     "start": {
@@ -1139,8 +1139,8 @@
                 }
               ],
               "range": [
-                626,
-                792
+                607,
+                773
               ],
               "loc": {
                 "start": {
@@ -1155,8 +1155,8 @@
             }
           ],
           "range": [
-            622,
-            794
+            603,
+            775
           ],
           "loc": {
             "start": {
@@ -1172,8 +1172,8 @@
         "generator": false,
         "expression": false,
         "range": [
-          604,
-          794
+          585,
+          775
         ],
         "loc": {
           "start": {
@@ -1190,8 +1190,8 @@
             "type": "Block",
             "value": "*\n * Pointwise bor\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * bor(1, 2)\n * // returns 1 | 2\n * bor([1, 2], [2, 2])\n * // returns [1 | 2, 2 | 2]\n * bor([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 | 2, 1 | 2], [1 | 2, 2 | 2] ]\n ",
             "range": [
-              273,
-              588
+              254,
+              569
             ],
             "loc": {
               "start": {
@@ -1208,8 +1208,8 @@
         "trailingComments": []
       },
       "range": [
-        589,
-        794
+        570,
+        775
       ],
       "loc": {
         "start": {
@@ -1226,8 +1226,8 @@
           "type": "Block",
           "value": "*\n * Pointwise bor\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * bor(1, 2)\n * // returns 1 | 2\n * bor([1, 2], [2, 2])\n * // returns [1 | 2, 2 | 2]\n * bor([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 | 2, 1 | 2], [1 | 2, 2 | 2] ]\n ",
           "range": [
-            273,
-            588
+            254,
+            569
           ],
           "loc": {
             "start": {
@@ -1246,7 +1246,7 @@
   "sourceType": "module",
   "range": [
     0,
-    794
+    775
   ],
   "loc": {
     "start": {
@@ -1263,8 +1263,8 @@
       "type": "Block",
       "value": "*\n * Pointwise bor\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * bor(1, 2)\n * // returns 1 | 2\n * bor([1, 2], [2, 2])\n * // returns [1 | 2, 2 | 2]\n * bor([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 | 2, 1 | 2], [1 | 2, 2 | 2] ]\n ",
       "range": [
-        273,
-        588
+        254,
+        569
       ],
       "loc": {
         "start": {

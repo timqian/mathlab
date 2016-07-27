@@ -531,11 +531,11 @@
               "arguments": [
                 {
                   "type": "Literal",
-                  "value": "mathlab.band: band for sparse matrix has not been implemented yet",
-                  "raw": "'mathlab.band: band for sparse matrix has not been implemented yet'",
+                  "value": "mathlab.band: band for sparse matrix not exist",
+                  "raw": "'mathlab.band: band for sparse matrix not exist'",
                   "range": [
                     208,
-                    275
+                    256
                   ],
                   "loc": {
                     "start": {
@@ -544,14 +544,14 @@
                     },
                     "end": {
                       "line": 10,
-                      "column": 85
+                      "column": 66
                     }
                   }
                 }
               ],
               "range": [
                 198,
-                276
+                257
               ],
               "loc": {
                 "start": {
@@ -560,13 +560,13 @@
                 },
                 "end": {
                   "line": 10,
-                  "column": 86
+                  "column": 67
                 }
               }
             },
             "range": [
               192,
-              277
+              258
             ],
             "loc": {
               "start": {
@@ -582,7 +582,7 @@
         ],
         "range": [
           188,
-          278
+          259
         ],
         "loc": {
           "start": {
@@ -599,7 +599,7 @@
       "expression": false,
       "range": [
         167,
-        278
+        259
       ],
       "loc": {
         "start": {
@@ -616,8 +616,8 @@
           "type": "Block",
           "value": "*\n * Pointwise band\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * band(1, 2)\n * // returns 1 & 2\n * band([1, 2], [2, 2])\n * // returns [1 & 2, 2 & 2]\n * band([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 & 2, 1 & 2], [1 & 2, 2 & 2] ]\n ",
           "range": [
-            280,
-            599
+            261,
+            580
           ],
           "loc": {
             "start": {
@@ -642,8 +642,8 @@
             "type": "Identifier",
             "name": "m1",
             "range": [
-              625,
-              627
+              606,
+              608
             ],
             "loc": {
               "start": {
@@ -660,8 +660,8 @@
             "type": "Identifier",
             "name": "m2",
             "range": [
-              629,
-              631
+              610,
+              612
             ],
             "loc": {
               "start": {
@@ -690,8 +690,8 @@
                     "type": "Identifier",
                     "name": "m1",
                     "range": [
-                      645,
-                      647
+                      626,
+                      628
                     ],
                     "loc": {
                       "start": {
@@ -708,8 +708,8 @@
                     "type": "Identifier",
                     "name": "constructor",
                     "range": [
-                      648,
-                      659
+                      629,
+                      640
                     ],
                     "loc": {
                       "start": {
@@ -723,8 +723,8 @@
                     }
                   },
                   "range": [
-                    645,
-                    659
+                    626,
+                    640
                   ],
                   "loc": {
                     "start": {
@@ -741,8 +741,8 @@
                   "type": "Identifier",
                   "name": "name",
                   "range": [
-                    660,
-                    664
+                    641,
+                    645
                   ],
                   "loc": {
                     "start": {
@@ -756,8 +756,8 @@
                   }
                 },
                 "range": [
-                  645,
-                  664
+                  626,
+                  645
                 ],
                 "loc": {
                   "start": {
@@ -778,8 +778,8 @@
                     "value": "Complex",
                     "raw": "'Complex'",
                     "range": [
-                      677,
-                      686
+                      658,
+                      667
                     ],
                     "loc": {
                       "start": {
@@ -801,8 +801,8 @@
                           "type": "Identifier",
                           "name": "cband",
                           "range": [
-                            701,
-                            706
+                            682,
+                            687
                           ],
                           "loc": {
                             "start": {
@@ -820,8 +820,8 @@
                             "type": "Identifier",
                             "name": "m1",
                             "range": [
-                              707,
-                              709
+                              688,
+                              690
                             ],
                             "loc": {
                               "start": {
@@ -838,8 +838,8 @@
                             "type": "Identifier",
                             "name": "m2",
                             "range": [
-                              711,
-                              713
+                              692,
+                              694
                             ],
                             "loc": {
                               "start": {
@@ -854,8 +854,8 @@
                           }
                         ],
                         "range": [
-                          701,
-                          714
+                          682,
+                          695
                         ],
                         "loc": {
                           "start": {
@@ -869,8 +869,8 @@
                         }
                       },
                       "range": [
-                        694,
-                        715
+                        675,
+                        696
                       ],
                       "loc": {
                         "start": {
@@ -885,8 +885,8 @@
                     }
                   ],
                   "range": [
-                    672,
-                    715
+                    653,
+                    696
                   ],
                   "loc": {
                     "start": {
@@ -906,8 +906,8 @@
                     "value": "Sparse",
                     "raw": "'Sparse'",
                     "range": [
-                      725,
-                      733
+                      706,
+                      714
                     ],
                     "loc": {
                       "start": {
@@ -929,8 +929,8 @@
                           "type": "Identifier",
                           "name": "sband",
                           "range": [
-                            748,
-                            753
+                            729,
+                            734
                           ],
                           "loc": {
                             "start": {
@@ -948,8 +948,8 @@
                             "type": "Identifier",
                             "name": "m1",
                             "range": [
-                              754,
-                              756
+                              735,
+                              737
                             ],
                             "loc": {
                               "start": {
@@ -966,8 +966,8 @@
                             "type": "Identifier",
                             "name": "m2",
                             "range": [
-                              758,
-                              760
+                              739,
+                              741
                             ],
                             "loc": {
                               "start": {
@@ -982,8 +982,8 @@
                           }
                         ],
                         "range": [
-                          748,
-                          761
+                          729,
+                          742
                         ],
                         "loc": {
                           "start": {
@@ -997,8 +997,8 @@
                         }
                       },
                       "range": [
-                        741,
-                        762
+                        722,
+                        743
                       ],
                       "loc": {
                         "start": {
@@ -1013,8 +1013,8 @@
                     }
                   ],
                   "range": [
-                    720,
-                    762
+                    701,
+                    743
                   ],
                   "loc": {
                     "start": {
@@ -1039,8 +1039,8 @@
                           "type": "Identifier",
                           "name": "band",
                           "range": [
-                            789,
-                            793
+                            770,
+                            774
                           ],
                           "loc": {
                             "start": {
@@ -1058,8 +1058,8 @@
                             "type": "Identifier",
                             "name": "m1",
                             "range": [
-                              794,
-                              796
+                              775,
+                              777
                             ],
                             "loc": {
                               "start": {
@@ -1076,8 +1076,8 @@
                             "type": "Identifier",
                             "name": "m2",
                             "range": [
-                              798,
-                              800
+                              779,
+                              781
                             ],
                             "loc": {
                               "start": {
@@ -1092,8 +1092,8 @@
                           }
                         ],
                         "range": [
-                          789,
-                          801
+                          770,
+                          782
                         ],
                         "loc": {
                           "start": {
@@ -1107,8 +1107,8 @@
                         }
                       },
                       "range": [
-                        782,
-                        802
+                        763,
+                        783
                       ],
                       "loc": {
                         "start": {
@@ -1123,8 +1123,8 @@
                     }
                   ],
                   "range": [
-                    767,
-                    802
+                    748,
+                    783
                   ],
                   "loc": {
                     "start": {
@@ -1139,8 +1139,8 @@
                 }
               ],
               "range": [
-                637,
-                806
+                618,
+                787
               ],
               "loc": {
                 "start": {
@@ -1155,8 +1155,8 @@
             }
           ],
           "range": [
-            633,
-            808
+            614,
+            789
           ],
           "loc": {
             "start": {
@@ -1172,8 +1172,8 @@
         "generator": false,
         "expression": false,
         "range": [
-          615,
-          808
+          596,
+          789
         ],
         "loc": {
           "start": {
@@ -1190,8 +1190,8 @@
             "type": "Block",
             "value": "*\n * Pointwise band\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * band(1, 2)\n * // returns 1 & 2\n * band([1, 2], [2, 2])\n * // returns [1 & 2, 2 & 2]\n * band([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 & 2, 1 & 2], [1 & 2, 2 & 2] ]\n ",
             "range": [
-              280,
-              599
+              261,
+              580
             ],
             "loc": {
               "start": {
@@ -1208,8 +1208,8 @@
         "trailingComments": []
       },
       "range": [
-        600,
-        808
+        581,
+        789
       ],
       "loc": {
         "start": {
@@ -1226,8 +1226,8 @@
           "type": "Block",
           "value": "*\n * Pointwise band\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * band(1, 2)\n * // returns 1 & 2\n * band([1, 2], [2, 2])\n * // returns [1 & 2, 2 & 2]\n * band([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 & 2, 1 & 2], [1 & 2, 2 & 2] ]\n ",
           "range": [
-            280,
-            599
+            261,
+            580
           ],
           "loc": {
             "start": {
@@ -1246,7 +1246,7 @@
   "sourceType": "module",
   "range": [
     0,
-    808
+    789
   ],
   "loc": {
     "start": {
@@ -1263,8 +1263,8 @@
       "type": "Block",
       "value": "*\n * Pointwise band\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * band(1, 2)\n * // returns 1 & 2\n * band([1, 2], [2, 2])\n * // returns [1 & 2, 2 & 2]\n * band([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 & 2, 1 & 2], [1 & 2, 2 & 2] ]\n ",
       "range": [
-        280,
-        599
+        261,
+        580
       ],
       "loc": {
         "start": {

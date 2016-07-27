@@ -33,6 +33,7 @@
   <ul>
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Complex.js~Complex.html">Complex</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-abs">abs</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-acos">acos</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-add">add</a></span></span></li>
@@ -96,125 +97,33 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="-mathlab-http-timqian-com-mathlab-"><a href="http://timqian.com/mathlab">mathlab</a></h1>
+<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><blockquote>
+<p>Note: Unstable, Developing</p>
+</blockquote>
+<h1 id="mathlab">mathlab</h1>
 <p>Lodash like math lab in javascript, focusing on matrix manipulation.</p>
-<h2 id="goals">Goals</h2>
+<p><a href="https://www.npmjs.com/package/mathlab"><img src="https://nodei.co/npm/mathlab.png" alt="npm"></a></p>
+<h2 id="features">Features</h2>
 <ul>
 <li><strong>Modulize</strong>: only import the function you need.</li>
 <li><strong>Easy to use</strong>: no extra concepts to grasp(1D Array as vector and 2D Array as matrix)</li>
 <li><strong>Functional</strong>: no side effact on input data and the outside world</li>
+<li><strong>Multifunctional</strong>: Support <code>sparse</code> and <code>complex</code> matrix manipulation; <code>FFT</code>; <code>eigenvectors &amp; eigenvalues of matrix</code>; and so on</li>
 </ul>
 <h2 id="install">Install</h2>
 <pre><code><code class="source-code prettyprint">$ npm install mathlab --save</code>
 </code></pre><h2 id="sample-usage">Sample usage</h2>
-<pre><code class="lang-js"><code class="source-code prettyprint">import { diag } from &apos;mathlab&apos; 
-// import diag from &apos;mathlab/lib/diag&apos;
+<pre><code class="lang-js"><code class="source-code prettyprint">import { dot } from &apos;mathlab&apos;
 
-diag([1,2])
-// [[1, 0], 
-//  [0, 2]]</code>
+const A = [[1,2,3],
+           [4,5,6]];
+const x = [7,8,9]
+const y = dot(A, x)
+
+console.log(y); // [50,122]</code>
 </code></pre>
-<h2 id="function-list">Function list</h2>
-<ul>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-pointwise"><code>pointwise()</code></a>    Create a pointwise function</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-det"><code>det()</code></a>    Determinant</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-dot"><code>dot()</code></a>    Matrix-Matrix, Matrix-Vector and Vector-Matrix product</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-eig"><code>eig()</code></a>    Eigenvalues and eigenvectors</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-getBlock"><code>getBlock()</code></a>    Extract a block from a matrix</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-getDiag"><code>getDiag()</code></a>    Get the diagonal of a matrix</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-identity"><code>identity()</code></a>    Identity matrix</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-inv"><code>inv()</code></a>    Matrix inverse</li>
-<li>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>largeArray()</code></a>    Don&apos;t prettyPrint Arrays larger than this</li>
-<li>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>LU()</code></a>    Dense LU decomposition</li>
-<li>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>LUsolve()</code></a>    Dense LU solve</li>
-<li>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>mapreduce()</code></a>    Make a pointwise map-reduce function</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-norm2"><code>norm2()</code></a>    Square root of the sum of the squares of the entries of x</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-norm2Squared"><code>norm2Squared()</code></a>    Sum of squares of entries of x</li>
-<li>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>norminf()</code></a>    Largest modulus entry of x</li>
-<li>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>parseFloat()</code></a>    Pointwise parseFloat(x)</li>
-<li>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>precision()</code></a>    Number of digits to prettyPrint</li>
-<li>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>prettyPrint()</code></a>    Pretty-prints x</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-random"><code>random()</code></a>    Create an Array of random numbers</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-rep"><code>rep()</code></a>    Create an Array by duplicating values</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-same"><code>same()</code></a>    x and y are entrywise identical</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-setBlock"><code>setBlock()</code></a>    Set a block of a matrix</li>
-<li>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>solve()</code></a>    Solve Ax=b</li>
-<li>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>solveLP()</code></a>    Solve a linear programming problem</li>
-<li>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>solveQP()</code></a>    Solve a quadratic programming problem</li>
-<li>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>spline()</code></a>    Create a Spline object</li>
-<li>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>Spline.at()</code></a>    Evaluate the Spline at a point</li>
-<li>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>Spline.diff()</code></a>    Differentiate the Spline</li>
-<li>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>Spline.roots()</code></a>    Find all the roots of the Spline</li>
-<li>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>sum()</code></a>    Sum all the entries of x</li>
-<li>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>svd()</code></a>    Singular value decomposition</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-Complex"><code>Complex()</code></a>    Create a Complex type</li>
-<li>[x] <a href=""><code>Complex.identity()</code></a> Generate identity complex structure matrix of given size</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>Complex.conj()</code></a>    Pointwise complex conjugate</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>Complex.fft()</code></a>    Fast Fourier transform</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>Complex.get()</code></a>    Read an entry</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>Complex.getRow()</code></a>    Get a row</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>Complex.getRows()</code></a>    Get a range of rows</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>Complex.ifft()</code></a>    Inverse FFComplex</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>Complex.reciprocal()</code></a>    Pointwise 1/z</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>Complex.set()</code></a>    Set an entry</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>Complex.setRow()</code></a>    Set a row</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>Complex.setRows()</code></a>    Set a range of rows</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>Complex.transjugate()</code></a>    Complexhe conjugate-transpose of a matrix</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-tensor"><code>tensor()</code></a>    Complexensor product ret[i][j] = x[i]*y[j]</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-transpose"><code>transpose()</code></a>    Matrix transpose</li>
-<li>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>uncmin()</code></a>    Unconstrained optimization</li>
-<li>[ ] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-"><code>version()</code></a>    Version string for the numeric library</li>
-</ul>
-<h4 id="pointwise-functions">Pointwise functions</h4>
-<ul>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-clone"><code>clone()</code></a>    Deep copy of Array</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-abs"><code>abs()</code></a>    Absolute value</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-acos"><code>acos()</code></a>    Arc-cosine</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-add"><code>add()</code></a>    Pointwise sum x+y</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-and"><code>and()</code></a>    Pointwise x &amp;&amp; y</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-asin"><code>asin()</code></a>    Arc-sine</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-atan"><code>atan()</code></a>    Arc-tangeant</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-atan2"><code>atan2()</code></a>    Arc-tangeant (two parameters)</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-band"><code>band()</code></a>    Pointwise x &amp; y</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-bnot"><code>bnot()</code></a>    Binary negation ~x</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-bor"><code>bor()</code></a>    Binary or x|y</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-bxor"><code>bxor()</code></a>    Binary xor x^y</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-ceil"><code>ceil()</code></a>    Pointwise Math.ceil(x)</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-cos"><code>cos()</code></a>    Pointwise Math.cos(x)</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-diag"><code>diag()</code></a>    Create diagonal matrix</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-dim"><code>dim()</code></a>    Get Array dimensions</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-div"><code>div()</code></a>    Pointwise x/y</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-eq"><code>eq()</code></a>    Pointwise comparison x === y</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-exp"><code>exp()</code></a>    Pointwise Math.exp(x)</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-floor"><code>floor()</code></a>    Poinwise Math.floor(x)</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-geq"><code>geq()</code></a>    Pointwise x&gt;=y</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-gt"><code>gt()</code></a>    Pointwise x&gt;y</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-leq"><code>leq()</code></a>    Pointwise x&lt;=y</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-linspace"><code>linspace()</code></a>    Generate evenly spaced values</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-log"><code>log()</code></a>    Pointwise Math.log(x)</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-lshift"><code>lshift()</code></a>    Pointwise x&lt;&lt;y</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-lt"><code>lt()</code></a>    Pointwise x&lt;y</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-mod"><code>mod()</code></a>    Pointwise x%y</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-mul"><code>mul()</code></a>    Pointwise x*y</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-neg"><code>neg()</code></a>    Pointwise -x</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-neq"><code>neq()</code></a>    Pointwise x!==y</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-not"><code>not()</code></a>    Pointwise logical negation !x</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-or"><code>or()</code></a>    Pointwise logical or x||y</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-pow"><code>pow()</code></a>    Pointwise Math.pow(x)</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-round"><code>round()</code></a>    Pointwise Math.round(x)</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-rrshift"><code>rrshift()</code></a>    Pointwise x&gt;&gt;&gt;y</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-rshift"><code>rshift()</code></a>    Pointwise x&gt;&gt;y</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-rshift"><code>rshifteq()</code></a>    Pointwise x&gt;&gt;=y</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-sin"><code>sin()</code></a>    Pointwise Math.sin(x)</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-sqrt"><code>sqrt()</code></a>    Pointwise Math.sqrt(x)</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-sub"><code>sub()</code></a>    Pointwise x-y</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-tan"><code>tan()</code></a>    Pointwise Math.tan(x)</li>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-xor"><code>xor()</code></a>    Pointwise x^y</li>
-</ul>
-<h4 id="constants">Constants</h4>
-<ul>
-<li>[x] <a href="http://www.timqian.com/mathlab/function/index.html#static-function-epsilon"><code>epsilon</code></a>    Return 2.220446049250313e-16</li>
-</ul>
+<h1 id="-documents-https-github-com-timqian-mathlab-tree-master-doc-readme-"><a href="https://github.com/timqian/mathlab/tree/master/doc#readme">Documents</a></h1>
+<h1 id="-documents-generated-from-comments-http-timqian-com-mathlab-"><a href="http://timqian.com/mathlab">Documents generated from comments</a></h1>
 </div>
 </div>
 

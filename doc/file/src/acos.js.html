@@ -33,6 +33,7 @@
   <ul>
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Complex.js~Complex.html">Complex</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-abs">abs</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-acos">acos</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-add">add</a></span></span></li>
@@ -99,6 +100,7 @@
 <div class="content" data-ice="content"><h1 data-ice="title">src/acos.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">
 import pointwise from &apos;./pointwise&apos;
+import Sparse from &apos;./Sparse&apos;
 
 const acos = pointwise(Math.acos)
 
@@ -107,14 +109,18 @@ function cacos(x) {
 }
 
 function sacos(x) {
-  throw new Error(&apos;mathlab.acos: acos for sparse matrix has not been implemented yet&apos;)
+  return new Sparse({
+    col: x.col.slice(), // copy the array
+    row: x.row.slice(),
+    val: acos(x.val),
+  })
 }
 
 /**
  * Pointwise Math.acos(x)
  * 
  * @export
- * @param {Number|Array} m
+ * @param {Number|Vector|Multidimensional array|Matirx|Sparse|Complex} m
  * @returns {Number|Array}
  * @example 
  * 

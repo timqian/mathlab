@@ -531,11 +531,11 @@
               "arguments": [
                 {
                   "type": "Literal",
-                  "value": "mathlab.lshift: lshift for sparse matrix has not been implemented yet",
-                  "raw": "'mathlab.lshift: lshift for sparse matrix has not been implemented yet'",
+                  "value": "mathlab.lshift: lshift for sparse matrix not exist",
+                  "raw": "'mathlab.lshift: lshift for sparse matrix not exist'",
                   "range": [
                     219,
-                    290
+                    271
                   ],
                   "loc": {
                     "start": {
@@ -544,14 +544,14 @@
                     },
                     "end": {
                       "line": 10,
-                      "column": 89
+                      "column": 70
                     }
                   }
                 }
               ],
               "range": [
                 209,
-                291
+                272
               ],
               "loc": {
                 "start": {
@@ -560,13 +560,13 @@
                 },
                 "end": {
                   "line": 10,
-                  "column": 90
+                  "column": 71
                 }
               }
             },
             "range": [
               203,
-              292
+              273
             ],
             "loc": {
               "start": {
@@ -582,7 +582,7 @@
         ],
         "range": [
           199,
-          293
+          274
         ],
         "loc": {
           "start": {
@@ -599,7 +599,7 @@
       "expression": false,
       "range": [
         176,
-        293
+        274
       ],
       "loc": {
         "start": {
@@ -616,8 +616,8 @@
           "type": "Block",
           "value": "*\n * Pointwise lshift\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * lshift(1, 2)\n * // returns 1 << 2\n * lshift([1, 2], [2, 2])\n * // returns [1 << 2, 2 << 2]\n * lshift([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 << 2, 1 << 2], [1 << 2, 2 << 2] ]\n ",
           "range": [
-            295,
-            629
+            276,
+            610
           ],
           "loc": {
             "start": {
@@ -642,8 +642,8 @@
             "type": "Identifier",
             "name": "m1",
             "range": [
-              655,
-              657
+              636,
+              638
             ],
             "loc": {
               "start": {
@@ -660,8 +660,8 @@
             "type": "Identifier",
             "name": "m2",
             "range": [
-              659,
-              661
+              640,
+              642
             ],
             "loc": {
               "start": {
@@ -690,8 +690,8 @@
                     "type": "Identifier",
                     "name": "m1",
                     "range": [
-                      675,
-                      677
+                      656,
+                      658
                     ],
                     "loc": {
                       "start": {
@@ -708,8 +708,8 @@
                     "type": "Identifier",
                     "name": "constructor",
                     "range": [
-                      678,
-                      689
+                      659,
+                      670
                     ],
                     "loc": {
                       "start": {
@@ -723,8 +723,8 @@
                     }
                   },
                   "range": [
-                    675,
-                    689
+                    656,
+                    670
                   ],
                   "loc": {
                     "start": {
@@ -741,8 +741,8 @@
                   "type": "Identifier",
                   "name": "name",
                   "range": [
-                    690,
-                    694
+                    671,
+                    675
                   ],
                   "loc": {
                     "start": {
@@ -756,8 +756,8 @@
                   }
                 },
                 "range": [
-                  675,
-                  694
+                  656,
+                  675
                 ],
                 "loc": {
                   "start": {
@@ -778,8 +778,8 @@
                     "value": "Complex",
                     "raw": "'Complex'",
                     "range": [
-                      707,
-                      716
+                      688,
+                      697
                     ],
                     "loc": {
                       "start": {
@@ -801,8 +801,8 @@
                           "type": "Identifier",
                           "name": "clshift",
                           "range": [
-                            731,
-                            738
+                            712,
+                            719
                           ],
                           "loc": {
                             "start": {
@@ -820,8 +820,8 @@
                             "type": "Identifier",
                             "name": "m1",
                             "range": [
-                              739,
-                              741
+                              720,
+                              722
                             ],
                             "loc": {
                               "start": {
@@ -838,8 +838,8 @@
                             "type": "Identifier",
                             "name": "m2",
                             "range": [
-                              743,
-                              745
+                              724,
+                              726
                             ],
                             "loc": {
                               "start": {
@@ -854,8 +854,8 @@
                           }
                         ],
                         "range": [
-                          731,
-                          746
+                          712,
+                          727
                         ],
                         "loc": {
                           "start": {
@@ -869,8 +869,8 @@
                         }
                       },
                       "range": [
-                        724,
-                        747
+                        705,
+                        728
                       ],
                       "loc": {
                         "start": {
@@ -885,8 +885,8 @@
                     }
                   ],
                   "range": [
-                    702,
-                    747
+                    683,
+                    728
                   ],
                   "loc": {
                     "start": {
@@ -906,8 +906,8 @@
                     "value": "Sparse",
                     "raw": "'Sparse'",
                     "range": [
-                      757,
-                      765
+                      738,
+                      746
                     ],
                     "loc": {
                       "start": {
@@ -929,8 +929,8 @@
                           "type": "Identifier",
                           "name": "slshift",
                           "range": [
-                            780,
-                            787
+                            761,
+                            768
                           ],
                           "loc": {
                             "start": {
@@ -948,8 +948,8 @@
                             "type": "Identifier",
                             "name": "m1",
                             "range": [
-                              788,
-                              790
+                              769,
+                              771
                             ],
                             "loc": {
                               "start": {
@@ -966,8 +966,8 @@
                             "type": "Identifier",
                             "name": "m2",
                             "range": [
-                              792,
-                              794
+                              773,
+                              775
                             ],
                             "loc": {
                               "start": {
@@ -982,8 +982,8 @@
                           }
                         ],
                         "range": [
-                          780,
-                          795
+                          761,
+                          776
                         ],
                         "loc": {
                           "start": {
@@ -997,8 +997,8 @@
                         }
                       },
                       "range": [
-                        773,
-                        796
+                        754,
+                        777
                       ],
                       "loc": {
                         "start": {
@@ -1013,8 +1013,8 @@
                     }
                   ],
                   "range": [
-                    752,
-                    796
+                    733,
+                    777
                   ],
                   "loc": {
                     "start": {
@@ -1039,8 +1039,8 @@
                           "type": "Identifier",
                           "name": "lshift",
                           "range": [
-                            823,
-                            829
+                            804,
+                            810
                           ],
                           "loc": {
                             "start": {
@@ -1058,8 +1058,8 @@
                             "type": "Identifier",
                             "name": "m1",
                             "range": [
-                              830,
-                              832
+                              811,
+                              813
                             ],
                             "loc": {
                               "start": {
@@ -1076,8 +1076,8 @@
                             "type": "Identifier",
                             "name": "m2",
                             "range": [
-                              834,
-                              836
+                              815,
+                              817
                             ],
                             "loc": {
                               "start": {
@@ -1092,8 +1092,8 @@
                           }
                         ],
                         "range": [
-                          823,
-                          837
+                          804,
+                          818
                         ],
                         "loc": {
                           "start": {
@@ -1107,8 +1107,8 @@
                         }
                       },
                       "range": [
-                        816,
-                        838
+                        797,
+                        819
                       ],
                       "loc": {
                         "start": {
@@ -1123,8 +1123,8 @@
                     }
                   ],
                   "range": [
-                    801,
-                    838
+                    782,
+                    819
                   ],
                   "loc": {
                     "start": {
@@ -1139,8 +1139,8 @@
                 }
               ],
               "range": [
-                667,
-                842
+                648,
+                823
               ],
               "loc": {
                 "start": {
@@ -1155,8 +1155,8 @@
             }
           ],
           "range": [
-            663,
-            844
+            644,
+            825
           ],
           "loc": {
             "start": {
@@ -1172,8 +1172,8 @@
         "generator": false,
         "expression": false,
         "range": [
-          645,
-          844
+          626,
+          825
         ],
         "loc": {
           "start": {
@@ -1190,8 +1190,8 @@
             "type": "Block",
             "value": "*\n * Pointwise lshift\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * lshift(1, 2)\n * // returns 1 << 2\n * lshift([1, 2], [2, 2])\n * // returns [1 << 2, 2 << 2]\n * lshift([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 << 2, 1 << 2], [1 << 2, 2 << 2] ]\n ",
             "range": [
-              295,
-              629
+              276,
+              610
             ],
             "loc": {
               "start": {
@@ -1208,8 +1208,8 @@
         "trailingComments": []
       },
       "range": [
-        630,
-        844
+        611,
+        825
       ],
       "loc": {
         "start": {
@@ -1226,8 +1226,8 @@
           "type": "Block",
           "value": "*\n * Pointwise lshift\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * lshift(1, 2)\n * // returns 1 << 2\n * lshift([1, 2], [2, 2])\n * // returns [1 << 2, 2 << 2]\n * lshift([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 << 2, 1 << 2], [1 << 2, 2 << 2] ]\n ",
           "range": [
-            295,
-            629
+            276,
+            610
           ],
           "loc": {
             "start": {
@@ -1246,7 +1246,7 @@
   "sourceType": "module",
   "range": [
     0,
-    844
+    825
   ],
   "loc": {
     "start": {
@@ -1263,8 +1263,8 @@
       "type": "Block",
       "value": "*\n * Pointwise lshift\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * lshift(1, 2)\n * // returns 1 << 2\n * lshift([1, 2], [2, 2])\n * // returns [1 << 2, 2 << 2]\n * lshift([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 << 2, 1 << 2], [1 << 2, 2 << 2] ]\n ",
       "range": [
-        295,
-        629
+        276,
+        610
       ],
       "loc": {
         "start": {

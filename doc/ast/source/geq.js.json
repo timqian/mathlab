@@ -531,11 +531,11 @@
               "arguments": [
                 {
                   "type": "Literal",
-                  "value": "mathlab.geq: geq for sparse matrix has not been implemented yet",
-                  "raw": "'mathlab.geq: geq for sparse matrix has not been implemented yet'",
+                  "value": "mathlab.geq: geq for sparse matrix not exist",
+                  "raw": "'mathlab.geq: geq for sparse matrix not exist'",
                   "range": [
                     204,
-                    269
+                    250
                   ],
                   "loc": {
                     "start": {
@@ -544,14 +544,14 @@
                     },
                     "end": {
                       "line": 10,
-                      "column": 83
+                      "column": 64
                     }
                   }
                 }
               ],
               "range": [
                 194,
-                270
+                251
               ],
               "loc": {
                 "start": {
@@ -560,13 +560,13 @@
                 },
                 "end": {
                   "line": 10,
-                  "column": 84
+                  "column": 65
                 }
               }
             },
             "range": [
               188,
-              271
+              252
             ],
             "loc": {
               "start": {
@@ -582,7 +582,7 @@
         ],
         "range": [
           184,
-          272
+          253
         ],
         "loc": {
           "start": {
@@ -599,7 +599,7 @@
       "expression": false,
       "range": [
         164,
-        272
+        253
       ],
       "loc": {
         "start": {
@@ -616,8 +616,8 @@
           "type": "Block",
           "value": "*\n * Pointwise geq\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * geq(1, 2)\n * // returns 1 >= 2\n * geq([1, 2], [2, 2])\n * // returns [1 >= 2, 2 >= 2]\n * geq([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 >= 2, 1 >= 2], [1 >= 2, 2 >= 2] ]\n ",
           "range": [
-            274,
-            596
+            255,
+            577
           ],
           "loc": {
             "start": {
@@ -642,8 +642,8 @@
             "type": "Identifier",
             "name": "m1",
             "range": [
-              622,
-              624
+              603,
+              605
             ],
             "loc": {
               "start": {
@@ -660,8 +660,8 @@
             "type": "Identifier",
             "name": "m2",
             "range": [
-              626,
-              628
+              607,
+              609
             ],
             "loc": {
               "start": {
@@ -690,8 +690,8 @@
                     "type": "Identifier",
                     "name": "m1",
                     "range": [
-                      642,
-                      644
+                      623,
+                      625
                     ],
                     "loc": {
                       "start": {
@@ -708,8 +708,8 @@
                     "type": "Identifier",
                     "name": "constructor",
                     "range": [
-                      645,
-                      656
+                      626,
+                      637
                     ],
                     "loc": {
                       "start": {
@@ -723,8 +723,8 @@
                     }
                   },
                   "range": [
-                    642,
-                    656
+                    623,
+                    637
                   ],
                   "loc": {
                     "start": {
@@ -741,8 +741,8 @@
                   "type": "Identifier",
                   "name": "name",
                   "range": [
-                    657,
-                    661
+                    638,
+                    642
                   ],
                   "loc": {
                     "start": {
@@ -756,8 +756,8 @@
                   }
                 },
                 "range": [
-                  642,
-                  661
+                  623,
+                  642
                 ],
                 "loc": {
                   "start": {
@@ -778,8 +778,8 @@
                     "value": "Complex",
                     "raw": "'Complex'",
                     "range": [
-                      674,
-                      683
+                      655,
+                      664
                     ],
                     "loc": {
                       "start": {
@@ -801,8 +801,8 @@
                           "type": "Identifier",
                           "name": "cgeq",
                           "range": [
-                            698,
-                            702
+                            679,
+                            683
                           ],
                           "loc": {
                             "start": {
@@ -820,8 +820,8 @@
                             "type": "Identifier",
                             "name": "m1",
                             "range": [
-                              703,
-                              705
+                              684,
+                              686
                             ],
                             "loc": {
                               "start": {
@@ -838,8 +838,8 @@
                             "type": "Identifier",
                             "name": "m2",
                             "range": [
-                              707,
-                              709
+                              688,
+                              690
                             ],
                             "loc": {
                               "start": {
@@ -854,8 +854,8 @@
                           }
                         ],
                         "range": [
-                          698,
-                          710
+                          679,
+                          691
                         ],
                         "loc": {
                           "start": {
@@ -869,8 +869,8 @@
                         }
                       },
                       "range": [
-                        691,
-                        711
+                        672,
+                        692
                       ],
                       "loc": {
                         "start": {
@@ -885,8 +885,8 @@
                     }
                   ],
                   "range": [
-                    669,
-                    711
+                    650,
+                    692
                   ],
                   "loc": {
                     "start": {
@@ -906,8 +906,8 @@
                     "value": "Sparse",
                     "raw": "'Sparse'",
                     "range": [
-                      721,
-                      729
+                      702,
+                      710
                     ],
                     "loc": {
                       "start": {
@@ -929,8 +929,8 @@
                           "type": "Identifier",
                           "name": "sgeq",
                           "range": [
-                            744,
-                            748
+                            725,
+                            729
                           ],
                           "loc": {
                             "start": {
@@ -948,8 +948,8 @@
                             "type": "Identifier",
                             "name": "m1",
                             "range": [
-                              749,
-                              751
+                              730,
+                              732
                             ],
                             "loc": {
                               "start": {
@@ -966,8 +966,8 @@
                             "type": "Identifier",
                             "name": "m2",
                             "range": [
-                              753,
-                              755
+                              734,
+                              736
                             ],
                             "loc": {
                               "start": {
@@ -982,8 +982,8 @@
                           }
                         ],
                         "range": [
-                          744,
-                          756
+                          725,
+                          737
                         ],
                         "loc": {
                           "start": {
@@ -997,8 +997,8 @@
                         }
                       },
                       "range": [
-                        737,
-                        757
+                        718,
+                        738
                       ],
                       "loc": {
                         "start": {
@@ -1013,8 +1013,8 @@
                     }
                   ],
                   "range": [
-                    716,
-                    757
+                    697,
+                    738
                   ],
                   "loc": {
                     "start": {
@@ -1039,8 +1039,8 @@
                           "type": "Identifier",
                           "name": "geq",
                           "range": [
-                            784,
-                            787
+                            765,
+                            768
                           ],
                           "loc": {
                             "start": {
@@ -1058,8 +1058,8 @@
                             "type": "Identifier",
                             "name": "m1",
                             "range": [
-                              788,
-                              790
+                              769,
+                              771
                             ],
                             "loc": {
                               "start": {
@@ -1076,8 +1076,8 @@
                             "type": "Identifier",
                             "name": "m2",
                             "range": [
-                              792,
-                              794
+                              773,
+                              775
                             ],
                             "loc": {
                               "start": {
@@ -1092,8 +1092,8 @@
                           }
                         ],
                         "range": [
-                          784,
-                          795
+                          765,
+                          776
                         ],
                         "loc": {
                           "start": {
@@ -1107,8 +1107,8 @@
                         }
                       },
                       "range": [
-                        777,
-                        796
+                        758,
+                        777
                       ],
                       "loc": {
                         "start": {
@@ -1123,8 +1123,8 @@
                     }
                   ],
                   "range": [
-                    762,
-                    796
+                    743,
+                    777
                   ],
                   "loc": {
                     "start": {
@@ -1139,8 +1139,8 @@
                 }
               ],
               "range": [
-                634,
-                800
+                615,
+                781
               ],
               "loc": {
                 "start": {
@@ -1155,8 +1155,8 @@
             }
           ],
           "range": [
-            630,
-            802
+            611,
+            783
           ],
           "loc": {
             "start": {
@@ -1172,8 +1172,8 @@
         "generator": false,
         "expression": false,
         "range": [
-          612,
-          802
+          593,
+          783
         ],
         "loc": {
           "start": {
@@ -1190,8 +1190,8 @@
             "type": "Block",
             "value": "*\n * Pointwise geq\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * geq(1, 2)\n * // returns 1 >= 2\n * geq([1, 2], [2, 2])\n * // returns [1 >= 2, 2 >= 2]\n * geq([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 >= 2, 1 >= 2], [1 >= 2, 2 >= 2] ]\n ",
             "range": [
-              274,
-              596
+              255,
+              577
             ],
             "loc": {
               "start": {
@@ -1208,8 +1208,8 @@
         "trailingComments": []
       },
       "range": [
-        597,
-        802
+        578,
+        783
       ],
       "loc": {
         "start": {
@@ -1226,8 +1226,8 @@
           "type": "Block",
           "value": "*\n * Pointwise geq\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * geq(1, 2)\n * // returns 1 >= 2\n * geq([1, 2], [2, 2])\n * // returns [1 >= 2, 2 >= 2]\n * geq([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 >= 2, 1 >= 2], [1 >= 2, 2 >= 2] ]\n ",
           "range": [
-            274,
-            596
+            255,
+            577
           ],
           "loc": {
             "start": {
@@ -1246,7 +1246,7 @@
   "sourceType": "module",
   "range": [
     0,
-    802
+    783
   ],
   "loc": {
     "start": {
@@ -1263,8 +1263,8 @@
       "type": "Block",
       "value": "*\n * Pointwise geq\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * geq(1, 2)\n * // returns 1 >= 2\n * geq([1, 2], [2, 2])\n * // returns [1 >= 2, 2 >= 2]\n * geq([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 >= 2, 1 >= 2], [1 >= 2, 2 >= 2] ]\n ",
       "range": [
-        274,
-        596
+        255,
+        577
       ],
       "loc": {
         "start": {

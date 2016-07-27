@@ -33,6 +33,7 @@
   <ul>
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Complex.js~Complex.html">Complex</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-abs">abs</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-acos">acos</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-add">add</a></span></span></li>
@@ -99,6 +100,7 @@
 <div class="content" data-ice="content"><h1 data-ice="title">src/floor.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">
 import pointwise from &apos;./pointwise&apos;
+import Sparse from &apos;./Sparse&apos;
 
 const floor = pointwise(Math.floor)
 
@@ -107,9 +109,12 @@ function cfloor(x) {
 }
 
 function sfloor(x) {
-  throw new Error(&apos;mathlab.floor: floor for sparse matrix has not been implemented yet&apos;)
+  return new Sparse({
+    col: x.col.slice(), // copy the array
+    row: x.row.slice(),
+    val: floor(x.val),
+  })
 }
-
 /**
  * Pointwise Math.floor(x)
  * 

@@ -2843,11 +2843,11 @@
               "arguments": [
                 {
                   "type": "Literal",
-                  "value": "mathlab.sub: sub for sparse matrix has not been implemented yet",
-                  "raw": "'mathlab.sub: sub for sparse matrix has not been implemented yet'",
+                  "value": "mathlab.sub: sub for sparse matrix not exist",
+                  "raw": "'mathlab.sub: sub for sparse matrix not exist'",
                   "range": [
                     620,
-                    685
+                    666
                   ],
                   "loc": {
                     "start": {
@@ -2856,14 +2856,14 @@
                     },
                     "end": {
                       "line": 25,
-                      "column": 83
+                      "column": 64
                     }
                   }
                 }
               ],
               "range": [
                 610,
-                686
+                667
               ],
               "loc": {
                 "start": {
@@ -2872,13 +2872,13 @@
                 },
                 "end": {
                   "line": 25,
-                  "column": 84
+                  "column": 65
                 }
               }
             },
             "range": [
               604,
-              687
+              668
             ],
             "loc": {
               "start": {
@@ -2894,7 +2894,7 @@
         ],
         "range": [
           600,
-          688
+          669
         ],
         "loc": {
           "start": {
@@ -2911,7 +2911,7 @@
       "expression": false,
       "range": [
         580,
-        688
+        669
       ],
       "loc": {
         "start": {
@@ -2928,8 +2928,8 @@
           "type": "Block",
           "value": "*\n * Pointwise mul\n * \n * @export\n * @param {Number|Array|Object} m1\n * @param {Number|Array|Object} m2\n * @returns {Number|Array}\n * @example \n * \n * mul(1, 2)\n * // returns 1 * 2\n * mul([1, 2], [2, 2])\n * // returns [1 * 2, 2 * 2]\n * mul([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 * 2, 1 * 2], [1 * 2, 2 * 2] ]\n ",
           "range": [
-            690,
-            1019
+            671,
+            1000
           ],
           "loc": {
             "start": {
@@ -2954,8 +2954,8 @@
             "type": "Identifier",
             "name": "m1",
             "range": [
-              1045,
-              1047
+              1026,
+              1028
             ],
             "loc": {
               "start": {
@@ -2972,8 +2972,8 @@
             "type": "Identifier",
             "name": "m2",
             "range": [
-              1049,
-              1051
+              1030,
+              1032
             ],
             "loc": {
               "start": {
@@ -3002,8 +3002,8 @@
                     "type": "Identifier",
                     "name": "m1",
                     "range": [
-                      1191,
-                      1193
+                      1172,
+                      1174
                     ],
                     "loc": {
                       "start": {
@@ -3020,8 +3020,8 @@
                     "type": "Identifier",
                     "name": "constructor",
                     "range": [
-                      1194,
-                      1205
+                      1175,
+                      1186
                     ],
                     "loc": {
                       "start": {
@@ -3035,8 +3035,8 @@
                     }
                   },
                   "range": [
-                    1191,
-                    1205
+                    1172,
+                    1186
                   ],
                   "loc": {
                     "start": {
@@ -3053,8 +3053,8 @@
                   "type": "Identifier",
                   "name": "name",
                   "range": [
-                    1206,
-                    1210
+                    1187,
+                    1191
                   ],
                   "loc": {
                     "start": {
@@ -3068,8 +3068,8 @@
                   }
                 },
                 "range": [
-                  1191,
-                  1210
+                  1172,
+                  1191
                 ],
                 "loc": {
                   "start": {
@@ -3090,8 +3090,8 @@
                     "value": "Array",
                     "raw": "'Array'",
                     "range": [
-                      1223,
-                      1230
+                      1204,
+                      1211
                     ],
                     "loc": {
                       "start": {
@@ -3113,8 +3113,8 @@
                           "type": "Identifier",
                           "name": "amul",
                           "range": [
-                            1245,
-                            1249
+                            1226,
+                            1230
                           ],
                           "loc": {
                             "start": {
@@ -3132,8 +3132,8 @@
                             "type": "Identifier",
                             "name": "m1",
                             "range": [
-                              1250,
-                              1252
+                              1231,
+                              1233
                             ],
                             "loc": {
                               "start": {
@@ -3150,8 +3150,8 @@
                             "type": "Identifier",
                             "name": "m2",
                             "range": [
-                              1254,
-                              1256
+                              1235,
+                              1237
                             ],
                             "loc": {
                               "start": {
@@ -3166,8 +3166,8 @@
                           }
                         ],
                         "range": [
-                          1245,
-                          1257
+                          1226,
+                          1238
                         ],
                         "loc": {
                           "start": {
@@ -3181,8 +3181,8 @@
                         }
                       },
                       "range": [
-                        1238,
-                        1258
+                        1219,
+                        1239
                       ],
                       "loc": {
                         "start": {
@@ -3197,8 +3197,8 @@
                     }
                   ],
                   "range": [
-                    1218,
-                    1258
+                    1199,
+                    1239
                   ],
                   "loc": {
                     "start": {
@@ -3218,8 +3218,8 @@
                     "value": "Complex",
                     "raw": "'Complex'",
                     "range": [
-                      1268,
-                      1277
+                      1249,
+                      1258
                     ],
                     "loc": {
                       "start": {
@@ -3241,8 +3241,8 @@
                           "type": "Identifier",
                           "name": "cmul",
                           "range": [
-                            1292,
-                            1296
+                            1273,
+                            1277
                           ],
                           "loc": {
                             "start": {
@@ -3260,8 +3260,8 @@
                             "type": "Identifier",
                             "name": "m1",
                             "range": [
-                              1297,
-                              1299
+                              1278,
+                              1280
                             ],
                             "loc": {
                               "start": {
@@ -3278,8 +3278,8 @@
                             "type": "Identifier",
                             "name": "m2",
                             "range": [
-                              1301,
-                              1303
+                              1282,
+                              1284
                             ],
                             "loc": {
                               "start": {
@@ -3294,8 +3294,8 @@
                           }
                         ],
                         "range": [
-                          1292,
-                          1304
+                          1273,
+                          1285
                         ],
                         "loc": {
                           "start": {
@@ -3309,8 +3309,8 @@
                         }
                       },
                       "range": [
-                        1285,
-                        1305
+                        1266,
+                        1286
                       ],
                       "loc": {
                         "start": {
@@ -3325,8 +3325,8 @@
                     }
                   ],
                   "range": [
-                    1263,
-                    1305
+                    1244,
+                    1286
                   ],
                   "loc": {
                     "start": {
@@ -3346,8 +3346,8 @@
                     "value": "Sparse",
                     "raw": "'Sparse'",
                     "range": [
-                      1315,
-                      1323
+                      1296,
+                      1304
                     ],
                     "loc": {
                       "start": {
@@ -3369,8 +3369,8 @@
                           "type": "Identifier",
                           "name": "smul",
                           "range": [
-                            1338,
-                            1342
+                            1319,
+                            1323
                           ],
                           "loc": {
                             "start": {
@@ -3388,8 +3388,8 @@
                             "type": "Identifier",
                             "name": "m1",
                             "range": [
-                              1343,
-                              1345
+                              1324,
+                              1326
                             ],
                             "loc": {
                               "start": {
@@ -3406,8 +3406,8 @@
                             "type": "Identifier",
                             "name": "m2",
                             "range": [
-                              1347,
-                              1349
+                              1328,
+                              1330
                             ],
                             "loc": {
                               "start": {
@@ -3422,8 +3422,8 @@
                           }
                         ],
                         "range": [
-                          1338,
-                          1350
+                          1319,
+                          1331
                         ],
                         "loc": {
                           "start": {
@@ -3437,8 +3437,8 @@
                         }
                       },
                       "range": [
-                        1331,
-                        1351
+                        1312,
+                        1332
                       ],
                       "loc": {
                         "start": {
@@ -3453,8 +3453,8 @@
                     }
                   ],
                   "range": [
-                    1310,
-                    1351
+                    1291,
+                    1332
                   ],
                   "loc": {
                     "start": {
@@ -3479,8 +3479,8 @@
                           "type": "Identifier",
                           "name": "amul",
                           "range": [
-                            1378,
-                            1382
+                            1359,
+                            1363
                           ],
                           "loc": {
                             "start": {
@@ -3498,8 +3498,8 @@
                             "type": "Identifier",
                             "name": "m1",
                             "range": [
-                              1383,
-                              1385
+                              1364,
+                              1366
                             ],
                             "loc": {
                               "start": {
@@ -3516,8 +3516,8 @@
                             "type": "Identifier",
                             "name": "m2",
                             "range": [
-                              1387,
-                              1389
+                              1368,
+                              1370
                             ],
                             "loc": {
                               "start": {
@@ -3532,8 +3532,8 @@
                           }
                         ],
                         "range": [
-                          1378,
-                          1390
+                          1359,
+                          1371
                         ],
                         "loc": {
                           "start": {
@@ -3547,8 +3547,8 @@
                         }
                       },
                       "range": [
-                        1371,
-                        1391
+                        1352,
+                        1372
                       ],
                       "loc": {
                         "start": {
@@ -3563,8 +3563,8 @@
                     }
                   ],
                   "range": [
-                    1356,
-                    1391
+                    1337,
+                    1372
                   ],
                   "loc": {
                     "start": {
@@ -3579,8 +3579,8 @@
                 }
               ],
               "range": [
-                1183,
-                1395
+                1164,
+                1376
               ],
               "loc": {
                 "start": {
@@ -3597,8 +3597,8 @@
                   "type": "Line",
                   "value": " if (m1.constructor.name !== m2.constructor.name) {",
                   "range": [
-                    1057,
-                    1110
+                    1038,
+                    1091
                   ],
                   "loc": {
                     "start": {
@@ -3615,8 +3615,8 @@
                   "type": "Line",
                   "value": "   throw new Error('mathlab.mul: argument type mismatch')",
                   "range": [
-                    1113,
-                    1172
+                    1094,
+                    1153
                   ],
                   "loc": {
                     "start": {
@@ -3633,8 +3633,8 @@
                   "type": "Line",
                   "value": " }",
                   "range": [
-                    1175,
-                    1179
+                    1156,
+                    1160
                   ],
                   "loc": {
                     "start": {
@@ -3651,8 +3651,8 @@
             }
           ],
           "range": [
-            1053,
-            1397
+            1034,
+            1378
           ],
           "loc": {
             "start": {
@@ -3668,8 +3668,8 @@
         "generator": false,
         "expression": false,
         "range": [
-          1035,
-          1397
+          1016,
+          1378
         ],
         "loc": {
           "start": {
@@ -3686,8 +3686,8 @@
             "type": "Block",
             "value": "*\n * Pointwise mul\n * \n * @export\n * @param {Number|Array|Object} m1\n * @param {Number|Array|Object} m2\n * @returns {Number|Array}\n * @example \n * \n * mul(1, 2)\n * // returns 1 * 2\n * mul([1, 2], [2, 2])\n * // returns [1 * 2, 2 * 2]\n * mul([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 * 2, 1 * 2], [1 * 2, 2 * 2] ]\n ",
             "range": [
-              690,
-              1019
+              671,
+              1000
             ],
             "loc": {
               "start": {
@@ -3704,8 +3704,8 @@
         "trailingComments": []
       },
       "range": [
-        1020,
-        1397
+        1001,
+        1378
       ],
       "loc": {
         "start": {
@@ -3722,8 +3722,8 @@
           "type": "Block",
           "value": "*\n * Pointwise mul\n * \n * @export\n * @param {Number|Array|Object} m1\n * @param {Number|Array|Object} m2\n * @returns {Number|Array}\n * @example \n * \n * mul(1, 2)\n * // returns 1 * 2\n * mul([1, 2], [2, 2])\n * // returns [1 * 2, 2 * 2]\n * mul([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 * 2, 1 * 2], [1 * 2, 2 * 2] ]\n ",
           "range": [
-            690,
-            1019
+            671,
+            1000
           ],
           "loc": {
             "start": {
@@ -3742,7 +3742,7 @@
   "sourceType": "module",
   "range": [
     0,
-    1397
+    1378
   ],
   "loc": {
     "start": {
@@ -3795,8 +3795,8 @@
       "type": "Block",
       "value": "*\n * Pointwise mul\n * \n * @export\n * @param {Number|Array|Object} m1\n * @param {Number|Array|Object} m2\n * @returns {Number|Array}\n * @example \n * \n * mul(1, 2)\n * // returns 1 * 2\n * mul([1, 2], [2, 2])\n * // returns [1 * 2, 2 * 2]\n * mul([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 * 2, 1 * 2], [1 * 2, 2 * 2] ]\n ",
       "range": [
-        690,
-        1019
+        671,
+        1000
       ],
       "loc": {
         "start": {
@@ -3813,8 +3813,8 @@
       "type": "Line",
       "value": " if (m1.constructor.name !== m2.constructor.name) {",
       "range": [
-        1057,
-        1110
+        1038,
+        1091
       ],
       "loc": {
         "start": {
@@ -3831,8 +3831,8 @@
       "type": "Line",
       "value": "   throw new Error('mathlab.mul: argument type mismatch')",
       "range": [
-        1113,
-        1172
+        1094,
+        1153
       ],
       "loc": {
         "start": {
@@ -3849,8 +3849,8 @@
       "type": "Line",
       "value": " }",
       "range": [
-        1175,
-        1179
+        1156,
+        1160
       ],
       "loc": {
         "start": {

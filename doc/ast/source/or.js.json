@@ -531,11 +531,11 @@
               "arguments": [
                 {
                   "type": "Literal",
-                  "value": "mathlab.or: or for sparse matrix has not been implemented yet",
-                  "raw": "'mathlab.or: or for sparse matrix has not been implemented yet'",
+                  "value": "mathlab.or: or for sparse matrix not exist",
+                  "raw": "'mathlab.or: or for sparse matrix not exist'",
                   "range": [
                     199,
-                    262
+                    243
                   ],
                   "loc": {
                     "start": {
@@ -544,14 +544,14 @@
                     },
                     "end": {
                       "line": 10,
-                      "column": 81
+                      "column": 62
                     }
                   }
                 }
               ],
               "range": [
                 189,
-                263
+                244
               ],
               "loc": {
                 "start": {
@@ -560,13 +560,13 @@
                 },
                 "end": {
                   "line": 10,
-                  "column": 82
+                  "column": 63
                 }
               }
             },
             "range": [
               183,
-              264
+              245
             ],
             "loc": {
               "start": {
@@ -582,7 +582,7 @@
         ],
         "range": [
           179,
-          265
+          246
         ],
         "loc": {
           "start": {
@@ -599,7 +599,7 @@
       "expression": false,
       "range": [
         160,
-        265
+        246
       ],
       "loc": {
         "start": {
@@ -616,8 +616,8 @@
           "type": "Block",
           "value": "*\n * Pointwise or\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * or(1, 2)\n * // returns 1 || 2\n * or([1, 2], [2, 2])\n * // returns [1 || 2, 2 || 2]\n * or([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 || 2, 1 || 2], [1 || 2, 2 || 2] ]\n ",
           "range": [
-            267,
-            585
+            248,
+            566
           ],
           "loc": {
             "start": {
@@ -642,8 +642,8 @@
             "type": "Identifier",
             "name": "m1",
             "range": [
-              611,
-              613
+              592,
+              594
             ],
             "loc": {
               "start": {
@@ -660,8 +660,8 @@
             "type": "Identifier",
             "name": "m2",
             "range": [
-              615,
-              617
+              596,
+              598
             ],
             "loc": {
               "start": {
@@ -690,8 +690,8 @@
                     "type": "Identifier",
                     "name": "m1",
                     "range": [
-                      631,
-                      633
+                      612,
+                      614
                     ],
                     "loc": {
                       "start": {
@@ -708,8 +708,8 @@
                     "type": "Identifier",
                     "name": "constructor",
                     "range": [
-                      634,
-                      645
+                      615,
+                      626
                     ],
                     "loc": {
                       "start": {
@@ -723,8 +723,8 @@
                     }
                   },
                   "range": [
-                    631,
-                    645
+                    612,
+                    626
                   ],
                   "loc": {
                     "start": {
@@ -741,8 +741,8 @@
                   "type": "Identifier",
                   "name": "name",
                   "range": [
-                    646,
-                    650
+                    627,
+                    631
                   ],
                   "loc": {
                     "start": {
@@ -756,8 +756,8 @@
                   }
                 },
                 "range": [
-                  631,
-                  650
+                  612,
+                  631
                 ],
                 "loc": {
                   "start": {
@@ -778,8 +778,8 @@
                     "value": "Complex",
                     "raw": "'Complex'",
                     "range": [
-                      663,
-                      672
+                      644,
+                      653
                     ],
                     "loc": {
                       "start": {
@@ -801,8 +801,8 @@
                           "type": "Identifier",
                           "name": "cor",
                           "range": [
-                            687,
-                            690
+                            668,
+                            671
                           ],
                           "loc": {
                             "start": {
@@ -820,8 +820,8 @@
                             "type": "Identifier",
                             "name": "m1",
                             "range": [
-                              691,
-                              693
+                              672,
+                              674
                             ],
                             "loc": {
                               "start": {
@@ -838,8 +838,8 @@
                             "type": "Identifier",
                             "name": "m2",
                             "range": [
-                              695,
-                              697
+                              676,
+                              678
                             ],
                             "loc": {
                               "start": {
@@ -854,8 +854,8 @@
                           }
                         ],
                         "range": [
-                          687,
-                          698
+                          668,
+                          679
                         ],
                         "loc": {
                           "start": {
@@ -869,8 +869,8 @@
                         }
                       },
                       "range": [
-                        680,
-                        699
+                        661,
+                        680
                       ],
                       "loc": {
                         "start": {
@@ -885,8 +885,8 @@
                     }
                   ],
                   "range": [
-                    658,
-                    699
+                    639,
+                    680
                   ],
                   "loc": {
                     "start": {
@@ -906,8 +906,8 @@
                     "value": "Sparse",
                     "raw": "'Sparse'",
                     "range": [
-                      709,
-                      717
+                      690,
+                      698
                     ],
                     "loc": {
                       "start": {
@@ -929,8 +929,8 @@
                           "type": "Identifier",
                           "name": "sor",
                           "range": [
-                            732,
-                            735
+                            713,
+                            716
                           ],
                           "loc": {
                             "start": {
@@ -948,8 +948,8 @@
                             "type": "Identifier",
                             "name": "m1",
                             "range": [
-                              736,
-                              738
+                              717,
+                              719
                             ],
                             "loc": {
                               "start": {
@@ -966,8 +966,8 @@
                             "type": "Identifier",
                             "name": "m2",
                             "range": [
-                              740,
-                              742
+                              721,
+                              723
                             ],
                             "loc": {
                               "start": {
@@ -982,8 +982,8 @@
                           }
                         ],
                         "range": [
-                          732,
-                          743
+                          713,
+                          724
                         ],
                         "loc": {
                           "start": {
@@ -997,8 +997,8 @@
                         }
                       },
                       "range": [
-                        725,
-                        744
+                        706,
+                        725
                       ],
                       "loc": {
                         "start": {
@@ -1013,8 +1013,8 @@
                     }
                   ],
                   "range": [
-                    704,
-                    744
+                    685,
+                    725
                   ],
                   "loc": {
                     "start": {
@@ -1039,8 +1039,8 @@
                           "type": "Identifier",
                           "name": "or",
                           "range": [
-                            771,
-                            773
+                            752,
+                            754
                           ],
                           "loc": {
                             "start": {
@@ -1058,8 +1058,8 @@
                             "type": "Identifier",
                             "name": "m1",
                             "range": [
-                              774,
-                              776
+                              755,
+                              757
                             ],
                             "loc": {
                               "start": {
@@ -1076,8 +1076,8 @@
                             "type": "Identifier",
                             "name": "m2",
                             "range": [
-                              778,
-                              780
+                              759,
+                              761
                             ],
                             "loc": {
                               "start": {
@@ -1092,8 +1092,8 @@
                           }
                         ],
                         "range": [
-                          771,
-                          781
+                          752,
+                          762
                         ],
                         "loc": {
                           "start": {
@@ -1107,8 +1107,8 @@
                         }
                       },
                       "range": [
-                        764,
-                        782
+                        745,
+                        763
                       ],
                       "loc": {
                         "start": {
@@ -1123,8 +1123,8 @@
                     }
                   ],
                   "range": [
-                    749,
-                    782
+                    730,
+                    763
                   ],
                   "loc": {
                     "start": {
@@ -1139,8 +1139,8 @@
                 }
               ],
               "range": [
-                623,
-                786
+                604,
+                767
               ],
               "loc": {
                 "start": {
@@ -1155,8 +1155,8 @@
             }
           ],
           "range": [
-            619,
-            788
+            600,
+            769
           ],
           "loc": {
             "start": {
@@ -1172,8 +1172,8 @@
         "generator": false,
         "expression": false,
         "range": [
-          601,
-          788
+          582,
+          769
         ],
         "loc": {
           "start": {
@@ -1190,8 +1190,8 @@
             "type": "Block",
             "value": "*\n * Pointwise or\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * or(1, 2)\n * // returns 1 || 2\n * or([1, 2], [2, 2])\n * // returns [1 || 2, 2 || 2]\n * or([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 || 2, 1 || 2], [1 || 2, 2 || 2] ]\n ",
             "range": [
-              267,
-              585
+              248,
+              566
             ],
             "loc": {
               "start": {
@@ -1208,8 +1208,8 @@
         "trailingComments": []
       },
       "range": [
-        586,
-        788
+        567,
+        769
       ],
       "loc": {
         "start": {
@@ -1226,8 +1226,8 @@
           "type": "Block",
           "value": "*\n * Pointwise or\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * or(1, 2)\n * // returns 1 || 2\n * or([1, 2], [2, 2])\n * // returns [1 || 2, 2 || 2]\n * or([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 || 2, 1 || 2], [1 || 2, 2 || 2] ]\n ",
           "range": [
-            267,
-            585
+            248,
+            566
           ],
           "loc": {
             "start": {
@@ -1246,7 +1246,7 @@
   "sourceType": "module",
   "range": [
     0,
-    788
+    769
   ],
   "loc": {
     "start": {
@@ -1263,8 +1263,8 @@
       "type": "Block",
       "value": "*\n * Pointwise or\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * or(1, 2)\n * // returns 1 || 2\n * or([1, 2], [2, 2])\n * // returns [1 || 2, 2 || 2]\n * or([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 || 2, 1 || 2], [1 || 2, 2 || 2] ]\n ",
       "range": [
-        267,
-        585
+        248,
+        566
       ],
       "loc": {
         "start": {

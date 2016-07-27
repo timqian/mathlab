@@ -1446,11 +1446,11 @@
               "arguments": [
                 {
                   "type": "Literal",
-                  "value": "mathlab.norm2: norm2 for sparse matrix has not been implemented yet",
-                  "raw": "'mathlab.norm2: norm2 for sparse matrix has not been implemented yet'",
+                  "value": "mathlab.norm2: norm2 for sparse matrix not exist",
+                  "raw": "'mathlab.norm2: norm2 for sparse matrix not exist'",
                   "range": [
                     610,
-                    679
+                    660
                   ],
                   "loc": {
                     "start": {
@@ -1459,14 +1459,14 @@
                     },
                     "end": {
                       "line": 37,
-                      "column": 87
+                      "column": 68
                     }
                   }
                 }
               ],
               "range": [
                 600,
-                680
+                661
               ],
               "loc": {
                 "start": {
@@ -1475,13 +1475,13 @@
                 },
                 "end": {
                   "line": 37,
-                  "column": 88
+                  "column": 69
                 }
               }
             },
             "range": [
               594,
-              681
+              662
             ],
             "loc": {
               "start": {
@@ -1497,7 +1497,7 @@
         ],
         "range": [
           590,
-          682
+          663
         ],
         "loc": {
           "start": {
@@ -1514,7 +1514,7 @@
       "expression": false,
       "range": [
         568,
-        682
+        663
       ],
       "loc": {
         "start": {
@@ -1533,8 +1533,8 @@
         "type": "Identifier",
         "name": "norm2",
         "range": [
-          693,
-          698
+          674,
+          679
         ],
         "loc": {
           "start": {
@@ -1552,8 +1552,8 @@
           "type": "Identifier",
           "name": "x",
           "range": [
-            699,
-            700
+            680,
+            681
           ],
           "loc": {
             "start": {
@@ -1581,8 +1581,8 @@
                   "type": "Identifier",
                   "name": "Math",
                   "range": [
-                    713,
-                    717
+                    694,
+                    698
                   ],
                   "loc": {
                     "start": {
@@ -1599,8 +1599,8 @@
                   "type": "Identifier",
                   "name": "sqrt",
                   "range": [
-                    718,
-                    722
+                    699,
+                    703
                   ],
                   "loc": {
                     "start": {
@@ -1614,8 +1614,8 @@
                   }
                 },
                 "range": [
-                  713,
-                  722
+                  694,
+                  703
                 ],
                 "loc": {
                   "start": {
@@ -1635,8 +1635,8 @@
                     "type": "Identifier",
                     "name": "norm2Squared",
                     "range": [
-                      723,
-                      735
+                      704,
+                      716
                     ],
                     "loc": {
                       "start": {
@@ -1654,8 +1654,8 @@
                       "type": "Identifier",
                       "name": "x",
                       "range": [
-                        736,
-                        737
+                        717,
+                        718
                       ],
                       "loc": {
                         "start": {
@@ -1670,8 +1670,8 @@
                     }
                   ],
                   "range": [
-                    723,
-                    738
+                    704,
+                    719
                   ],
                   "loc": {
                     "start": {
@@ -1686,8 +1686,8 @@
                 }
               ],
               "range": [
-                713,
-                739
+                694,
+                720
               ],
               "loc": {
                 "start": {
@@ -1701,8 +1701,8 @@
               }
             },
             "range": [
-              706,
-              740
+              687,
+              721
             ],
             "loc": {
               "start": {
@@ -1717,8 +1717,8 @@
           }
         ],
         "range": [
-          702,
-          743
+          683,
+          724
         ],
         "loc": {
           "start": {
@@ -1734,8 +1734,8 @@
       "generator": false,
       "expression": false,
       "range": [
-        684,
-        743
+        665,
+        724
       ],
       "loc": {
         "start": {
@@ -1752,7 +1752,7 @@
   "sourceType": "module",
   "range": [
     0,
-    743
+    724
   ],
   "loc": {
     "start": {

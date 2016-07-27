@@ -1,10 +1,10 @@
 > Note: Unstable, Developing
 
 # mathlab
+Lodash like math lab in javascript, focusing on matrix manipulation.
 
 [![npm](https://nodei.co/npm/mathlab.png)](https://www.npmjs.com/package/mathlab)
 
-Lodash like math lab in javascript, focusing on matrix manipulation.
 
 ## Features
 - **Modulize**: only import the function you need.

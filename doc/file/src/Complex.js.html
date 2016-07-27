@@ -33,6 +33,7 @@
   <ul>
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Complex.js~Complex.html">Complex</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-abs">abs</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-acos">acos</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-add">add</a></span></span></li>
@@ -105,9 +106,8 @@ import clone from &apos;./clone&apos;;
 import neg from &apos;./neg&apos;;
 import add from &apos;./add&apos;;
 import getBlock from &apos;./getBlock&apos;;
-import setBlock from &apos;./setBlock&apos;
+import setBlock from &apos;./setBlock&apos;;
 import transpose from &apos;./transpose&apos;;
-
 
 export default class Complex {
   constructor(x, y) {
@@ -132,6 +132,7 @@ export default class Complex {
     if(y) { return new Complex(t(x), negtranspose(y)); }
     return new Complex(t(x));
   }
+  
   get(i) {
     var x = this.x, y = this.y, k = 0, ik, n = i.length;
     if(y) {
@@ -150,6 +151,7 @@ export default class Complex {
     }
     return new Complex(x);
   }
+  
   set(i,v) {
     var x = this.x, y = this.y, k = 0, ik, n = i.length, vx = v.x, vy = v.y;
     if(n===0) {

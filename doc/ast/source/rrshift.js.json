@@ -531,11 +531,11 @@
               "arguments": [
                 {
                   "type": "Literal",
-                  "value": "mathlab.rrshift: rrshift for sparse matrix has not been implemented yet",
-                  "raw": "'mathlab.rrshift: rrshift for sparse matrix has not been implemented yet'",
+                  "value": "mathlab.rrshift: rrshift for sparse matrix not exist",
+                  "raw": "'mathlab.rrshift: rrshift for sparse matrix not exist'",
                   "range": [
                     225,
-                    298
+                    279
                   ],
                   "loc": {
                     "start": {
@@ -544,14 +544,14 @@
                     },
                     "end": {
                       "line": 10,
-                      "column": 91
+                      "column": 72
                     }
                   }
                 }
               ],
               "range": [
                 215,
-                299
+                280
               ],
               "loc": {
                 "start": {
@@ -560,13 +560,13 @@
                 },
                 "end": {
                   "line": 10,
-                  "column": 92
+                  "column": 73
                 }
               }
             },
             "range": [
               209,
-              300
+              281
             ],
             "loc": {
               "start": {
@@ -582,7 +582,7 @@
         ],
         "range": [
           205,
-          301
+          282
         ],
         "loc": {
           "start": {
@@ -599,7 +599,7 @@
       "expression": false,
       "range": [
         181,
-        301
+        282
       ],
       "loc": {
         "start": {
@@ -616,8 +616,8 @@
           "type": "Block",
           "value": "*\n * Pointwise rrshift\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * rrshift(1, 2)\n * // returns 1 >>> 2\n * rrshift([1, 2], [2, 2])\n * // returns [1 >>> 2, 2 >>> 2]\n * rrshift([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 >>> 2, 1 >>> 2], [1 >>> 2, 2 >>> 2] ]\n ",
           "range": [
-            303,
-            648
+            284,
+            629
           ],
           "loc": {
             "start": {
@@ -642,8 +642,8 @@
             "type": "Identifier",
             "name": "m1",
             "range": [
-              674,
-              676
+              655,
+              657
             ],
             "loc": {
               "start": {
@@ -660,8 +660,8 @@
             "type": "Identifier",
             "name": "m2",
             "range": [
-              678,
-              680
+              659,
+              661
             ],
             "loc": {
               "start": {
@@ -690,8 +690,8 @@
                     "type": "Identifier",
                     "name": "m1",
                     "range": [
-                      694,
-                      696
+                      675,
+                      677
                     ],
                     "loc": {
                       "start": {
@@ -708,8 +708,8 @@
                     "type": "Identifier",
                     "name": "constructor",
                     "range": [
-                      697,
-                      708
+                      678,
+                      689
                     ],
                     "loc": {
                       "start": {
@@ -723,8 +723,8 @@
                     }
                   },
                   "range": [
-                    694,
-                    708
+                    675,
+                    689
                   ],
                   "loc": {
                     "start": {
@@ -741,8 +741,8 @@
                   "type": "Identifier",
                   "name": "name",
                   "range": [
-                    709,
-                    713
+                    690,
+                    694
                   ],
                   "loc": {
                     "start": {
@@ -756,8 +756,8 @@
                   }
                 },
                 "range": [
-                  694,
-                  713
+                  675,
+                  694
                 ],
                 "loc": {
                   "start": {
@@ -778,8 +778,8 @@
                     "value": "Complex",
                     "raw": "'Complex'",
                     "range": [
-                      726,
-                      735
+                      707,
+                      716
                     ],
                     "loc": {
                       "start": {
@@ -801,8 +801,8 @@
                           "type": "Identifier",
                           "name": "crrshift",
                           "range": [
-                            750,
-                            758
+                            731,
+                            739
                           ],
                           "loc": {
                             "start": {
@@ -820,8 +820,8 @@
                             "type": "Identifier",
                             "name": "m1",
                             "range": [
-                              759,
-                              761
+                              740,
+                              742
                             ],
                             "loc": {
                               "start": {
@@ -838,8 +838,8 @@
                             "type": "Identifier",
                             "name": "m2",
                             "range": [
-                              763,
-                              765
+                              744,
+                              746
                             ],
                             "loc": {
                               "start": {
@@ -854,8 +854,8 @@
                           }
                         ],
                         "range": [
-                          750,
-                          766
+                          731,
+                          747
                         ],
                         "loc": {
                           "start": {
@@ -869,8 +869,8 @@
                         }
                       },
                       "range": [
-                        743,
-                        767
+                        724,
+                        748
                       ],
                       "loc": {
                         "start": {
@@ -885,8 +885,8 @@
                     }
                   ],
                   "range": [
-                    721,
-                    767
+                    702,
+                    748
                   ],
                   "loc": {
                     "start": {
@@ -906,8 +906,8 @@
                     "value": "Sparse",
                     "raw": "'Sparse'",
                     "range": [
-                      777,
-                      785
+                      758,
+                      766
                     ],
                     "loc": {
                       "start": {
@@ -929,8 +929,8 @@
                           "type": "Identifier",
                           "name": "srrshift",
                           "range": [
-                            800,
-                            808
+                            781,
+                            789
                           ],
                           "loc": {
                             "start": {
@@ -948,8 +948,8 @@
                             "type": "Identifier",
                             "name": "m1",
                             "range": [
-                              809,
-                              811
+                              790,
+                              792
                             ],
                             "loc": {
                               "start": {
@@ -966,8 +966,8 @@
                             "type": "Identifier",
                             "name": "m2",
                             "range": [
-                              813,
-                              815
+                              794,
+                              796
                             ],
                             "loc": {
                               "start": {
@@ -982,8 +982,8 @@
                           }
                         ],
                         "range": [
-                          800,
-                          816
+                          781,
+                          797
                         ],
                         "loc": {
                           "start": {
@@ -997,8 +997,8 @@
                         }
                       },
                       "range": [
-                        793,
-                        817
+                        774,
+                        798
                       ],
                       "loc": {
                         "start": {
@@ -1013,8 +1013,8 @@
                     }
                   ],
                   "range": [
-                    772,
-                    817
+                    753,
+                    798
                   ],
                   "loc": {
                     "start": {
@@ -1039,8 +1039,8 @@
                           "type": "Identifier",
                           "name": "rrshift",
                           "range": [
-                            844,
-                            851
+                            825,
+                            832
                           ],
                           "loc": {
                             "start": {
@@ -1058,8 +1058,8 @@
                             "type": "Identifier",
                             "name": "m1",
                             "range": [
-                              852,
-                              854
+                              833,
+                              835
                             ],
                             "loc": {
                               "start": {
@@ -1076,8 +1076,8 @@
                             "type": "Identifier",
                             "name": "m2",
                             "range": [
-                              856,
-                              858
+                              837,
+                              839
                             ],
                             "loc": {
                               "start": {
@@ -1092,8 +1092,8 @@
                           }
                         ],
                         "range": [
-                          844,
-                          859
+                          825,
+                          840
                         ],
                         "loc": {
                           "start": {
@@ -1107,8 +1107,8 @@
                         }
                       },
                       "range": [
-                        837,
-                        860
+                        818,
+                        841
                       ],
                       "loc": {
                         "start": {
@@ -1123,8 +1123,8 @@
                     }
                   ],
                   "range": [
-                    822,
-                    860
+                    803,
+                    841
                   ],
                   "loc": {
                     "start": {
@@ -1139,8 +1139,8 @@
                 }
               ],
               "range": [
-                686,
-                864
+                667,
+                845
               ],
               "loc": {
                 "start": {
@@ -1155,8 +1155,8 @@
             }
           ],
           "range": [
-            682,
-            866
+            663,
+            847
           ],
           "loc": {
             "start": {
@@ -1172,8 +1172,8 @@
         "generator": false,
         "expression": false,
         "range": [
-          664,
-          866
+          645,
+          847
         ],
         "loc": {
           "start": {
@@ -1190,8 +1190,8 @@
             "type": "Block",
             "value": "*\n * Pointwise rrshift\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * rrshift(1, 2)\n * // returns 1 >>> 2\n * rrshift([1, 2], [2, 2])\n * // returns [1 >>> 2, 2 >>> 2]\n * rrshift([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 >>> 2, 1 >>> 2], [1 >>> 2, 2 >>> 2] ]\n ",
             "range": [
-              303,
-              648
+              284,
+              629
             ],
             "loc": {
               "start": {
@@ -1208,8 +1208,8 @@
         "trailingComments": []
       },
       "range": [
-        649,
-        866
+        630,
+        847
       ],
       "loc": {
         "start": {
@@ -1226,8 +1226,8 @@
           "type": "Block",
           "value": "*\n * Pointwise rrshift\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * rrshift(1, 2)\n * // returns 1 >>> 2\n * rrshift([1, 2], [2, 2])\n * // returns [1 >>> 2, 2 >>> 2]\n * rrshift([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 >>> 2, 1 >>> 2], [1 >>> 2, 2 >>> 2] ]\n ",
           "range": [
-            303,
-            648
+            284,
+            629
           ],
           "loc": {
             "start": {
@@ -1246,7 +1246,7 @@
   "sourceType": "module",
   "range": [
     0,
-    866
+    847
   ],
   "loc": {
     "start": {
@@ -1263,8 +1263,8 @@
       "type": "Block",
       "value": "*\n * Pointwise rrshift\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * rrshift(1, 2)\n * // returns 1 >>> 2\n * rrshift([1, 2], [2, 2])\n * // returns [1 >>> 2, 2 >>> 2]\n * rrshift([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 >>> 2, 1 >>> 2], [1 >>> 2, 2 >>> 2] ]\n ",
       "range": [
-        303,
-        648
+        284,
+        629
       ],
       "loc": {
         "start": {

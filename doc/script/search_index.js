@@ -6,6 +6,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "mathlab/src/sparse.js~sparse",
+    "class/src/Sparse.js~Sparse.html",
+    "<span>Sparse</span> <span class=\"search-result-import-path\">mathlab/src/Sparse.js</span>",
+    "class"
+  ],
+  [
     "mathlab/src/abs.js~abs",
     "function/index.html#static-function-abs",
     "<span>abs</span> <span class=\"search-result-import-path\">mathlab/src/abs.js</span>",
@@ -792,10 +798,40 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/oldt.js",
-    "file/src/OldT.js.html",
-    "src/OldT.js",
+    "src/sparse.js",
+    "file/src/Sparse.js.html",
+    "src/Sparse.js",
     "file"
+  ],
+  [
+    "src/sparse.js~sparse#col",
+    "class/src/Sparse.js~Sparse.html#instance-member-col",
+    "src/Sparse.js~Sparse#col",
+    "member"
+  ],
+  [
+    "src/sparse.js~sparse#constructor",
+    "class/src/Sparse.js~Sparse.html#instance-constructor-constructor",
+    "src/Sparse.js~Sparse#constructor",
+    "method"
+  ],
+  [
+    "src/sparse.js~sparse#row",
+    "class/src/Sparse.js~Sparse.html#instance-member-row",
+    "src/Sparse.js~Sparse#row",
+    "member"
+  ],
+  [
+    "src/sparse.js~sparse#tofull",
+    "class/src/Sparse.js~Sparse.html#instance-method-toFull",
+    "src/Sparse.js~Sparse#toFull",
+    "method"
+  ],
+  [
+    "src/sparse.js~sparse#val",
+    "class/src/Sparse.js~Sparse.html#instance-member-val",
+    "src/Sparse.js~Sparse#val",
+    "member"
   ],
   [
     "src/abs.js",

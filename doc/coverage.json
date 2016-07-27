@@ -1,29 +1,41 @@
 {
-  "coverage": "76.31%",
-  "expectCount": 76,
+  "coverage": "70.73%",
+  "expectCount": 82,
   "actualCount": 58,
   "files": {
     "src/Complex.js": {
       "expectCount": 17,
       "actualCount": 0,
       "undocumentLines": [
+        12,
         13,
-        14,
-        163,
+        164,
         36,
-        144,
-        127,
-        102,
-        27,
-        189,
-        19,
-        54,
-        150,
-        132,
-        114,
-        31,
-        15,
-        16
+        145,
+        128,
+        103,
+        26,
+        190,
+        18,
+        55,
+        151,
+        133,
+        115,
+        30,
+        14,
+        15
+      ]
+    },
+    "src/Sparse.js": {
+      "expectCount": 6,
+      "actualCount": 0,
+      "undocumentLines": [
+        4,
+        7,
+        5,
+        8,
+        43,
+        9
       ]
     },
     "src/abs.js": {
