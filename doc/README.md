@@ -31,34 +31,34 @@ mathlab support Complex number/vectors/matrix and Sparse matrix manipulation.
 2. Sparse matrix
 
 	example:
-```js
-import {Sparse, abs} from 'mathlab'
+	```js
+	import {Sparse, abs} from 'mathlab'
 
-// transform normal matrix to sparse
-const s = new Sparse([[-1,-2,0],
-                      [0,-3,0],
-                      [-2,0,-5]])
-// {
-// 	col: [0,2,4,5],
-// 	row: [0,2,0,1,2],
-// 	val: [-1,-2,-2,-3,-5]
-// }
+	// transform normal matrix to sparse
+	const s = new Sparse([[-1,-2,0],
+												[0,-3,0],
+												[-2,0,-5]])
+	// {
+	// 	col: [0,2,4,5],
+	// 	row: [0,2,0,1,2],
+	// 	val: [-1,-2,-2,-3,-5]
+	// }
 
 
-// manipulation
-const sAbs = abs(s)
-// {
-// 	col: [0,2,4,5],
-// 	row: [0,2,0,1,2],
-// 	val: [1,2,2,3,5]
-// }
+	// manipulation
+	const sAbs = abs(s)
+	// {
+	// 	col: [0,2,4,5],
+	// 	row: [0,2,0,1,2],
+	// 	val: [1,2,2,3,5]
+	// }
 
-// transform sparse matrix to full matrix
-sAbs.toFull()
-// [[-1,-2,0],
-// [0,-3,0],
-// [-2,0,-5]]
-```
+	// transform sparse matrix to full matrix
+	sAbs.toFull()
+	// [[-1,-2,0],
+	// [0,-3,0],
+	// [-2,0,-5]]
+	```
 
 ## Function list
    |         |         |              |           |            |           |                |
@@ -76,6 +76,13 @@ band   |   det   |      exp   |      inv   |       neg   |       pointwise   |  
 
 ## Math Object functions
 
+
+### Function list:
+
+
+
+
+### Sample usage
 <a name='abs'><a/>
 - [**abs(x)**](#abs): Pointwise [Math.abs(x)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/abs) [*(source)*](https://github.com/timqian/mathlab/blob/master/src/abs.js)
 	+ params: `Number | Array | Complex | Sparse`
