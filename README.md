@@ -29,5 +29,5 @@ const y = dot(A, x)
 console.log(y); // [50,122]
 ```
 
-# [Documents](https://github.com/timqian/mathlab/tree/master/doc#readme)
+# [Documents wrote by human](https://github.com/timqian/mathlab/tree/master/doc#readme)
 # [Documents generated from comments](http://timqian.com/mathlab)
