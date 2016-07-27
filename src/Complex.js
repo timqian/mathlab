@@ -10,9 +10,9 @@ import setBlock from './setBlock';
 import transpose from './transpose';
 
 export default class Complex {
-  constructor(x, y) {
-    this.re = x;
-    this.im = y;
+  constructor(re, im) {
+    this.re = re;
+    this.im = im;
   }
 
   reciprocal() {
