@@ -21,11 +21,11 @@ describe('dot', () => {
   })
 
   it('Complex', () => {
-    dot(new Complex(1), 2).x.should.be.equal(2)
+    dot(new Complex(1), 2).re.should.be.equal(2)
     // {x: -2, y: 14}
     dot(new Complex([1, 2], [2, 2]), new Complex([2,2], [2,2]))
-      .x.should.equal(-2)
+      .re.should.equal(-2)
     dot(new Complex([1, 2], [2, 2]), new Complex([2,2], [2,2]))
-      .y.should.equal(14)
+      .im.should.equal(14)
   })
 })

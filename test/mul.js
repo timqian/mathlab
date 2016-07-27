@@ -14,8 +14,8 @@ describe('mul', () => {
       .should.deepEqual(
         [ [2 * 2, 1 * 2], [1 * 2, 2 * 2] ]
       )
-    mul(c1, c2).x.should.deepEqual([ 1, 3 ])
-    mul(c1, c2).y.should.deepEqual([ 3, 4 ])
-    mul(c1, 3).x.should.deepEqual([3, 6])
+    mul(c1, c2).re.should.deepEqual([ 1, 3 ])
+    mul(c1, c2).im.should.deepEqual([ 3, 4 ])
+    mul(c1, 3).re.should.deepEqual([3, 6])
   })
 })

@@ -10,8 +10,8 @@ describe('getDiag', function () {
 
   it('Complex', () =>{
     getDiag(new Complex([[1, 3], [0, 2]], [[1, 3], [0, 2]]))
-      .x.should.deepEqual([1,2])
+      .re.should.deepEqual([1,2])
     getDiag(new Complex([[1, 3], [0, 2]], [[1, 3], [0, 2]]))
-      .y.should.deepEqual([1,2])
+      .im.should.deepEqual([1,2])
   })
 })

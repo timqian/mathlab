@@ -11,10 +11,10 @@ describe('cos', () => {
   })
 
   it('Complex', () => {
-    cos(new Complex(1)).x.should.approximately(0.540, 0.01)
+    cos(new Complex(1)).re.should.approximately(0.540, 0.01)
     // {x: [ -0.6421, -1.566], y: [ 1.069, 3.298]}
-    cos(new Complex([1, 2], [2, 2])).x[0].should.approximately(-0.642, 0.01)
-    cos(new Complex([1, 2], [2, 2])).y[1].should.approximately(3.298, 0.01)
+    cos(new Complex([1, 2], [2, 2])).re[0].should.approximately(-0.642, 0.01)
+    cos(new Complex([1, 2], [2, 2])).im[1].should.approximately(3.298, 0.01)
   })
 
   it('Sparse', () =>{

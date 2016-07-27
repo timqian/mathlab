@@ -11,11 +11,11 @@ describe('sub', () => {
       .should.deepEqual(
         [ [2 - 2, 1 - 2], [1 - 2, 2 - 2] ]
       )
-    sub(new Complex(1, 2), 2).x.should.equal(-1)
-    sub(new Complex(1, 2), 2).y.should.equal(2)
+    sub(new Complex(1, 2), 2).re.should.equal(-1)
+    sub(new Complex(1, 2), 2).im.should.equal(2)
     sub(new Complex([1,2], [2,2]), new Complex([1,1],[1,1]))
-      .x.should.deepEqual([0, 1])
+      .re.should.deepEqual([0, 1])
     sub(new Complex([[1,2], [2,2]]), [[1,1],[1,1]])
-      .x.should.deepEqual([[0,1],[1,1]])
+      .re.should.deepEqual([[0,1],[1,1]])
   })
 })

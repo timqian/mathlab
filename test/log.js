@@ -11,10 +11,10 @@ describe('log', () => {
   })
 
  it('Complex', () => {
-    log(new Complex(1)).x.should.approximately(0, 0.01)
+    log(new Complex(1)).re.should.approximately(0, 0.01)
     // {x: [ 0.8047, 1.04], y: [ 1.107, 0.7854]}
-    log(new Complex([1, 2], [2, 2])).x[0].should.approximately(0.804, 0.01)
-    log(new Complex([1, 2], [2, 2])).y[1].should.approximately(0.785, 0.01)
+    log(new Complex([1, 2], [2, 2])).re[0].should.approximately(0.804, 0.01)
+    log(new Complex([1, 2], [2, 2])).im[1].should.approximately(0.785, 0.01)
   })
 
  it('Sparse', () =>{

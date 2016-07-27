@@ -10,11 +10,11 @@ import sub from './sub'
 const sin = pointwise(Math.sin)
 
 function csin(x) {
-  if (x.y) {
+  if (x.im) {
     return div(sub(exp(x), exp(neg(x))), new Complex(0,2))
     // return x.exp().sub(x.neg().exp()).div(new Complex(0, 2));
   }
-  return new Complex(sin(x.x));
+  return new Complex(sin(x.re));
 }
 
 function ssin(x) {

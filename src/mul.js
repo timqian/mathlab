@@ -9,16 +9,16 @@ const amul = pointwise((x, y) => x * y)
 // complex array mul
 function cmul(x, y) {
   if(!(y instanceof Complex)) { y = new Complex(y); }
-  if (x.y) {
-    if (y.y) {
-      return new Complex(sub(amul(x.x, y.x), amul(x.y, y.y)), add(amul(x.x, y.y), amul(x.y, y.x)));
+  if (x.im) {
+    if (y.im) {
+      return new Complex(sub(amul(x.re, y.re), amul(x.im, y.im)), add(amul(x.re, y.im), amul(x.im, y.re)));
     }
-    return new Complex(amul(x.x, y.x), amul(x.y, y.x));
+    return new Complex(amul(x.re, y.re), amul(x.im, y.re));
   }
-  if (y.y) {
-    return new Complex(amul(x.x, y.x), amul(x.x, y.y));
+  if (y.im) {
+    return new Complex(amul(x.re, y.re), amul(x.re, y.im));
   }
-  return new Complex(amul(x.x, y.x));
+  return new Complex(amul(x.re, y.re));
 }
 
 function smul(x, y) {

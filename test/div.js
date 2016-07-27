@@ -18,8 +18,8 @@ describe('div', () => {
 
   it('Complex', () => {
     div([4, 2], 2).should.deepEqual([2, 1])
-    div(c1, c2).x.should.deepEqual([ 0.6000000000000001, 1 ])
-    div(c1, c2).y.should.deepEqual([ 0.2, 0 ])
-    div(c1, 2).x.should.deepEqual([.5, 1])
+    div(c1, c2).re.should.deepEqual([ 0.6000000000000001, 1 ])
+    div(c1, c2).im.should.deepEqual([ 0.2, 0 ])
+    div(c1, 2).re.should.deepEqual([.5, 1])
   })
 })

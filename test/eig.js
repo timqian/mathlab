@@ -10,8 +10,8 @@ describe('eig', () => {
 		//	      y: }
 		// }
     eig([[1,2,5],[3,5,-1],[7,-3,5]])
-      .lambda.x[0].should.be.approximately(-4.28, 0.01)
+      .lambda.re[0].should.be.approximately(-4.28, 0.01)
 		eig([[1,2,5],[3,5,-1],[7,-3,5]])
-			.E.x[0][0].should.approximately(0.71, 0.1)
+			.E.re[0][0].should.approximately(0.71, 0.1)
   })
 })

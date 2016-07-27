@@ -9,10 +9,10 @@ import add from './add';
 const abs = pointwise(Math.abs)
 
 function cabs(x) {
-  if (x.y) {
-    return new Complex(sqrt(add(mul(x.x, x.x), mul(x.y, x.y))));
+  if (x.im) {
+    return new Complex(sqrt(add(mul(x.re, x.re), mul(x.im, x.im))));
   }
-  return new Complex(abs(x.x));
+  return new Complex(abs(x.re));
 }
 
 function sabs(x) {

@@ -6,16 +6,16 @@ const sub = pointwise((x, y) => x - y);
 
 function csub(x, y) {
   if (!(y instanceof Complex)) { y = new Complex(y); }
-  if (x.y) {
-    if (y.y) {
-      return new Complex(sub(x.x, y.x), sub(x.y, y.y));
+  if (x.im) {
+    if (y.im) {
+      return new Complex(sub(x.re, y.re), sub(x.im, y.im));
     }
-    return new Complex(sub(x.x, y.x), x.y);
+    return new Complex(sub(x.re, y.re), x.im);
   }
-  if (y.y) {
-    return new Complex(sub(x.x, y.x), neg(y.y));
+  if (y.im) {
+    return new Complex(sub(x.re, y.re), neg(y.im));
   }
-  return new Complex(sub(x.x, y.x));
+  return new Complex(sub(x.re, y.re));
 }
 
 function ssub(x, y) {

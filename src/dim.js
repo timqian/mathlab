@@ -21,10 +21,10 @@ export default function(x) {
 }
 
 function cdim(x) {
-  if (x.x) {
-    return dim(x.x)
+  if (x.re) {
+    return dim(x.re)
   } else {
-    return dim(x.y)
+    return dim(x.im)
   }
 }
 

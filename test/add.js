@@ -14,13 +14,13 @@ describe('add', () => {
   })
 
   it('Complex', () => {
-    add(new Complex(1, 2), 2).x.should.equal(3)
-    add(new Complex(1, 2), 2).y.should.equal(2)
+    add(new Complex(1, 2), 2).re.should.equal(3)
+    add(new Complex(1, 2), 2).im.should.equal(2)
     add(new Complex([1,2], [2,2]), new Complex([1,1],[1,1]))
-      .x.should.deepEqual([2, 3])
+      .re.should.deepEqual([2, 3])
     add(new Complex([[1,2], [2,2]]), [[1,1],[1,1]])
-      .x.should.deepEqual([[2, 3],[3,3]])
-    add(new Complex(1,2), 1).x.should.equal(2)
+      .re.should.deepEqual([[2, 3],[3,3]])
+    add(new Complex(1,2), 1).re.should.equal(2)
   })
 
   it('Sparse', () => {

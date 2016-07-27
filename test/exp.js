@@ -11,10 +11,10 @@ describe('exp', () => {
   })
 
   it('Complex', () => {
-    exp(new Complex(1)).x.should.approximately(2.718, 0.01)
+    exp(new Complex(1)).re.should.approximately(2.718, 0.01)
     /**{x: [ -1.131, -3.075], y: [ 2.472, 6.719]} */
-    exp(new Complex([1, 2], [2, 2])).x[0].should.approximately(-1.131, 0.01)
-    exp(new Complex([1, 2], [2, 2])).y[1].should.approximately(6.719, 0.01)
+    exp(new Complex([1, 2], [2, 2])).re[0].should.approximately(-1.131, 0.01)
+    exp(new Complex([1, 2], [2, 2])).im[1].should.approximately(6.719, 0.01)
   })
 
  it('Sparse', () =>{

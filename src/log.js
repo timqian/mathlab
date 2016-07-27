@@ -8,12 +8,12 @@ import abs from './abs'
 const log = pointwise(Math.log)
 
 function clog(x) {
-  if (x.y) {
-    var theta = new Complex(atan2(x.y, x.x)),
+  if (x.im) {
+    var theta = new Complex(atan2(x.im, x.re)),
       r = abs(x);
-    return new Complex(log(r.x), theta.x);
+    return new Complex(log(r.re), theta.re);
   }
-  return new Complex(log(x.x));
+  return new Complex(log(x.re));
 }
 
 function slog(x) {

@@ -9,9 +9,9 @@ import Sparse from './Sparse'
 const exp = pointwise(Math.exp)
 
 function cexp(x) {
-  var ex = exp(x.x);
-  if (x.y) {
-    return new Complex(mul(cos(x.y), ex), mul(sin(x.y), ex));
+  var ex = exp(x.re);
+  if (x.im) {
+    return new Complex(mul(cos(x.im), ex), mul(sin(x.im), ex));
   }
   return new Complex(ex);
 }

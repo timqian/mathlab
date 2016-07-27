@@ -6,12 +6,12 @@ const div = pointwise((x, y) => x / y);
 
 function cdiv(x, y) {
   if (!(y instanceof Complex)) y = new Complex(y);
-  if (y.y) {
+  if (y.im) {
     return mul(x, y.reciprocal()); 
   }
-  if (x.y) {
-    return new Complex(div(x.x, y.x), div(x.y, y.x)); }
-  return new Complex(div(x.x, y.x));
+  if (x.im) {
+    return new Complex(div(x.re, y.re), div(x.im, y.re)); }
+  return new Complex(div(x.re, y.re));
 }
 
 function sdiv(x, y) {

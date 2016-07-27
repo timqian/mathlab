@@ -5,16 +5,16 @@ const add = pointwise((x, y) => x + y);
 
 function cadd(x, y) {
   if (!(y instanceof Complex)) { y = new Complex(y); }
-  if (x.y) {
-    if (y.y) {
-      return new Complex(add(x.x, y.x), add(x.y, y.y));
+  if (x.im) {
+    if (y.im) {
+      return new Complex(add(x.re, y.re), add(x.im, y.im));
     }
-    return new Complex(add(x.x, y.x), x.y);
+    return new Complex(add(x.re, y.re), x.im);
   }
-  if (y.y) {
-    return new Complex(add(x.x, y.x), y.y);
+  if (y.im) {
+    return new Complex(add(x.re, y.re), y.im);
   }
-  return new Complex(add(x.x, y.x));
+  return new Complex(add(x.re, y.re));
 }
 
 function sadd(x, y) {

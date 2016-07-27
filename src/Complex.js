@@ -11,16 +11,16 @@ import transpose from './transpose';
 
 export default class Complex {
   constructor(x, y) {
-    this.x = x;
-    this.y = y;
+    this.re = x;
+    this.im = y;
   }
 
   reciprocal() {
-    if(this.y) {
-        var d = add(mul(this.x,this.x),mul(this.y,this.y));
-        return new Complex(div(this.x, d),div(neg(this.y), d));
+    if(this.im) {
+        var d = add(mul(this.re,this.re),mul(this.im,this.im));
+        return new Complex(div(this.re, d),div(neg(this.im), d));
     }
-    return new Complex(div(1, this.x));
+    return new Complex(div(1, this.re));
   }
 
   identity(n) {
@@ -28,13 +28,13 @@ export default class Complex {
   }
   
   transjugate() {
-    var t = transpose, x = this.x, y = this.y;
+    var t = transpose, x = this.re, y = this.im;
     if(y) { return new Complex(t(x), negtranspose(y)); }
     return new Complex(t(x));
   }
   
   get(i) {
-    var x = this.x, y = this.y, k = 0, ik, n = i.length;
+    var x = this.re, y = this.im, k = 0, ik, n = i.length;
     if(y) {
         while(k<n) {
             ik = i[k];
@@ -53,18 +53,18 @@ export default class Complex {
   }
   
   set(i,v) {
-    var x = this.x, y = this.y, k = 0, ik, n = i.length, vx = v.x, vy = v.y;
+    var x = this.re, y = this.im, k = 0, ik, n = i.length, vx = v.re, vy = v.im;
     if(n===0) {
-        if(vy) { this.y = vy; }
-        else if(y) { this.y = undefined; }
-        this.x = x;
+        if(vy) { this.im = vy; }
+        else if(y) { this.im = undefined; }
+        this.re = x;
         return this;
     }
     if(vy) {
         if(y) { /* ok */ }
         else {
             y = rep(dim(x),0);
-            this.y = y;
+            this.im = y;
         }
         while(k<n-1) {
             ik = i[k];
@@ -102,7 +102,7 @@ export default class Complex {
 
   getRows(i0,i1) {
     var n = i1-i0+1, j;
-    var rx = Array(n), ry, x = this.x, y = this.y;
+    var rx = Array(n), ry, x = this.re, y = this.im;
     for(j=i0;j<=i1;j++) { rx[j-i0] = x[j]; }
     if(y) {
         ry = Array(n);
@@ -114,10 +114,10 @@ export default class Complex {
 
   setRows(i0,i1,A) {
     var j;
-    var rx = this.x, ry = this.y, x = A.x, y = A.y;
+    var rx = this.re, ry = this.im, x = A.re, y = A.im;
     for(j=i0;j<=i1;j++) { rx[j] = x[j-i0]; }
     if(y) {
-        if(!ry) { ry = rep(dim(rx),0); this.y = ry; }
+        if(!ry) { ry = rep(dim(rx),0); this.im = ry; }
         for(j=i0;j<=i1;j++) { ry[j] = y[j-i0]; }
     } else if(ry) {
         for(j=i0;j<=i1;j++) { ry[j] = rep([x[j-i0].length],0); }
@@ -126,15 +126,15 @@ export default class Complex {
   }
 
   getRow(k) {
-    var x = this.x, y = this.y;
+    var x = this.re, y = this.im;
     if(y) { return new Complex(x[k],y[k]); }
     return new Complex(x[k]);
   }
   setRow(i,v) {
-    var rx = this.x, ry = this.y, x = v.x, y = v.y;
+    var rx = this.re, ry = this.im, x = v.re, y = v.im;
     rx[i] = x;
     if(y) {
-        if(!ry) { ry = rep(dim(rx),0); this.y = ry; }
+        if(!ry) { ry = rep(dim(rx),0); this.im = ry; }
         ry[i] = y;
     } else if(ry) {
         ry = rep([x.length],0);
@@ -143,16 +143,16 @@ export default class Complex {
   }
 
   getBlock(from,to) {
-    var x = this.x, y = this.y, b = getBlock;
+    var x = this.re, y = this.im, b = getBlock;
     if(y) { return new Complex(b(x,from,to),b(y,from,to)); }
     return new Complex(b(x,from,to));
   }
 
   setBlock(from,to,A) {
     if(!(A instanceof Complex)) A = new Complex(A);
-    var x = this.x, y = this.y, b = setBlock, Ax = A.x, Ay = A.y;
+    var x = this.re, y = this.im, b = setBlock, Ax = A.re, Ay = A.im;
     if(Ay) {
-        if(!y) { this.y = rep(dim(this),0); y = this.y; }
+        if(!y) { this.im = rep(dim(this),0); y = this.im; }
         b(x,from,to,Ax);
         b(y,from,to,Ay);
         return this;
@@ -162,7 +162,7 @@ export default class Complex {
   }
 
   fft() {
-    var x = this.x, y = this.y;
+    var x = this.re, y = this.im;
     var n = x.length, log = Math.log, log2 = log(2),
         p = Math.ceil(log(2*n-1)/log2), m = Math.pow(2,p);
     var cx = rep([m],0), cy = rep([m],0), cos = Math.cos, sin = Math.sin;
@@ -180,15 +180,15 @@ export default class Complex {
     }
     var X = new Complex(a,b), Y = new Complex(cx,cy);
     X = mul(X, Y);
-    convpow2(X.x, X.y, clone(Y.x), neg(Y.y));
+    convpow2(X.re, X.im, clone(Y.re), neg(Y.im));
     X = mul(X, Y);
-    X.x.length = n;
-    X.y.length = n;
+    X.re.length = n;
+    X.im.length = n;
     return X;
   }
 
   ifft() {
-    var x = this.x, y = this.y;
+    var x = this.re, y = this.im;
     var n = x.length, log = Math.log, log2 = log(2),
         p = Math.ceil(log(2*n-1)/log2), m = Math.pow(2,p);
     var cx = rep([m],0), cy = rep([m],0), cos = Math.cos, sin = Math.sin;
@@ -206,10 +206,10 @@ export default class Complex {
     }
     var X = new Complex(a,b), Y = new Complex(cx,cy);
     X = mul(X, Y);
-    convpow2(X.x, X.y, clone(Y.x), neg(Y.y));
+    convpow2(X.re, X.im, clone(Y.re), neg(Y.im));
     X = mul(X, Y);
-    X.x.length = n;
-    X.y.length = n;
+    X.re.length = n;
+    X.im.length = n;
     return div(X, n);
   }
 }

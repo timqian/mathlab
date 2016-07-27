@@ -31,16 +31,16 @@ export default function (x, y) {
 
 function cdot(x, y) {
   if (!(y instanceof Complex)) { y = new Complex(y); }
-    if (x.y) {
-      if (y.y) {
-        return new Complex(sub(dot(x.x, y.x), dot(x.y, y.y)), add(dot(x.x, y.y), dot(x.y, y.x)));
+    if (x.im) {
+      if (y.im) {
+        return new Complex(sub(dot(x.re, y.re), dot(x.im, y.im)), add(dot(x.re, y.im), dot(x.im, y.re)));
       }
-      return new Complex(dot(x.x, y.x), dot(x.y, y.x));
+      return new Complex(dot(x.re, y.re), dot(x.im, y.re));
     }
-    if (y.y) {
-      return new Complex(dot(x.x, y.x), dot(x.x, y.y));
+    if (y.im) {
+      return new Complex(dot(x.re, y.re), dot(x.re, y.im));
     }
-    return new Complex(dot(x.x, y.x));
+    return new Complex(dot(x.re, y.re));
 }
 
 function sdot(x, y) {

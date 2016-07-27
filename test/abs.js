@@ -12,9 +12,9 @@ describe('abs', () => {
   })
 
   it('Complex', () => {
-    abs(new Complex(-1)).x.should.approximately(1, 0.01)
+    abs(new Complex(-1)).re.should.approximately(1, 0.01)
     // {x: [ 2.236, 2.828], y: }
-    abs(new Complex([1, 2], [2, 2])).x[0].should.approximately(2.236, 0.01)
+    abs(new Complex([1, 2], [2, 2])).re[0].should.approximately(2.236, 0.01)
   })
 
   it('Sparse', () => {

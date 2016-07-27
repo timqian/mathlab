@@ -12,10 +12,10 @@ describe('sin', () => {
 
 
   it('Complex', () => {
-    sin(new Complex(1)).x.should.approximately(0.841, 0.01)
+    sin(new Complex(1)).re.should.approximately(0.841, 0.01)
     // {x: [ 1.403, 3.421], y: [ 0.4891, 1.509]}
-    sin(new Complex([1, 2], [2, 2])).x[0].should.approximately(1.403, 0.01)
-    sin(new Complex([1, 2], [2, 2])).y[1].should.approximately(1.509, 0.01)
+    sin(new Complex([1, 2], [2, 2])).re[0].should.approximately(1.403, 0.01)
+    sin(new Complex([1, 2], [2, 2])).im[1].should.approximately(1.509, 0.01)
   })
 
   it('Sparse', () =>{

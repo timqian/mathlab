@@ -14,8 +14,8 @@ describe('neg', () => {
   })
 
   it('Complex', () => {
-    neg(new Complex(1)).x.should.equal(-1)
-    neg(new Complex([1, 2], [2, 2])).y.should.deepEqual([-2,-2])
+    neg(new Complex(1)).re.should.equal(-1)
+    neg(new Complex([1, 2], [2, 2])).im.should.deepEqual([-2,-2])
   })
 
   it('Sparse', () =>{

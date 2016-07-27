@@ -6,10 +6,10 @@ import Sparse from './Sparse'
 const neg = pointwise(x=> -x);
 
 function cneg(x) {
-  if (x.y) {
-    return new Complex(neg(x.x), neg(x.y));
+  if (x.im) {
+    return new Complex(neg(x.re), neg(x.im));
   }
-  return new Complex(neg(x.x));
+  return new Complex(neg(x.re));
 }
 
 function sneg(x) {

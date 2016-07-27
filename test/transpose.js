@@ -9,8 +9,8 @@ describe('transpose', () => {
 
   it('Complex', () =>{
     transpose(new Complex([[1,2],[1,2]], [[1,2],[3,4]]))
-      .x.should.deepEqual([[1,1],[2,2]])
+      .re.should.deepEqual([[1,1],[2,2]])
     transpose(new Complex([[1,2],[1,2]], [[1,2],[3,4]]))
-      .y.should.deepEqual([[1,3],[2,4]])
+      .im.should.deepEqual([[1,3],[2,4]])
   })
 })

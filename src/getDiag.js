@@ -24,10 +24,10 @@ export default function (A) {
 
 function cgetDiag(A) {
   // TODO: Check if is matrix
-    if (A.y) {
-      return new Complex(getDiag(A.x), getDiag(A.y));
+    if (A.im) {
+      return new Complex(getDiag(A.re), getDiag(A.im));
     }
-    return new Complex(getDiag(A.x));
+    return new Complex(getDiag(A.re));
 }
 
 function sgetDiag(A) {

@@ -26,11 +26,11 @@ export default function (x, y) {
 }
 
 function cnorm2(x, y) {
-	if (x.y) {
+	if (x.im) {
 		var f = norm2Squared;
-		return Math.sqrt(f(x.x) + f(x.y));
+		return Math.sqrt(f(x.re) + f(x.im));
 	}
-	return norm2(x.x);
+	return norm2(x.re);
 }
 
 function snorm2(x, y) {

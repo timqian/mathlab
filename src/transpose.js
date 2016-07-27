@@ -27,10 +27,10 @@ export default function (x) {
 function ctranspose(x) {
   // TODO: Check if is matrix
     var t = transpose;
-    if (x.y) {
-      return new Complex(t(x.x), t(x.y));
+    if (x.im) {
+      return new Complex(t(x.re), t(x.im));
     }
-    return new Complex(t(x.x));
+    return new Complex(t(x.re));
 }
 
 function stranspose(x) {

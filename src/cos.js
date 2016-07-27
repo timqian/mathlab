@@ -10,10 +10,10 @@ import add from './add'
 const cos = pointwise(Math.cos)
 
 function ccos(x) {
-  if (x.y) {
+  if (x.im) {
     return div(add(exp(x), exp(neg(x))), 2);
   }
-  return new Complex(cos(x.x));
+  return new Complex(cos(x.re));
 }
 
 function scos(x) {
