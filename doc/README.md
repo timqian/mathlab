@@ -121,12 +121,12 @@ add(new Complex([1,2], [2,2]), new Complex([1,1],[1,1]))
 > dim | same | rep | diag | identity | random | linspace
 
 - dim: returns the dimensions of an Array
-	```js
-	dim(1) // []
-	dim([1,2]) // [2]
-	dim(new Complex([1,2], [1,2])) // [2]
-	dim([[1,2],[2,2],[3,3]]) // [3,2]
-	```
+```js
+dim(1) // []
+dim([1,2]) // [2]
+dim(new Complex([1,2], [1,2])) // [2]
+dim([[1,2],[2,2],[3,3]]) // [3,2]
+```
 
 
 ## Linear algebra
@@ -134,11 +134,11 @@ add(new Complex([1,2], [2,2]), new Complex([1,1],[1,1]))
 > dot | solve | det | inv | norm2 | tensor | eig
 
 - dot: returns dot product
-	```js
-	dot([1, 2], 4) // [4, 8]
-	dot([[1, 1], [2, 1]], [1, 2]) // [3, 4]
-	dot(new Complex([1, 2], [2, 2]), new Complex([2,2], [2,2])) // -2
-	```
+```js
+dot([1, 2], 4) // [4, 8]
+dot([[1, 1], [2, 1]], [1, 2]) // [3, 4]
+dot(new Complex([1, 2], [2, 2]), new Complex([2,2], [2,2])) // -2
+```
 
 ## Fast Fourier Transforms
 
