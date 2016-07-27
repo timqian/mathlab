@@ -14,7 +14,7 @@ Lodash like math lab in javascript, focusing on matrix manipulation.
 - **Multifunctional**: Support `sparse` and `complex` matrix manipulation; `FFT`; `eigenvectors & eigenvalues of matrix`; and so on
 
 ## Install
-```
+```bash
 $ npm install mathlab --save
 ```
 
@@ -32,3 +32,13 @@ console.log(y); // [50,122]
 
 # [Documents wrote by human(unfinished)](https://github.com/timqian/mathlab/tree/master/doc#readme)
 # [Documents generated from comments(unfinished)](http://timqian.com/mathlab)
+
+
+## Tests
+
+To run the test suite, first install the dependencies, then run npm test:
+
+```bash
+$ npm install
+$ npm test
+```
