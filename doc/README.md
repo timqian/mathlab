@@ -2,16 +2,30 @@
 
 ## Table of Contents
 
-1. [Data types](#data-types)
+1. [Sparse matrix and Complex numbers](#sparse-matrix-and-complex-numbers)
 1. [Math Object functions](#math-object-functions)
+1. [Utility functions](#utility-functions)
+1. [Arithmetic operations](#arithmetic-operations)
+1. [Linear algebra](#linear-algebra)
+1. [Fast Fourier Transforms](#fast-fourier-transforms)
+1. [Coordinate matrices]
+1. [Solving PDEs]
+1. [Solving ODEs]
+1. [Cubic splines]
+1. [Quadratic Programming]
+1. [Unconstrained optimization]
+1. [Linear programming]
+1. [Seedrandom]
 
 ## Sparse matrix and Complex numbers
+
+> Complex | Sparse
 
 Besides from normal Array presenting vectors and matrix,
 mathlab support Complex number/vectors/matrix and Sparse matrix manipulation.
 
 1. Complex number/vectors/matrix
-	
+
 	example:
 	```js
 	import { Complex, abs, add } from 'mathlab'
@@ -60,6 +74,92 @@ mathlab support Complex number/vectors/matrix and Sparse matrix manipulation.
 	//  [-2,0,-5]]
 	```
 
+## Math Object functions
+
+The *Math* object functions have been adapted to work on Arrays , Complex and Sparse Objects
+
+#### Sample usage
+
+**abs**: Pointwise [Math.abs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/abs) [*(source)*](https://github.com/timqian/mathlab/blob/master/src/abs.js)
+- params: `Number | Array | Complex | Sparse`
+- returns: `Number | Array | Complex | Sparse`
+- example:
+	```js
+	import {abs, Complex, Sparse} from './mathlab'
+
+	abs(-1)  // 1
+	abs([-1, 2])  // [1, 2]
+	abs(new Complex(3, 4))  // {x: 5, y: 0}
+	abs(new Sparse([[1,2,0],[0,0,-1],[1,0,0]])) // {row: col: val:}
+	```
+
+#### Function list:
+  'abs', 'acos', 'asin', 'atan',
+  'ceil', 'cos', 'exp', 'floor',
+  'log', 'round', 'sin', 'sqrt', 'tan'
+
+## Utility functions
+
+> dim | same | rep | diag | identity | random | linspace
+
+## Arithmetic operations
+
+> add | sub | mul | div 
+> neg | isFinite | isNaN
+
+
+## Linear algebra
+
+> dot | solve | det | inv | norm2 | tensor | eig
+
+## Fast Fourier Transforms
+
+> fft | ifft
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Function list
    |         |         |              |           |            |           |                |
 ---|     --- | ------ |     ---------- | --------- | ----------- | --------- | ----------- |
@@ -72,28 +172,3 @@ atan2   |  Complex   |  epsilon   |  identity   |  mod   |       or   |         
 atan   |   cos   |      eq   |       index   |     mul   |       pointwise2   |    rshift   |      transpose   |
 band   |   det   |      exp   |      inv   |       neg   |       pointwise   |     same   |
 
-
-
-## Math Object functions
-
-The *Math* object functions have been adapted to work on Arrays , Complex and Sparse Objects
-
-### Sample usage
-<a name='abs'><a/>
-- [**abs(x)**](#abs): Pointwise [Math.abs(x)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/abs) [*(source)*](https://github.com/timqian/mathlab/blob/master/src/abs.js)
-	+ params: `Number | Array | Complex | Sparse`
-	+ returns: `Number | Array | Complex | Sparse`
-	+ example:
-		```js
-		import {abs, Complex, Sparse} from './mathlab'
-
-		abs(-1)  // 1
-		abs([-1, 2])  // [1, 2]
-		abs(new Complex(3, 4))  // {x: 5, y: 0}
-		abs(new Sparse([[1,2,0],[0,0,-1],[1,0,0]])) // {row: col: val:}
-		```
-
-### Function list:
-  'abs', 'acos', 'asin', 'atan',
-  'ceil', 'cos', 'exp', 'floor',
-  'log', 'round', 'sin', 'sqrt', 'tan'
