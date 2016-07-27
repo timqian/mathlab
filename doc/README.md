@@ -36,8 +36,8 @@ mathlab support Complex number/vectors/matrix and Sparse matrix manipulation.
 
 	// transform normal matrix to sparse
 	const s = new Sparse([[-1,-2,0],
-												[0,-3,0],
-												[-2,0,-5]])
+	                      [0,-3,0],
+	                      [-2,0,-5]])
 	// {
 	// 	col: [0,2,4,5],
 	// 	row: [0,2,0,1,2],
@@ -56,8 +56,8 @@ mathlab support Complex number/vectors/matrix and Sparse matrix manipulation.
 	// transform sparse matrix to full matrix
 	sAbs.toFull()
 	// [[-1,-2,0],
-	// [0,-3,0],
-	// [-2,0,-5]]
+	//  [0,-3,0],
+	//  [-2,0,-5]]
 	```
 
 ## Function list
