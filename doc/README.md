@@ -54,8 +54,8 @@ import {Sparse, abs} from 'mathlab'
 
 // transform normal matrix to sparse
 const s = new Sparse([[-1,-2,0],
-											[0,-3,0],
-											[-2,0,-5]])
+                      [0,-3,0],
+                      [-2,0,-5]])
 // {
 // 	col: [0,2,4,5],
 // 	row: [0,2,0,1,2],
@@ -145,7 +145,10 @@ dot(new Complex([1, 2], [2, 2]), new Complex([2,2], [2,2])) // -2
 > fft | ifft
 
 ```js
+import {fft, ifft} from 'mathlab'
 
+const fftRes = fft(new Complex([1,2,3,4,5],[6,7,8,9,10])) // {re: [ 15, -5.941, -3.312, -1.688, 0.941], im: [ 40, 0.941, -1.688, -3.312, -5.941]}
+ifft(fftRes) // {re:[1,2,3,4,5], im:[6,7,8,9,10]}
 ```
 
 
@@ -183,22 +186,12 @@ dot(new Complex([1, 2], [2, 2]), new Complex([2,2], [2,2])) // -2
 - [ ] [`sum()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Sum all the entries of x
 - [ ] [`svd()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Singular value decomposition
 - [x] [`Complex()`](http://www.timqian.com/mathlab/function/index.html#static-function-Complex)	Create a Complex type
-- [x] [`Complex.identity()`]() Generate identity complex structure matrix of given size
-- [x] [`Complex.conj()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise complex conjugate
-- [x] [`Complex.fft()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Fast Fourier transform
-- [x] [`Complex.get()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Read an entry
-- [x] [`Complex.getRow()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Get a row
-- [x] [`Complex.getRows()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Get a range of rows
-- [x] [`Complex.ifft()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Inverse FFComplex
-- [x] [`Complex.reciprocal()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Pointwise 1/z
-- [x] [`Complex.set()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Set an entry
-- [x] [`Complex.setRow()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Set a row
-- [x] [`Complex.setRows()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Set a range of rows
-- [x] [`Complex.transjugate()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Complexhe conjugate-transpose of a matrix
 - [x] [`tensor()`](http://www.timqian.com/mathlab/function/index.html#static-function-tensor)	Complexensor product ret[i][j] = x[i]*y[j]
 - [x] [`transpose()`](http://www.timqian.com/mathlab/function/index.html#static-function-transpose)	Matrix transpose
 - [ ] [`uncmin()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Unconstrained optimization
 - [ ] [`version()`](http://www.timqian.com/mathlab/function/index.html#static-function-)	Version string for the numeric library
+- [x] [`ifft()`](http://www.timqian.com/mathlab/function/index.html#static-function-ifft)	Inverse FFT
+- [x] [`fft()`](http://www.timqian.com/mathlab/function/index.html#static-function-fft)	Fast Fourier transform
 
 #### Pointwise functions
 
