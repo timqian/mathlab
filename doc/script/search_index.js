@@ -144,6 +144,12 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "mathlab/src/fft.js~fft",
+    "function/index.html#static-function-fft",
+    "<span>fft</span> <span class=\"search-result-import-path\">mathlab/src/fft.js</span>",
+    "function"
+  ],
+  [
     "mathlab/src/floor.js~floor",
     "function/index.html#static-function-floor",
     "<span>floor</span> <span class=\"search-result-import-path\">mathlab/src/floor.js</span>",
@@ -177,6 +183,12 @@ window.esdocSearchIndex = [
     "mathlab/src/identity.js~identity",
     "function/index.html#static-function-identity",
     "<span>identity</span> <span class=\"search-result-import-path\">mathlab/src/identity.js</span>",
+    "function"
+  ],
+  [
+    "mathlab/src/fft.js~ifft",
+    "function/index.html#static-function-ifft",
+    "<span>ifft</span> <span class=\"search-result-import-path\">mathlab/src/fft.js</span>",
     "function"
   ],
   [
@@ -708,21 +720,9 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/complex.js~complex#fft",
-    "class/src/Complex.js~Complex.html#instance-method-fft",
-    "src/Complex.js~Complex#fft",
-    "method"
-  ],
-  [
     "src/complex.js~complex#get",
     "class/src/Complex.js~Complex.html#instance-method-get",
     "src/Complex.js~Complex#get",
-    "method"
-  ],
-  [
-    "src/complex.js~complex#getblock",
-    "class/src/Complex.js~Complex.html#instance-method-getBlock",
-    "src/Complex.js~Complex#getBlock",
     "method"
   ],
   [
@@ -744,10 +744,16 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/complex.js~complex#ifft",
-    "class/src/Complex.js~Complex.html#instance-method-ifft",
-    "src/Complex.js~Complex#ifft",
-    "method"
+    "src/complex.js~complex#im",
+    "class/src/Complex.js~Complex.html#instance-member-im",
+    "src/Complex.js~Complex#im",
+    "member"
+  ],
+  [
+    "src/complex.js~complex#re",
+    "class/src/Complex.js~Complex.html#instance-member-re",
+    "src/Complex.js~Complex#re",
+    "member"
   ],
   [
     "src/complex.js~complex#reciprocal",
@@ -759,12 +765,6 @@ window.esdocSearchIndex = [
     "src/complex.js~complex#set",
     "class/src/Complex.js~Complex.html#instance-method-set",
     "src/Complex.js~Complex#set",
-    "method"
-  ],
-  [
-    "src/complex.js~complex#setblock",
-    "class/src/Complex.js~Complex.html#instance-method-setBlock",
-    "src/Complex.js~Complex#setBlock",
     "method"
   ],
   [
@@ -784,18 +784,6 @@ window.esdocSearchIndex = [
     "class/src/Complex.js~Complex.html#instance-method-transjugate",
     "src/Complex.js~Complex#transjugate",
     "method"
-  ],
-  [
-    "src/complex.js~complex#x",
-    "class/src/Complex.js~Complex.html#instance-member-x",
-    "src/Complex.js~Complex#x",
-    "member"
-  ],
-  [
-    "src/complex.js~complex#y",
-    "class/src/Complex.js~Complex.html#instance-member-y",
-    "src/Complex.js~Complex#y",
-    "member"
   ],
   [
     "src/sparse.js",
@@ -969,6 +957,12 @@ window.esdocSearchIndex = [
     "src/exp.js",
     "file/src/exp.js.html",
     "src/exp.js",
+    "file"
+  ],
+  [
+    "src/fft.js",
+    "file/src/fft.js.html",
+    "src/fft.js",
     "file"
   ],
   [

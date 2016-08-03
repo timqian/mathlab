@@ -10,7 +10,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import identity from './identity';\nimport mul from './mul';\nimport div from './div';\nimport rep from './rep';\nimport clone from './clone';\nimport neg from './neg';\nimport add from './add';\nimport getBlock from './getBlock';\nimport setBlock from './setBlock';\nimport transpose from './transpose';\n\nexport default class Complex {\n  constructor(x, y) {\n    this.x = x;\n    this.y = y;\n  }\n\n  reciprocal() {\n    if(this.y) {\n        var d = add(mul(this.x,this.x),mul(this.y,this.y));\n        return new Complex(div(this.x, d),div(neg(this.y), d));\n    }\n    return new Complex(div(1, this.x));\n  }\n\n  identity(n) {\n    return new Complex(identity(n));\n  }\n  \n  transjugate() {\n    var t = transpose, x = this.x, y = this.y;\n    if(y) { return new Complex(t(x), negtranspose(y)); }\n    return new Complex(t(x));\n  }\n  \n  get(i) {\n    var x = this.x, y = this.y, k = 0, ik, n = i.length;\n    if(y) {\n        while(k<n) {\n            ik = i[k];\n            x = x[ik];\n            y = y[ik];\n            k++;\n        }\n        return new Complex(x,y);\n    }\n    while(k<n) {\n        ik = i[k];\n        x = x[ik];\n        k++;\n    }\n    return new Complex(x);\n  }\n  \n  set(i,v) {\n    var x = this.x, y = this.y, k = 0, ik, n = i.length, vx = v.x, vy = v.y;\n    if(n===0) {\n        if(vy) { this.y = vy; }\n        else if(y) { this.y = undefined; }\n        this.x = x;\n        return this;\n    }\n    if(vy) {\n        if(y) { /* ok */ }\n        else {\n            y = rep(dim(x),0);\n            this.y = y;\n        }\n        while(k<n-1) {\n            ik = i[k];\n            x = x[ik];\n            y = y[ik];\n            k++;\n        }\n        ik = i[k];\n        x[ik] = vx;\n        y[ik] = vy;\n        return this;\n    }\n    if(y) {\n        while(k<n-1) {\n            ik = i[k];\n            x = x[ik];\n            y = y[ik];\n            k++;\n        }\n        ik = i[k];\n        x[ik] = vx;\n        if(vx instanceof Array) y[ik] = rep(dim(vx),0);\n        else y[ik] = 0;\n        return this;\n    }\n    while(k<n-1) {\n        ik = i[k];\n        x = x[ik];\n        k++;\n    }\n    ik = i[k];\n    x[ik] = vx;\n    return this;\n  }\n\n  getRows(i0,i1) {\n    var n = i1-i0+1, j;\n    var rx = Array(n), ry, x = this.x, y = this.y;\n    for(j=i0;j<=i1;j++) { rx[j-i0] = x[j]; }\n    if(y) {\n        ry = Array(n);\n        for(j=i0;j<=i1;j++) { ry[j-i0] = y[j]; }\n        return new Complex(rx,ry);\n    }\n    return new Complex(rx);\n  }\n\n  setRows(i0,i1,A) {\n    var j;\n    var rx = this.x, ry = this.y, x = A.x, y = A.y;\n    for(j=i0;j<=i1;j++) { rx[j] = x[j-i0]; }\n    if(y) {\n        if(!ry) { ry = rep(dim(rx),0); this.y = ry; }\n        for(j=i0;j<=i1;j++) { ry[j] = y[j-i0]; }\n    } else if(ry) {\n        for(j=i0;j<=i1;j++) { ry[j] = rep([x[j-i0].length],0); }\n    }\n    return this;\n  }\n\n  getRow(k) {\n    var x = this.x, y = this.y;\n    if(y) { return new Complex(x[k],y[k]); }\n    return new Complex(x[k]);\n  }\n  setRow(i,v) {\n    var rx = this.x, ry = this.y, x = v.x, y = v.y;\n    rx[i] = x;\n    if(y) {\n        if(!ry) { ry = rep(dim(rx),0); this.y = ry; }\n        ry[i] = y;\n    } else if(ry) {\n        ry = rep([x.length],0);\n    }\n    return this;\n  }\n\n  getBlock(from,to) {\n    var x = this.x, y = this.y, b = getBlock;\n    if(y) { return new Complex(b(x,from,to),b(y,from,to)); }\n    return new Complex(b(x,from,to));\n  }\n\n  setBlock(from,to,A) {\n    if(!(A instanceof Complex)) A = new Complex(A);\n    var x = this.x, y = this.y, b = setBlock, Ax = A.x, Ay = A.y;\n    if(Ay) {\n        if(!y) { this.y = rep(dim(this),0); y = this.y; }\n        b(x,from,to,Ax);\n        b(y,from,to,Ay);\n        return this;\n    }\n    b(x,from,to,Ax);\n    if(y) b(y,from,to,rep(dim(Ax),0));\n  }\n\n  fft() {\n    var x = this.x, y = this.y;\n    var n = x.length, log = Math.log, log2 = log(2),\n        p = Math.ceil(log(2*n-1)/log2), m = Math.pow(2,p);\n    var cx = rep([m],0), cy = rep([m],0), cos = Math.cos, sin = Math.sin;\n    var k, c = (-3.141592653589793238462643383279502884197169399375105820/n),t;\n    var a = rep([m],0), b = rep([m],0),nhalf = Math.floor(n/2);\n    for(k=0;k<n;k++) a[k] = x[k];\n    if(typeof y !== \"undefined\") for(k=0;k<n;k++) b[k] = y[k];\n    cx[0] = 1;\n    for(k=1;k<=m/2;k++) {\n      t = c*k*k;\n          console.log('X',X);cx[k] = cos(t);x\n      cy[k] = sin(t);\n      cx[m-k] = cos(t);\n      cy[m-k] = sin(t)\n    }\n    var X = new Complex(a,b), Y = new Complex(cx,cy);\n    X = mul(X, Y);\n    convpow2(X.x, X.y, clone(Y.x), neg(Y.y));\n    X = mul(X, Y);\n    X.x.length = n;\n    X.y.length = n;\n    return X;\n  }\n\n  ifft() {\n    var x = this.x, y = this.y;\n    var n = x.length, log = Math.log, log2 = log(2),\n        p = Math.ceil(log(2*n-1)/log2), m = Math.pow(2,p);\n    var cx = rep([m],0), cy = rep([m],0), cos = Math.cos, sin = Math.sin;\n    var k, c = (3.141592653589793238462643383279502884197169399375105820/n),t;\n    var a = rep([m],0), b = rep([m],0),nhalf = Math.floor(n/2);\n    for(k=0;k<n;k++) a[k] = x[k];\n    if(typeof y !== \"undefined\") for(k=0;k<n;k++) b[k] = y[k];\n    cx[0] = 1;\n    for(k=1;k<=m/2;k++) {\n      t = c*k*k;\n      cx[k] = cos(t);\n      cy[k] = sin(t);\n      cx[m-k] = cos(t);\n      cy[m-k] = sin(t)\n    }\n    var X = new Complex(a,b), Y = new Complex(cx,cy);\n    X = mul(X, Y);\n    convpow2(X.x, X.y, clone(Y.x), neg(Y.y));\n    X = mul(X, Y);\n    X.x.length = n;\n    X.y.length = n;\n    return div(X, n);\n  }\n}\n\n/**\n * Generate identity complex structure matrix of given size\n * \n * @param {Number} n\n * @returns {Object}\n * @example \n * \n * Complex.identity(2)\n * // {x: [[1, 0], [0, 1]], y: undefined}\n */\nComplex.identity = function(n) {\n  return new Complex(identity(n));\n}\n\n\n\nfunction fftpow2(x,y) {\n    var n = x.length;\n    if(n === 1) return;\n    var cos = Math.cos, sin = Math.sin, i,j;\n    var xe = Array(n/2), ye = Array(n/2), xo = Array(n/2), yo = Array(n/2);\n    j = n/2;\n    for(i=n-1;i!==-1;--i) {\n        --j;\n        xo[j] = x[i];\n        yo[j] = y[i];\n        --i;\n        xe[j] = x[i];\n        ye[j] = y[i];\n    }\n    fftpow2(xe,ye);\n    fftpow2(xo,yo);\n    j = n/2;\n    var t,k = (-6.2831853071795864769252867665590057683943387987502116419/n),ci,si;\n    for(i=n-1;i!==-1;--i) {\n        --j;\n        if(j === -1) j = n/2-1;\n        t = k*i;\n        ci = cos(t);\n        si = sin(t);\n        x[i] = xe[j] + ci*xo[j] - si*yo[j];\n        y[i] = ye[j] + ci*yo[j] + si*xo[j];\n    }\n}\n\nfunction _ifftpow2(x,y) {\n    var n = x.length;\n    if(n === 1) return;\n    var cos = Math.cos, sin = Math.sin, i,j;\n    var xe = Array(n/2), ye = Array(n/2), xo = Array(n/2), yo = Array(n/2);\n    j = n/2;\n    for(i=n-1;i!==-1;--i) {\n        --j;\n        xo[j] = x[i];\n        yo[j] = y[i];\n        --i;\n        xe[j] = x[i];\n        ye[j] = y[i];\n    }\n    _ifftpow2(xe,ye);\n    _ifftpow2(xo,yo);\n    j = n/2;\n    var t,k = (6.2831853071795864769252867665590057683943387987502116419/n),ci,si;\n    for(i=n-1;i!==-1;--i) {\n        --j;\n        if(j === -1) j = n/2-1;\n        t = k*i;\n        ci = cos(t);\n        si = sin(t);\n        x[i] = xe[j] + ci*xo[j] - si*yo[j];\n        y[i] = ye[j] + ci*yo[j] + si*xo[j];\n    }\n}\n\nfunction ifftpow2(x,y) {\n    _ifftpow2(x, y);\n    // x = div(x, x.length);\n    // y = div(y, y.length);\n    x.forEach((n, i) => {x[i] = n / x.length});\n    y.forEach((n, i) => {y[i] = n / y.length});\n}\n\nfunction convpow2(ax,ay,bx,by) {\n    fftpow2(ax,ay);\n    fftpow2(bx,by);\n    var i,n = ax.length,axi,bxi,ayi,byi;\n    for(i=n-1;i!==-1;--i) {\n        axi = ax[i]; ayi = ay[i]; bxi = bx[i]; byi = by[i];\n        ax[i] = axi*bxi-ayi*byi;\n        ay[i] = axi*byi+ayi*bxi;\n    }\n    ifftpow2(ax,ay);\n}\n"
+    "content": "import identity from './identity';\nimport mul from './mul';\nimport div from './div';\nimport rep from './rep';\nimport clone from './clone';\nimport neg from './neg';\nimport add from './add';\nimport getBlock from './getBlock';\nimport setBlock from './setBlock';\nimport transpose from './transpose';\n\nexport default class Complex {\n  constructor(re, im) {\n    this.re = re;\n    this.im = im;\n  }\n\n  reciprocal() {\n    if(this.im) {\n        var d = add(mul(this.re,this.re),mul(this.im,this.im));\n        return new Complex(div(this.re, d),div(neg(this.im), d));\n    }\n    return new Complex(div(1, this.re));\n  }\n\n  identity(n) {\n    return new Complex(identity(n));\n  }\n  \n  transjugate() {\n    var t = transpose, x = this.re, y = this.im;\n    if(y) { return new Complex(t(x), negtranspose(y)); }\n    return new Complex(t(x));\n  }\n  \n  get(i) {\n    var x = this.re, y = this.im, k = 0, ik, n = i.length;\n    if(y) {\n        while(k<n) {\n            ik = i[k];\n            x = x[ik];\n            y = y[ik];\n            k++;\n        }\n        return new Complex(x,y);\n    }\n    while(k<n) {\n        ik = i[k];\n        x = x[ik];\n        k++;\n    }\n    return new Complex(x);\n  }\n  \n  set(i,v) {\n    var x = this.re, y = this.im, k = 0, ik, n = i.length, vx = v.re, vy = v.im;\n    if(n===0) {\n        if(vy) { this.im = vy; }\n        else if(y) { this.im = undefined; }\n        this.re = x;\n        return this;\n    }\n    if(vy) {\n        if(y) { /* ok */ }\n        else {\n            y = rep(dim(x),0);\n            this.im = y;\n        }\n        while(k<n-1) {\n            ik = i[k];\n            x = x[ik];\n            y = y[ik];\n            k++;\n        }\n        ik = i[k];\n        x[ik] = vx;\n        y[ik] = vy;\n        return this;\n    }\n    if(y) {\n        while(k<n-1) {\n            ik = i[k];\n            x = x[ik];\n            y = y[ik];\n            k++;\n        }\n        ik = i[k];\n        x[ik] = vx;\n        if(vx instanceof Array) y[ik] = rep(dim(vx),0);\n        else y[ik] = 0;\n        return this;\n    }\n    while(k<n-1) {\n        ik = i[k];\n        x = x[ik];\n        k++;\n    }\n    ik = i[k];\n    x[ik] = vx;\n    return this;\n  }\n\n  getRows(i0,i1) {\n    var n = i1-i0+1, j;\n    var rx = Array(n), ry, x = this.re, y = this.im;\n    for(j=i0;j<=i1;j++) { rx[j-i0] = x[j]; }\n    if(y) {\n        ry = Array(n);\n        for(j=i0;j<=i1;j++) { ry[j-i0] = y[j]; }\n        return new Complex(rx,ry);\n    }\n    return new Complex(rx);\n  }\n\n  setRows(i0,i1,A) {\n    var j;\n    var rx = this.re, ry = this.im, x = A.re, y = A.im;\n    for(j=i0;j<=i1;j++) { rx[j] = x[j-i0]; }\n    if(y) {\n        if(!ry) { ry = rep(dim(rx),0); this.im = ry; }\n        for(j=i0;j<=i1;j++) { ry[j] = y[j-i0]; }\n    } else if(ry) {\n        for(j=i0;j<=i1;j++) { ry[j] = rep([x[j-i0].length],0); }\n    }\n    return this;\n  }\n\n  getRow(k) {\n    var x = this.re, y = this.im;\n    if(y) { return new Complex(x[k],y[k]); }\n    return new Complex(x[k]);\n  }\n  setRow(i,v) {\n    var rx = this.re, ry = this.im, x = v.re, y = v.im;\n    rx[i] = x;\n    if(y) {\n        if(!ry) { ry = rep(dim(rx),0); this.im = ry; }\n        ry[i] = y;\n    } else if(ry) {\n        ry = rep([x.length],0);\n    }\n    return this;\n  }\n\n}\n\n/**\n * Generate identity complex structure matrix of given size\n * \n * @param {Number} n\n * @returns {Object}\n * @example \n * \n * Complex.identity(2)\n * // {x: [[1, 0], [0, 1]], y: undefined}\n */\nComplex.identity = function(n) {\n  return new Complex(identity(n));\n}\n"
   },
   {
     "__docId__": 1,
@@ -43,13 +43,13 @@
     "undocument": true,
     "params": [
       {
-        "name": "x",
+        "name": "re",
         "types": [
           "*"
         ]
       },
       {
-        "name": "y",
+        "name": "im",
         "types": [
           "*"
         ]
@@ -62,9 +62,9 @@
     "kind": "member",
     "static": false,
     "variation": null,
-    "name": "x",
+    "name": "re",
     "memberof": "src/Complex.js~Complex",
-    "longname": "src/Complex.js~Complex#x",
+    "longname": "src/Complex.js~Complex#re",
     "access": null,
     "description": null,
     "lineNumber": 14,
@@ -80,9 +80,9 @@
     "kind": "member",
     "static": false,
     "variation": null,
-    "name": "y",
+    "name": "im",
     "memberof": "src/Complex.js~Complex",
-    "longname": "src/Complex.js~Complex#y",
+    "longname": "src/Complex.js~Complex#im",
     "access": null,
     "description": null,
     "lineNumber": 15,
@@ -225,9 +225,9 @@
     "kind": "member",
     "static": false,
     "variation": null,
-    "name": "y",
+    "name": "im",
     "memberof": "src/Complex.js~Complex",
-    "longname": "src/Complex.js~Complex#y",
+    "longname": "src/Complex.js~Complex#im",
     "access": null,
     "description": null,
     "lineNumber": 58,
@@ -243,9 +243,9 @@
     "kind": "member",
     "static": false,
     "variation": null,
-    "name": "y",
+    "name": "im",
     "memberof": "src/Complex.js~Complex",
-    "longname": "src/Complex.js~Complex#y",
+    "longname": "src/Complex.js~Complex#im",
     "access": null,
     "description": null,
     "lineNumber": 59,
@@ -261,9 +261,9 @@
     "kind": "member",
     "static": false,
     "variation": null,
-    "name": "x",
+    "name": "re",
     "memberof": "src/Complex.js~Complex",
-    "longname": "src/Complex.js~Complex#x",
+    "longname": "src/Complex.js~Complex#re",
     "access": null,
     "description": null,
     "lineNumber": 60,
@@ -279,9 +279,9 @@
     "kind": "member",
     "static": false,
     "variation": null,
-    "name": "y",
+    "name": "im",
     "memberof": "src/Complex.js~Complex",
-    "longname": "src/Complex.js~Complex#y",
+    "longname": "src/Complex.js~Complex#im",
     "access": null,
     "description": null,
     "lineNumber": 67,
@@ -369,9 +369,9 @@
     "kind": "member",
     "static": false,
     "variation": null,
-    "name": "y",
+    "name": "im",
     "memberof": "src/Complex.js~Complex",
-    "longname": "src/Complex.js~Complex#y",
+    "longname": "src/Complex.js~Complex#im",
     "access": null,
     "description": null,
     "lineNumber": 120,
@@ -447,9 +447,9 @@
     "kind": "member",
     "static": false,
     "variation": null,
-    "name": "y",
+    "name": "im",
     "memberof": "src/Complex.js~Complex",
-    "longname": "src/Complex.js~Complex#y",
+    "longname": "src/Complex.js~Complex#im",
     "access": null,
     "description": null,
     "lineNumber": 137,
@@ -462,136 +462,6 @@
   },
   {
     "__docId__": 20,
-    "kind": "method",
-    "static": false,
-    "variation": null,
-    "name": "getBlock",
-    "memberof": "src/Complex.js~Complex",
-    "longname": "src/Complex.js~Complex#getBlock",
-    "access": null,
-    "description": null,
-    "lineNumber": 145,
-    "undocument": true,
-    "params": [
-      {
-        "name": "from",
-        "types": [
-          "*"
-        ]
-      },
-      {
-        "name": "to",
-        "types": [
-          "*"
-        ]
-      }
-    ],
-    "return": {
-      "types": [
-        "*"
-      ]
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 21,
-    "kind": "method",
-    "static": false,
-    "variation": null,
-    "name": "setBlock",
-    "memberof": "src/Complex.js~Complex",
-    "longname": "src/Complex.js~Complex#setBlock",
-    "access": null,
-    "description": null,
-    "lineNumber": 151,
-    "undocument": true,
-    "params": [
-      {
-        "name": "from",
-        "types": [
-          "*"
-        ]
-      },
-      {
-        "name": "to",
-        "types": [
-          "*"
-        ]
-      },
-      {
-        "name": "A",
-        "types": [
-          "*"
-        ]
-      }
-    ],
-    "return": {
-      "types": [
-        "*"
-      ]
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 22,
-    "kind": "member",
-    "static": false,
-    "variation": null,
-    "name": "y",
-    "memberof": "src/Complex.js~Complex",
-    "longname": "src/Complex.js~Complex#y",
-    "access": null,
-    "description": null,
-    "lineNumber": 155,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 23,
-    "kind": "method",
-    "static": false,
-    "variation": null,
-    "name": "fft",
-    "memberof": "src/Complex.js~Complex",
-    "longname": "src/Complex.js~Complex#fft",
-    "access": null,
-    "description": null,
-    "lineNumber": 164,
-    "undocument": true,
-    "params": [],
-    "return": {
-      "types": [
-        "*"
-      ]
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 24,
-    "kind": "method",
-    "static": false,
-    "variation": null,
-    "name": "ifft",
-    "memberof": "src/Complex.js~Complex",
-    "longname": "src/Complex.js~Complex#ifft",
-    "access": null,
-    "description": null,
-    "lineNumber": 190,
-    "undocument": true,
-    "params": [],
-    "return": {
-      "types": [
-        "*"
-      ]
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 25,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -606,7 +476,7 @@
     "examples": [
       "\nComplex.identity(2)\n// {x: [[1, 0], [0, 1]], y: undefined}"
     ],
-    "lineNumber": 227,
+    "lineNumber": 157,
     "unknown": [
       {
         "tagName": "@returns",
@@ -636,143 +506,7 @@
     "generator": false
   },
   {
-    "__docId__": 26,
-    "kind": "function",
-    "static": true,
-    "variation": null,
-    "name": "fftpow2",
-    "memberof": "src/Complex.js",
-    "longname": "src/Complex.js~fftpow2",
-    "access": null,
-    "export": false,
-    "importPath": "mathlab/src/Complex.js",
-    "importStyle": null,
-    "description": null,
-    "lineNumber": 233,
-    "undocument": true,
-    "params": [
-      {
-        "name": "x",
-        "types": [
-          "*"
-        ]
-      },
-      {
-        "name": "y",
-        "types": [
-          "*"
-        ]
-      }
-    ],
-    "generator": false
-  },
-  {
-    "__docId__": 27,
-    "kind": "function",
-    "static": true,
-    "variation": null,
-    "name": "_ifftpow2",
-    "memberof": "src/Complex.js",
-    "longname": "src/Complex.js~_ifftpow2",
-    "access": null,
-    "export": false,
-    "importPath": "mathlab/src/Complex.js",
-    "importStyle": null,
-    "description": null,
-    "lineNumber": 262,
-    "undocument": true,
-    "params": [
-      {
-        "name": "x",
-        "types": [
-          "*"
-        ]
-      },
-      {
-        "name": "y",
-        "types": [
-          "*"
-        ]
-      }
-    ],
-    "generator": false
-  },
-  {
-    "__docId__": 28,
-    "kind": "function",
-    "static": true,
-    "variation": null,
-    "name": "ifftpow2",
-    "memberof": "src/Complex.js",
-    "longname": "src/Complex.js~ifftpow2",
-    "access": null,
-    "export": false,
-    "importPath": "mathlab/src/Complex.js",
-    "importStyle": null,
-    "description": null,
-    "lineNumber": 291,
-    "undocument": true,
-    "params": [
-      {
-        "name": "x",
-        "types": [
-          "*"
-        ]
-      },
-      {
-        "name": "y",
-        "types": [
-          "*"
-        ]
-      }
-    ],
-    "generator": false
-  },
-  {
-    "__docId__": 29,
-    "kind": "function",
-    "static": true,
-    "variation": null,
-    "name": "convpow2",
-    "memberof": "src/Complex.js",
-    "longname": "src/Complex.js~convpow2",
-    "access": null,
-    "export": false,
-    "importPath": "mathlab/src/Complex.js",
-    "importStyle": null,
-    "description": null,
-    "lineNumber": 299,
-    "undocument": true,
-    "params": [
-      {
-        "name": "ax",
-        "types": [
-          "*"
-        ]
-      },
-      {
-        "name": "ay",
-        "types": [
-          "*"
-        ]
-      },
-      {
-        "name": "bx",
-        "types": [
-          "*"
-        ]
-      },
-      {
-        "name": "by",
-        "types": [
-          "*"
-        ]
-      }
-    ],
-    "generator": false
-  },
-  {
-    "__docId__": 30,
+    "__docId__": 21,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -782,10 +516,10 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import dim from './dim'\nimport rep from './rep'\n\nexport default class Sparse {\n  constructor(A) {\n    if(!Array.isArray(A) && A.col){\n      this.col = A.col;\n      this.row = A.row;\n      this.val = A.val;\n    } else {\n      // TODO: throw error while A is not matrix\n      var m = A.length, n, foo, i, j, counts = [];\n      for (i = m - 1; i !== -1; --i) {\n        foo = A[i];\n        for (j in foo) {\n          j = parseInt(j);\n          while (j >= counts.length) counts[counts.length] = 0;\n          if (foo[j] !== 0) counts[j]++;\n        }\n      }\n      var n = counts.length;\n      var Ai = Array(n + 1);\n      Ai[0] = 0;\n      for (i = 0; i < n; ++i) Ai[i + 1] = Ai[i] + counts[i];\n      var Aj = Array(Ai[n]), Av = Array(Ai[n]);\n      for (i = m - 1; i !== -1; --i) {\n        foo = A[i];\n        for (j in foo) {\n          if (foo[j] !== 0) {\n            counts[j]--;\n            Aj[Ai[j] + counts[j]] = i;\n            Av[Ai[j] + counts[j]] = foo[j];\n          }\n        }\n      }\n\n      this.col = Ai;\n      this.row = Aj;\n      this.val = Av;\n    }\n  }\n\n  toFull() {\n    var Ai = this.col, Aj = this.row, Av = this.val, \n      s = dim(this), m = s[0], n = s[1], i,j,j0,j1,k;\n    var B = rep([m,n],0);\n    for(i=0;i<n;i++) {\n      j0 = Ai[i];\n      j1 = Ai[i+1];\n      for(j=j0;j<j1;++j) { B[Aj[j]][i] = Av[j]; }\n    }\n    return B;\n  }\n}\n\n// Sparse.diag = function (d) {\n//   // TODO\n//   var n = d.length,i,ret = Array(n),i1,i2,i3;\n//   for(i=n-1;i>=1;i-=2) {\n//     i1 = i-1;\n//     ret[i] = []; ret[i][i] = d[i];\n//     ret[i1] = []; ret[i1][i1] = d[i1];\n//   }\n//   if(i===0) { ret[0] = []; ret[0][0] = d[i]; }\n//   console.log(ret);\n// }\n\nconsole.log(new Sparse({col:[1,2], row:[1,2], val:[1,2]}))\nconsole.log(new Sparse([[1,0,0],[0,1,0],[0,0,0]]))\n"
+    "content": "import dim from './dim'\nimport rep from './rep'\n\nexport default class Sparse {\n  constructor(A) {\n    if(!Array.isArray(A) && A.col){\n      this.col = A.col;\n      this.row = A.row;\n      this.val = A.val;\n    } else {\n      // TODO: throw error while A is not matrix\n      var m = A.length, n, foo, i, j, counts = [];\n      for (i = m - 1; i !== -1; --i) {\n        foo = A[i];\n        for (j in foo) {\n          j = parseInt(j);\n          while (j >= counts.length) counts[counts.length] = 0;\n          if (foo[j] !== 0) counts[j]++;\n        }\n      }\n      var n = counts.length;\n      var Ai = Array(n + 1);\n      Ai[0] = 0;\n      for (i = 0; i < n; ++i) Ai[i + 1] = Ai[i] + counts[i];\n      var Aj = Array(Ai[n]), Av = Array(Ai[n]);\n      for (i = m - 1; i !== -1; --i) {\n        foo = A[i];\n        for (j in foo) {\n          if (foo[j] !== 0) {\n            counts[j]--;\n            Aj[Ai[j] + counts[j]] = i;\n            Av[Ai[j] + counts[j]] = foo[j];\n          }\n        }\n      }\n\n      this.col = Ai;\n      this.row = Aj;\n      this.val = Av;\n    }\n  }\n\n  toFull() {\n    var Ai = this.col, Aj = this.row, Av = this.val, \n      s = dim(this), m = s[0], n = s[1], i,j,j0,j1,k;\n    var B = rep([m,n],0);\n    for(i=0;i<n;i++) {\n      j0 = Ai[i];\n      j1 = Ai[i+1];\n      for(j=j0;j<j1;++j) { B[Aj[j]][i] = Av[j]; }\n    }\n    return B;\n  }\n}\n\n// Sparse.diag = function (d) {\n//   // TODO\n//   var n = d.length,i,ret = Array(n),i1,i2,i3;\n//   for(i=n-1;i>=1;i-=2) {\n//     i1 = i-1;\n//     ret[i] = []; ret[i][i] = d[i];\n//     ret[i1] = []; ret[i1][i1] = d[i1];\n//   }\n//   if(i===0) { ret[0] = []; ret[0][0] = d[i]; }\n//   console.log(ret);\n// }\n\n"
   },
   {
-    "__docId__": 31,
+    "__docId__": 22,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -802,7 +536,7 @@
     "interface": false
   },
   {
-    "__docId__": 32,
+    "__docId__": 23,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -824,7 +558,7 @@
     "generator": false
   },
   {
-    "__docId__": 33,
+    "__docId__": 24,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -842,7 +576,7 @@
     }
   },
   {
-    "__docId__": 34,
+    "__docId__": 25,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -860,7 +594,7 @@
     }
   },
   {
-    "__docId__": 35,
+    "__docId__": 26,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -878,7 +612,7 @@
     }
   },
   {
-    "__docId__": 36,
+    "__docId__": 27,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -896,7 +630,7 @@
     }
   },
   {
-    "__docId__": 37,
+    "__docId__": 28,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -914,7 +648,7 @@
     }
   },
   {
-    "__docId__": 38,
+    "__docId__": 29,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -932,7 +666,7 @@
     }
   },
   {
-    "__docId__": 39,
+    "__docId__": 30,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -952,7 +686,7 @@
     "generator": false
   },
   {
-    "__docId__": 40,
+    "__docId__": 31,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -962,10 +696,10 @@
     "access": null,
     "description": null,
     "lineNumber": 2,
-    "content": "\nimport pointwise from './pointwise'\nimport Complex from './Complex'\nimport Sparse from './Sparse'\nimport mul from './mul'\nimport sqrt from './sqrt';\nimport add from './add';\n\nconst abs = pointwise(Math.abs)\n\nfunction cabs(x) {\n  if (x.y) {\n    return new Complex(sqrt(add(mul(x.x, x.x), mul(x.y, x.y))));\n  }\n  return new Complex(abs(x.x));\n}\n\nfunction sabs(x) {\n  return new Sparse({\n    col: x.col.slice(), // copy the array\n    row: x.row.slice(),\n    val: abs(x.val),\n  })\n}\n\n/**\n * Pointwise Math.abs(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * abs(1)\n * // returns Math.abs(1)\n * abs([1, 2])\n * // returns [Math.abs(1), Math.abs(2)]\n * abs([[1,2],[1,3]])\n * // returns [ [Math.abs(1), Math.abs(2)], [Math.abs(1), Math.abs(3)] ]\n */\nexport default function (m) {\n  switch (m.constructor.name) {\n    case 'Complex':\n      return cabs(m);\n    case 'Sparse':\n      return sabs(m);\n    default:\n      return abs(m);\n  }\n}\n"
+    "content": "\nimport pointwise from './pointwise'\nimport Complex from './Complex'\nimport Sparse from './Sparse'\nimport mul from './mul'\nimport sqrt from './sqrt';\nimport add from './add';\n\nconst abs = pointwise(Math.abs)\n\nfunction cabs(x) {\n  if (x.im) {\n    return new Complex(sqrt(add(mul(x.re, x.re), mul(x.im, x.im))));\n  }\n  return new Complex(abs(x.re));\n}\n\nfunction sabs(x) {\n  return new Sparse({\n    col: x.col.slice(), // copy the array\n    row: x.row.slice(),\n    val: abs(x.val),\n  })\n}\n\n/**\n * Pointwise Math.abs(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * abs(1)\n * // returns Math.abs(1)\n * abs([1, 2])\n * // returns [Math.abs(1), Math.abs(2)]\n * abs([[1,2],[1,3]])\n * // returns [ [Math.abs(1), Math.abs(2)], [Math.abs(1), Math.abs(3)] ]\n */\nexport default function (m) {\n  switch (m.constructor.name) {\n    case 'Complex':\n      return cabs(m);\n    case 'Sparse':\n      return sabs(m);\n    default:\n      return abs(m);\n  }\n}\n"
   },
   {
-    "__docId__": 41,
+    "__docId__": 32,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -986,7 +720,7 @@
     }
   },
   {
-    "__docId__": 42,
+    "__docId__": 33,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1016,7 +750,7 @@
     "generator": false
   },
   {
-    "__docId__": 43,
+    "__docId__": 34,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1046,7 +780,7 @@
     "generator": false
   },
   {
-    "__docId__": 44,
+    "__docId__": 35,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1097,7 +831,7 @@
     "generator": false
   },
   {
-    "__docId__": 45,
+    "__docId__": 36,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1110,7 +844,7 @@
     "content": "\nimport pointwise from './pointwise'\nimport Sparse from './Sparse'\n\nconst acos = pointwise(Math.acos)\n\nfunction cacos(x) {\n  throw new Error('mathlab.acos: no acos for complex number')\n}\n\nfunction sacos(x) {\n  return new Sparse({\n    col: x.col.slice(), // copy the array\n    row: x.row.slice(),\n    val: acos(x.val),\n  })\n}\n\n/**\n * Pointwise Math.acos(x)\n * \n * @export\n * @param {Number|Vector|Multidimensional array|Matirx|Sparse|Complex} m\n * @returns {Number|Array}\n * @example \n * \n * acos(1)\n * // returns Math.acos(1)\n * acos([1, 2])\n * // returns [Math.acos(1), Math.acos(2)]\n * acos([[1,2],[1,3]])\n * // returns [ [Math.acos(1), Math.acos(2)], [Math.acos(1), Math.acos(3)] ]\n */\nexport default function (m) {\n  switch (m.constructor.name) {\n    case 'Complex':\n      return cacos(m);\n    case 'Sparse':\n      return sacos(m);\n    default:\n      return acos(m);\n  }\n}\n"
   },
   {
-    "__docId__": 46,
+    "__docId__": 37,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -1131,7 +865,7 @@
     }
   },
   {
-    "__docId__": 47,
+    "__docId__": 38,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1156,7 +890,7 @@
     "generator": false
   },
   {
-    "__docId__": 48,
+    "__docId__": 39,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1186,7 +920,7 @@
     "generator": false
   },
   {
-    "__docId__": 49,
+    "__docId__": 40,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1241,7 +975,7 @@
     "generator": false
   },
   {
-    "__docId__": 50,
+    "__docId__": 41,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1251,10 +985,10 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import pointwise from './pointwise'\nimport Complex from './Complex'\n\nconst add = pointwise((x, y) => x + y);\n\nfunction cadd(x, y) {\n  if (!(y instanceof Complex)) { y = new Complex(y); }\n  if (x.y) {\n    if (y.y) {\n      return new Complex(add(x.x, y.x), add(x.y, y.y));\n    }\n    return new Complex(add(x.x, y.x), x.y);\n  }\n  if (y.y) {\n    return new Complex(add(x.x, y.x), y.y);\n  }\n  return new Complex(add(x.x, y.x));\n}\n\nfunction sadd(x, y) {\n  // TODO\n  throw new Error('mathlab.add: add for sparse matrix not exist')\n}\n\n/**\n * Pointwise add\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * add(1, 2)\n * // returns 1 + 2\n * add([1, 2], [2, 2])\n * // returns [1 + 2, 2 + 2]\n * add([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 + 2, 1 + 2], [1 + 2, 2 + 2] ]\n */\nexport default function (m1, m2) {\n  switch (m1.constructor.name) {\n    case 'Complex':\n      return cadd(m1, m2);\n    case 'Sparse':\n      return sadd(m1, m2);\n    default:\n      return add(m1, m2);\n  }\n}"
+    "content": "import pointwise from './pointwise'\nimport Complex from './Complex'\n\nconst add = pointwise((x, y) => x + y);\n\nfunction cadd(x, y) {\n  if (!(y instanceof Complex)) { y = new Complex(y); }\n  if (x.im) {\n    if (y.im) {\n      return new Complex(add(x.re, y.re), add(x.im, y.im));\n    }\n    return new Complex(add(x.re, y.re), x.im);\n  }\n  if (y.im) {\n    return new Complex(add(x.re, y.re), y.im);\n  }\n  return new Complex(add(x.re, y.re));\n}\n\nfunction sadd(x, y) {\n  // TODO\n  throw new Error('mathlab.add: add for sparse matrix not exist')\n}\n\n/**\n * Pointwise add\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * add(1, 2)\n * // returns 1 + 2\n * add([1, 2], [2, 2])\n * // returns [1 + 2, 2 + 2]\n * add([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 + 2, 1 + 2], [1 + 2, 2 + 2] ]\n */\nexport default function (m1, m2) {\n  switch (m1.constructor.name) {\n    case 'Complex':\n      return cadd(m1, m2);\n    case 'Sparse':\n      return sadd(m1, m2);\n    default:\n      return add(m1, m2);\n  }\n}"
   },
   {
-    "__docId__": 51,
+    "__docId__": 42,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -1275,7 +1009,7 @@
     }
   },
   {
-    "__docId__": 52,
+    "__docId__": 43,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1311,7 +1045,7 @@
     "generator": false
   },
   {
-    "__docId__": 53,
+    "__docId__": 44,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1342,7 +1076,7 @@
     "generator": false
   },
   {
-    "__docId__": 54,
+    "__docId__": 45,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1404,7 +1138,7 @@
     "generator": false
   },
   {
-    "__docId__": 55,
+    "__docId__": 46,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1417,7 +1151,7 @@
     "content": "import pointwise from './pointwise'\n\nconst and = pointwise((x, y) => x && y);\n\nfunction cand(x, y) {\n  throw new Error('mathlab.and: no and for complex number')\n}\n\nfunction sand(x, y) {\n  // TODO\n  throw new Error('mathlab.and: and for sparse matrix not exist')\n}\n\n/**\n * Pointwise and\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * and(1, 2)\n * // returns 1 && 2\n * and([1, 2], [2, 2])\n * // returns [1 && 2, 2 && 2]\n * and([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 && 2, 1 && 2], [1 && 2, 2 && 2] ]\n */\nexport default function (m1, m2) {\n  switch (m1.constructor.name) {\n    case 'Complex':\n      return cand(m1, m2);\n    case 'Sparse':\n      return sand(m1, m2);\n    default:\n      return and(m1, m2);\n  }\n}"
   },
   {
-    "__docId__": 56,
+    "__docId__": 47,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -1438,7 +1172,7 @@
     }
   },
   {
-    "__docId__": 57,
+    "__docId__": 48,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1469,7 +1203,7 @@
     "generator": false
   },
   {
-    "__docId__": 58,
+    "__docId__": 49,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1500,7 +1234,7 @@
     "generator": false
   },
   {
-    "__docId__": 59,
+    "__docId__": 50,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1562,7 +1296,7 @@
     "generator": false
   },
   {
-    "__docId__": 60,
+    "__docId__": 51,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1575,7 +1309,7 @@
     "content": "\nimport pointwise from './pointwise'\nimport Sparse from './Sparse'\n\nconst asin = pointwise(Math.asin)\n\nfunction casin(x) {\n  throw new Error('mathlab.asin: no asin for complex number')\n}\n\nfunction sasin(x) {\n  return new Sparse({\n    col: x.col.slice(), // copy the array\n    row: x.row.slice(),\n    val: asin(x.val),\n  })\n}\n\n/**\n * Pointwise Math.asin(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * asin(1)\n * // returns Math.asin(1)\n * asin([1, 2])\n * // returns [Math.asin(1), Math.asin(2)]\n * asin([[1,2],[1,3]])\n * // returns [ [Math.asin(1), Math.asin(2)], [Math.asin(1), Math.asin(3)] ]\n */\nexport default function (m) {\n  switch (m.constructor.name) {\n    case 'Complex':\n      return casin(m);\n    case 'Sparse':\n      return sasin(m);\n    default:\n      return asin(m);\n  }\n}\n"
   },
   {
-    "__docId__": 61,
+    "__docId__": 52,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -1596,7 +1330,7 @@
     }
   },
   {
-    "__docId__": 62,
+    "__docId__": 53,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1621,7 +1355,7 @@
     "generator": false
   },
   {
-    "__docId__": 63,
+    "__docId__": 54,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1651,7 +1385,7 @@
     "generator": false
   },
   {
-    "__docId__": 64,
+    "__docId__": 55,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1702,7 +1436,7 @@
     "generator": false
   },
   {
-    "__docId__": 65,
+    "__docId__": 56,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1715,7 +1449,7 @@
     "content": "\nimport pointwise from './pointwise'\nimport Sparse from './Sparse'\n\nconst atan = pointwise(Math.atan)\n\nfunction catan(x) {\n  throw new Error('mathlab.atan: no atan for complex number')\n}\n\nfunction satan(x) {\n  return new Sparse({\n    col: x.col.slice(), // copy the array\n    row: x.row.slice(),\n    val: atan(x.val),\n  })\n}\n\n/**\n * Pointwise Math.atan(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * atan(1)\n * // returns Math.atan(1)\n * atan([1, 2])\n * // returns [Math.atan(1), Math.atan(2)]\n * atan([[1,2],[1,3]])\n * // returns [ [Math.atan(1), Math.atan(2)], [Math.atan(1), Math.atan(3)] ]\n */\nexport default function (m) {\n  switch (m.constructor.name) {\n    case 'Complex':\n      return catan(m);\n    case 'Sparse':\n      return satan(m);\n    default:\n      return atan(m);\n  }\n}\n"
   },
   {
-    "__docId__": 66,
+    "__docId__": 57,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -1736,7 +1470,7 @@
     }
   },
   {
-    "__docId__": 67,
+    "__docId__": 58,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1761,7 +1495,7 @@
     "generator": false
   },
   {
-    "__docId__": 68,
+    "__docId__": 59,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1791,7 +1525,7 @@
     "generator": false
   },
   {
-    "__docId__": 69,
+    "__docId__": 60,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1842,7 +1576,7 @@
     "generator": false
   },
   {
-    "__docId__": 70,
+    "__docId__": 61,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1855,7 +1589,7 @@
     "content": "\nimport pointwise from './pointwise'\n\n/**\n * Pointwise Math.atan2(x, y)\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * atan2(1, 2)\n * // returns Math.atan2(1, 2)\n * atan2([1, 2], [2, 2])\n * // returns [Math.atan2(1, 2), Math.atan2(2, 2)]\n * atan2([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [Math.atan2(2, 2), Math.atan2(1, 2)], [Math.atan2(1, 2), Math.atan2(2, 2)] ]\n */\nexport default function (m1, m2) {\n  // TODO \n  return pointwise(Math.atan2)(m1, m2)\n}\n"
   },
   {
-    "__docId__": 71,
+    "__docId__": 62,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1917,7 +1651,7 @@
     "generator": false
   },
   {
-    "__docId__": 72,
+    "__docId__": 63,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1930,7 +1664,7 @@
     "content": "import pointwise from './pointwise'\n\nconst band = pointwise((x, y) => x & y);\n\nfunction cband(x, y) {\n  throw new Error('mathlab.band: no band for complex number')\n}\n\nfunction sband(x, y) {\n  throw new Error('mathlab.band: band for sparse matrix not exist')\n}\n\n/**\n * Pointwise band\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * band(1, 2)\n * // returns 1 & 2\n * band([1, 2], [2, 2])\n * // returns [1 & 2, 2 & 2]\n * band([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 & 2, 1 & 2], [1 & 2, 2 & 2] ]\n */\nexport default function (m1, m2) {\n  switch (m1.constructor.name) {\n    case 'Complex':\n      return cband(m1, m2);\n    case 'Sparse':\n      return sband(m1, m2);\n    default:\n      return band(m1, m2);\n  }\n}"
   },
   {
-    "__docId__": 73,
+    "__docId__": 64,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -1951,7 +1685,7 @@
     }
   },
   {
-    "__docId__": 74,
+    "__docId__": 65,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1982,7 +1716,7 @@
     "generator": false
   },
   {
-    "__docId__": 75,
+    "__docId__": 66,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2013,7 +1747,7 @@
     "generator": false
   },
   {
-    "__docId__": 76,
+    "__docId__": 67,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2075,7 +1809,7 @@
     "generator": false
   },
   {
-    "__docId__": 77,
+    "__docId__": 68,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -2088,7 +1822,7 @@
     "content": "\nimport pointwise from './pointwise'\nimport Sparse from './Sparse'\n\nconst bnot = pointwise(x=> ~x);\n\nfunction cbnot(x) {\n  throw new Error('mathlab.bnot: no bnot for complex number')\n}\n\nfunction sbnot(x) {\n  return new Sparse({\n    col: x.col.slice(), // copy the array\n    row: x.row.slice(),\n    val: bnot(x.val),\n  })\n}\n\n/**\n * Pointwise Math.bnot(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * bnot(1)\n * // returns Math.bnot(1)\n * bnot([1, 2])\n * // returns [Math.bnot(1), Math.bnot(2)]\n * bnot([[1,2],[1,3]])\n * // returns [ [Math.bnot(1), Math.bnot(2)], [Math.bnot(1), Math.bnot(3)] ]\n */\nexport default function (m) {\n  switch (m.constructor.name) {\n    case 'Complex':\n      return cbnot(m);\n    case 'Sparse':\n      return sbnot(m);\n    default:\n      return bnot(m);\n  }\n}\n"
   },
   {
-    "__docId__": 78,
+    "__docId__": 69,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -2109,7 +1843,7 @@
     }
   },
   {
-    "__docId__": 79,
+    "__docId__": 70,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2134,7 +1868,7 @@
     "generator": false
   },
   {
-    "__docId__": 80,
+    "__docId__": 71,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2164,7 +1898,7 @@
     "generator": false
   },
   {
-    "__docId__": 81,
+    "__docId__": 72,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2215,7 +1949,7 @@
     "generator": false
   },
   {
-    "__docId__": 82,
+    "__docId__": 73,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -2228,7 +1962,7 @@
     "content": "import pointwise from './pointwise'\n\nconst bor = pointwise((x, y) => x | y);\n\nfunction cbor(x, y) {\n  throw new Error('mathlab.bor: no bor for complex number')\n}\n\nfunction sbor(x, y) {\n  throw new Error('mathlab.bor: bor for sparse matrix not exist')\n}\n\n/**\n * Pointwise bor\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * bor(1, 2)\n * // returns 1 | 2\n * bor([1, 2], [2, 2])\n * // returns [1 | 2, 2 | 2]\n * bor([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 | 2, 1 | 2], [1 | 2, 2 | 2] ]\n */\nexport default function (m1, m2) {\n  switch (m1.constructor.name) {\n    case 'Complex':\n      return cbor(m1, m2);\n    case 'Sparse':\n      return sbor(m1, m2);\n    default:\n      return bor(m1, m2);\n  }\n}"
   },
   {
-    "__docId__": 83,
+    "__docId__": 74,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -2249,7 +1983,7 @@
     }
   },
   {
-    "__docId__": 84,
+    "__docId__": 75,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2280,7 +2014,7 @@
     "generator": false
   },
   {
-    "__docId__": 85,
+    "__docId__": 76,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2311,7 +2045,7 @@
     "generator": false
   },
   {
-    "__docId__": 86,
+    "__docId__": 77,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2373,7 +2107,7 @@
     "generator": false
   },
   {
-    "__docId__": 87,
+    "__docId__": 78,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -2386,7 +2120,7 @@
     "content": "import pointwise from './pointwise'\n\nconst bxor = pointwise((x, y) => x ^ y);\n\nfunction cbxor(x, y) {\n  throw new Error('mathlab.bxor: no bxor for complex number')\n}\n\nfunction sbxor(x, y) {\n  throw new Error('mathlab.bxor: bxor for sparse matrix not exist')\n}\n\n/**\n * Pointwise bxor\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * bxor(1, 2)\n * // returns 1 ^ 2\n * bxor([1, 2], [2, 2])\n * // returns [1 ^ 2, 2 ^ 2]\n * bxor([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 ^ 2, 1 ^ 2], [1 ^ 2, 2 ^ 2] ]\n */\nexport default function (m1, m2) {\n  switch (m1.constructor.name) {\n    case 'Complex':\n      return cbxor(m1, m2);\n    case 'Sparse':\n      return sbxor(m1, m2);\n    default:\n      return bxor(m1, m2);\n  }\n}"
   },
   {
-    "__docId__": 88,
+    "__docId__": 79,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -2407,7 +2141,7 @@
     }
   },
   {
-    "__docId__": 89,
+    "__docId__": 80,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2438,7 +2172,7 @@
     "generator": false
   },
   {
-    "__docId__": 90,
+    "__docId__": 81,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2469,7 +2203,7 @@
     "generator": false
   },
   {
-    "__docId__": 91,
+    "__docId__": 82,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2531,7 +2265,7 @@
     "generator": false
   },
   {
-    "__docId__": 92,
+    "__docId__": 83,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -2544,7 +2278,7 @@
     "content": "\nimport pointwise from './pointwise'\nimport Sparse from './Sparse'\n\nconst ceil = pointwise(Math.ceil)\n\nfunction cceil(x) {\n  throw new Error('mathlab.ceil: no ceil for complex number')\n}\n\nfunction sceil(x) {\n  return new Sparse({\n    col: x.col.slice(), // copy the array\n    row: x.row.slice(),\n    val: ceil(x.val),\n  })\n}\n\n/**\n * Pointwise Math.ceil(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * ceil(1)\n * // returns Math.ceil(1)\n * ceil([1, 2])\n * // returns [Math.ceil(1), Math.ceil(2)]\n * ceil([[1,2],[1,3]])\n * // returns [ [Math.ceil(1), Math.ceil(2)], [Math.ceil(1), Math.ceil(3)] ]\n */\nexport default function (m) {\n  switch (m.constructor.name) {\n    case 'Complex':\n      return cceil(m);\n    case 'Sparse':\n      return sceil(m);\n    default:\n      return ceil(m);\n  }\n}\n"
   },
   {
-    "__docId__": 93,
+    "__docId__": 84,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -2565,7 +2299,7 @@
     }
   },
   {
-    "__docId__": 94,
+    "__docId__": 85,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2590,7 +2324,7 @@
     "generator": false
   },
   {
-    "__docId__": 95,
+    "__docId__": 86,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2620,7 +2354,7 @@
     "generator": false
   },
   {
-    "__docId__": 96,
+    "__docId__": 87,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2671,7 +2405,7 @@
     "generator": false
   },
   {
-    "__docId__": 97,
+    "__docId__": 88,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -2684,7 +2418,7 @@
     "content": "\nimport pointwise from './pointwise'\nimport Sparse from './Sparse'\n\nconst clone = pointwise(x => x);\n\nfunction cclone(x) {\n  throw new Error('mathlab.clone: no clone for complex number')\n}\n\nfunction sclone(x) {\n  return new Sparse({\n    col: x.col.slice(), // copy the array\n    row: x.row.slice(),\n    val: x.val.slice()\n  })}\n\n/**\n * Pointwise clone(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * clone(1)\n * // returns clone(1)\n * clone([1, 2])\n * // returns [clone(1), clone(2)]\n * clone([[1,2],[1,3]])\n * // returns [ [clone(1), clone(2)], [clone(1), clone(3)] ]\n */\nexport default function (m) {\n  switch (m.constructor.name) {\n    case 'Complex':\n      return cclone(m);\n    case 'Sparse':\n      return sclone(m);\n    default:\n      return clone(m);\n  }\n}\n"
   },
   {
-    "__docId__": 98,
+    "__docId__": 89,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -2705,7 +2439,7 @@
     }
   },
   {
-    "__docId__": 99,
+    "__docId__": 90,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2730,7 +2464,7 @@
     "generator": false
   },
   {
-    "__docId__": 100,
+    "__docId__": 91,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2760,7 +2494,7 @@
     "generator": false
   },
   {
-    "__docId__": 101,
+    "__docId__": 92,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2811,7 +2545,7 @@
     "generator": false
   },
   {
-    "__docId__": 102,
+    "__docId__": 93,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -2821,10 +2555,10 @@
     "access": null,
     "description": null,
     "lineNumber": 2,
-    "content": "\nimport pointwise from './pointwise'\nimport Complex from './Complex'\nimport Sparse from './Sparse'\nimport neg from './neg'\nimport exp from './exp'\nimport div from './div'\nimport add from './add'\n\nconst cos = pointwise(Math.cos)\n\nfunction ccos(x) {\n  if (x.y) {\n    return div(add(exp(x), exp(neg(x))), 2);\n  }\n  return new Complex(cos(x.x));\n}\n\nfunction scos(x) {\n  return new Sparse({\n    col: x.col.slice(), // copy the array\n    row: x.row.slice(),\n    val: cos(x.val),\n  })\n}\n\n/**\n * Pointwise Math.cos(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * cos(1)\n * // returns Math.cos(1)\n * cos([1, 2])\n * // returns [Math.cos(1), Math.cos(2)]\n * cos([[1,2],[1,3]])\n * // returns [ [Math.cos(1), Math.cos(2)], [Math.cos(1), Math.cos(3)] ]\n */\nexport default function (m) {\n  switch (m.constructor.name) {\n    case 'Complex':\n      return ccos(m);\n    case 'Sparse':\n      return scos(m);\n    default:\n      return cos(m);\n  }\n}\n"
+    "content": "\nimport pointwise from './pointwise'\nimport Complex from './Complex'\nimport Sparse from './Sparse'\nimport neg from './neg'\nimport exp from './exp'\nimport div from './div'\nimport add from './add'\n\nconst cos = pointwise(Math.cos)\n\nfunction ccos(x) {\n  if (x.im) {\n    return div(add(exp(x), exp(neg(x))), 2);\n  }\n  return new Complex(cos(x.re));\n}\n\nfunction scos(x) {\n  return new Sparse({\n    col: x.col.slice(), // copy the array\n    row: x.row.slice(),\n    val: cos(x.val),\n  })\n}\n\n/**\n * Pointwise Math.cos(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * cos(1)\n * // returns Math.cos(1)\n * cos([1, 2])\n * // returns [Math.cos(1), Math.cos(2)]\n * cos([[1,2],[1,3]])\n * // returns [ [Math.cos(1), Math.cos(2)], [Math.cos(1), Math.cos(3)] ]\n */\nexport default function (m) {\n  switch (m.constructor.name) {\n    case 'Complex':\n      return ccos(m);\n    case 'Sparse':\n      return scos(m);\n    default:\n      return cos(m);\n  }\n}\n"
   },
   {
-    "__docId__": 103,
+    "__docId__": 94,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -2845,7 +2579,7 @@
     }
   },
   {
-    "__docId__": 104,
+    "__docId__": 95,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2875,7 +2609,7 @@
     "generator": false
   },
   {
-    "__docId__": 105,
+    "__docId__": 96,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2905,7 +2639,7 @@
     "generator": false
   },
   {
-    "__docId__": 106,
+    "__docId__": 97,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2956,7 +2690,7 @@
     "generator": false
   },
   {
-    "__docId__": 107,
+    "__docId__": 98,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -2969,7 +2703,7 @@
     "content": "//\tDeterminant\nimport dim from './dim'\nimport clone from './clone'\n\n/**\n * Determinant of matix\n * \n * @export\n * @param {Array} x\n * @returns {Number}\n * @example\n * \n * det([[1, 2], [1, 2]])\n * // 0\n */\nexport default function det (x) {\n  // TODO\n  var s = dim(x)\n  if (s.length !== 2 || s[0] !== s[1]) { throw new Error('det() only works on square matrices'); }\n  var n = s[0], ret = 1,i,j,k,A = clone(x),Aj,Ai,alpha,temp,k1,k2,k3\n  for (j = 0;j < n - 1;j++) {\n    k = j\n    for (i = j + 1;i < n;i++) { if (Math.abs(A[i][j]) > Math.abs(A[k][j])) { k = i; } }\n    if (k !== j) {\n      temp = A[k]; A[k] = A[j]; A[j] = temp\n      ret *= -1\n    }\n    Aj = A[j]\n    for (i = j + 1;i < n;i++) {\n      Ai = A[i]\n      alpha = Ai[j] / Aj[j]\n      for (k = j + 1;k < n - 1;k += 2) {\n        k1 = k + 1\n        Ai[k] -= Aj[k] * alpha\n        Ai[k1] -= Aj[k1] * alpha\n      }\n      if (k !== n) { Ai[k] -= Aj[k] * alpha; }\n    }\n    if (Aj[j] === 0) { return 0; }\n    ret *= Aj[j]\n  }\n  return ret * A[j][j]\n}\n"
   },
   {
-    "__docId__": 108,
+    "__docId__": 99,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3018,7 +2752,7 @@
     "generator": false
   },
   {
-    "__docId__": 109,
+    "__docId__": 100,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -3031,7 +2765,7 @@
     "content": "/**\n * Create diagonal matrix from vector\n * \n * @param {Array} d\n * @returns {Array}\n * @example \n * \n * diag([1, 2])\n * // [[1, 0], \n * //  [0, 2]]\n */\nexport default function diag (d) {\n  var i, i1, j, n = d.length, A = Array(n), Ai\n  for (i = n - 1; i >= 0; i--) {\n    Ai = Array(n)\n    i1 = i + 2\n    for (j = n - 1; j >= i1; j -= 2) {\n      Ai[j] = 0\n      Ai[j - 1] = 0\n    }\n    if (j > i) { Ai[j] = 0; }\n    Ai[i] = d[i]\n    for (j = i - 1; j >= 1; j -= 2) {\n      Ai[j] = 0\n      Ai[j - 1] = 0\n    }\n    if (j === 0) { Ai[0] = 0; }\n    A[i] = Ai\n  }\n  return A\n}\n"
   },
   {
-    "__docId__": 110,
+    "__docId__": 101,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3076,7 +2810,7 @@
     "generator": false
   },
   {
-    "__docId__": 111,
+    "__docId__": 102,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -3086,10 +2820,10 @@
     "access": null,
     "description": null,
     "lineNumber": 12,
-    "content": "/**\n * Get Array dimensions\n * \n * @export\n * @param {Array} x\n * @returns {Array}\n * @example \n * \n * dim([[1, 2, 3], [1, 2, 2]])\n * // [2, 3]\n */\nexport default function(x) {\n  switch (x.constructor.name) {\n    case 'Complex':\n      return cdim(x);\n    case 'Sparse':\n      return sdim(x);\n    default:\n      return dim(x);\n  }\n}\n\nfunction cdim(x) {\n  if (x.x) {\n    return dim(x.x)\n  } else {\n    return dim(x.y)\n  }\n}\n\nfunction sdim(x) {\n  return [x.col.length-1, x.col.length-1];\n}\n\n\nfunction dim (x) {\n  if (typeof x === 'object') {\n    if (typeof x[0] === 'object') {\n      if (typeof x[0][0] === 'object') {\n        throw new Error('mathlab: only support two demitional matrix for now')\n      }\n      return [x.length, x[0].length]\n    }\n    return [x.length]\n  }\n  return []\n}\n"
+    "content": "/**\n * Get Array dimensions\n * \n * @export\n * @param {Array} x\n * @returns {Array}\n * @example \n * \n * dim([[1, 2, 3], [1, 2, 2]])\n * // [2, 3]\n */\nexport default function(x) {\n  switch (x.constructor.name) {\n    case 'Complex':\n      return cdim(x);\n    case 'Sparse':\n      return sdim(x);\n    default:\n      return dim(x);\n  }\n}\n\nfunction cdim(x) {\n  if (x.re) {\n    return dim(x.re)\n  } else {\n    return dim(x.im)\n  }\n}\n\nfunction sdim(x) {\n  return [x.col.length-1, x.col.length-1];\n}\n\n\nfunction dim (x) {\n  if (typeof x === 'object') {\n    if (typeof x[0] === 'object') {\n      if (typeof x[0][0] === 'object') {\n        throw new Error('mathlab: only support two demitional matrix for now')\n      }\n      return [x.length, x[0].length]\n    }\n    return [x.length]\n  }\n  return []\n}\n"
   },
   {
-    "__docId__": 112,
+    "__docId__": 103,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3138,7 +2872,7 @@
     "generator": false
   },
   {
-    "__docId__": 113,
+    "__docId__": 104,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3168,7 +2902,7 @@
     "generator": false
   },
   {
-    "__docId__": 114,
+    "__docId__": 105,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3198,7 +2932,7 @@
     "generator": false
   },
   {
-    "__docId__": 115,
+    "__docId__": 106,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3228,7 +2962,7 @@
     "generator": false
   },
   {
-    "__docId__": 116,
+    "__docId__": 107,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -3238,10 +2972,10 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import pointwise from './pointwise'\nimport Complex from './Complex';\nimport mul from './mul';\n\nconst div = pointwise((x, y) => x / y);\n\nfunction cdiv(x, y) {\n  if (!(y instanceof Complex)) y = new Complex(y);\n  if (y.y) {\n    return mul(x, y.reciprocal()); \n  }\n  if (x.y) {\n    return new Complex(div(x.x, y.x), div(x.y, y.x)); }\n  return new Complex(div(x.x, y.x));\n}\n\nfunction sdiv(x, y) {\n  // TODO\n  throw new Error('mathlab.div: div for sparse matrix not exist')\n}\n\n/**\n * Pointwise div\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * div(1, 2)\n * // returns 1 / 2\n * div([1, 2], [2, 2])\n * // returns [1 / 2, 2 / 2]\n * div([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 / 2, 1 / 2], [1 / 2, 2 / 2] ]\n */\nexport default function (m1, m2) {\n  switch (m1.constructor.name) {\n    case 'Complex':\n      return cdiv(m1, m2);\n    case 'Sparse':\n      return sdiv(m1, m2);\n    default:\n      return div(m1, m2);\n  }\n}"
+    "content": "import pointwise from './pointwise'\nimport Complex from './Complex';\nimport mul from './mul';\n\nconst div = pointwise((x, y) => x / y);\n\nfunction cdiv(x, y) {\n  if (!(y instanceof Complex)) y = new Complex(y);\n  if (y.im) {\n    return mul(x, y.reciprocal()); \n  }\n  if (x.im) {\n    return new Complex(div(x.re, y.re), div(x.im, y.re)); }\n  return new Complex(div(x.re, y.re));\n}\n\nfunction sdiv(x, y) {\n  // TODO\n  throw new Error('mathlab.div: div for sparse matrix not exist')\n}\n\n/**\n * Pointwise div\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * div(1, 2)\n * // returns 1 / 2\n * div([1, 2], [2, 2])\n * // returns [1 / 2, 2 / 2]\n * div([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 / 2, 1 / 2], [1 / 2, 2 / 2] ]\n */\nexport default function (m1, m2) {\n  switch (m1.constructor.name) {\n    case 'Complex':\n      return cdiv(m1, m2);\n    case 'Sparse':\n      return sdiv(m1, m2);\n    default:\n      return div(m1, m2);\n  }\n}"
   },
   {
-    "__docId__": 117,
+    "__docId__": 108,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -3262,7 +2996,7 @@
     }
   },
   {
-    "__docId__": 118,
+    "__docId__": 109,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3298,7 +3032,7 @@
     "generator": false
   },
   {
-    "__docId__": 119,
+    "__docId__": 110,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3329,7 +3063,7 @@
     "generator": false
   },
   {
-    "__docId__": 120,
+    "__docId__": 111,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3391,7 +3125,7 @@
     "generator": false
   },
   {
-    "__docId__": 121,
+    "__docId__": 112,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -3401,10 +3135,10 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import dim from './dim'\nimport add from './add'\nimport sub from './sub'\nimport Complex from './Complex'\n\n/**\n * \n * \n * @export\n * @param {Array | Number} x\n * @param {Array | Number} y\n * @returns {Array | Number}\n * @example\n * \n * dot([[1, 1], [2, 1]], [1, 2])\n * // [3, 4]\n * \n * dot([1, 2], 4)\n * // [4, 8]\n */\nexport default function (x, y) {\n  switch (x.constructor.name) {\n    case 'Complex':\n      return cdot(x, y);\n    case 'Sparse':\n      return sdot(x, y);\n    default:\n      return dot(x, y);\n  }\n}\n\nfunction cdot(x, y) {\n  if (!(y instanceof Complex)) { y = new Complex(y); }\n    if (x.y) {\n      if (y.y) {\n        return new Complex(sub(dot(x.x, y.x), dot(x.y, y.y)), add(dot(x.x, y.y), dot(x.y, y.x)));\n      }\n      return new Complex(dot(x.x, y.x), dot(x.y, y.x));\n    }\n    if (y.y) {\n      return new Complex(dot(x.x, y.x), dot(x.x, y.y));\n    }\n    return new Complex(dot(x.x, y.x));\n}\n\nfunction sdot(x, y) {\n    // TODO\n  throw new Error('mathlab.dot: dot for sparse matrix not exist')\n}\n\nfunction dot(x, y) {\n    var d = dim;\n    switch (d(x).length * 1000 + d(y).length) {\n        case 2002:\n            if (y.length < 10) return dotMMsmall(x, y);\n            else return dotMMbig(x, y);\n        case 2001:\n            return dotMV(x, y);\n        case 1002:\n            return dotVM(x, y);\n        case 1001:\n            return dotVV(x, y);\n        case 1000:\n            return mulVS(x, y);\n        case 1:\n            return mulSV(x, y);\n        case 0:\n            return x * y;\n        default:\n            throw new Error('dot only works on vectors and matrices');\n    }\n}\n\n\nfunction dotMMsmall(x, y) {\n    var i, j, k, p, q, r, ret, foo, bar, woo, i0, k0, p0, r0;\n    p = x.length;\n    q = y.length;\n    r = y[0].length;\n    ret = Array(p);\n    for (i = p - 1; i >= 0; i--) {\n        foo = Array(r);\n        bar = x[i];\n        for (k = r - 1; k >= 0; k--) {\n            woo = bar[q - 1] * y[q - 1][k];\n            for (j = q - 2; j >= 1; j -= 2) {\n                i0 = j - 1;\n                woo += bar[j] * y[j][k] + bar[i0] * y[i0][k];\n            }\n            if (j === 0) {\n                woo += bar[0] * y[0][k];\n            }\n            foo[k] = woo;\n        }\n        ret[i] = foo;\n    }\n    return ret;\n}\n\nfunction _getCol(A, j, x) {\n    var n = A.length,\n        i;\n    for (i = n - 1; i > 0; --i) {\n        x[i] = A[i][j];\n        --i;\n        x[i] = A[i][j];\n    }\n    if (i === 0) x[0] = A[0][j];\n}\n\nfunction dotMMbig(x, y) {\n    var gc = _getCol,\n        p = y.length,\n        v = Array(p);\n    var m = x.length,\n        n = y[0].length,\n        A = new Array(m),\n        xj;\n    var VV = dotVV;\n    var i, j, k, z;\n    --p;\n    --m;\n    for (i = m; i !== -1; --i) A[i] = Array(n);\n    --n;\n    for (i = n; i !== -1; --i) {\n        gc(y, i, v);\n        for (j = m; j !== -1; --j) {\n            z = 0;\n            xj = x[j];\n            A[j][i] = VV(xj, v);\n        }\n    }\n    return A;\n}\n\nfunction dotMV(x, y) {\n    var p = x.length,\n        q = y.length,\n        i;\n    var ret = Array(p);\n    for (i = p - 1; i >= 0; i--) {\n        ret[i] = dotVV(x[i], y);\n    }\n    return ret;\n}\n\nfunction dotVM(x, y) {\n    var i, j, k, p, q, r, ret, foo, bar, woo, i0, k0, p0, r0, s1, s2, s3, baz, accum;\n    p = x.length;\n    q = y[0].length;\n    ret = Array(q);\n    for (k = q - 1; k >= 0; k--) {\n        woo = x[p - 1] * y[p - 1][k];\n        for (j = p - 2; j >= 1; j -= 2) {\n            i0 = j - 1;\n            woo += x[j] * y[j][k] + x[i0] * y[i0][k];\n        }\n        if (j === 0) {\n            woo += x[0] * y[0][k];\n        }\n        ret[k] = woo;\n    }\n    return ret;\n}\n\nfunction dotVV(x, y) {\n    var i, n = x.length,\n        i1, ret = x[n - 1] * y[n - 1];\n    for (i = n - 2; i >= 1; i -= 2) {\n        i1 = i - 1;\n        ret += x[i] * y[i] + x[i1] * y[i1];\n    }\n    if (i === 0) {\n        ret += x[0] * y[0];\n    }\n    return ret;\n}\n\nfunction mulVV(x, y) {\n    var _n = y.length;\n    var i, ret = Array(_n);\n    for (i = _n - 1; i !== -1; --i) {\n        ret[i] = x[i] * y[i]\n    }\n    return ret;\n}\n\nfunction mulSV(x, y) {\n    var _n = y.length;\n    var i, ret = Array(_n);\n    for (i = _n - 1; i !== -1; --i) {\n        ret[i] = x * y[i]\n    }\n    return ret;\n}\n\nfunction mulVS(x, y) {\n    var _n = x.length;\n    var i, ret = Array(_n);\n    for (i = _n - 1; i !== -1; --i) {\n        ret[i] = x[i] * y\n    }\n    return ret;\n}"
+    "content": "import dim from './dim'\nimport add from './add'\nimport sub from './sub'\nimport Complex from './Complex'\n\n/**\n * \n * \n * @export\n * @param {Array | Number} x\n * @param {Array | Number} y\n * @returns {Array | Number}\n * @example\n * \n * dot([[1, 1], [2, 1]], [1, 2])\n * // [3, 4]\n * \n * dot([1, 2], 4)\n * // [4, 8]\n */\nexport default function (x, y) {\n  switch (x.constructor.name) {\n    case 'Complex':\n      return cdot(x, y);\n    case 'Sparse':\n      return sdot(x, y);\n    default:\n      return dot(x, y);\n  }\n}\n\nfunction cdot(x, y) {\n  if (!(y instanceof Complex)) { y = new Complex(y); }\n    if (x.im) {\n      if (y.im) {\n        return new Complex(sub(dot(x.re, y.re), dot(x.im, y.im)), add(dot(x.re, y.im), dot(x.im, y.re)));\n      }\n      return new Complex(dot(x.re, y.re), dot(x.im, y.re));\n    }\n    if (y.im) {\n      return new Complex(dot(x.re, y.re), dot(x.re, y.im));\n    }\n    return new Complex(dot(x.re, y.re));\n}\n\nfunction sdot(x, y) {\n    // TODO\n  throw new Error('mathlab.dot: dot for sparse matrix not exist')\n}\n\nfunction dot(x, y) {\n    var d = dim;\n    switch (d(x).length * 1000 + d(y).length) {\n        case 2002:\n            if (y.length < 10) return dotMMsmall(x, y);\n            else return dotMMbig(x, y);\n        case 2001:\n            return dotMV(x, y);\n        case 1002:\n            return dotVM(x, y);\n        case 1001:\n            return dotVV(x, y);\n        case 1000:\n            return mulVS(x, y);\n        case 1:\n            return mulSV(x, y);\n        case 0:\n            return x * y;\n        default:\n            throw new Error('dot only works on vectors and matrices');\n    }\n}\n\n\nfunction dotMMsmall(x, y) {\n    var i, j, k, p, q, r, ret, foo, bar, woo, i0, k0, p0, r0;\n    p = x.length;\n    q = y.length;\n    r = y[0].length;\n    ret = Array(p);\n    for (i = p - 1; i >= 0; i--) {\n        foo = Array(r);\n        bar = x[i];\n        for (k = r - 1; k >= 0; k--) {\n            woo = bar[q - 1] * y[q - 1][k];\n            for (j = q - 2; j >= 1; j -= 2) {\n                i0 = j - 1;\n                woo += bar[j] * y[j][k] + bar[i0] * y[i0][k];\n            }\n            if (j === 0) {\n                woo += bar[0] * y[0][k];\n            }\n            foo[k] = woo;\n        }\n        ret[i] = foo;\n    }\n    return ret;\n}\n\nfunction _getCol(A, j, x) {\n    var n = A.length,\n        i;\n    for (i = n - 1; i > 0; --i) {\n        x[i] = A[i][j];\n        --i;\n        x[i] = A[i][j];\n    }\n    if (i === 0) x[0] = A[0][j];\n}\n\nfunction dotMMbig(x, y) {\n    var gc = _getCol,\n        p = y.length,\n        v = Array(p);\n    var m = x.length,\n        n = y[0].length,\n        A = new Array(m),\n        xj;\n    var VV = dotVV;\n    var i, j, k, z;\n    --p;\n    --m;\n    for (i = m; i !== -1; --i) A[i] = Array(n);\n    --n;\n    for (i = n; i !== -1; --i) {\n        gc(y, i, v);\n        for (j = m; j !== -1; --j) {\n            z = 0;\n            xj = x[j];\n            A[j][i] = VV(xj, v);\n        }\n    }\n    return A;\n}\n\nfunction dotMV(x, y) {\n    var p = x.length,\n        q = y.length,\n        i;\n    var ret = Array(p);\n    for (i = p - 1; i >= 0; i--) {\n        ret[i] = dotVV(x[i], y);\n    }\n    return ret;\n}\n\nfunction dotVM(x, y) {\n    var i, j, k, p, q, r, ret, foo, bar, woo, i0, k0, p0, r0, s1, s2, s3, baz, accum;\n    p = x.length;\n    q = y[0].length;\n    ret = Array(q);\n    for (k = q - 1; k >= 0; k--) {\n        woo = x[p - 1] * y[p - 1][k];\n        for (j = p - 2; j >= 1; j -= 2) {\n            i0 = j - 1;\n            woo += x[j] * y[j][k] + x[i0] * y[i0][k];\n        }\n        if (j === 0) {\n            woo += x[0] * y[0][k];\n        }\n        ret[k] = woo;\n    }\n    return ret;\n}\n\nfunction dotVV(x, y) {\n    var i, n = x.length,\n        i1, ret = x[n - 1] * y[n - 1];\n    for (i = n - 2; i >= 1; i -= 2) {\n        i1 = i - 1;\n        ret += x[i] * y[i] + x[i1] * y[i1];\n    }\n    if (i === 0) {\n        ret += x[0] * y[0];\n    }\n    return ret;\n}\n\nfunction mulVV(x, y) {\n    var _n = y.length;\n    var i, ret = Array(_n);\n    for (i = _n - 1; i !== -1; --i) {\n        ret[i] = x[i] * y[i]\n    }\n    return ret;\n}\n\nfunction mulSV(x, y) {\n    var _n = y.length;\n    var i, ret = Array(_n);\n    for (i = _n - 1; i !== -1; --i) {\n        ret[i] = x * y[i]\n    }\n    return ret;\n}\n\nfunction mulVS(x, y) {\n    var _n = x.length;\n    var i, ret = Array(_n);\n    for (i = _n - 1; i !== -1; --i) {\n        ret[i] = x[i] * y\n    }\n    return ret;\n}"
   },
   {
-    "__docId__": 122,
+    "__docId__": 113,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3466,7 +3200,7 @@
     "generator": false
   },
   {
-    "__docId__": 123,
+    "__docId__": 114,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3502,7 +3236,7 @@
     "generator": false
   },
   {
-    "__docId__": 124,
+    "__docId__": 115,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3533,7 +3267,7 @@
     "generator": false
   },
   {
-    "__docId__": 125,
+    "__docId__": 116,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3569,7 +3303,7 @@
     "generator": false
   },
   {
-    "__docId__": 126,
+    "__docId__": 117,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3605,7 +3339,7 @@
     "generator": false
   },
   {
-    "__docId__": 127,
+    "__docId__": 118,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3642,7 +3376,7 @@
     "generator": false
   },
   {
-    "__docId__": 128,
+    "__docId__": 119,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3678,7 +3412,7 @@
     "generator": false
   },
   {
-    "__docId__": 129,
+    "__docId__": 120,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3714,7 +3448,7 @@
     "generator": false
   },
   {
-    "__docId__": 130,
+    "__docId__": 121,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3750,7 +3484,7 @@
     "generator": false
   },
   {
-    "__docId__": 131,
+    "__docId__": 122,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3786,7 +3520,7 @@
     "generator": false
   },
   {
-    "__docId__": 132,
+    "__docId__": 123,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3822,7 +3556,7 @@
     "generator": false
   },
   {
-    "__docId__": 133,
+    "__docId__": 124,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3858,7 +3592,7 @@
     "generator": false
   },
   {
-    "__docId__": 134,
+    "__docId__": 125,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3894,7 +3628,7 @@
     "generator": false
   },
   {
-    "__docId__": 135,
+    "__docId__": 126,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -3904,10 +3638,10 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import transpose from './transpose';\nimport Complex from './Complex'\nimport neq from './neq'\nimport clone from './clone'\nimport norm2 from './norm2'\nimport div from './div'\nimport dim from './dim'\nimport dot from './dot'\nimport add from './add'\nimport getBlock from './getBlock'\nimport tensor from './tensor'\nimport identity from './identity'\nimport epsilon from './epsilon'\nimport sub from './sub'\nimport mul from './mul'\nimport diag from './diag'\nimport rep from './rep'\nimport neg from './neg'\nimport getDiag from './getDiag'\n\n\n/**\n * Eigenvalues of real matrices\n * \n * @param {any} A\n * @param {any} maxiter\n * @returns\n */\nexport default function eig(A, maxiter) {\n  var QH = toUpperHessenberg(A);\n  var QB = QRFrancis(QH.H, maxiter);\n  var n = A.length,\n    i, k, flag = false,\n    B = QB.B,\n    H = dot(QB.Q, dot(QH.H, transpose(QB.Q)));\n  var Q = new Complex(dot(QB.Q, QH.Q)),\n    Q0;\n  var m = B.length,\n    j;\n  var a, b, c, d, p1, p2, disc, x, y, p, q, n1, n2;\n  var sqrt = Math.sqrt;\n  for (k = 0; k < m; k++) {\n    i = B[k][0];\n    if (i === B[k][1]) {\n      // nothing\n    } else {\n      j = i + 1;\n      a = H[i][i];\n      b = H[i][j];\n      c = H[j][i];\n      d = H[j][j];\n      if (b === 0 && c === 0) continue;\n      p1 = -a - d;\n      p2 = a * d - b * c;\n      disc = p1 * p1 - 4 * p2;\n      if (disc >= 0) {\n        if (p1 < 0) x = -0.5 * (p1 - sqrt(disc));\n        else x = -0.5 * (p1 + sqrt(disc));\n        n1 = (a - x) * (a - x) + b * b;\n        n2 = c * c + (d - x) * (d - x);\n        if (n1 > n2) {\n          n1 = sqrt(n1);\n          p = (a - x) / n1;\n          q = b / n1;\n        } else {\n          n2 = sqrt(n2);\n          p = c / n2;\n          q = (d - x) / n2;\n        }\n        Q0 = new Complex([\n          [q, -p],\n          [p, q]\n        ]);\n        Q.setRows(i, j, dot(Q0, Q.getRows(i, j)));\n      } else {\n        x = -0.5 * p1;\n        y = 0.5 * sqrt(-disc);\n        n1 = (a - x) * (a - x) + b * b;\n        n2 = c * c + (d - x) * (d - x);\n        if (n1 > n2) {\n          n1 = sqrt(n1 + y * y);\n          p = (a - x) / n1;\n          q = b / n1;\n          x = 0;\n          y /= n1;\n        } else {\n          n2 = sqrt(n2 + y * y);\n          p = c / n2;\n          q = (d - x) / n2;\n          x = y / n2;\n          y = 0;\n        }\n        Q0 = new Complex([\n          [q, -p],\n          [p, q]\n        ], [\n          [x, y],\n          [y, -x]\n        ]);\n        Q.setRows(i, j, dot(Q0, Q.getRows(i, j)));\n      }\n    }\n  }\n  var R = dot(dot(Q, A), Q.transjugate()),\n    n = A.length,\n    E = new Complex(identity(n));\n  for (j = 0; j < n; j++) {\n    if (j > 0) {\n      for (k = j - 1; k >= 0; k--) {\n        var Rk = R.get([k, k]),\n          Rj = R.get([j, j]);\n        if (neq(Rk.x, Rj.x) || neq(Rk.y, Rj.y)) {\n          x = R.getRow(k).getBlock([k], [j - 1]);\n          y = E.getRow(j).getBlock([k], [j - 1]);\n          E.set([j, k], div((sub(neg(R.get([k, j])), dot(x, y))), sub(Rk, Rj)));\n        } else {\n          E.setRow(j, E.getRow(k));\n          continue;\n        }\n      }\n    }\n  }\n  for (j = 0; j < n; j++) {\n    x = E.getRow(j);\n    E.setRow(j, div(x, norm2(x)));\n  }\n  E = transpose(E);\n  E = dot(Q.transjugate(),E);\n  return {\n    lambda: getDiag(R),\n    E: E\n  };\n};\n\nfunction house(x) {\n  var v = clone(x);\n  var s = x[0] >= 0 ? 1 : -1;\n  var alpha = s * norm2(x);\n  v[0] += alpha;\n  var foo = norm2(v);\n  if (foo === 0) { /* this should not happen */\n    throw new Error('eig: internal error');\n  }\n  return div(v, foo);\n}\n\nfunction toUpperHessenberg(me) {\n  var s = dim(me);\n  if (s.length !== 2 || s[0] !== s[1]) {\n    throw new Error('mathlab: toUpperHessenberg() only works on square matrices');\n  }\n  var m = s[0],\n    i, j, k, x, v, A = clone(me),\n    B, C, Ai, Ci, Q = identity(m),\n    Qi;\n  for (j = 0; j < m - 2; j++) {\n    x = Array(m - j - 1);\n    for (i = j + 1; i < m; i++) {\n      x[i - j - 1] = A[i][j];\n    }\n    if (norm2(x) > 0) {\n      v = house(x);\n      B = getBlock(A, [j + 1, j], [m - 1, m - 1]);\n      C = tensor(v, dot(v, B));\n      for (i = j + 1; i < m; i++) {\n        Ai = A[i];\n        Ci = C[i - j - 1];\n        for (k = j; k < m; k++) Ai[k] -= 2 * Ci[k - j];\n      }\n      B = getBlock(A, [0, j + 1], [m - 1, m - 1]);\n      C = tensor(dot(B, v), v);\n      for (i = 0; i < m; i++) {\n        Ai = A[i];\n        Ci = C[i];\n        for (k = j + 1; k < m; k++) Ai[k] -= 2 * Ci[k - j - 1];\n      }\n      B = Array(m - j - 1);\n      for (i = j + 1; i < m; i++) B[i - j - 1] = Q[i];\n      C = tensor(v, dot(v, B));\n      for (i = j + 1; i < m; i++) {\n        Qi = Q[i];\n        Ci = C[i - j - 1];\n        for (k = 0; k < m; k++) Qi[k] -= 2 * Ci[k];\n      }\n    }\n  }\n  return {\n    H: A,\n    Q: Q\n  };\n}\n\n\nfunction QRFrancis(H, maxiter) {\n  if (typeof maxiter === \"undefined\") {\n    maxiter = 10000;\n  }\n  H = clone(H);\n  var H0 = clone(H);\n  var s = dim(H),\n    m = s[0],\n    x, v, a, b, c, d, det, tr, Hloc, Q = identity(m),\n    Qi, Hi, B, C, Ci, i, j, k, iter;\n  if (m < 3) {\n    return {\n      Q: Q,\n      B: [\n        [0, m - 1]\n      ]\n    };\n  }\n  for (iter = 0; iter < maxiter; iter++) {\n    for (j = 0; j < m - 1; j++) {\n      if (Math.abs(H[j + 1][j]) < epsilon * (Math.abs(H[j][j]) + Math.abs(H[j + 1][j + 1]))) {\n        var QH1 = QRFrancis(getBlock(H, [0, 0], [j, j]), maxiter);\n        var QH2 = QRFrancis(getBlock(H, [j + 1, j + 1], [m - 1, m - 1]), maxiter);\n        B = Array(j + 1);\n        for (i = 0; i <= j; i++) {\n          B[i] = Q[i];\n        }\n        C = dot(QH1.Q, B);\n        for (i = 0; i <= j; i++) {\n          Q[i] = C[i];\n        }\n        B = Array(m - j - 1);\n        for (i = j + 1; i < m; i++) {\n          B[i - j - 1] = Q[i];\n        }\n        C = dot(QH2.Q, B);\n        for (i = j + 1; i < m; i++) {\n          Q[i] = C[i - j - 1];\n        }\n        return {\n          Q: Q,\n          B: QH1.B.concat(add(QH2.B, j + 1))\n        };\n      }\n    }\n    a = H[m - 2][m - 2];\n    b = H[m - 2][m - 1];\n    c = H[m - 1][m - 2];\n    d = H[m - 1][m - 1];\n    tr = a + d;\n    det = (a * d - b * c);\n    Hloc = getBlock(H, [0, 0], [2, 2]);\n    if (tr * tr >= 4 * det) {\n      var s1, s2;\n      s1 = 0.5 * (tr + Math.sqrt(tr * tr - 4 * det));\n      s2 = 0.5 * (tr - Math.sqrt(tr * tr - 4 * det));\n      Hloc = add(sub(dot(Hloc, Hloc),\n          mul(Hloc, s1 + s2)),\n        diag(rep([3], s1 * s2)));\n    } else {\n      Hloc = add(sub(dot(Hloc, Hloc),\n          mul(Hloc, tr)),\n        diag(rep([3], det)));\n    }\n    x = [Hloc[0][0], Hloc[1][0], Hloc[2][0]];\n    v = house(x);\n    B = [H[0], H[1], H[2]];\n    C = tensor(v, dot(v, B));\n    for (i = 0; i < 3; i++) {\n      Hi = H[i];\n      Ci = C[i];\n      for (k = 0; k < m; k++) Hi[k] -= 2 * Ci[k];\n    }\n    B = getBlock(H, [0, 0], [m - 1, 2]);\n    C = tensor(dot(B, v), v);\n    for (i = 0; i < m; i++) {\n      Hi = H[i];\n      Ci = C[i];\n      for (k = 0; k < 3; k++) Hi[k] -= 2 * Ci[k];\n    }\n    B = [Q[0], Q[1], Q[2]];\n    C = tensor(v, dot(v, B));\n    for (i = 0; i < 3; i++) {\n      Qi = Q[i];\n      Ci = C[i];\n      for (k = 0; k < m; k++) Qi[k] -= 2 * Ci[k];\n    }\n    var J;\n    for (j = 0; j < m - 2; j++) {\n      for (k = j; k <= j + 1; k++) {\n        if (Math.abs(H[k + 1][k]) < epsilon * (Math.abs(H[k][k]) + Math.abs(H[k + 1][k + 1]))) {\n          var QH1 = QRFrancis(getBlock(H, [0, 0], [k, k]), maxiter);\n          var QH2 = QRFrancis(getBlock(H, [k + 1, k + 1], [m - 1, m - 1]), maxiter);\n          B = Array(k + 1);\n          for (i = 0; i <= k; i++) {\n            B[i] = Q[i];\n          }\n          C = dot(QH1.Q, B);\n          for (i = 0; i <= k; i++) {\n            Q[i] = C[i];\n          }\n          B = Array(m - k - 1);\n          for (i = k + 1; i < m; i++) {\n            B[i - k - 1] = Q[i];\n          }\n          C = dot(QH2.Q, B);\n          for (i = k + 1; i < m; i++) {\n            Q[i] = C[i - k - 1];\n          }\n          return {\n            Q: Q,\n            B: QH1.B.concat(add(QH2.B, k + 1))\n          };\n        }\n      }\n      J = Math.min(m - 1, j + 3);\n      x = Array(J - j);\n      for (i = j + 1; i <= J; i++) {\n        x[i - j - 1] = H[i][j];\n      }\n      v = house(x);\n      B = getBlock(H, [j + 1, j], [J, m - 1]);\n      C = tensor(v, dot(v, B));\n      for (i = j + 1; i <= J; i++) {\n        Hi = H[i];\n        Ci = C[i - j - 1];\n        for (k = j; k < m; k++) Hi[k] -= 2 * Ci[k - j];\n      }\n      B = getBlock(H, [0, j + 1], [m - 1, J]);\n      C = tensor(dot(B, v), v);\n      for (i = 0; i < m; i++) {\n        Hi = H[i];\n        Ci = C[i];\n        for (k = j + 1; k <= J; k++) Hi[k] -= 2 * Ci[k - j - 1];\n      }\n      B = Array(J - j);\n      for (i = j + 1; i <= J; i++) B[i - j - 1] = Q[i];\n      C = tensor(v, dot(v, B));\n      for (i = j + 1; i <= J; i++) {\n        Qi = Q[i];\n        Ci = C[i - j - 1];\n        for (k = 0; k < m; k++) Qi[k] -= 2 * Ci[k];\n      }\n    }\n  }\n  throw new Error('mathlab: eigenvalue iteration does not converge -- increase maxiter?');\n}"
+    "content": "import transpose from './transpose';\nimport Complex from './Complex'\nimport neq from './neq'\nimport clone from './clone'\nimport norm2 from './norm2'\nimport div from './div'\nimport dim from './dim'\nimport dot from './dot'\nimport add from './add'\nimport getBlock from './getBlock'\nimport tensor from './tensor'\nimport identity from './identity'\nimport epsilon from './epsilon'\nimport sub from './sub'\nimport mul from './mul'\nimport diag from './diag'\nimport rep from './rep'\nimport neg from './neg'\nimport getDiag from './getDiag'\n\n\n/**\n * Eigenvalues of real matrices\n * \n * @param {any} A\n * @param {any} maxiter\n * @returns\n */\nexport default function eig(A, maxiter) {\n  var QH = toUpperHessenberg(A);\n  var QB = QRFrancis(QH.H, maxiter);\n  var n = A.length,\n    i, k, flag = false,\n    B = QB.B,\n    H = dot(QB.Q, dot(QH.H, transpose(QB.Q)));\n  var Q = new Complex(dot(QB.Q, QH.Q)),\n    Q0;\n  var m = B.length,\n    j;\n  var a, b, c, d, p1, p2, disc, x, y, p, q, n1, n2;\n  var sqrt = Math.sqrt;\n  for (k = 0; k < m; k++) {\n    i = B[k][0];\n    if (i === B[k][1]) {\n      // nothing\n    } else {\n      j = i + 1;\n      a = H[i][i];\n      b = H[i][j];\n      c = H[j][i];\n      d = H[j][j];\n      if (b === 0 && c === 0) continue;\n      p1 = -a - d;\n      p2 = a * d - b * c;\n      disc = p1 * p1 - 4 * p2;\n      if (disc >= 0) {\n        if (p1 < 0) x = -0.5 * (p1 - sqrt(disc));\n        else x = -0.5 * (p1 + sqrt(disc));\n        n1 = (a - x) * (a - x) + b * b;\n        n2 = c * c + (d - x) * (d - x);\n        if (n1 > n2) {\n          n1 = sqrt(n1);\n          p = (a - x) / n1;\n          q = b / n1;\n        } else {\n          n2 = sqrt(n2);\n          p = c / n2;\n          q = (d - x) / n2;\n        }\n        Q0 = new Complex([\n          [q, -p],\n          [p, q]\n        ]);\n        Q.setRows(i, j, dot(Q0, Q.getRows(i, j)));\n      } else {\n        x = -0.5 * p1;\n        y = 0.5 * sqrt(-disc);\n        n1 = (a - x) * (a - x) + b * b;\n        n2 = c * c + (d - x) * (d - x);\n        if (n1 > n2) {\n          n1 = sqrt(n1 + y * y);\n          p = (a - x) / n1;\n          q = b / n1;\n          x = 0;\n          y /= n1;\n        } else {\n          n2 = sqrt(n2 + y * y);\n          p = c / n2;\n          q = (d - x) / n2;\n          x = y / n2;\n          y = 0;\n        }\n        Q0 = new Complex([\n          [q, -p],\n          [p, q]\n        ], [\n          [x, y],\n          [y, -x]\n        ]);\n        Q.setRows(i, j, dot(Q0, Q.getRows(i, j)));\n      }\n    }\n  }\n  var R = dot(dot(Q, A), Q.transjugate()),\n    n = A.length,\n    E = new Complex(identity(n));\n  for (j = 0; j < n; j++) {\n    if (j > 0) {\n      for (k = j - 1; k >= 0; k--) {\n        var Rk = R.get([k, k]),\n          Rj = R.get([j, j]);\n        if (neq(Rk.re, Rj.re) || neq(Rk.im, Rj.im)) {\n          x = getBlock(R.getRow(k), [k], [j - 1]);\n          y = getBlock(E.getRow(j), [k], [j - 1]);\n          E.set([j, k], div((sub(neg(R.get([k, j])), dot(x, y))), sub(Rk, Rj)));\n        } else {\n          E.setRow(j, E.getRow(k));\n          continue;\n        }\n      }\n    }\n  }\n  for (j = 0; j < n; j++) {\n    x = E.getRow(j);\n    E.setRow(j, div(x, norm2(x)));\n  }\n  E = transpose(E);\n  E = dot(Q.transjugate(),E);\n  return {\n    lambda: getDiag(R),\n    E: E\n  };\n};\n\nfunction house(x) {\n  var v = clone(x);\n  var s = x[0] >= 0 ? 1 : -1;\n  var alpha = s * norm2(x);\n  v[0] += alpha;\n  var foo = norm2(v);\n  if (foo === 0) { /* this should not happen */\n    throw new Error('eig: internal error');\n  }\n  return div(v, foo);\n}\n\nfunction toUpperHessenberg(me) {\n  var s = dim(me);\n  if (s.length !== 2 || s[0] !== s[1]) {\n    throw new Error('mathlab: toUpperHessenberg() only works on square matrices');\n  }\n  var m = s[0],\n    i, j, k, x, v, A = clone(me),\n    B, C, Ai, Ci, Q = identity(m),\n    Qi;\n  for (j = 0; j < m - 2; j++) {\n    x = Array(m - j - 1);\n    for (i = j + 1; i < m; i++) {\n      x[i - j - 1] = A[i][j];\n    }\n    if (norm2(x) > 0) {\n      v = house(x);\n      B = getBlock(A, [j + 1, j], [m - 1, m - 1]);\n      C = tensor(v, dot(v, B));\n      for (i = j + 1; i < m; i++) {\n        Ai = A[i];\n        Ci = C[i - j - 1];\n        for (k = j; k < m; k++) Ai[k] -= 2 * Ci[k - j];\n      }\n      B = getBlock(A, [0, j + 1], [m - 1, m - 1]);\n      C = tensor(dot(B, v), v);\n      for (i = 0; i < m; i++) {\n        Ai = A[i];\n        Ci = C[i];\n        for (k = j + 1; k < m; k++) Ai[k] -= 2 * Ci[k - j - 1];\n      }\n      B = Array(m - j - 1);\n      for (i = j + 1; i < m; i++) B[i - j - 1] = Q[i];\n      C = tensor(v, dot(v, B));\n      for (i = j + 1; i < m; i++) {\n        Qi = Q[i];\n        Ci = C[i - j - 1];\n        for (k = 0; k < m; k++) Qi[k] -= 2 * Ci[k];\n      }\n    }\n  }\n  return {\n    H: A,\n    Q: Q\n  };\n}\n\n\nfunction QRFrancis(H, maxiter) {\n  if (typeof maxiter === \"undefined\") {\n    maxiter = 10000;\n  }\n  H = clone(H);\n  var H0 = clone(H);\n  var s = dim(H),\n    m = s[0],\n    x, v, a, b, c, d, det, tr, Hloc, Q = identity(m),\n    Qi, Hi, B, C, Ci, i, j, k, iter;\n  if (m < 3) {\n    return {\n      Q: Q,\n      B: [\n        [0, m - 1]\n      ]\n    };\n  }\n  for (iter = 0; iter < maxiter; iter++) {\n    for (j = 0; j < m - 1; j++) {\n      if (Math.abs(H[j + 1][j]) < epsilon * (Math.abs(H[j][j]) + Math.abs(H[j + 1][j + 1]))) {\n        var QH1 = QRFrancis(getBlock(H, [0, 0], [j, j]), maxiter);\n        var QH2 = QRFrancis(getBlock(H, [j + 1, j + 1], [m - 1, m - 1]), maxiter);\n        B = Array(j + 1);\n        for (i = 0; i <= j; i++) {\n          B[i] = Q[i];\n        }\n        C = dot(QH1.Q, B);\n        for (i = 0; i <= j; i++) {\n          Q[i] = C[i];\n        }\n        B = Array(m - j - 1);\n        for (i = j + 1; i < m; i++) {\n          B[i - j - 1] = Q[i];\n        }\n        C = dot(QH2.Q, B);\n        for (i = j + 1; i < m; i++) {\n          Q[i] = C[i - j - 1];\n        }\n        return {\n          Q: Q,\n          B: QH1.B.concat(add(QH2.B, j + 1))\n        };\n      }\n    }\n    a = H[m - 2][m - 2];\n    b = H[m - 2][m - 1];\n    c = H[m - 1][m - 2];\n    d = H[m - 1][m - 1];\n    tr = a + d;\n    det = (a * d - b * c);\n    Hloc = getBlock(H, [0, 0], [2, 2]);\n    if (tr * tr >= 4 * det) {\n      var s1, s2;\n      s1 = 0.5 * (tr + Math.sqrt(tr * tr - 4 * det));\n      s2 = 0.5 * (tr - Math.sqrt(tr * tr - 4 * det));\n      Hloc = add(sub(dot(Hloc, Hloc),\n          mul(Hloc, s1 + s2)),\n        diag(rep([3], s1 * s2)));\n    } else {\n      Hloc = add(sub(dot(Hloc, Hloc),\n          mul(Hloc, tr)),\n        diag(rep([3], det)));\n    }\n    x = [Hloc[0][0], Hloc[1][0], Hloc[2][0]];\n    v = house(x);\n    B = [H[0], H[1], H[2]];\n    C = tensor(v, dot(v, B));\n    for (i = 0; i < 3; i++) {\n      Hi = H[i];\n      Ci = C[i];\n      for (k = 0; k < m; k++) Hi[k] -= 2 * Ci[k];\n    }\n    B = getBlock(H, [0, 0], [m - 1, 2]);\n    C = tensor(dot(B, v), v);\n    for (i = 0; i < m; i++) {\n      Hi = H[i];\n      Ci = C[i];\n      for (k = 0; k < 3; k++) Hi[k] -= 2 * Ci[k];\n    }\n    B = [Q[0], Q[1], Q[2]];\n    C = tensor(v, dot(v, B));\n    for (i = 0; i < 3; i++) {\n      Qi = Q[i];\n      Ci = C[i];\n      for (k = 0; k < m; k++) Qi[k] -= 2 * Ci[k];\n    }\n    var J;\n    for (j = 0; j < m - 2; j++) {\n      for (k = j; k <= j + 1; k++) {\n        if (Math.abs(H[k + 1][k]) < epsilon * (Math.abs(H[k][k]) + Math.abs(H[k + 1][k + 1]))) {\n          var QH1 = QRFrancis(getBlock(H, [0, 0], [k, k]), maxiter);\n          var QH2 = QRFrancis(getBlock(H, [k + 1, k + 1], [m - 1, m - 1]), maxiter);\n          B = Array(k + 1);\n          for (i = 0; i <= k; i++) {\n            B[i] = Q[i];\n          }\n          C = dot(QH1.Q, B);\n          for (i = 0; i <= k; i++) {\n            Q[i] = C[i];\n          }\n          B = Array(m - k - 1);\n          for (i = k + 1; i < m; i++) {\n            B[i - k - 1] = Q[i];\n          }\n          C = dot(QH2.Q, B);\n          for (i = k + 1; i < m; i++) {\n            Q[i] = C[i - k - 1];\n          }\n          return {\n            Q: Q,\n            B: QH1.B.concat(add(QH2.B, k + 1))\n          };\n        }\n      }\n      J = Math.min(m - 1, j + 3);\n      x = Array(J - j);\n      for (i = j + 1; i <= J; i++) {\n        x[i - j - 1] = H[i][j];\n      }\n      v = house(x);\n      B = getBlock(H, [j + 1, j], [J, m - 1]);\n      C = tensor(v, dot(v, B));\n      for (i = j + 1; i <= J; i++) {\n        Hi = H[i];\n        Ci = C[i - j - 1];\n        for (k = j; k < m; k++) Hi[k] -= 2 * Ci[k - j];\n      }\n      B = getBlock(H, [0, j + 1], [m - 1, J]);\n      C = tensor(dot(B, v), v);\n      for (i = 0; i < m; i++) {\n        Hi = H[i];\n        Ci = C[i];\n        for (k = j + 1; k <= J; k++) Hi[k] -= 2 * Ci[k - j - 1];\n      }\n      B = Array(J - j);\n      for (i = j + 1; i <= J; i++) B[i - j - 1] = Q[i];\n      C = tensor(v, dot(v, B));\n      for (i = j + 1; i <= J; i++) {\n        Qi = Q[i];\n        Ci = C[i - j - 1];\n        for (k = 0; k < m; k++) Qi[k] -= 2 * Ci[k];\n      }\n    }\n  }\n  throw new Error('mathlab: eigenvalue iteration does not converge -- increase maxiter?');\n}"
   },
   {
-    "__docId__": 136,
+    "__docId__": 127,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3956,7 +3690,7 @@
     "generator": false
   },
   {
-    "__docId__": 137,
+    "__docId__": 128,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3986,7 +3720,7 @@
     "generator": false
   },
   {
-    "__docId__": 138,
+    "__docId__": 129,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -4016,7 +3750,7 @@
     "generator": false
   },
   {
-    "__docId__": 139,
+    "__docId__": 130,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -4052,7 +3786,7 @@
     "generator": false
   },
   {
-    "__docId__": 140,
+    "__docId__": 131,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -4065,7 +3799,7 @@
     "content": "/**\n * 2.220446049250313e-16\n * \n * @export\n */\nexport default 2.220446049250313e-16"
   },
   {
-    "__docId__": 141,
+    "__docId__": 132,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -4078,7 +3812,7 @@
     "content": "import pointwise from './pointwise'\n\nconst eq = pointwise((x, y) => x === y);\n\nfunction ceq(x, y) {\n  throw new Error('mathlab.eq: no eq for complex number')\n}\n\nfunction seq(x, y) {\n  throw new Error('mathlab.eq: eq for sparse matrix not exist')\n}\n\n/**\n * Pointwise eq\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * eq(1, 2)\n * // returns 1 === 2\n * eq([1, 2], [2, 2])\n * // returns [1 === 2, 2 === 2]\n * eq([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 === 2, 1 === 2], [1 === 2, 2 === 2] ]\n */\nexport default function (m1, m2) {\n  switch (m1.constructor.name) {\n    case 'Complex':\n      return ceq(m1, m2);\n    case 'Sparse':\n      return seq(m1, m2);\n    default:\n      return eq(m1, m2);\n  }\n}"
   },
   {
-    "__docId__": 142,
+    "__docId__": 133,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -4099,7 +3833,7 @@
     }
   },
   {
-    "__docId__": 143,
+    "__docId__": 134,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -4130,7 +3864,7 @@
     "generator": false
   },
   {
-    "__docId__": 144,
+    "__docId__": 135,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -4161,7 +3895,7 @@
     "generator": false
   },
   {
-    "__docId__": 145,
+    "__docId__": 136,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -4223,7 +3957,7 @@
     "generator": false
   },
   {
-    "__docId__": 146,
+    "__docId__": 137,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -4233,10 +3967,10 @@
     "access": null,
     "description": null,
     "lineNumber": 2,
-    "content": "\nimport pointwise from './pointwise'\nimport cos from './cos'\nimport sin from './sin'\nimport mul from './mul'\nimport Complex from './Complex'\nimport Sparse from './Sparse'\n\nconst exp = pointwise(Math.exp)\n\nfunction cexp(x) {\n  var ex = exp(x.x);\n  if (x.y) {\n    return new Complex(mul(cos(x.y), ex), mul(sin(x.y), ex));\n  }\n  return new Complex(ex);\n}\n\nfunction sexp(x) {\n  return new Sparse({\n    col: x.col.slice(), // copy the array\n    row: x.row.slice(),\n    val: exp(x.val),\n  })\n}\n\n/**\n * Pointwise Math.exp(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * exp(1)\n * // returns Math.exp(1)\n * exp([1, 2])\n * // returns [Math.exp(1), Math.exp(2)]\n * exp([[1,2],[1,3]])\n * // returns [ [Math.exp(1), Math.exp(2)], [Math.exp(1), Math.exp(3)] ]\n */\nexport default function (m) {\n  switch (m.constructor.name) {\n    case 'Complex':\n      return cexp(m);\n    case 'Sparse':\n      return sexp(m);\n    default:\n      return exp(m);\n  }\n}\n"
+    "content": "\nimport pointwise from './pointwise'\nimport cos from './cos'\nimport sin from './sin'\nimport mul from './mul'\nimport Complex from './Complex'\nimport Sparse from './Sparse'\n\nconst exp = pointwise(Math.exp)\n\nfunction cexp(x) {\n  var ex = exp(x.re);\n  if (x.im) {\n    return new Complex(mul(cos(x.im), ex), mul(sin(x.im), ex));\n  }\n  return new Complex(ex);\n}\n\nfunction sexp(x) {\n  return new Sparse({\n    col: x.col.slice(), // copy the array\n    row: x.row.slice(),\n    val: exp(x.val),\n  })\n}\n\n/**\n * Pointwise Math.exp(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * exp(1)\n * // returns Math.exp(1)\n * exp([1, 2])\n * // returns [Math.exp(1), Math.exp(2)]\n * exp([[1,2],[1,3]])\n * // returns [ [Math.exp(1), Math.exp(2)], [Math.exp(1), Math.exp(3)] ]\n */\nexport default function (m) {\n  switch (m.constructor.name) {\n    case 'Complex':\n      return cexp(m);\n    case 'Sparse':\n      return sexp(m);\n    default:\n      return exp(m);\n  }\n}\n"
   },
   {
-    "__docId__": 147,
+    "__docId__": 138,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -4257,7 +3991,7 @@
     }
   },
   {
-    "__docId__": 148,
+    "__docId__": 139,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -4287,7 +4021,7 @@
     "generator": false
   },
   {
-    "__docId__": 149,
+    "__docId__": 140,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -4317,7 +4051,7 @@
     "generator": false
   },
   {
-    "__docId__": 150,
+    "__docId__": 141,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -4365,6 +4099,301 @@
       "spread": false,
       "description": ""
     },
+    "generator": false
+  },
+  {
+    "__docId__": 142,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/fft.js",
+    "memberof": null,
+    "longname": "src/fft.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1,
+    "content": "import rep from './rep';\nimport mul from './mul';\nimport clone from './clone';\nimport neg from './neg';\nimport Complex from './Complex';\nimport div from './div';\n\n/**\n * Fast Fourier transform \n * \n * @export\n * @param {any} m\n * @returns\n */\nexport function fft(m) {\n  switch (m.constructor.name) {\n    case 'Complex':\n      return cfft(m);\n    case 'Sparse':\n        throw new Error('mathlab.fft: fft for sparse matrix not done yet')\n    default:\n      return cfft(new Complex(m));\n  }\n}\n\n\n/**\n * Inverse FFT\n * \n * @export\n * @param {any} m\n * @returns\n */\nexport function ifft(m) {\n  switch (m.constructor.name) {\n    case 'Complex':\n      return cifft(m);\n    case 'Sparse':\n        throw new Error('mathlab.ifft: ifft for sparse matrix not done yet')\n    default:\n      return cifft(new Complex(m));\n  }\n}\n\n\n\nfunction cfft(cplx) {\n\tvar x = cplx.re, y = cplx.im;\n\tvar n = x.length, log = Math.log, log2 = log(2),\n\t\t\tp = Math.ceil(log(2*n-1)/log2), m = Math.pow(2,p);\n\tvar cx = rep([m],0), cy = rep([m],0), cos = Math.cos, sin = Math.sin;\n\tvar k, c = (-3.141592653589793238462643383279502884197169399375105820/n),t;\n\tvar a = rep([m],0), b = rep([m],0),nhalf = Math.floor(n/2);\n\tfor(k=0;k<n;k++) a[k] = x[k];\n\tif(typeof y !== \"undefined\") for(k=0;k<n;k++) b[k] = y[k];\n\tcx[0] = 1;\n\tfor(k=1;k<=m/2;k++) {\n\t\tt = c*k*k;\n\t\tcx[k] = cos(t);\n\t\tcy[k] = sin(t);\n\t\tcx[m-k] = cos(t);\n\t\tcy[m-k] = sin(t)\n\t}\n\tvar X = new Complex(a,b), Y = new Complex(cx,cy);\n\tX = mul(X, Y);\n\tconvpow2(X.re, X.im, clone(Y.re), neg(Y.im));\n\tX = mul(X, Y);\n\tX.re.length = n;\n\tX.im.length = n;\n\treturn X;\n}\n\nfunction cifft(cplx) {\n\tvar x = cplx.re, y = cplx.im;\n\tvar n = x.length, log = Math.log, log2 = log(2),\n\t\t\tp = Math.ceil(log(2*n-1)/log2), m = Math.pow(2,p);\n\tvar cx = rep([m],0), cy = rep([m],0), cos = Math.cos, sin = Math.sin;\n\tvar k, c = (3.141592653589793238462643383279502884197169399375105820/n),t;\n\tvar a = rep([m],0), b = rep([m],0),nhalf = Math.floor(n/2);\n\tfor(k=0;k<n;k++) a[k] = x[k];\n\tif(typeof y !== \"undefined\") for(k=0;k<n;k++) b[k] = y[k];\n\tcx[0] = 1;\n\tfor(k=1;k<=m/2;k++) {\n\t\tt = c*k*k;\n\t\tcx[k] = cos(t);\n\t\tcy[k] = sin(t);\n\t\tcx[m-k] = cos(t);\n\t\tcy[m-k] = sin(t)\n\t}\n\tvar X = new Complex(a,b), Y = new Complex(cx,cy);\n\tX = mul(X, Y);\n\tconvpow2(X.re, X.im, clone(Y.re), neg(Y.im));\n\tX = mul(X, Y);\n\tX.re.length = n;\n\tX.im.length = n;\n\treturn div(X, n);\n}\n\n\n\nfunction fftpow2(x,y) {\n    var n = x.length;\n    if(n === 1) return;\n    var cos = Math.cos, sin = Math.sin, i,j;\n    var xe = Array(n/2), ye = Array(n/2), xo = Array(n/2), yo = Array(n/2);\n    j = n/2;\n    for(i=n-1;i!==-1;--i) {\n        --j;\n        xo[j] = x[i];\n        yo[j] = y[i];\n        --i;\n        xe[j] = x[i];\n        ye[j] = y[i];\n    }\n    fftpow2(xe,ye);\n    fftpow2(xo,yo);\n    j = n/2;\n    var t,k = (-6.2831853071795864769252867665590057683943387987502116419/n),ci,si;\n    for(i=n-1;i!==-1;--i) {\n        --j;\n        if(j === -1) j = n/2-1;\n        t = k*i;\n        ci = cos(t);\n        si = sin(t);\n        x[i] = xe[j] + ci*xo[j] - si*yo[j];\n        y[i] = ye[j] + ci*yo[j] + si*xo[j];\n    }\n}\n\nfunction _ifftpow2(x,y) {\n    var n = x.length;\n    if(n === 1) return;\n    var cos = Math.cos, sin = Math.sin, i,j;\n    var xe = Array(n/2), ye = Array(n/2), xo = Array(n/2), yo = Array(n/2);\n    j = n/2;\n    for(i=n-1;i!==-1;--i) {\n        --j;\n        xo[j] = x[i];\n        yo[j] = y[i];\n        --i;\n        xe[j] = x[i];\n        ye[j] = y[i];\n    }\n    _ifftpow2(xe,ye);\n    _ifftpow2(xo,yo);\n    j = n/2;\n    var t,k = (6.2831853071795864769252867665590057683943387987502116419/n),ci,si;\n    for(i=n-1;i!==-1;--i) {\n        --j;\n        if(j === -1) j = n/2-1;\n        t = k*i;\n        ci = cos(t);\n        si = sin(t);\n        x[i] = xe[j] + ci*xo[j] - si*yo[j];\n        y[i] = ye[j] + ci*yo[j] + si*xo[j];\n    }\n}\n\nfunction ifftpow2(x,y) {\n    _ifftpow2(x, y);\n    // x = div(x, x.length);\n    // y = div(y, y.length);\n    x.forEach((n, i) => {x[i] = n / x.length});\n    y.forEach((n, i) => {y[i] = n / y.length});\n}\n\nfunction convpow2(ax,ay,bx,by) {\n    fftpow2(ax,ay);\n    fftpow2(bx,by);\n    var i,n = ax.length,axi,bxi,ayi,byi;\n    for(i=n-1;i!==-1;--i) {\n        axi = ax[i]; ayi = ay[i]; bxi = bx[i]; byi = by[i];\n        ax[i] = axi*bxi-ayi*byi;\n        ay[i] = axi*byi+ayi*bxi;\n    }\n    ifftpow2(ax,ay);\n}\n\n"
+  },
+  {
+    "__docId__": 143,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "fft",
+    "memberof": "src/fft.js",
+    "longname": "src/fft.js~fft",
+    "access": null,
+    "export": true,
+    "importPath": "mathlab/src/fft.js",
+    "importStyle": "{fft}",
+    "description": "Fast Fourier transform ",
+    "lineNumber": 15,
+    "unknown": [
+      {
+        "tagName": "@export",
+        "tagValue": ""
+      },
+      {
+        "tagName": "@returns",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "m",
+        "description": ""
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 144,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "ifft",
+    "memberof": "src/fft.js",
+    "longname": "src/fft.js~ifft",
+    "access": null,
+    "export": true,
+    "importPath": "mathlab/src/fft.js",
+    "importStyle": "{ifft}",
+    "description": "Inverse FFT",
+    "lineNumber": 34,
+    "unknown": [
+      {
+        "tagName": "@export",
+        "tagValue": ""
+      },
+      {
+        "tagName": "@returns",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "m",
+        "description": ""
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 145,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "cfft",
+    "memberof": "src/fft.js",
+    "longname": "src/fft.js~cfft",
+    "access": null,
+    "export": false,
+    "importPath": "mathlab/src/fft.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 47,
+    "undocument": true,
+    "params": [
+      {
+        "name": "cplx",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 146,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "cifft",
+    "memberof": "src/fft.js",
+    "longname": "src/fft.js~cifft",
+    "access": null,
+    "export": false,
+    "importPath": "mathlab/src/fft.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 73,
+    "undocument": true,
+    "params": [
+      {
+        "name": "cplx",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 147,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "fftpow2",
+    "memberof": "src/fft.js",
+    "longname": "src/fft.js~fftpow2",
+    "access": null,
+    "export": false,
+    "importPath": "mathlab/src/fft.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 101,
+    "undocument": true,
+    "params": [
+      {
+        "name": "x",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "y",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 148,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "_ifftpow2",
+    "memberof": "src/fft.js",
+    "longname": "src/fft.js~_ifftpow2",
+    "access": null,
+    "export": false,
+    "importPath": "mathlab/src/fft.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 130,
+    "undocument": true,
+    "params": [
+      {
+        "name": "x",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "y",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 149,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "ifftpow2",
+    "memberof": "src/fft.js",
+    "longname": "src/fft.js~ifftpow2",
+    "access": null,
+    "export": false,
+    "importPath": "mathlab/src/fft.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 159,
+    "undocument": true,
+    "params": [
+      {
+        "name": "x",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "y",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "generator": false
+  },
+  {
+    "__docId__": 150,
+    "kind": "function",
+    "static": true,
+    "variation": null,
+    "name": "convpow2",
+    "memberof": "src/fft.js",
+    "longname": "src/fft.js~convpow2",
+    "access": null,
+    "export": false,
+    "importPath": "mathlab/src/fft.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 167,
+    "undocument": true,
+    "params": [
+      {
+        "name": "ax",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "ay",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "bx",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "by",
+        "types": [
+          "*"
+        ]
+      }
+    ],
     "generator": false
   },
   {
@@ -4758,7 +4787,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import Complex from './Complex'\n\n/**\n * \tGet the diagonal of a matrix\n * \n * @export\n * @param {Array} A\n * @returns {Array}\n * @example \n * \n * getDiag([[1, 3], [0, 2]])\n * // [1, 2]\n */\nexport default function (A) {\n  switch (A.constructor.name) {\n    case 'Complex':\n      return cgetDiag(A);\n    case 'Sparse':\n      return sgetDiag(A);\n    default:\n      return getDiag(A);\n  }\n}\n\nfunction cgetDiag(A) {\n  // TODO: Check if is matrix\n    if (A.y) {\n      return new Complex(getDiag(A.x), getDiag(A.y));\n    }\n    return new Complex(getDiag(A.x));\n}\n\nfunction sgetDiag(A) {\n  throw new Error('mathlab.getDiag: getDiag for sparse matrix not exist')\n}\n\nfunction getDiag(A) {\n  var n = Math.min(A.length, A[0].length),i,ret = Array(n)\n  for (i = n - 1;i >= 1;--i) {\n    ret[i] = A[i][i]\n    --i\n    ret[i] = A[i][i]\n  }\n  if (i === 0) {\n    ret[0] = A[0][0]\n  }\n  return ret\n}\n"
+    "content": "import Complex from './Complex'\n\n/**\n * \tGet the diagonal of a matrix\n * \n * @export\n * @param {Array} A\n * @returns {Array}\n * @example \n * \n * getDiag([[1, 3], [0, 2]])\n * // [1, 2]\n */\nexport default function (A) {\n  switch (A.constructor.name) {\n    case 'Complex':\n      return cgetDiag(A);\n    case 'Sparse':\n      return sgetDiag(A);\n    default:\n      return getDiag(A);\n  }\n}\n\nfunction cgetDiag(A) {\n  // TODO: Check if is matrix\n    if (A.im) {\n      return new Complex(getDiag(A.re), getDiag(A.im));\n    }\n    return new Complex(getDiag(A.re));\n}\n\nfunction sgetDiag(A) {\n  throw new Error('mathlab.getDiag: getDiag for sparse matrix not exist')\n}\n\nfunction getDiag(A) {\n  var n = Math.min(A.length, A[0].length),i,ret = Array(n)\n  for (i = n - 1;i >= 1;--i) {\n    ret[i] = A[i][i]\n    --i\n    ret[i] = A[i][i]\n  }\n  if (i === 0) {\n    ret[0] = A[0][0]\n  }\n  return ret\n}\n"
   },
   {
     "__docId__": 164,
@@ -5423,7 +5452,7 @@
     "access": null,
     "description": null,
     "lineNumber": 2,
-    "content": "\nimport pointwise from './pointwise'\nimport Sparse from './Sparse'\nimport Complex from './Complex'\nimport atan2 from './atan2'\nimport abs from './abs'\n\nconst log = pointwise(Math.log)\n\nfunction clog(x) {\n  if (x.y) {\n    var theta = new Complex(atan2(x.y, x.x)),\n      r = abs(x);\n    return new Complex(log(r.x), theta.x);\n  }\n  return new Complex(log(x.x));\n}\n\nfunction slog(x) {\n  return new Sparse({\n    col: x.col.slice(), // copy the array\n    row: x.row.slice(),\n    val: log(x.val),\n  })\n}\n\n/**\n * Pointwise Math.log(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * log(1)\n * // returns Math.log(1)\n * log([1, 2])\n * // returns [Math.log(1), Math.log(2)]\n * log([[1,2],[1,3]])\n * // returns [ [Math.log(1), Math.log(2)], [Math.log(1), Math.log(3)] ]\n */\nexport default function (m) {\n  switch (m.constructor.name) {\n    case 'Complex':\n      return clog(m);\n    case 'Sparse':\n      return slog(m);\n    default:\n      return log(m);\n  }\n}\n"
+    "content": "\nimport pointwise from './pointwise'\nimport Sparse from './Sparse'\nimport Complex from './Complex'\nimport atan2 from './atan2'\nimport abs from './abs'\n\nconst log = pointwise(Math.log)\n\nfunction clog(x) {\n  if (x.im) {\n    var theta = new Complex(atan2(x.im, x.re)),\n      r = abs(x);\n    return new Complex(log(r.re), theta.re);\n  }\n  return new Complex(log(x.re));\n}\n\nfunction slog(x) {\n  return new Sparse({\n    col: x.col.slice(), // copy the array\n    row: x.row.slice(),\n    val: log(x.val),\n  })\n}\n\n/**\n * Pointwise Math.log(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * log(1)\n * // returns Math.log(1)\n * log([1, 2])\n * // returns [Math.log(1), Math.log(2)]\n * log([[1,2],[1,3]])\n * // returns [ [Math.log(1), Math.log(2)], [Math.log(1), Math.log(3)] ]\n */\nexport default function (m) {\n  switch (m.constructor.name) {\n    case 'Complex':\n      return clog(m);\n    case 'Sparse':\n      return slog(m);\n    default:\n      return log(m);\n  }\n}\n"
   },
   {
     "__docId__": 185,
@@ -6042,7 +6071,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import pointwise from './pointwise';\nimport Complex from './Complex';\nimport add from './add';\nimport sub from './sub';\n\n// array mul\nconst amul = pointwise((x, y) => x * y)\n\n// complex array mul\nfunction cmul(x, y) {\n  if(!(y instanceof Complex)) { y = new Complex(y); }\n  if (x.y) {\n    if (y.y) {\n      return new Complex(sub(amul(x.x, y.x), amul(x.y, y.y)), add(amul(x.x, y.y), amul(x.y, y.x)));\n    }\n    return new Complex(amul(x.x, y.x), amul(x.y, y.x));\n  }\n  if (y.y) {\n    return new Complex(amul(x.x, y.x), amul(x.x, y.y));\n  }\n  return new Complex(amul(x.x, y.x));\n}\n\nfunction smul(x, y) {\n  throw new Error('mathlab.sub: sub for sparse matrix not exist')\n}\n\n/**\n * Pointwise mul\n * \n * @export\n * @param {Number|Array|Object} m1\n * @param {Number|Array|Object} m2\n * @returns {Number|Array}\n * @example \n * \n * mul(1, 2)\n * // returns 1 * 2\n * mul([1, 2], [2, 2])\n * // returns [1 * 2, 2 * 2]\n * mul([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 * 2, 1 * 2], [1 * 2, 2 * 2] ]\n */\nexport default function (m1, m2) {\n  // if (m1.constructor.name !== m2.constructor.name) {\n  //   throw new Error('mathlab.mul: argument type mismatch')\n  // }\n\n  switch (m1.constructor.name) {\n    case 'Array':\n      return amul(m1, m2);\n    case 'Complex':\n      return cmul(m1, m2);\n    case 'Sparse':\n      return smul(m1, m2);\n    default:\n      return amul(m1, m2);\n  }\n}"
+    "content": "import pointwise from './pointwise';\nimport Complex from './Complex';\nimport add from './add';\nimport sub from './sub';\n\n// array mul\nconst amul = pointwise((x, y) => x * y)\n\n// complex array mul\nfunction cmul(x, y) {\n  if(!(y instanceof Complex)) { y = new Complex(y); }\n  if (x.im) {\n    if (y.im) {\n      return new Complex(sub(amul(x.re, y.re), amul(x.im, y.im)), add(amul(x.re, y.im), amul(x.im, y.re)));\n    }\n    return new Complex(amul(x.re, y.re), amul(x.im, y.re));\n  }\n  if (y.im) {\n    return new Complex(amul(x.re, y.re), amul(x.re, y.im));\n  }\n  return new Complex(amul(x.re, y.re));\n}\n\nfunction smul(x, y) {\n  throw new Error('mathlab.sub: sub for sparse matrix not exist')\n}\n\n/**\n * Pointwise mul\n * \n * @export\n * @param {Number|Array|Object} m1\n * @param {Number|Array|Object} m2\n * @returns {Number|Array}\n * @example \n * \n * mul(1, 2)\n * // returns 1 * 2\n * mul([1, 2], [2, 2])\n * // returns [1 * 2, 2 * 2]\n * mul([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 * 2, 1 * 2], [1 * 2, 2 * 2] ]\n */\nexport default function (m1, m2) {\n  // if (m1.constructor.name !== m2.constructor.name) {\n  //   throw new Error('mathlab.mul: argument type mismatch')\n  // }\n\n  switch (m1.constructor.name) {\n    case 'Array':\n      return amul(m1, m2);\n    case 'Complex':\n      return cmul(m1, m2);\n    case 'Sparse':\n      return smul(m1, m2);\n    default:\n      return amul(m1, m2);\n  }\n}"
   },
   {
     "__docId__": 205,
@@ -6207,7 +6236,7 @@
     "access": null,
     "description": null,
     "lineNumber": 2,
-    "content": "\nimport pointwise from './pointwise'\nimport Complex from './Complex'\nimport Sparse from './Sparse'\n\nconst neg = pointwise(x=> -x);\n\nfunction cneg(x) {\n  if (x.y) {\n    return new Complex(neg(x.x), neg(x.y));\n  }\n  return new Complex(neg(x.x));\n}\n\nfunction sneg(x) {\n  return new Sparse({\n    col: x.col.slice(), // copy the array\n    row: x.row.slice(),\n    val: neg(x.val),\n  })\n}\n\n/**\n * Pointwise Math.neg(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * neg(1)\n * // returns Math.neg(1)\n * neg([1, 2])\n * // returns [Math.neg(1), Math.neg(2)]\n * neg([[1,2],[1,3]])\n * // returns [ [Math.neg(1), Math.neg(2)], [Math.neg(1), Math.neg(3)] ]\n */\nexport default function (m) {\n  switch (m.constructor.name) {\n    case 'Complex':\n      return cneg(m);\n    case 'Sparse':\n      return sneg(m);\n    default:\n      return neg(m);\n  }\n}\n"
+    "content": "\nimport pointwise from './pointwise'\nimport Complex from './Complex'\nimport Sparse from './Sparse'\n\nconst neg = pointwise(x=> -x);\n\nfunction cneg(x) {\n  if (x.im) {\n    return new Complex(neg(x.re), neg(x.im));\n  }\n  return new Complex(neg(x.re));\n}\n\nfunction sneg(x) {\n  return new Sparse({\n    col: x.col.slice(), // copy the array\n    row: x.row.slice(),\n    val: neg(x.val),\n  })\n}\n\n/**\n * Pointwise Math.neg(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * neg(1)\n * // returns Math.neg(1)\n * neg([1, 2])\n * // returns [Math.neg(1), Math.neg(2)]\n * neg([[1,2],[1,3]])\n * // returns [ [Math.neg(1), Math.neg(2)], [Math.neg(1), Math.neg(3)] ]\n */\nexport default function (m) {\n  switch (m.constructor.name) {\n    case 'Complex':\n      return cneg(m);\n    case 'Sparse':\n      return sneg(m);\n    default:\n      return neg(m);\n  }\n}\n"
   },
   {
     "__docId__": 210,
@@ -6566,7 +6595,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import norm2Squared from './norm2Squared';\n\n\n/**\n * Square root of the sum of the squares of the entries of x\n * \n * @export\n * @param {Array|Number} x\n * @returns {Number}\n * @example\n * \n * norm2(2)\n * // 2\n * norm2([2,2])\n * // 2.828\n */\nexport default function (x, y) {\n  switch (x.constructor.name) {\n    case 'Complex':\n      return cnorm2(x, y);\n    case 'Sparse':\n      return snorm2(x, y);\n    default:\n      return norm2(x, y);\n  }\n}\n\nfunction cnorm2(x, y) {\n\tif (x.y) {\n\t\tvar f = norm2Squared;\n\t\treturn Math.sqrt(f(x.x) + f(x.y));\n\t}\n\treturn norm2(x.x);\n}\n\nfunction snorm2(x, y) {\n  throw new Error('mathlab.norm2: norm2 for sparse matrix not exist')\n}\n\nfunction norm2(x) {\n  return Math.sqrt(norm2Squared(x)); \n}"
+    "content": "import norm2Squared from './norm2Squared';\n\n\n/**\n * Square root of the sum of the squares of the entries of x\n * \n * @export\n * @param {Array|Number} x\n * @returns {Number}\n * @example\n * \n * norm2(2)\n * // 2\n * norm2([2,2])\n * // 2.828\n */\nexport default function (x, y) {\n  switch (x.constructor.name) {\n    case 'Complex':\n      return cnorm2(x, y);\n    case 'Sparse':\n      return snorm2(x, y);\n    default:\n      return norm2(x, y);\n  }\n}\n\nfunction cnorm2(x, y) {\n\tif (x.im) {\n\t\tvar f = norm2Squared;\n\t\treturn Math.sqrt(f(x.re) + f(x.im));\n\t}\n\treturn norm2(x.re);\n}\n\nfunction snorm2(x, y) {\n  throw new Error('mathlab.norm2: norm2 for sparse matrix not exist')\n}\n\nfunction norm2(x) {\n  return Math.sqrt(norm2Squared(x)); \n}"
   },
   {
     "__docId__": 222,
@@ -7365,7 +7394,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "export function reciprocal() {\n    var mul = numeric.mul, div = numeric.div;\n    if(this.y) {\n        var d = numeric.add(mul(this.x,this.x),mul(this.y,this.y));\n        return new numeric.Complex(div(this.x,d),div(numeric.neg(this.y),d));\n    }\n    return new Complex(div(1,this.x));\n}"
+    "content": "export function reciprocal() {\n    var mul = numeric.mul, div = numeric.div;\n    if(this.im) {\n        var d = numeric.add(mul(this.re,this.re),mul(this.im,this.im));\n        return new numeric.Complex(div(this.re,d),div(numeric.neg(this.im),d));\n    }\n    return new Complex(div(1,this.re));\n}"
   },
   {
     "__docId__": 248,
@@ -8080,7 +8109,7 @@
     "access": null,
     "description": null,
     "lineNumber": 2,
-    "content": "\nimport pointwise from './pointwise'\nimport Complex from './Complex'\nimport Sparse from './Sparse'\nimport neg from './neg'\nimport exp from './exp'\nimport div from './div'\nimport sub from './sub'\n\nconst sin = pointwise(Math.sin)\n\nfunction csin(x) {\n  if (x.y) {\n    return div(sub(exp(x), exp(neg(x))), new Complex(0,2))\n    // return x.exp().sub(x.neg().exp()).div(new Complex(0, 2));\n  }\n  return new Complex(sin(x.x));\n}\n\nfunction ssin(x) {\n  return new Sparse({\n    col: x.col.slice(), // copy the array\n    row: x.row.slice(),\n    val: sin(x.val),\n  })\n}\n\n/**\n * Pointwise Math.sin(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * sin(1)\n * // returns Math.sin(1)\n * sin([1, 2])\n * // returns [Math.sin(1), Math.sin(2)]\n * sin([[1,2],[1,3]])\n * // returns [ [Math.sin(1), Math.sin(2)], [Math.sin(1), Math.sin(3)] ]\n */\nexport default function (m) {\n  switch (m.constructor.name) {\n    case 'Complex':\n      return csin(m);\n    case 'Sparse':\n      return ssin(m);\n    default:\n      return sin(m);\n  }\n}\n"
+    "content": "\nimport pointwise from './pointwise'\nimport Complex from './Complex'\nimport Sparse from './Sparse'\nimport neg from './neg'\nimport exp from './exp'\nimport div from './div'\nimport sub from './sub'\n\nconst sin = pointwise(Math.sin)\n\nfunction csin(x) {\n  if (x.im) {\n    return div(sub(exp(x), exp(neg(x))), new Complex(0,2))\n    // return x.exp().sub(x.neg().exp()).div(new Complex(0, 2));\n  }\n  return new Complex(sin(x.re));\n}\n\nfunction ssin(x) {\n  return new Sparse({\n    col: x.col.slice(), // copy the array\n    row: x.row.slice(),\n    val: sin(x.val),\n  })\n}\n\n/**\n * Pointwise Math.sin(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * sin(1)\n * // returns Math.sin(1)\n * sin([1, 2])\n * // returns [Math.sin(1), Math.sin(2)]\n * sin([[1,2],[1,3]])\n * // returns [ [Math.sin(1), Math.sin(2)], [Math.sin(1), Math.sin(3)] ]\n */\nexport default function (m) {\n  switch (m.constructor.name) {\n    case 'Complex':\n      return csin(m);\n    case 'Sparse':\n      return ssin(m);\n    default:\n      return sin(m);\n  }\n}\n"
   },
   {
     "__docId__": 271,
@@ -8365,7 +8394,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import pointwise from './pointwise'\nimport Complex from './Complex'\nimport neg from './neg'\n\nconst sub = pointwise((x, y) => x - y);\n\nfunction csub(x, y) {\n  if (!(y instanceof Complex)) { y = new Complex(y); }\n  if (x.y) {\n    if (y.y) {\n      return new Complex(sub(x.x, y.x), sub(x.y, y.y));\n    }\n    return new Complex(sub(x.x, y.x), x.y);\n  }\n  if (y.y) {\n    return new Complex(sub(x.x, y.x), neg(y.y));\n  }\n  return new Complex(sub(x.x, y.x));\n}\n\nfunction ssub(x, y) {\n  throw new Error('mathlab.sub: sub for sparse matrix not exist')\n}\n\n/**\n * Pointwise sub\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * sub(1, 2)\n * // returns 1 - 2\n * sub([1, 2], [2, 2])\n * // returns [1 - 2, 2 - 2]\n * sub([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 - 2, 1 - 2], [1 - 2, 2 - 2] ]\n */\nexport default function (m1, m2) {\n  switch (m1.constructor.name) {\n    case 'Complex':\n      return csub(m1, m2);\n    case 'Sparse':\n      return ssub(m1, m2);\n    default:\n      return sub(m1, m2);\n  }\n}"
+    "content": "import pointwise from './pointwise'\nimport Complex from './Complex'\nimport neg from './neg'\n\nconst sub = pointwise((x, y) => x - y);\n\nfunction csub(x, y) {\n  if (!(y instanceof Complex)) { y = new Complex(y); }\n  if (x.im) {\n    if (y.im) {\n      return new Complex(sub(x.re, y.re), sub(x.im, y.im));\n    }\n    return new Complex(sub(x.re, y.re), x.im);\n  }\n  if (y.im) {\n    return new Complex(sub(x.re, y.re), neg(y.im));\n  }\n  return new Complex(sub(x.re, y.re));\n}\n\nfunction ssub(x, y) {\n  throw new Error('mathlab.sub: sub for sparse matrix not exist')\n}\n\n/**\n * Pointwise sub\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * sub(1, 2)\n * // returns 1 - 2\n * sub([1, 2], [2, 2])\n * // returns [1 - 2, 2 - 2]\n * sub([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 - 2, 1 - 2], [1 - 2, 2 - 2] ]\n */\nexport default function (m1, m2) {\n  switch (m1.constructor.name) {\n    case 'Complex':\n      return csub(m1, m2);\n    case 'Sparse':\n      return ssub(m1, m2);\n    default:\n      return sub(m1, m2);\n  }\n}"
   },
   {
     "__docId__": 281,
@@ -8743,7 +8772,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import Complex from './Complex'\n\n/**\n * Matrix transpose\n * \n * @export\n * @param {Array} x\n * @returns {Array}\n * @example \n * \n * transpose([[1,2,3],[4,5,6]])\n * //[[1,4],\n * // [2,5],\n * // [3,6]]\n */\nexport default function (x) {\n  switch (x.constructor.name) {\n    case 'Complex':\n      return ctranspose(x);\n    case 'Sparse':\n      return stranspose(x);\n    default:\n      return transpose(x);\n  }\n}\n\nfunction ctranspose(x) {\n  // TODO: Check if is matrix\n    var t = transpose;\n    if (x.y) {\n      return new Complex(t(x.x), t(x.y));\n    }\n    return new Complex(t(x.x));\n}\n\nfunction stranspose(x) {\n  throw new Error('mathlab.transpose: transpose for sparse matrix not exist')\n}\n\nfunction transpose (x) {\n  var i,j,m = x.length,n = x[0].length, ret = Array(n),A0,A1,Bj\n  for (j = 0;j < n;j++) ret[j] = Array(m)\n  for (i = m - 1;i >= 1;i -= 2) {\n    A1 = x[i]\n    A0 = x[i - 1]\n    for (j = n - 1;j >= 1;--j) {\n      Bj = ret[j]; Bj[i] = A1[j]; Bj[i - 1] = A0[j]\n      --j\n      Bj = ret[j]; Bj[i] = A1[j]; Bj[i - 1] = A0[j]\n    }\n    if (j === 0) {\n      Bj = ret[0]; Bj[i] = A1[0]; Bj[i - 1] = A0[0]\n    }\n  }\n  if (i === 0) {\n    A0 = x[0]\n    for (j = n - 1;j >= 1;--j) {\n      ret[j][0] = A0[j]\n      --j\n      ret[j][0] = A0[j]\n    }\n    if (j === 0) { ret[0][0] = A0[0]; }\n  }\n  return ret\n}\n"
+    "content": "import Complex from './Complex'\n\n/**\n * Matrix transpose\n * \n * @export\n * @param {Array} x\n * @returns {Array}\n * @example \n * \n * transpose([[1,2,3],[4,5,6]])\n * //[[1,4],\n * // [2,5],\n * // [3,6]]\n */\nexport default function (x) {\n  switch (x.constructor.name) {\n    case 'Complex':\n      return ctranspose(x);\n    case 'Sparse':\n      return stranspose(x);\n    default:\n      return transpose(x);\n  }\n}\n\nfunction ctranspose(x) {\n  // TODO: Check if is matrix\n    var t = transpose;\n    if (x.im) {\n      return new Complex(t(x.re), t(x.im));\n    }\n    return new Complex(t(x.re));\n}\n\nfunction stranspose(x) {\n  throw new Error('mathlab.transpose: transpose for sparse matrix not exist')\n}\n\nfunction transpose (x) {\n  var i,j,m = x.length,n = x[0].length, ret = Array(n),A0,A1,Bj\n  for (j = 0;j < n;j++) ret[j] = Array(m)\n  for (i = m - 1;i >= 1;i -= 2) {\n    A1 = x[i]\n    A0 = x[i - 1]\n    for (j = n - 1;j >= 1;--j) {\n      Bj = ret[j]; Bj[i] = A1[j]; Bj[i - 1] = A0[j]\n      --j\n      Bj = ret[j]; Bj[i] = A1[j]; Bj[i - 1] = A0[j]\n    }\n    if (j === 0) {\n      Bj = ret[0]; Bj[i] = A1[0]; Bj[i - 1] = A0[0]\n    }\n  }\n  if (i === 0) {\n    A0 = x[0]\n    for (j = n - 1;j >= 1;--j) {\n      ret[j][0] = A0[j]\n      --j\n      ret[j][0] = A0[j]\n    }\n    if (j === 0) { ret[0][0] = A0[0]; }\n  }\n  return ret\n}\n"
   },
   {
     "__docId__": 293,

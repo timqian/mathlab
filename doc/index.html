@@ -56,6 +56,8 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-eig">eig</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-eq">eq</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-exp">exp</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fft">fft</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ifft">ifft</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-floor">floor</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-geq">geq</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getBlock">getBlock</a></span></span></li>
@@ -99,6 +101,7 @@
 
 <div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><blockquote>
 <p>Note: Unstable, Developing</p>
+<p>Start as a refactoring of <a href="https://github.com/sloisel/numeric">numeric</a></p>
 </blockquote>
 <h1 id="mathlab">mathlab</h1>
 <p>Lodash like math lab in javascript, focusing on matrix manipulation.</p>
@@ -111,8 +114,9 @@
 <li><strong>Multifunctional</strong>: Support <code>sparse</code> and <code>complex</code> matrix manipulation; <code>FFT</code>; <code>eigenvectors &amp; eigenvalues of matrix</code>; and so on</li>
 </ul>
 <h2 id="install">Install</h2>
-<pre><code><code class="source-code prettyprint">$ npm install mathlab --save</code>
-</code></pre><h2 id="sample-usage">Sample usage</h2>
+<pre><code class="lang-bash"><code class="source-code prettyprint">$ npm install mathlab --save</code>
+</code></pre>
+<h2 id="sample-usage">Sample usage</h2>
 <pre><code class="lang-js"><code class="source-code prettyprint">import { dot } from &apos;mathlab&apos;
 
 const A = [[1,2,3],
@@ -122,8 +126,13 @@ const y = dot(A, x)
 
 console.log(y); // [50,122]</code>
 </code></pre>
-<h1 id="-documents-https-github-com-timqian-mathlab-tree-master-doc-readme-"><a href="https://github.com/timqian/mathlab/tree/master/doc#readme">Documents</a></h1>
-<h1 id="-documents-generated-from-comments-http-timqian-com-mathlab-"><a href="http://timqian.com/mathlab">Documents generated from comments</a></h1>
+<h1 id="-documents-wrote-by-human-unfinished-https-github-com-timqian-mathlab-tree-master-doc-readme-"><a href="https://github.com/timqian/mathlab/tree/master/doc#readme">Documents wrote by human(unfinished)</a></h1>
+<h1 id="-documents-generated-from-comments-unfinished-http-timqian-com-mathlab-"><a href="http://timqian.com/mathlab">Documents generated from comments(unfinished)</a></h1>
+<h2 id="tests">Tests</h2>
+<p>To run the test suite, first install the dependencies, then run npm test:</p>
+<pre><code class="lang-bash"><code class="source-code prettyprint">$ npm install
+$ npm test</code>
+</code></pre>
 </div>
 </div>
 

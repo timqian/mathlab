@@ -726,10 +726,10 @@
               },
               "property": {
                 "type": "Identifier",
-                "name": "y",
+                "name": "im",
                 "range": [
                   256,
-                  257
+                  258
                 ],
                 "loc": {
                   "start": {
@@ -738,13 +738,13 @@
                   },
                   "end": {
                     "line": 13,
-                    "column": 9
+                    "column": 10
                   }
                 }
               },
               "range": [
                 254,
-                257
+                258
               ],
               "loc": {
                 "start": {
@@ -753,7 +753,7 @@
                 },
                 "end": {
                   "line": 13,
-                  "column": 9
+                  "column": 10
                 }
               }
             },
@@ -768,8 +768,8 @@
                       "type": "Identifier",
                       "name": "div",
                       "range": [
-                        272,
-                        275
+                        273,
+                        276
                       ],
                       "loc": {
                         "start": {
@@ -789,8 +789,8 @@
                           "type": "Identifier",
                           "name": "sub",
                           "range": [
-                            276,
-                            279
+                            277,
+                            280
                           ],
                           "loc": {
                             "start": {
@@ -810,8 +810,8 @@
                               "type": "Identifier",
                               "name": "exp",
                               "range": [
-                                280,
-                                283
+                                281,
+                                284
                               ],
                               "loc": {
                                 "start": {
@@ -829,8 +829,8 @@
                                 "type": "Identifier",
                                 "name": "x",
                                 "range": [
-                                  284,
-                                  285
+                                  285,
+                                  286
                                 ],
                                 "loc": {
                                   "start": {
@@ -845,8 +845,8 @@
                               }
                             ],
                             "range": [
-                              280,
-                              286
+                              281,
+                              287
                             ],
                             "loc": {
                               "start": {
@@ -865,8 +865,8 @@
                               "type": "Identifier",
                               "name": "exp",
                               "range": [
-                                288,
-                                291
+                                289,
+                                292
                               ],
                               "loc": {
                                 "start": {
@@ -886,8 +886,8 @@
                                   "type": "Identifier",
                                   "name": "neg",
                                   "range": [
-                                    292,
-                                    295
+                                    293,
+                                    296
                                   ],
                                   "loc": {
                                     "start": {
@@ -905,8 +905,8 @@
                                     "type": "Identifier",
                                     "name": "x",
                                     "range": [
-                                      296,
-                                      297
+                                      297,
+                                      298
                                     ],
                                     "loc": {
                                       "start": {
@@ -921,8 +921,8 @@
                                   }
                                 ],
                                 "range": [
-                                  292,
-                                  298
+                                  293,
+                                  299
                                 ],
                                 "loc": {
                                   "start": {
@@ -937,8 +937,8 @@
                               }
                             ],
                             "range": [
-                              288,
-                              299
+                              289,
+                              300
                             ],
                             "loc": {
                               "start": {
@@ -953,8 +953,8 @@
                           }
                         ],
                         "range": [
-                          276,
-                          300
+                          277,
+                          301
                         ],
                         "loc": {
                           "start": {
@@ -973,8 +973,8 @@
                           "type": "Identifier",
                           "name": "Complex",
                           "range": [
-                            306,
-                            313
+                            307,
+                            314
                           ],
                           "loc": {
                             "start": {
@@ -993,8 +993,8 @@
                             "value": 0,
                             "raw": "0",
                             "range": [
-                              314,
-                              315
+                              315,
+                              316
                             ],
                             "loc": {
                               "start": {
@@ -1012,8 +1012,8 @@
                             "value": 2,
                             "raw": "2",
                             "range": [
-                              316,
-                              317
+                              317,
+                              318
                             ],
                             "loc": {
                               "start": {
@@ -1028,8 +1028,8 @@
                           }
                         ],
                         "range": [
-                          302,
-                          318
+                          303,
+                          319
                         ],
                         "loc": {
                           "start": {
@@ -1044,8 +1044,8 @@
                       }
                     ],
                     "range": [
-                      272,
-                      319
+                      273,
+                      320
                     ],
                     "loc": {
                       "start": {
@@ -1062,8 +1062,8 @@
                         "type": "Line",
                         "value": " return x.exp().sub(x.neg().exp()).div(new Complex(0, 2));",
                         "range": [
-                          324,
-                          384
+                          325,
+                          385
                         ],
                         "loc": {
                           "start": {
@@ -1079,8 +1079,8 @@
                     ]
                   },
                   "range": [
-                    265,
-                    387
+                    266,
+                    388
                   ],
                   "loc": {
                     "start": {
@@ -1095,13 +1095,13 @@
                 }
               ],
               "range": [
-                259,
-                388
+                260,
+                389
               ],
               "loc": {
                 "start": {
                   "line": 13,
-                  "column": 11
+                  "column": 12
                 },
                 "end": {
                   "line": 16,
@@ -1112,7 +1112,7 @@
             "alternate": null,
             "range": [
               250,
-              388
+              389
             ],
             "loc": {
               "start": {
@@ -1133,8 +1133,8 @@
                 "type": "Identifier",
                 "name": "Complex",
                 "range": [
-                  402,
-                  409
+                  403,
+                  410
                 ],
                 "loc": {
                   "start": {
@@ -1154,8 +1154,8 @@
                     "type": "Identifier",
                     "name": "sin",
                     "range": [
-                      410,
-                      413
+                      411,
+                      414
                     ],
                     "loc": {
                       "start": {
@@ -1176,8 +1176,8 @@
                         "type": "Identifier",
                         "name": "x",
                         "range": [
-                          414,
-                          415
+                          415,
+                          416
                         ],
                         "loc": {
                           "start": {
@@ -1192,10 +1192,10 @@
                       },
                       "property": {
                         "type": "Identifier",
-                        "name": "x",
+                        "name": "re",
                         "range": [
-                          416,
-                          417
+                          417,
+                          419
                         ],
                         "loc": {
                           "start": {
@@ -1204,13 +1204,13 @@
                           },
                           "end": {
                             "line": 17,
-                            "column": 28
+                            "column": 29
                           }
                         }
                       },
                       "range": [
-                        414,
-                        417
+                        415,
+                        419
                       ],
                       "loc": {
                         "start": {
@@ -1219,14 +1219,14 @@
                         },
                         "end": {
                           "line": 17,
-                          "column": 28
+                          "column": 29
                         }
                       }
                     }
                   ],
                   "range": [
-                    410,
-                    418
+                    411,
+                    420
                   ],
                   "loc": {
                     "start": {
@@ -1235,14 +1235,14 @@
                     },
                     "end": {
                       "line": 17,
-                      "column": 29
+                      "column": 30
                     }
                   }
                 }
               ],
               "range": [
-                398,
-                419
+                399,
+                421
               ],
               "loc": {
                 "start": {
@@ -1251,13 +1251,13 @@
                 },
                 "end": {
                   "line": 17,
-                  "column": 30
+                  "column": 31
                 }
               }
             },
             "range": [
-              391,
-              420
+              392,
+              422
             ],
             "loc": {
               "start": {
@@ -1266,7 +1266,7 @@
               },
               "end": {
                 "line": 17,
-                "column": 31
+                "column": 32
               }
             },
             "leadingComments": [
@@ -1274,8 +1274,8 @@
                 "type": "Line",
                 "value": " return x.exp().sub(x.neg().exp()).div(new Complex(0, 2));",
                 "range": [
-                  324,
-                  384
+                  325,
+                  385
                 ],
                 "loc": {
                   "start": {
@@ -1293,7 +1293,7 @@
         ],
         "range": [
           246,
-          422
+          424
         ],
         "loc": {
           "start": {
@@ -1310,7 +1310,7 @@
       "expression": false,
       "range": [
         229,
-        422
+        424
       ],
       "loc": {
         "start": {
@@ -1329,8 +1329,8 @@
         "type": "Identifier",
         "name": "ssin",
         "range": [
-          433,
-          437
+          435,
+          439
         ],
         "loc": {
           "start": {
@@ -1348,8 +1348,8 @@
           "type": "Identifier",
           "name": "x",
           "range": [
-            438,
-            439
+            440,
+            441
           ],
           "loc": {
             "start": {
@@ -1374,8 +1374,8 @@
                 "type": "Identifier",
                 "name": "Sparse",
                 "range": [
-                  456,
-                  462
+                  458,
+                  464
                 ],
                 "loc": {
                   "start": {
@@ -1398,8 +1398,8 @@
                         "type": "Identifier",
                         "name": "col",
                         "range": [
-                          469,
-                          472
+                          471,
+                          474
                         ],
                         "loc": {
                           "start": {
@@ -1424,8 +1424,8 @@
                               "type": "Identifier",
                               "name": "x",
                               "range": [
-                                474,
-                                475
+                                476,
+                                477
                               ],
                               "loc": {
                                 "start": {
@@ -1442,8 +1442,8 @@
                               "type": "Identifier",
                               "name": "col",
                               "range": [
-                                476,
-                                479
+                                478,
+                                481
                               ],
                               "loc": {
                                 "start": {
@@ -1457,8 +1457,8 @@
                               }
                             },
                             "range": [
-                              474,
-                              479
+                              476,
+                              481
                             ],
                             "loc": {
                               "start": {
@@ -1475,8 +1475,8 @@
                             "type": "Identifier",
                             "name": "slice",
                             "range": [
-                              480,
-                              485
+                              482,
+                              487
                             ],
                             "loc": {
                               "start": {
@@ -1490,8 +1490,8 @@
                             }
                           },
                           "range": [
-                            474,
-                            485
+                            476,
+                            487
                           ],
                           "loc": {
                             "start": {
@@ -1506,8 +1506,8 @@
                         },
                         "arguments": [],
                         "range": [
-                          474,
-                          487
+                          476,
+                          489
                         ],
                         "loc": {
                           "start": {
@@ -1525,8 +1525,8 @@
                       "shorthand": false,
                       "computed": false,
                       "range": [
-                        469,
-                        487
+                        471,
+                        489
                       ],
                       "loc": {
                         "start": {
@@ -1545,8 +1545,8 @@
                         "type": "Identifier",
                         "name": "row",
                         "range": [
-                          511,
-                          514
+                          513,
+                          516
                         ],
                         "loc": {
                           "start": {
@@ -1571,8 +1571,8 @@
                               "type": "Identifier",
                               "name": "x",
                               "range": [
-                                516,
-                                517
+                                518,
+                                519
                               ],
                               "loc": {
                                 "start": {
@@ -1589,8 +1589,8 @@
                               "type": "Identifier",
                               "name": "row",
                               "range": [
-                                518,
-                                521
+                                520,
+                                523
                               ],
                               "loc": {
                                 "start": {
@@ -1604,8 +1604,8 @@
                               }
                             },
                             "range": [
-                              516,
-                              521
+                              518,
+                              523
                             ],
                             "loc": {
                               "start": {
@@ -1622,8 +1622,8 @@
                             "type": "Identifier",
                             "name": "slice",
                             "range": [
-                              522,
-                              527
+                              524,
+                              529
                             ],
                             "loc": {
                               "start": {
@@ -1637,8 +1637,8 @@
                             }
                           },
                           "range": [
-                            516,
-                            527
+                            518,
+                            529
                           ],
                           "loc": {
                             "start": {
@@ -1653,8 +1653,8 @@
                         },
                         "arguments": [],
                         "range": [
-                          516,
-                          529
+                          518,
+                          531
                         ],
                         "loc": {
                           "start": {
@@ -1672,8 +1672,8 @@
                       "shorthand": false,
                       "computed": false,
                       "range": [
-                        511,
-                        529
+                        513,
+                        531
                       ],
                       "loc": {
                         "start": {
@@ -1690,8 +1690,8 @@
                           "type": "Line",
                           "value": " copy the array",
                           "range": [
-                            489,
-                            506
+                            491,
+                            508
                           ],
                           "loc": {
                             "start": {
@@ -1712,8 +1712,8 @@
                         "type": "Identifier",
                         "name": "val",
                         "range": [
-                          535,
-                          538
+                          537,
+                          540
                         ],
                         "loc": {
                           "start": {
@@ -1732,8 +1732,8 @@
                           "type": "Identifier",
                           "name": "sin",
                           "range": [
-                            540,
-                            543
+                            542,
+                            545
                           ],
                           "loc": {
                             "start": {
@@ -1754,8 +1754,8 @@
                               "type": "Identifier",
                               "name": "x",
                               "range": [
-                                544,
-                                545
+                                546,
+                                547
                               ],
                               "loc": {
                                 "start": {
@@ -1772,8 +1772,8 @@
                               "type": "Identifier",
                               "name": "val",
                               "range": [
-                                546,
-                                549
+                                548,
+                                551
                               ],
                               "loc": {
                                 "start": {
@@ -1787,8 +1787,8 @@
                               }
                             },
                             "range": [
-                              544,
-                              549
+                              546,
+                              551
                             ],
                             "loc": {
                               "start": {
@@ -1803,8 +1803,8 @@
                           }
                         ],
                         "range": [
-                          540,
-                          550
+                          542,
+                          552
                         ],
                         "loc": {
                           "start": {
@@ -1822,8 +1822,8 @@
                       "shorthand": false,
                       "computed": false,
                       "range": [
-                        535,
-                        550
+                        537,
+                        552
                       ],
                       "loc": {
                         "start": {
@@ -1838,8 +1838,8 @@
                     }
                   ],
                   "range": [
-                    463,
-                    555
+                    465,
+                    557
                   ],
                   "loc": {
                     "start": {
@@ -1854,8 +1854,8 @@
                 }
               ],
               "range": [
-                452,
-                556
+                454,
+                558
               ],
               "loc": {
                 "start": {
@@ -1869,8 +1869,8 @@
               }
             },
             "range": [
-              445,
-              557
+              447,
+              559
             ],
             "loc": {
               "start": {
@@ -1885,8 +1885,8 @@
           }
         ],
         "range": [
-          441,
-          558
+          443,
+          560
         ],
         "loc": {
           "start": {
@@ -1902,8 +1902,8 @@
       "generator": false,
       "expression": false,
       "range": [
-        424,
-        558
+        426,
+        560
       ],
       "loc": {
         "start": {
@@ -1920,8 +1920,8 @@
           "type": "Block",
           "value": "*\n * Pointwise Math.sin(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * sin(1)\n * // returns Math.sin(1)\n * sin([1, 2])\n * // returns [Math.sin(1), Math.sin(2)]\n * sin([[1,2],[1,3]])\n * // returns [ [Math.sin(1), Math.sin(2)], [Math.sin(1), Math.sin(3)] ]\n ",
           "range": [
-            560,
-            865
+            562,
+            867
           ],
           "loc": {
             "start": {
@@ -1946,8 +1946,8 @@
             "type": "Identifier",
             "name": "m",
             "range": [
-              891,
-              892
+              893,
+              894
             ],
             "loc": {
               "start": {
@@ -1976,8 +1976,8 @@
                     "type": "Identifier",
                     "name": "m",
                     "range": [
-                      906,
-                      907
+                      908,
+                      909
                     ],
                     "loc": {
                       "start": {
@@ -1994,8 +1994,8 @@
                     "type": "Identifier",
                     "name": "constructor",
                     "range": [
-                      908,
-                      919
+                      910,
+                      921
                     ],
                     "loc": {
                       "start": {
@@ -2009,8 +2009,8 @@
                     }
                   },
                   "range": [
-                    906,
-                    919
+                    908,
+                    921
                   ],
                   "loc": {
                     "start": {
@@ -2027,8 +2027,8 @@
                   "type": "Identifier",
                   "name": "name",
                   "range": [
-                    920,
-                    924
+                    922,
+                    926
                   ],
                   "loc": {
                     "start": {
@@ -2042,8 +2042,8 @@
                   }
                 },
                 "range": [
-                  906,
-                  924
+                  908,
+                  926
                 ],
                 "loc": {
                   "start": {
@@ -2064,8 +2064,8 @@
                     "value": "Complex",
                     "raw": "'Complex'",
                     "range": [
-                      937,
-                      946
+                      939,
+                      948
                     ],
                     "loc": {
                       "start": {
@@ -2087,8 +2087,8 @@
                           "type": "Identifier",
                           "name": "csin",
                           "range": [
-                            961,
-                            965
+                            963,
+                            967
                           ],
                           "loc": {
                             "start": {
@@ -2106,8 +2106,8 @@
                             "type": "Identifier",
                             "name": "m",
                             "range": [
-                              966,
-                              967
+                              968,
+                              969
                             ],
                             "loc": {
                               "start": {
@@ -2122,8 +2122,8 @@
                           }
                         ],
                         "range": [
-                          961,
-                          968
+                          963,
+                          970
                         ],
                         "loc": {
                           "start": {
@@ -2137,8 +2137,8 @@
                         }
                       },
                       "range": [
-                        954,
-                        969
+                        956,
+                        971
                       ],
                       "loc": {
                         "start": {
@@ -2153,8 +2153,8 @@
                     }
                   ],
                   "range": [
-                    932,
-                    969
+                    934,
+                    971
                   ],
                   "loc": {
                     "start": {
@@ -2174,8 +2174,8 @@
                     "value": "Sparse",
                     "raw": "'Sparse'",
                     "range": [
-                      979,
-                      987
+                      981,
+                      989
                     ],
                     "loc": {
                       "start": {
@@ -2197,8 +2197,8 @@
                           "type": "Identifier",
                           "name": "ssin",
                           "range": [
-                            1002,
-                            1006
+                            1004,
+                            1008
                           ],
                           "loc": {
                             "start": {
@@ -2216,8 +2216,8 @@
                             "type": "Identifier",
                             "name": "m",
                             "range": [
-                              1007,
-                              1008
+                              1009,
+                              1010
                             ],
                             "loc": {
                               "start": {
@@ -2232,8 +2232,8 @@
                           }
                         ],
                         "range": [
-                          1002,
-                          1009
+                          1004,
+                          1011
                         ],
                         "loc": {
                           "start": {
@@ -2247,8 +2247,8 @@
                         }
                       },
                       "range": [
-                        995,
-                        1010
+                        997,
+                        1012
                       ],
                       "loc": {
                         "start": {
@@ -2263,8 +2263,8 @@
                     }
                   ],
                   "range": [
-                    974,
-                    1010
+                    976,
+                    1012
                   ],
                   "loc": {
                     "start": {
@@ -2289,8 +2289,8 @@
                           "type": "Identifier",
                           "name": "sin",
                           "range": [
-                            1037,
-                            1040
+                            1039,
+                            1042
                           ],
                           "loc": {
                             "start": {
@@ -2308,8 +2308,8 @@
                             "type": "Identifier",
                             "name": "m",
                             "range": [
-                              1041,
-                              1042
+                              1043,
+                              1044
                             ],
                             "loc": {
                               "start": {
@@ -2324,8 +2324,8 @@
                           }
                         ],
                         "range": [
-                          1037,
-                          1043
+                          1039,
+                          1045
                         ],
                         "loc": {
                           "start": {
@@ -2339,8 +2339,8 @@
                         }
                       },
                       "range": [
-                        1030,
-                        1044
+                        1032,
+                        1046
                       ],
                       "loc": {
                         "start": {
@@ -2355,8 +2355,8 @@
                     }
                   ],
                   "range": [
-                    1015,
-                    1044
+                    1017,
+                    1046
                   ],
                   "loc": {
                     "start": {
@@ -2371,8 +2371,8 @@
                 }
               ],
               "range": [
-                898,
-                1048
+                900,
+                1050
               ],
               "loc": {
                 "start": {
@@ -2387,8 +2387,8 @@
             }
           ],
           "range": [
-            894,
-            1050
+            896,
+            1052
           ],
           "loc": {
             "start": {
@@ -2404,8 +2404,8 @@
         "generator": false,
         "expression": false,
         "range": [
-          881,
-          1050
+          883,
+          1052
         ],
         "loc": {
           "start": {
@@ -2422,8 +2422,8 @@
             "type": "Block",
             "value": "*\n * Pointwise Math.sin(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * sin(1)\n * // returns Math.sin(1)\n * sin([1, 2])\n * // returns [Math.sin(1), Math.sin(2)]\n * sin([[1,2],[1,3]])\n * // returns [ [Math.sin(1), Math.sin(2)], [Math.sin(1), Math.sin(3)] ]\n ",
             "range": [
-              560,
-              865
+              562,
+              867
             ],
             "loc": {
               "start": {
@@ -2440,8 +2440,8 @@
         "trailingComments": []
       },
       "range": [
-        866,
-        1050
+        868,
+        1052
       ],
       "loc": {
         "start": {
@@ -2458,8 +2458,8 @@
           "type": "Block",
           "value": "*\n * Pointwise Math.sin(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * sin(1)\n * // returns Math.sin(1)\n * sin([1, 2])\n * // returns [Math.sin(1), Math.sin(2)]\n * sin([[1,2],[1,3]])\n * // returns [ [Math.sin(1), Math.sin(2)], [Math.sin(1), Math.sin(3)] ]\n ",
           "range": [
-            560,
-            865
+            562,
+            867
           ],
           "loc": {
             "start": {
@@ -2478,7 +2478,7 @@
   "sourceType": "module",
   "range": [
     1,
-    1050
+    1052
   ],
   "loc": {
     "start": {
@@ -2495,8 +2495,8 @@
       "type": "Line",
       "value": " return x.exp().sub(x.neg().exp()).div(new Complex(0, 2));",
       "range": [
-        324,
-        384
+        325,
+        385
       ],
       "loc": {
         "start": {
@@ -2513,8 +2513,8 @@
       "type": "Line",
       "value": " copy the array",
       "range": [
-        489,
-        506
+        491,
+        508
       ],
       "loc": {
         "start": {
@@ -2531,8 +2531,8 @@
       "type": "Block",
       "value": "*\n * Pointwise Math.sin(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * sin(1)\n * // returns Math.sin(1)\n * sin([1, 2])\n * // returns [Math.sin(1), Math.sin(2)]\n * sin([[1,2],[1,3]])\n * // returns [ [Math.sin(1), Math.sin(2)], [Math.sin(1), Math.sin(3)] ]\n ",
       "range": [
-        560,
-        865
+        562,
+        867
       ],
       "loc": {
         "start": {

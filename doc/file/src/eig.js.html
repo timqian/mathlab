@@ -56,6 +56,8 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-eig">eig</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-eq">eq</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-exp">exp</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fft">fft</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ifft">ifft</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-floor">floor</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-geq">geq</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getBlock">getBlock</a></span></span></li>
@@ -209,9 +211,9 @@ export default function eig(A, maxiter) {
       for (k = j - 1; k &gt;= 0; k--) {
         var Rk = R.get([k, k]),
           Rj = R.get([j, j]);
-        if (neq(Rk.x, Rj.x) || neq(Rk.y, Rj.y)) {
-          x = R.getRow(k).getBlock([k], [j - 1]);
-          y = E.getRow(j).getBlock([k], [j - 1]);
+        if (neq(Rk.re, Rj.re) || neq(Rk.im, Rj.im)) {
+          x = getBlock(R.getRow(k), [k], [j - 1]);
+          y = getBlock(E.getRow(j), [k], [j - 1]);
           E.set([j, k], div((sub(neg(R.get([k, j])), dot(x, y))), sub(Rk, Rj)));
         } else {
           E.setRow(j, E.getRow(k));

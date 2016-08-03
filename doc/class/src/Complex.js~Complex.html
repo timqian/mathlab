@@ -56,6 +56,8 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-eig">eig</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-eq">eq</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-exp">exp</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fft">fft</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ifft">ifft</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-floor">floor</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-geq">geq</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getBlock">getBlock</a></span></span></li>
@@ -152,7 +154,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Complex.js~Complex.html#instance-constructor-constructor">constructor</a></span></span><span data-ice="signature">(x: <span>*</span>, y: <span>*</span>)</span>
+           <span data-ice="name"><span><a href="class/src/Complex.js~Complex.html#instance-constructor-constructor">constructor</a></span></span><span data-ice="signature">(re: <span>*</span>, im: <span>*</span>)</span>
         </p>
       </div>
       <div>
@@ -184,7 +186,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Complex.js~Complex.html#instance-member-x">x</a></span></span><span data-ice="signature">: <span>*</span></span>
+           <span data-ice="name"><span><a href="class/src/Complex.js~Complex.html#instance-member-im">im</a></span></span><span data-ice="signature">: <span>*</span></span>
         </p>
       </div>
       <div>
@@ -209,7 +211,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Complex.js~Complex.html#instance-member-y">y</a></span></span><span data-ice="signature">: <span>*</span></span>
+           <span data-ice="name"><span><a href="class/src/Complex.js~Complex.html#instance-member-re">re</a></span></span><span data-ice="signature">: <span>*</span></span>
         </p>
       </div>
       <div>
@@ -241,57 +243,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Complex.js~Complex.html#instance-method-fft">fft</a></span></span><span data-ice="signature">(): <span>*</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
            <span data-ice="name"><span><a href="class/src/Complex.js~Complex.html#instance-method-get">get</a></span></span><span data-ice="signature">(i: <span>*</span>): <span>*</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-           <span data-ice="name"><span><a href="class/src/Complex.js~Complex.html#instance-method-getBlock">getBlock</a></span></span><span data-ice="signature">(from: <span>*</span>, to: <span>*</span>): <span>*</span></span>
         </p>
       </div>
       <div>
@@ -391,31 +343,6 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/Complex.js~Complex.html#instance-method-ifft">ifft</a></span></span><span data-ice="signature">(): <span>*</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
            <span data-ice="name"><span><a href="class/src/Complex.js~Complex.html#instance-method-reciprocal">reciprocal</a></span></span><span data-ice="signature">(): <span>*</span></span>
         </p>
       </div>
@@ -442,31 +369,6 @@
       <div>
         <p>
            <span data-ice="name"><span><a href="class/src/Complex.js~Complex.html#instance-method-set">set</a></span></span><span data-ice="signature">(i: <span>*</span>, v: <span>*</span>): <span>*</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-           <span data-ice="name"><span><a href="class/src/Complex.js~Complex.html#instance-method-setBlock">setBlock</a></span></span><span data-ice="signature">(from: <span>*</span>, to: <span>*</span>, A: <span>*</span>): <span>*</span></span>
         </p>
       </div>
       <div>
@@ -572,7 +474,7 @@
     
     
     
-    <span data-ice="name">constructor</span><span data-ice="signature">(x: <span>*</span>, y: <span>*</span>)</span>
+    <span data-ice="name">constructor</span><span data-ice="signature">(re: <span>*</span>, im: <span>*</span>)</span>
     <span class="right-info">
       
       
@@ -596,13 +498,13 @@
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">x</td>
+      <td data-ice="name" data-depth="0">re</td>
       <td data-ice="type"><span>*</span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"></td>
     </tr>
 <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">y</td>
+      <td data-ice="name" data-depth="0">im</td>
       <td data-ice="type"><span>*</span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"></td>
@@ -631,53 +533,13 @@
 <div data-ice="memberDetails"><h2 data-ice="title">Public Members</h2>
 
 <div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-member-x">
+  <h3 data-ice="anchor" id="instance-member-im">
     <span class="access" data-ice="access">public</span>
     
     
     
     
-    <span data-ice="name">x</span><span data-ice="signature">: <span>*</span></span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/Complex.js.html#lineNumber14">source</a></span></span>
-    </span>
-  </h3>
-
-  
-  
-  
-  
-
-  
-
-  <div data-ice="properties">
-</div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-member-y">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    <span data-ice="name">y</span><span data-ice="signature">: <span>*</span></span>
+    <span data-ice="name">im</span><span data-ice="signature">: <span>*</span></span>
     <span class="right-info">
       
       
@@ -710,21 +572,18 @@
   
   
 </div>
-</div>
-<div data-ice="methodDetails"><h2 data-ice="title">Public Methods</h2>
-
 <div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-method-fft">
+  <h3 data-ice="anchor" id="instance-member-re">
     <span class="access" data-ice="access">public</span>
     
     
     
     
-    <span data-ice="name">fft</span><span data-ice="signature">(): <span>*</span></span>
+    <span data-ice="name">re</span><span data-ice="signature">: <span>*</span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Complex.js.html#lineNumber164">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Complex.js.html#lineNumber14">source</a></span></span>
     </span>
   </h3>
 
@@ -738,17 +597,7 @@
   <div data-ice="properties">
 </div>
 
-  <div class="return-params" data-ice="returnParams">
-    <h4>Return:</h4>
-    <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span>*</span></td>
-        
-      </tr>
-    </table>
-    <div data-ice="returnProperties">
-</div>
-  </div>
+  
 
   
 
@@ -763,6 +612,9 @@
   
   
 </div>
+</div>
+<div data-ice="methodDetails"><h2 data-ice="title">Public Methods</h2>
+
 <div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-method-get">
     <span class="access" data-ice="access">public</span>
@@ -795,78 +647,6 @@
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">i</td>
-      <td data-ice="type"><span>*</span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
-    </tr>
-</tbody>
-  </table>
-</div>
-</div>
-
-  <div class="return-params" data-ice="returnParams">
-    <h4>Return:</h4>
-    <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span>*</span></td>
-        
-      </tr>
-    </table>
-    <div data-ice="returnProperties">
-</div>
-  </div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-method-getBlock">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    <span data-ice="name">getBlock</span><span data-ice="signature">(from: <span>*</span>, to: <span>*</span>): <span>*</span></span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/Complex.js.html#lineNumber145">source</a></span></span>
-    </span>
-  </h3>
-
-  
-  
-  
-  
-
-  
-
-  <div data-ice="properties"><div data-ice="properties">
-  <h4 data-ice="title">Params:</h4>
-  <table class="params">
-    <thead>
-    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-    
-    <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">from</td>
-      <td data-ice="type"><span>*</span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
-    </tr>
-<tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">to</td>
       <td data-ice="type"><span>*</span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"></td>
@@ -1106,56 +886,6 @@
   
 </div>
 <div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-method-ifft">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    <span data-ice="name">ifft</span><span data-ice="signature">(): <span>*</span></span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/Complex.js.html#lineNumber190">source</a></span></span>
-    </span>
-  </h3>
-
-  
-  
-  
-  
-
-  
-
-  <div data-ice="properties">
-</div>
-
-  <div class="return-params" data-ice="returnParams">
-    <h4>Return:</h4>
-    <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span>*</span></td>
-        
-      </tr>
-    </table>
-    <div data-ice="returnProperties">
-</div>
-  </div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-method-reciprocal">
     <span class="access" data-ice="access">public</span>
     
@@ -1243,84 +973,6 @@
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">v</td>
-      <td data-ice="type"><span>*</span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
-    </tr>
-</tbody>
-  </table>
-</div>
-</div>
-
-  <div class="return-params" data-ice="returnParams">
-    <h4>Return:</h4>
-    <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span>*</span></td>
-        
-      </tr>
-    </table>
-    <div data-ice="returnProperties">
-</div>
-  </div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-method-setBlock">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    <span data-ice="name">setBlock</span><span data-ice="signature">(from: <span>*</span>, to: <span>*</span>, A: <span>*</span>): <span>*</span></span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/Complex.js.html#lineNumber151">source</a></span></span>
-    </span>
-  </h3>
-
-  
-  
-  
-  
-
-  
-
-  <div data-ice="properties"><div data-ice="properties">
-  <h4 data-ice="title">Params:</h4>
-  <table class="params">
-    <thead>
-    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-    
-    <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">from</td>
-      <td data-ice="type"><span>*</span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
-    </tr>
-<tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">to</td>
-      <td data-ice="type"><span>*</span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
-    </tr>
-<tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">A</td>
       <td data-ice="type"><span>*</span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"></td>

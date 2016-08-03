@@ -56,6 +56,8 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-eig">eig</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-eq">eq</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-exp">exp</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fft">fft</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ifft">ifft</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-floor">floor</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-geq">geq</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getBlock">getBlock</a></span></span></li>
@@ -105,16 +107,16 @@ const add = pointwise((x, y) =&gt; x + y);
 
 function cadd(x, y) {
   if (!(y instanceof Complex)) { y = new Complex(y); }
-  if (x.y) {
-    if (y.y) {
-      return new Complex(add(x.x, y.x), add(x.y, y.y));
+  if (x.im) {
+    if (y.im) {
+      return new Complex(add(x.re, y.re), add(x.im, y.im));
     }
-    return new Complex(add(x.x, y.x), x.y);
+    return new Complex(add(x.re, y.re), x.im);
   }
-  if (y.y) {
-    return new Complex(add(x.x, y.x), y.y);
+  if (y.im) {
+    return new Complex(add(x.re, y.re), y.im);
   }
-  return new Complex(add(x.x, y.x));
+  return new Complex(add(x.re, y.re));
 }
 
 function sadd(x, y) {

@@ -56,6 +56,8 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-eig">eig</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-eq">eq</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-exp">exp</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fft">fft</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ifft">ifft</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-floor">floor</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-geq">geq</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getBlock">getBlock</a></span></span></li>
@@ -100,11 +102,11 @@
 <div class="content" data-ice="content"><h1 data-ice="title">src/reciprocal.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">export function reciprocal() {
     var mul = numeric.mul, div = numeric.div;
-    if(this.y) {
-        var d = numeric.add(mul(this.x,this.x),mul(this.y,this.y));
-        return new numeric.Complex(div(this.x,d),div(numeric.neg(this.y),d));
+    if(this.im) {
+        var d = numeric.add(mul(this.re,this.re),mul(this.im,this.im));
+        return new numeric.Complex(div(this.re,d),div(numeric.neg(this.im),d));
     }
-    return new Complex(div(1,this.x));
+    return new Complex(div(1,this.re));
 }</code></pre>
 
 </div>

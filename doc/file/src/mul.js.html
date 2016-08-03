@@ -56,6 +56,8 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-eig">eig</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-eq">eq</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-exp">exp</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-fft">fft</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ifft">ifft</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-floor">floor</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-geq">geq</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getBlock">getBlock</a></span></span></li>
@@ -109,16 +111,16 @@ const amul = pointwise((x, y) =&gt; x * y)
 // complex array mul
 function cmul(x, y) {
   if(!(y instanceof Complex)) { y = new Complex(y); }
-  if (x.y) {
-    if (y.y) {
-      return new Complex(sub(amul(x.x, y.x), amul(x.y, y.y)), add(amul(x.x, y.y), amul(x.y, y.x)));
+  if (x.im) {
+    if (y.im) {
+      return new Complex(sub(amul(x.re, y.re), amul(x.im, y.im)), add(amul(x.re, y.im), amul(x.im, y.re)));
     }
-    return new Complex(amul(x.x, y.x), amul(x.y, y.x));
+    return new Complex(amul(x.re, y.re), amul(x.im, y.re));
   }
-  if (y.y) {
-    return new Complex(amul(x.x, y.x), amul(x.x, y.y));
+  if (y.im) {
+    return new Complex(amul(x.re, y.re), amul(x.re, y.im));
   }
-  return new Complex(amul(x.x, y.x));
+  return new Complex(amul(x.re, y.re));
 }
 
 function smul(x, y) {
