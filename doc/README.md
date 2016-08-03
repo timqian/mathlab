@@ -86,18 +86,14 @@ The *Math* object functions have been adapted to work on Arrays , Complex and Sp
 
 #### Sample usage
 
-**abs**: Pointwise [Math.abs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/abs) [*(source)*](https://github.com/timqian/mathlab/blob/master/src/abs.js)
-- params: `Number | Array | Complex | Sparse`
-- returns: `Number | Array | Complex | Sparse`
-- example:
-	```js
-	import {abs, Complex, Sparse} from './mathlab'
+```js
+import {abs, Complex, Sparse} from './mathlab'
 
-	abs(-1)  // 1
-	abs([-1, 2])  // [1, 2]
-	abs(new Complex(3, 4))  // {x: 5, y: 0}
-	abs(new Sparse([[1,2,0],[0,0,-1],[1,0,0]])) // {row: col: val:}
-	```
+abs(-1)  // 1
+abs([-1, 2])  // [1, 2]
+abs(new Complex(3, 4))  // {x: 5, y: 0}
+abs(new Sparse([[1,2,0],[0,0,-1],[1,0,0]])) // {row: col: val:}
+```
 
 ## Arithmetic operations
 
@@ -145,11 +141,14 @@ dot(new Complex([1, 2], [2, 2]), new Complex([2,2], [2,2])) // -2
 > fft | ifft
 
 ```js
-import {fft, ifft} from 'mathlab'
+import {fft, ifft, Complex} from 'mathlab'
 
-const fftRes = fft(new Complex([1,2,3,4,5],[6,7,8,9,10])) // {re: [ 15, -5.941, -3.312, -1.688, 0.941], im: [ 40, 0.941, -1.688, -3.312, -5.941]}
-ifft(fftRes) // {re:[1,2,3,4,5], im:[6,7,8,9,10]}
-```
+// {re: [ 15, -5.941, -3.312, -1.688, 0.941], im: [ 40, 0.941, -1.688, -3.312, -5.941]}
+const fftRes = fft(new Complex([1,2,3,4,5],[6,7,8,9,10]))
+
+// {re:[1,2,3,4,5], im:[6,7,8,9,10]}
+ifft(fftRes) 
+```	
 
 
 ## Function list
