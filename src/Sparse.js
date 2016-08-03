@@ -65,5 +65,3 @@ export default class Sparse {
 //   console.log(ret);
 // }
 
-console.log(new Sparse({col:[1,2], row:[1,2], val:[1,2]}))
-console.log(new Sparse([[1,0,0],[0,1,0],[0,0,0]]))

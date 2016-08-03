@@ -110,8 +110,8 @@ export default function eig(A, maxiter) {
         var Rk = R.get([k, k]),
           Rj = R.get([j, j]);
         if (neq(Rk.re, Rj.re) || neq(Rk.im, Rj.im)) {
-          x = R.getRow(k).getBlock([k], [j - 1]);
-          y = E.getRow(j).getBlock([k], [j - 1]);
+          x = getBlock(R.getRow(k), [k], [j - 1]);
+          y = getBlock(E.getRow(j), [k], [j - 1]);
           E.set([j, k], div((sub(neg(R.get([k, j])), dot(x, y))), sub(Rk, Rj)));
         } else {
           E.setRow(j, E.getRow(k));
