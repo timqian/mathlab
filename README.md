@@ -33,7 +33,7 @@ const y = dot(A, x)
 console.log(y) // [50,122]
 ```
 
-## [Documents](http://timqian.com/mathlab)
+## Documents
 
 http://timqian.com/mathlab
 
