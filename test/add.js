@@ -26,6 +26,8 @@ describe('add', () => {
   it('Sparse', () => {
     const a = new Sparse([[1,2,0],[0,3,0],[0,0,5]])
     const b = new Sparse([[2,9,0],[0,4,0],[-2,0,0]])
-    throw add(a, b)
+
+    // {"col": [0,2,4,5], "row": [0,2,0,1,2], "val": [3,-2,11,7,5]}
+    add(a, b).val.should.deepEqual([3,-2,11,7,5])
   })
 })
