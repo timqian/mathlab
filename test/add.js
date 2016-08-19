@@ -1,7 +1,7 @@
 
 import assert from 'assert'
 import should from 'should'
-import { add, Complex } from '../lib'
+import { add, Complex, Sparse } from '../lib'
 
 describe('add', () => {
   it('num & arr', () => {
@@ -24,5 +24,8 @@ describe('add', () => {
   })
 
   it('Sparse', () => {
+    const a = new Sparse([[1,2,0],[0,3,0],[0,0,5]])
+    const b = new Sparse([[2,9,0],[0,4,0],[-2,0,0]])
+    throw add(a, b)
   })
 })

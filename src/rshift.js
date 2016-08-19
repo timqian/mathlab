@@ -1,13 +1,11 @@
-import pointwise from './pointwise'
+import pointwise2 from './pointwise2'
+import spPointwise2 from './spPointwise2'
 
-const rshift = pointwise((x, y) => x >> y);
+const rshift = pointwise2((x, y) => x >> y)
+const srshift = spPointwise2((x, y) => x >> y)
 
 function crshift(x, y) {
   throw new Error('mathlab.rshift: no rshift for complex number')
-}
-
-function srshift(x, y) {
-  throw new Error('mathlab.rshift: rshift for sparse matrix not exist')
 }
 
 /**

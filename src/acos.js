@@ -1,19 +1,13 @@
 
 import pointwise from './pointwise'
+import spPointwise from './spPointwise'
 import Sparse from './Sparse'
 
 const acos = pointwise(Math.acos)
+const sacos = spPointwise(Math.acos)
 
 function cacos(x) {
   throw new Error('mathlab.acos: no acos for complex number')
-}
-
-function sacos(x) {
-  return new Sparse({
-    col: x.col.slice(), // copy the array
-    row: x.row.slice(),
-    val: acos(x.val),
-  })
 }
 
 /**

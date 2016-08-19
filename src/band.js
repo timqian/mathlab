@@ -1,13 +1,11 @@
-import pointwise from './pointwise'
+import pointwise2 from './pointwise2'
+import spPointwise2 from './spPointwise2'
 
-const band = pointwise((x, y) => x & y);
+const band = pointwise2((x, y) => x & y);
+const sband = spPointwise2((x, y) => x & y);
 
 function cband(x, y) {
   throw new Error('mathlab.band: no band for complex number')
-}
-
-function sband(x, y) {
-  throw new Error('mathlab.band: band for sparse matrix not exist')
 }
 
 /**

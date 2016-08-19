@@ -1,5 +1,6 @@
 
 import pointwise from './pointwise'
+import spPointwise from './spPointwise'
 import Complex from './Complex'
 import Sparse from './Sparse'
 import neg from './neg'
@@ -8,6 +9,7 @@ import div from './div'
 import sub from './sub'
 
 const sin = pointwise(Math.sin)
+const ssin = spPointwise(Math.sin)
 
 function csin(x) {
   if (x.im) {
@@ -17,13 +19,6 @@ function csin(x) {
   return new Complex(sin(x.re));
 }
 
-function ssin(x) {
-  return new Sparse({
-    col: x.col.slice(), // copy the array
-    row: x.row.slice(),
-    val: sin(x.val),
-  })
-}
 
 /**
  * Pointwise Math.sin(x)

@@ -1,13 +1,11 @@
-import pointwise from './pointwise'
+import pointwise2 from './pointwise2'
+import spPointwise2 from './spPointwise2'
 
-const bxor = pointwise((x, y) => x ^ y);
+const bxor = pointwise2((x, y) => x ^ y)
+const sbxor = spPointwise2((x, y) => x ^ y)
 
 function cbxor(x, y) {
   throw new Error('mathlab.bxor: no bxor for complex number')
-}
-
-function sbxor(x, y) {
-  throw new Error('mathlab.bxor: bxor for sparse matrix not exist')
 }
 
 /**

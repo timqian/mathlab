@@ -1,13 +1,11 @@
-import pointwise from './pointwise'
+import pointwise2 from './pointwise2'
+import spPointwise2 from './spPointwise2'
 
-const geq = pointwise((x, y) => x >= y);
+const geq = pointwise2((x, y) => x >= y)
+const sgeq = spPointwise2((x, y) => x >= y)
 
 function cgeq(x, y) {
   throw new Error('mathlab.geq: no geq for complex number')
-}
-
-function sgeq(x, y) {
-  throw new Error('mathlab.geq: geq for sparse matrix not exist')
 }
 
 /**

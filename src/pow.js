@@ -1,5 +1,5 @@
 
-import pointwise from './pointwise'
+import pointwise2 from './pointwise2'
 
 /**
  * Pointwise Math.pow(x, y)
@@ -18,5 +18,5 @@ import pointwise from './pointwise'
  * // returns [ [Math.pow(2, 2), Math.pow(1, 2)], [Math.pow(1, 2), Math.pow(2, 2)] ]
  */
 export default function (m1, m2) { 
-  return pointwise(Math.pow)(m1, m2)
+  return pointwise2(Math.pow)(m1, m2)
 }

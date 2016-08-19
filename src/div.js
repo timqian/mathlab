@@ -1,8 +1,10 @@
-import pointwise from './pointwise'
+import pointwise2 from './pointwise2'
+import spPointwise2 from './spPointwise2'
 import Complex from './Complex';
 import mul from './mul';
 
-const div = pointwise((x, y) => x / y);
+const div = pointwise2((x, y) => x / y)
+const sdiv = spPointwise2((x, y) => x / y)
 
 function cdiv(x, y) {
   if (!(y instanceof Complex)) y = new Complex(y);
@@ -12,11 +14,6 @@ function cdiv(x, y) {
   if (x.im) {
     return new Complex(div(x.re, y.re), div(x.im, y.re)); }
   return new Complex(div(x.re, y.re));
-}
-
-function sdiv(x, y) {
-  // TODO
-  throw new Error('mathlab.div: div for sparse matrix not exist')
 }
 
 /**

@@ -1,13 +1,11 @@
-import pointwise from './pointwise'
+import pointwise2 from './pointwise2'
+import spPointwise2 from './spPointwise2'
 
-const gt = pointwise((x, y) => x > y);
+const gt = pointwise2((x, y) => x > y);
+const sgt = spPointwise2((x, y) => x > y);
 
 function cgt(x, y) {
   throw new Error('mathlab.gt: no gt for complex number')
-}
-
-function sgt(x, y) {
-  throw new Error('mathlab.gt: gt for sparse matrix not exist')
 }
 
 /**

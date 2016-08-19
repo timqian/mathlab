@@ -1,19 +1,13 @@
 
 import pointwise from './pointwise'
+import spPointwise from './spPointwise'
 import Sparse from './Sparse'
 
 const ceil = pointwise(Math.ceil)
+const sceil = spPointwise(Math.ceil)
 
 function cceil(x) {
   throw new Error('mathlab.ceil: no ceil for complex number')
-}
-
-function sceil(x) {
-  return new Sparse({
-    col: x.col.slice(), // copy the array
-    row: x.row.slice(),
-    val: ceil(x.val),
-  })
 }
 
 /**

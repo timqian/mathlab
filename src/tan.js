@@ -1,21 +1,16 @@
 
 import pointwise from './pointwise'
+import spPointwise from './spPointwise'
 import Sparse from './Sparse'
 
 const tan = pointwise(Math.tan)
+const stan = spPointwise(Math.tan)
 
 function ctan(x) {
   // TODO
   throw new Error('mathlab.tan: no tan for complex number')
 }
 
-function stan(x) {
-  return new Sparse({
-    col: x.col.slice(), // copy the array
-    row: x.row.slice(),
-    val: tan(x.val),
-  })
-}
 
 /**
  * Pointwise Math.tan(x)

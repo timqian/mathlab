@@ -1,19 +1,14 @@
 
 import pointwise from './pointwise'
+import spPointwise from './spPointwise'
 import Sparse from './Sparse'
 
-const clone = pointwise(x => x);
+const clone = pointwise(x => x)
+const sclone = spPointwise(x => x)
 
 function cclone(x) {
   throw new Error('mathlab.clone: no clone for complex number')
 }
-
-function sclone(x) {
-  return new Sparse({
-    col: x.col.slice(), // copy the array
-    row: x.row.slice(),
-    val: x.val.slice()
-  })}
 
 /**
  * Pointwise clone(x)

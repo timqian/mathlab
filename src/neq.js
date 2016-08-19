@@ -1,14 +1,13 @@
-import pointwise from './pointwise'
+import pointwise2 from './pointwise2'
+import spPointwise2 from './spPointwise2'
 
-const neq = pointwise((x, y) => x !== y);
+const neq = pointwise2((x, y) => x !== y)
+const sneq = spPointwise2((x, y) => x !== y)
 
 function cneq(x, y) {
   throw new Error('mathlab.neq: no neq for complex number')
 }
 
-function sneq(x, y) {
-  throw new Error('mathlab.neq: neq for sparse matrix not exist')
-}
 
 /**
  * Pointwise neq

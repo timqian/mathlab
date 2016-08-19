@@ -1,19 +1,13 @@
 
 import pointwise from './pointwise'
+import spPointwise from './spPointwise'
 import Sparse from './Sparse'
 
 const sqrt = pointwise(Math.sqrt)
+const ssqrt = spPointwise(Math.sqrt)
 
 function csqrt(x) {
   throw new Error('mathlab.sqrt: no sqrt for complex number')
-}
-
-function ssqrt(x) {
-  return new Sparse({
-    col: x.col.slice(), // copy the array
-    row: x.row.slice(),
-    val: sqrt(x.val),
-  })
 }
 
 /**

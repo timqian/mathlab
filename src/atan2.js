@@ -1,5 +1,5 @@
 
-import pointwise from './pointwise'
+import pointwise2 from './pointwise2'
 
 /**
  * Pointwise Math.atan2(x, y)
@@ -19,5 +19,5 @@ import pointwise from './pointwise'
  */
 export default function (m1, m2) {
   // TODO 
-  return pointwise(Math.atan2)(m1, m2)
+  return pointwise2(Math.atan2)(m1, m2)
 }

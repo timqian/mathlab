@@ -1,19 +1,13 @@
 
 import pointwise from './pointwise'
+import spPointwise from './spPointwise'
 import Sparse from './Sparse'
 
 const asin = pointwise(Math.asin)
+const sasin = spPointwise(Math.asin)
 
 function casin(x) {
   throw new Error('mathlab.asin: no asin for complex number')
-}
-
-function sasin(x) {
-  return new Sparse({
-    col: x.col.slice(), // copy the array
-    row: x.row.slice(),
-    val: asin(x.val),
-  })
 }
 
 /**

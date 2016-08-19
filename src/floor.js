@@ -1,20 +1,16 @@
 
 import pointwise from './pointwise'
+import spPointwise from './spPointwise'
 import Sparse from './Sparse'
 
 const floor = pointwise(Math.floor)
+const sfloor = spPointwise(Math.floor)
 
 function cfloor(x) {
   throw new Error('mathlab.floor: no floor for complex number')
 }
 
-function sfloor(x) {
-  return new Sparse({
-    col: x.col.slice(), // copy the array
-    row: x.row.slice(),
-    val: floor(x.val),
-  })
-}
+
 /**
  * Pointwise Math.floor(x)
  * 

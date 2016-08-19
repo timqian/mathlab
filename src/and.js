@@ -1,14 +1,11 @@
-import pointwise from './pointwise'
+import pointwise2 from './pointwise2'
+import spPointwise2 from './spPointwise2'
 
-const and = pointwise((x, y) => x && y);
+const and = pointwise2((x, y) => x && y)
+const sand = spPointwise2((x, y) => x && y)
 
 function cand(x, y) {
   throw new Error('mathlab.and: no and for complex number')
-}
-
-function sand(x, y) {
-  // TODO
-  throw new Error('mathlab.and: and for sparse matrix not exist')
 }
 
 /**

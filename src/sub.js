@@ -1,8 +1,10 @@
-import pointwise from './pointwise'
+import pointwise2 from './pointwise2'
+import spPointwise2 from './spPointwise2'
 import Complex from './Complex'
 import neg from './neg'
 
-const sub = pointwise((x, y) => x - y);
+const sub = pointwise2((x, y) => x - y)
+const ssub = spPointwise2((x, y) => x - y)
 
 function csub(x, y) {
   if (!(y instanceof Complex)) { y = new Complex(y); }
@@ -18,9 +20,6 @@ function csub(x, y) {
   return new Complex(sub(x.re, y.re));
 }
 
-function ssub(x, y) {
-  throw new Error('mathlab.sub: sub for sparse matrix not exist')
-}
 
 /**
  * Pointwise sub

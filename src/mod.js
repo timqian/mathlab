@@ -1,13 +1,11 @@
-import pointwise from './pointwise'
+import pointwise2 from './pointwise2'
+import spPointwise2 from './spPointwise2'
 
-const mod = pointwise((x, y) => x % y);
+const mod = pointwise2((x, y) => x % y);
+const smod = spPointwise2((x, y) => x % y);
 
 function cmod(x, y) {
   throw new Error('mathlab.mod: no mod for complex number')
-}
-
-function smod(x, y) {
-  throw new Error('mathlab.mod: mod for sparse matrix not exist')
 }
 
 /**

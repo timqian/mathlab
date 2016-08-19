@@ -1,13 +1,11 @@
-import pointwise from './pointwise'
+import pointwise2 from './pointwise2'
+import spPointwise2 from './spPointwise2'
 
-const eq = pointwise((x, y) => x === y);
+const eq = pointwise2((x, y) => x === y);
+const seq = spPointwise2((x, y) => x === y);
 
 function ceq(x, y) {
   throw new Error('mathlab.eq: no eq for complex number')
-}
-
-function seq(x, y) {
-  throw new Error('mathlab.eq: eq for sparse matrix not exist')
 }
 
 /**

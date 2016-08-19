@@ -1,5 +1,6 @@
 
 import pointwise from './pointwise'
+import spPointwise from './spPointwise'
 import cos from './cos'
 import sin from './sin'
 import mul from './mul'
@@ -7,6 +8,7 @@ import Complex from './Complex'
 import Sparse from './Sparse'
 
 const exp = pointwise(Math.exp)
+const sexp = spPointwise(Math.exp)
 
 function cexp(x) {
   var ex = exp(x.re);
@@ -16,13 +18,6 @@ function cexp(x) {
   return new Complex(ex);
 }
 
-function sexp(x) {
-  return new Sparse({
-    col: x.col.slice(), // copy the array
-    row: x.row.slice(),
-    val: exp(x.val),
-  })
-}
 
 /**
  * Pointwise Math.exp(x)

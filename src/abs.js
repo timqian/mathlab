@@ -1,12 +1,15 @@
 
 import pointwise from './pointwise'
+import spPointwise from './spPointwise'
 import Complex from './Complex'
 import Sparse from './Sparse'
 import mul from './mul'
-import sqrt from './sqrt';
-import add from './add';
+import sqrt from './sqrt'
+import add from './add'
+
 
 const abs = pointwise(Math.abs)
+const sabs = spPointwise(Math.abs)
 
 function cabs(x) {
   if (x.im) {
@@ -15,13 +18,6 @@ function cabs(x) {
   return new Complex(abs(x.re));
 }
 
-function sabs(x) {
-  return new Sparse({
-    col: x.col.slice(), // copy the array
-    row: x.row.slice(),
-    val: abs(x.val),
-  })
-}
 
 /**
  * Pointwise Math.abs(x)
@@ -31,12 +27,12 @@ function sabs(x) {
  * @returns {Number|Array}
  * @example 
  * 
- * abs(1)
- * // returns Math.abs(1)
- * abs([1, 2])
- * // returns [Math.abs(1), Math.abs(2)]
- * abs([[1,2],[1,3]])
- * // returns [ [Math.abs(1), Math.abs(2)], [Math.abs(1), Math.abs(3)] ]
+ * abs(-1)
+ * // returns Math.abs(-1)
+ * abs([1, -2])
+ * // returns [Math.abs(1), Math.abs(-2)]
+ * abs([[1,2],[1,-3]])
+ * // returns [ [Math.abs(1), Math.abs(2)], [Math.abs(1), Math.abs(-3)] ]
  */
 export default function (m) {
   switch (m.constructor.name) {

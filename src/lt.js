@@ -1,14 +1,13 @@
-import pointwise from './pointwise'
+import pointwise2 from './pointwise2'
+import spPointwise2 from './spPointwise2'
 
-const lt = pointwise((x, y) => x < y);
+const lt = pointwise2((x, y) => x < y);
+const slt = spPointwise2((x, y) => x < y);
 
 function clt(x, y) {
   throw new Error('mathlab.lt: no lt for complex number')
 }
 
-function slt(x, y) {
-  throw new Error('mathlab.lt: lt for sparse matrix not exist')
-}
 
 /**
  * Pointwise lt

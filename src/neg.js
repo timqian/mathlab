@@ -1,9 +1,11 @@
 
 import pointwise from './pointwise'
+import spPointwise from './spPointwise'
 import Complex from './Complex'
 import Sparse from './Sparse'
 
-const neg = pointwise(x=> -x);
+const neg = pointwise(x=> -x)
+const sneg = spPointwise(x=> -x)
 
 function cneg(x) {
   if (x.im) {
@@ -12,13 +14,6 @@ function cneg(x) {
   return new Complex(neg(x.re));
 }
 
-function sneg(x) {
-  return new Sparse({
-    col: x.col.slice(), // copy the array
-    row: x.row.slice(),
-    val: neg(x.val),
-  })
-}
 
 /**
  * Pointwise Math.neg(x)

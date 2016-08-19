@@ -1,20 +1,15 @@
 
 import pointwise from './pointwise'
+import spPointwise from './spPointwise'
 import Sparse from './Sparse'
 
-const bnot = pointwise(x=> ~x);
+const bnot = pointwise(x=> ~x)
+const sbnot = spPointwise(x=> ~x)
 
 function cbnot(x) {
   throw new Error('mathlab.bnot: no bnot for complex number')
 }
 
-function sbnot(x) {
-  return new Sparse({
-    col: x.col.slice(), // copy the array
-    row: x.row.slice(),
-    val: bnot(x.val),
-  })
-}
 
 /**
  * Pointwise Math.bnot(x)

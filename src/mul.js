@@ -1,10 +1,12 @@
-import pointwise from './pointwise';
+import pointwise2 from './pointwise2';
+import spPointwise2 from './spPointwise2'
 import Complex from './Complex';
 import add from './add';
 import sub from './sub';
 
 // array mul
-const amul = pointwise((x, y) => x * y)
+const amul = pointwise2((x, y) => x * y)
+const smul = spPointwise2((x, y) => x * y)
 
 // complex array mul
 function cmul(x, y) {
@@ -21,9 +23,6 @@ function cmul(x, y) {
   return new Complex(amul(x.re, y.re));
 }
 
-function smul(x, y) {
-  throw new Error('mathlab.sub: sub for sparse matrix not exist')
-}
 
 /**
  * Pointwise mul

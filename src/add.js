@@ -1,7 +1,9 @@
-import pointwise from './pointwise'
+import pointwise2 from './pointwise2'
+import spPointwise2 from './spPointwise2'
 import Complex from './Complex'
 
-const add = pointwise((x, y) => x + y);
+const add = pointwise2((x, y) => x + y)
+const sadd = spPointwise2((x, y) => x + y)
 
 function cadd(x, y) {
   if (!(y instanceof Complex)) { y = new Complex(y); }
@@ -15,11 +17,6 @@ function cadd(x, y) {
     return new Complex(add(x.re, y.re), y.im);
   }
   return new Complex(add(x.re, y.re));
-}
-
-function sadd(x, y) {
-  // TODO
-  throw new Error('mathlab.add: add for sparse matrix not exist')
 }
 
 /**

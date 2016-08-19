@@ -1,5 +1,6 @@
 
 import pointwise from './pointwise'
+import spPointwise from './spPointwise'
 import Complex from './Complex'
 import Sparse from './Sparse'
 import neg from './neg'
@@ -8,20 +9,13 @@ import div from './div'
 import add from './add'
 
 const cos = pointwise(Math.cos)
+const scos = spPointwise(Math.cos)
 
 function ccos(x) {
   if (x.im) {
     return div(add(exp(x), exp(neg(x))), 2);
   }
   return new Complex(cos(x.re));
-}
-
-function scos(x) {
-  return new Sparse({
-    col: x.col.slice(), // copy the array
-    row: x.row.slice(),
-    val: cos(x.val),
-  })
 }
 
 /**

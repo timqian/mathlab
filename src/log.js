@@ -1,11 +1,13 @@
 
 import pointwise from './pointwise'
+import spPointwise from './spPointwise'
 import Sparse from './Sparse'
 import Complex from './Complex'
 import atan2 from './atan2'
 import abs from './abs'
 
 const log = pointwise(Math.log)
+const slog = spPointwise(Math.log)
 
 function clog(x) {
   if (x.im) {
@@ -16,13 +18,6 @@ function clog(x) {
   return new Complex(log(x.re));
 }
 
-function slog(x) {
-  return new Sparse({
-    col: x.col.slice(), // copy the array
-    row: x.row.slice(),
-    val: log(x.val),
-  })
-}
 
 /**
  * Pointwise Math.log(x)
