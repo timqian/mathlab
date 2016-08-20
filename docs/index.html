@@ -105,21 +105,11 @@
 
 <div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="mathlab">mathlab</h1>
 <p>Lodash like math lab in javascript, focusing on matrix manipulation.</p>
-<blockquote>
-<p>Start as a refactoring of <a href="https://github.com/sloisel/numeric">numeric</a></p>
-</blockquote>
 <p><a href="https://www.npmjs.com/package/mathlab"><img src="https://nodei.co/npm/mathlab.png" alt="npm"></a></p>
-<h2 id="features">Features</h2>
-<ul>
-<li><strong>Modulize</strong>: only import the function you need.</li>
-<li><strong>Easy to use</strong>: no extra concepts to grasp(1D Array as vector and 2D Array as matrix)</li>
-<li><strong>Functional</strong>: no side effact on input data and the outside world</li>
-<li><strong>Multifunctional</strong>: Support <code>sparse</code> and <code>complex</code> matrix manipulation; <code>FFT</code>; <code>eigenvectors &amp; eigenvalues of matrix</code>; and so on</li>
-</ul>
-<h2 id="install">Install</h2>
+<h1 id="install">Install</h1>
 <pre><code class="lang-bash"><code class="source-code prettyprint">$ npm install mathlab --save</code>
 </code></pre>
-<h2 id="sample-usage">Sample usage</h2>
+<h1 id="sample-usage">Sample usage</h1>
 <pre><code class="lang-js"><code class="source-code prettyprint">import { dot } from &apos;mathlab&apos;
 
 const A = [[1,2,3],
@@ -130,23 +120,33 @@ const x = [7,8,9]
 // calculate dot product
 dot(A, x) // [50,122]</code>
 </code></pre>
-<h2 id="introduction-to-functions">Introduction to functions</h2>
-<p>Mathlab is basicly a collection of mathmatic functions which can be applied to numbers, arrays and two self-defined datatype (Complex and Sparse).</p>
-<p>The function can be devide into 5 groups:</p>
+<h1 id="features">Features</h1>
+<ul>
+<li><strong>Modulize</strong>: only import the function you need.</li>
+<li><strong>Easy to use</strong>: no extra concepts to grasp(1D Array as vector and 2D Array as matrix)</li>
+<li><strong>Functional</strong>: no side effact on input data and the outside world</li>
+<li><strong>Multifunctional</strong>: Support <code>sparse</code> and <code>complex</code> matrix manipulation; <code>FFT</code>; <code>eigenvectors &amp; eigenvalues of matrix</code>; and so on</li>
+</ul>
+<h1 id="introduction-to-functions">Introduction to functions</h1>
+<p>Mathlab provide a collection of mathmatic functions which can be applied to numbers, arrays and two self-defined datatypes (Complex and Sparse).</p>
+<p>Functions can be devide into 5 groups:</p>
 <h3 id="1-math-object-functions">1. Math Object functions</h3>
 <blockquote>
-<p>abs | acos | asin | atan | ceil | cos | exp | floor | log | round | sin | sqrt | tan</p>
+<p><a href="http://www.timqian.com/mathlab/function/index.html#static-function-abs">abs</a> | <a href="http://www.timqian.com/mathlab/function/index.html#static-function-acos">acos</a> | <a href="http://www.timqian.com/mathlab/function/index.html#static-function-asin">asin</a> | <a href="http://www.timqian.com/mathlab/function/index.html#static-function-atan">atan</a> | <a href="http://www.timqian.com/mathlab/function/index.html#static-function-ceil">ceil</a> | <a href="http://www.timqian.com/mathlab/function/index.html#static-function-cos">cos</a> | <a href="http://www.timqian.com/mathlab/function/index.html#static-function-exp">exp</a> | <a href="http://www.timqian.com/mathlab/function/index.html#static-function-exp">floor</a> | 
+<a href="http://www.timqian.com/mathlab/function/index.html#static-function-log">log</a> | <a href="http://www.timqian.com/mathlab/function/index.html#static-function-round">round</a> | <a href="http://www.timqian.com/mathlab/function/index.html#static-function-sin">sin</a> | <a href="http://www.timqian.com/mathlab/function/index.html#static-function-sqrt">sqrt</a> | <a href="http://www.timqian.com/mathlab/function/index.html#static-function-tan">tan</a></p>
 </blockquote>
-<p>The <em>Math</em> object functions have been adapted to work on Arrays , Complex and Sparse Objects</p>
+<p>The <em>Math</em> object functions have been adapted to work on Arrays, Complex and Sparse Objects</p>
 <h4 id="example">example</h4>
 <pre><code class="lang-js"><code class="source-code prettyprint">import {abs, Complex, Sparse} from &apos;./mathlab&apos;
 
 abs(-1)  // 1
-abs([-1, 2])  // [1, 2]</code>
+abs([-1, 2])  // [1, 2]
+abs(new Complex(3, 4))  // {re: 5, im: 0}
+abs(new Sparse([[1,2,0],[0,0,-1],[1,0,0]])) // {row: col: val:}</code>
 </code></pre>
 <h3 id="2-arithmetic-operations">2. Arithmetic operations</h3>
 <blockquote>
-<p>add | sub | mul | div | neg | isFinite | isNaN</p>
+<p><a href="http://www.timqian.com/mathlab/function/index.html#static-function-add">add</a> | <a href="http://www.timqian.com/mathlab/function/index.html#static-function-sub">sub</a> | <a href="http://www.timqian.com/mathlab/function/index.html#static-function-mul">mul</a> | <a href="http://www.timqian.com/mathlab/function/index.html#static-function-div">div</a> | <a href="http://www.timqian.com/mathlab/function/index.html#static-function-neg">neg</a></p>
 </blockquote>
 <p>The standard arithmetic operations have been vectorized:</p>
 <h4 id="example">example</h4>
@@ -155,25 +155,16 @@ abs([-1, 2])  // [1, 2]</code>
 add(1, 2) // 3
 add([1,2], 2,2) // [3,4]</code>
 </code></pre>
-<h3 id="3-utility-functions">3. Utility functions</h3>
+<h3 id="3-linear-algebra">3. Linear algebra</h3>
 <blockquote>
-<p>dim | same | rep | diag | identity | random | linspace</p>
-</blockquote>
-<h4 id="example-dim-">example <code>dim</code></h4>
-<pre><code class="lang-js"><code class="source-code prettyprint">dim(1) // []
-dim([1,2]) // [2]
-dim([[1,2],[2,2],[3,3]]) // [3,2]</code>
-</code></pre>
-<h3 id="4-linear-algebra">4. Linear algebra</h3>
-<blockquote>
-<p>dot | solve | det | inv | norm2 | tensor | eig</p>
+<p><a href="http://www.timqian.com/mathlab/function/index.html#static-function-dot">dot</a> | <a href="http://www.timqian.com/mathlab/function/index.html#static-function-">solve</a> | <a href="http://www.timqian.com/mathlab/function/index.html#static-function-det">det</a> | <a href="http://www.timqian.com/mathlab/function/index.html#static-function-inv">inv</a> | <a href="http://www.timqian.com/mathlab/function/index.html#static-function-norm2">norm2</a> | <a href="http://www.timqian.com/mathlab/function/index.html#static-function-tensor">tensor</a> | <a href="http://www.timqian.com/mathlab/function/index.html#static-function-eig">eig</a></p>
 </blockquote>
 <h4 id="example-dot-">example: <code>dot</code></h4>
 <pre><code class="lang-js"><code class="source-code prettyprint">dot([[1, 1], [2, 1]], [1, 2]) // [3, 4]</code>
 </code></pre>
-<h3 id="5-fast-fourier-transforms">5. Fast Fourier Transforms</h3>
+<h3 id="4-fast-fourier-transforms">4. Fast Fourier Transforms</h3>
 <blockquote>
-<p>fft | ifft</p>
+<p><a href="http://www.timqian.com/mathlab/function/index.html#static-function-fft">fft</a> | <a href="http://www.timqian.com/mathlab/function/index.html#static-function-ifft">ifft</a></p>
 </blockquote>
 <h4 id="example">example</h4>
 <pre><code class="lang-js"><code class="source-code prettyprint">import {fft, ifft, Complex} from &apos;mathlab&apos;
@@ -184,7 +175,59 @@ const fftRes = fft(new Complex([1,2,3,4,5],[6,7,8,9,10]))
 // {re:[1,2,3,4,5], im:[6,7,8,9,10]}
 ifft(fftRes)</code>
 </code></pre>
-<h2 id="introduction-to-complex-and-sparse">Introduction to Complex and Sparse</h2>
+<h3 id="5-utility-functions">5. Utility functions</h3>
+<blockquote>
+<p><a href="http://www.timqian.com/mathlab/function/index.html#static-function-dim">dim</a> | <a href="http://www.timqian.com/mathlab/function/index.html#static-function-same">same</a> | <a href="http://www.timqian.com/mathlab/function/index.html#static-function-rep">rep</a> | <a href="http://www.timqian.com/mathlab/function/index.html#static-function-diag">diag</a> | <a href="http://www.timqian.com/mathlab/function/index.html#static-function-identity">identity</a> | <a href="http://www.timqian.com/mathlab/function/index.html#static-function-random">random</a> | <a href="http://www.timqian.com/mathlab/function/index.html#static-function-linspace">linspace</a></p>
+</blockquote>
+<h4 id="example-dim-">example <code>dim</code></h4>
+<pre><code class="lang-js"><code class="source-code prettyprint">dim(1) // []
+dim([1,2]) // [2]
+dim([[1,2],[2,2],[3,3]]) // [3,2]</code>
+</code></pre>
+<h1 id="introduction-to-complex-and-sparse-matrix">Introduction to Complex and Sparse matrix</h1>
+<p>Mathlab provided two Classes for you to initialize Complex and Sparse matrix.</p>
+<h2 id="complex">Complex</h2>
+<p>Creates a Complex instance that represents a complex number or array.
+It accepts two arguments as the real and imaginary part of a complex number or array.</p>
+<h3 id="usage">Usage</h3>
+<h4 id="initalize">Initalize</h4>
+<pre><code class="lang-js"><code class="source-code prettyprint">import { Complex, abs } from &apos;mathlab&apos;
+
+// complex number
+const c = new Complex(1, 2) // {re:1, im:2}
+
+// complex array
+const ca = new Complex([1,2], [1,2]) // {re:[1,2], im:[1,2]}
+
+// mathlab functions can be applied on it
+abs(ca) // {re: [ 1.414, 2.828], im: undefined}</code>
+</code></pre>
+<h4 id="methods-still-adding-">Methods (still adding)</h4>
+<ul>
+<li>reciprocal: Pointwise 1/z </li>
+<li>transjugate: The conjugate-transpose of the matrix</li>
+</ul>
+<pre><code class="lang-js"><code class="source-code prettyprint">ca.reciprocal() // {re: [ 0.5, 0.25], im: [ -0.5, -0.25]}</code>
+</code></pre>
+<h2 id="sparse">Sparse</h2>
+<p>Creates a Sparse instance that represents a sparse matrix.
+In mathlab, sparse matrices are stored in the <a href="https://en.wikipedia.org/wiki/Sparse_matrix#Compressed_sparse_column_.28CSC_or_CCS.29">compressed column storage</a> ordering. </p>
+<h3 id="usage">Usage</h3>
+<h4 id="initialize">Initialize</h4>
+<pre><code class="lang-js"><code class="source-code prettyprint">import { Sparse } from &apos;mathlab&apos;
+
+const z = new Sparse([[1,0,0],[5,2,0],[1,0,0]]) //  { col: [ 0, 3, 4, 4 ], row: [ 0, 1, 2, 1 ], val: [ 1, 5, 1, 2 ] }</code>
+</code></pre>
+<h4 id="methods-still-adding-">Methods (still adding)</h4>
+<ul>
+<li>toFull: Convert to full presentation</li>
+</ul>
+<pre><code class="lang-js"><code class="source-code prettyprint">z.toFull() // [[1,0,0],[5,2,0],[1,0,0]]</code>
+</code></pre>
+<h1 id="thanks">Thanks</h1>
+<blockquote>
+<p><strong>Start as a refactoring of <a href="https://github.com/sloisel/numeric">numeric</a></strong></p>
+</blockquote>
 </div>
 </div>
 

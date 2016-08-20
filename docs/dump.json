@@ -10,7 +10,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import identity from './identity';\nimport mul from './mul';\nimport div from './div';\nimport rep from './rep';\nimport clone from './clone';\nimport neg from './neg';\nimport add from './add';\nimport getBlock from './getBlock';\nimport setBlock from './setBlock';\nimport transpose from './transpose';\n\nexport default class Complex {\n  constructor(re, im) {\n    this.re = re;\n    this.im = im;\n  }\n\n  reciprocal() {\n    if(this.im) {\n        var d = add(mul(this.re,this.re),mul(this.im,this.im));\n        return new Complex(div(this.re, d),div(neg(this.im), d));\n    }\n    return new Complex(div(1, this.re));\n  }\n\n  identity(n) {\n    return new Complex(identity(n));\n  }\n  \n  transjugate() {\n    var t = transpose, x = this.re, y = this.im;\n    if(y) { return new Complex(t(x), negtranspose(y)); }\n    return new Complex(t(x));\n  }\n  \n  get(i) {\n    var x = this.re, y = this.im, k = 0, ik, n = i.length;\n    if(y) {\n        while(k<n) {\n            ik = i[k];\n            x = x[ik];\n            y = y[ik];\n            k++;\n        }\n        return new Complex(x,y);\n    }\n    while(k<n) {\n        ik = i[k];\n        x = x[ik];\n        k++;\n    }\n    return new Complex(x);\n  }\n  \n  set(i,v) {\n    var x = this.re, y = this.im, k = 0, ik, n = i.length, vx = v.re, vy = v.im;\n    if(n===0) {\n        if(vy) { this.im = vy; }\n        else if(y) { this.im = undefined; }\n        this.re = x;\n        return this;\n    }\n    if(vy) {\n        if(y) { /* ok */ }\n        else {\n            y = rep(dim(x),0);\n            this.im = y;\n        }\n        while(k<n-1) {\n            ik = i[k];\n            x = x[ik];\n            y = y[ik];\n            k++;\n        }\n        ik = i[k];\n        x[ik] = vx;\n        y[ik] = vy;\n        return this;\n    }\n    if(y) {\n        while(k<n-1) {\n            ik = i[k];\n            x = x[ik];\n            y = y[ik];\n            k++;\n        }\n        ik = i[k];\n        x[ik] = vx;\n        if(vx instanceof Array) y[ik] = rep(dim(vx),0);\n        else y[ik] = 0;\n        return this;\n    }\n    while(k<n-1) {\n        ik = i[k];\n        x = x[ik];\n        k++;\n    }\n    ik = i[k];\n    x[ik] = vx;\n    return this;\n  }\n\n  getRows(i0,i1) {\n    var n = i1-i0+1, j;\n    var rx = Array(n), ry, x = this.re, y = this.im;\n    for(j=i0;j<=i1;j++) { rx[j-i0] = x[j]; }\n    if(y) {\n        ry = Array(n);\n        for(j=i0;j<=i1;j++) { ry[j-i0] = y[j]; }\n        return new Complex(rx,ry);\n    }\n    return new Complex(rx);\n  }\n\n  setRows(i0,i1,A) {\n    var j;\n    var rx = this.re, ry = this.im, x = A.re, y = A.im;\n    for(j=i0;j<=i1;j++) { rx[j] = x[j-i0]; }\n    if(y) {\n        if(!ry) { ry = rep(dim(rx),0); this.im = ry; }\n        for(j=i0;j<=i1;j++) { ry[j] = y[j-i0]; }\n    } else if(ry) {\n        for(j=i0;j<=i1;j++) { ry[j] = rep([x[j-i0].length],0); }\n    }\n    return this;\n  }\n\n  getRow(k) {\n    var x = this.re, y = this.im;\n    if(y) { return new Complex(x[k],y[k]); }\n    return new Complex(x[k]);\n  }\n  setRow(i,v) {\n    var rx = this.re, ry = this.im, x = v.re, y = v.im;\n    rx[i] = x;\n    if(y) {\n        if(!ry) { ry = rep(dim(rx),0); this.im = ry; }\n        ry[i] = y;\n    } else if(ry) {\n        ry = rep([x.length],0);\n    }\n    return this;\n  }\n\n}\n\n/**\n * Generate identity complex structure matrix of given size\n * \n * @param {Number} n\n * @returns {Object}\n * @example \n * \n * Complex.identity(2)\n * // {x: [[1, 0], [0, 1]], y: undefined}\n */\nComplex.identity = function(n) {\n  return new Complex(identity(n));\n}\n"
+    "content": "import identity from './identity';\nimport mul from './mul';\nimport div from './div';\nimport rep from './rep';\nimport clone from './clone';\nimport neg from './neg';\nimport add from './add';\nimport getBlock from './getBlock';\nimport setBlock from './setBlock';\nimport transpose from './transpose';\n\nexport default class Complex {\n  constructor(re, im) {\n    this.re = re;\n    this.im = im;\n  }\n\n  reciprocal() {\n    if(this.im) {\n        var d = add(mul(this.re,this.re),mul(this.im,this.im));\n        return new Complex(div(this.re, d),div(neg(this.im), d));\n    }\n    return new Complex(div(1, this.re));\n  }\n\n  transjugate() {\n    var t = transpose, x = this.re, y = this.im;\n    if(y) { return new Complex(t(x), negtranspose(y)); }\n    return new Complex(t(x));\n  }\n  \n  get(i) {\n    var x = this.re, y = this.im, k = 0, ik, n = i.length;\n    if(y) {\n        while(k<n) {\n            ik = i[k];\n            x = x[ik];\n            y = y[ik];\n            k++;\n        }\n        return new Complex(x,y);\n    }\n    while(k<n) {\n        ik = i[k];\n        x = x[ik];\n        k++;\n    }\n    return new Complex(x);\n  }\n  \n  set(i,v) {\n    var x = this.re, y = this.im, k = 0, ik, n = i.length, vx = v.re, vy = v.im;\n    if(n===0) {\n        if(vy) { this.im = vy; }\n        else if(y) { this.im = undefined; }\n        this.re = x;\n        return this;\n    }\n    if(vy) {\n        if(y) { /* ok */ }\n        else {\n            y = rep(dim(x),0);\n            this.im = y;\n        }\n        while(k<n-1) {\n            ik = i[k];\n            x = x[ik];\n            y = y[ik];\n            k++;\n        }\n        ik = i[k];\n        x[ik] = vx;\n        y[ik] = vy;\n        return this;\n    }\n    if(y) {\n        while(k<n-1) {\n            ik = i[k];\n            x = x[ik];\n            y = y[ik];\n            k++;\n        }\n        ik = i[k];\n        x[ik] = vx;\n        if(vx instanceof Array) y[ik] = rep(dim(vx),0);\n        else y[ik] = 0;\n        return this;\n    }\n    while(k<n-1) {\n        ik = i[k];\n        x = x[ik];\n        k++;\n    }\n    ik = i[k];\n    x[ik] = vx;\n    return this;\n  }\n\n  getRows(i0,i1) {\n    var n = i1-i0+1, j;\n    var rx = Array(n), ry, x = this.re, y = this.im;\n    for(j=i0;j<=i1;j++) { rx[j-i0] = x[j]; }\n    if(y) {\n        ry = Array(n);\n        for(j=i0;j<=i1;j++) { ry[j-i0] = y[j]; }\n        return new Complex(rx,ry);\n    }\n    return new Complex(rx);\n  }\n\n  setRows(i0,i1,A) {\n    var j;\n    var rx = this.re, ry = this.im, x = A.re, y = A.im;\n    for(j=i0;j<=i1;j++) { rx[j] = x[j-i0]; }\n    if(y) {\n        if(!ry) { ry = rep(dim(rx),0); this.im = ry; }\n        for(j=i0;j<=i1;j++) { ry[j] = y[j-i0]; }\n    } else if(ry) {\n        for(j=i0;j<=i1;j++) { ry[j] = rep([x[j-i0].length],0); }\n    }\n    return this;\n  }\n\n  getRow(k) {\n    var x = this.re, y = this.im;\n    if(y) { return new Complex(x[k],y[k]); }\n    return new Complex(x[k]);\n  }\n  setRow(i,v) {\n    var rx = this.re, ry = this.im, x = v.re, y = v.im;\n    rx[i] = x;\n    if(y) {\n        if(!ry) { ry = rep(dim(rx),0); this.im = ry; }\n        ry[i] = y;\n    } else if(ry) {\n        ry = rep([x.length],0);\n    }\n    return this;\n  }\n\n}\n\n/**\n * Generate identity complex structure matrix of given size\n * \n * @param {Number} n\n * @returns {Object}\n * @example \n * \n * Complex.identity(2)\n * // {x: [[1, 0], [0, 1]], y: undefined}\n */\nComplex.identity = function(n) {\n  return new Complex(identity(n));\n}\n"
   },
   {
     "__docId__": 1,
@@ -118,21 +118,14 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "identity",
+    "name": "transjugate",
     "memberof": "src/Complex.js~Complex",
-    "longname": "src/Complex.js~Complex#identity",
+    "longname": "src/Complex.js~Complex#transjugate",
     "access": null,
     "description": null,
     "lineNumber": 26,
     "undocument": true,
-    "params": [
-      {
-        "name": "n",
-        "types": [
-          "*"
-        ]
-      }
-    ],
+    "params": [],
     "return": {
       "types": [
         "*"
@@ -145,32 +138,12 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "transjugate",
-    "memberof": "src/Complex.js~Complex",
-    "longname": "src/Complex.js~Complex#transjugate",
-    "access": null,
-    "description": null,
-    "lineNumber": 30,
-    "undocument": true,
-    "params": [],
-    "return": {
-      "types": [
-        "*"
-      ]
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 8,
-    "kind": "method",
-    "static": false,
-    "variation": null,
     "name": "get",
     "memberof": "src/Complex.js~Complex",
     "longname": "src/Complex.js~Complex#get",
     "access": null,
     "description": null,
-    "lineNumber": 36,
+    "lineNumber": 32,
     "undocument": true,
     "params": [
       {
@@ -188,7 +161,7 @@
     "generator": false
   },
   {
-    "__docId__": 9,
+    "__docId__": 8,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -197,7 +170,7 @@
     "longname": "src/Complex.js~Complex#set",
     "access": null,
     "description": null,
-    "lineNumber": 55,
+    "lineNumber": 51,
     "undocument": true,
     "params": [
       {
@@ -221,6 +194,24 @@
     "generator": false
   },
   {
+    "__docId__": 9,
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "im",
+    "memberof": "src/Complex.js~Complex",
+    "longname": "src/Complex.js~Complex#im",
+    "access": null,
+    "description": null,
+    "lineNumber": 54,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
     "__docId__": 10,
     "kind": "member",
     "static": false,
@@ -230,7 +221,7 @@
     "longname": "src/Complex.js~Complex#im",
     "access": null,
     "description": null,
-    "lineNumber": 58,
+    "lineNumber": 55,
     "undocument": true,
     "type": {
       "types": [
@@ -243,12 +234,12 @@
     "kind": "member",
     "static": false,
     "variation": null,
-    "name": "im",
+    "name": "re",
     "memberof": "src/Complex.js~Complex",
-    "longname": "src/Complex.js~Complex#im",
+    "longname": "src/Complex.js~Complex#re",
     "access": null,
     "description": null,
-    "lineNumber": 59,
+    "lineNumber": 56,
     "undocument": true,
     "type": {
       "types": [
@@ -261,12 +252,12 @@
     "kind": "member",
     "static": false,
     "variation": null,
-    "name": "re",
+    "name": "im",
     "memberof": "src/Complex.js~Complex",
-    "longname": "src/Complex.js~Complex#re",
+    "longname": "src/Complex.js~Complex#im",
     "access": null,
     "description": null,
-    "lineNumber": 60,
+    "lineNumber": 63,
     "undocument": true,
     "type": {
       "types": [
@@ -276,24 +267,6 @@
   },
   {
     "__docId__": 13,
-    "kind": "member",
-    "static": false,
-    "variation": null,
-    "name": "im",
-    "memberof": "src/Complex.js~Complex",
-    "longname": "src/Complex.js~Complex#im",
-    "access": null,
-    "description": null,
-    "lineNumber": 67,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 14,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -302,7 +275,7 @@
     "longname": "src/Complex.js~Complex#getRows",
     "access": null,
     "description": null,
-    "lineNumber": 103,
+    "lineNumber": 99,
     "undocument": true,
     "params": [
       {
@@ -326,7 +299,7 @@
     "generator": false
   },
   {
-    "__docId__": 15,
+    "__docId__": 14,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -335,7 +308,7 @@
     "longname": "src/Complex.js~Complex#setRows",
     "access": null,
     "description": null,
-    "lineNumber": 115,
+    "lineNumber": 111,
     "undocument": true,
     "params": [
       {
@@ -365,7 +338,7 @@
     "generator": false
   },
   {
-    "__docId__": 16,
+    "__docId__": 15,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -374,7 +347,7 @@
     "longname": "src/Complex.js~Complex#im",
     "access": null,
     "description": null,
-    "lineNumber": 120,
+    "lineNumber": 116,
     "undocument": true,
     "type": {
       "types": [
@@ -383,7 +356,7 @@
     }
   },
   {
-    "__docId__": 17,
+    "__docId__": 16,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -392,7 +365,7 @@
     "longname": "src/Complex.js~Complex#getRow",
     "access": null,
     "description": null,
-    "lineNumber": 128,
+    "lineNumber": 124,
     "undocument": true,
     "params": [
       {
@@ -410,7 +383,7 @@
     "generator": false
   },
   {
-    "__docId__": 18,
+    "__docId__": 17,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -419,7 +392,7 @@
     "longname": "src/Complex.js~Complex#setRow",
     "access": null,
     "description": null,
-    "lineNumber": 133,
+    "lineNumber": 129,
     "undocument": true,
     "params": [
       {
@@ -443,7 +416,7 @@
     "generator": false
   },
   {
-    "__docId__": 19,
+    "__docId__": 18,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -452,7 +425,7 @@
     "longname": "src/Complex.js~Complex#im",
     "access": null,
     "description": null,
-    "lineNumber": 137,
+    "lineNumber": 133,
     "undocument": true,
     "type": {
       "types": [
@@ -461,7 +434,7 @@
     }
   },
   {
-    "__docId__": 20,
+    "__docId__": 19,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -476,7 +449,7 @@
     "examples": [
       "\nComplex.identity(2)\n// {x: [[1, 0], [0, 1]], y: undefined}"
     ],
-    "lineNumber": 157,
+    "lineNumber": 153,
     "unknown": [
       {
         "tagName": "@returns",
@@ -506,7 +479,7 @@
     "generator": false
   },
   {
-    "__docId__": 21,
+    "__docId__": 20,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -519,7 +492,7 @@
     "content": "import dim from './dim'\nimport rep from './rep'\n\nexport default class Sparse {\n  constructor(A) {\n    if(!Array.isArray(A) && A.col){\n      this.col = A.col;\n      this.row = A.row;\n      this.val = A.val;\n    } else {\n      // TODO: throw error while A is not matrix\n      var m = A.length, n, foo, i, j, counts = [];\n      for (i = m - 1; i !== -1; --i) {\n        foo = A[i];\n        for (j in foo) {\n          j = parseInt(j);\n          while (j >= counts.length) counts[counts.length] = 0;\n          if (foo[j] !== 0) counts[j]++;\n        }\n      }\n      var n = counts.length;\n      var Ai = Array(n + 1);\n      Ai[0] = 0;\n      for (i = 0; i < n; ++i) Ai[i + 1] = Ai[i] + counts[i];\n      var Aj = Array(Ai[n]), Av = Array(Ai[n]);\n      for (i = m - 1; i !== -1; --i) {\n        foo = A[i];\n        for (j in foo) {\n          if (foo[j] !== 0) {\n            counts[j]--;\n            Aj[Ai[j] + counts[j]] = i;\n            Av[Ai[j] + counts[j]] = foo[j];\n          }\n        }\n      }\n\n      this.col = Ai;\n      this.row = Aj;\n      this.val = Av;\n    }\n  }\n\n  toFull() {\n    var Ai = this.col, Aj = this.row, Av = this.val, \n      s = dim(this), m = s[0], n = s[1], i,j,j0,j1,k;\n    var B = rep([m,n],0);\n    for(i=0;i<n;i++) {\n      j0 = Ai[i];\n      j1 = Ai[i+1];\n      for(j=j0;j<j1;++j) { B[Aj[j]][i] = Av[j]; }\n    }\n    return B;\n  }\n}\n\n// Sparse.diag = function (d) {\n//   // TODO\n//   var n = d.length,i,ret = Array(n),i1,i2,i3;\n//   for(i=n-1;i>=1;i-=2) {\n//     i1 = i-1;\n//     ret[i] = []; ret[i][i] = d[i];\n//     ret[i1] = []; ret[i1][i1] = d[i1];\n//   }\n//   if(i===0) { ret[0] = []; ret[0][0] = d[i]; }\n//   console.log(ret);\n// }\n\n"
   },
   {
-    "__docId__": 22,
+    "__docId__": 21,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -536,7 +509,7 @@
     "interface": false
   },
   {
-    "__docId__": 23,
+    "__docId__": 22,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -558,7 +531,7 @@
     "generator": false
   },
   {
-    "__docId__": 24,
+    "__docId__": 23,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -576,7 +549,7 @@
     }
   },
   {
-    "__docId__": 25,
+    "__docId__": 24,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -594,7 +567,7 @@
     }
   },
   {
-    "__docId__": 26,
+    "__docId__": 25,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -612,7 +585,7 @@
     }
   },
   {
-    "__docId__": 27,
+    "__docId__": 26,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -630,7 +603,7 @@
     }
   },
   {
-    "__docId__": 28,
+    "__docId__": 27,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -648,7 +621,7 @@
     }
   },
   {
-    "__docId__": 29,
+    "__docId__": 28,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -666,7 +639,7 @@
     }
   },
   {
-    "__docId__": 30,
+    "__docId__": 29,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -686,7 +659,7 @@
     "generator": false
   },
   {
-    "__docId__": 31,
+    "__docId__": 30,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -699,7 +672,7 @@
     "content": "\nimport pointwise from './pointwise'\nimport spPointwise from './spPointwise'\nimport Complex from './Complex'\nimport Sparse from './Sparse'\nimport mul from './mul'\nimport sqrt from './sqrt'\nimport add from './add'\n\n\nconst abs = pointwise(Math.abs)\nconst sabs = spPointwise(Math.abs)\n\nfunction cabs(x) {\n  if (x.im) {\n    return new Complex(sqrt(add(mul(x.re, x.re), mul(x.im, x.im))));\n  }\n  return new Complex(abs(x.re));\n}\n\n/**\n * Pointwise Math.abs(x)\n * \n * @export\n * @param {Number|Array|Complex|Sparse} m\n * @returns {Number|Array|Complex|Sparse}\n * @example \n * \n * abs(-1) // 1\n * abs([1, -2]) // [1, 2]\n * abs([[-1,2],[1,-3]]) // [[1,2],[1,3]]\n */\nexport default function (m) {\n  switch (m.constructor.name) {\n    case 'Complex':\n      return cabs(m);\n    case 'Sparse':\n      return sabs(m);\n    default:\n      return abs(m);\n  }\n}\n"
   },
   {
-    "__docId__": 32,
+    "__docId__": 31,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -720,7 +693,7 @@
     }
   },
   {
-    "__docId__": 33,
+    "__docId__": 32,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -741,7 +714,7 @@
     }
   },
   {
-    "__docId__": 34,
+    "__docId__": 33,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -771,7 +744,7 @@
     "generator": false
   },
   {
-    "__docId__": 35,
+    "__docId__": 34,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -826,7 +799,7 @@
     "generator": false
   },
   {
-    "__docId__": 36,
+    "__docId__": 35,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -839,7 +812,7 @@
     "content": "\nimport pointwise from './pointwise'\nimport spPointwise from './spPointwise'\nimport Sparse from './Sparse'\n\nconst acos = pointwise(Math.acos)\nconst sacos = spPointwise(Math.acos)\n\nfunction cacos(x) {\n  throw new Error('mathlab.acos: no acos for complex number')\n}\n\n/**\n * Pointwise Math.acos(x)\n * \n * @export\n * @param {Number|Array|Sparse} m\n * @returns {Number|Array|Sparse}\n * @example \n * \n * acos(1) // Math.acos(1)\n * acos([1, 2]) // [Math.acos(1), Math.acos(2)]\n * acos([[1,2],[1,3]]) // [ [Math.acos(1), Math.acos(2)], [Math.acos(1), Math.acos(3)] ]\n */\nexport default function (m) {\n  switch (m.constructor.name) {\n    case 'Complex':\n      return cacos(m);\n    case 'Sparse':\n      return sacos(m);\n    default:\n      return acos(m);\n  }\n}\n"
   },
   {
-    "__docId__": 37,
+    "__docId__": 36,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -860,7 +833,7 @@
     }
   },
   {
-    "__docId__": 38,
+    "__docId__": 37,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -881,7 +854,7 @@
     }
   },
   {
-    "__docId__": 39,
+    "__docId__": 38,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -906,7 +879,7 @@
     "generator": false
   },
   {
-    "__docId__": 40,
+    "__docId__": 39,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -959,7 +932,7 @@
     "generator": false
   },
   {
-    "__docId__": 41,
+    "__docId__": 40,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -972,7 +945,7 @@
     "content": "import pointwise2 from './pointwise2'\nimport spPointwise2 from './spPointwise2'\nimport Complex from './Complex'\n\nconst add = pointwise2((x, y) => x + y)\nconst sadd = spPointwise2((x, y) => x + y)\n\nfunction cadd(x, y) {\n  if (!(y instanceof Complex)) { y = new Complex(y); }\n  if (x.im) {\n    if (y.im) {\n      return new Complex(add(x.re, y.re), add(x.im, y.im));\n    }\n    return new Complex(add(x.re, y.re), x.im);\n  }\n  if (y.im) {\n    return new Complex(add(x.re, y.re), y.im);\n  }\n  return new Complex(add(x.re, y.re));\n}\n\n/**\n * Pointwise add\n * \n * @export\n * @param {Number|Array|Complex|Sparse} m1\n * @param {Number|Array|Complex|Sparse} m2\n * @returns {Number|Array|Complex|Sparse}\n * @example \n * \n * add(1, 2) // 3\n * add([1, 2], [2, 2]) // [3, 4]\n * add([[2,1], [1,2]], [[2, 2], [2, 2]])) // [ [2 + 2, 1 + 2], [1 + 2, 2 + 2] ]\n */\nexport default function (m1, m2) {\n  switch (m1.constructor.name) {\n    case 'Complex':\n      return cadd(m1, m2);\n    case 'Sparse':\n      return sadd(m1, m2);\n    default:\n      return add(m1, m2);\n  }\n}"
   },
   {
-    "__docId__": 42,
+    "__docId__": 41,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -993,7 +966,7 @@
     }
   },
   {
-    "__docId__": 43,
+    "__docId__": 42,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -1014,7 +987,7 @@
     }
   },
   {
-    "__docId__": 44,
+    "__docId__": 43,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1050,7 +1023,7 @@
     "generator": false
   },
   {
-    "__docId__": 45,
+    "__docId__": 44,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1118,7 +1091,7 @@
     "generator": false
   },
   {
-    "__docId__": 46,
+    "__docId__": 45,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1131,7 +1104,7 @@
     "content": "import pointwise2 from './pointwise2'\nimport spPointwise2 from './spPointwise2'\n\nconst and = pointwise2((x, y) => x && y)\nconst sand = spPointwise2((x, y) => x && y)\n\nfunction cand(x, y) {\n  throw new Error('mathlab.and: no and for complex number')\n}\n\n/**\n * Pointwise and\n * \n * @export\n * @param {Number|Array|Complex|Sparse} m1\n * @param {Number|Array|Complex|Sparse} m2\n * @returns {Number|Array|Complex|Sparse}\n * @example \n * \n * and(1, 0) // 0\n * and([1, 1], [1, 0]) // [1, 0]\n * and([[1,1], [1,1]], [[1,0], [0,0]])) // [[1,0], [0,0]]\n */\nexport default function (m1, m2) {\n  switch (m1.constructor.name) {\n    case 'Complex':\n      return cand(m1, m2);\n    case 'Sparse':\n      return sand(m1, m2);\n    default:\n      return and(m1, m2);\n  }\n}"
   },
   {
-    "__docId__": 47,
+    "__docId__": 46,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -1152,7 +1125,7 @@
     }
   },
   {
-    "__docId__": 48,
+    "__docId__": 47,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -1173,7 +1146,7 @@
     }
   },
   {
-    "__docId__": 49,
+    "__docId__": 48,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1204,7 +1177,7 @@
     "generator": false
   },
   {
-    "__docId__": 50,
+    "__docId__": 49,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1272,7 +1245,7 @@
     "generator": false
   },
   {
-    "__docId__": 51,
+    "__docId__": 50,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1285,7 +1258,7 @@
     "content": "\nimport pointwise from './pointwise'\nimport spPointwise from './spPointwise'\nimport Sparse from './Sparse'\n\nconst asin = pointwise(Math.asin)\nconst sasin = spPointwise(Math.asin)\n\nfunction casin(x) {\n  throw new Error('mathlab.asin: no asin for complex number')\n}\n\n/**\n * Pointwise Math.asin(x)\n * \n * @export\n * @param {Number|Array|Sparse} m\n * @returns {Number|Array|Sparse}\n * @example \n * \n * asin(1) // Math.asin(1)\n * asin([1, 2]) // [Math.asin(1), Math.asin(2)]\n * asin([[1,2],[1,3]]) // [ [Math.asin(1), Math.asin(2)], [Math.asin(1), Math.asin(3)] ]\n */\nexport default function (m) {\n  switch (m.constructor.name) {\n    case 'Complex':\n      return casin(m);\n    case 'Sparse':\n      return sasin(m);\n    default:\n      return asin(m);\n  }\n}\n"
   },
   {
-    "__docId__": 52,
+    "__docId__": 51,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -1306,7 +1279,7 @@
     }
   },
   {
-    "__docId__": 53,
+    "__docId__": 52,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -1327,7 +1300,7 @@
     }
   },
   {
-    "__docId__": 54,
+    "__docId__": 53,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1352,7 +1325,7 @@
     "generator": false
   },
   {
-    "__docId__": 55,
+    "__docId__": 54,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1405,7 +1378,7 @@
     "generator": false
   },
   {
-    "__docId__": 56,
+    "__docId__": 55,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1418,7 +1391,7 @@
     "content": "\nimport pointwise from './pointwise'\nimport spPointwise from './spPointwise'\nimport Sparse from './Sparse'\n\nconst atan = pointwise(Math.atan)\nconst satan = spPointwise(Math.atan)\n\nfunction catan(x) {\n  throw new Error('mathlab.atan: no atan for complex number')\n}\n\n/**\n * Pointwise Math.atan(x)\n * \n * @export\n * @param {Number|Array|Sparse} m\n * @returns {Number|Array|Sparse}\n * @example \n * \n * atan(1) // Math.atan(1)\n * atan([1, 2]) // [Math.atan(1), Math.atan(2)]\n * atan([[1,2],[1,3]]) // [ [Math.atan(1), Math.atan(2)], [Math.atan(1), Math.atan(3)] ]\n */\nexport default function (m) {\n  switch (m.constructor.name) {\n    case 'Complex':\n      return catan(m);\n    case 'Sparse':\n      return satan(m);\n    default:\n      return atan(m);\n  }\n}\n"
   },
   {
-    "__docId__": 57,
+    "__docId__": 56,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -1439,7 +1412,7 @@
     }
   },
   {
-    "__docId__": 58,
+    "__docId__": 57,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -1460,7 +1433,7 @@
     }
   },
   {
-    "__docId__": 59,
+    "__docId__": 58,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1485,7 +1458,7 @@
     "generator": false
   },
   {
-    "__docId__": 60,
+    "__docId__": 59,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1538,7 +1511,7 @@
     "generator": false
   },
   {
-    "__docId__": 61,
+    "__docId__": 60,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1551,7 +1524,7 @@
     "content": "\nimport pointwise2 from './pointwise2'\n\n/**\n * Pointwise Math.atan2(x, y)\n * \n * @export\n * @param {Number|Array|Complex|Sparse} m1\n * @param {Number|Array|Complex|Sparse} m2\n * @returns {Number|Array|Complex|Sparse}\n * @example \n * \n * atan2(1, 2) // Math.atan2(1, 2)\n * atan2([1, 2], [2, 2]) // [Math.atan2(1, 2), Math.atan2(2, 2)]\n * atan2([[2,1], [1,2]], [[2, 2], [2, 2]])) // [ [Math.atan2(2, 2), Math.atan2(1, 2)], [Math.atan2(1, 2), Math.atan2(2, 2)] ]\n */\nexport default function (m1, m2) {\n  // TODO \n  return pointwise2(Math.atan2)(m1, m2)\n}\n"
   },
   {
-    "__docId__": 62,
+    "__docId__": 61,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1619,7 +1592,7 @@
     "generator": false
   },
   {
-    "__docId__": 63,
+    "__docId__": 62,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1632,7 +1605,7 @@
     "content": "import pointwise2 from './pointwise2'\nimport spPointwise2 from './spPointwise2'\n\nconst band = pointwise2((x, y) => x & y);\nconst sband = spPointwise2((x, y) => x & y);\n\nfunction cband(x, y) {\n  throw new Error('mathlab.band: no band for complex number')\n}\n\n/**\n * Pointwise band\n * \n * @export\n * @param {Number|Array|Complex|Sparse} m1\n * @param {Number|Array|Complex|Sparse} m2\n * @returns {Number|Array|Complex|Sparse}\n * @example \n * \n * band(1, 2) // 1 & 2\n * band([1, 2], [2, 2]) // [1 & 2, 2 & 2]\n * band([[2,1], [1,2]], [[2, 2], [2, 2]])) // [ [2 & 2, 1 & 2], [1 & 2, 2 & 2] ]\n */\nexport default function (m1, m2) {\n  switch (m1.constructor.name) {\n    case 'Complex':\n      return cband(m1, m2);\n    case 'Sparse':\n      return sband(m1, m2);\n    default:\n      return band(m1, m2);\n  }\n}"
   },
   {
-    "__docId__": 64,
+    "__docId__": 63,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -1653,7 +1626,7 @@
     }
   },
   {
-    "__docId__": 65,
+    "__docId__": 64,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -1674,7 +1647,7 @@
     }
   },
   {
-    "__docId__": 66,
+    "__docId__": 65,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1705,7 +1678,7 @@
     "generator": false
   },
   {
-    "__docId__": 67,
+    "__docId__": 66,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1773,7 +1746,7 @@
     "generator": false
   },
   {
-    "__docId__": 68,
+    "__docId__": 67,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1786,7 +1759,7 @@
     "content": "\nimport pointwise from './pointwise'\nimport spPointwise from './spPointwise'\nimport Sparse from './Sparse'\n\nconst bnot = pointwise(x=> ~x)\nconst sbnot = spPointwise(x=> ~x)\n\nfunction cbnot(x) {\n  throw new Error('mathlab.bnot: no bnot for complex number')\n}\n\n\n/**\n * Pointwise Math.bnot(x)\n * \n * @export\n * @param {Number|Array|Sparse} m\n * @returns {Number|Array|Sparse}\n * @example \n * \n * bnot(1) // ~1\n * bnot([1, 2]) // [~1, ~2]\n * bnot([[1,2],[1,3]]) // [[~1,~2],[~1,~3]]\n */\nexport default function (m) {\n  switch (m.constructor.name) {\n    case 'Complex':\n      return cbnot(m);\n    case 'Sparse':\n      return sbnot(m);\n    default:\n      return bnot(m);\n  }\n}\n"
   },
   {
-    "__docId__": 69,
+    "__docId__": 68,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -1807,7 +1780,7 @@
     }
   },
   {
-    "__docId__": 70,
+    "__docId__": 69,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -1828,7 +1801,7 @@
     }
   },
   {
-    "__docId__": 71,
+    "__docId__": 70,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1853,7 +1826,7 @@
     "generator": false
   },
   {
-    "__docId__": 72,
+    "__docId__": 71,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1906,7 +1879,7 @@
     "generator": false
   },
   {
-    "__docId__": 73,
+    "__docId__": 72,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1919,7 +1892,7 @@
     "content": "import pointwise2 from './pointwise2'\nimport spPointwise2 from './spPointwise2'\n\nconst bor = pointwise2((x, y) => x | y);\nconst sbor = spPointwise2((x, y) => x | y);\n\nfunction cbor(x, y) {\n  throw new Error('mathlab.bor: no bor for complex number')\n}\n\n/**\n * Pointwise bor\n * \n * @export\n * @param {Number|Array|Sparse} m1\n * @param {Number|Array|Sparse} m2\n * @returns {Number|Array|Sparse}\n * @example \n * \n * bor(1, 2) // 1 | 2\n * bor([1, 2], [2, 2]) // [1 | 2, 2 | 2]\n * bor([[2,1], [1,2]], [[2, 2], [2, 2]])) // [ [2 | 2, 1 | 2], [1 | 2, 2 | 2] ]\n */\nexport default function (m1, m2) {\n  switch (m1.constructor.name) {\n    case 'Complex':\n      return cbor(m1, m2);\n    case 'Sparse':\n      return sbor(m1, m2);\n    default:\n      return bor(m1, m2);\n  }\n}"
   },
   {
-    "__docId__": 74,
+    "__docId__": 73,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -1940,7 +1913,7 @@
     }
   },
   {
-    "__docId__": 75,
+    "__docId__": 74,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -1961,7 +1934,7 @@
     }
   },
   {
-    "__docId__": 76,
+    "__docId__": 75,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -1992,7 +1965,7 @@
     "generator": false
   },
   {
-    "__docId__": 77,
+    "__docId__": 76,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2057,7 +2030,7 @@
     "generator": false
   },
   {
-    "__docId__": 78,
+    "__docId__": 77,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -2070,7 +2043,7 @@
     "content": "import pointwise2 from './pointwise2'\nimport spPointwise2 from './spPointwise2'\n\nconst bxor = pointwise2((x, y) => x ^ y)\nconst sbxor = spPointwise2((x, y) => x ^ y)\n\nfunction cbxor(x, y) {\n  throw new Error('mathlab.bxor: no bxor for complex number')\n}\n\n/**\n * Pointwise bxor\n * \n * @export\n * @param {Number|Array|Sparse} m1\n * @param {Number|Array|Sparse} m2\n * @returns {Number|Array|Sparse}\n * @example \n * \n * bxor(1, 2) // 1 ^ 2\n * bxor([1, 2], [2, 2]) // [1 ^ 2, 2 ^ 2]\n * bxor([[2,1], [1,2]], [[2, 2], [2, 2]])) // [ [2 ^ 2, 1 ^ 2], [1 ^ 2, 2 ^ 2] ]\n */\nexport default function (m1, m2) {\n  switch (m1.constructor.name) {\n    case 'Complex':\n      return cbxor(m1, m2);\n    case 'Sparse':\n      return sbxor(m1, m2);\n    default:\n      return bxor(m1, m2);\n  }\n}"
   },
   {
-    "__docId__": 79,
+    "__docId__": 78,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -2091,7 +2064,7 @@
     }
   },
   {
-    "__docId__": 80,
+    "__docId__": 79,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -2112,7 +2085,7 @@
     }
   },
   {
-    "__docId__": 81,
+    "__docId__": 80,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2143,7 +2116,7 @@
     "generator": false
   },
   {
-    "__docId__": 82,
+    "__docId__": 81,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2208,7 +2181,7 @@
     "generator": false
   },
   {
-    "__docId__": 83,
+    "__docId__": 82,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -2221,7 +2194,7 @@
     "content": "\nimport pointwise from './pointwise'\nimport spPointwise from './spPointwise'\nimport Sparse from './Sparse'\n\nconst ceil = pointwise(Math.ceil)\nconst sceil = spPointwise(Math.ceil)\n\nfunction cceil(x) {\n  throw new Error('mathlab.ceil: no ceil for complex number')\n}\n\n/**\n * Pointwise Math.ceil(x)\n * \n * @export\n * @param {Number|Array|Complex|Sparse} m\n * @returns {Number|Array|Complex|Sparse}\n * @example \n * \n * ceil(1) // Math.ceil(1)\n * ceil([1, 2]) // [Math.ceil(1), Math.ceil(2)]\n * ceil([[1,2],[1,3]]) // [ [Math.ceil(1), Math.ceil(2)], [Math.ceil(1), Math.ceil(3)] ]\n */\nexport default function (m) {\n  switch (m.constructor.name) {\n    case 'Complex':\n      return cceil(m);\n    case 'Sparse':\n      return sceil(m);\n    default:\n      return ceil(m);\n  }\n}\n"
   },
   {
-    "__docId__": 84,
+    "__docId__": 83,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -2242,7 +2215,7 @@
     }
   },
   {
-    "__docId__": 85,
+    "__docId__": 84,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -2263,7 +2236,7 @@
     }
   },
   {
-    "__docId__": 86,
+    "__docId__": 85,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2288,7 +2261,7 @@
     "generator": false
   },
   {
-    "__docId__": 87,
+    "__docId__": 86,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2343,7 +2316,7 @@
     "generator": false
   },
   {
-    "__docId__": 88,
+    "__docId__": 87,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -2356,7 +2329,7 @@
     "content": "\nimport pointwise from './pointwise'\nimport spPointwise from './spPointwise'\nimport Sparse from './Sparse'\n\nconst clone = pointwise(x => x)\nconst sclone = spPointwise(x => x)\n\nfunction cclone(x) {\n  throw new Error('mathlab.clone: no clone for complex number')\n}\n\n/**\n * Pointwise clone(x)\n * \n * @export\n * @param {Number|Array|Complex|Sparse} m\n * @returns {Number|Array|Complex|Sparse}\n * @example \n * \n * clone([[1,2],[1,3]]) // [[1,2],[1,3]]\n */\nexport default function (m) {\n  switch (m.constructor.name) {\n    case 'Complex':\n      return cclone(m);\n    case 'Sparse':\n      return sclone(m);\n    default:\n      return clone(m);\n  }\n}\n"
   },
   {
-    "__docId__": 89,
+    "__docId__": 88,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -2377,7 +2350,7 @@
     }
   },
   {
-    "__docId__": 90,
+    "__docId__": 89,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -2398,7 +2371,7 @@
     }
   },
   {
-    "__docId__": 91,
+    "__docId__": 90,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2423,7 +2396,7 @@
     "generator": false
   },
   {
-    "__docId__": 92,
+    "__docId__": 91,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2478,7 +2451,7 @@
     "generator": false
   },
   {
-    "__docId__": 93,
+    "__docId__": 92,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -2491,7 +2464,7 @@
     "content": "\nimport pointwise from './pointwise'\nimport spPointwise from './spPointwise'\nimport Complex from './Complex'\nimport Sparse from './Sparse'\nimport neg from './neg'\nimport exp from './exp'\nimport div from './div'\nimport add from './add'\n\nconst cos = pointwise(Math.cos)\nconst scos = spPointwise(Math.cos)\n\nfunction ccos(x) {\n  if (x.im) {\n    return div(add(exp(x), exp(neg(x))), 2);\n  }\n  return new Complex(cos(x.re));\n}\n\n/**\n * Pointwise Math.cos(x)\n * \n * @export\n * @param {Number|Array|Complex|Sparse} m\n * @returns {Number|Array|Complex|Sparse}\n * @example \n * \n * cos(1)\n * // returns Math.cos(1)\n * cos([1, 2])\n * // returns [Math.cos(1), Math.cos(2)]\n * cos([[1,2],[1,3]])\n * // returns [ [Math.cos(1), Math.cos(2)], [Math.cos(1), Math.cos(3)] ]\n */\nexport default function (m) {\n  switch (m.constructor.name) {\n    case 'Complex':\n      return ccos(m);\n    case 'Sparse':\n      return scos(m);\n    default:\n      return cos(m);\n  }\n}\n"
   },
   {
-    "__docId__": 94,
+    "__docId__": 93,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -2512,7 +2485,7 @@
     }
   },
   {
-    "__docId__": 95,
+    "__docId__": 94,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -2533,7 +2506,7 @@
     }
   },
   {
-    "__docId__": 96,
+    "__docId__": 95,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2563,7 +2536,7 @@
     "generator": false
   },
   {
-    "__docId__": 97,
+    "__docId__": 96,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2618,7 +2591,7 @@
     "generator": false
   },
   {
-    "__docId__": 98,
+    "__docId__": 97,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -2631,7 +2604,7 @@
     "content": "//\tDeterminant\nimport dim from './dim'\nimport clone from './clone'\n\n/**\n * Determinant of matix\n * \n * @export\n * @param {Array} x\n * @returns {Number}\n * @example\n * \n * det([[1, 2], [1, 2]])\n * // 0\n */\nexport default function det (x) {\n  // TODO\n  var s = dim(x)\n  if (s.length !== 2 || s[0] !== s[1]) { throw new Error('det() only works on square matrices'); }\n  var n = s[0], ret = 1,i,j,k,A = clone(x),Aj,Ai,alpha,temp,k1,k2,k3\n  for (j = 0;j < n - 1;j++) {\n    k = j\n    for (i = j + 1;i < n;i++) { if (Math.abs(A[i][j]) > Math.abs(A[k][j])) { k = i; } }\n    if (k !== j) {\n      temp = A[k]; A[k] = A[j]; A[j] = temp\n      ret *= -1\n    }\n    Aj = A[j]\n    for (i = j + 1;i < n;i++) {\n      Ai = A[i]\n      alpha = Ai[j] / Aj[j]\n      for (k = j + 1;k < n - 1;k += 2) {\n        k1 = k + 1\n        Ai[k] -= Aj[k] * alpha\n        Ai[k1] -= Aj[k1] * alpha\n      }\n      if (k !== n) { Ai[k] -= Aj[k] * alpha; }\n    }\n    if (Aj[j] === 0) { return 0; }\n    ret *= Aj[j]\n  }\n  return ret * A[j][j]\n}\n"
   },
   {
-    "__docId__": 99,
+    "__docId__": 98,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2680,7 +2653,7 @@
     "generator": false
   },
   {
-    "__docId__": 100,
+    "__docId__": 99,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -2693,7 +2666,7 @@
     "content": "/**\n * Create diagonal matrix from vector\n * \n * @param {Array} d\n * @returns {Array}\n * @example \n * \n * diag([1, 2])\n * // [[1, 0], \n * //  [0, 2]]\n */\nexport default function diag (d) {\n  var i, i1, j, n = d.length, A = Array(n), Ai\n  for (i = n - 1; i >= 0; i--) {\n    Ai = Array(n)\n    i1 = i + 2\n    for (j = n - 1; j >= i1; j -= 2) {\n      Ai[j] = 0\n      Ai[j - 1] = 0\n    }\n    if (j > i) { Ai[j] = 0; }\n    Ai[i] = d[i]\n    for (j = i - 1; j >= 1; j -= 2) {\n      Ai[j] = 0\n      Ai[j - 1] = 0\n    }\n    if (j === 0) { Ai[0] = 0; }\n    A[i] = Ai\n  }\n  return A\n}\n"
   },
   {
-    "__docId__": 101,
+    "__docId__": 100,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2738,7 +2711,7 @@
     "generator": false
   },
   {
-    "__docId__": 102,
+    "__docId__": 101,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -2751,7 +2724,7 @@
     "content": "/**\n * Get Array dimensions\n * \n * @export\n * @param {Array} x\n * @returns {Array}\n * @example \n * \n * dim([[1, 2, 3], [1, 2, 2]])\n * // [2, 3]\n */\nexport default function(x) {\n  switch (x.constructor.name) {\n    case 'Complex':\n      return cdim(x);\n    case 'Sparse':\n      return sdim(x);\n    default:\n      return dim(x);\n  }\n}\n\nfunction cdim(x) {\n  if (x.re) {\n    return dim(x.re)\n  } else {\n    return dim(x.im)\n  }\n}\n\nfunction sdim(x) {\n  return [x.col.length-1, x.col.length-1];\n}\n\n\nfunction dim (x) {\n  if (typeof x === 'object') {\n    if (typeof x[0] === 'object') {\n      if (typeof x[0][0] === 'object') {\n        throw new Error('mathlab: only support two demitional matrix for now')\n      }\n      return [x.length, x[0].length]\n    }\n    return [x.length]\n  }\n  return []\n}\n"
   },
   {
-    "__docId__": 103,
+    "__docId__": 102,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2800,7 +2773,7 @@
     "generator": false
   },
   {
-    "__docId__": 104,
+    "__docId__": 103,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2830,7 +2803,7 @@
     "generator": false
   },
   {
-    "__docId__": 105,
+    "__docId__": 104,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2860,7 +2833,7 @@
     "generator": false
   },
   {
-    "__docId__": 106,
+    "__docId__": 105,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2890,7 +2863,7 @@
     "generator": false
   },
   {
-    "__docId__": 107,
+    "__docId__": 106,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -2903,7 +2876,7 @@
     "content": "import pointwise2 from './pointwise2'\nimport spPointwise2 from './spPointwise2'\nimport Complex from './Complex';\nimport mul from './mul';\n\nconst div = pointwise2((x, y) => x / y)\nconst sdiv = spPointwise2((x, y) => x / y)\n\nfunction cdiv(x, y) {\n  if (!(y instanceof Complex)) y = new Complex(y);\n  if (y.im) {\n    return mul(x, y.reciprocal()); \n  }\n  if (x.im) {\n    return new Complex(div(x.re, y.re), div(x.im, y.re)); }\n  return new Complex(div(x.re, y.re));\n}\n\n/**\n * Pointwise div\n * \n * @export\n * @param {Number|Array|Complex|Sparse} m1\n * @param {Number|Array|Complex|Sparse} m2\n * @returns {Number|Array|Complex|Sparse}\n * @example \n * \n * div(1, 2)\n * // returns 1 / 2\n * div([1, 2], [2, 2])\n * // returns [1 / 2, 2 / 2]\n * div([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 / 2, 1 / 2], [1 / 2, 2 / 2] ]\n */\nexport default function (m1, m2) {\n  switch (m1.constructor.name) {\n    case 'Complex':\n      return cdiv(m1, m2);\n    case 'Sparse':\n      return sdiv(m1, m2);\n    default:\n      return div(m1, m2);\n  }\n}"
   },
   {
-    "__docId__": 108,
+    "__docId__": 107,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -2924,7 +2897,7 @@
     }
   },
   {
-    "__docId__": 109,
+    "__docId__": 108,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -2945,7 +2918,7 @@
     }
   },
   {
-    "__docId__": 110,
+    "__docId__": 109,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -2981,7 +2954,7 @@
     "generator": false
   },
   {
-    "__docId__": 111,
+    "__docId__": 110,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3049,7 +3022,7 @@
     "generator": false
   },
   {
-    "__docId__": 112,
+    "__docId__": 111,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -3062,7 +3035,7 @@
     "content": "import dim from './dim'\nimport add from './add'\nimport sub from './sub'\nimport Complex from './Complex'\n\n/**\n * \n * \n * @export\n * @param {Array | Number} x\n * @param {Array | Number} y\n * @returns {Array | Number}\n * @example\n * \n * dot([[1, 1], [2, 1]], [1, 2])\n * // [3, 4]\n * \n * dot([1, 2], 4)\n * // [4, 8]\n */\nexport default function (x, y) {\n  switch (x.constructor.name) {\n    case 'Complex':\n      return cdot(x, y);\n    case 'Sparse':\n      return sdot(x, y);\n    default:\n      return dot(x, y);\n  }\n}\n\nfunction cdot(x, y) {\n  if (!(y instanceof Complex)) { y = new Complex(y); }\n    if (x.im) {\n      if (y.im) {\n        return new Complex(sub(dot(x.re, y.re), dot(x.im, y.im)), add(dot(x.re, y.im), dot(x.im, y.re)));\n      }\n      return new Complex(dot(x.re, y.re), dot(x.im, y.re));\n    }\n    if (y.im) {\n      return new Complex(dot(x.re, y.re), dot(x.re, y.im));\n    }\n    return new Complex(dot(x.re, y.re));\n}\n\nfunction sdot(x, y) {\n    // TODO\n  throw new Error('mathlab.dot: dot for sparse matrix not exist')\n}\n\nfunction dot(x, y) {\n    var d = dim;\n    switch (d(x).length * 1000 + d(y).length) {\n        case 2002:\n            if (y.length < 10) return dotMMsmall(x, y);\n            else return dotMMbig(x, y);\n        case 2001:\n            return dotMV(x, y);\n        case 1002:\n            return dotVM(x, y);\n        case 1001:\n            return dotVV(x, y);\n        case 1000:\n            return mulVS(x, y);\n        case 1:\n            return mulSV(x, y);\n        case 0:\n            return x * y;\n        default:\n            throw new Error('dot only works on vectors and matrices');\n    }\n}\n\n\nfunction dotMMsmall(x, y) {\n    var i, j, k, p, q, r, ret, foo, bar, woo, i0, k0, p0, r0;\n    p = x.length;\n    q = y.length;\n    r = y[0].length;\n    ret = Array(p);\n    for (i = p - 1; i >= 0; i--) {\n        foo = Array(r);\n        bar = x[i];\n        for (k = r - 1; k >= 0; k--) {\n            woo = bar[q - 1] * y[q - 1][k];\n            for (j = q - 2; j >= 1; j -= 2) {\n                i0 = j - 1;\n                woo += bar[j] * y[j][k] + bar[i0] * y[i0][k];\n            }\n            if (j === 0) {\n                woo += bar[0] * y[0][k];\n            }\n            foo[k] = woo;\n        }\n        ret[i] = foo;\n    }\n    return ret;\n}\n\nfunction _getCol(A, j, x) {\n    var n = A.length,\n        i;\n    for (i = n - 1; i > 0; --i) {\n        x[i] = A[i][j];\n        --i;\n        x[i] = A[i][j];\n    }\n    if (i === 0) x[0] = A[0][j];\n}\n\nfunction dotMMbig(x, y) {\n    var gc = _getCol,\n        p = y.length,\n        v = Array(p);\n    var m = x.length,\n        n = y[0].length,\n        A = new Array(m),\n        xj;\n    var VV = dotVV;\n    var i, j, k, z;\n    --p;\n    --m;\n    for (i = m; i !== -1; --i) A[i] = Array(n);\n    --n;\n    for (i = n; i !== -1; --i) {\n        gc(y, i, v);\n        for (j = m; j !== -1; --j) {\n            z = 0;\n            xj = x[j];\n            A[j][i] = VV(xj, v);\n        }\n    }\n    return A;\n}\n\nfunction dotMV(x, y) {\n    var p = x.length,\n        q = y.length,\n        i;\n    var ret = Array(p);\n    for (i = p - 1; i >= 0; i--) {\n        ret[i] = dotVV(x[i], y);\n    }\n    return ret;\n}\n\nfunction dotVM(x, y) {\n    var i, j, k, p, q, r, ret, foo, bar, woo, i0, k0, p0, r0, s1, s2, s3, baz, accum;\n    p = x.length;\n    q = y[0].length;\n    ret = Array(q);\n    for (k = q - 1; k >= 0; k--) {\n        woo = x[p - 1] * y[p - 1][k];\n        for (j = p - 2; j >= 1; j -= 2) {\n            i0 = j - 1;\n            woo += x[j] * y[j][k] + x[i0] * y[i0][k];\n        }\n        if (j === 0) {\n            woo += x[0] * y[0][k];\n        }\n        ret[k] = woo;\n    }\n    return ret;\n}\n\nfunction dotVV(x, y) {\n    var i, n = x.length,\n        i1, ret = x[n - 1] * y[n - 1];\n    for (i = n - 2; i >= 1; i -= 2) {\n        i1 = i - 1;\n        ret += x[i] * y[i] + x[i1] * y[i1];\n    }\n    if (i === 0) {\n        ret += x[0] * y[0];\n    }\n    return ret;\n}\n\nfunction mulVV(x, y) {\n    var _n = y.length;\n    var i, ret = Array(_n);\n    for (i = _n - 1; i !== -1; --i) {\n        ret[i] = x[i] * y[i]\n    }\n    return ret;\n}\n\nfunction mulSV(x, y) {\n    var _n = y.length;\n    var i, ret = Array(_n);\n    for (i = _n - 1; i !== -1; --i) {\n        ret[i] = x * y[i]\n    }\n    return ret;\n}\n\nfunction mulVS(x, y) {\n    var _n = x.length;\n    var i, ret = Array(_n);\n    for (i = _n - 1; i !== -1; --i) {\n        ret[i] = x[i] * y\n    }\n    return ret;\n}"
   },
   {
-    "__docId__": 113,
+    "__docId__": 112,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3124,7 +3097,7 @@
     "generator": false
   },
   {
-    "__docId__": 114,
+    "__docId__": 113,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3160,7 +3133,7 @@
     "generator": false
   },
   {
-    "__docId__": 115,
+    "__docId__": 114,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3191,7 +3164,7 @@
     "generator": false
   },
   {
-    "__docId__": 116,
+    "__docId__": 115,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3227,7 +3200,7 @@
     "generator": false
   },
   {
-    "__docId__": 117,
+    "__docId__": 116,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3263,7 +3236,7 @@
     "generator": false
   },
   {
-    "__docId__": 118,
+    "__docId__": 117,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3300,7 +3273,7 @@
     "generator": false
   },
   {
-    "__docId__": 119,
+    "__docId__": 118,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3336,7 +3309,7 @@
     "generator": false
   },
   {
-    "__docId__": 120,
+    "__docId__": 119,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3372,7 +3345,7 @@
     "generator": false
   },
   {
-    "__docId__": 121,
+    "__docId__": 120,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3408,7 +3381,7 @@
     "generator": false
   },
   {
-    "__docId__": 122,
+    "__docId__": 121,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3444,7 +3417,7 @@
     "generator": false
   },
   {
-    "__docId__": 123,
+    "__docId__": 122,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3480,7 +3453,7 @@
     "generator": false
   },
   {
-    "__docId__": 124,
+    "__docId__": 123,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3516,7 +3489,7 @@
     "generator": false
   },
   {
-    "__docId__": 125,
+    "__docId__": 124,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3552,7 +3525,7 @@
     "generator": false
   },
   {
-    "__docId__": 126,
+    "__docId__": 125,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -3565,7 +3538,7 @@
     "content": "import transpose from './transpose';\nimport Complex from './Complex'\nimport neq from './neq'\nimport clone from './clone'\nimport norm2 from './norm2'\nimport div from './div'\nimport dim from './dim'\nimport dot from './dot'\nimport add from './add'\nimport getBlock from './getBlock'\nimport tensor from './tensor'\nimport identity from './identity'\nimport epsilon from './epsilon'\nimport sub from './sub'\nimport mul from './mul'\nimport diag from './diag'\nimport rep from './rep'\nimport neg from './neg'\nimport getDiag from './getDiag'\n\n\n/**\n * Eigenvalues of real matrices\n * \n * @param {any} A\n * @param {any} maxiter\n * @returns\n */\nexport default function eig(A, maxiter) {\n  var QH = toUpperHessenberg(A);\n  var QB = QRFrancis(QH.H, maxiter);\n  var n = A.length,\n    i, k, flag = false,\n    B = QB.B,\n    H = dot(QB.Q, dot(QH.H, transpose(QB.Q)));\n  var Q = new Complex(dot(QB.Q, QH.Q)),\n    Q0;\n  var m = B.length,\n    j;\n  var a, b, c, d, p1, p2, disc, x, y, p, q, n1, n2;\n  var sqrt = Math.sqrt;\n  for (k = 0; k < m; k++) {\n    i = B[k][0];\n    if (i === B[k][1]) {\n      // nothing\n    } else {\n      j = i + 1;\n      a = H[i][i];\n      b = H[i][j];\n      c = H[j][i];\n      d = H[j][j];\n      if (b === 0 && c === 0) continue;\n      p1 = -a - d;\n      p2 = a * d - b * c;\n      disc = p1 * p1 - 4 * p2;\n      if (disc >= 0) {\n        if (p1 < 0) x = -0.5 * (p1 - sqrt(disc));\n        else x = -0.5 * (p1 + sqrt(disc));\n        n1 = (a - x) * (a - x) + b * b;\n        n2 = c * c + (d - x) * (d - x);\n        if (n1 > n2) {\n          n1 = sqrt(n1);\n          p = (a - x) / n1;\n          q = b / n1;\n        } else {\n          n2 = sqrt(n2);\n          p = c / n2;\n          q = (d - x) / n2;\n        }\n        Q0 = new Complex([\n          [q, -p],\n          [p, q]\n        ]);\n        Q.setRows(i, j, dot(Q0, Q.getRows(i, j)));\n      } else {\n        x = -0.5 * p1;\n        y = 0.5 * sqrt(-disc);\n        n1 = (a - x) * (a - x) + b * b;\n        n2 = c * c + (d - x) * (d - x);\n        if (n1 > n2) {\n          n1 = sqrt(n1 + y * y);\n          p = (a - x) / n1;\n          q = b / n1;\n          x = 0;\n          y /= n1;\n        } else {\n          n2 = sqrt(n2 + y * y);\n          p = c / n2;\n          q = (d - x) / n2;\n          x = y / n2;\n          y = 0;\n        }\n        Q0 = new Complex([\n          [q, -p],\n          [p, q]\n        ], [\n          [x, y],\n          [y, -x]\n        ]);\n        Q.setRows(i, j, dot(Q0, Q.getRows(i, j)));\n      }\n    }\n  }\n  var R = dot(dot(Q, A), Q.transjugate()),\n    n = A.length,\n    E = new Complex(identity(n));\n  for (j = 0; j < n; j++) {\n    if (j > 0) {\n      for (k = j - 1; k >= 0; k--) {\n        var Rk = R.get([k, k]),\n          Rj = R.get([j, j]);\n        if (neq(Rk.re, Rj.re) || neq(Rk.im, Rj.im)) {\n          x = getBlock(R.getRow(k), [k], [j - 1]);\n          y = getBlock(E.getRow(j), [k], [j - 1]);\n          E.set([j, k], div((sub(neg(R.get([k, j])), dot(x, y))), sub(Rk, Rj)));\n        } else {\n          E.setRow(j, E.getRow(k));\n          continue;\n        }\n      }\n    }\n  }\n  for (j = 0; j < n; j++) {\n    x = E.getRow(j);\n    E.setRow(j, div(x, norm2(x)));\n  }\n  E = transpose(E);\n  E = dot(Q.transjugate(),E);\n  return {\n    lambda: getDiag(R),\n    E: E\n  };\n};\n\nfunction house(x) {\n  var v = clone(x);\n  var s = x[0] >= 0 ? 1 : -1;\n  var alpha = s * norm2(x);\n  v[0] += alpha;\n  var foo = norm2(v);\n  if (foo === 0) { /* this should not happen */\n    throw new Error('eig: internal error');\n  }\n  return div(v, foo);\n}\n\nfunction toUpperHessenberg(me) {\n  var s = dim(me);\n  if (s.length !== 2 || s[0] !== s[1]) {\n    throw new Error('mathlab: toUpperHessenberg() only works on square matrices');\n  }\n  var m = s[0],\n    i, j, k, x, v, A = clone(me),\n    B, C, Ai, Ci, Q = identity(m),\n    Qi;\n  for (j = 0; j < m - 2; j++) {\n    x = Array(m - j - 1);\n    for (i = j + 1; i < m; i++) {\n      x[i - j - 1] = A[i][j];\n    }\n    if (norm2(x) > 0) {\n      v = house(x);\n      B = getBlock(A, [j + 1, j], [m - 1, m - 1]);\n      C = tensor(v, dot(v, B));\n      for (i = j + 1; i < m; i++) {\n        Ai = A[i];\n        Ci = C[i - j - 1];\n        for (k = j; k < m; k++) Ai[k] -= 2 * Ci[k - j];\n      }\n      B = getBlock(A, [0, j + 1], [m - 1, m - 1]);\n      C = tensor(dot(B, v), v);\n      for (i = 0; i < m; i++) {\n        Ai = A[i];\n        Ci = C[i];\n        for (k = j + 1; k < m; k++) Ai[k] -= 2 * Ci[k - j - 1];\n      }\n      B = Array(m - j - 1);\n      for (i = j + 1; i < m; i++) B[i - j - 1] = Q[i];\n      C = tensor(v, dot(v, B));\n      for (i = j + 1; i < m; i++) {\n        Qi = Q[i];\n        Ci = C[i - j - 1];\n        for (k = 0; k < m; k++) Qi[k] -= 2 * Ci[k];\n      }\n    }\n  }\n  return {\n    H: A,\n    Q: Q\n  };\n}\n\n\nfunction QRFrancis(H, maxiter) {\n  if (typeof maxiter === \"undefined\") {\n    maxiter = 10000;\n  }\n  H = clone(H);\n  var H0 = clone(H);\n  var s = dim(H),\n    m = s[0],\n    x, v, a, b, c, d, det, tr, Hloc, Q = identity(m),\n    Qi, Hi, B, C, Ci, i, j, k, iter;\n  if (m < 3) {\n    return {\n      Q: Q,\n      B: [\n        [0, m - 1]\n      ]\n    };\n  }\n  for (iter = 0; iter < maxiter; iter++) {\n    for (j = 0; j < m - 1; j++) {\n      if (Math.abs(H[j + 1][j]) < epsilon * (Math.abs(H[j][j]) + Math.abs(H[j + 1][j + 1]))) {\n        var QH1 = QRFrancis(getBlock(H, [0, 0], [j, j]), maxiter);\n        var QH2 = QRFrancis(getBlock(H, [j + 1, j + 1], [m - 1, m - 1]), maxiter);\n        B = Array(j + 1);\n        for (i = 0; i <= j; i++) {\n          B[i] = Q[i];\n        }\n        C = dot(QH1.Q, B);\n        for (i = 0; i <= j; i++) {\n          Q[i] = C[i];\n        }\n        B = Array(m - j - 1);\n        for (i = j + 1; i < m; i++) {\n          B[i - j - 1] = Q[i];\n        }\n        C = dot(QH2.Q, B);\n        for (i = j + 1; i < m; i++) {\n          Q[i] = C[i - j - 1];\n        }\n        return {\n          Q: Q,\n          B: QH1.B.concat(add(QH2.B, j + 1))\n        };\n      }\n    }\n    a = H[m - 2][m - 2];\n    b = H[m - 2][m - 1];\n    c = H[m - 1][m - 2];\n    d = H[m - 1][m - 1];\n    tr = a + d;\n    det = (a * d - b * c);\n    Hloc = getBlock(H, [0, 0], [2, 2]);\n    if (tr * tr >= 4 * det) {\n      var s1, s2;\n      s1 = 0.5 * (tr + Math.sqrt(tr * tr - 4 * det));\n      s2 = 0.5 * (tr - Math.sqrt(tr * tr - 4 * det));\n      Hloc = add(sub(dot(Hloc, Hloc),\n          mul(Hloc, s1 + s2)),\n        diag(rep([3], s1 * s2)));\n    } else {\n      Hloc = add(sub(dot(Hloc, Hloc),\n          mul(Hloc, tr)),\n        diag(rep([3], det)));\n    }\n    x = [Hloc[0][0], Hloc[1][0], Hloc[2][0]];\n    v = house(x);\n    B = [H[0], H[1], H[2]];\n    C = tensor(v, dot(v, B));\n    for (i = 0; i < 3; i++) {\n      Hi = H[i];\n      Ci = C[i];\n      for (k = 0; k < m; k++) Hi[k] -= 2 * Ci[k];\n    }\n    B = getBlock(H, [0, 0], [m - 1, 2]);\n    C = tensor(dot(B, v), v);\n    for (i = 0; i < m; i++) {\n      Hi = H[i];\n      Ci = C[i];\n      for (k = 0; k < 3; k++) Hi[k] -= 2 * Ci[k];\n    }\n    B = [Q[0], Q[1], Q[2]];\n    C = tensor(v, dot(v, B));\n    for (i = 0; i < 3; i++) {\n      Qi = Q[i];\n      Ci = C[i];\n      for (k = 0; k < m; k++) Qi[k] -= 2 * Ci[k];\n    }\n    var J;\n    for (j = 0; j < m - 2; j++) {\n      for (k = j; k <= j + 1; k++) {\n        if (Math.abs(H[k + 1][k]) < epsilon * (Math.abs(H[k][k]) + Math.abs(H[k + 1][k + 1]))) {\n          var QH1 = QRFrancis(getBlock(H, [0, 0], [k, k]), maxiter);\n          var QH2 = QRFrancis(getBlock(H, [k + 1, k + 1], [m - 1, m - 1]), maxiter);\n          B = Array(k + 1);\n          for (i = 0; i <= k; i++) {\n            B[i] = Q[i];\n          }\n          C = dot(QH1.Q, B);\n          for (i = 0; i <= k; i++) {\n            Q[i] = C[i];\n          }\n          B = Array(m - k - 1);\n          for (i = k + 1; i < m; i++) {\n            B[i - k - 1] = Q[i];\n          }\n          C = dot(QH2.Q, B);\n          for (i = k + 1; i < m; i++) {\n            Q[i] = C[i - k - 1];\n          }\n          return {\n            Q: Q,\n            B: QH1.B.concat(add(QH2.B, k + 1))\n          };\n        }\n      }\n      J = Math.min(m - 1, j + 3);\n      x = Array(J - j);\n      for (i = j + 1; i <= J; i++) {\n        x[i - j - 1] = H[i][j];\n      }\n      v = house(x);\n      B = getBlock(H, [j + 1, j], [J, m - 1]);\n      C = tensor(v, dot(v, B));\n      for (i = j + 1; i <= J; i++) {\n        Hi = H[i];\n        Ci = C[i - j - 1];\n        for (k = j; k < m; k++) Hi[k] -= 2 * Ci[k - j];\n      }\n      B = getBlock(H, [0, j + 1], [m - 1, J]);\n      C = tensor(dot(B, v), v);\n      for (i = 0; i < m; i++) {\n        Hi = H[i];\n        Ci = C[i];\n        for (k = j + 1; k <= J; k++) Hi[k] -= 2 * Ci[k - j - 1];\n      }\n      B = Array(J - j);\n      for (i = j + 1; i <= J; i++) B[i - j - 1] = Q[i];\n      C = tensor(v, dot(v, B));\n      for (i = j + 1; i <= J; i++) {\n        Qi = Q[i];\n        Ci = C[i - j - 1];\n        for (k = 0; k < m; k++) Qi[k] -= 2 * Ci[k];\n      }\n    }\n  }\n  throw new Error('mathlab: eigenvalue iteration does not converge -- increase maxiter?');\n}"
   },
   {
-    "__docId__": 127,
+    "__docId__": 126,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3614,7 +3587,7 @@
     "generator": false
   },
   {
-    "__docId__": 128,
+    "__docId__": 127,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3644,7 +3617,7 @@
     "generator": false
   },
   {
-    "__docId__": 129,
+    "__docId__": 128,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3674,7 +3647,7 @@
     "generator": false
   },
   {
-    "__docId__": 130,
+    "__docId__": 129,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3710,7 +3683,7 @@
     "generator": false
   },
   {
-    "__docId__": 131,
+    "__docId__": 130,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -3723,7 +3696,7 @@
     "content": "/**\n * 2.220446049250313e-16\n * \n * @export\n */\nexport default 2.220446049250313e-16"
   },
   {
-    "__docId__": 132,
+    "__docId__": 131,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -3736,7 +3709,7 @@
     "content": "import pointwise2 from './pointwise2'\nimport spPointwise2 from './spPointwise2'\n\nconst eq = pointwise2((x, y) => x === y);\nconst seq = spPointwise2((x, y) => x === y);\n\nfunction ceq(x, y) {\n  throw new Error('mathlab.eq: no eq for complex number')\n}\n\n/**\n * Pointwise eq\n * \n * @export\n * @param {Number|Array|Complex|Sparse} m1\n * @param {Number|Array|Complex|Sparse} m2\n * @returns {Number|Array|Complex|Sparse}\n * @example \n * \n * eq(1, 2)\n * // returns 1 === 2\n * eq([1, 2], [2, 2])\n * // returns [1 === 2, 2 === 2]\n * eq([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 === 2, 1 === 2], [1 === 2, 2 === 2] ]\n */\nexport default function (m1, m2) {\n  switch (m1.constructor.name) {\n    case 'Complex':\n      return ceq(m1, m2);\n    case 'Sparse':\n      return seq(m1, m2);\n    default:\n      return eq(m1, m2);\n  }\n}"
   },
   {
-    "__docId__": 133,
+    "__docId__": 132,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -3757,7 +3730,7 @@
     }
   },
   {
-    "__docId__": 134,
+    "__docId__": 133,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -3778,7 +3751,7 @@
     }
   },
   {
-    "__docId__": 135,
+    "__docId__": 134,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3809,7 +3782,7 @@
     "generator": false
   },
   {
-    "__docId__": 136,
+    "__docId__": 135,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3877,7 +3850,7 @@
     "generator": false
   },
   {
-    "__docId__": 137,
+    "__docId__": 136,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -3890,7 +3863,7 @@
     "content": "\nimport pointwise from './pointwise'\nimport spPointwise from './spPointwise'\nimport cos from './cos'\nimport sin from './sin'\nimport mul from './mul'\nimport Complex from './Complex'\nimport Sparse from './Sparse'\n\nconst exp = pointwise(Math.exp)\nconst sexp = spPointwise(Math.exp)\n\nfunction cexp(x) {\n  var ex = exp(x.re);\n  if (x.im) {\n    return new Complex(mul(cos(x.im), ex), mul(sin(x.im), ex));\n  }\n  return new Complex(ex);\n}\n\n\n/**\n * Pointwise Math.exp(x)\n * \n * @export\n * @param {Number|Array|Complex|Sparse} m\n * @returns {Number|Array|Complex|Sparse}\n * @example \n * \n * exp(1)\n * // returns Math.exp(1)\n * exp([1, 2])\n * // returns [Math.exp(1), Math.exp(2)]\n * exp([[1,2],[1,3]])\n * // returns [ [Math.exp(1), Math.exp(2)], [Math.exp(1), Math.exp(3)] ]\n */\nexport default function (m) {\n  switch (m.constructor.name) {\n    case 'Complex':\n      return cexp(m);\n    case 'Sparse':\n      return sexp(m);\n    default:\n      return exp(m);\n  }\n}\n"
   },
   {
-    "__docId__": 138,
+    "__docId__": 137,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -3911,7 +3884,7 @@
     }
   },
   {
-    "__docId__": 139,
+    "__docId__": 138,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -3932,7 +3905,7 @@
     }
   },
   {
-    "__docId__": 140,
+    "__docId__": 139,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -3962,7 +3935,7 @@
     "generator": false
   },
   {
-    "__docId__": 141,
+    "__docId__": 140,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -4017,7 +3990,7 @@
     "generator": false
   },
   {
-    "__docId__": 142,
+    "__docId__": 141,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -4030,7 +4003,7 @@
     "content": "import rep from './rep';\nimport mul from './mul';\nimport clone from './clone';\nimport neg from './neg';\nimport Complex from './Complex';\nimport div from './div';\n\n/**\n * Fast Fourier transform \n * \n * @export\n * @param {any} m\n * @returns\n */\nexport function fft(m) {\n  switch (m.constructor.name) {\n    case 'Complex':\n      return cfft(m);\n    case 'Sparse':\n        throw new Error('mathlab.fft: fft for sparse matrix not done yet')\n    default:\n      return cfft(new Complex(m));\n  }\n}\n\n\n/**\n * Inverse FFT\n * \n * @export\n * @param {any} m\n * @returns\n */\nexport function ifft(m) {\n  switch (m.constructor.name) {\n    case 'Complex':\n      return cifft(m);\n    case 'Sparse':\n        throw new Error('mathlab.ifft: ifft for sparse matrix not done yet')\n    default:\n      return cifft(new Complex(m));\n  }\n}\n\n\n\nfunction cfft(cplx) {\n\tvar x = cplx.re, y = cplx.im;\n\tvar n = x.length, log = Math.log, log2 = log(2),\n\t\t\tp = Math.ceil(log(2*n-1)/log2), m = Math.pow(2,p);\n\tvar cx = rep([m],0), cy = rep([m],0), cos = Math.cos, sin = Math.sin;\n\tvar k, c = (-3.141592653589793238462643383279502884197169399375105820/n),t;\n\tvar a = rep([m],0), b = rep([m],0),nhalf = Math.floor(n/2);\n\tfor(k=0;k<n;k++) a[k] = x[k];\n\tif(typeof y !== \"undefined\") for(k=0;k<n;k++) b[k] = y[k];\n\tcx[0] = 1;\n\tfor(k=1;k<=m/2;k++) {\n\t\tt = c*k*k;\n\t\tcx[k] = cos(t);\n\t\tcy[k] = sin(t);\n\t\tcx[m-k] = cos(t);\n\t\tcy[m-k] = sin(t)\n\t}\n\tvar X = new Complex(a,b), Y = new Complex(cx,cy);\n\tX = mul(X, Y);\n\tconvpow2(X.re, X.im, clone(Y.re), neg(Y.im));\n\tX = mul(X, Y);\n\tX.re.length = n;\n\tX.im.length = n;\n\treturn X;\n}\n\nfunction cifft(cplx) {\n\tvar x = cplx.re, y = cplx.im;\n\tvar n = x.length, log = Math.log, log2 = log(2),\n\t\t\tp = Math.ceil(log(2*n-1)/log2), m = Math.pow(2,p);\n\tvar cx = rep([m],0), cy = rep([m],0), cos = Math.cos, sin = Math.sin;\n\tvar k, c = (3.141592653589793238462643383279502884197169399375105820/n),t;\n\tvar a = rep([m],0), b = rep([m],0),nhalf = Math.floor(n/2);\n\tfor(k=0;k<n;k++) a[k] = x[k];\n\tif(typeof y !== \"undefined\") for(k=0;k<n;k++) b[k] = y[k];\n\tcx[0] = 1;\n\tfor(k=1;k<=m/2;k++) {\n\t\tt = c*k*k;\n\t\tcx[k] = cos(t);\n\t\tcy[k] = sin(t);\n\t\tcx[m-k] = cos(t);\n\t\tcy[m-k] = sin(t)\n\t}\n\tvar X = new Complex(a,b), Y = new Complex(cx,cy);\n\tX = mul(X, Y);\n\tconvpow2(X.re, X.im, clone(Y.re), neg(Y.im));\n\tX = mul(X, Y);\n\tX.re.length = n;\n\tX.im.length = n;\n\treturn div(X, n);\n}\n\n\n\nfunction fftpow2(x,y) {\n    var n = x.length;\n    if(n === 1) return;\n    var cos = Math.cos, sin = Math.sin, i,j;\n    var xe = Array(n/2), ye = Array(n/2), xo = Array(n/2), yo = Array(n/2);\n    j = n/2;\n    for(i=n-1;i!==-1;--i) {\n        --j;\n        xo[j] = x[i];\n        yo[j] = y[i];\n        --i;\n        xe[j] = x[i];\n        ye[j] = y[i];\n    }\n    fftpow2(xe,ye);\n    fftpow2(xo,yo);\n    j = n/2;\n    var t,k = (-6.2831853071795864769252867665590057683943387987502116419/n),ci,si;\n    for(i=n-1;i!==-1;--i) {\n        --j;\n        if(j === -1) j = n/2-1;\n        t = k*i;\n        ci = cos(t);\n        si = sin(t);\n        x[i] = xe[j] + ci*xo[j] - si*yo[j];\n        y[i] = ye[j] + ci*yo[j] + si*xo[j];\n    }\n}\n\nfunction _ifftpow2(x,y) {\n    var n = x.length;\n    if(n === 1) return;\n    var cos = Math.cos, sin = Math.sin, i,j;\n    var xe = Array(n/2), ye = Array(n/2), xo = Array(n/2), yo = Array(n/2);\n    j = n/2;\n    for(i=n-1;i!==-1;--i) {\n        --j;\n        xo[j] = x[i];\n        yo[j] = y[i];\n        --i;\n        xe[j] = x[i];\n        ye[j] = y[i];\n    }\n    _ifftpow2(xe,ye);\n    _ifftpow2(xo,yo);\n    j = n/2;\n    var t,k = (6.2831853071795864769252867665590057683943387987502116419/n),ci,si;\n    for(i=n-1;i!==-1;--i) {\n        --j;\n        if(j === -1) j = n/2-1;\n        t = k*i;\n        ci = cos(t);\n        si = sin(t);\n        x[i] = xe[j] + ci*xo[j] - si*yo[j];\n        y[i] = ye[j] + ci*yo[j] + si*xo[j];\n    }\n}\n\nfunction ifftpow2(x,y) {\n    _ifftpow2(x, y);\n    // x = div(x, x.length);\n    // y = div(y, y.length);\n    x.forEach((n, i) => {x[i] = n / x.length});\n    y.forEach((n, i) => {y[i] = n / y.length});\n}\n\nfunction convpow2(ax,ay,bx,by) {\n    fftpow2(ax,ay);\n    fftpow2(bx,by);\n    var i,n = ax.length,axi,bxi,ayi,byi;\n    for(i=n-1;i!==-1;--i) {\n        axi = ax[i]; ayi = ay[i]; bxi = bx[i]; byi = by[i];\n        ax[i] = axi*bxi-ayi*byi;\n        ay[i] = axi*byi+ayi*bxi;\n    }\n    ifftpow2(ax,ay);\n}\n\n"
   },
   {
-    "__docId__": 143,
+    "__docId__": 142,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -4073,7 +4046,7 @@
     "generator": false
   },
   {
-    "__docId__": 144,
+    "__docId__": 143,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -4116,7 +4089,7 @@
     "generator": false
   },
   {
-    "__docId__": 145,
+    "__docId__": 144,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -4146,7 +4119,7 @@
     "generator": false
   },
   {
-    "__docId__": 146,
+    "__docId__": 145,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -4176,7 +4149,7 @@
     "generator": false
   },
   {
-    "__docId__": 147,
+    "__docId__": 146,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -4207,7 +4180,7 @@
     "generator": false
   },
   {
-    "__docId__": 148,
+    "__docId__": 147,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -4238,7 +4211,7 @@
     "generator": false
   },
   {
-    "__docId__": 149,
+    "__docId__": 148,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -4269,7 +4242,7 @@
     "generator": false
   },
   {
-    "__docId__": 150,
+    "__docId__": 149,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -4312,7 +4285,7 @@
     "generator": false
   },
   {
-    "__docId__": 151,
+    "__docId__": 150,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -4325,7 +4298,7 @@
     "content": "\nimport pointwise from './pointwise'\nimport spPointwise from './spPointwise'\nimport Sparse from './Sparse'\n\nconst floor = pointwise(Math.floor)\nconst sfloor = spPointwise(Math.floor)\n\nfunction cfloor(x) {\n  throw new Error('mathlab.floor: no floor for complex number')\n}\n\n\n/**\n * Pointwise Math.floor(x)\n * \n * @export\n * @param {Number|Array|Complex|Sparse} m\n * @returns {Number|Array|Complex|Sparse}\n * @example \n * \n * floor(1)\n * // returns Math.floor(1)\n * floor([1, 2])\n * // returns [Math.floor(1), Math.floor(2)]\n * floor([[1,2],[1,3]])\n * // returns [ [Math.floor(1), Math.floor(2)], [Math.floor(1), Math.floor(3)] ]\n */\nexport default function (m) {\n  switch (m.constructor.name) {\n    case 'Complex':\n      return cfloor(m);\n    case 'Sparse':\n      return sfloor(m);\n    default:\n      return floor(m);\n  }\n}\n"
   },
   {
-    "__docId__": 152,
+    "__docId__": 151,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -4346,7 +4319,7 @@
     }
   },
   {
-    "__docId__": 153,
+    "__docId__": 152,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -4367,7 +4340,7 @@
     }
   },
   {
-    "__docId__": 154,
+    "__docId__": 153,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -4392,7 +4365,7 @@
     "generator": false
   },
   {
-    "__docId__": 155,
+    "__docId__": 154,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -4447,7 +4420,7 @@
     "generator": false
   },
   {
-    "__docId__": 156,
+    "__docId__": 155,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -4460,7 +4433,7 @@
     "content": "import pointwise2 from './pointwise2'\nimport spPointwise2 from './spPointwise2'\n\nconst geq = pointwise2((x, y) => x >= y)\nconst sgeq = spPointwise2((x, y) => x >= y)\n\nfunction cgeq(x, y) {\n  throw new Error('mathlab.geq: no geq for complex number')\n}\n\n/**\n * Pointwise geq\n * \n * @export\n * @param {Number|Array|Complex|Sparse} m1\n * @param {Number|Array|Complex|Sparse} m2\n * @returns {Number|Array|Complex|Sparse}\n * @example \n * \n * geq(1, 2)\n * // returns 1 >= 2\n * geq([1, 2], [2, 2])\n * // returns [1 >= 2, 2 >= 2]\n * geq([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 >= 2, 1 >= 2], [1 >= 2, 2 >= 2] ]\n */\nexport default function (m1, m2) {\n  switch (m1.constructor.name) {\n    case 'Complex':\n      return cgeq(m1, m2);\n    case 'Sparse':\n      return sgeq(m1, m2);\n    default:\n      return geq(m1, m2);\n  }\n}"
   },
   {
-    "__docId__": 157,
+    "__docId__": 156,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -4481,7 +4454,7 @@
     }
   },
   {
-    "__docId__": 158,
+    "__docId__": 157,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -4502,7 +4475,7 @@
     }
   },
   {
-    "__docId__": 159,
+    "__docId__": 158,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -4533,7 +4506,7 @@
     "generator": false
   },
   {
-    "__docId__": 160,
+    "__docId__": 159,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -4601,7 +4574,7 @@
     "generator": false
   },
   {
-    "__docId__": 161,
+    "__docId__": 160,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -4614,7 +4587,7 @@
     "content": "import dim from './dim'\n\n/**\n * Extract a block from a matrix \n * \n * @export\n * @param {Array} x\n * @param {Array} from from position\n * @param {Array} to to position\n * @returns {Array}\n * @example\n * \n * getBlock([[1,2,3],\n *           [3,4,5]], [0,0], [1,1])\n * // [[1, 2],\n *     [3, 4]]\n */\nexport default function getBlock(x, from, to) {\n  var s = dim(x);\n\n  function foo(x, k) {\n    var i, a = from[k],\n      n = to[k] - a,\n      ret = Array(n);\n    if (k === s.length - 1) {\n      for (i = n; i >= 0; i--) {\n        ret[i] = x[i + a];\n      }\n      return ret;\n    }\n    for (i = n; i >= 0; i--) {\n      ret[i] = foo(x[i + a], k + 1);\n    }\n    return ret;\n  }\n  return foo(x, 0);\n}"
   },
   {
-    "__docId__": 162,
+    "__docId__": 161,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -4683,7 +4656,7 @@
     "generator": false
   },
   {
-    "__docId__": 163,
+    "__docId__": 162,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -4696,7 +4669,7 @@
     "content": "import Complex from './Complex'\n\n/**\n * \tGet the diagonal of a matrix\n * \n * @export\n * @param {Array} A\n * @returns {Array}\n * @example \n * \n * getDiag([[1, 3], [0, 2]])\n * // [1, 2]\n */\nexport default function (A) {\n  switch (A.constructor.name) {\n    case 'Complex':\n      return cgetDiag(A);\n    case 'Sparse':\n      return sgetDiag(A);\n    default:\n      return getDiag(A);\n  }\n}\n\nfunction cgetDiag(A) {\n  // TODO: Check if is matrix\n    if (A.im) {\n      return new Complex(getDiag(A.re), getDiag(A.im));\n    }\n    return new Complex(getDiag(A.re));\n}\n\nfunction sgetDiag(A) {\n  throw new Error('mathlab.getDiag: getDiag for sparse matrix not exist')\n}\n\nfunction getDiag(A) {\n  var n = Math.min(A.length, A[0].length),i,ret = Array(n)\n  for (i = n - 1;i >= 1;--i) {\n    ret[i] = A[i][i]\n    --i\n    ret[i] = A[i][i]\n  }\n  if (i === 0) {\n    ret[0] = A[0][0]\n  }\n  return ret\n}\n"
   },
   {
-    "__docId__": 164,
+    "__docId__": 163,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -4745,7 +4718,7 @@
     "generator": false
   },
   {
-    "__docId__": 165,
+    "__docId__": 164,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -4775,7 +4748,7 @@
     "generator": false
   },
   {
-    "__docId__": 166,
+    "__docId__": 165,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -4800,7 +4773,7 @@
     "generator": false
   },
   {
-    "__docId__": 167,
+    "__docId__": 166,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -4830,7 +4803,7 @@
     "generator": false
   },
   {
-    "__docId__": 168,
+    "__docId__": 167,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -4843,7 +4816,7 @@
     "content": "import pointwise2 from './pointwise2'\nimport spPointwise2 from './spPointwise2'\n\nconst gt = pointwise2((x, y) => x > y);\nconst sgt = spPointwise2((x, y) => x > y);\n\nfunction cgt(x, y) {\n  throw new Error('mathlab.gt: no gt for complex number')\n}\n\n/**\n * Pointwise gt\n * \n * @export\n * @param {Number|Array|Complex|Sparse} m1\n * @param {Number|Array|Complex|Sparse} m2\n * @returns {Number|Array|Complex|Sparse}\n * @example \n * \n * gt(1, 2)\n * // returns 1 > 2\n * gt([1, 2], [2, 2])\n * // returns [1 > 2, 2 > 2]\n * gt([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 > 2, 1 > 2], [1 > 2, 2 > 2] ]\n */\nexport default function (m1, m2) {\n  switch (m1.constructor.name) {\n    case 'Complex':\n      return cgt(m1, m2);\n    case 'Sparse':\n      return sgt(m1, m2);\n    default:\n      return gt(m1, m2);\n  }\n}"
   },
   {
-    "__docId__": 169,
+    "__docId__": 168,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -4864,7 +4837,7 @@
     }
   },
   {
-    "__docId__": 170,
+    "__docId__": 169,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -4885,7 +4858,7 @@
     }
   },
   {
-    "__docId__": 171,
+    "__docId__": 170,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -4916,7 +4889,7 @@
     "generator": false
   },
   {
-    "__docId__": 172,
+    "__docId__": 171,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -4984,7 +4957,7 @@
     "generator": false
   },
   {
-    "__docId__": 173,
+    "__docId__": 172,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -4997,7 +4970,7 @@
     "content": "import diag from './diag';\nimport rep from './rep';\n\n/**\n * Generate identity matrix of given size\n * \n * @param {Number} n\n * @returns {Array}\n * @example \n * \n * identity(2)\n * // [[1, 0], [0, 1]]\n */\nexport default function identity(n) {\n    return diag(rep([n], 1));\n}"
   },
   {
-    "__docId__": 174,
+    "__docId__": 173,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -5042,7 +5015,7 @@
     "generator": false
   },
   {
-    "__docId__": 175,
+    "__docId__": 174,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -5055,7 +5028,7 @@
     "content": "import dim from './dim'\nimport identity from './identity'\nimport clone from './clone'\n\n/**\n * Inverse of an matrix\n * \n * @export\n * @param {Array} x\n * @returns {Array}\n * @example \n * \n * inv([[1,2],[3,4]])\n * // [[   -2,    1],\n * //  [  1.5, -0.5]]\n */\nexport default function inv (x) {\n  var s = dim(x), abs = Math.abs, m = s[0], n = s[1]\n  var A = clone(x), Ai, Aj\n  var I = identity(m), Ii, Ij\n  var i,j,k,x\n  for (j = 0;j < n;++j) {\n    var i0 = -1\n    var v0 = -1\n    for (i = j;i !== m;++i) { k = abs(A[i][j]); if (k > v0) { i0 = i; v0 = k; } }\n    Aj = A[i0]; A[i0] = A[j]; A[j] = Aj\n    Ij = I[i0]; I[i0] = I[j]; I[j] = Ij\n    x = Aj[j]\n    for (k = j;k !== n;++k)    Aj[k] /= x\n    for (k = n - 1;k !== -1;--k) Ij[k] /= x\n    for (i = m - 1;i !== -1;--i) {\n      if (i !== j) {\n        Ai = A[i]\n        Ii = I[i]\n        x = Ai[j]\n        for (k = j + 1;k !== n;++k)  Ai[k] -= Aj[k] * x\n        for (k = n - 1;k > 0;--k) { Ii[k] -= Ij[k] * x; --k; Ii[k] -= Ij[k] * x; }\n        if (k === 0) Ii[0] -= Ij[0] * x\n      }\n    }\n  }\n  return I\n}\n"
   },
   {
-    "__docId__": 176,
+    "__docId__": 175,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -5104,7 +5077,7 @@
     "generator": false
   },
   {
-    "__docId__": 177,
+    "__docId__": 176,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -5117,7 +5090,7 @@
     "content": "import pointwise2 from './pointwise2'\nimport spPointwise2 from './spPointwise2'\n\nconst leq = pointwise2((x, y) => x <= y);\nconst sleq = spPointwise2((x, y) => x <= y);\n\nfunction cleq(x, y) {\n  throw new Error('mathlab.leq: no leq for complex number')\n}\n\n\n/**\n * Pointwise leq\n * \n * @export\n * @param {Number|Array|Complex|Sparse} m1\n * @param {Number|Array|Complex|Sparse} m2\n * @returns {Number|Array|Complex|Sparse}\n * @example \n * \n * leq(1, 2)\n * // returns 1 <= 2\n * leq([1, 2], [2, 2])\n * // returns [1 <= 2, 2 <= 2]\n * leq([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 <= 2, 1 <= 2], [1 <= 2, 2 <= 2] ]\n */\nexport default function (m1, m2) {\n  switch (m1.constructor.name) {\n    case 'Complex':\n      return cleq(m1, m2);\n    case 'Sparse':\n      return sleq(m1, m2);\n    default:\n      return leq(m1, m2);\n  }\n}"
   },
   {
-    "__docId__": 178,
+    "__docId__": 177,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -5138,7 +5111,7 @@
     }
   },
   {
-    "__docId__": 179,
+    "__docId__": 178,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -5159,7 +5132,7 @@
     }
   },
   {
-    "__docId__": 180,
+    "__docId__": 179,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -5190,7 +5163,7 @@
     "generator": false
   },
   {
-    "__docId__": 181,
+    "__docId__": 180,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -5258,7 +5231,7 @@
     "generator": false
   },
   {
-    "__docId__": 182,
+    "__docId__": 181,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -5271,7 +5244,7 @@
     "content": "/**\n * Generate evenly spaced values\n * \n * @export\n * @param {Number} a\n * @param {Number} b\n * @param {Number} n\n * @returns {Array}\n * @example \n * \n * linspace(1, 2, 3)\n * // [1, 1.5, 2]\n */\nexport default function linspace (a, b, n) {\n  if (typeof n === 'undefined') n = Math.max(Math.round(b - a) + 1, 1)\n  if (n < 2) {\n    return n === 1 ? [a] : []\n  }\n  var i,ret = Array(n)\n  n--\n  for (i = n;i >= 0;i--) {\n    ret[i] = (i * b + (n - i) * a) / n\n  }\n  return ret\n}\n"
   },
   {
-    "__docId__": 183,
+    "__docId__": 182,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -5340,7 +5313,7 @@
     "generator": false
   },
   {
-    "__docId__": 184,
+    "__docId__": 183,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -5353,7 +5326,7 @@
     "content": "\nimport pointwise from './pointwise'\nimport spPointwise from './spPointwise'\nimport Sparse from './Sparse'\nimport Complex from './Complex'\nimport atan2 from './atan2'\nimport abs from './abs'\n\nconst log = pointwise(Math.log)\nconst slog = spPointwise(Math.log)\n\nfunction clog(x) {\n  if (x.im) {\n    var theta = new Complex(atan2(x.im, x.re)),\n      r = abs(x);\n    return new Complex(log(r.re), theta.re);\n  }\n  return new Complex(log(x.re));\n}\n\n\n/**\n * Pointwise Math.log(x)\n * \n * @export\n * @param {Number|Array|Complex|Sparse} m\n * @returns {Number|Array|Complex|Sparse}\n * @example \n * \n * log(1)\n * // returns Math.log(1)\n * log([1, 2])\n * // returns [Math.log(1), Math.log(2)]\n * log([[1,2],[1,3]])\n * // returns [ [Math.log(1), Math.log(2)], [Math.log(1), Math.log(3)] ]\n */\nexport default function (m) {\n  switch (m.constructor.name) {\n    case 'Complex':\n      return clog(m);\n    case 'Sparse':\n      return slog(m);\n    default:\n      return log(m);\n  }\n}\n"
   },
   {
-    "__docId__": 185,
+    "__docId__": 184,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -5374,7 +5347,7 @@
     }
   },
   {
-    "__docId__": 186,
+    "__docId__": 185,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -5395,7 +5368,7 @@
     }
   },
   {
-    "__docId__": 187,
+    "__docId__": 186,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -5425,7 +5398,7 @@
     "generator": false
   },
   {
-    "__docId__": 188,
+    "__docId__": 187,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -5480,7 +5453,7 @@
     "generator": false
   },
   {
-    "__docId__": 189,
+    "__docId__": 188,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -5493,7 +5466,7 @@
     "content": "import pointwise2 from './pointwise2'\nimport spPointwise2 from './spPointwise2'\n\nconst lshift = pointwise2((x, y) => x << y);\nconst slshift = spPointwise2((x, y) => x << y);\n\nfunction clshift(x, y) {\n  throw new Error('mathlab.lshift: no lshift for complex number')\n}\n\n/**\n * Pointwise lshift\n * \n * @export\n * @param {Number|Array|Complex|Sparse} m1\n * @param {Number|Array|Complex|Sparse} m2\n * @returns {Number|Array|Complex|Sparse}\n * @example \n * \n * lshift(1, 2)\n * // returns 1 << 2\n * lshift([1, 2], [2, 2])\n * // returns [1 << 2, 2 << 2]\n * lshift([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 << 2, 1 << 2], [1 << 2, 2 << 2] ]\n */\nexport default function (m1, m2) {\n  switch (m1.constructor.name) {\n    case 'Complex':\n      return clshift(m1, m2);\n    case 'Sparse':\n      return slshift(m1, m2);\n    default:\n      return lshift(m1, m2);\n  }\n}"
   },
   {
-    "__docId__": 190,
+    "__docId__": 189,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -5514,7 +5487,7 @@
     }
   },
   {
-    "__docId__": 191,
+    "__docId__": 190,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -5535,7 +5508,7 @@
     }
   },
   {
-    "__docId__": 192,
+    "__docId__": 191,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -5566,7 +5539,7 @@
     "generator": false
   },
   {
-    "__docId__": 193,
+    "__docId__": 192,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -5634,7 +5607,7 @@
     "generator": false
   },
   {
-    "__docId__": 194,
+    "__docId__": 193,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -5647,7 +5620,7 @@
     "content": "import pointwise2 from './pointwise2'\nimport spPointwise2 from './spPointwise2'\n\nconst lt = pointwise2((x, y) => x < y);\nconst slt = spPointwise2((x, y) => x < y);\n\nfunction clt(x, y) {\n  throw new Error('mathlab.lt: no lt for complex number')\n}\n\n\n/**\n * Pointwise lt\n * \n * @export\n * @param {Number|Array|Complex|Sparse} m1\n * @param {Number|Array|Complex|Sparse} m2\n * @returns {Number|Array|Complex|Sparse}\n * @example \n * \n * lt(1, 2)\n * // returns 1 < 2\n * lt([1, 2], [2, 2])\n * // returns [1 < 2, 2 < 2]\n * lt([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 < 2, 1 < 2], [1 < 2, 2 < 2] ]\n */\nexport default function (m1, m2) {\n  switch (m1.constructor.name) {\n    case 'Complex':\n      return clt(m1, m2);\n    case 'Sparse':\n      return slt(m1, m2);\n    default:\n      return lt(m1, m2);\n  }\n}"
   },
   {
-    "__docId__": 195,
+    "__docId__": 194,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -5668,7 +5641,7 @@
     }
   },
   {
-    "__docId__": 196,
+    "__docId__": 195,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -5689,7 +5662,7 @@
     }
   },
   {
-    "__docId__": 197,
+    "__docId__": 196,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -5720,7 +5693,7 @@
     "generator": false
   },
   {
-    "__docId__": 198,
+    "__docId__": 197,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -5788,7 +5761,7 @@
     "generator": false
   },
   {
-    "__docId__": 199,
+    "__docId__": 198,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -5801,7 +5774,7 @@
     "content": "import pointwise2 from './pointwise2'\nimport spPointwise2 from './spPointwise2'\n\nconst mod = pointwise2((x, y) => x % y);\nconst smod = spPointwise2((x, y) => x % y);\n\nfunction cmod(x, y) {\n  throw new Error('mathlab.mod: no mod for complex number')\n}\n\n/**\n * Pointwise mod\n * \n * @export\n * @param {Number|Array|Complex|Sparse} m1\n * @param {Number|Array|Complex|Sparse} m2\n * @returns {Number|Array|Complex|Sparse}\n * @example \n * \n * mod(1, 2)\n * // returns 1 % 2\n * mod([1, 2], [2, 2])\n * // returns [1 % 2, 2 % 2]\n * mod([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 % 2, 1 % 2], [1 % 2, 2 % 2] ]\n */\nexport default function (m1, m2) {\n  switch (m1.constructor.name) {\n    case 'Complex':\n      return cmod(m1, m2);\n    case 'Sparse':\n      return smod(m1, m2);\n    default:\n      return mod(m1, m2);\n  }\n}"
   },
   {
-    "__docId__": 200,
+    "__docId__": 199,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -5822,7 +5795,7 @@
     }
   },
   {
-    "__docId__": 201,
+    "__docId__": 200,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -5843,7 +5816,7 @@
     }
   },
   {
-    "__docId__": 202,
+    "__docId__": 201,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -5874,7 +5847,7 @@
     "generator": false
   },
   {
-    "__docId__": 203,
+    "__docId__": 202,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -5942,7 +5915,7 @@
     "generator": false
   },
   {
-    "__docId__": 204,
+    "__docId__": 203,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -5955,7 +5928,7 @@
     "content": "import pointwise2 from './pointwise2';\nimport spPointwise2 from './spPointwise2'\nimport Complex from './Complex';\nimport add from './add';\nimport sub from './sub';\n\n// array mul\nconst amul = pointwise2((x, y) => x * y)\nconst smul = spPointwise2((x, y) => x * y)\n\n// complex array mul\nfunction cmul(x, y) {\n  if(!(y instanceof Complex)) { y = new Complex(y); }\n  if (x.im) {\n    if (y.im) {\n      return new Complex(sub(amul(x.re, y.re), amul(x.im, y.im)), add(amul(x.re, y.im), amul(x.im, y.re)));\n    }\n    return new Complex(amul(x.re, y.re), amul(x.im, y.re));\n  }\n  if (y.im) {\n    return new Complex(amul(x.re, y.re), amul(x.re, y.im));\n  }\n  return new Complex(amul(x.re, y.re));\n}\n\n\n/**\n * Pointwise mul\n * \n * @export\n * @param {Number|Array|Complex|Sparse|Object} m1\n * @param {Number|Array|Complex|Sparse|Object} m2\n * @returns {Number|Array|Complex|Sparse}\n * @example \n * \n * mul(1, 2)\n * // returns 1 * 2\n * mul([1, 2], [2, 2])\n * // returns [1 * 2, 2 * 2]\n * mul([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 * 2, 1 * 2], [1 * 2, 2 * 2] ]\n */\nexport default function (m1, m2) {\n  // if (m1.constructor.name !== m2.constructor.name) {\n  //   throw new Error('mathlab.mul: argument type mismatch')\n  // }\n\n  switch (m1.constructor.name) {\n    case 'Array':\n      return amul(m1, m2);\n    case 'Complex':\n      return cmul(m1, m2);\n    case 'Sparse':\n      return smul(m1, m2);\n    default:\n      return amul(m1, m2);\n  }\n}"
   },
   {
-    "__docId__": 205,
+    "__docId__": 204,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -5976,7 +5949,7 @@
     }
   },
   {
-    "__docId__": 206,
+    "__docId__": 205,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -5997,7 +5970,7 @@
     }
   },
   {
-    "__docId__": 207,
+    "__docId__": 206,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -6033,7 +6006,7 @@
     "generator": false
   },
   {
-    "__docId__": 208,
+    "__docId__": 207,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -6103,7 +6076,7 @@
     "generator": false
   },
   {
-    "__docId__": 209,
+    "__docId__": 208,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -6116,7 +6089,7 @@
     "content": "\nimport pointwise from './pointwise'\nimport spPointwise from './spPointwise'\nimport Complex from './Complex'\nimport Sparse from './Sparse'\n\nconst neg = pointwise(x=> -x)\nconst sneg = spPointwise(x=> -x)\n\nfunction cneg(x) {\n  if (x.im) {\n    return new Complex(neg(x.re), neg(x.im));\n  }\n  return new Complex(neg(x.re));\n}\n\n\n/**\n * Pointwise Math.neg(x)\n * \n * @export\n * @param {Number|Array|Complex|Sparse} m\n * @returns {Number|Array|Complex|Sparse}\n * @example \n * \n * neg(1)\n * // returns Math.neg(1)\n * neg([1, 2])\n * // returns [Math.neg(1), Math.neg(2)]\n * neg([[1,2],[1,3]])\n * // returns [ [Math.neg(1), Math.neg(2)], [Math.neg(1), Math.neg(3)] ]\n */\nexport default function (m) {\n  switch (m.constructor.name) {\n    case 'Complex':\n      return cneg(m);\n    case 'Sparse':\n      return sneg(m);\n    default:\n      return neg(m);\n  }\n}\n"
   },
   {
-    "__docId__": 210,
+    "__docId__": 209,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -6137,7 +6110,7 @@
     }
   },
   {
-    "__docId__": 211,
+    "__docId__": 210,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -6158,7 +6131,7 @@
     }
   },
   {
-    "__docId__": 212,
+    "__docId__": 211,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -6188,7 +6161,7 @@
     "generator": false
   },
   {
-    "__docId__": 213,
+    "__docId__": 212,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -6243,7 +6216,7 @@
     "generator": false
   },
   {
-    "__docId__": 214,
+    "__docId__": 213,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -6256,7 +6229,7 @@
     "content": "/**\n * neg transpose\n * \n * @export\n * @param {any} x\n * @returns\n */\nexport default function negtranspose(x) {\n    var i,j,m = x.length,n = x[0].length, ret=Array(n),A0,A1,Bj;\n    for(j=0;j<n;j++) ret[j] = Array(m);\n    for(i=m-1;i>=1;i-=2) {\n        A1 = x[i];\n        A0 = x[i-1];\n        for(j=n-1;j>=1;--j) {\n            Bj = ret[j]; Bj[i] = -A1[j]; Bj[i-1] = -A0[j];\n            --j;\n            Bj = ret[j]; Bj[i] = -A1[j]; Bj[i-1] = -A0[j];\n        }\n        if(j===0) {\n            Bj = ret[0]; Bj[i] = -A1[0]; Bj[i-1] = -A0[0];\n        }\n    }\n    if(i===0) {\n        A0 = x[0];\n        for(j=n-1;j>=1;--j) {\n            ret[j][0] = -A0[j];\n            --j;\n            ret[j][0] = -A0[j];\n        }\n        if(j===0) { ret[0][0] = -A0[0]; }\n    }\n    return ret;\n}"
   },
   {
-    "__docId__": 215,
+    "__docId__": 214,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -6299,7 +6272,7 @@
     "generator": false
   },
   {
-    "__docId__": 216,
+    "__docId__": 215,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -6312,7 +6285,7 @@
     "content": "import pointwise2 from './pointwise2'\nimport spPointwise2 from './spPointwise2'\n\nconst neq = pointwise2((x, y) => x !== y)\nconst sneq = spPointwise2((x, y) => x !== y)\n\nfunction cneq(x, y) {\n  throw new Error('mathlab.neq: no neq for complex number')\n}\n\n\n/**\n * Pointwise neq\n * \n * @export\n * @param {Number|Array|Complex|Sparse} m1\n * @param {Number|Array|Complex|Sparse} m2\n * @returns {Number|Array|Complex|Sparse}\n * @example \n * \n * neq(1, 2)\n * // returns 1 !== 2\n * neq([1, 2], [2, 2])\n * // returns [1 !== 2, 2 !== 2]\n * neq([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 !== 2, 1 !== 2], [1 !== 2, 2 !== 2] ]\n */\nexport default function (m1, m2) {\n  switch (m1.constructor.name) {\n    case 'Complex':\n      return cneq(m1, m2);\n    case 'Sparse':\n      return sneq(m1, m2);\n    default:\n      return neq(m1, m2);\n  }\n}"
   },
   {
-    "__docId__": 217,
+    "__docId__": 216,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -6333,7 +6306,7 @@
     }
   },
   {
-    "__docId__": 218,
+    "__docId__": 217,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -6354,7 +6327,7 @@
     }
   },
   {
-    "__docId__": 219,
+    "__docId__": 218,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -6385,7 +6358,7 @@
     "generator": false
   },
   {
-    "__docId__": 220,
+    "__docId__": 219,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -6453,7 +6426,7 @@
     "generator": false
   },
   {
-    "__docId__": 221,
+    "__docId__": 220,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -6466,7 +6439,7 @@
     "content": "import norm2Squared from './norm2Squared';\n\n\n/**\n * Square root of the sum of the squares of the entries of x\n * \n * @export\n * @param {Array|Number} x\n * @returns {Number}\n * @example\n * \n * norm2(2)\n * // 2\n * norm2([2,2])\n * // 2.828\n */\nexport default function (x, y) {\n  switch (x.constructor.name) {\n    case 'Complex':\n      return cnorm2(x, y);\n    case 'Sparse':\n      return snorm2(x, y);\n    default:\n      return norm2(x, y);\n  }\n}\n\nfunction cnorm2(x, y) {\n\tif (x.im) {\n\t\tvar f = norm2Squared;\n\t\treturn Math.sqrt(f(x.re) + f(x.im));\n\t}\n\treturn norm2(x.re);\n}\n\nfunction snorm2(x, y) {\n  throw new Error('mathlab.norm2: norm2 for sparse matrix not exist')\n}\n\nfunction norm2(x) {\n  return Math.sqrt(norm2Squared(x)); \n}"
   },
   {
-    "__docId__": 222,
+    "__docId__": 221,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -6516,7 +6489,7 @@
     "generator": false
   },
   {
-    "__docId__": 223,
+    "__docId__": 222,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -6552,7 +6525,7 @@
     "generator": false
   },
   {
-    "__docId__": 224,
+    "__docId__": 223,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -6583,7 +6556,7 @@
     "generator": false
   },
   {
-    "__docId__": 225,
+    "__docId__": 224,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -6613,7 +6586,7 @@
     "generator": false
   },
   {
-    "__docId__": 226,
+    "__docId__": 225,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -6626,7 +6599,7 @@
     "content": "import dim from './dim';\n\n/**\n * Sum of the squares of the entries of x\n * \n * @export\n * @param {Array|Number} x\n * @returns {Number}\n * @example\n * \n * norm2Squared(2)\n * // 4\n * norm2Squared([2,2])\n * // 8\n */\nexport default function nrom2Squared(x, s, k) {\n  var accum = 0;\n  if (typeof x !== \"object\") {\n    xi = x;\n    accum += xi * xi;;\n    return accum;\n  }\n  if (typeof s === \"undefined\") s = dim(x);\n  if (typeof k === \"undefined\") k = 0;\n  if (k === s.length - 1) return norm2SquaredV(x);\n  var xi;\n  var n = x.length,\n    i;\n  for (i = n - 1; i !== -1; --i) {\n    xi = nrom2Squared(x[i]);\n    accum += xi * xi;;\n  }\n  return accum;\n}\n\nfunction norm2SquaredV(x) {\n  var n = x.length;\n  var i, xi;\n  var accum = 0;;\n  for (i = n - 1; i !== -1; --i) {\n    xi = x[i];\n    accum += xi * xi;\n  }\n  return accum;\n}"
   },
   {
-    "__docId__": 227,
+    "__docId__": 226,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -6676,7 +6649,7 @@
     "generator": false
   },
   {
-    "__docId__": 228,
+    "__docId__": 227,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -6706,7 +6679,7 @@
     "generator": false
   },
   {
-    "__docId__": 229,
+    "__docId__": 228,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -6719,7 +6692,7 @@
     "content": "\nimport pointwise from './pointwise'\nimport spPointwise from './spPointwise'\nimport Sparse from './Sparse'\n\nconst not = pointwise(x=> !x)\nconst snot = spPointwise(x=> !x)\n\nfunction cnot(x) {\n  throw new Error('mathlab.not: no not for complex number')\n}\n\n/**\n * Pointwise Math.not(x)\n * \n * @export\n * @param {Number|Array|Complex|Sparse} m\n * @returns {Number|Array|Complex|Sparse}\n * @example \n * \n * not(1)\n * // returns Math.not(1)\n * not([1, 2])\n * // returns [Math.not(1), Math.not(2)]\n * not([[1,2],[1,3]])\n * // returns [ [Math.not(1), Math.not(2)], [Math.not(1), Math.not(3)] ]\n */\nexport default function (m) {\n  switch (m.constructor.name) {\n    case 'Complex':\n      return cnot(m);\n    case 'Sparse':\n      return snot(m);\n    default:\n      return not(m);\n  }\n}\n"
   },
   {
-    "__docId__": 230,
+    "__docId__": 229,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -6740,7 +6713,7 @@
     }
   },
   {
-    "__docId__": 231,
+    "__docId__": 230,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -6761,7 +6734,7 @@
     }
   },
   {
-    "__docId__": 232,
+    "__docId__": 231,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -6786,7 +6759,7 @@
     "generator": false
   },
   {
-    "__docId__": 233,
+    "__docId__": 232,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -6841,7 +6814,7 @@
     "generator": false
   },
   {
-    "__docId__": 234,
+    "__docId__": 233,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -6854,7 +6827,7 @@
     "content": "import pointwise2 from './pointwise2'\nimport spPointwise2 from './spPointwise2'\n\nconst or = pointwise2((x, y) => x || y);\nconst sor = spPointwise2((x, y) => x || y);\n\nfunction cor(x, y) {\n  throw new Error('mathlab.or: no or for complex number')\n}\n\n\n/**\n * Pointwise or\n * \n * @export\n * @param {Number|Array|Complex|Sparse} m1\n * @param {Number|Array|Complex|Sparse} m2\n * @returns {Number|Array|Complex|Sparse}\n * @example \n * \n * or(1, 2)\n * // returns 1 || 2\n * or([1, 2], [2, 2])\n * // returns [1 || 2, 2 || 2]\n * or([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 || 2, 1 || 2], [1 || 2, 2 || 2] ]\n */\nexport default function (m1, m2) {\n  switch (m1.constructor.name) {\n    case 'Complex':\n      return cor(m1, m2);\n    case 'Sparse':\n      return sor(m1, m2);\n    default:\n      return or(m1, m2);\n  }\n}"
   },
   {
-    "__docId__": 235,
+    "__docId__": 234,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -6875,7 +6848,7 @@
     }
   },
   {
-    "__docId__": 236,
+    "__docId__": 235,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -6896,7 +6869,7 @@
     }
   },
   {
-    "__docId__": 237,
+    "__docId__": 236,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -6927,7 +6900,7 @@
     "generator": false
   },
   {
-    "__docId__": 238,
+    "__docId__": 237,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -6995,7 +6968,7 @@
     "generator": false
   },
   {
-    "__docId__": 239,
+    "__docId__": 238,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -7008,7 +6981,7 @@
     "content": "import dim from './dim'\n\n/**\n * Create a pointwise function\n * \n * @export\n * @param {Function} fun\n * @returns {Function}\n * @example \n * \n * function _inc (x) {\n *   return x + 1\n * }\n * const inc = pointwise(inc)\n * inc(1)                                  // 2\n * inc([1, 2])                             // [2, 3]\n * inc([[1, 2], [1, 3]])                   // [[2, 3], [2, 4]]\n */\nexport default function pointwise(fun) {\n  return function(m) {\n    switch (dim(m).length) {\n      case 0:\n        return fun(m)\n      case 1:\n        return m.map(fun)\n      case 2:\n        return m.map(a => a.map(fun))\n      default:\n        throw new Error('mathlab.pointwise: dimension of matrix should <= 2')\n    }\n  }\n}"
   },
   {
-    "__docId__": 240,
+    "__docId__": 239,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -7057,7 +7030,7 @@
     "generator": false
   },
   {
-    "__docId__": 241,
+    "__docId__": 240,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -7070,7 +7043,7 @@
     "content": "import dim from './dim'\n\n/**\n * Create a pointwise function of two arguments\n * \n * @export\n * @param {Function} fun\n * @returns {Function}\n * @example \n * \n * function _add (x, y) {\n *   return x + y\n * }\n * const add = pointwise(_add)\n * add(1, 2)                                // 3\n * add([1, 2], [1, 2])                      // [2, 4]\n * add([[1, 2], [1, 2]], [[1, 2], [1, 2]])  //[[2, 4], [2, 4]]\n */\nexport default function pointwise2(fun) {\n  return function(m1, m2) {\n    switch (dim(m1).length) {\n    case 0:\n        return fun(m1, m2)\n    case 1:\n        {\n        if (typeof m2 === 'number') {\n            return m1.map(x => fun(x, m2))\n        }\n        return m1.map((x, i) => fun(x, m2[i]))\n        }\n    case 2:\n        {\n        if (typeof m2 === 'number') {\n            return m1.map(mm1 => mm1.map(x => fun(x, m2)))\n        }\n        return m1.map((mm1, i) => mm1.map((x, j) => fun(x, m2[i][j])))\n        }\n\n    default:\n        throw new Error('mathlab.pointwise: dimension of given array should <= 2')\n    }\n}\n}"
   },
   {
-    "__docId__": 242,
+    "__docId__": 241,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -7119,7 +7092,7 @@
     "generator": false
   },
   {
-    "__docId__": 243,
+    "__docId__": 242,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -7132,7 +7105,7 @@
     "content": "\nimport pointwise2 from './pointwise2'\n\n/**\n * Pointwise Math.pow(x, y)\n * \n * @export\n * @param {Number|Array|Complex|Sparse} m1\n * @param {Number|Array|Complex|Sparse} m2\n * @returns {Number|Array|Complex|Sparse}\n * @example \n * \n * pow(1, 2)\n * // returns Math.pow(1, 2)\n * pow([1, 2], [2, 2])\n * // returns [Math.pow(1, 2), Math.pow(2, 2)]\n * pow([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [Math.pow(2, 2), Math.pow(1, 2)], [Math.pow(1, 2), Math.pow(2, 2)] ]\n */\nexport default function (m1, m2) { \n  return pointwise2(Math.pow)(m1, m2)\n}\n"
   },
   {
-    "__docId__": 244,
+    "__docId__": 243,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -7200,7 +7173,7 @@
     "generator": false
   },
   {
-    "__docId__": 245,
+    "__docId__": 244,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -7213,7 +7186,7 @@
     "content": "\n/**\n * Create an Array of random numbers \n * \n * @export\n * @param {Array} size of the random matrix\n * @returns {Array} array of random numbers\n * @example\n * \n * random([2, 3])\n * // [[0.05303,0.1537,0.7280],\n *     [0.3839,0.08818,0.6316]]\n */\nexport default function random(s) { \n    return _random(s,0);\n}\n\nfunction _random(s,k) {\n    var i,n=s[k],ret=Array(n), rnd;\n    if(k === s.length-1) {\n        rnd = Math.random;\n        for(i=n-1;i>=1;i-=2) {\n            ret[i] = rnd();\n            ret[i-1] = rnd();\n        }\n        if(i===0) { ret[0] = rnd(); }\n        return ret;\n    }\n    for(i=n-1;i>=0;i--) ret[i] = _random(s,k+1);\n    return ret;\n}"
   },
   {
-    "__docId__": 246,
+    "__docId__": 245,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -7262,7 +7235,7 @@
     "generator": false
   },
   {
-    "__docId__": 247,
+    "__docId__": 246,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -7298,7 +7271,7 @@
     "generator": false
   },
   {
-    "__docId__": 248,
+    "__docId__": 247,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -7311,7 +7284,7 @@
     "content": "export function reciprocal() {\n    var mul = numeric.mul, div = numeric.div;\n    if(this.im) {\n        var d = numeric.add(mul(this.re,this.re),mul(this.im,this.im));\n        return new numeric.Complex(div(this.re,d),div(numeric.neg(this.im),d));\n    }\n    return new Complex(div(1,this.re));\n}"
   },
   {
-    "__docId__": 249,
+    "__docId__": 248,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -7334,7 +7307,7 @@
     "generator": false
   },
   {
-    "__docId__": 250,
+    "__docId__": 249,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -7347,7 +7320,7 @@
     "content": "/**\n * Create an Array by duplicating values \n * \n * @param {Array} s size of the Matrix\n * @param {Array} v value\n * @returns {Array}\n * @example\n * \n * rep([2,3], 0)\n * // [[0,0,0],\n *     [0,0,0]] \n * \n * rep([3], 5)\n * // [5,5,5]\n */\nexport default function rep(s,v,k) {\n    if(typeof k === \"undefined\") { k=0; }\n    var n = s[k], ret = Array(n), i;\n    if(k === s.length-1) {\n        for(i=n-2;i>=0;i-=2) { ret[i+1] = v; ret[i] = v; }\n        if(i===-1) { ret[0] = v; }\n        return ret;\n    }\n    for(i=n-1;i>=0;i--) { ret[i] = rep(s,v,k+1); }\n    return ret;\n}"
   },
   {
-    "__docId__": 251,
+    "__docId__": 250,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -7402,7 +7375,7 @@
     "generator": false
   },
   {
-    "__docId__": 252,
+    "__docId__": 251,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -7415,7 +7388,7 @@
     "content": "\nimport pointwise from './pointwise'\n\nconst round = pointwise(Math.round)\n\nfunction cround(x) {\n  throw new Error('mathlab.round: no round for complex number')\n}\n\nfunction sround(x) {\n  throw new Error('mathlab.round: round for sparse matrix not exist')\n}\n\n/**\n * Pointwise Math.round(x)\n * \n * @export\n * @param {Number|Array|Complex|Sparse} m\n * @returns {Number|Array|Complex|Sparse}\n * @example \n * \n * round(1)\n * // returns Math.round(1)\n * round([1, 2])\n * // returns [Math.round(1), Math.round(2)]\n * round([[1,2],[1,3]])\n * // returns [ [Math.round(1), Math.round(2)], [Math.round(1), Math.round(3)] ]\n */\nexport default function (m) {\n  switch (m.constructor.name) {\n    case 'Complex':\n      return cround(m);\n    case 'Sparse':\n      return sround(m);\n    default:\n      return round(m);\n  }\n}\n"
   },
   {
-    "__docId__": 253,
+    "__docId__": 252,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -7436,7 +7409,7 @@
     }
   },
   {
-    "__docId__": 254,
+    "__docId__": 253,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -7461,7 +7434,7 @@
     "generator": false
   },
   {
-    "__docId__": 255,
+    "__docId__": 254,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -7486,7 +7459,7 @@
     "generator": false
   },
   {
-    "__docId__": 256,
+    "__docId__": 255,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -7541,7 +7514,7 @@
     "generator": false
   },
   {
-    "__docId__": 257,
+    "__docId__": 256,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -7554,7 +7527,7 @@
     "content": "import pointwise2 from './pointwise2'\nimport spPointwise2 from './spPointwise2'\n\nconst rrshift = pointwise2((x, y) => x >>> y)\nconst srrshift = spPointwise2((x, y) => x >>> y)\n\nfunction crrshift(x, y) {\n  throw new Error('mathlab.rrshift: no rrshift for complex number')\n}\n\n\n/**\n * Pointwise rrshift\n * \n * @export\n * @param {Number|Array|Complex|Sparse} m1\n * @param {Number|Array|Complex|Sparse} m2\n * @returns {Number|Array|Complex|Sparse}\n * @example \n * \n * rrshift(1, 2)\n * // returns 1 >>> 2\n * rrshift([1, 2], [2, 2])\n * // returns [1 >>> 2, 2 >>> 2]\n * rrshift([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 >>> 2, 1 >>> 2], [1 >>> 2, 2 >>> 2] ]\n */\nexport default function (m1, m2) {\n  switch (m1.constructor.name) {\n    case 'Complex':\n      return crrshift(m1, m2);\n    case 'Sparse':\n      return srrshift(m1, m2);\n    default:\n      return rrshift(m1, m2);\n  }\n}"
   },
   {
-    "__docId__": 258,
+    "__docId__": 257,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -7575,7 +7548,7 @@
     }
   },
   {
-    "__docId__": 259,
+    "__docId__": 258,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -7596,7 +7569,7 @@
     }
   },
   {
-    "__docId__": 260,
+    "__docId__": 259,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -7627,7 +7600,7 @@
     "generator": false
   },
   {
-    "__docId__": 261,
+    "__docId__": 260,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -7695,7 +7668,7 @@
     "generator": false
   },
   {
-    "__docId__": 262,
+    "__docId__": 261,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -7708,7 +7681,7 @@
     "content": "import pointwise2 from './pointwise2'\nimport spPointwise2 from './spPointwise2'\n\nconst rshift = pointwise2((x, y) => x >> y)\nconst srshift = spPointwise2((x, y) => x >> y)\n\nfunction crshift(x, y) {\n  throw new Error('mathlab.rshift: no rshift for complex number')\n}\n\n/**\n * Pointwise rshift\n * \n * @export\n * @param {Number|Array|Complex|Sparse} m1\n * @param {Number|Array|Complex|Sparse} m2\n * @returns {Number|Array|Complex|Sparse}\n * @example \n * \n * rshift(1, 2)\n * // returns 1 >> 2\n * rshift([1, 2], [2, 2])\n * // returns [1 >> 2, 2 >> 2]\n * rshift([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 >> 2, 1 >> 2], [1 >> 2, 2 >> 2] ]\n */\nexport default function (m1, m2) {\n  switch (m1.constructor.name) {\n    case 'Complex':\n      return crshift(m1, m2);\n    case 'Sparse':\n      return srshift(m1, m2);\n    default:\n      return rshift(m1, m2);\n  }\n}"
   },
   {
-    "__docId__": 263,
+    "__docId__": 262,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -7729,7 +7702,7 @@
     }
   },
   {
-    "__docId__": 264,
+    "__docId__": 263,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -7750,7 +7723,7 @@
     }
   },
   {
-    "__docId__": 265,
+    "__docId__": 264,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -7781,7 +7754,7 @@
     "generator": false
   },
   {
-    "__docId__": 266,
+    "__docId__": 265,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -7849,7 +7822,7 @@
     "generator": false
   },
   {
-    "__docId__": 267,
+    "__docId__": 266,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -7862,7 +7835,7 @@
     "content": "/**\n * \tx and y are entrywise identical \n * \n * @export\n * @param {Array} x\n * @param {Array} y\n * @returns {Boolean}\n * @example\n * \n * same([1,2], [1,2,3]) // false\n * same([1, 2], [1, 2]) // true\n */\nexport default function same(x,y) {\n    var i,n;\n    if(!(x instanceof Array) || !(y instanceof Array)) { return false; }\n    n = x.length;\n    if(n !== y.length) { return false; }\n    for(i=0;i<n;i++) {\n        if(x[i] === y[i]) { continue; }\n        if(typeof x[i] === \"object\") { if(!same(x[i],y[i])) return false; }\n        else { return false; }\n    }\n    return true;\n}"
   },
   {
-    "__docId__": 268,
+    "__docId__": 267,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -7921,7 +7894,7 @@
     "generator": false
   },
   {
-    "__docId__": 269,
+    "__docId__": 268,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -7934,7 +7907,7 @@
     "content": "import dim from './dim'\n\n/**\n * Set a block of a matrix \n * \n * @param {Array} x\n * @param {Array} from\n * @param {Array} to\n * @param {Array} B\n * @returns {Array}\n * @example\n * \n * setBlock([[1,2,3], [3,4,5]], [0,0], [1,1],[[2,2],[2,2]])\n * // [[2,2,3],[2,2,5]]\n */\nexport default function setBlock(x,from,to,B) {\n    var s = dim(x);\n    function foo(x,y,k) {\n        var i,a = from[k], n = to[k]-a;\n        if(k === s.length-1) { for(i=n;i>=0;i--) { x[i+a] = y[i]; } }\n        for(i=n;i>=0;i--) { foo(x[i+a],y[i],k+1); }\n    }\n    foo(x,B,0);\n    return x;\n}"
   },
   {
-    "__docId__": 270,
+    "__docId__": 269,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -8009,7 +7982,7 @@
     "generator": false
   },
   {
-    "__docId__": 271,
+    "__docId__": 270,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -8022,7 +7995,7 @@
     "content": "\nimport pointwise from './pointwise'\nimport spPointwise from './spPointwise'\nimport Complex from './Complex'\nimport Sparse from './Sparse'\nimport neg from './neg'\nimport exp from './exp'\nimport div from './div'\nimport sub from './sub'\n\nconst sin = pointwise(Math.sin)\nconst ssin = spPointwise(Math.sin)\n\nfunction csin(x) {\n  if (x.im) {\n    return div(sub(exp(x), exp(neg(x))), new Complex(0,2))\n    // return x.exp().sub(x.neg().exp()).div(new Complex(0, 2));\n  }\n  return new Complex(sin(x.re));\n}\n\n\n/**\n * Pointwise Math.sin(x)\n * \n * @export\n * @param {Number|Array|Complex|Sparse} m\n * @returns {Number|Array|Complex|Sparse}\n * @example \n * \n * sin(1)\n * // returns Math.sin(1)\n * sin([1, 2])\n * // returns [Math.sin(1), Math.sin(2)]\n * sin([[1,2],[1,3]])\n * // returns [ [Math.sin(1), Math.sin(2)], [Math.sin(1), Math.sin(3)] ]\n */\nexport default function (m) {\n  switch (m.constructor.name) {\n    case 'Complex':\n      return csin(m);\n    case 'Sparse':\n      return ssin(m);\n    default:\n      return sin(m);\n  }\n}\n"
   },
   {
-    "__docId__": 272,
+    "__docId__": 271,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -8043,7 +8016,7 @@
     }
   },
   {
-    "__docId__": 273,
+    "__docId__": 272,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -8064,7 +8037,7 @@
     }
   },
   {
-    "__docId__": 274,
+    "__docId__": 273,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -8094,7 +8067,7 @@
     "generator": false
   },
   {
-    "__docId__": 275,
+    "__docId__": 274,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -8149,7 +8122,7 @@
     "generator": false
   },
   {
-    "__docId__": 276,
+    "__docId__": 275,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -8162,7 +8135,7 @@
     "content": "\t\nimport Sparse from './Sparse'\nimport pointwise from './pointwise'\n\n/**\n * Create pointwise function for sparse matrix operating on none zero arguments\n * \n * @export\n * @param {Function} fun\n * @returns {Function}\n * @example \n * \n * function _inc (x) {\n *   return x + 1\n * }\n * const inc = spPointwise(_inc)\n * inc(new Sparse([1,0],[0,0]))           // new Sparse([2,0],[0,0])\n */\nexport default function spPointwise(fun) {\n\treturn function (x) {\n\t\treturn new Sparse({\n\t\t\tcol: x.col.slice(), // copy the array\n\t\t\trow: x.row.slice(),\n\t\t\tval: x.val.map(fun),\n\t\t})\n\t}\n}"
   },
   {
-    "__docId__": 277,
+    "__docId__": 276,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -8211,7 +8184,7 @@
     "generator": false
   },
   {
-    "__docId__": 278,
+    "__docId__": 277,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -8224,7 +8197,7 @@
     "content": "import sup from './sup'\nimport rep from './rep'\nimport Sparse from './Sparse'\n\nexport default function spPointwise2(fun) {\n\treturn function (X, Y) {\n\t\tvar Xi = X.col, Xj = X.row, Xv = X.val;\n\t\tvar Yi = Y.col, Yj = Y.row, Yv = Y.val;\n\t\tvar n = Xi.length - 1, m = Math.max(sup(Xj), sup(Yj)) + 1;\n\t\tvar Zi = rep([n + 1], 0), Zj = [], Zv = [];\n\t\tvar x = rep([m], 0), y = rep([m], 0);\n\t\tvar xk, yk, zk;\n\t\tvar i, j, j0, j1, k, p = 0;\n\t\tfor (i = 0; i < n; ++i) {\n\t\t\tj0 = Xi[i];\n\t\t\tj1 = Xi[i + 1];\n\t\t\tfor (j = j0; j !== j1; ++j) {\n\t\t\t\tk = Xj[j];\n\t\t\t\tx[k] = 1;\n\t\t\t\tZj[p] = k;\n\t\t\t\t++p;\n\t\t\t}\n\t\t\tj0 = Yi[i];\n\t\t\tj1 = Yi[i + 1];\n\t\t\tfor (j = j0; j !== j1; ++j) {\n\t\t\t\tk = Yj[j];\n\t\t\t\ty[k] = Yv[j];\n\t\t\t\tif (x[k] === 0) { Zj[p] = k;++p; }\n\t\t\t}\n\t\t\tZi[i + 1] = p;\n\t\t\tj0 = Xi[i];\n\t\t\tj1 = Xi[i + 1];\n\t\t\tfor (j = j0; j !== j1; ++j) x[Xj[j]] = Xv[j];\n\t\t\tj0 = Zi[i];\n\t\t\tj1 = Zi[i + 1];\n\t\t\tfor (j = j0; j !== j1; ++j) {\n\t\t\t\tk = Zj[j];\n\t\t\t\txk = x[k];\n\t\t\t\tyk = y[k];\n\t\t\t\tzk = fun(xk, yk);\n\t\t\t\tZv[j] = zk;\n\t\t\t}\n\t\t\tj0 = Xi[i];\n\t\t\tj1 = Xi[i + 1];\n\t\t\tfor (j = j0; j !== j1; ++j) x[Xj[j]] = 0;\n\t\t\tj0 = Yi[i];\n\t\t\tj1 = Yi[i + 1];\n\t\t\tfor (j = j0; j !== j1; ++j) y[Yj[j]] = 0;\n\t\t}\n\t\treturn new Sparse({\n\t\t\tcol: Zi,\n\t\t\trow: Zj,\n\t\t\tval: Zv,\n\t\t})\n\t}\n}"
   },
   {
-    "__docId__": 279,
+    "__docId__": 278,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -8254,7 +8227,7 @@
     "generator": false
   },
   {
-    "__docId__": 280,
+    "__docId__": 279,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -8267,7 +8240,7 @@
     "content": "\nimport pointwise from './pointwise'\nimport spPointwise from './spPointwise'\nimport Sparse from './Sparse'\n\nconst sqrt = pointwise(Math.sqrt)\nconst ssqrt = spPointwise(Math.sqrt)\n\nfunction csqrt(x) {\n  throw new Error('mathlab.sqrt: no sqrt for complex number')\n}\n\n/**\n * Pointwise Math.sqrt(x)\n * \n * @export\n * @param {Number|Array|Complex|Sparse} m\n * @returns {Number|Array|Complex|Sparse}\n * @example \n * \n * sqrt(1)\n * // returns Math.sqrt(1)\n * sqrt([1, 2])\n * // returns [Math.sqrt(1), Math.sqrt(2)]\n * sqrt([[1,2],[1,3]])\n * // returns [ [Math.sqrt(1), Math.sqrt(2)], [Math.sqrt(1), Math.sqrt(3)] ]\n */\nexport default function (m) {\n  switch (m.constructor.name) {\n    case 'Complex':\n      return csqrt(m);\n    case 'Sparse':\n      return ssqrt(m);\n    default:\n      return sqrt(m);\n  }\n}\n"
   },
   {
-    "__docId__": 281,
+    "__docId__": 280,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -8288,7 +8261,7 @@
     }
   },
   {
-    "__docId__": 282,
+    "__docId__": 281,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -8309,7 +8282,7 @@
     }
   },
   {
-    "__docId__": 283,
+    "__docId__": 282,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -8334,7 +8307,7 @@
     "generator": false
   },
   {
-    "__docId__": 284,
+    "__docId__": 283,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -8389,7 +8362,7 @@
     "generator": false
   },
   {
-    "__docId__": 285,
+    "__docId__": 284,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -8402,7 +8375,7 @@
     "content": "import pointwise2 from './pointwise2'\nimport spPointwise2 from './spPointwise2'\nimport Complex from './Complex'\nimport neg from './neg'\n\nconst sub = pointwise2((x, y) => x - y)\nconst ssub = spPointwise2((x, y) => x - y)\n\nfunction csub(x, y) {\n  if (!(y instanceof Complex)) { y = new Complex(y); }\n  if (x.im) {\n    if (y.im) {\n      return new Complex(sub(x.re, y.re), sub(x.im, y.im));\n    }\n    return new Complex(sub(x.re, y.re), x.im);\n  }\n  if (y.im) {\n    return new Complex(sub(x.re, y.re), neg(y.im));\n  }\n  return new Complex(sub(x.re, y.re));\n}\n\n\n/**\n * Pointwise sub\n * \n * @export\n * @param {Number|Array|Complex|Sparse} m1\n * @param {Number|Array|Complex|Sparse} m2\n * @returns {Number|Array|Complex|Sparse}\n * @example \n * \n * sub(1, 2)\n * // returns 1 - 2\n * sub([1, 2], [2, 2])\n * // returns [1 - 2, 2 - 2]\n * sub([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [2 - 2, 1 - 2], [1 - 2, 2 - 2] ]\n */\nexport default function (m1, m2) {\n  switch (m1.constructor.name) {\n    case 'Complex':\n      return csub(m1, m2);\n    case 'Sparse':\n      return ssub(m1, m2);\n    default:\n      return sub(m1, m2);\n  }\n}"
   },
   {
-    "__docId__": 286,
+    "__docId__": 285,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -8423,7 +8396,7 @@
     }
   },
   {
-    "__docId__": 287,
+    "__docId__": 286,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -8444,7 +8417,7 @@
     }
   },
   {
-    "__docId__": 288,
+    "__docId__": 287,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -8480,7 +8453,7 @@
     "generator": false
   },
   {
-    "__docId__": 289,
+    "__docId__": 288,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -8548,7 +8521,7 @@
     "generator": false
   },
   {
-    "__docId__": 290,
+    "__docId__": 289,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -8561,7 +8534,7 @@
     "content": "import dim from './dim'\n\nexport default function sup(x, s, k) {\n  var accum = -Infinity, max = Math.max;\n  if (typeof x !== \"object\") { \n    xi = x;\n    accum = max(accum, xi);;\n    return accum; \n\t}\n  if (typeof s === \"undefined\") s = dim(x);\n  if (typeof k === \"undefined\") k = 0;\n  if (k === s.length - 1) return supV(x);\n  var xi, n = x.length, i;\n  for (i = n - 1; i !== -1; --i) { \n\t\txi = arguments.callee(x[i]);\n    accum = max(accum, xi);\n\t}\n  return accum; \n}\n\nfunction supV(x) {\n\tvar n = x.length;\n\tvar i,xi;\n\tvar accum = -Infinity, max = Math.max;;\n\tfor(i=n-1;i!==-1;--i) { \n\t\t\txi = x[i];\n\t\t\taccum = max(accum,xi);;\n\t}\n\treturn accum;\n}\n"
   },
   {
-    "__docId__": 291,
+    "__docId__": 290,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -8603,7 +8576,7 @@
     "generator": false
   },
   {
-    "__docId__": 292,
+    "__docId__": 291,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -8633,7 +8606,7 @@
     "generator": false
   },
   {
-    "__docId__": 293,
+    "__docId__": 292,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -8646,7 +8619,7 @@
     "content": "\nimport pointwise from './pointwise'\nimport spPointwise from './spPointwise'\nimport Sparse from './Sparse'\n\nconst tan = pointwise(Math.tan)\nconst stan = spPointwise(Math.tan)\n\nfunction ctan(x) {\n  // TODO\n  throw new Error('mathlab.tan: no tan for complex number')\n}\n\n\n/**\n * Pointwise Math.tan(x)\n * \n * @export\n * @param {Number|Array|Complex|Sparse} m\n * @returns {Number|Array|Complex|Sparse}\n * @example \n * \n * tan(1)\n * // returns Math.tan(1)\n * tan([1, 2])\n * // returns [Math.tan(1), Math.tan(2)]\n * tan([[1,2],[1,3]])\n * // returns [ [Math.tan(1), Math.tan(2)], [Math.tan(1), Math.tan(3)] ]\n */\nexport default function (m) {\n  switch (m.constructor.name) {\n    case 'Complex':\n      return ctan(m);\n    case 'Sparse':\n      return stan(m);\n    default:\n      return tan(m);\n  }\n}\n"
   },
   {
-    "__docId__": 294,
+    "__docId__": 293,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -8667,7 +8640,7 @@
     }
   },
   {
-    "__docId__": 295,
+    "__docId__": 294,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -8688,7 +8661,7 @@
     }
   },
   {
-    "__docId__": 296,
+    "__docId__": 295,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -8713,7 +8686,7 @@
     "generator": false
   },
   {
-    "__docId__": 297,
+    "__docId__": 296,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -8768,7 +8741,7 @@
     "generator": false
   },
   {
-    "__docId__": 298,
+    "__docId__": 297,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -8781,7 +8754,7 @@
     "content": "import mul from './mul'\nimport dim from './dim'\n\n/**\n * Tensor product ret[i][j] = x[i]*y[j]\n * \n * @export\n * @param {Array|Number} x\n * @param {Array|Number} y\n * @returns {Array|Number}\n * @example \n * \n * tensor([1,2],[3,4])\n * // [[1,4],\n * //  [6,8]]\n */\nexport default function tensor(x,y) {\n    if(typeof x === \"number\" || typeof y === \"number\") return mul(x,y);\n    var s1 = dim(x), s2 = dim(y);\n    if(s1.length !== 1 || s2.length !== 1) {\n        throw new Error('Mathlab.tensor: tensor product is only defined for vectors');\n    }\n    var m = s1[0], n = s2[0], A = Array(m), Ai, i,j,xi;\n    for(i=m-1;i>=0;i--) {\n        Ai = Array(n);\n        xi = x[i];\n        for(j=n-1;j>=3;--j) {\n            Ai[j] = xi * y[j];\n            --j;\n            Ai[j] = xi * y[j];\n            --j;\n            Ai[j] = xi * y[j];\n            --j;\n            Ai[j] = xi * y[j];\n        }\n        while(j>=0) { Ai[j] = xi * y[j]; --j; }\n        A[i] = Ai;\n    }\n    return A;\n}"
   },
   {
-    "__docId__": 299,
+    "__docId__": 298,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -8843,7 +8816,7 @@
     "generator": false
   },
   {
-    "__docId__": 300,
+    "__docId__": 299,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -8856,7 +8829,7 @@
     "content": "import Complex from './Complex'\n\n/**\n * Matrix transpose\n * \n * @export\n * @param {Array} x\n * @returns {Array}\n * @example \n * \n * transpose([[1,2,3],[4,5,6]])\n * //[[1,4],\n * // [2,5],\n * // [3,6]]\n */\nexport default function (x) {\n  switch (x.constructor.name) {\n    case 'Complex':\n      return ctranspose(x);\n    case 'Sparse':\n      return stranspose(x);\n    default:\n      return transpose(x);\n  }\n}\n\nfunction ctranspose(x) {\n  // TODO: Check if is matrix\n    var t = transpose;\n    if (x.im) {\n      return new Complex(t(x.re), t(x.im));\n    }\n    return new Complex(t(x.re));\n}\n\nfunction stranspose(x) {\n  throw new Error('mathlab.transpose: transpose for sparse matrix not exist')\n}\n\nfunction transpose (x) {\n  var i,j,m = x.length,n = x[0].length, ret = Array(n),A0,A1,Bj\n  for (j = 0;j < n;j++) ret[j] = Array(m)\n  for (i = m - 1;i >= 1;i -= 2) {\n    A1 = x[i]\n    A0 = x[i - 1]\n    for (j = n - 1;j >= 1;--j) {\n      Bj = ret[j]; Bj[i] = A1[j]; Bj[i - 1] = A0[j]\n      --j\n      Bj = ret[j]; Bj[i] = A1[j]; Bj[i - 1] = A0[j]\n    }\n    if (j === 0) {\n      Bj = ret[0]; Bj[i] = A1[0]; Bj[i - 1] = A0[0]\n    }\n  }\n  if (i === 0) {\n    A0 = x[0]\n    for (j = n - 1;j >= 1;--j) {\n      ret[j][0] = A0[j]\n      --j\n      ret[j][0] = A0[j]\n    }\n    if (j === 0) { ret[0][0] = A0[0]; }\n  }\n  return ret\n}\n"
   },
   {
-    "__docId__": 301,
+    "__docId__": 300,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -8905,7 +8878,7 @@
     "generator": false
   },
   {
-    "__docId__": 302,
+    "__docId__": 301,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -8935,7 +8908,7 @@
     "generator": false
   },
   {
-    "__docId__": 303,
+    "__docId__": 302,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -8960,7 +8933,7 @@
     "generator": false
   },
   {
-    "__docId__": 304,
+    "__docId__": 303,
     "kind": "function",
     "static": true,
     "variation": null,
@@ -8990,7 +8963,7 @@
     "generator": false
   },
   {
-    "__docId__": 306,
+    "__docId__": 305,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9003,7 +8976,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 307,
+    "__docId__": 306,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9016,7 +8989,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 308,
+    "__docId__": 307,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9029,7 +9002,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 309,
+    "__docId__": 308,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9042,7 +9015,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 310,
+    "__docId__": 309,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9055,7 +9028,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 311,
+    "__docId__": 310,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9068,7 +9041,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 312,
+    "__docId__": 311,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9081,7 +9054,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 313,
+    "__docId__": 312,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9094,7 +9067,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 314,
+    "__docId__": 313,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9107,7 +9080,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 315,
+    "__docId__": 314,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9120,7 +9093,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 316,
+    "__docId__": 315,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9133,7 +9106,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 317,
+    "__docId__": 316,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9146,7 +9119,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 318,
+    "__docId__": 317,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9159,7 +9132,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 319,
+    "__docId__": 318,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9172,7 +9145,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 320,
+    "__docId__": 319,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9185,7 +9158,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 321,
+    "__docId__": 320,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9198,7 +9171,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 322,
+    "__docId__": 321,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9211,7 +9184,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 323,
+    "__docId__": 322,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9224,7 +9197,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 324,
+    "__docId__": 323,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9237,7 +9210,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 325,
+    "__docId__": 324,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9250,7 +9223,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 326,
+    "__docId__": 325,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9263,7 +9236,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 327,
+    "__docId__": 326,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9276,7 +9249,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 328,
+    "__docId__": 327,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9289,7 +9262,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 329,
+    "__docId__": 328,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9302,7 +9275,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 330,
+    "__docId__": 329,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9315,7 +9288,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 331,
+    "__docId__": 330,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9328,7 +9301,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 332,
+    "__docId__": 331,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9341,7 +9314,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 333,
+    "__docId__": 332,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9354,7 +9327,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 334,
+    "__docId__": 333,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9367,7 +9340,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 335,
+    "__docId__": 334,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9380,7 +9353,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 336,
+    "__docId__": 335,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9393,7 +9366,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 337,
+    "__docId__": 336,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9406,7 +9379,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 338,
+    "__docId__": 337,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9419,7 +9392,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 339,
+    "__docId__": 338,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9432,7 +9405,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 340,
+    "__docId__": 339,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9445,7 +9418,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 341,
+    "__docId__": 340,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9458,7 +9431,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 342,
+    "__docId__": 341,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9471,7 +9444,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 343,
+    "__docId__": 342,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9484,7 +9457,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 344,
+    "__docId__": 343,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9497,7 +9470,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 345,
+    "__docId__": 344,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9510,7 +9483,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 346,
+    "__docId__": 345,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9523,7 +9496,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 347,
+    "__docId__": 346,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9536,7 +9509,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 348,
+    "__docId__": 347,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9549,7 +9522,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 349,
+    "__docId__": 348,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9562,7 +9535,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 350,
+    "__docId__": 349,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9575,7 +9548,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 351,
+    "__docId__": 350,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9588,7 +9561,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 352,
+    "__docId__": 351,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9601,7 +9574,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 354,
+    "__docId__": 353,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9614,7 +9587,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 355,
+    "__docId__": 354,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9627,7 +9600,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 356,
+    "__docId__": 355,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9640,7 +9613,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 357,
+    "__docId__": 356,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9653,7 +9626,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 358,
+    "__docId__": 357,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9666,7 +9639,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 359,
+    "__docId__": 358,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9679,7 +9652,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 360,
+    "__docId__": 359,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -9692,7 +9665,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 361,
+    "__docId__": 360,
     "kind": "external",
     "static": true,
     "variation": null,

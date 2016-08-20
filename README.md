@@ -2,16 +2,7 @@
 
 Lodash like math lab in javascript, focusing on matrix manipulation.
 
-> Start as a refactoring of [numeric](https://github.com/sloisel/numeric)
-
 [![npm](https://nodei.co/npm/mathlab.png)](https://www.npmjs.com/package/mathlab)
-
-# Features
-
-- **Modulize**: only import the function you need.
-- **Easy to use**: no extra concepts to grasp(1D Array as vector and 2D Array as matrix)
-- **Functional**: no side effact on input data and the outside world
-- **Multifunctional**: Support `sparse` and `complex` matrix manipulation; `FFT`; `eigenvectors & eigenvalues of matrix`; and so on
 
 # Install
 
@@ -31,6 +22,13 @@ const x = [7,8,9]
 // calculate dot product
 dot(A, x) // [50,122]
 ```
+
+# Features
+
+- **Modulize**: only import the function you need.
+- **Easy to use**: no extra concepts to grasp(1D Array as vector and 2D Array as matrix)
+- **Functional**: no side effact on input data and the outside world
+- **Multifunctional**: Support `sparse` and `complex` matrix manipulation; `FFT`; `eigenvectors & eigenvalues of matrix`; and so on
 
 # Introduction to functions
 
@@ -165,6 +163,10 @@ const z = new Sparse([[1,0,0],[5,2,0],[1,0,0]]) //  { col: [ 0, 3, 4, 4 ], row: 
 z.toFull() // [[1,0,0],[5,2,0],[1,0,0]]
 ```
 
+# Thanks
+
+> **Start as a refactoring of [numeric](https://github.com/sloisel/numeric)**
+
 
 [pointwise]: http://www.timqian.com/mathlab/function/index.html#static-function-pointwise
 [det]: http://www.timqian.com/mathlab/function/index.html#static-function-det
@@ -248,3 +250,4 @@ z.toFull() // [[1,0,0],[5,2,0],[1,0,0]]
 [tan]: http://www.timqian.com/mathlab/function/index.html#static-function-tan
 [xor]: http://www.timqian.com/mathlab/function/index.html#static-function-xor
 [epsilon]: http://www.timqian.com/mathlab/function/index.html#static-function-epsilon
+

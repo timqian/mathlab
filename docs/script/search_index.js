@@ -762,12 +762,6 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/complex.js~complex#identity",
-    "class/src/Complex.js~Complex.html#instance-method-identity",
-    "src/Complex.js~Complex#identity",
-    "method"
-  ],
-  [
     "src/complex.js~complex#im",
     "class/src/Complex.js~Complex.html#instance-member-im",
     "src/Complex.js~Complex#im",
