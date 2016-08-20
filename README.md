@@ -165,7 +165,7 @@ z.toFull() // [[1,0,0],[5,2,0],[1,0,0]]
 
 # Thanks
 
-> **Start as a refactoring of [numeric](https://github.com/sloisel/numeric)**
+> **Mathlab start as a refactoring of [numeric](https://github.com/sloisel/numeric)**
 
 
 [pointwise]: http://www.timqian.com/mathlab/function/index.html#static-function-pointwise
