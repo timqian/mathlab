@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">src/rrshift.js | API Document</title>
+  <title data-ice="title">src/sup.js | API Document</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -103,44 +103,38 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/rrshift.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import pointwise2 from &apos;./pointwise2&apos;
-import spPointwise2 from &apos;./spPointwise2&apos;
+<div class="content" data-ice="content"><h1 data-ice="title">src/sup.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import dim from &apos;./dim&apos;
 
-const rrshift = pointwise2((x, y) =&gt; x &gt;&gt;&gt; y)
-const srrshift = spPointwise2((x, y) =&gt; x &gt;&gt;&gt; y)
-
-function crrshift(x, y) {
-  throw new Error(&apos;mathlab.rrshift: no rrshift for complex number&apos;)
+export default function sup(x, s, k) {
+  var accum = -Infinity, max = Math.max;
+  if (typeof x !== &quot;object&quot;) { 
+    xi = x;
+    accum = max(accum, xi);;
+    return accum; 
+	}
+  if (typeof s === &quot;undefined&quot;) s = dim(x);
+  if (typeof k === &quot;undefined&quot;) k = 0;
+  if (k === s.length - 1) return supV(x);
+  var xi, n = x.length, i;
+  for (i = n - 1; i !== -1; --i) { 
+		xi = arguments.callee(x[i]);
+    accum = max(accum, xi);
+	}
+  return accum; 
 }
 
-
-/**
- * Pointwise rrshift
- * 
- * @export
- * @param {Number|Array|Complex|Sparse} m1
- * @param {Number|Array|Complex|Sparse} m2
- * @returns {Number|Array|Complex|Sparse}
- * @example 
- * 
- * rrshift(1, 2)
- * // returns 1 &gt;&gt;&gt; 2
- * rrshift([1, 2], [2, 2])
- * // returns [1 &gt;&gt;&gt; 2, 2 &gt;&gt;&gt; 2]
- * rrshift([[2,1], [1,2]], [[2, 2], [2, 2]]))
- * // returns [ [2 &gt;&gt;&gt; 2, 1 &gt;&gt;&gt; 2], [1 &gt;&gt;&gt; 2, 2 &gt;&gt;&gt; 2] ]
- */
-export default function (m1, m2) {
-  switch (m1.constructor.name) {
-    case &apos;Complex&apos;:
-      return crrshift(m1, m2);
-    case &apos;Sparse&apos;:
-      return srrshift(m1, m2);
-    default:
-      return rrshift(m1, m2);
-  }
-}</code></pre>
+function supV(x) {
+	var n = x.length;
+	var i,xi;
+	var accum = -Infinity, max = Math.max;;
+	for(i=n-1;i!==-1;--i) { 
+			xi = x[i];
+			accum = max(accum,xi);;
+	}
+	return accum;
+}
+</code></pre>
 
 </div>
 

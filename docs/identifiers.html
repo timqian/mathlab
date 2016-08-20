@@ -80,6 +80,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-not">not</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-or">or</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-pointwise">pointwise</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-pointwise2">pointwise2</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-pow">pow</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-random">random</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-reciprocal">reciprocal</a></span></span></li>
@@ -90,8 +91,11 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-same">same</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setBlock">setBlock</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-sin">sin</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-spPointwise">spPointwise</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-spPointwise2">spPointwise2</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-sqrt">sqrt</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-sub">sub</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-sup">sup</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-tan">tan</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-tensor">tensor</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-transpose">transpose</a></span></span></li>
@@ -173,7 +177,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-abs">abs</a></span></span><span data-ice="signature">(m: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-abs">abs</a></span></span><span data-ice="signature">(m: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span>
         </p>
       </div>
       <div>
@@ -199,7 +203,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-acos">acos</a></span></span><span data-ice="signature">(m: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span>Vector</span> | <span>Multidimensional array</span> | <span>Matirx</span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-acos">acos</a></span></span><span data-ice="signature">(m: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span>
         </p>
       </div>
       <div>
@@ -225,7 +229,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-add">add</a></span></span><span data-ice="signature">(m1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>, m2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-add">add</a></span></span><span data-ice="signature">(m1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>, m2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span>
         </p>
       </div>
       <div>
@@ -251,7 +255,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-and">and</a></span></span><span data-ice="signature">(m1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>, m2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-and">and</a></span></span><span data-ice="signature">(m1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>, m2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span>
         </p>
       </div>
       <div>
@@ -277,7 +281,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-asin">asin</a></span></span><span data-ice="signature">(m: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-asin">asin</a></span></span><span data-ice="signature">(m: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span>
         </p>
       </div>
       <div>
@@ -303,7 +307,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-atan">atan</a></span></span><span data-ice="signature">(m: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-atan">atan</a></span></span><span data-ice="signature">(m: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span>
         </p>
       </div>
       <div>
@@ -329,7 +333,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-atan2">atan2</a></span></span><span data-ice="signature">(m1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>, m2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-atan2">atan2</a></span></span><span data-ice="signature">(m1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>, m2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span>
         </p>
       </div>
       <div>
@@ -355,7 +359,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-band">band</a></span></span><span data-ice="signature">(m1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>, m2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-band">band</a></span></span><span data-ice="signature">(m1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>, m2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span>
         </p>
       </div>
       <div>
@@ -381,7 +385,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-bnot">bnot</a></span></span><span data-ice="signature">(m: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-bnot">bnot</a></span></span><span data-ice="signature">(m: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span>
         </p>
       </div>
       <div>
@@ -407,7 +411,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-bor">bor</a></span></span><span data-ice="signature">(m1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>, m2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-bor">bor</a></span></span><span data-ice="signature">(m1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>, m2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span>
         </p>
       </div>
       <div>
@@ -433,7 +437,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-bxor">bxor</a></span></span><span data-ice="signature">(m1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>, m2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-bxor">bxor</a></span></span><span data-ice="signature">(m1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>, m2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span>
         </p>
       </div>
       <div>
@@ -459,7 +463,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-ceil">ceil</a></span></span><span data-ice="signature">(m: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-ceil">ceil</a></span></span><span data-ice="signature">(m: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span>
         </p>
       </div>
       <div>
@@ -485,7 +489,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-clone">clone</a></span></span><span data-ice="signature">(m: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-clone">clone</a></span></span><span data-ice="signature">(m: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span>
         </p>
       </div>
       <div>
@@ -511,7 +515,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-cos">cos</a></span></span><span data-ice="signature">(m: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-cos">cos</a></span></span><span data-ice="signature">(m: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span>
         </p>
       </div>
       <div>
@@ -615,7 +619,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-div">div</a></span></span><span data-ice="signature">(m1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>, m2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-div">div</a></span></span><span data-ice="signature">(m1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>, m2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span>
         </p>
       </div>
       <div>
@@ -692,7 +696,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-eq">eq</a></span></span><span data-ice="signature">(m1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>, m2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-eq">eq</a></span></span><span data-ice="signature">(m1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>, m2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span>
         </p>
       </div>
       <div>
@@ -718,7 +722,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-exp">exp</a></span></span><span data-ice="signature">(m: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-exp">exp</a></span></span><span data-ice="signature">(m: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span>
         </p>
       </div>
       <div>
@@ -770,7 +774,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-floor">floor</a></span></span><span data-ice="signature">(m: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-floor">floor</a></span></span><span data-ice="signature">(m: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span>
         </p>
       </div>
       <div>
@@ -796,7 +800,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-geq">geq</a></span></span><span data-ice="signature">(m1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>, m2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-geq">geq</a></span></span><span data-ice="signature">(m1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>, m2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span>
         </p>
       </div>
       <div>
@@ -874,7 +878,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-gt">gt</a></span></span><span data-ice="signature">(m1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>, m2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-gt">gt</a></span></span><span data-ice="signature">(m1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>, m2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span>
         </p>
       </div>
       <div>
@@ -978,7 +982,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-leq">leq</a></span></span><span data-ice="signature">(m1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>, m2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-leq">leq</a></span></span><span data-ice="signature">(m1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>, m2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span>
         </p>
       </div>
       <div>
@@ -1030,7 +1034,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-log">log</a></span></span><span data-ice="signature">(m: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-log">log</a></span></span><span data-ice="signature">(m: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span>
         </p>
       </div>
       <div>
@@ -1056,7 +1060,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-lshift">lshift</a></span></span><span data-ice="signature">(m1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>, m2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-lshift">lshift</a></span></span><span data-ice="signature">(m1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>, m2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span>
         </p>
       </div>
       <div>
@@ -1082,7 +1086,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-lt">lt</a></span></span><span data-ice="signature">(m1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>, m2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-lt">lt</a></span></span><span data-ice="signature">(m1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>, m2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span>
         </p>
       </div>
       <div>
@@ -1108,7 +1112,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-mod">mod</a></span></span><span data-ice="signature">(m1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>, m2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-mod">mod</a></span></span><span data-ice="signature">(m1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>, m2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span>
         </p>
       </div>
       <div>
@@ -1134,7 +1138,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-mul">mul</a></span></span><span data-ice="signature">(m1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>, m2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-mul">mul</a></span></span><span data-ice="signature">(m1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>, m2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span>
         </p>
       </div>
       <div>
@@ -1160,7 +1164,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-neg">neg</a></span></span><span data-ice="signature">(m: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-neg">neg</a></span></span><span data-ice="signature">(m: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span>
         </p>
       </div>
       <div>
@@ -1212,7 +1216,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-neq">neq</a></span></span><span data-ice="signature">(m1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>, m2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-neq">neq</a></span></span><span data-ice="signature">(m1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>, m2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span>
         </p>
       </div>
       <div>
@@ -1264,7 +1268,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-not">not</a></span></span><span data-ice="signature">(m: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-not">not</a></span></span><span data-ice="signature">(m: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span>
         </p>
       </div>
       <div>
@@ -1316,7 +1320,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-or">or</a></span></span><span data-ice="signature">(m1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>, m2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-or">or</a></span></span><span data-ice="signature">(m1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>, m2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span>
         </p>
       </div>
       <div>
@@ -1368,7 +1372,33 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-pow">pow</a></span></span><span data-ice="signature">(m1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>, m2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-pointwise2">pointwise2</a></span></span><span data-ice="signature">(fun: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Create a pointwise function of two arguments</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="function/index.html#static-function-pow">pow</a></span></span><span data-ice="signature">(m1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>, m2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span>
         </p>
       </div>
       <div>
@@ -1471,7 +1501,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-round">round</a></span></span><span data-ice="signature">(m: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-round">round</a></span></span><span data-ice="signature">(m: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span>
         </p>
       </div>
       <div>
@@ -1497,7 +1527,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-rrshift">rrshift</a></span></span><span data-ice="signature">(m1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>, m2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-rrshift">rrshift</a></span></span><span data-ice="signature">(m1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>, m2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span>
         </p>
       </div>
       <div>
@@ -1523,7 +1553,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-rshift">rshift</a></span></span><span data-ice="signature">(m1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>, m2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-rshift">rshift</a></span></span><span data-ice="signature">(m1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>, m2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span>
         </p>
       </div>
       <div>
@@ -1601,7 +1631,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-sin">sin</a></span></span><span data-ice="signature">(m: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-sin">sin</a></span></span><span data-ice="signature">(m: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span>
         </p>
       </div>
       <div>
@@ -1627,7 +1657,58 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-sqrt">sqrt</a></span></span><span data-ice="signature">(m: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-spPointwise">spPointwise</a></span></span><span data-ice="signature">(fun: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Function</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Create pointwise function for sparse matrix operating on none zero arguments</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="function/index.html#static-function-spPointwise2">spPointwise2</a></span></span><span data-ice="signature">(fun: <span>*</span>): <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="function/index.html#static-function-sqrt">sqrt</a></span></span><span data-ice="signature">(m: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span>
         </p>
       </div>
       <div>
@@ -1653,7 +1734,7 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-sub">sub</a></span></span><span data-ice="signature">(m1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>, m2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-sub">sub</a></span></span><span data-ice="signature">(m1: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>, m2: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span>
         </p>
       </div>
       <div>
@@ -1679,7 +1760,32 @@
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="function/index.html#static-function-tan">tan</a></span></span><span data-ice="signature">(m: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span></span>
+           <span data-ice="name"><span><a href="function/index.html#static-function-sup">sup</a></span></span><span data-ice="signature">(x: <span>*</span>, s: <span>*</span>, k: <span>*</span>): <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+           <span data-ice="name"><span><a href="function/index.html#static-function-tan">tan</a></span></span><span data-ice="signature">(m: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span> | <span><a href="class/src/Complex.js~Complex.html">Complex</a></span> | <span><a href="class/src/Sparse.js~Sparse.html">Sparse</a></span></span>
         </p>
       </div>
       <div>

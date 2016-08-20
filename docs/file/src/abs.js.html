@@ -80,6 +80,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-not">not</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-or">or</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-pointwise">pointwise</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-pointwise2">pointwise2</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-pow">pow</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-random">random</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-reciprocal">reciprocal</a></span></span></li>
@@ -90,8 +91,11 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-same">same</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setBlock">setBlock</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-sin">sin</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-spPointwise">spPointwise</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-spPointwise2">spPointwise2</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-sqrt">sqrt</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-sub">sub</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-sup">sup</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-tan">tan</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-tensor">tensor</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-transpose">transpose</a></span></span></li>
@@ -102,13 +106,16 @@
 <div class="content" data-ice="content"><h1 data-ice="title">src/abs.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">
 import pointwise from &apos;./pointwise&apos;
+import spPointwise from &apos;./spPointwise&apos;
 import Complex from &apos;./Complex&apos;
 import Sparse from &apos;./Sparse&apos;
 import mul from &apos;./mul&apos;
-import sqrt from &apos;./sqrt&apos;;
-import add from &apos;./add&apos;;
+import sqrt from &apos;./sqrt&apos;
+import add from &apos;./add&apos;
+
 
 const abs = pointwise(Math.abs)
+const sabs = spPointwise(Math.abs)
 
 function cabs(x) {
   if (x.im) {
@@ -117,28 +124,17 @@ function cabs(x) {
   return new Complex(abs(x.re));
 }
 
-function sabs(x) {
-  return new Sparse({
-    col: x.col.slice(), // copy the array
-    row: x.row.slice(),
-    val: abs(x.val),
-  })
-}
-
 /**
  * Pointwise Math.abs(x)
  * 
  * @export
- * @param {Number|Array} m
- * @returns {Number|Array}
+ * @param {Number|Array|Complex|Sparse} m
+ * @returns {Number|Array|Complex|Sparse}
  * @example 
  * 
- * abs(1)
- * // returns Math.abs(1)
- * abs([1, 2])
- * // returns [Math.abs(1), Math.abs(2)]
- * abs([[1,2],[1,3]])
- * // returns [ [Math.abs(1), Math.abs(2)], [Math.abs(1), Math.abs(3)] ]
+ * abs(-1) // 1
+ * abs([1, -2]) // [1, 2]
+ * abs([[-1,2],[1,-3]]) // [[1,2],[1,3]]
  */
 export default function (m) {
   switch (m.constructor.name) {

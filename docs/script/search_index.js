@@ -282,6 +282,12 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "mathlab/src/pointwise2.js~pointwise2",
+    "function/index.html#static-function-pointwise2",
+    "<span>pointwise2</span> <span class=\"search-result-import-path\">mathlab/src/pointwise2.js</span>",
+    "function"
+  ],
+  [
     "mathlab/src/pointwise.js~pointwise",
     "function/index.html#static-function-pointwise",
     "<span>pointwise</span> <span class=\"search-result-import-path\">mathlab/src/pointwise.js</span>",
@@ -348,6 +354,18 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "mathlab/src/sppointwise2.js~sppointwise2",
+    "function/index.html#static-function-spPointwise2",
+    "<span>spPointwise2</span> <span class=\"search-result-import-path\">mathlab/src/spPointwise2.js</span>",
+    "function"
+  ],
+  [
+    "mathlab/src/sppointwise.js~sppointwise",
+    "function/index.html#static-function-spPointwise",
+    "<span>spPointwise</span> <span class=\"search-result-import-path\">mathlab/src/spPointwise.js</span>",
+    "function"
+  ],
+  [
     "mathlab/src/sqrt.js~sqrt",
     "function/index.html#static-function-sqrt",
     "<span>sqrt</span> <span class=\"search-result-import-path\">mathlab/src/sqrt.js</span>",
@@ -357,6 +375,12 @@ window.esdocSearchIndex = [
     "mathlab/src/sub.js~sub",
     "function/index.html#static-function-sub",
     "<span>sub</span> <span class=\"search-result-import-path\">mathlab/src/sub.js</span>",
+    "function"
+  ],
+  [
+    "mathlab/src/sup.js~sup",
+    "function/index.html#static-function-sup",
+    "<span>sup</span> <span class=\"search-result-import-path\">mathlab/src/sup.js</span>",
     "function"
   ],
   [
@@ -1164,6 +1188,18 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/sppointwise.js",
+    "file/src/spPointwise.js.html",
+    "src/spPointwise.js",
+    "file"
+  ],
+  [
+    "src/sppointwise2.js",
+    "file/src/spPointwise2.js.html",
+    "src/spPointwise2.js",
+    "file"
+  ],
+  [
     "src/sqrt.js",
     "file/src/sqrt.js.html",
     "src/sqrt.js",
@@ -1173,6 +1209,12 @@ window.esdocSearchIndex = [
     "src/sub.js",
     "file/src/sub.js.html",
     "src/sub.js",
+    "file"
+  ],
+  [
+    "src/sup.js",
+    "file/src/sup.js.html",
+    "src/sup.js",
     "file"
   ],
   [

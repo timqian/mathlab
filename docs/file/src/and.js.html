@@ -80,6 +80,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-not">not</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-or">or</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-pointwise">pointwise</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-pointwise2">pointwise2</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-pow">pow</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-random">random</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-reciprocal">reciprocal</a></span></span></li>
@@ -90,8 +91,11 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-same">same</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setBlock">setBlock</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-sin">sin</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-spPointwise">spPointwise</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-spPointwise2">spPointwise2</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-sqrt">sqrt</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-sub">sub</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-sup">sup</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-tan">tan</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-tensor">tensor</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-transpose">transpose</a></span></span></li>
@@ -100,34 +104,28 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/and.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import pointwise from &apos;./pointwise&apos;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import pointwise2 from &apos;./pointwise2&apos;
+import spPointwise2 from &apos;./spPointwise2&apos;
 
-const and = pointwise((x, y) =&gt; x &amp;&amp; y);
+const and = pointwise2((x, y) =&gt; x &amp;&amp; y)
+const sand = spPointwise2((x, y) =&gt; x &amp;&amp; y)
 
 function cand(x, y) {
   throw new Error(&apos;mathlab.and: no and for complex number&apos;)
-}
-
-function sand(x, y) {
-  // TODO
-  throw new Error(&apos;mathlab.and: and for sparse matrix not exist&apos;)
 }
 
 /**
  * Pointwise and
  * 
  * @export
- * @param {Number|Array} m1
- * @param {Number|Array} m2
- * @returns {Number|Array}
+ * @param {Number|Array|Complex|Sparse} m1
+ * @param {Number|Array|Complex|Sparse} m2
+ * @returns {Number|Array|Complex|Sparse}
  * @example 
  * 
- * and(1, 2)
- * // returns 1 &amp;&amp; 2
- * and([1, 2], [2, 2])
- * // returns [1 &amp;&amp; 2, 2 &amp;&amp; 2]
- * and([[2,1], [1,2]], [[2, 2], [2, 2]]))
- * // returns [ [2 &amp;&amp; 2, 1 &amp;&amp; 2], [1 &amp;&amp; 2, 2 &amp;&amp; 2] ]
+ * and(1, 0) // 0
+ * and([1, 1], [1, 0]) // [1, 0]
+ * and([[1,1], [1,1]], [[1,0], [0,0]])) // [[1,0], [0,0]]
  */
 export default function (m1, m2) {
   switch (m1.constructor.name) {

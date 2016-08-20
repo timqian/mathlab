@@ -80,6 +80,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-not">not</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-or">or</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-pointwise">pointwise</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-pointwise2">pointwise2</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-pow">pow</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-random">random</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-reciprocal">reciprocal</a></span></span></li>
@@ -90,8 +91,11 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-same">same</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setBlock">setBlock</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-sin">sin</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-spPointwise">spPointwise</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-spPointwise2">spPointwise2</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-sqrt">sqrt</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-sub">sub</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-sup">sup</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-tan">tan</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-tensor">tensor</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-transpose">transpose</a></span></span></li>
@@ -99,12 +103,11 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><blockquote>
-<p>Note: Unstable, Developing</p>
+<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="mathlab">mathlab</h1>
+<p>Lodash like math lab in javascript, focusing on matrix manipulation.</p>
+<blockquote>
 <p>Start as a refactoring of <a href="https://github.com/sloisel/numeric">numeric</a></p>
 </blockquote>
-<h1 id="mathlab">mathlab</h1>
-<p>Lodash like math lab in javascript, focusing on matrix manipulation.</p>
 <p><a href="https://www.npmjs.com/package/mathlab"><img src="https://nodei.co/npm/mathlab.png" alt="npm"></a></p>
 <h2 id="features">Features</h2>
 <ul>
@@ -120,19 +123,68 @@
 <pre><code class="lang-js"><code class="source-code prettyprint">import { dot } from &apos;mathlab&apos;
 
 const A = [[1,2,3],
-           [4,5,6]];
-const x = [7,8,9]
-const y = dot(A, x)
+           [4,5,6]]
 
-console.log(y); // [50,122]</code>
+const x = [7,8,9]
+
+// calculate dot product
+dot(A, x) // [50,122]</code>
 </code></pre>
-<h1 id="-documents-wrote-by-human-unfinished-https-github-com-timqian-mathlab-tree-master-doc-readme-"><a href="https://github.com/timqian/mathlab/tree/master/doc#readme">Documents wrote by human(unfinished)</a></h1>
-<h1 id="-documents-generated-from-comments-unfinished-http-timqian-com-mathlab-"><a href="http://timqian.com/mathlab">Documents generated from comments(unfinished)</a></h1>
-<h2 id="tests">Tests</h2>
-<p>To run the test suite, first install the dependencies, then run npm test:</p>
-<pre><code class="lang-bash"><code class="source-code prettyprint">$ npm install
-$ npm test</code>
+<h2 id="introduction-to-functions">Introduction to functions</h2>
+<p>Mathlab is basicly a collection of mathmatic functions which can be applied to numbers, arrays and two self-defined datatype (Complex and Sparse).</p>
+<p>The function can be devide into 5 groups:</p>
+<h3 id="1-math-object-functions">1. Math Object functions</h3>
+<blockquote>
+<p>abs | acos | asin | atan | ceil | cos | exp | floor | log | round | sin | sqrt | tan</p>
+</blockquote>
+<p>The <em>Math</em> object functions have been adapted to work on Arrays , Complex and Sparse Objects</p>
+<h4 id="example">example</h4>
+<pre><code class="lang-js"><code class="source-code prettyprint">import {abs, Complex, Sparse} from &apos;./mathlab&apos;
+
+abs(-1)  // 1
+abs([-1, 2])  // [1, 2]</code>
 </code></pre>
+<h3 id="2-arithmetic-operations">2. Arithmetic operations</h3>
+<blockquote>
+<p>add | sub | mul | div | neg | isFinite | isNaN</p>
+</blockquote>
+<p>The standard arithmetic operations have been vectorized:</p>
+<h4 id="example">example</h4>
+<pre><code class="lang-js"><code class="source-code prettyprint">import { add, Complex } from &apos;mathlab&apos;
+
+add(1, 2) // 3
+add([1,2], 2,2) // [3,4]</code>
+</code></pre>
+<h3 id="3-utility-functions">3. Utility functions</h3>
+<blockquote>
+<p>dim | same | rep | diag | identity | random | linspace</p>
+</blockquote>
+<h4 id="example-dim-">example <code>dim</code></h4>
+<pre><code class="lang-js"><code class="source-code prettyprint">dim(1) // []
+dim([1,2]) // [2]
+dim([[1,2],[2,2],[3,3]]) // [3,2]</code>
+</code></pre>
+<h3 id="4-linear-algebra">4. Linear algebra</h3>
+<blockquote>
+<p>dot | solve | det | inv | norm2 | tensor | eig</p>
+</blockquote>
+<h4 id="example-dot-">example: <code>dot</code></h4>
+<pre><code class="lang-js"><code class="source-code prettyprint">dot([[1, 1], [2, 1]], [1, 2]) // [3, 4]</code>
+</code></pre>
+<h3 id="5-fast-fourier-transforms">5. Fast Fourier Transforms</h3>
+<blockquote>
+<p>fft | ifft</p>
+</blockquote>
+<h4 id="example">example</h4>
+<pre><code class="lang-js"><code class="source-code prettyprint">import {fft, ifft, Complex} from &apos;mathlab&apos;
+
+// {re: [ 15, -5.941, -3.312, -1.688, 0.941], im: [ 40, 0.941, -1.688, -3.312, -5.941]}
+const fftRes = fft(new Complex([1,2,3,4,5],[6,7,8,9,10]))
+
+// {re:[1,2,3,4,5], im:[6,7,8,9,10]}
+ifft(fftRes)</code>
+</code></pre>
+<h2 id="introduction-to-complex-and-sparse">Introduction to Complex and Sparse</h2>
 </div>
 </div>
 

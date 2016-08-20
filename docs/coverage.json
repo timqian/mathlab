@@ -1,7 +1,7 @@
 {
-  "coverage": "75%",
-  "expectCount": 80,
-  "actualCount": 60,
+  "coverage": "73.8%",
+  "expectCount": 84,
+  "actualCount": 62,
   "files": {
     "src/Complex.js": {
       "expectCount": 13,
@@ -259,6 +259,11 @@
       "actualCount": 1,
       "undocumentLines": []
     },
+    "src/pointwise2.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
     "src/pow.js": {
       "expectCount": 1,
       "actualCount": 1,
@@ -311,6 +316,18 @@
       "actualCount": 1,
       "undocumentLines": []
     },
+    "src/spPointwise.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/spPointwise2.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        5
+      ]
+    },
     "src/sqrt.js": {
       "expectCount": 1,
       "actualCount": 1,
@@ -320,6 +337,13 @@
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
+    },
+    "src/sup.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        3
+      ]
     },
     "src/tan.js": {
       "expectCount": 1,

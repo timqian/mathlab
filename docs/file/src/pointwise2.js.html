@@ -80,6 +80,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-not">not</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-or">or</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-pointwise">pointwise</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-pointwise2">pointwise2</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-pow">pow</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-random">random</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-reciprocal">reciprocal</a></span></span></li>
@@ -90,8 +91,11 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-same">same</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setBlock">setBlock</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-sin">sin</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-spPointwise">spPointwise</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-spPointwise2">spPointwise2</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-sqrt">sqrt</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-sub">sub</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-sup">sup</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-tan">tan</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-tensor">tensor</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-transpose">transpose</a></span></span></li>
@@ -100,8 +104,50 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/pointwise2.js</h1>
-<pre class="source-code line-number raw-source-code"></pre>
-<p data-ice="emptySourceCode">Sorry, this documentation does not provide source code.</p>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import dim from &apos;./dim&apos;
+
+/**
+ * Create a pointwise function of two arguments
+ * 
+ * @export
+ * @param {Function} fun
+ * @returns {Function}
+ * @example 
+ * 
+ * function _add (x, y) {
+ *   return x + y
+ * }
+ * const add = pointwise(_add)
+ * add(1, 2)                                // 3
+ * add([1, 2], [1, 2])                      // [2, 4]
+ * add([[1, 2], [1, 2]], [[1, 2], [1, 2]])  //[[2, 4], [2, 4]]
+ */
+export default function pointwise2(fun) {
+  return function(m1, m2) {
+    switch (dim(m1).length) {
+    case 0:
+        return fun(m1, m2)
+    case 1:
+        {
+        if (typeof m2 === &apos;number&apos;) {
+            return m1.map(x =&gt; fun(x, m2))
+        }
+        return m1.map((x, i) =&gt; fun(x, m2[i]))
+        }
+    case 2:
+        {
+        if (typeof m2 === &apos;number&apos;) {
+            return m1.map(mm1 =&gt; mm1.map(x =&gt; fun(x, m2)))
+        }
+        return m1.map((mm1, i) =&gt; mm1.map((x, j) =&gt; fun(x, m2[i][j])))
+        }
+
+    default:
+        throw new Error(&apos;mathlab.pointwise: dimension of given array should &lt;= 2&apos;)
+    }
+}
+}</code></pre>
+
 </div>
 
 <footer class="footer">

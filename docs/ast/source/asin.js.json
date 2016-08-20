@@ -81,10 +81,10 @@
           "type": "ImportDefaultSpecifier",
           "local": {
             "type": "Identifier",
-            "name": "Sparse",
+            "name": "spPointwise",
             "range": [
               44,
-              50
+              55
             ],
             "loc": {
               "start": {
@@ -93,13 +93,13 @@
               },
               "end": {
                 "line": 3,
-                "column": 13
+                "column": 18
               }
             }
           },
           "range": [
             44,
-            50
+            55
           ],
           "loc": {
             "start": {
@@ -108,6 +108,79 @@
             },
             "end": {
               "line": 3,
+              "column": 18
+            }
+          }
+        }
+      ],
+      "source": {
+        "type": "Literal",
+        "value": "./spPointwise",
+        "raw": "'./spPointwise'",
+        "range": [
+          61,
+          76
+        ],
+        "loc": {
+          "start": {
+            "line": 3,
+            "column": 24
+          },
+          "end": {
+            "line": 3,
+            "column": 39
+          }
+        }
+      },
+      "range": [
+        37,
+        77
+      ],
+      "loc": {
+        "start": {
+          "line": 3,
+          "column": 0
+        },
+        "end": {
+          "line": 4,
+          "column": 0
+        }
+      }
+    },
+    {
+      "type": "ImportDeclaration",
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "local": {
+            "type": "Identifier",
+            "name": "Sparse",
+            "range": [
+              84,
+              90
+            ],
+            "loc": {
+              "start": {
+                "line": 4,
+                "column": 7
+              },
+              "end": {
+                "line": 4,
+                "column": 13
+              }
+            }
+          },
+          "range": [
+            84,
+            90
+          ],
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 7
+            },
+            "end": {
+              "line": 4,
               "column": 13
             }
           }
@@ -118,31 +191,31 @@
         "value": "./Sparse",
         "raw": "'./Sparse'",
         "range": [
-          56,
-          66
+          96,
+          106
         ],
         "loc": {
           "start": {
-            "line": 3,
+            "line": 4,
             "column": 19
           },
           "end": {
-            "line": 3,
+            "line": 4,
             "column": 29
           }
         }
       },
       "range": [
-        37,
-        68
+        77,
+        108
       ],
       "loc": {
         "start": {
-          "line": 3,
+          "line": 4,
           "column": 0
         },
         "end": {
-          "line": 5,
+          "line": 6,
           "column": 0
         }
       }
@@ -156,16 +229,16 @@
             "type": "Identifier",
             "name": "asin",
             "range": [
-              74,
-              78
+              114,
+              118
             ],
             "loc": {
               "start": {
-                "line": 5,
+                "line": 6,
                 "column": 6
               },
               "end": {
-                "line": 5,
+                "line": 6,
                 "column": 10
               }
             }
@@ -176,16 +249,16 @@
               "type": "Identifier",
               "name": "pointwise",
               "range": [
-                81,
-                90
+                121,
+                130
               ],
               "loc": {
                 "start": {
-                  "line": 5,
+                  "line": 6,
                   "column": 13
                 },
                 "end": {
-                  "line": 5,
+                  "line": 6,
                   "column": 22
                 }
               }
@@ -198,16 +271,16 @@
                   "type": "Identifier",
                   "name": "Math",
                   "range": [
-                    91,
-                    95
+                    131,
+                    135
                   ],
                   "loc": {
                     "start": {
-                      "line": 5,
+                      "line": 6,
                       "column": 23
                     },
                     "end": {
-                      "line": 5,
+                      "line": 6,
                       "column": 27
                     }
                   }
@@ -216,62 +289,62 @@
                   "type": "Identifier",
                   "name": "asin",
                   "range": [
-                    96,
-                    100
+                    136,
+                    140
                   ],
                   "loc": {
                     "start": {
-                      "line": 5,
+                      "line": 6,
                       "column": 28
                     },
                     "end": {
-                      "line": 5,
+                      "line": 6,
                       "column": 32
                     }
                   }
                 },
                 "range": [
-                  91,
-                  100
+                  131,
+                  140
                 ],
                 "loc": {
                   "start": {
-                    "line": 5,
+                    "line": 6,
                     "column": 23
                   },
                   "end": {
-                    "line": 5,
+                    "line": 6,
                     "column": 32
                   }
                 }
               }
             ],
             "range": [
-              81,
-              101
+              121,
+              141
             ],
             "loc": {
               "start": {
-                "line": 5,
+                "line": 6,
                 "column": 13
               },
               "end": {
-                "line": 5,
+                "line": 6,
                 "column": 33
               }
             }
           },
           "range": [
-            74,
-            101
+            114,
+            141
           ],
           "loc": {
             "start": {
-              "line": 5,
+              "line": 6,
               "column": 6
             },
             "end": {
-              "line": 5,
+              "line": 6,
               "column": 33
             }
           }
@@ -279,16 +352,162 @@
       ],
       "kind": "const",
       "range": [
-        68,
-        103
+        108,
+        142
       ],
       "loc": {
         "start": {
-          "line": 5,
+          "line": 6,
           "column": 0
         },
         "end": {
           "line": 7,
+          "column": 0
+        }
+      }
+    },
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "sasin",
+            "range": [
+              148,
+              153
+            ],
+            "loc": {
+              "start": {
+                "line": 7,
+                "column": 6
+              },
+              "end": {
+                "line": 7,
+                "column": 11
+              }
+            }
+          },
+          "init": {
+            "type": "CallExpression",
+            "callee": {
+              "type": "Identifier",
+              "name": "spPointwise",
+              "range": [
+                156,
+                167
+              ],
+              "loc": {
+                "start": {
+                  "line": 7,
+                  "column": 14
+                },
+                "end": {
+                  "line": 7,
+                  "column": 25
+                }
+              }
+            },
+            "arguments": [
+              {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "Identifier",
+                  "name": "Math",
+                  "range": [
+                    168,
+                    172
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 7,
+                      "column": 26
+                    },
+                    "end": {
+                      "line": 7,
+                      "column": 30
+                    }
+                  }
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "asin",
+                  "range": [
+                    173,
+                    177
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 7,
+                      "column": 31
+                    },
+                    "end": {
+                      "line": 7,
+                      "column": 35
+                    }
+                  }
+                },
+                "range": [
+                  168,
+                  177
+                ],
+                "loc": {
+                  "start": {
+                    "line": 7,
+                    "column": 26
+                  },
+                  "end": {
+                    "line": 7,
+                    "column": 35
+                  }
+                }
+              }
+            ],
+            "range": [
+              156,
+              178
+            ],
+            "loc": {
+              "start": {
+                "line": 7,
+                "column": 14
+              },
+              "end": {
+                "line": 7,
+                "column": 36
+              }
+            }
+          },
+          "range": [
+            148,
+            178
+          ],
+          "loc": {
+            "start": {
+              "line": 7,
+              "column": 6
+            },
+            "end": {
+              "line": 7,
+              "column": 36
+            }
+          }
+        }
+      ],
+      "kind": "const",
+      "range": [
+        142,
+        180
+      ],
+      "loc": {
+        "start": {
+          "line": 7,
+          "column": 0
+        },
+        "end": {
+          "line": 9,
           "column": 0
         }
       }
@@ -299,16 +518,16 @@
         "type": "Identifier",
         "name": "casin",
         "range": [
-          112,
-          117
+          189,
+          194
         ],
         "loc": {
           "start": {
-            "line": 7,
+            "line": 9,
             "column": 9
           },
           "end": {
-            "line": 7,
+            "line": 9,
             "column": 14
           }
         }
@@ -318,16 +537,16 @@
           "type": "Identifier",
           "name": "x",
           "range": [
-            118,
-            119
+            195,
+            196
           ],
           "loc": {
             "start": {
-              "line": 7,
+              "line": 9,
               "column": 15
             },
             "end": {
-              "line": 7,
+              "line": 9,
               "column": 16
             }
           }
@@ -344,16 +563,16 @@
                 "type": "Identifier",
                 "name": "Error",
                 "range": [
-                  135,
-                  140
+                  212,
+                  217
                 ],
                 "loc": {
                   "start": {
-                    "line": 8,
+                    "line": 10,
                     "column": 12
                   },
                   "end": {
-                    "line": 8,
+                    "line": 10,
                     "column": 17
                   }
                 }
@@ -364,656 +583,63 @@
                   "value": "mathlab.asin: no asin for complex number",
                   "raw": "'mathlab.asin: no asin for complex number'",
                   "range": [
-                    141,
-                    183
+                    218,
+                    260
                   ],
                   "loc": {
                     "start": {
-                      "line": 8,
+                      "line": 10,
                       "column": 18
                     },
                     "end": {
-                      "line": 8,
+                      "line": 10,
                       "column": 60
                     }
                   }
                 }
               ],
               "range": [
-                131,
-                184
+                208,
+                261
               ],
               "loc": {
                 "start": {
-                  "line": 8,
+                  "line": 10,
                   "column": 8
                 },
                 "end": {
-                  "line": 8,
+                  "line": 10,
                   "column": 61
                 }
               }
             },
             "range": [
-              125,
-              185
+              202,
+              262
             ],
             "loc": {
               "start": {
-                "line": 8,
+                "line": 10,
                 "column": 2
               },
               "end": {
-                "line": 9,
+                "line": 11,
                 "column": 0
               }
             }
           }
         ],
         "range": [
-          121,
-          186
+          198,
+          263
         ],
         "loc": {
           "start": {
-            "line": 7,
-            "column": 18
-          },
-          "end": {
             "line": 9,
-            "column": 1
-          }
-        }
-      },
-      "generator": false,
-      "expression": false,
-      "range": [
-        103,
-        186
-      ],
-      "loc": {
-        "start": {
-          "line": 7,
-          "column": 0
-        },
-        "end": {
-          "line": 9,
-          "column": 1
-        }
-      }
-    },
-    {
-      "type": "FunctionDeclaration",
-      "id": {
-        "type": "Identifier",
-        "name": "sasin",
-        "range": [
-          197,
-          202
-        ],
-        "loc": {
-          "start": {
-            "line": 11,
-            "column": 9
-          },
-          "end": {
-            "line": 11,
-            "column": 14
-          }
-        }
-      },
-      "params": [
-        {
-          "type": "Identifier",
-          "name": "x",
-          "range": [
-            203,
-            204
-          ],
-          "loc": {
-            "start": {
-              "line": 11,
-              "column": 15
-            },
-            "end": {
-              "line": 11,
-              "column": 16
-            }
-          }
-        }
-      ],
-      "body": {
-        "type": "BlockStatement",
-        "body": [
-          {
-            "type": "ReturnStatement",
-            "argument": {
-              "type": "NewExpression",
-              "callee": {
-                "type": "Identifier",
-                "name": "Sparse",
-                "range": [
-                  221,
-                  227
-                ],
-                "loc": {
-                  "start": {
-                    "line": 12,
-                    "column": 13
-                  },
-                  "end": {
-                    "line": 12,
-                    "column": 19
-                  }
-                }
-              },
-              "arguments": [
-                {
-                  "type": "ObjectExpression",
-                  "properties": [
-                    {
-                      "type": "Property",
-                      "key": {
-                        "type": "Identifier",
-                        "name": "col",
-                        "range": [
-                          234,
-                          237
-                        ],
-                        "loc": {
-                          "start": {
-                            "line": 13,
-                            "column": 4
-                          },
-                          "end": {
-                            "line": 13,
-                            "column": 7
-                          }
-                        }
-                      },
-                      "value": {
-                        "type": "CallExpression",
-                        "callee": {
-                          "type": "MemberExpression",
-                          "computed": false,
-                          "object": {
-                            "type": "MemberExpression",
-                            "computed": false,
-                            "object": {
-                              "type": "Identifier",
-                              "name": "x",
-                              "range": [
-                                239,
-                                240
-                              ],
-                              "loc": {
-                                "start": {
-                                  "line": 13,
-                                  "column": 9
-                                },
-                                "end": {
-                                  "line": 13,
-                                  "column": 10
-                                }
-                              }
-                            },
-                            "property": {
-                              "type": "Identifier",
-                              "name": "col",
-                              "range": [
-                                241,
-                                244
-                              ],
-                              "loc": {
-                                "start": {
-                                  "line": 13,
-                                  "column": 11
-                                },
-                                "end": {
-                                  "line": 13,
-                                  "column": 14
-                                }
-                              }
-                            },
-                            "range": [
-                              239,
-                              244
-                            ],
-                            "loc": {
-                              "start": {
-                                "line": 13,
-                                "column": 9
-                              },
-                              "end": {
-                                "line": 13,
-                                "column": 14
-                              }
-                            }
-                          },
-                          "property": {
-                            "type": "Identifier",
-                            "name": "slice",
-                            "range": [
-                              245,
-                              250
-                            ],
-                            "loc": {
-                              "start": {
-                                "line": 13,
-                                "column": 15
-                              },
-                              "end": {
-                                "line": 13,
-                                "column": 20
-                              }
-                            }
-                          },
-                          "range": [
-                            239,
-                            250
-                          ],
-                          "loc": {
-                            "start": {
-                              "line": 13,
-                              "column": 9
-                            },
-                            "end": {
-                              "line": 13,
-                              "column": 20
-                            }
-                          }
-                        },
-                        "arguments": [],
-                        "range": [
-                          239,
-                          252
-                        ],
-                        "loc": {
-                          "start": {
-                            "line": 13,
-                            "column": 9
-                          },
-                          "end": {
-                            "line": 13,
-                            "column": 22
-                          }
-                        }
-                      },
-                      "kind": "init",
-                      "method": false,
-                      "shorthand": false,
-                      "computed": false,
-                      "range": [
-                        234,
-                        252
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 13,
-                          "column": 4
-                        },
-                        "end": {
-                          "line": 13,
-                          "column": 22
-                        }
-                      }
-                    },
-                    {
-                      "type": "Property",
-                      "key": {
-                        "type": "Identifier",
-                        "name": "row",
-                        "range": [
-                          276,
-                          279
-                        ],
-                        "loc": {
-                          "start": {
-                            "line": 14,
-                            "column": 4
-                          },
-                          "end": {
-                            "line": 14,
-                            "column": 7
-                          }
-                        }
-                      },
-                      "value": {
-                        "type": "CallExpression",
-                        "callee": {
-                          "type": "MemberExpression",
-                          "computed": false,
-                          "object": {
-                            "type": "MemberExpression",
-                            "computed": false,
-                            "object": {
-                              "type": "Identifier",
-                              "name": "x",
-                              "range": [
-                                281,
-                                282
-                              ],
-                              "loc": {
-                                "start": {
-                                  "line": 14,
-                                  "column": 9
-                                },
-                                "end": {
-                                  "line": 14,
-                                  "column": 10
-                                }
-                              }
-                            },
-                            "property": {
-                              "type": "Identifier",
-                              "name": "row",
-                              "range": [
-                                283,
-                                286
-                              ],
-                              "loc": {
-                                "start": {
-                                  "line": 14,
-                                  "column": 11
-                                },
-                                "end": {
-                                  "line": 14,
-                                  "column": 14
-                                }
-                              }
-                            },
-                            "range": [
-                              281,
-                              286
-                            ],
-                            "loc": {
-                              "start": {
-                                "line": 14,
-                                "column": 9
-                              },
-                              "end": {
-                                "line": 14,
-                                "column": 14
-                              }
-                            }
-                          },
-                          "property": {
-                            "type": "Identifier",
-                            "name": "slice",
-                            "range": [
-                              287,
-                              292
-                            ],
-                            "loc": {
-                              "start": {
-                                "line": 14,
-                                "column": 15
-                              },
-                              "end": {
-                                "line": 14,
-                                "column": 20
-                              }
-                            }
-                          },
-                          "range": [
-                            281,
-                            292
-                          ],
-                          "loc": {
-                            "start": {
-                              "line": 14,
-                              "column": 9
-                            },
-                            "end": {
-                              "line": 14,
-                              "column": 20
-                            }
-                          }
-                        },
-                        "arguments": [],
-                        "range": [
-                          281,
-                          294
-                        ],
-                        "loc": {
-                          "start": {
-                            "line": 14,
-                            "column": 9
-                          },
-                          "end": {
-                            "line": 14,
-                            "column": 22
-                          }
-                        }
-                      },
-                      "kind": "init",
-                      "method": false,
-                      "shorthand": false,
-                      "computed": false,
-                      "range": [
-                        276,
-                        294
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 14,
-                          "column": 4
-                        },
-                        "end": {
-                          "line": 14,
-                          "column": 22
-                        }
-                      },
-                      "leadingComments": [
-                        {
-                          "type": "Line",
-                          "value": " copy the array",
-                          "range": [
-                            254,
-                            271
-                          ],
-                          "loc": {
-                            "start": {
-                              "line": 13,
-                              "column": 24
-                            },
-                            "end": {
-                              "line": 13,
-                              "column": 41
-                            }
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "type": "Property",
-                      "key": {
-                        "type": "Identifier",
-                        "name": "val",
-                        "range": [
-                          300,
-                          303
-                        ],
-                        "loc": {
-                          "start": {
-                            "line": 15,
-                            "column": 4
-                          },
-                          "end": {
-                            "line": 15,
-                            "column": 7
-                          }
-                        }
-                      },
-                      "value": {
-                        "type": "CallExpression",
-                        "callee": {
-                          "type": "Identifier",
-                          "name": "asin",
-                          "range": [
-                            305,
-                            309
-                          ],
-                          "loc": {
-                            "start": {
-                              "line": 15,
-                              "column": 9
-                            },
-                            "end": {
-                              "line": 15,
-                              "column": 13
-                            }
-                          }
-                        },
-                        "arguments": [
-                          {
-                            "type": "MemberExpression",
-                            "computed": false,
-                            "object": {
-                              "type": "Identifier",
-                              "name": "x",
-                              "range": [
-                                310,
-                                311
-                              ],
-                              "loc": {
-                                "start": {
-                                  "line": 15,
-                                  "column": 14
-                                },
-                                "end": {
-                                  "line": 15,
-                                  "column": 15
-                                }
-                              }
-                            },
-                            "property": {
-                              "type": "Identifier",
-                              "name": "val",
-                              "range": [
-                                312,
-                                315
-                              ],
-                              "loc": {
-                                "start": {
-                                  "line": 15,
-                                  "column": 16
-                                },
-                                "end": {
-                                  "line": 15,
-                                  "column": 19
-                                }
-                              }
-                            },
-                            "range": [
-                              310,
-                              315
-                            ],
-                            "loc": {
-                              "start": {
-                                "line": 15,
-                                "column": 14
-                              },
-                              "end": {
-                                "line": 15,
-                                "column": 19
-                              }
-                            }
-                          }
-                        ],
-                        "range": [
-                          305,
-                          316
-                        ],
-                        "loc": {
-                          "start": {
-                            "line": 15,
-                            "column": 9
-                          },
-                          "end": {
-                            "line": 15,
-                            "column": 20
-                          }
-                        }
-                      },
-                      "kind": "init",
-                      "method": false,
-                      "shorthand": false,
-                      "computed": false,
-                      "range": [
-                        300,
-                        316
-                      ],
-                      "loc": {
-                        "start": {
-                          "line": 15,
-                          "column": 4
-                        },
-                        "end": {
-                          "line": 15,
-                          "column": 20
-                        }
-                      }
-                    }
-                  ],
-                  "range": [
-                    228,
-                    321
-                  ],
-                  "loc": {
-                    "start": {
-                      "line": 12,
-                      "column": 20
-                    },
-                    "end": {
-                      "line": 16,
-                      "column": 3
-                    }
-                  }
-                }
-              ],
-              "range": [
-                217,
-                322
-              ],
-              "loc": {
-                "start": {
-                  "line": 12,
-                  "column": 9
-                },
-                "end": {
-                  "line": 16,
-                  "column": 4
-                }
-              }
-            },
-            "range": [
-              210,
-              323
-            ],
-            "loc": {
-              "start": {
-                "line": 12,
-                "column": 2
-              },
-              "end": {
-                "line": 17,
-                "column": 0
-              }
-            }
-          }
-        ],
-        "range": [
-          206,
-          324
-        ],
-        "loc": {
-          "start": {
-            "line": 11,
             "column": 18
           },
           "end": {
-            "line": 17,
+            "line": 11,
             "column": 1
           }
         }
@@ -1021,34 +647,34 @@
       "generator": false,
       "expression": false,
       "range": [
-        188,
-        324
+        180,
+        263
       ],
       "loc": {
         "start": {
-          "line": 11,
+          "line": 9,
           "column": 0
         },
         "end": {
-          "line": 17,
+          "line": 11,
           "column": 1
         }
       },
       "trailingComments": [
         {
           "type": "Block",
-          "value": "*\n * Pointwise Math.asin(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * asin(1)\n * // returns Math.asin(1)\n * asin([1, 2])\n * // returns [Math.asin(1), Math.asin(2)]\n * asin([[1,2],[1,3]])\n * // returns [ [Math.asin(1), Math.asin(2)], [Math.asin(1), Math.asin(3)] ]\n ",
+          "value": "*\n * Pointwise Math.asin(x)\n * \n * @export\n * @param {Number|Array|Sparse} m\n * @returns {Number|Array|Sparse}\n * @example \n * \n * asin(1) // Math.asin(1)\n * asin([1, 2]) // [Math.asin(1), Math.asin(2)]\n * asin([[1,2],[1,3]]) // [ [Math.asin(1), Math.asin(2)], [Math.asin(1), Math.asin(3)] ]\n ",
           "range": [
-            326,
-            642
+            265,
+            562
           ],
           "loc": {
             "start": {
-              "line": 19,
+              "line": 13,
               "column": 0
             },
             "end": {
-              "line": 33,
+              "line": 24,
               "column": 3
             }
           }
@@ -1065,16 +691,16 @@
             "type": "Identifier",
             "name": "m",
             "range": [
-              668,
-              669
+              588,
+              589
             ],
             "loc": {
               "start": {
-                "line": 34,
+                "line": 25,
                 "column": 25
               },
               "end": {
-                "line": 34,
+                "line": 25,
                 "column": 26
               }
             }
@@ -1095,16 +721,16 @@
                     "type": "Identifier",
                     "name": "m",
                     "range": [
-                      683,
-                      684
+                      603,
+                      604
                     ],
                     "loc": {
                       "start": {
-                        "line": 35,
+                        "line": 26,
                         "column": 10
                       },
                       "end": {
-                        "line": 35,
+                        "line": 26,
                         "column": 11
                       }
                     }
@@ -1113,31 +739,31 @@
                     "type": "Identifier",
                     "name": "constructor",
                     "range": [
-                      685,
-                      696
+                      605,
+                      616
                     ],
                     "loc": {
                       "start": {
-                        "line": 35,
+                        "line": 26,
                         "column": 12
                       },
                       "end": {
-                        "line": 35,
+                        "line": 26,
                         "column": 23
                       }
                     }
                   },
                   "range": [
-                    683,
-                    696
+                    603,
+                    616
                   ],
                   "loc": {
                     "start": {
-                      "line": 35,
+                      "line": 26,
                       "column": 10
                     },
                     "end": {
-                      "line": 35,
+                      "line": 26,
                       "column": 23
                     }
                   }
@@ -1146,31 +772,31 @@
                   "type": "Identifier",
                   "name": "name",
                   "range": [
-                    697,
-                    701
+                    617,
+                    621
                   ],
                   "loc": {
                     "start": {
-                      "line": 35,
+                      "line": 26,
                       "column": 24
                     },
                     "end": {
-                      "line": 35,
+                      "line": 26,
                       "column": 28
                     }
                   }
                 },
                 "range": [
-                  683,
-                  701
+                  603,
+                  621
                 ],
                 "loc": {
                   "start": {
-                    "line": 35,
+                    "line": 26,
                     "column": 10
                   },
                   "end": {
-                    "line": 35,
+                    "line": 26,
                     "column": 28
                   }
                 }
@@ -1183,16 +809,16 @@
                     "value": "Complex",
                     "raw": "'Complex'",
                     "range": [
-                      714,
-                      723
+                      634,
+                      643
                     ],
                     "loc": {
                       "start": {
-                        "line": 36,
+                        "line": 27,
                         "column": 9
                       },
                       "end": {
-                        "line": 36,
+                        "line": 27,
                         "column": 18
                       }
                     }
@@ -1206,16 +832,16 @@
                           "type": "Identifier",
                           "name": "casin",
                           "range": [
-                            738,
-                            743
+                            658,
+                            663
                           ],
                           "loc": {
                             "start": {
-                              "line": 37,
+                              "line": 28,
                               "column": 13
                             },
                             "end": {
-                              "line": 37,
+                              "line": 28,
                               "column": 18
                             }
                           }
@@ -1225,63 +851,63 @@
                             "type": "Identifier",
                             "name": "m",
                             "range": [
-                              744,
-                              745
+                              664,
+                              665
                             ],
                             "loc": {
                               "start": {
-                                "line": 37,
+                                "line": 28,
                                 "column": 19
                               },
                               "end": {
-                                "line": 37,
+                                "line": 28,
                                 "column": 20
                               }
                             }
                           }
                         ],
                         "range": [
-                          738,
-                          746
+                          658,
+                          666
                         ],
                         "loc": {
                           "start": {
-                            "line": 37,
+                            "line": 28,
                             "column": 13
                           },
                           "end": {
-                            "line": 37,
+                            "line": 28,
                             "column": 21
                           }
                         }
                       },
                       "range": [
-                        731,
-                        747
+                        651,
+                        667
                       ],
                       "loc": {
                         "start": {
-                          "line": 37,
+                          "line": 28,
                           "column": 6
                         },
                         "end": {
-                          "line": 37,
+                          "line": 28,
                           "column": 22
                         }
                       }
                     }
                   ],
                   "range": [
-                    709,
-                    747
+                    629,
+                    667
                   ],
                   "loc": {
                     "start": {
-                      "line": 36,
+                      "line": 27,
                       "column": 4
                     },
                     "end": {
-                      "line": 37,
+                      "line": 28,
                       "column": 22
                     }
                   }
@@ -1293,16 +919,16 @@
                     "value": "Sparse",
                     "raw": "'Sparse'",
                     "range": [
-                      757,
-                      765
+                      677,
+                      685
                     ],
                     "loc": {
                       "start": {
-                        "line": 38,
+                        "line": 29,
                         "column": 9
                       },
                       "end": {
-                        "line": 38,
+                        "line": 29,
                         "column": 17
                       }
                     }
@@ -1316,16 +942,16 @@
                           "type": "Identifier",
                           "name": "sasin",
                           "range": [
-                            780,
-                            785
+                            700,
+                            705
                           ],
                           "loc": {
                             "start": {
-                              "line": 39,
+                              "line": 30,
                               "column": 13
                             },
                             "end": {
-                              "line": 39,
+                              "line": 30,
                               "column": 18
                             }
                           }
@@ -1335,63 +961,63 @@
                             "type": "Identifier",
                             "name": "m",
                             "range": [
-                              786,
-                              787
+                              706,
+                              707
                             ],
                             "loc": {
                               "start": {
-                                "line": 39,
+                                "line": 30,
                                 "column": 19
                               },
                               "end": {
-                                "line": 39,
+                                "line": 30,
                                 "column": 20
                               }
                             }
                           }
                         ],
                         "range": [
-                          780,
-                          788
+                          700,
+                          708
                         ],
                         "loc": {
                           "start": {
-                            "line": 39,
+                            "line": 30,
                             "column": 13
                           },
                           "end": {
-                            "line": 39,
+                            "line": 30,
                             "column": 21
                           }
                         }
                       },
                       "range": [
-                        773,
-                        789
+                        693,
+                        709
                       ],
                       "loc": {
                         "start": {
-                          "line": 39,
+                          "line": 30,
                           "column": 6
                         },
                         "end": {
-                          "line": 39,
+                          "line": 30,
                           "column": 22
                         }
                       }
                     }
                   ],
                   "range": [
-                    752,
-                    789
+                    672,
+                    709
                   ],
                   "loc": {
                     "start": {
-                      "line": 38,
+                      "line": 29,
                       "column": 4
                     },
                     "end": {
-                      "line": 39,
+                      "line": 30,
                       "column": 22
                     }
                   }
@@ -1408,16 +1034,16 @@
                           "type": "Identifier",
                           "name": "asin",
                           "range": [
-                            816,
-                            820
+                            736,
+                            740
                           ],
                           "loc": {
                             "start": {
-                              "line": 41,
+                              "line": 32,
                               "column": 13
                             },
                             "end": {
-                              "line": 41,
+                              "line": 32,
                               "column": 17
                             }
                           }
@@ -1427,95 +1053,95 @@
                             "type": "Identifier",
                             "name": "m",
                             "range": [
-                              821,
-                              822
+                              741,
+                              742
                             ],
                             "loc": {
                               "start": {
-                                "line": 41,
+                                "line": 32,
                                 "column": 18
                               },
                               "end": {
-                                "line": 41,
+                                "line": 32,
                                 "column": 19
                               }
                             }
                           }
                         ],
                         "range": [
-                          816,
-                          823
+                          736,
+                          743
                         ],
                         "loc": {
                           "start": {
-                            "line": 41,
+                            "line": 32,
                             "column": 13
                           },
                           "end": {
-                            "line": 41,
+                            "line": 32,
                             "column": 20
                           }
                         }
                       },
                       "range": [
-                        809,
-                        824
+                        729,
+                        744
                       ],
                       "loc": {
                         "start": {
-                          "line": 41,
+                          "line": 32,
                           "column": 6
                         },
                         "end": {
-                          "line": 41,
+                          "line": 32,
                           "column": 21
                         }
                       }
                     }
                   ],
                   "range": [
-                    794,
-                    824
+                    714,
+                    744
                   ],
                   "loc": {
                     "start": {
-                      "line": 40,
+                      "line": 31,
                       "column": 4
                     },
                     "end": {
-                      "line": 41,
+                      "line": 32,
                       "column": 21
                     }
                   }
                 }
               ],
               "range": [
-                675,
-                828
+                595,
+                748
               ],
               "loc": {
                 "start": {
-                  "line": 35,
+                  "line": 26,
                   "column": 2
                 },
                 "end": {
-                  "line": 42,
+                  "line": 33,
                   "column": 3
                 }
               }
             }
           ],
           "range": [
-            671,
-            830
+            591,
+            750
           ],
           "loc": {
             "start": {
-              "line": 34,
+              "line": 25,
               "column": 28
             },
             "end": {
-              "line": 43,
+              "line": 34,
               "column": 1
             }
           }
@@ -1523,34 +1149,34 @@
         "generator": false,
         "expression": false,
         "range": [
-          658,
-          830
+          578,
+          750
         ],
         "loc": {
           "start": {
-            "line": 34,
+            "line": 25,
             "column": 15
           },
           "end": {
-            "line": 43,
+            "line": 34,
             "column": 1
           }
         },
         "leadingComments": [
           {
             "type": "Block",
-            "value": "*\n * Pointwise Math.asin(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * asin(1)\n * // returns Math.asin(1)\n * asin([1, 2])\n * // returns [Math.asin(1), Math.asin(2)]\n * asin([[1,2],[1,3]])\n * // returns [ [Math.asin(1), Math.asin(2)], [Math.asin(1), Math.asin(3)] ]\n ",
+            "value": "*\n * Pointwise Math.asin(x)\n * \n * @export\n * @param {Number|Array|Sparse} m\n * @returns {Number|Array|Sparse}\n * @example \n * \n * asin(1) // Math.asin(1)\n * asin([1, 2]) // [Math.asin(1), Math.asin(2)]\n * asin([[1,2],[1,3]]) // [ [Math.asin(1), Math.asin(2)], [Math.asin(1), Math.asin(3)] ]\n ",
             "range": [
-              326,
-              642
+              265,
+              562
             ],
             "loc": {
               "start": {
-                "line": 19,
+                "line": 13,
                 "column": 0
               },
               "end": {
-                "line": 33,
+                "line": 24,
                 "column": 3
               }
             }
@@ -1559,34 +1185,34 @@
         "trailingComments": []
       },
       "range": [
-        643,
-        830
+        563,
+        750
       ],
       "loc": {
         "start": {
-          "line": 34,
+          "line": 25,
           "column": 0
         },
         "end": {
-          "line": 43,
+          "line": 34,
           "column": 1
         }
       },
       "leadingComments": [
         {
           "type": "Block",
-          "value": "*\n * Pointwise Math.asin(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * asin(1)\n * // returns Math.asin(1)\n * asin([1, 2])\n * // returns [Math.asin(1), Math.asin(2)]\n * asin([[1,2],[1,3]])\n * // returns [ [Math.asin(1), Math.asin(2)], [Math.asin(1), Math.asin(3)] ]\n ",
+          "value": "*\n * Pointwise Math.asin(x)\n * \n * @export\n * @param {Number|Array|Sparse} m\n * @returns {Number|Array|Sparse}\n * @example \n * \n * asin(1) // Math.asin(1)\n * asin([1, 2]) // [Math.asin(1), Math.asin(2)]\n * asin([[1,2],[1,3]]) // [ [Math.asin(1), Math.asin(2)], [Math.asin(1), Math.asin(3)] ]\n ",
           "range": [
-            326,
-            642
+            265,
+            562
           ],
           "loc": {
             "start": {
-              "line": 19,
+              "line": 13,
               "column": 0
             },
             "end": {
-              "line": 33,
+              "line": 24,
               "column": 3
             }
           }
@@ -1597,7 +1223,7 @@
   "sourceType": "module",
   "range": [
     1,
-    830
+    750
   ],
   "loc": {
     "start": {
@@ -1605,43 +1231,25 @@
       "column": 0
     },
     "end": {
-      "line": 43,
+      "line": 34,
       "column": 1
     }
   },
   "comments": [
     {
-      "type": "Line",
-      "value": " copy the array",
-      "range": [
-        254,
-        271
-      ],
-      "loc": {
-        "start": {
-          "line": 13,
-          "column": 24
-        },
-        "end": {
-          "line": 13,
-          "column": 41
-        }
-      }
-    },
-    {
       "type": "Block",
-      "value": "*\n * Pointwise Math.asin(x)\n * \n * @export\n * @param {Number|Array} m\n * @returns {Number|Array}\n * @example \n * \n * asin(1)\n * // returns Math.asin(1)\n * asin([1, 2])\n * // returns [Math.asin(1), Math.asin(2)]\n * asin([[1,2],[1,3]])\n * // returns [ [Math.asin(1), Math.asin(2)], [Math.asin(1), Math.asin(3)] ]\n ",
+      "value": "*\n * Pointwise Math.asin(x)\n * \n * @export\n * @param {Number|Array|Sparse} m\n * @returns {Number|Array|Sparse}\n * @example \n * \n * asin(1) // Math.asin(1)\n * asin([1, 2]) // [Math.asin(1), Math.asin(2)]\n * asin([[1,2],[1,3]]) // [ [Math.asin(1), Math.asin(2)], [Math.asin(1), Math.asin(3)] ]\n ",
       "range": [
-        326,
-        642
+        265,
+        562
       ],
       "loc": {
         "start": {
-          "line": 19,
+          "line": 13,
           "column": 0
         },
         "end": {
-          "line": 33,
+          "line": 24,
           "column": 3
         }
       }

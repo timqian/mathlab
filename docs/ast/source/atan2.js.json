@@ -8,10 +8,10 @@
           "type": "ImportDefaultSpecifier",
           "local": {
             "type": "Identifier",
-            "name": "pointwise",
+            "name": "pointwise2",
             "range": [
               8,
-              17
+              18
             ],
             "loc": {
               "start": {
@@ -20,13 +20,13 @@
               },
               "end": {
                 "line": 2,
-                "column": 16
+                "column": 17
               }
             }
           },
           "range": [
             8,
-            17
+            18
           ],
           "loc": {
             "start": {
@@ -35,36 +35,36 @@
             },
             "end": {
               "line": 2,
-              "column": 16
+              "column": 17
             }
           }
         }
       ],
       "source": {
         "type": "Literal",
-        "value": "./pointwise",
-        "raw": "'./pointwise'",
+        "value": "./pointwise2",
+        "raw": "'./pointwise2'",
         "range": [
-          23,
-          36
+          24,
+          38
         ],
         "loc": {
           "start": {
             "line": 2,
-            "column": 22
+            "column": 23
           },
           "end": {
             "line": 2,
-            "column": 35
+            "column": 37
           }
         },
         "trailingComments": [
           {
             "type": "Block",
-            "value": "*\n * Pointwise Math.atan2(x, y)\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * atan2(1, 2)\n * // returns Math.atan2(1, 2)\n * atan2([1, 2], [2, 2])\n * // returns [Math.atan2(1, 2), Math.atan2(2, 2)]\n * atan2([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [Math.atan2(2, 2), Math.atan2(1, 2)], [Math.atan2(1, 2), Math.atan2(2, 2)] ]\n ",
+            "value": "*\n * Pointwise Math.atan2(x, y)\n * \n * @export\n * @param {Number|Array|Complex|Sparse} m1\n * @param {Number|Array|Complex|Sparse} m2\n * @returns {Number|Array|Complex|Sparse}\n * @example \n * \n * atan2(1, 2) // Math.atan2(1, 2)\n * atan2([1, 2], [2, 2]) // [Math.atan2(1, 2), Math.atan2(2, 2)]\n * atan2([[2,1], [1,2]], [[2, 2], [2, 2]])) // [ [Math.atan2(2, 2), Math.atan2(1, 2)], [Math.atan2(1, 2), Math.atan2(2, 2)] ]\n ",
             "range": [
-              38,
-              449
+              40,
+              463
             ],
             "loc": {
               "start": {
@@ -72,7 +72,7 @@
                 "column": 0
               },
               "end": {
-                "line": 19,
+                "line": 16,
                 "column": 3
               }
             }
@@ -81,7 +81,7 @@
       },
       "range": [
         1,
-        450
+        464
       ],
       "loc": {
         "start": {
@@ -89,7 +89,7 @@
           "column": 0
         },
         "end": {
-          "line": 20,
+          "line": 17,
           "column": 0
         }
       }
@@ -104,16 +104,16 @@
             "type": "Identifier",
             "name": "m1",
             "range": [
-              475,
-              477
+              489,
+              491
             ],
             "loc": {
               "start": {
-                "line": 20,
+                "line": 17,
                 "column": 25
               },
               "end": {
-                "line": 20,
+                "line": 17,
                 "column": 27
               }
             }
@@ -122,16 +122,16 @@
             "type": "Identifier",
             "name": "m2",
             "range": [
-              479,
-              481
+              493,
+              495
             ],
             "loc": {
               "start": {
-                "line": 20,
+                "line": 17,
                 "column": 29
               },
               "end": {
-                "line": 20,
+                "line": 17,
                 "column": 31
               }
             }
@@ -148,19 +148,19 @@
                   "type": "CallExpression",
                   "callee": {
                     "type": "Identifier",
-                    "name": "pointwise",
+                    "name": "pointwise2",
                     "range": [
-                      505,
-                      514
+                      519,
+                      529
                     ],
                     "loc": {
                       "start": {
-                        "line": 22,
+                        "line": 19,
                         "column": 9
                       },
                       "end": {
-                        "line": 22,
-                        "column": 18
+                        "line": 19,
+                        "column": 19
                       }
                     }
                   },
@@ -172,17 +172,17 @@
                         "type": "Identifier",
                         "name": "Math",
                         "range": [
-                          515,
-                          519
+                          530,
+                          534
                         ],
                         "loc": {
                           "start": {
-                            "line": 22,
-                            "column": 19
+                            "line": 19,
+                            "column": 20
                           },
                           "end": {
-                            "line": 22,
-                            "column": 23
+                            "line": 19,
+                            "column": 24
                           }
                         }
                       },
@@ -190,48 +190,48 @@
                         "type": "Identifier",
                         "name": "atan2",
                         "range": [
-                          520,
-                          525
+                          535,
+                          540
                         ],
                         "loc": {
                           "start": {
-                            "line": 22,
-                            "column": 24
+                            "line": 19,
+                            "column": 25
                           },
                           "end": {
-                            "line": 22,
-                            "column": 29
+                            "line": 19,
+                            "column": 30
                           }
                         }
                       },
                       "range": [
-                        515,
-                        525
+                        530,
+                        540
                       ],
                       "loc": {
                         "start": {
-                          "line": 22,
-                          "column": 19
+                          "line": 19,
+                          "column": 20
                         },
                         "end": {
-                          "line": 22,
-                          "column": 29
+                          "line": 19,
+                          "column": 30
                         }
                       }
                     }
                   ],
                   "range": [
-                    505,
-                    526
+                    519,
+                    541
                   ],
                   "loc": {
                     "start": {
-                      "line": 22,
+                      "line": 19,
                       "column": 9
                     },
                     "end": {
-                      "line": 22,
-                      "column": 30
+                      "line": 19,
+                      "column": 31
                     }
                   }
                 },
@@ -240,17 +240,17 @@
                     "type": "Identifier",
                     "name": "m1",
                     "range": [
-                      527,
-                      529
+                      542,
+                      544
                     ],
                     "loc": {
                       "start": {
-                        "line": 22,
-                        "column": 31
+                        "line": 19,
+                        "column": 32
                       },
                       "end": {
-                        "line": 22,
-                        "column": 33
+                        "line": 19,
+                        "column": 34
                       }
                     }
                   },
@@ -258,47 +258,47 @@
                     "type": "Identifier",
                     "name": "m2",
                     "range": [
-                      531,
-                      533
+                      546,
+                      548
                     ],
                     "loc": {
                       "start": {
-                        "line": 22,
-                        "column": 35
+                        "line": 19,
+                        "column": 36
                       },
                       "end": {
-                        "line": 22,
-                        "column": 37
+                        "line": 19,
+                        "column": 38
                       }
                     }
                   }
                 ],
                 "range": [
-                  505,
-                  534
+                  519,
+                  549
                 ],
                 "loc": {
                   "start": {
-                    "line": 22,
+                    "line": 19,
                     "column": 9
                   },
                   "end": {
-                    "line": 22,
-                    "column": 38
+                    "line": 19,
+                    "column": 39
                   }
                 }
               },
               "range": [
-                498,
-                535
+                512,
+                550
               ],
               "loc": {
                 "start": {
-                  "line": 22,
+                  "line": 19,
                   "column": 2
                 },
                 "end": {
-                  "line": 23,
+                  "line": 20,
                   "column": 0
                 }
               },
@@ -307,16 +307,16 @@
                   "type": "Line",
                   "value": " TODO ",
                   "range": [
-                    487,
-                    495
+                    501,
+                    509
                   ],
                   "loc": {
                     "start": {
-                      "line": 21,
+                      "line": 18,
                       "column": 2
                     },
                     "end": {
-                      "line": 21,
+                      "line": 18,
                       "column": 10
                     }
                   }
@@ -325,16 +325,16 @@
             }
           ],
           "range": [
-            483,
-            536
+            497,
+            551
           ],
           "loc": {
             "start": {
-              "line": 20,
+              "line": 17,
               "column": 33
             },
             "end": {
-              "line": 23,
+              "line": 20,
               "column": 1
             }
           }
@@ -342,26 +342,26 @@
         "generator": false,
         "expression": false,
         "range": [
-          465,
-          536
+          479,
+          551
         ],
         "loc": {
           "start": {
-            "line": 20,
+            "line": 17,
             "column": 15
           },
           "end": {
-            "line": 23,
+            "line": 20,
             "column": 1
           }
         },
         "leadingComments": [
           {
             "type": "Block",
-            "value": "*\n * Pointwise Math.atan2(x, y)\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * atan2(1, 2)\n * // returns Math.atan2(1, 2)\n * atan2([1, 2], [2, 2])\n * // returns [Math.atan2(1, 2), Math.atan2(2, 2)]\n * atan2([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [Math.atan2(2, 2), Math.atan2(1, 2)], [Math.atan2(1, 2), Math.atan2(2, 2)] ]\n ",
+            "value": "*\n * Pointwise Math.atan2(x, y)\n * \n * @export\n * @param {Number|Array|Complex|Sparse} m1\n * @param {Number|Array|Complex|Sparse} m2\n * @returns {Number|Array|Complex|Sparse}\n * @example \n * \n * atan2(1, 2) // Math.atan2(1, 2)\n * atan2([1, 2], [2, 2]) // [Math.atan2(1, 2), Math.atan2(2, 2)]\n * atan2([[2,1], [1,2]], [[2, 2], [2, 2]])) // [ [Math.atan2(2, 2), Math.atan2(1, 2)], [Math.atan2(1, 2), Math.atan2(2, 2)] ]\n ",
             "range": [
-              38,
-              449
+              40,
+              463
             ],
             "loc": {
               "start": {
@@ -369,7 +369,7 @@
                 "column": 0
               },
               "end": {
-                "line": 19,
+                "line": 16,
                 "column": 3
               }
             }
@@ -378,26 +378,26 @@
         "trailingComments": []
       },
       "range": [
-        450,
-        536
+        464,
+        551
       ],
       "loc": {
         "start": {
-          "line": 20,
+          "line": 17,
           "column": 0
         },
         "end": {
-          "line": 23,
+          "line": 20,
           "column": 1
         }
       },
       "leadingComments": [
         {
           "type": "Block",
-          "value": "*\n * Pointwise Math.atan2(x, y)\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * atan2(1, 2)\n * // returns Math.atan2(1, 2)\n * atan2([1, 2], [2, 2])\n * // returns [Math.atan2(1, 2), Math.atan2(2, 2)]\n * atan2([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [Math.atan2(2, 2), Math.atan2(1, 2)], [Math.atan2(1, 2), Math.atan2(2, 2)] ]\n ",
+          "value": "*\n * Pointwise Math.atan2(x, y)\n * \n * @export\n * @param {Number|Array|Complex|Sparse} m1\n * @param {Number|Array|Complex|Sparse} m2\n * @returns {Number|Array|Complex|Sparse}\n * @example \n * \n * atan2(1, 2) // Math.atan2(1, 2)\n * atan2([1, 2], [2, 2]) // [Math.atan2(1, 2), Math.atan2(2, 2)]\n * atan2([[2,1], [1,2]], [[2, 2], [2, 2]])) // [ [Math.atan2(2, 2), Math.atan2(1, 2)], [Math.atan2(1, 2), Math.atan2(2, 2)] ]\n ",
           "range": [
-            38,
-            449
+            40,
+            463
           ],
           "loc": {
             "start": {
@@ -405,7 +405,7 @@
               "column": 0
             },
             "end": {
-              "line": 19,
+              "line": 16,
               "column": 3
             }
           }
@@ -416,7 +416,7 @@
   "sourceType": "module",
   "range": [
     1,
-    536
+    551
   ],
   "loc": {
     "start": {
@@ -424,17 +424,17 @@
       "column": 0
     },
     "end": {
-      "line": 23,
+      "line": 20,
       "column": 1
     }
   },
   "comments": [
     {
       "type": "Block",
-      "value": "*\n * Pointwise Math.atan2(x, y)\n * \n * @export\n * @param {Number|Array} m1\n * @param {Number|Array} m2\n * @returns {Number|Array}\n * @example \n * \n * atan2(1, 2)\n * // returns Math.atan2(1, 2)\n * atan2([1, 2], [2, 2])\n * // returns [Math.atan2(1, 2), Math.atan2(2, 2)]\n * atan2([[2,1], [1,2]], [[2, 2], [2, 2]]))\n * // returns [ [Math.atan2(2, 2), Math.atan2(1, 2)], [Math.atan2(1, 2), Math.atan2(2, 2)] ]\n ",
+      "value": "*\n * Pointwise Math.atan2(x, y)\n * \n * @export\n * @param {Number|Array|Complex|Sparse} m1\n * @param {Number|Array|Complex|Sparse} m2\n * @returns {Number|Array|Complex|Sparse}\n * @example \n * \n * atan2(1, 2) // Math.atan2(1, 2)\n * atan2([1, 2], [2, 2]) // [Math.atan2(1, 2), Math.atan2(2, 2)]\n * atan2([[2,1], [1,2]], [[2, 2], [2, 2]])) // [ [Math.atan2(2, 2), Math.atan2(1, 2)], [Math.atan2(1, 2), Math.atan2(2, 2)] ]\n ",
       "range": [
-        38,
-        449
+        40,
+        463
       ],
       "loc": {
         "start": {
@@ -442,7 +442,7 @@
           "column": 0
         },
         "end": {
-          "line": 19,
+          "line": 16,
           "column": 3
         }
       }
@@ -451,16 +451,16 @@
       "type": "Line",
       "value": " TODO ",
       "range": [
-        487,
-        495
+        501,
+        509
       ],
       "loc": {
         "start": {
-          "line": 21,
+          "line": 18,
           "column": 2
         },
         "end": {
-          "line": 21,
+          "line": 18,
           "column": 10
         }
       }
