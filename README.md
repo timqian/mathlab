@@ -1,5 +1,11 @@
-# mathlab
-
+  __  __         _    _      _         _     
+ |  \/  |       | |  | |    | |       | |    
+ | \  / |  __ _ | |_ | |__  | |  __ _ | |__  
+ | |\/| | / _` || __|| '_ \ | | / _` || '_ \ 
+ | |  | || (_| || |_ | | | || || (_| || |_) |
+ |_|  |_| \__,_| \__||_| |_||_| \__,_||_.__/ 
+                                             
+                                             
 Lodash like math lab in javascript, focusing on matrix manipulation.
 
 > Start as a refactoring of [numeric](https://github.com/sloisel/numeric)
