@@ -12,17 +12,14 @@ function cbxor(x, y) {
  * Pointwise bxor
  * 
  * @export
- * @param {Number|Array} m1
- * @param {Number|Array} m2
- * @returns {Number|Array}
+ * @param {Number|Array|Sparse} m1
+ * @param {Number|Array|Sparse} m2
+ * @returns {Number|Array|Sparse}
  * @example 
  * 
- * bxor(1, 2)
- * // returns 1 ^ 2
- * bxor([1, 2], [2, 2])
- * // returns [1 ^ 2, 2 ^ 2]
- * bxor([[2,1], [1,2]], [[2, 2], [2, 2]]))
- * // returns [ [2 ^ 2, 1 ^ 2], [1 ^ 2, 2 ^ 2] ]
+ * bxor(1, 2) // 1 ^ 2
+ * bxor([1, 2], [2, 2]) // [1 ^ 2, 2 ^ 2]
+ * bxor([[2,1], [1,2]], [[2, 2], [2, 2]])) // [ [2 ^ 2, 1 ^ 2], [1 ^ 2, 2 ^ 2] ]
  */
 export default function (m1, m2) {
   switch (m1.constructor.name) {

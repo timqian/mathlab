@@ -14,16 +14,11 @@ function cclone(x) {
  * Pointwise clone(x)
  * 
  * @export
- * @param {Number|Array} m
- * @returns {Number|Array}
+ * @param {Number|Array|Complex|Sparse} m
+ * @returns {Number|Array|Complex|Sparse}
  * @example 
  * 
- * clone(1)
- * // returns clone(1)
- * clone([1, 2])
- * // returns [clone(1), clone(2)]
- * clone([[1,2],[1,3]])
- * // returns [ [clone(1), clone(2)], [clone(1), clone(3)] ]
+ * clone([[1,2],[1,3]]) // [[1,2],[1,3]]
  */
 export default function (m) {
   switch (m.constructor.name) {

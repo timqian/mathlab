@@ -5,9 +5,9 @@ import pointwise2 from './pointwise2'
  * Pointwise Math.pow(x, y)
  * 
  * @export
- * @param {Number|Array} m1
- * @param {Number|Array} m2
- * @returns {Number|Array}
+ * @param {Number|Array|Complex|Sparse} m1
+ * @param {Number|Array|Complex|Sparse} m2
+ * @returns {Number|Array|Complex|Sparse}
  * @example 
  * 
  * pow(1, 2)

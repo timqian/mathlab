@@ -15,16 +15,13 @@ function cbnot(x) {
  * Pointwise Math.bnot(x)
  * 
  * @export
- * @param {Number|Array} m
- * @returns {Number|Array}
+ * @param {Number|Array|Sparse} m
+ * @returns {Number|Array|Sparse}
  * @example 
  * 
- * bnot(1)
- * // returns Math.bnot(1)
- * bnot([1, 2])
- * // returns [Math.bnot(1), Math.bnot(2)]
- * bnot([[1,2],[1,3]])
- * // returns [ [Math.bnot(1), Math.bnot(2)], [Math.bnot(1), Math.bnot(3)] ]
+ * bnot(1) // ~1
+ * bnot([1, 2]) // [~1, ~2]
+ * bnot([[1,2],[1,3]]) // [[~1,~2],[~1,~3]]
  */
 export default function (m) {
   switch (m.constructor.name) {

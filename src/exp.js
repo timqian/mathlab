@@ -23,8 +23,8 @@ function cexp(x) {
  * Pointwise Math.exp(x)
  * 
  * @export
- * @param {Number|Array} m
- * @returns {Number|Array}
+ * @param {Number|Array|Complex|Sparse} m
+ * @returns {Number|Array|Complex|Sparse}
  * @example 
  * 
  * exp(1)

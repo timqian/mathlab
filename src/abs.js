@@ -18,21 +18,17 @@ function cabs(x) {
   return new Complex(abs(x.re));
 }
 
-
 /**
  * Pointwise Math.abs(x)
  * 
  * @export
- * @param {Number|Array} m
- * @returns {Number|Array}
+ * @param {Number|Array|Complex|Sparse} m
+ * @returns {Number|Array|Complex|Sparse}
  * @example 
  * 
- * abs(-1)
- * // returns Math.abs(-1)
- * abs([1, -2])
- * // returns [Math.abs(1), Math.abs(-2)]
- * abs([[1,2],[1,-3]])
- * // returns [ [Math.abs(1), Math.abs(2)], [Math.abs(1), Math.abs(-3)] ]
+ * abs(-1) // 1
+ * abs([1, -2]) // [1, 2]
+ * abs([[-1,2],[1,-3]]) // [[1,2],[1,3]]
  */
 export default function (m) {
   switch (m.constructor.name) {

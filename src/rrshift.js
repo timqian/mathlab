@@ -13,9 +13,9 @@ function crrshift(x, y) {
  * Pointwise rrshift
  * 
  * @export
- * @param {Number|Array} m1
- * @param {Number|Array} m2
- * @returns {Number|Array}
+ * @param {Number|Array|Complex|Sparse} m1
+ * @param {Number|Array|Complex|Sparse} m2
+ * @returns {Number|Array|Complex|Sparse}
  * @example 
  * 
  * rrshift(1, 2)

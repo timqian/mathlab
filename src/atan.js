@@ -14,16 +14,13 @@ function catan(x) {
  * Pointwise Math.atan(x)
  * 
  * @export
- * @param {Number|Array} m
- * @returns {Number|Array}
+ * @param {Number|Array|Sparse} m
+ * @returns {Number|Array|Sparse}
  * @example 
  * 
- * atan(1)
- * // returns Math.atan(1)
- * atan([1, 2])
- * // returns [Math.atan(1), Math.atan(2)]
- * atan([[1,2],[1,3]])
- * // returns [ [Math.atan(1), Math.atan(2)], [Math.atan(1), Math.atan(3)] ]
+ * atan(1) // Math.atan(1)
+ * atan([1, 2]) // [Math.atan(1), Math.atan(2)]
+ * atan([[1,2],[1,3]]) // [ [Math.atan(1), Math.atan(2)], [Math.atan(1), Math.atan(3)] ]
  */
 export default function (m) {
   switch (m.constructor.name) {

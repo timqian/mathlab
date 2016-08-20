@@ -22,8 +22,8 @@ function ccos(x) {
  * Pointwise Math.cos(x)
  * 
  * @export
- * @param {Number|Array} m
- * @returns {Number|Array}
+ * @param {Number|Array|Complex|Sparse} m
+ * @returns {Number|Array|Complex|Sparse}
  * @example 
  * 
  * cos(1)

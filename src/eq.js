@@ -12,9 +12,9 @@ function ceq(x, y) {
  * Pointwise eq
  * 
  * @export
- * @param {Number|Array} m1
- * @param {Number|Array} m2
- * @returns {Number|Array}
+ * @param {Number|Array|Complex|Sparse} m1
+ * @param {Number|Array|Complex|Sparse} m2
+ * @returns {Number|Array|Complex|Sparse}
  * @example 
  * 
  * eq(1, 2)

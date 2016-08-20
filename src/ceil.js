@@ -14,16 +14,13 @@ function cceil(x) {
  * Pointwise Math.ceil(x)
  * 
  * @export
- * @param {Number|Array} m
- * @returns {Number|Array}
+ * @param {Number|Array|Complex|Sparse} m
+ * @returns {Number|Array|Complex|Sparse}
  * @example 
  * 
- * ceil(1)
- * // returns Math.ceil(1)
- * ceil([1, 2])
- * // returns [Math.ceil(1), Math.ceil(2)]
- * ceil([[1,2],[1,3]])
- * // returns [ [Math.ceil(1), Math.ceil(2)], [Math.ceil(1), Math.ceil(3)] ]
+ * ceil(1) // Math.ceil(1)
+ * ceil([1, 2]) // [Math.ceil(1), Math.ceil(2)]
+ * ceil([[1,2],[1,3]]) // [ [Math.ceil(1), Math.ceil(2)], [Math.ceil(1), Math.ceil(3)] ]
  */
 export default function (m) {
   switch (m.constructor.name) {

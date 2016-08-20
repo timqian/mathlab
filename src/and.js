@@ -12,17 +12,14 @@ function cand(x, y) {
  * Pointwise and
  * 
  * @export
- * @param {Number|Array} m1
- * @param {Number|Array} m2
- * @returns {Number|Array}
+ * @param {Number|Array|Complex|Sparse} m1
+ * @param {Number|Array|Complex|Sparse} m2
+ * @returns {Number|Array|Complex|Sparse}
  * @example 
  * 
- * and(1, 2)
- * // returns 1 && 2
- * and([1, 2], [2, 2])
- * // returns [1 && 2, 2 && 2]
- * and([[2,1], [1,2]], [[2, 2], [2, 2]]))
- * // returns [ [2 && 2, 1 && 2], [1 && 2, 2 && 2] ]
+ * and(1, 0) // 0
+ * and([1, 1], [1, 0]) // [1, 0]
+ * and([[1,1], [1,1]], [[1,0], [0,0]])) // [[1,0], [0,0]]
  */
 export default function (m1, m2) {
   switch (m1.constructor.name) {

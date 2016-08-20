@@ -28,9 +28,9 @@ function cmul(x, y) {
  * Pointwise mul
  * 
  * @export
- * @param {Number|Array|Object} m1
- * @param {Number|Array|Object} m2
- * @returns {Number|Array}
+ * @param {Number|Array|Complex|Sparse|Object} m1
+ * @param {Number|Array|Complex|Sparse|Object} m2
+ * @returns {Number|Array|Complex|Sparse}
  * @example 
  * 
  * mul(1, 2)

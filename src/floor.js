@@ -15,8 +15,8 @@ function cfloor(x) {
  * Pointwise Math.floor(x)
  * 
  * @export
- * @param {Number|Array} m
- * @returns {Number|Array}
+ * @param {Number|Array|Complex|Sparse} m
+ * @returns {Number|Array|Complex|Sparse}
  * @example 
  * 
  * floor(1)
