@@ -34,7 +34,7 @@ dot(A, x) // [50,122]
 
 # Introduction to functions
 
-Mathlab is basicly a collection of mathmatic functions which can be applied to numbers, arrays and two self-defined datatype (Complex and Sparse).
+Mathlab provide a collection of mathmatic functions which can be applied to numbers, arrays and two self-defined datatypes (Complex and Sparse).
 
 Functions can be devide into 5 groups:
 
@@ -111,7 +111,7 @@ dim([[1,2],[2,2],[3,3]]) // [3,2]
 
 # Introduction to Complex and Sparse matrix
 
-Mathlab provided two Classes for you to create Complex and Sparse matrix.
+Mathlab provided two Classes for you to initialize Complex and Sparse matrix.
 
 ## Complex
 
@@ -123,19 +123,26 @@ It accepts two arguments as the real and imaginary part of a complex number or a
 #### Initalize
 
 ```js
-import { Complex } from 'mathlab'
+import { Complex, abs } from 'mathlab'
 
 // complex number
 const c = new Complex(1, 2) // {re:1, im:2}
 
 // complex array
 const ca = new Complex([1,2], [1,2]) // {re:[1,2], im:[1,2]}
+
+// mathlab functions can be applied on it
+abs(ca) // {re: [ 1.414, 2.828], im: undefined}
 ```
 
-#### Methods
+#### Methods (still adding)
 
-- reciprocal
-- transjugate
+- reciprocal: Pointwise 1/z 
+- transjugate: The conjugate-transpose of the matrix
+
+```js
+ca.reciprocal() // {re: [ 0.5, 0.25], im: [ -0.5, -0.25]}
+```
 
 ## Sparse
 Creates a Sparse instance that represents a sparse matrix.
@@ -150,10 +157,13 @@ import { Sparse } from 'mathlab'
 
 const z = new Sparse([[1,0,0],[5,2,0],[1,0,0]]) //  { col: [ 0, 3, 4, 4 ], row: [ 0, 1, 2, 1 ], val: [ 1, 5, 1, 2 ] }
 ```
-#### Methods
+#### Methods (still adding)
 
-- toFull
+- toFull: Convert to full presentation
 
+```js
+z.toFull() // [[1,0,0],[5,2,0],[1,0,0]]
+```
 
 
 [pointwise]: http://www.timqian.com/mathlab/function/index.html#static-function-pointwise
