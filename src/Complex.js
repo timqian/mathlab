@@ -23,10 +23,6 @@ export default class Complex {
     return new Complex(div(1, this.re));
   }
 
-  identity(n) {
-    return new Complex(identity(n));
-  }
-  
   transjugate() {
     var t = transpose, x = this.re, y = this.im;
     if(y) { return new Complex(t(x), negtranspose(y)); }
