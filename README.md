@@ -6,12 +6,12 @@ Lodash like math lab in javascript, focusing on matrix manipulation.
 
 # Install
 
-Using npm:
+**Using npm:**
 ```bash
 $ npm install mathlab --save
 ```
 
-Using cdn:
+**Using cdn:**
 ```html
 <script src="https://npmcdn.com/mathlab/dist/mathlab.min.js"></script>
 ```
