@@ -6,8 +6,14 @@ Lodash like math lab in javascript, focusing on matrix manipulation.
 
 # Install
 
+Using npm:
 ```bash
 $ npm install mathlab --save
+```
+
+Using cdn:
+```html
+<script src="https://npmcdn.com/mathlab/dist/axios.min.js"></script>
 ```
 
 # Sample usage
@@ -22,6 +28,7 @@ const x = [7,8,9]
 // calculate dot product
 dot(A, x) // [50,122]
 ```
+
 
 # Features
 

@@ -1,17 +1,17 @@
 {
   "name": "mathlab",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "lodash like math lab",
   "main": "lib/index.js",
   "scripts": {
+    "compile": "babel -d lib/ src/",
     "pretest": "npm run compile",
     "test": "mocha --recursive --require babel-register",
-    "compile": "babel -d lib/ src/",
-    "prepublish": "npm run compile",
     "genDoc": "./node_modules/esdoc/out/src/ESDocCLI.js -c esdoc.json",
     "build:bundle": "browserify app.js -o dist/mathlab.js",
     "build:uglify": "uglifyjs dist/mathlab.js -mc --source-map dist/mathlab.min.js.map -o dist/mathlab.min.js",
-    "build":"npm run build:bundle && npm run build:uglify"
+    "build":"npm run build:bundle && npm run build:uglify",
+    "prepublish": "npm run test && npm run genDoc && npm run compile && npm run build"
   },
   "repository": {
     "type": "git",
