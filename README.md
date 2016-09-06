@@ -13,7 +13,7 @@ $ npm install mathlab --save
 
 **Using cdn:**
 ```html
-<script src="https://npmcdn.com/mathlab/dist/mathlab.min.js"></script>
+<script src="https://unpkg.com/mathlab/dist/mathlab.min.js"></script>
 ```
 
 # Sample usage
